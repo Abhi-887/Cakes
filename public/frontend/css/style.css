@@ -409,8 +409,8 @@ button {
 .droap_menu::-webkit-scrollbar-thumb {
     background: var(--colorPrimary);
 }
-
-.main_menu .navbar-nav .nav-item:hover .droap_menu {
+/* .main_menu .navbar-nav  */
+.nav-item:hover .droap_menu {
     top: 100%;
     opacity: 1;
     visibility: visible;
@@ -1162,7 +1162,7 @@ button {
     /* padding: 3px 15px; */
     box-shadow: var(--boxShadow);
     border-radius: 30px;
-    
+
 }
 
 .fp__menu_item .fp__menu_item_text {
