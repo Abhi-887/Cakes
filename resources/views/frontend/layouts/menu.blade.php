@@ -34,31 +34,32 @@
                 @endif
             </ul>
 
-            <a class="btn btn-primary ms-auto d-xxl-none d-block" data-bs-toggle="offcanvas" href="#offcanvasExample"
-                role="button" aria-controls="offcanvasExample">
-                <i class="fa-solid fa-bars"></i>
+            <a class="ms-auto d-xxl-none d-block" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+                aria-controls="offcanvasExample">
+                <i class="fas fa-bars fs-3 mt-2 me-3 color-light-gray"></i>
             </a>
 
             <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
                 aria-labelledby="offcanvasExampleLabel">
-                <div class="offcanvas-header">
-                    <a class="" href="{{ url('/') }}">
+                <div class="offcanvas-header pt-3">
+                    <a class="w-50" href="{{ url('/') }}">
                         <img src="{{ asset('uploads/web-logo1.png') }}" alt="3D-Cakes Logo" class="w-100" />
                     </a>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <button type="button" class="btn-close fs-4" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
                     <ul class="mt-3">
                         @if ($MainMenu)
                             @foreach ($MainMenu as $menu)
-                                <li class="nav-item my-2">
+                                <li class="nav-item my-3">
                                     <a class="nav-link fw-semibold" href="{{ $menu['link'] }}">{{ $menu['label'] }}
-                                        @if ($menu['child'])
-                                            <i class="far fa-angle-down mobile-dropdown-menu"></i>
-                                        @endif
                                     </a>
                                     @if ($menu['child'])
-                                        <ul class="drop-dropdown position-absolute bg-light">
+                                        <i class="far fa-angle-down mobile-dropdown-menu"></i>
+                                    @endif
+                                    @if ($menu['child'])
+                                        <ul class="drop-dropdown bg-light">
                                             @foreach ($menu['child'] as $item)
                                                 <li>
                                                     <a class="dropdown-item border-bottom fw-semibold p-2"
@@ -107,16 +108,15 @@
                         href="{{ route('dashboard') }}">
                         <i class="fas fa-comment-alt-dots"></i>
                         <span
-                            class="sunseen-message-count bg-gray position-absolute text-light fw-semibold text-center end-25 ms-1 rounded-circle">{{ $unseenMessages > 0 ? 1 : 0 }}</span>
+                            class="sunseen-message-count bg-gray position-absolute text-light fw-semibold text-center bottom-50 end-25 ms-1 rounded-circle">{{ $unseenMessages > 0 ? 1 : 0 }}</span>
                     </a>
                 </li>
-                {{--
+
                 <li>
-                    <a href="{{ route('login') }}" style="color: white"
-                    ><i class="fas fa-user"></i
-                    ></a>
+                    <a class="mx-3 fs-5" href="{{ route('login') }}"><i class="fas fa-user"></i></a>
                 </li>
-                --}} {{--
+
+                {{--
                 <li>
                     <a
                     class="common_btn d-inline ms-3 position-relative fw-semibold transitions"
@@ -245,5 +245,11 @@
                 })
             })
         })
+
+        $(document).ready(function() {
+            $(".mobile-dropdown-menu").click(function() {
+                $(".drop-dropdown").slideToggle("slow");
+            });
+        });
     </script>
 @endpush
