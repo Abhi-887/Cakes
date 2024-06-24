@@ -79,15 +79,13 @@ class WorkwithusDataTable extends DataTable
                 ->exportable(false)
                 ->printable(false)
                 ->width(60)
-                ->addClass('text-center')
-                ->view('frontend.datatables.portfolio'),
+                ->addClass('text-center'),
 
             Column::computed('cv')
                 ->exportable(false)
                 ->printable(false)
                 ->width(60)
-                ->addClass('text-center')
-                ->view('frontend.datatables.cv'),
+                ->addClass('text-center'),
         ];
     }
 
