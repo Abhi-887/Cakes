@@ -53,14 +53,17 @@
                         @if ($MainMenu)
                             @foreach ($MainMenu as $index => $menu)
                                 <li class="nav-item my-3">
-                                    <a class="nav-link fw-semibold" href="{{ $menu['link'] }}">{{ $menu['label'] }}
-                                    </a>
+                                    <div class="d-flex align-items-center ms-2">
+                                        <a class="nav-link fw-semibold" href="{{ $menu['link'] }}">{{ $menu['label'] }}
+                                        </a>
+                                        @if ($menu['child'])
+                                            <span class="mobile-dropdown-menu" data-index="{{ $index }}">
+                                                <i class="far fa-angle-down"></i></span>
+                                        @endif
+                                    </div>
                                     @if ($menu['child'])
-                                        <i class="far fa-angle-down mobile-dropdown-menu"
-                                            data-index="{{ $index }}"></i>
-                                    @endif
-                                    @if ($menu['child'])
-                                        <ul class="drop-dropdown bg-light" id="dropdown-{{ $index }}">
+                                        <ul class="drop-dropdown bg-light" id="dropdown-{{ $index }}"
+                                            style="display: none;">
                                             @foreach ($menu['child'] as $item)
                                                 <li>
                                                     <a class="dropdown-item border-bottom fw-semibold p-2"
