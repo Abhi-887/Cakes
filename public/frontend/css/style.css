@@ -6560,10 +6560,11 @@ CHECKOUT PAGE START
 }
 
 .active > .page-link, .page-link.active {
-    z-index: 3;
+    z-index: -1;
     color: var(--colorWhite);
     background-color: var(--colorPrimary);
     border-color: var(--colorPrimary);
+    color: white !important;
   }
 
 

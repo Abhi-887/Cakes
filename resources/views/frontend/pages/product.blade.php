@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                    BREADCRUMB START
-                                ==============================-->
+                                        BREADCRUMB START
+                                    ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,8 +18,8 @@
         </div>
     </section>
     <!--=============================
-                                    BREADCRUMB END
-                                ==============================-->
+                                        BREADCRUMB END
+                                    ==============================-->
     <style>
         .form-control {
             -webkit-appearance: button;
@@ -28,12 +28,12 @@
     </style>
 
     <!--=============================
-                                    SEARCH MENU START
-                                ==============================-->
+                                        SEARCH MENU START
+                                    ==============================-->
     <section class="fp__search_menu mt_120 xs_mt_90 mb_100 xs_mb_70">
         <div class="container">
             <form class="fp__search_menu_form" method="GET" action="{{ route('product.index') }}">
-                <div class="row align-items-center">
+                <div class="row justify-content-around align-items-center">
                     <div class="col-xl-3 col-md-5">
                         <input class="py-2 form-control rounded-pill" type="text" placeholder="Search..." name="search"
                             value="{{ request()->search }}">
