@@ -112,7 +112,7 @@ Route::get('/blogs/{slug}', [FrontendController::class, 'blogDetails'])->name('b
 Route::post('/blogs/comment/{blog_id}', [FrontendController::class, 'blogCommentStore'])->name('blogs.comment.store');
 
 /** Show products by category */
-Route::get('/category/{slug}', [FrontendController::class, 'showCategoryProducts'])->name('category.show');
+Route::get('/products/{slug}', [FrontendController::class, 'showCategoryProducts'])->name('category.show');
 
 /** About Routes */
 Route::get('/about', [FrontendController::class, 'about'])->name('about');

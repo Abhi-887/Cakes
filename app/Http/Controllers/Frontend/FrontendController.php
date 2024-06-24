@@ -380,7 +380,7 @@ class FrontendController extends Controller
         $category = Category::where('slug', $slug)->firstOrFail();
         $products = Product::where('category_id', $category->id)->get();
 
-        return view('frontend.category-products', compact('category', 'products'));
+        return view('frontend.pages.product', compact('category', 'products'));
     }
 
 
