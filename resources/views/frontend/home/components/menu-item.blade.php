@@ -84,7 +84,7 @@
                                 <img src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}"
                                     class="img-fluid w-100">
                             </div>
-                            <a class="category bg-light px-2 py-1" href="{{ route('category.show', $products->category->slug) }}">{{ @$product->category->name }}</a>
+                            <a class="category bg-light px-2 py-1" href="{{ route('category.show', $products->category->slug) }}">{{ @$products->category->name }}</a>
                             <div class="fp__menu_item_text">
                                 @if ($product->reviews_avg_rating)
                                     <p class="rating">
