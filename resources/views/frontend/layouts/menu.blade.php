@@ -9,7 +9,7 @@
                 <img src="{{ asset('uploads/web-logo1.png') }}" alt="3D-Cakes Logo" class="w-100" />
             </a>
         </div>
-        <ul class="d-flex">
+        <ul class="navbar-nav d-flex">
             {{-- Main Menu Items --}} @if ($MainMenu)
                 @foreach ($MainMenu as $menu)
                     <li class="nav-item">
