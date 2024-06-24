@@ -55,7 +55,7 @@
                                     <a class="nav-link fw-semibold" href="{{ $menu['link'] }}">{{ $menu['label'] }}</a>
                                     @if ($menu['child'])
                                         <i class="far fa-angle-down mobile-dropdown-menu"></i>
-                                        <ul class="position-absolute bg-light drop-dropdown" style="display: none;">
+                                        <ul class="bg-light d-none">
                                             @foreach ($menu['child'] as $item)
                                                 <li>
                                                     <a class="border-bottom fw-semibold p-2"
