@@ -34,8 +34,8 @@
                 @endif
             </ul>
 
-            <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
-                aria-controls="offcanvasExample">
+            <a class="btn btn-primary ms-auto d-xxl-none d-block" data-bs-toggle="offcanvas" href="#offcanvasExample"
+                role="button" aria-controls="offcanvasExample">
                 <i class="fa-solid fa-bars"></i>
             </a>
 
@@ -48,31 +48,17 @@
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
-                    <div>
-                        Some text as placeholder. In real life you can have the elements you have chosen. Like, text,
-                        images, lists, etc.
-                    </div>
-                    {{-- <div class="dropdown mt-3">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                            Dropdown button
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </div> --}}
-                    <ul class="dropdown mt-3">
+                    <ul class="mt-3">
                         @if ($MainMenu)
                             @foreach ($MainMenu as $menu)
-                                <li class="nav-item mx-2">
-                                    <a class="nav-link fw-semibold mx-2" href="{{ $menu['link'] }}">{{ $menu['label'] }}
+                                <li class="nav-item my-2">
+                                    <a class="nav-link fw-semibold" href="{{ $menu['link'] }}">{{ $menu['label'] }}
                                         @if ($menu['child'])
-                                            <i class="far fa-angle-down"></i>
+                                            <i class="far fa-angle-down mobile-dropdown-menu"></i>
                                         @endif
                                     </a>
                                     @if ($menu['child'])
-                                        <ul class="dropdown-menu position-absolute bg-light">
+                                        <ul class="drop-dropdown position-absolute bg-light">
                                             @foreach ($menu['child'] as $item)
                                                 <li>
                                                     <a class="dropdown-item border-bottom fw-semibold p-2"
