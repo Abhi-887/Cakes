@@ -18,7 +18,7 @@
                   </div>
                   <div class="card-body">
 
-                    <form action="{{route('admin.footer-grid-four.update', $footer->id)}}" method="POST">
+                    <form action="{{route('admin.footer-grid-four.update', $footerGridFour->id)}}" method="POST">
                         @csrf
                         @method('PUT')
                         <div class="form-group">
