@@ -283,10 +283,8 @@ class FrontendController extends Controller
 
     public function products(Request $request): View
     {
-        // Initialize the query
         $products = Product::where('status', 1)->orderBy('id', 'DESC');
 
-        // Apply search filter if present
         if ($request->has('search') && $request->filled('search')) {
             $products->where(function ($query) use ($request) {
                 $query->where('name', 'like', '%' . $request->search . '%')
@@ -294,28 +292,25 @@ class FrontendController extends Controller
             });
         }
 
-        // Apply category filter if present
-        if ($request->has('category') && $request->filled('category')) {
-            $products->whereHas('category', function ($query) use ($request) {
-                $query->where('slug', $request->category);
-            });
+        if ($request->has('parent_category') && $request->filled('parent_category')) {
+            $products->where('category_id', $request->parent_category);
         }
 
-        // Eager load subCategory, calculate average rating and review count, and paginate
+        if ($request->has('sub_category') && $request->filled('sub_category')) {
+            $products->where('sub_category', $request->sub_category);
+        }
+
         $products = $products->with([
             'subCategory',
             'reviews' => function ($query) {
-                $query->select('product_id', 'rating');  // assuming you have a 'rating' column in the reviews table
+                $query->select('product_id', 'rating');
             }
         ])->withAvg('reviews', 'rating')->withCount('reviews')->paginate(15);
 
-        // Fetch categories
         $categories = Category::where('status', 1)->get();
 
-        // Return the view with products and categories
         return view('frontend.pages.product', compact('products', 'categories'));
     }
-
     function showProduct(string $slug): View
     {
         $product = Product::with(['productImages', 'productSizes', 'productOptions'])->where(['slug' => $slug, 'status' => 1])
