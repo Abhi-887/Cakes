@@ -34,7 +34,7 @@ class ProductController extends Controller
     {
         $categories = Category::all();
         return view('admin.product.create', compact('categories'));
-    }	
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -113,7 +113,7 @@ class ProductController extends Controller
 
     return to_route('admin.product.index');
 	}
-	
+
 	public function getSubcategories(Request $request, $categoryId)
 	{
 		// Retrieve subcategories based on the given category ID

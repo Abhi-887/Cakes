@@ -90,7 +90,6 @@ Route::get('/voucher-redemption', function () {
 
 /** Chef page */
 Route::get('/chef', [FrontendController::class, 'chef'])->name('chef');
-
 /** Testimonial page */
 Route::get('/testimonials', [FrontendController::class, 'testimonial'])->name('testimonial');
 
@@ -110,9 +109,6 @@ Route::post('/work-with-us', [WorkwithusController::class, 'store'])->name('work
 Route::get('/blogs', [FrontendController::class, 'blog'])->name('blogs');
 Route::get('/blogs/{slug}', [FrontendController::class, 'blogDetails'])->name('blogs.details');
 Route::post('/blogs/comment/{blog_id}', [FrontendController::class, 'blogCommentStore'])->name('blogs.comment.store');
-
-/** Show products by category */
-Route::get('/products/{slug}', [FrontendController::class, 'showCategoryProducts'])->name('category.show');
 
 /** About Routes */
 Route::get('/about', [FrontendController::class, 'about'])->name('about');
