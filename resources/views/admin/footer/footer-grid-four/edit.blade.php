@@ -18,24 +18,24 @@
                   </div>
                   <div class="card-body">
 
-                    <form action="{{route('admin.footer-grid-four.update', $footer->id)}}" method="POST">
+                    <form action="{{route('admin.footer-grid-four.update', $footerGridFour->id)}}" method="POST">
                         @csrf
                         @method('PUT')
                         <div class="form-group">
                             <label>Name</label>
-                            <input type="text" class="form-control" name="name" value="{{$footer->name}}">
+                            <input type="text" class="form-control" name="name" value="{{$footerGridFour->name}}">
                         </div>
 
                         <div class="form-group">
                             <label>url</label>
-                            <input type="text" class="form-control" name="url" value="{{$footer->url}}">
+                            <input type="text" class="form-control" name="url" value="{{$footerGridFour->url}}">
                         </div>
 
                         <div class="form-group">
                             <label for="inputState">Status</label>
                             <select id="inputState" class="form-control" name="status">
-                              <option {{$footer->status === 1 ? 'selected' : ''}} value="1">Active</option>
-                              <option {{$footer->status === 0 ? 'selected' : ''}} value="0">Inactive</option>
+                              <option {{$footerGridFour->status === 1 ? 'selected' : ''}} value="1">Active</option>
+                              <option {{$footerGridFour->status === 0 ? 'selected' : ''}} value="0">Inactive</option>
                             </select>
                         </div>
 
