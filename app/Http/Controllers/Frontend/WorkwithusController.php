@@ -26,13 +26,13 @@ class WorkwithusController extends Controller
             'why_ideal' => 'required|string',
             'relevant_experience' => 'required|string',
             'current_position_duration' => 'required|string|max:255',
-            'portfolio' => 'nullable',
-            'cv' => 'nullable',
+            'portfolio' => 'nullable', // Updated validation rule
+            'cv' => 'nullable', // Updated validation rule
         ]);
 
         // Handle file uploads
         $portfolioPath = $request->file('portfolio') ? $request->file('portfolio')->store('portfolios') : null;
-        $cvPath = $request->file('cv')->store('cvs');
+        $cvPath = $request->file('cv') ? $request->file('cv')->store('cvs') : null;
 
         // Create a new Workwithus instance and fill it with validated data
         $workwithus = new Workwithus();
@@ -53,4 +53,5 @@ class WorkwithusController extends Controller
         // Return a JSON response
         return response()->json(['message' => 'Your application has been submitted successfully!'], 200);
     }
+
 }
