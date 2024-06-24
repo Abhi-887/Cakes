@@ -25,6 +25,9 @@ class WorkwithusDataTable extends DataTable
             ->setRowId('id')
             ->addColumn('portfolio', function($row) {
                 return '<img width="100px" src="'.asset($row->portfolio).'">';
+            })
+            ->addColumn('cv', function($row) {
+                return '<img width="100px" src="'.asset($row->cv).'">';
             });
     }
 
