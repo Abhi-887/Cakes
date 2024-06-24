@@ -31,7 +31,7 @@
        WE'RE HIRING! PAGE START
     ==============================-->
 
-    <div class="container mt-5">
+    <div class="container my-5">
         <p>To apply to join the team at 3D Cakes Edinburgh or 3D Cakes Milngavie, please complete the application form below and hit the 'Submit Application' button. Please ensure that you select the job reference(s) for all positions for which you wish to be considered (you may apply for more than one role).</p>
 
         <h3>Current vacancies are displayed below:</h3>
@@ -55,7 +55,7 @@
         <form class="" action="{{route('work-with-us.store')}}" method="POST">
             @csrf
             <div class="form-group mt-3">
-                <label>Please select the Job Reference(s) for which you would like to apply:</label>
+                <label class="mt-2">Please select the Job Reference(s) for which you would like to apply:</label>
                 <div class="form-check d-flex align-items-center">
                     <input class="form-check-input" type="checkbox" id="jobReference1" name="job_reference[]" value="EDIN10">
                     <label class="form-check-label ms-2" for="jobReference1">
@@ -119,7 +119,7 @@
             <input type="file" class="form-control-file" id="cv" name="cv" accept=".pdf, .bmp, .jpeg, .png" required>
           </div>
 
-          <button type="submit" class="btn btn-primary">Submit Application</button>
+          <div class=" mt-4 text-center"><button type="submit" class="btn btn-primary">Submit Application</button></div>
         </form>
       </div>
 
