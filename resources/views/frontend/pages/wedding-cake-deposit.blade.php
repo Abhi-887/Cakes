@@ -91,7 +91,7 @@
 				<label for="weddingDate" class="mb-2">Wedding date:<span class="text-danger">*</span></label>
 				<input type="date" class="form-control" id="weddingDate" name="weddingDate" required>
 			  </div>
-			  <div class="text-end"><button type="submit" onclick="loadProductModal" class="btn btn-primary">Add to Cart</button></div>
+			  <div class="text-end"><button type="submit" onclick="loadProductModal" class=" common_btn v_submit_button">Add to Cart</button></div>
 			</form>
 
 		  </div>
