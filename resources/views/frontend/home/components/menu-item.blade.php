@@ -2,20 +2,20 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
 
 <style>
-    /* .popularfood {
+    .testimonial {
         background: #262626;
-    } */
+    }
 
-    /* .popularfood .stars {
+    .testimonial .stars {
         color: #ff9800;
-    } */
+    }
 
-    .popularfood .profile img {
+    .testimonial .profile img {
         width: 50px;
         height: 50px;
     }
 
-    .popularfood .profile .name {
+    .testimonial .profile .name {
         font-weight: bold;
         color: #333;
     }
@@ -60,7 +60,7 @@
         </div>
     </div>
 
-    <div class="popularfood-slider popularfood">
+    <div class="testimonial-slider popularfood">
         <div class="row mt-5 mx-2">
             @foreach ($categories as $category)
                 @php
