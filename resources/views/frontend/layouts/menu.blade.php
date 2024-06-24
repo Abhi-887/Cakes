@@ -59,10 +59,10 @@
                                     @endif
 
                                     @if ($menu['child'])
-                                        <ul class="drop-dropdown position-absolute bg-light">
+                                        <ul class="position-absolute bg-light">
                                             @foreach ($menu['child'] as $item)
                                                 <li>
-                                                    <a class="dropdown-item border-bottom fw-semibold p-2"
+                                                    <a class="border-bottom fw-semibold p-2"
                                                         href="{{ $item['link'] }}">{{ $item['label'] }}</a>
                                                 </li>
                                             @endforeach
