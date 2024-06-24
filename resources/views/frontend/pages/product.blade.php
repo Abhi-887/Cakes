@@ -100,7 +100,7 @@
                             <div class="fp__menu_item_img">
                                 <img src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}"
                                     class="img-fluid w-100">
-                                <a class="category z-index-0 mt-3 py-1 px-3"
+                                <a class="category z-1 mt-3 py-1 px-3"
                                     href="#">{{ $product->subCategory->name ?? '' }}</a>
                             </div>
                             <div class="fp__menu_item_text">
