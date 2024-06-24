@@ -24,7 +24,7 @@
                 <div class="col-lg-3 col-md-12 footer-info">
                     <h5 class="mb-xl-3 mb-1 fw-normal text-black mt-xl-0 mt-2">{{ @$footerInfoTwo->name }}</h5>
                     <div>{!! @$footerInfoTwo->address !!}</div>
-                    <p><strong class="me-2">Email:</br></strong>{{ @$footerInfoTwo->email }}</p>
+                    <p><strong class="me-2">Email:</strong>{{ @$footerInfoTwo->email }}</p>
                     <p><strong class="me-2">Phone:</strong>{{ @$footerInfoTwo->phone }}</p>
                 </div>
 
