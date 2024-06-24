@@ -119,7 +119,7 @@
             <input type="file" class="form-control-file" id="cv" name="cv" accept=".pdf, .bmp, .jpeg, .png" required>
           </div>
 
-          <div class=" mt-4 text-center"><button type="submit" class="btn btn-primary">Submit Application</button></div>
+          <div class=" mt-4 text-center"><button type="submit" class="common_btn v_submit_button">Submit Application</button></div>
         </form>
       </div>
 
