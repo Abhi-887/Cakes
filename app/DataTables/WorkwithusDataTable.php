@@ -23,8 +23,8 @@ class WorkwithusDataTable extends DataTable
         return (new EloquentDataTable($query))
             ->addColumn('action', 'work-with-us.action')
             ->setRowId('id')
-            ->addColumn('image', function($row) {
-                return '<img width="100px" src="'.asset($row->image).'">';
+            ->addColumn('portfolio', function($row) {
+                return '<img width="100px" src="'.asset($row->portfolio).'">';
             });
     }
 
