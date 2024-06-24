@@ -36,16 +36,17 @@
 
             <a class="ms-auto d-xxl-none d-block" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
                 aria-controls="offcanvasExample">
-                <i class="fas fa-bars fs-3 mt-2 ms-3 color-light-gray"></i>
+                <i class="fas fa-bars fs-3 mt-2 me-3 color-light-gray"></i>
             </a>
 
             <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
                 aria-labelledby="offcanvasExampleLabel">
-                <div class="offcanvas-header">
-                    <a class="" href="{{ url('/') }}">
+                <div class="offcanvas-header pt-3">
+                    <a class="w-50" href="{{ url('/') }}">
                         <img src="{{ asset('uploads/web-logo1.png') }}" alt="3D-Cakes Logo" class="w-100" />
                     </a>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <button type="button" class="btn-close fs-4" data-bs-dismiss="offcanvas"
+                        aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
                     <ul class="mt-3">
