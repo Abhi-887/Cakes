@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                            BREADCRUMB START
-                        ==============================-->
+                                BREADCRUMB START
+                            ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,13 +18,13 @@
         </div>
     </section>
     <!--=============================
-                            BREADCRUMB END
-                        ==============================-->
+                                BREADCRUMB END
+                            ==============================-->
 
 
     <!--=============================
-                            MENU DETAILS START
-                        ==============================-->
+                                MENU DETAILS START
+                            ==============================-->
     <section class="fp__menu_details mt_115 xs_mt_85 mb_95 xs_mb_65">
         <div class="container">
             <div class="row">
@@ -55,13 +55,13 @@
                     <div class="fp__menu_details_text">
                         <h2>{!! $product->name !!}</h2>
                         @if ($product->reviews_avg_rating)
-                        <p class="rating">
-                            @for ($i = 1; $i <= $product->reviews_avg_rating; $i++)
-                            <i class="fas fa-star"></i>
-                            @endfor
+                            <p class="rating">
+                                @for ($i = 1; $i <= $product->reviews_avg_rating; $i++)
+                                    <i class="fas fa-star"></i>
+                                @endfor
 
-                            <span>({{ $product->reviews_count }})</span>
-                        </p>
+                                <span>({{ $product->reviews_count }})</span>
+                            </p>
                         @endif
                         <h3 class="price">
                             @if ($product->offer_price > 0)
@@ -104,7 +104,8 @@
                                     @foreach ($product->productOptions as $productOption)
                                         <div class="form-check">
                                             <input class="form-check-input v_product_option" name="product_option[]"
-                                                type="checkbox" value="{{ $productOption->id }}" id="option-{{ $productOption->id }}"
+                                                type="checkbox" value="{{ $productOption->id }}"
+                                                id="option-{{ $productOption->id }}"
                                                 data-price="{{ $productOption->price }}">
                                             <label class="form-check-label" for="option-{{ $productOption->id }}">
                                                 {{ $productOption->name }} <span>+
@@ -133,9 +134,9 @@
 
                         <ul class="details_button_area d-flex flex-wrap">
                             @if ($product->quantity === 0)
-                            <li><a class="common_btn bg-danger" href="javascript:;">Stock Out</a></li>
+                                <li><a class="common_btn bg-danger" href="javascript:;">Stock Out</a></li>
                             @else
-                            <li><a class="common_btn v_submit_button" href="#">add to cart</a></li>
+                                <li><a class="common_btn v_submit_button" href="#">add to cart</a></li>
                             @endif
                             <li><a class="wishlist" href="#"><i class="far fa-heart"></i></a></li>
                         </ul>
@@ -170,29 +171,32 @@
                                             <h4>{{ count($reviews) }} reviews</h4>
                                             <div class="fp__comment pt-0 mt_20">
                                                 @foreach ($reviews as $review)
-                                                <div class="fp__single_comment m-0 border-0">
-                                                    <img src="{{asset($review->user->avatar)}}" alt="review" class="img-fluid">
-                                                    <div class="fp__single_comm_text">
-                                                        <h3>{{ $review->user->name }} <span>{{ date('d m Y', strtotime($review->created_at)) }} </span></h3>
-                                                        <span class="rating">
-                                                            @for ($i = 1; $i <= $review->rating; $i++)
-                                                            <i class="fas fa-star"></i>
-                                                            @endfor
+                                                    <div class="fp__single_comment m-0 border-0">
+                                                        <img src="{{ asset($review->user->avatar) }}" alt="review"
+                                                            class="img-fluid">
+                                                        <div class="fp__single_comm_text">
+                                                            <h3>{{ $review->user->name }}
+                                                                <span>{{ date('d m Y', strtotime($review->created_at)) }}
+                                                                </span></h3>
+                                                            <span class="rating">
+                                                                @for ($i = 1; $i <= $review->rating; $i++)
+                                                                    <i class="fas fa-star"></i>
+                                                                @endfor
 
 
-                                                        </span>
-                                                        <p>{{ $review->review }}</p>
-                                                    </div>
-                                                </div>
-                                                @endforeach
-                                                @if ($reviews->hasPages())
-                                                <div class="fp__pagination mt_60">
-                                                    <div class="row">
-                                                        <div class="col-12">
-                                                            {{ $reviews->links() }}
+                                                            </span>
+                                                            <p>{{ $review->review }}</p>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                @endforeach
+                                                @if ($reviews->hasPages())
+                                                    <div class="fp__pagination mt_60">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                {{ $reviews->links() }}
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 @endif
                                                 @if (count($reviews) === 0)
                                                     <div class="alert alert-warning mt-4">No review found!</div>
@@ -202,41 +206,43 @@
 
                                         </div>
                                         @auth
-                                        <div class="col-lg-4">
-                                            <div class="fp__post_review">
-                                                <h4>write a Review</h4>
-                                                <form action="{{ route('product-review.store') }}" method="POST">
-                                                    @csrf
-                                                    <div class="row">
-                                                        <div class="col-xl-12 mt-3">
-                                                            <label> Choose a rating</label>
-                                                            <select name="rating" id="rating_input" class="form-control ">
-                                                                <option value="5">5</option>
-                                                                <option value="4">4</option>
-                                                                <option value="3">3</option>
-                                                                <option value="2">2</option>
-                                                                <option value="1">1</option>
-                                                            </select>
-                                                            <input type="hidden" name="product_id" value="{{ $product->id }}">
-                                                        </div>
+                                            <div class="col-lg-4">
+                                                <div class="fp__post_review">
+                                                    <h4>write a Review</h4>
+                                                    <form action="{{ route('product-review.store') }}" method="POST">
+                                                        @csrf
+                                                        <div class="row">
+                                                            <div class="col-xl-12 mt-3">
+                                                                <label> Choose a rating</label>
+                                                                <select name="rating" id="rating_input"
+                                                                    class="form-control ">
+                                                                    <option value="5">5</option>
+                                                                    <option value="4">4</option>
+                                                                    <option value="3">3</option>
+                                                                    <option value="2">2</option>
+                                                                    <option value="1">1</option>
+                                                                </select>
+                                                                <input type="hidden" name="product_id"
+                                                                    value="{{ $product->id }}">
+                                                            </div>
 
-                                                        <div class="col-xl-12">
-                                                            <label for="">Review</label>
-                                                            <textarea style="margin-top: 2px" name="review" rows="3" placeholder="Write your review"></textarea>
+                                                            <div class="col-xl-12">
+                                                                <label for="">Review</label>
+                                                                <textarea style="margin-top: 2px" name="review" rows="3" placeholder="Write your review"></textarea>
+                                                            </div>
+                                                            <div class="col-12">
+                                                                <button class="common_btn" type="submit">submit
+                                                                    review</button>
+                                                            </div>
                                                         </div>
-                                                        <div class="col-12">
-                                                            <button class="common_btn" type="submit">submit
-                                                                review</button>
-                                                        </div>
-                                                    </div>
-                                                </form>
+                                                    </form>
+                                                </div>
                                             </div>
-                                        </div>
                                         @else
-                                        <div class="col-lg-4">
-                                            <h4>write a Review</h4>
-                                            <div class="alert alert-warning mt-4">Please login first to add review.</div>
-                                        </div>
+                                            <div class="col-lg-4">
+                                                <h4>write a Review</h4>
+                                                <div class="alert alert-warning mt-4">Please login first to add review.</div>
+                                            </div>
                                         @endauth
                                     </div>
                                 </div>
@@ -261,18 +267,18 @@
                                     <div class="fp__menu_item_text">
                                         <p class="rating">
                                             @if ($relatedProduct->reviews_avg_rating)
-                                            <p class="rating">
-                                                @for ($i = 1; $i <= $relatedProduct->reviews_avg_rating; $i++)
-                                                <i class="fas fa-star"></i>
-                                                @endfor
+                                                <p class="rating">
+                                                    @for ($i = 1; $i <= $relatedProduct->reviews_avg_rating; $i++)
+                                                        <i class="fas fa-star"></i>
+                                                    @endfor
 
-                                                <span>({{ $relatedProduct->reviews_count }})</span>
-                                            </p>
+                                                    <span>({{ $relatedProduct->reviews_count }})</span>
+                                                </p>
                                             @endif
                                         </p>
                                         <a class="title"
                                             href="{{ route('product.show', $relatedProduct->slug) }}">{!! $relatedProduct->name !!}</a>
-                                        <h5 class="price">
+                                        <h5 class="mb-3">
                                             @if ($relatedProduct->offer_price > 0)
                                                 {{ currencyPosition($relatedProduct->offer_price) }}
                                                 <del>{{ currencyPosition($relatedProduct->price) }}</del>
@@ -281,7 +287,9 @@
                                             @endif
                                         </h5>
                                         <ul class="d-flex flex-wrap justify-content-center">
-                                            <li><a href="javascript:;" onclick="loadProductModal('{{ $relatedProduct->id }}')"><i class="fas fa-shopping-basket"></i></a></li>
+                                            <li><a href="javascript:;"
+                                                    onclick="loadProductModal('{{ $relatedProduct->id }}')"><i
+                                                        class="fas fa-shopping-basket"></i></a></li>
                                             <li><a href="#"><i class="fal fa-heart"></i></a></li>
                                             <li><a href="#"><i class="far fa-eye"></i></a></li>
                                         </ul>
@@ -358,7 +366,7 @@
                 $('#v_total_price').text("{{ config('settings.site_currency_icon') }}" + totalPrice);
             }
 
-            $('.v_submit_button').on('click', function(e){
+            $('.v_submit_button').on('click', function(e) {
                 e.preventDefault();
                 $("#v_add_to_cart_form").submit();
             })
@@ -380,13 +388,13 @@
                 let formData = $(this).serialize();
                 $.ajax({
                     method: 'POST',
-                    url: '{{ route("add-to-cart") }}',
+                    url: '{{ route('add-to-cart') }}',
                     data: formData,
                     beforeSend: function() {
                         $('.v_submit_button').attr('disabled', true);
                         $('.v_submit_button').html(
                             '<span class="spinner-border spinner-border-sm text-light" role="status" aria-hidden="true"></span> Loading...'
-                            )
+                        )
                     },
                     success: function(response) {
                         updateSidebarCart();
