@@ -10,7 +10,7 @@
                     <img src="{{ asset('uploads/web-logo1.png') }}" alt="3D-Cakes Logo" class="w-100" />
                 </a>
             </div>
-            <ul class="d-none d-xxl-flex">
+            <ul class="d-none d-md-flex">
                 {{-- Main Menu Items --}} @if ($MainMenu)
                     @foreach ($MainMenu as $menu)
                         <li class="nav-item mx-2">
@@ -34,7 +34,7 @@
                 @endif
             </ul>
 
-            <a class="ms-auto d-xxl-none d-block" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+            <a class="ms-auto d-md-none d-block" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
                 aria-controls="offcanvasExample">
                 <i class="fas fa-bars fs-3 mt-2 me-3 color-light-gray"></i>
             </a>
@@ -72,10 +72,51 @@
                             @endforeach
                         @endif
                     </ul>
+                    <ul class="menu_icon">
+                        <li>
+                            <a href="#" class="menu_search mx-3 position-relative fw-semibold fs-5 transitions"><i
+                                    class="far fa-search"></i></a>
+                            <div
+                                class="fp__search_form position-fixed w-100 top-0 end-0 justify-content-center align-items-center transitions vh-100">
+                                <form class="top-50 start-50 position-absolute" action="{{ route('product.index') }}"
+                                    method="GET">
+                                    <span
+                                        class="close_search position-absolute text-center rounded-circle fs-3 mb-5 bottom-100 end-0 transitions"><i
+                                            class="far fa-times"></i></span>
+                                    <input class="searchinput w-100 border border-0 rounded-5" type="text"
+                                        placeholder="Search . . ." name="search" />
+                                    <button
+                                        class="position-absolute top-50 fw-semibold rounded-5 px-4 py-2 outline-0 transitions"
+                                        type="submit">
+                                        Search
+                                    </button>
+                                </form>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="cart_icon mx-3 position-relative fw-semibold fs-5 transitions"><i
+                                    class="fas fa-shopping-basket"></i>
+                                <span
+                                    class="cart_count bg-gray position-absolute text-light fw-semibold text-center bottom-50 end-25 rounded-circle">{{ count(Cart::content()) }}</span></a>
+                        </li>
+                        @php @$unseenMessages = \App\Models\Chat::where(['sender_id' => 1, 'receiver_id' => auth()->user()->id, 'seen' => 0])->count(); @endphp
+                        <li>
+                            <a class="message_icon mx-3 position-relative fw-semibold fs-5 transitions"
+                                href="{{ route('dashboard') }}">
+                                <i class="fas fa-comment-alt-dots"></i>
+                                <span
+                                    class="sunseen-message-count bg-gray position-absolute text-light fw-semibold text-center bottom-50 end-25 ms-1 rounded-circle">{{ $unseenMessages > 0 ? 1 : 0 }}</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="ms-3 fs-5" href="{{ route('login') }}"><i class="fas fa-user"></i></a>
+                        </li>
+                    </ul>
                 </div>
             </div>
 
-            <ul class="menu_icon d-flex align-items-center flex-wrap">
+            <ul class="menu_icon d-none d-xxl-flex align-items-center flex-wrap">
                 <li>
                     <a href="#" class="menu_search mx-3 position-relative fw-semibold fs-5 transitions"><i
                             class="far fa-search"></i></a>
@@ -103,14 +144,14 @@
                             class="cart_count bg-gray position-absolute text-light fw-semibold text-center bottom-50 end-25 rounded-circle">{{ count(Cart::content()) }}</span></a>
                 </li>
                 @php @$unseenMessages = \App\Models\Chat::where(['sender_id' => 1, 'receiver_id' => auth()->user()->id, 'seen' => 0])->count(); @endphp
-                {{-- <li>
+                <li>
                     <a class="message_icon mx-3 position-relative fw-semibold fs-5 transitions"
                         href="{{ route('dashboard') }}">
                         <i class="fas fa-comment-alt-dots"></i>
                         <span
                             class="sunseen-message-count bg-gray position-absolute text-light fw-semibold text-center bottom-50 end-25 ms-1 rounded-circle">{{ $unseenMessages > 0 ? 1 : 0 }}</span>
                     </a>
-                </li> --}}
+                </li>
 
                 <li>
                     <a class="ms-3 fs-5" href="{{ route('login') }}"><i class="fas fa-user"></i></a>
