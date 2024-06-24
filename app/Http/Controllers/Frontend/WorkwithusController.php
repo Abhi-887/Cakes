@@ -32,7 +32,7 @@ class WorkwithusController extends Controller
 
         // Handle file uploads
         $portfolioPath = $request->file('portfolio') ? $request->file('portfolio')->store('portfolios') : null;
-        $cvPath = $request->file('cv')->store('cvs');
+        $cvPath = $request->file('cv')->store('cv');
 
         // Create a new Workwithus instance and fill it with validated data
         $workwithus = new Workwithus();
