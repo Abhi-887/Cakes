@@ -57,18 +57,17 @@
                                     @if ($menu['child'])
                                         <i class="far fa-angle-down mobile-dropdown-menu"></i>
                                     @endif
-
-                                    @if ($menu['child'])
-                                        <ul class="drop-dropdown position-absolute bg-light">
-                                            @foreach ($menu['child'] as $item)
-                                                <li>
-                                                    <a class="dropdown-item border-bottom fw-semibold p-2"
-                                                        href="{{ $item['link'] }}">{{ $item['label'] }}</a>
-                                                </li>
-                                            @endforeach
-                                        </ul>
-                                    @endif
                                 </li>
+                                @if ($menu['child'])
+                                    <ul class="drop-dropdown position-absolute bg-light">
+                                        @foreach ($menu['child'] as $item)
+                                            <li>
+                                                <a class="dropdown-item border-bottom fw-semibold p-2"
+                                                    href="{{ $item['link'] }}">{{ $item['label'] }}</a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
+                                @endif
                             @endforeach
                         @endif
                     </ul>
