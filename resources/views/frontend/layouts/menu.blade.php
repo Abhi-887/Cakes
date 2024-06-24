@@ -7,7 +7,7 @@
         <div class="wrapper d-flex justify-content-between align-items-center mx-auto w-100 p-3">
             <div class="header-logo">
                 <a class="" href="{{ url('/') }}">
-                    <img src="{{ asset('uploads/web-logo1.png') }}" alt="3D-Cakes Logo" class="w-100" />
+                    <img src="{{ asset('uploads/web-logo1.png') }}" alt="3D-Cakes Logo" class="img-fluid" />
                 </a>
             </div>
             <ul class="d-none d-xxl-flex">
@@ -36,7 +36,7 @@
 
             <a class="ms-auto d-xxl-none d-block" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
                 aria-controls="offcanvasExample">
-                <i class="fas fa-bars fs-3 mt-2 me-3 color-light-gray"></i>
+                <i class="fas fa-bars fs-2 color-light-gray"></i>
             </a>
 
             <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
@@ -53,14 +53,17 @@
                         @if ($MainMenu)
                             @foreach ($MainMenu as $index => $menu)
                                 <li class="nav-item my-3">
-                                    <a class="nav-link fw-semibold" href="{{ $menu['link'] }}">{{ $menu['label'] }}
-                                    </a>
+                                    <div class="d-flex align-items-center ms-2">
+                                        <a class="nav-link fw-semibold" href="{{ $menu['link'] }}">{{ $menu['label'] }}
+                                        </a>
+                                        @if ($menu['child'])
+                                            <span class="mobile-dropdown-menu" data-index="{{ $index }}">
+                                                <i class="far fa-angle-down"></i></span>
+                                        @endif
+                                    </div>
                                     @if ($menu['child'])
-                                        <i class="far fa-angle-down mobile-dropdown-menu"
-                                            data-index="{{ $index }}"></i>
-                                    @endif
-                                    @if ($menu['child'])
-                                        <ul class="drop-dropdown bg-light" id="dropdown-{{ $index }}">
+                                        <ul class="drop-dropdown bg-light" id="dropdown-{{ $index }}"
+                                            style="display: none;">
                                             @foreach ($menu['child'] as $item)
                                                 <li>
                                                     <a class="dropdown-item border-bottom fw-semibold p-2"
@@ -76,7 +79,7 @@
 
                     <ul class="d-flex menu_icon my-3">
                         <li>
-                            <a class="fs-5" href="{{ route('login') }}"><i class="fas fa-user"></i></a>
+                            <a class="fs-5 ms-2" href="{{ route('login') }}"><i class="fas fa-user"></i></a>
                         </li>
                         <li>
                             <a class="cart_icon mx-4 position-relative fw-semibold fs-5 transitions"><i
