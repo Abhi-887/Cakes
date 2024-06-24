@@ -409,7 +409,6 @@ button {
 .droap_menu::-webkit-scrollbar-thumb {
     background: var(--colorPrimary);
 }
-/* .main_menu .navbar-nav  */
 .nav-item:hover .droap_menu {
     top: 100%;
     opacity: 1;
