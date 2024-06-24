@@ -3,16 +3,16 @@
         $MainMenu = Menu::getByName('main_menu');
     @endphp
 
-    <nav class="bg-light main_menu py-4 px-3">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light main_menu py-4 px-3">
         <div class="wrapper mx-auto w-100">
             {{-- Navbar Toggler --}}
-            {{-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="far fa-bars"></i>
-            </button> --}}
+            </button>
 
             {{-- Navbar Collapsible Content --}}
-            <div id="navbarNav">
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <div class="header-logo">
                     <a class="" href="{{ url('/') }}">
                         <img src="{{ asset('uploads/web-logo1.png') }}" alt="3D-Cakes Logo" class="w-100">
