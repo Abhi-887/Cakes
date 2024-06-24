@@ -140,12 +140,12 @@
 			</a>
 		</li>
 		<li class="{{ setSidebarActive(['admin.consultation.*']) }}">
-			<a class="nav-link" href="{{ route('admin.consultation.index') }}"><i class="far fa-clock"></i>
+			<a class="nav-link" href="{{ route('admin.consultation.index') }}"><i class="fa-solid fa-business-time"></i></i>
 				<span>Consultation Time</span>
 			</a>
 		</li>
 		<li class="{{ setSidebarActive(['admin.Weddingcakesdeposit.index']) }}">
-			<a class="nav-link" href="{{ route('admin.Weddingcakesdeposit.index') }}"><i class="far fa-clock"></i>
+			<a class="nav-link" href="{{ route('admin.Weddingcakesdeposit.index') }}"><i class="fa-solid fa-bookmark"></i></i>
 			<span>Wedding Booking Schedule </span>
 			</a>
 		</li>
