@@ -10,7 +10,7 @@
                     <img src="{{ asset('uploads/web-logo1.png') }}" alt="3D-Cakes Logo" class="w-100" />
                 </a>
             </div>
-            <ul class="d-none d-md-flex">
+            <ul class="d-none d-xxl-flex">
                 {{-- Main Menu Items --}} @if ($MainMenu)
                     @foreach ($MainMenu as $menu)
                         <li class="nav-item mx-2">
@@ -34,7 +34,7 @@
                 @endif
             </ul>
 
-            <a class="ms-auto d-md-none d-block" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+            <a class="ms-auto d-xxl-none d-block" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
                 aria-controls="offcanvasExample">
                 <i class="fas fa-bars fs-3 mt-2 me-3 color-light-gray"></i>
             </a>
