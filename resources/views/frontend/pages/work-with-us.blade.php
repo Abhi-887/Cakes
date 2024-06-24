@@ -53,7 +53,7 @@
           </div>
         </div>
 
-        <form>
+        <form class="" action="{{route('work-with-us.store')}}" method="POST">
           <div class="form-group">
             <label for="jobReference">Please select the Job Reference(s) for which you would like to apply:</label>
             <select class="form-control" id="jobReference" name="job_reference" multiple>
