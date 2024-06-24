@@ -69,7 +69,7 @@
 
                                 // Filter subcategories based on selected parent
                                 const filteredOptions = subOptions.filter(option => option.dataset.parent ==
-                                selectedParent);
+                                    selectedParent);
 
                                 // Add filtered subcategories to the subcategory select
                                 filteredOptions.forEach(option => subSelect.appendChild(option));
@@ -99,7 +99,8 @@
                             <div class="fp__menu_item_img">
                                 <img src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}"
                                     class="img-fluid w-100">
-                                <a class="category" href="#">{{ $product->subCategory->name ?? '' }}</a>
+                                <a class="category mt-3 py-1 px-3"
+                                    href="#">{{ $product->subCategory->name ?? '' }}</a>
                             </div>
                             <div class="fp__menu_item_text">
                                 @if ($product->reviews_avg_rating)
