@@ -57,15 +57,15 @@
             @csrf
             <div class="form-group">
                 <label>Please select the Job Reference(s) for which you would like to apply:</label>
-                <div class="form-check">
+                <div class="form-check d-flex align-items-center">
                     <input class="form-check-input" type="checkbox" id="jobReference1" name="job_reference[]" value="EDIN10">
-                    <label class="form-check-label" for="jobReference1">
+                    <label class="form-check-label ms-2" for="jobReference1">
                         EDIN10: Part Time Front-of-House Assistant (Wed - Fri)
                     </label>
                 </div>
-                <div class="form-check">
+                <div class="form-check d-flex align-items-center">
                     <input class="form-check-input" type="checkbox" id="jobReference2" name="job_reference[]" value="DRIV4">
-                    <label class="form-check-label" for="jobReference2">
+                    <label class="form-check-label ms-2" for="jobReference2">
                         DRIV4: Full Time Delivery Driver
                     </label>
                 </div>
