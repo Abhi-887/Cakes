@@ -373,6 +373,17 @@ class FrontendController extends Controller
         return redirect()->back();
     }
 
+
+
+        public function showCategoryProducts($slug)
+    {
+        $category = Category::where('slug', $slug)->firstOrFail();
+        $products = Product::where('category_id', $category->id)->get();
+
+        return view('frontend.pages.product-view', compact('category', 'products'));
+    }
+
+
     function applyCoupon(Request $request)
     {
 
