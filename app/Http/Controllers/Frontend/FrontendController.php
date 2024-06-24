@@ -378,11 +378,11 @@ class FrontendController extends Controller
         public function showCategoryProducts($slug)
     {
         $category = Category::where('slug', $slug)->firstOrFail();
-        $product = Product::where('category_id', $category->id)->get();
+        $products = Product::where('category_id', $category->id)->get();
            // Retrieve all parent categories
         $categories = Category::all();
 
-        return view('frontend.pages.product', compact('category', 'product', 'categories'));
+        return view('frontend.pages.product', compact('category', 'products', 'categories'));
     }
 
 
