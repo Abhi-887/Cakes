@@ -9,8 +9,6 @@ use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Html\Builder as HtmlBuilder;
 use Yajra\DataTables\Html\Button;
 use Yajra\DataTables\Html\Column;
-use Yajra\DataTables\Html\Editor\Editor;
-use Yajra\DataTables\Html\Editor\Fields;
 use Yajra\DataTables\Services\DataTable;
 
 class WorkwithusDataTable extends DataTable
@@ -23,8 +21,11 @@ class WorkwithusDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
-            ->addColumn('action', 'subscriber.action')
-            ->setRowId('id');
+            ->addColumn('action', 'work-with-us.action')
+            ->setRowId('id')
+            ->addColumn('portfolio', function($row) {
+                return '<img width="100px" src="'.asset($row->portfolio).'">';
+            });
     }
 
     /**
@@ -44,7 +45,6 @@ class WorkwithusDataTable extends DataTable
                     ->setTableId('Workwithus-table')
                     ->columns($this->getColumns())
                     ->minifiedAjax()
-                    //->dom('Bfrtip')
                     ->orderBy(0)
                     ->selectStyleSingle()
                     ->buttons([
@@ -73,21 +73,20 @@ class WorkwithusDataTable extends DataTable
             Column::make('relevant_experience'),
             Column::make('current_position_duration'),
             Column::computed('portfolio')
-            ->exportable(false)
-            ->printable(false)
-            ->width(60)
-            ->addClass('text-center')
-            ->view('frontend.datatables.portfolio'), // Assuming you have a blade view for portfolio
-        Column::computed('cv')
-            ->exportable(false)
-            ->printable(false)
-            ->width(60)
-            ->addClass('text-center')
-            ->view('frontend.datatables.cv'), // Assuming you have a blade view for cv
+                ->exportable(false)
+                ->printable(false)
+                ->width(60)
+                ->addClass('text-center')
+                ->view('frontend.datatables.portfolio'),
 
+            Column::computed('cv')
+                ->exportable(false)
+                ->printable(false)
+                ->width(60)
+                ->addClass('text-center')
+                ->view('frontend.datatables.cv'),
         ];
     }
-
 
     /**
      * Get the filename for export.
