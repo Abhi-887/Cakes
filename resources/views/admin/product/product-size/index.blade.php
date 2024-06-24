@@ -82,7 +82,7 @@
             <div class="col-md-6">
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h4>Create Product Options</h4>
+                        <h4>Create Product Dropdown</h4>
 
                     </div>
                     <div class="card-body">
