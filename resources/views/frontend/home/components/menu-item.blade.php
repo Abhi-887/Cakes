@@ -2,20 +2,20 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
 
 <style>
-    .testimonial {
+    .popularfood {
         background: #262626;
     }
 
-    .testimonial .stars {
+    .popularfood .stars {
         color: #ff9800;
     }
 
-    .testimonial .profile img {
+    .popularfood .profile img {
         width: 50px;
         height: 50px;
     }
 
-    .testimonial .profile .name {
+    .popularfood .profile .name {
         font-weight: bold;
         color: #333;
     }
@@ -60,7 +60,7 @@
         </div>
     </div>
 
-    <div class="testimonial-slider popularfood">
+    <div class="popularfood-slider popularfood">
         <div class="row mt-5 mx-2">
             @foreach ($categories as $category)
                 @php
@@ -95,7 +95,7 @@
                                         <span>{{ $product->reviews_count }}</span>
                                     </p>
                                 @endif
-                                <a class="title"
+                                <a class="title my-3"
                                     href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
                                 <h5
                                     class="price fw-semibold text-center position-absolute py-1 px-3 rounded-pill color-light-gray top-0">
