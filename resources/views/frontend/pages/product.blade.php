@@ -24,7 +24,7 @@
 
     <section class="fp__search_menu mt_120 xs_mt_90 mb_100 xs_mb_70">
         <div class="container">
-            <form class="fp__search_menu_form" method="GET" action="{{ route('product.index') }}">
+            <form class="" method="GET" action="{{ route('product.index') }}">
                 <div class="row justify-content-around align-items-center">
                     <div class="col-xl-3 col-md-5">
                         <input class="py-2 form-control rounded-pill" type="text" placeholder="Search..." name="search"
