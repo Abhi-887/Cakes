@@ -150,7 +150,7 @@
 			</a>
 		</li>
         <li class="{{ setSidebarActive(['admin.work-with-us.index']) }}">
-			<a class="nav-link" href="{{ route('admin.work-with-us.index') }}"><i class="far fa-clock"></i>
+			<a class="nav-link" href="{{ route('admin.work-with-us.index') }}"><i class="fa-solid fa-house-laptop"></i></i>
 			<span>Work With Us </span>
 			</a>
 		</li>
