@@ -53,10 +53,11 @@
                             @foreach ($MainMenu as $menu)
                                 <li class="nav-item my-2">
                                     <a class="nav-link fw-semibold" href="{{ $menu['link'] }}">{{ $menu['label'] }}
-                                        @if ($menu['child'])
-                                            <i class="far fa-angle-down mobile-dropdown-menu"></i>
-                                        @endif
                                     </a>
+                                    @if ($menu['child'])
+                                        <i class="far fa-angle-down mobile-dropdown-menu"></i>
+                                    @endif
+
                                     @if ($menu['child'])
                                         <ul class="drop-dropdown position-absolute bg-light">
                                             @foreach ($menu['child'] as $item)
