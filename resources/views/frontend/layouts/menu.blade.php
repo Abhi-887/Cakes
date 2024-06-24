@@ -70,22 +70,22 @@
                     </a>
                 </li>
                 {{--
-      <li>
-        <a href="{{ route('login') }}" style="color: white"
-          ><i class="fas fa-user"></i
-        ></a>
-      </li>
-      --}} {{--
-      <li>
-        <a
-          class="common_btn d-inline ms-3 position-relative fw-semibold transitions"
-          href="#"
-          data-bs-toggle="modal"
-          data-bs-target="#staticBackdrop"
-          >reservation</a
-        >
-      </li>
-      --}}
+                <li>
+                    <a href="{{ route('login') }}" style="color: white"
+                    ><i class="fas fa-user"></i
+                    ></a>
+                </li>
+                --}} {{--
+                <li>
+                    <a
+                    class="common_btn d-inline ms-3 position-relative fw-semibold transitions"
+                    href="#"
+                    data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop"
+                    >reservation</a
+                    >
+                </li>
+                --}}
             </ul>
         </div>
     </nav>
