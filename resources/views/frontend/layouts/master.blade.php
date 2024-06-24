@@ -103,7 +103,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="row d-md-none d-lg-none mt-5 px-5">
+            {{-- <div class="row d-md-none d-lg-none mt-5 px-5">
                 <div class="col-6 p-0 text-end">
                     <div class="dropdown">
                         <button class="btn btn-secondary rounded-0 bg-black dropdown-toggle w-100 menu-btn"
@@ -117,7 +117,7 @@
                         </ul>
                     </div>
                 </div>
-                <p>hello</p> 
+                <p>hello</p>
 
                 <div class="col-6 p-0">
                     <div class="dropdown">
@@ -134,7 +134,7 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </section>
     </div>
 
