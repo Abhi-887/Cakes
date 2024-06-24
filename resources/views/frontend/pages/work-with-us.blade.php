@@ -18,7 +18,7 @@
                     <h1>We're Hiring</h1>
                     <ul>
                         <li><a href="/">home</a></li>
-                        <li><a href="#">Wedding Cake Deposit</a></li>
+                        <li><a href="#">We're Hiring</a></li>
                     </ul>
                 </div>
             </div>
@@ -53,7 +53,8 @@
           </div>
         </div>
 
-        <form>
+        <form class="" action="{{route('work-with-us.store')}}" method="POST">
+            @csrf
           <div class="form-group">
             <label for="jobReference">Please select the Job Reference(s) for which you would like to apply:</label>
             <select class="form-control" id="jobReference" name="job_reference" multiple>
