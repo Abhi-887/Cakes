@@ -1,14 +1,6 @@
 @extends('frontend.layouts.master')
 
 @section('content')
-<?php
-print_r($products);
-
-dd($products);
-?>
-
-
-
 <!--=============================
                             BREADCRUMB START
                         ==============================-->
@@ -70,26 +62,26 @@ dd($products);
 
                 <script>
                     document.addEventListener('DOMContentLoaded', function() {
-                            const parentSelect = document.getElementById('parent_category');
-                            const subSelect = document.getElementById('sub_category');
-                            const subOptions = Array.from(subSelect.options);
+                        const parentSelect = document.getElementById('parent_category');
+                        const subSelect = document.getElementById('sub_category');
+                        const subOptions = Array.from(subSelect.options);
 
-                            parentSelect.addEventListener('change', function() {
-                                const selectedParent = this.value;
+                        parentSelect.addEventListener('change', function() {
+                            const selectedParent = this.value;
 
-                                // Clear current subcategories
-                                subSelect.innerHTML = '<option value="">All</option>';
+                            // Clear current subcategories
+                            subSelect.innerHTML = '<option value="">All</option>';
 
-                                // Filter subcategories based on selected parent
-                                const filteredOptions = subOptions.filter(option => option.dataset.parent == selectedParent);
+                            // Filter subcategories based on selected parent
+                            const filteredOptions = subOptions.filter(option => option.dataset.parent == selectedParent);
 
-                                // Add filtered subcategories to the subcategory select
-                                filteredOptions.forEach(option => subSelect.appendChild(option));
-                            });
-
-                            // Trigger change event on page load to set initial state
-                            parentSelect.dispatchEvent(new Event('change'));
+                            // Add filtered subcategories to the subcategory select
+                            filteredOptions.forEach(option => subSelect.appendChild(option));
                         });
+
+                        // Trigger change event on page load to set initial state
+                        parentSelect.dispatchEvent(new Event('change'));
+                    });
                 </script>
 
                 <div class="col-xl-2 col-md-3">
@@ -106,6 +98,7 @@ dd($products);
                         <img src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}"
                             class="img-fluid w-100">
                         <a class="category" href="#">{{ $product->category->name ?? '' }}</a>
+                        <a class="subcategory" href="#">{{ $product->subCategory->name ?? '' }}</a>
                     </div>
                     <div class="fp__menu_item_text">
                         @if ($product->reviews_avg_rating)
