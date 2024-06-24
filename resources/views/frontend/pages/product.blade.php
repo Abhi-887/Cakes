@@ -87,7 +87,8 @@
                     </script>
 
                     <div class="col-xl-2 col-md-3">
-                        <button type="submit" class="px-4 py-2 border border-0 rounded-pill">Search</button>
+                        <button type="submit"
+                            class="wedding-cake-button px-3 py-2 border border-0 rounded-pill">Search</button>
                     </div>
                 </div>
             </form>
