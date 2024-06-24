@@ -53,7 +53,7 @@
                         @if ($MainMenu)
                             @foreach ($MainMenu as $index => $menu)
                                 <li class="nav-item my-3">
-                                    <div class="d-flex">
+                                    <div class="d-flex align-items-center ms-2">
                                         <a class="nav-link fw-semibold" href="{{ $menu['link'] }}">{{ $menu['label'] }}
                                         </a>
                                         @if ($menu['child'])
