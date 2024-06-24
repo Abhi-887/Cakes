@@ -7,7 +7,7 @@
         <div class="wrapper d-flex justify-content-between align-items-center mx-auto w-100 p-3">
             <div class="header-logo">
                 <a class="" href="{{ url('/') }}">
-                    <img src="{{ asset('uploads/web-logo1.png') }}" alt="3D-Cakes Logo" class="w-100" />
+                    <img src="{{ asset('uploads/web-logo1.png') }}" alt="3D-Cakes Logo" class="img-fluid" />
                 </a>
             </div>
             <ul class="d-none d-xxl-flex">
@@ -36,7 +36,7 @@
 
             <a class="ms-auto d-xxl-none d-block" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
                 aria-controls="offcanvasExample">
-                <i class="fas fa-bars fs-3 mt-2 me-3 color-light-gray"></i>
+                <i class="fas fa-bars fs-2 color-light-gray"></i>
             </a>
 
             <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
