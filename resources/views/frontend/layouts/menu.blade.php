@@ -3,8 +3,8 @@
         $MainMenu = Menu::getByName('main_menu');
     @endphp
 
-    <nav class="navbar">
-        <div class="wrapper d-flex justify-content-between align-items-center  mx-auto w-100">
+    <nav class="navbar bg-light px-3">
+        <div class="wrapper d-flex justify-content-between align-items-center mx-auto w-100 py-3">
             <div class="header-logo">
                 <a class="" href="{{ url('/') }}">
                     <img src="{{ asset('uploads/web-logo1.png') }}" alt="3D-Cakes Logo" class="w-100" />
@@ -13,7 +13,7 @@
             <ul class="d-flex">
                 {{-- Main Menu Items --}} @if ($MainMenu)
                     @foreach ($MainMenu as $menu)
-                        <li class="nav-item">
+                        <li class="nav-item mx-2">
                             <a class="nav-link fw-semibold mx-2" href="{{ $menu['link'] }}">{{ $menu['label'] }}
                                 @if ($menu['child'])
                                     <i class="far fa-angle-down"></i>
@@ -135,6 +135,7 @@
         {{-- <a class="checkout" href="check_out.html">checkout</a> --}}
     </div>
 </div>
+
 @php
     $reservationTimes = \App\Models\ReservationTime::where('status', 1)->get();
 @endphp
