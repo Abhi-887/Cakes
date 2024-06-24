@@ -375,15 +375,21 @@ class FrontendController extends Controller
 
 
 
-        public function showCategoryProducts($slug)
+    public function showCategoryProducts($slug)
     {
+        // Retrieve the category by slug and fail if not found
         $category = Category::where('slug', $slug)->firstOrFail();
-        $products = Product::where('category_id', $category->id)->get();
-           // Retrieve all parent categories
+
+        // Retrieve all parent categories
         $categories = Category::all();
 
+        // Retrieve all products associated with the category, paginated
+        $products = Product::where('category_id', $category->id)->paginate(10); // Adjust the number per page as needed
+
+        // Pass the category, products, and categories to the view
         return view('frontend.pages.product', compact('category', 'products', 'categories'));
     }
+
 
 
     function applyCoupon(Request $request)
