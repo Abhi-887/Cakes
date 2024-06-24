@@ -34,7 +34,7 @@
     <div class="container my-5">
     <div class=""> <h5>To apply to join the team at 3D Cakes Edinburgh or 3D Cakes Milngavie, please complete the application form below and hit the 'Submit Application' button. Please ensure that you select the job reference(s) for all positions for which you wish to be considered (you may apply for more than one role).</h5></div>
 
-       <div class="mb-4"> <h3>Current vacancies are displayed below:</h3></div>
+       <div class="my-4"> <h3>Current vacancies are displayed below:</h3></div>
         <div class="card mb-3">
           <div class="card-body">
             <div class=" mb-3"><h4>Part Time Front-of-House Assistant (Edinburgh) Wednesday - Friday</h4></div>
