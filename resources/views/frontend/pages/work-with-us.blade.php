@@ -32,7 +32,6 @@
     ==============================-->
 
     <div class="container mt-5">
-        <h1 class="text-center">WE'RE HIRING!</h1>
         <p>To apply to join the team at 3D Cakes Edinburgh or 3D Cakes Milngavie, please complete the application form below and hit the 'Submit Application' button. Please ensure that you select the job reference(s) for all positions for which you wish to be considered (you may apply for more than one role).</p>
 
         <h3>Current vacancies are displayed below:</h3>
@@ -55,7 +54,7 @@
 
         <form class="" action="{{route('work-with-us.store')}}" method="POST">
             @csrf
-            <div class="form-group">
+            <div class="form-group mt-3">
                 <label>Please select the Job Reference(s) for which you would like to apply:</label>
                 <div class="form-check d-flex align-items-center">
                     <input class="form-check-input" type="checkbox" id="jobReference1" name="job_reference[]" value="EDIN10">
@@ -72,22 +71,22 @@
             </div>
 
 
-          <div class="form-group">
+          <div class="form-group mt-3">
             <label for="name">Name *</label>
             <input type="text" class="form-control" id="name" name="name" required>
           </div>
 
-          <div class="form-group">
+          <div class="form-group mt-3">
             <label for="email">Email Address *</label>
             <input type="email" class="form-control" id="email" name="email" required>
           </div>
 
-          <div class="form-group">
+          <div class="form-group mt-3">
             <label for="telephone">Telephone Number *</label>
             <input type="tel" class="form-control" id="telephone" name="telephone" required>
           </div>
 
-          <div class="form-group">
+          <div class="form-group mt-3">
             <label for="drivingLicense">Do you hold a valid UK driving license? *</label>
             <select class="form-control" id="drivingLicense" name="driving_license" required>
               <option value="yes">Yes</option>
@@ -95,27 +94,27 @@
             </select>
           </div>
 
-          <div class="form-group">
+          <div class="form-group mt-3">
             <label for="whyIdeal">Please detail why you think you would be ideal for the role(s): *</label>
             <textarea class="form-control" id="whyIdeal" name="why_ideal" rows="3" required></textarea>
           </div>
 
-          <div class="form-group">
+          <div class="form-group mt-3">
             <label for="relevantExperience">Please detail any relevant experience that you feel would be beneficial for the role(s): *</label>
             <textarea class="form-control" id="relevantExperience" name="relevant_experience" rows="3" required></textarea>
           </div>
 
-          <div class="form-group">
+          <div class="form-group mt-3">
             <label for="currentPosition">Length of time in current position *</label>
             <input type="text" class="form-control" id="currentPosition" name="current_position_duration" required>
           </div>
 
-          <div class="form-group">
+          <div class="form-group mt-3">
             <label for="portfolio">Examples of Your Work</label>
             <input type="file" class="form-control-file" id="portfolio" name="portfolio" accept=".pdf, .bmp, .jpeg, .png">
           </div>
 
-          <div class="form-group">
+          <div class="form-group mt-3">
             <label for="cv">Please attach your CV *</label>
             <input type="file" class="form-control-file" id="cv" name="cv" accept=".pdf, .bmp, .jpeg, .png" required>
           </div>
