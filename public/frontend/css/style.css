@@ -6582,3 +6582,7 @@ CHECKOUT PAGE START
   .wedding-cake-button {
     background: #86a4ba !important;
   }
+
+  .offcanvas {
+    width: 450px !important;
+  }
