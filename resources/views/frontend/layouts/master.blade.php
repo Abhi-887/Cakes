@@ -86,18 +86,18 @@
     <div class="header-top">
         <section class="wrapper px-3 mx-auto w-100">
             <div class="row align-items-center py-2">
-                <div class="col-md-6 text-center text-sm-center text-md-start text-lg-start">
+                <div class="col-md-6 m-0">
                     <div class="row">
                         <div class="col-6">
-                            <h6 class="me-5"><b>Edinburgh:</b> 0131 337 9990</h6>
+                            <h6><b>Edinburgh:</b> 0131 337 9990</h6>
                         </div>
                         <div class="col-6">
-                            <h6 class=""><b>Glasgow:</b> 0141 378 0027</h6>
+                            <h6><b>Glasgow:</b> 0141 378 0027</h6>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <ul class="text-uppercase d-none d-md-flex d-lg-flex justify-content-end">
+                    <ul class="text-uppercase d-none d-md-flex d-lg-flex justify-content-end m-0">
                         <li class="pe-3"><a class="text-decoration-none black text-dark" href="/login">My
                                 Account</a></li>
                         <li class="pe-3"><a class="text-decoration-none black text-dark" href="/">My
