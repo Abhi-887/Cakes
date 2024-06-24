@@ -113,7 +113,7 @@
                 </li>
 
                 <li>
-                    <a class="mx-3 " href="{{ route('login') }}"><i class="fas fa-user"></i></a>
+                    <a class="mx-3 fs-5" href="{{ route('login') }}"><i class="fas fa-user"></i></a>
                 </li>
 
                 {{--
