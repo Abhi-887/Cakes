@@ -32,12 +32,12 @@
     ==============================-->
 
     <div class="container my-5">
-        <p>To apply to join the team at 3D Cakes Edinburgh or 3D Cakes Milngavie, please complete the application form below and hit the 'Submit Application' button. Please ensure that you select the job reference(s) for all positions for which you wish to be considered (you may apply for more than one role).</p>
+    <div class=""> <h5>To apply to join the team at 3D Cakes Edinburgh or 3D Cakes Milngavie, please complete the application form below and hit the 'Submit Application' button. Please ensure that you select the job reference(s) for all positions for which you wish to be considered (you may apply for more than one role).</h5></div>
 
-        <h3>Current vacancies are displayed below:</h3>
+       <div class="mb-4"> <h3>Current vacancies are displayed below:</h3></div>
         <div class="card mb-3">
           <div class="card-body">
-            <h4>Part Time Front-of-House Assistant (Edinburgh) Wednesday - Friday</h4>
+            <div class=" mb-3"><h4>Part Time Front-of-House Assistant (Edinburgh) Wednesday - Friday</h4></div>
             <p><strong>Main Duties:</strong> Front-of-house customer service for coffees & cake slices, baking and cake decorating (ideal candidate will have an enjoyment for baking and cake decorating). Have barista training skills. Have knowledge of Food Handling and Food Hygiene requirements. Be able to maintain a calm demeanour in busy periods, and provide a consistently high standard of customer service.</p>
             <p><strong>Working Hours & Wage:</strong> Wednesday - Friday 8.30am - 5pm, Job Type: Part-Time, £10.50 per hour | Job Reference: EDIN10</p>
           </div>
@@ -45,7 +45,7 @@
 
         <div class="card mb-3">
           <div class="card-body">
-            <h4>Full Time Delivery Driver</h4>
+            <div class=" mb-3"> <h4>Full Time Delivery Driver</h4></div>
             <p><strong>Main Duties:</strong> Main duties will include delivery of cakes to customers in various locations throughout Scotland. Van provided during working hours and business is covered for company van. Previous experience in a delivery driver role. Decant and stack reliable (for gas/trolly and methodical). Be flexible as working days will vary per week depending on delivery requirements each week.</p>
             <p><strong>Other Information:</strong> Suitable candidates will have held a flat, clean UK driving license for a minimum of three years. For insurance purposes, our policy requires drivers to be 25 or older.</p>
             <p><strong>Working Hours & Wage:</strong> 5 days per week (25-40 hours per week); Rota Basis, £12 per hour | Job Reference: DRIV4</p>
