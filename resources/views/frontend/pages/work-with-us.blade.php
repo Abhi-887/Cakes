@@ -72,22 +72,22 @@
 
 
           <div class="form-group mt-3">
-            <label for="name">Name *</label>
+            <label for="name" class="mb-2">Name *</label>
             <input type="text" class="form-control" id="name" name="name" required>
           </div>
 
           <div class="form-group mt-3">
-            <label for="email">Email Address *</label>
+            <label for="email" class="mb-2">Email Address *</label>
             <input type="email" class="form-control" id="email" name="email" required>
           </div>
 
           <div class="form-group mt-3">
-            <label for="telephone">Telephone Number *</label>
+            <label for="telephone" class="mb-2">Telephone Number *</label>
             <input type="tel" class="form-control" id="telephone" name="telephone" required>
           </div>
 
           <div class="form-group mt-3">
-            <label for="drivingLicense">Do you hold a valid UK driving license? *</label>
+            <label for="drivingLicense" class="mb-2">Do you hold a valid UK driving license? *</label>
             <select class="form-control" id="drivingLicense" name="driving_license" required>
               <option value="yes">Yes</option>
               <option value="no">No</option>
@@ -95,27 +95,27 @@
           </div>
 
           <div class="form-group mt-3">
-            <label for="whyIdeal">Please detail why you think you would be ideal for the role(s): *</label>
+            <label for="whyIdeal" class="mb-2">Please detail why you think you would be ideal for the role(s): *</label>
             <textarea class="form-control" id="whyIdeal" name="why_ideal" rows="3" required></textarea>
           </div>
 
           <div class="form-group mt-3">
-            <label for="relevantExperience">Please detail any relevant experience that you feel would be beneficial for the role(s): *</label>
+            <label for="relevantExperience" class="mb-2">Please detail any relevant experience that you feel would be beneficial for the role(s): *</label>
             <textarea class="form-control" id="relevantExperience" name="relevant_experience" rows="3" required></textarea>
           </div>
 
           <div class="form-group mt-3">
-            <label for="currentPosition">Length of time in current position *</label>
+            <label for="currentPosition" class="mb-2">Length of time in current position *</label>
             <input type="text" class="form-control" id="currentPosition" name="current_position_duration" required>
           </div>
 
           <div class="form-group mt-3">
-            <label for="portfolio">Examples of Your Work</label>
+            <label for="portfolio" class="mb-2">Examples of Your Work</label>
             <input type="file" class="form-control-file" id="portfolio" name="portfolio" accept=".pdf, .bmp, .jpeg, .png">
           </div>
 
           <div class="form-group mt-3">
-            <label for="cv">Please attach your CV *</label>
+            <label for="cv" class="mb-2">Please attach your CV *</label>
             <input type="file" class="form-control-file" id="cv" name="cv" accept=".pdf, .bmp, .jpeg, .png" required>
           </div>
 
