@@ -98,7 +98,7 @@
                         <img src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}"
                             class="img-fluid w-100">
                         {{-- <a class="category" href="#">{{ $product->category->name ?? '' }}</a> --}}
-                        <a class="category" href="#">{{ $product->subCategory->name ?? '' }}</a>
+                        <a class="category" href="#">{{ $product->sub_category->name ?? '' }}</a>
                     </div>
                     <div class="fp__menu_item_text">
                         @if ($product->reviews_avg_rating)
