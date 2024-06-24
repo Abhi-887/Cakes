@@ -79,7 +79,7 @@
 
                     <ul class="d-flex menu_icon my-3">
                         <li>
-                            <a class="fs-5" href="{{ route('login') }}"><i class="fas fa-user"></i></a>
+                            <a class="fs-5 ms-2" href="{{ route('login') }}"><i class="fas fa-user"></i></a>
                         </li>
                         <li>
                             <a class="cart_icon mx-4 position-relative fw-semibold fs-5 transitions"><i
