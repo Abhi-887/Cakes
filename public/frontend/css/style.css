@@ -1920,6 +1920,10 @@ button {
     width: 150px;
 }
 
+footer .wrapper a:hover {
+    color: #8ba7bc !important;
+  }
+
 .fp__footer_content span {
     display: block;
     margin: 10px 0px;
