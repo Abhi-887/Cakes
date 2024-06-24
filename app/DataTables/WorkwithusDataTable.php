@@ -3,6 +3,7 @@
 namespace App\DataTables;
 
 use App\Models\Workwithus;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Html\Builder as HtmlBuilder;
@@ -73,8 +74,7 @@ class WorkwithusDataTable extends DataTable
             Column::make('current_position_duration'),
             Column::make('portfolio'),
             Column::make('cv'),
-            Column::make('created_at'),
-            Column::make('updated_at'),
+
         ];
     }
 
