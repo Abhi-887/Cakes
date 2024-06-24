@@ -4,7 +4,7 @@
     @endphp
 
     <nav class="navbar">
-        <div class="wrapper mx-auto w-100">
+        <div class="wrapper d-flex justify-content-between align-items-center  mx-auto w-100">
             <div class="header-logo">
                 <a class="" href="{{ url('/') }}">
                     <img src="{{ asset('uploads/web-logo1.png') }}" alt="3D-Cakes Logo" class="w-100" />
