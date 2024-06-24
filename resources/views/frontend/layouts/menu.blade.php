@@ -108,7 +108,7 @@
                         href="{{ route('dashboard') }}">
                         <i class="fas fa-comment-alt-dots"></i>
                         <span
-                            class="sunseen-message-count bg-gray position-absolute text-light fw-semibold text-center end-25 ms-1 rounded-circle">{{ $unseenMessages > 0 ? 1 : 0 }}</span>
+                            class="sunseen-message-count bg-gray position-absolute text-light fw-semibold text-center bottom-50 end-25 ms-1 rounded-circle">{{ $unseenMessages > 0 ? 1 : 0 }}</span>
                     </a>
                 </li>
 
