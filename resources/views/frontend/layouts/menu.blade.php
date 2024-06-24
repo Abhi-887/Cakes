@@ -58,7 +58,7 @@
                                         <i class="far fa-angle-down mobile-dropdown-menu"></i>
                                     @endif
                                     @if ($menu['child'])
-                                        <ul class="drop-dropdown bg-light d-none">
+                                        <ul class="drop-dropdown bg-light">
                                             @foreach ($menu['child'] as $item)
                                                 <li>
                                                     <a class="dropdown-item border-bottom fw-semibold p-2"
