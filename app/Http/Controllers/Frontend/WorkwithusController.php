@@ -26,8 +26,8 @@ class WorkwithusController extends Controller
             'why_ideal' => 'required|string',
             'relevant_experience' => 'required|string',
             'current_position_duration' => 'required|string|max:255',
-            'portfolio' => 'nullable|mimes:pdf,bmp,jpeg,png',
-            'cv' => 'required|mimes:pdf,bmp,jpeg,png',
+            'portfolio' => 'nullable',
+            'cv' => 'nullable',
         ]);
 
         // Handle file uploads
