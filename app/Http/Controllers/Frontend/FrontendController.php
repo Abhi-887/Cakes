@@ -305,7 +305,7 @@ class FrontendController extends Controller
             'reviews' => function ($query) {
                 $query->select('product_id', 'rating');
             }
-        ])->withAvg('reviews', 'rating')->withCount('reviews')->paginate(15);
+        ])->withAvg('reviews', 'rating')->withCount('reviews')->paginate(12);
 
         $categories = Category::where('status', 1)->get();
 
