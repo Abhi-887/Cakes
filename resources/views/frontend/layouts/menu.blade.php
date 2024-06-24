@@ -43,9 +43,9 @@
                 aria-labelledby="offcanvasExampleLabel">
                 <div class="offcanvas-header pt-3">
                     <a class="w-50" href="{{ url('/') }}">
-                        <img src="{{ asset('uploads/web-logo1.png') }}" alt="3D-Cakes Logo" class="w-100" />
+                        <img src="{{ asset('uploads/web-logo1.png') }}" alt="3D-Cakes Logo" class="img-fluid" />
                     </a>
-                    <button type="button" class="btn-close fs-4" data-bs-dismiss="offcanvas"
+                    <button type="button" class="btn-close fs-4 color-light-gray" data-bs-dismiss="offcanvas"
                         aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
@@ -53,16 +53,16 @@
                         @if ($MainMenu)
                             @foreach ($MainMenu as $index => $menu)
                                 <li class="nav-item my-3">
-                                    <div class="d-flex align-items-center ms-2">
+                                    <div class="d-flex ms-2">
                                         <a class="nav-link fw-semibold" href="{{ $menu['link'] }}">{{ $menu['label'] }}
                                         </a>
                                         @if ($menu['child'])
-                                            <span class="mobile-dropdown-menu" data-index="{{ $index }}">
+                                            <span class="mobile-dropdown-menu ms-2" data-index="{{ $index }}">
                                                 <i class="far fa-angle-down"></i></span>
                                         @endif
                                     </div>
                                     @if ($menu['child'])
-                                        <ul class="drop-dropdown bg-light" id="dropdown-{{ $index }}"
+                                        <ul class="drop-dropdown mt-2" id="dropdown-{{ $index }}"
                                             style="display: none;">
                                             @foreach ($menu['child'] as $item)
                                                 <li>
@@ -77,7 +77,7 @@
                         @endif
                     </ul>
 
-                    <ul class="d-flex menu_icon my-3">
+                    <ul class="d-flex menu_icon mt-4">
                         <li>
                             <a class="fs-5 ms-2" href="{{ route('login') }}"><i class="fas fa-user"></i></a>
                         </li>
