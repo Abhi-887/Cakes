@@ -60,7 +60,7 @@
                                         @endif
                                     </div>
                                     @if ($menu['child'])
-                                        <ul class="drop-dropdown bg-light">
+                                        <ul class="drop-dropdown bg-light d-none">
                                             @foreach ($menu['child'] as $item)
                                                 <li>
                                                     <a class="dropdown-item border-bottom fw-semibold p-2"
