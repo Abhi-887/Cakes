@@ -51,7 +51,7 @@
                     <ul class="mt-3">
                         @if ($MainMenu)
                             @foreach ($MainMenu as $menu)
-                                <li class="nav-item my-2">
+                                <li class="nav-item my-3">
                                     <a class="nav-link fw-semibold" href="{{ $menu['link'] }}">{{ $menu['label'] }}
                                     </a>
                                     @if ($menu['child'])
@@ -112,7 +112,7 @@
                 </li>
 
                 <li>
-                    <a href="{{ route('login') }}" style="color: white"><i class="fas fa-user"></i></a>
+                    <a class="mx-3 " href="{{ route('login') }}"><i class="fas fa-user"></i></a>
                 </li>
 
                 {{--
