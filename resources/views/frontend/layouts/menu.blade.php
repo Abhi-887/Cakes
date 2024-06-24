@@ -4,7 +4,7 @@
     @endphp
 
     <nav class="navbar">
-        <div class="wrapper mx-auto w-100">
+        <div class="wrapper d-flex justify-content-between align-items-center  mx-auto w-100">
             <div class="header-logo">
                 <a class="" href="{{ url('/') }}">
                     <img src="{{ asset('uploads/web-logo1.png') }}" alt="3D-Cakes Logo" class="w-100" />
@@ -70,22 +70,22 @@
                     </a>
                 </li>
                 {{--
-      <li>
-        <a href="{{ route('login') }}" style="color: white"
-          ><i class="fas fa-user"></i
-        ></a>
-      </li>
-      --}} {{--
-      <li>
-        <a
-          class="common_btn d-inline ms-3 position-relative fw-semibold transitions"
-          href="#"
-          data-bs-toggle="modal"
-          data-bs-target="#staticBackdrop"
-          >reservation</a
-        >
-      </li>
-      --}}
+                <li>
+                    <a href="{{ route('login') }}" style="color: white"
+                    ><i class="fas fa-user"></i
+                    ></a>
+                </li>
+                --}} {{--
+                <li>
+                    <a
+                    class="common_btn d-inline ms-3 position-relative fw-semibold transitions"
+                    href="#"
+                    data-bs-toggle="modal"
+                    data-bs-target="#staticBackdrop"
+                    >reservation</a
+                    >
+                </li>
+                --}}
             </ul>
         </div>
     </nav>

@@ -264,7 +264,7 @@ button {
     max-width: 200px;
 }
 
-.navbar-nav a,
+.nav-item a,
 .menu_icon i {
     color: #4b637f !important;
 }
@@ -391,12 +391,12 @@ button {
     cursor: pointer;
 }
 
-.main_menu .navbar-nav .nav-item {
+ .nav-item {
     position: relative;
 }
 
-.main_menu .navbar-nav .nav-item:hover .nav-link,
-.main_menu .navbar-nav .nav-item .nav-link.active {
+.nav-item:hover .nav-link,
+.nav-item .nav-link.active {
     color: #8BADBD !important;
 }
 
@@ -5565,7 +5565,7 @@ CHECKOUT PAGE START
     border: 0;
 }
 
-.home_2 .main_menu .navbar-nav .nav-item .nav-link {
+.nav-item .nav-link {
     color: var(--colorWhite);
 }
 
@@ -5606,7 +5606,7 @@ CHECKOUT PAGE START
     border-bottom: 1px solid #eee;
 }
 
-.home_2 .menu_fix .navbar-nav .nav-item .nav-link {
+.nav-item .nav-link {
     color: var(--colorBlack);
 }
 
