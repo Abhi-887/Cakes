@@ -89,10 +89,11 @@
                             data-bs-toggle="modal" data-bs-target="#staticBackdrop">reservation</a>
                     </li> --}}
                 </ul>
-
             </div>
         </div>
     </nav>
+
+
 </section>
 
 <div class="fp__menu_cart_area position-fixed top-0 end-0 transitions vh-100 vw-100">
