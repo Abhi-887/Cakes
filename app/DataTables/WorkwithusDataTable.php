@@ -3,13 +3,12 @@
 namespace App\DataTables;
 
 use App\Models\Workwithus;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Html\Builder as HtmlBuilder;
 use Yajra\DataTables\Html\Button;
 use Yajra\DataTables\Html\Column;
-use Yajra\DataTables\Html\Editor\Editor;
-use Yajra\DataTables\Html\Editor\Fields;
 use Yajra\DataTables\Services\DataTable;
 
 class WorkwithusDataTable extends DataTable
@@ -22,8 +21,14 @@ class WorkwithusDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
-            ->addColumn('action', 'subscriber.action')
-            ->setRowId('id');
+            ->addColumn('action', 'work-with-us.action')
+            ->setRowId('id')
+            ->addColumn('portfolio', function($row) {
+                return '<img width="100px" src="'.asset($row->portfolio).'">';
+            })
+            ->addColumn('cv', function($row) {
+                return '<img width="100px" src="'.asset($row->cv).'">';
+            });
     }
 
     /**
@@ -43,7 +48,6 @@ class WorkwithusDataTable extends DataTable
                     ->setTableId('Workwithus-table')
                     ->columns($this->getColumns())
                     ->minifiedAjax()
-                    //->dom('Bfrtip')
                     ->orderBy(0)
                     ->selectStyleSingle()
                     ->buttons([
@@ -71,13 +75,19 @@ class WorkwithusDataTable extends DataTable
             Column::make('why_ideal'),
             Column::make('relevant_experience'),
             Column::make('current_position_duration'),
-            Column::make('portfolio'),
-            Column::make('cv'),
-            Column::make('created_at'),
-            Column::make('updated_at'),
+            Column::computed('portfolio')
+                ->exportable(false)
+                ->printable(false)
+                ->width(60)
+                ->addClass('text-center'),
+
+            Column::computed('cv')
+                ->exportable(false)
+                ->printable(false)
+                ->width(60)
+                ->addClass('text-center'),
         ];
     }
-
 
     /**
      * Get the filename for export.

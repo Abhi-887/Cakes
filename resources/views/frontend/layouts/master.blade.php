@@ -86,14 +86,18 @@
     <div class="header-top">
         <section class="wrapper px-3 mx-auto w-100">
             <div class="row align-items-center py-2">
-                <div class="col-md-6 text-center text-sm-center text-md-start text-lg-start">
-                    <div class="d-flex">
-                        <h6 class="me-5"><b>Edinburgh:</b> 0131 337 9990</h6>
-                        <h6 class=""><b>Glasgow:</b> 0141 378 0027</h6>
+                <div class="col-md-7 m-0">
+                    <div class="row">
+                        <div class="col-6">
+                            <h6><b>Edinburgh:</b> 0131 337 9990</h6>
+                        </div>
+                        <div class="col-6 text-end">
+                            <h6><b>Glasgow:</b> 0141 378 0027</h6>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <ul class="text-uppercase d-none d-md-flex d-lg-flex justify-content-end">
+                <div class="col-md-5">
+                    <ul class="text-uppercase d-none d-md-flex d-lg-flex justify-content-end m-0">
                         <li class="pe-3"><a class="text-decoration-none black text-dark" href="/login">My
                                 Account</a></li>
                         <li class="pe-3"><a class="text-decoration-none black text-dark" href="/">My
@@ -103,7 +107,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="row d-md-none d-lg-none mt-5 px-5">
+            {{-- <div class="row d-md-none d-lg-none mt-5 px-5">
                 <div class="col-6 p-0 text-end">
                     <div class="dropdown">
                         <button class="btn btn-secondary rounded-0 bg-black dropdown-toggle w-100 menu-btn"
@@ -117,7 +121,7 @@
                         </ul>
                     </div>
                 </div>
-                <p>hello</p> 
+                <p>hello</p>
 
                 <div class="col-6 p-0">
                     <div class="dropdown">
@@ -134,7 +138,7 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </section>
     </div>
 

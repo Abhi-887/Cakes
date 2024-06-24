@@ -155,10 +155,10 @@ class FrontendController extends Controller
     function contact(): View
     {
         $contact = Contact::first();
-		 $contact2 = Contact2::first();
+        $contact2 = Contact2::first();
         return view('frontend.pages.contact', compact('contact', 'contact2'));
     }
-	 
+
 
     function sendContactMessage(Request $request)
     {
@@ -292,13 +292,20 @@ class FrontendController extends Controller
             });
         }
 
-        if ($request->has('category') && $request->filled('category')) {
-            $products->whereHas('category', function ($query) use ($request) {
-                $query->where('slug', $request->category);
-            });
+        if ($request->has('parent_category') && $request->filled('parent_category')) {
+            $products->where('category_id', $request->parent_category);
         }
 
-        $products = $products->withAvg('reviews', 'rating')->withCount('reviews')->paginate(12);
+        if ($request->has('sub_category') && $request->filled('sub_category')) {
+            $products->where('sub_category', $request->sub_category);
+        }
+
+        $products = $products->with([
+            'subCategory',
+            'reviews' => function ($query) {
+                $query->select('product_id', 'rating');
+            }
+        ])->withAvg('reviews', 'rating')->withCount('reviews')->paginate(12);
 
         $categories = Category::where('status', 1)->get();
 

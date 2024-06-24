@@ -54,8 +54,8 @@
                                     @csrf
                                     <div class="form-group">
                                         <label for="email">Email</label>
-                                        <input id="email" type="email" class="form-control" name="email"
-                                            tabindex="1" required autofocus value="{{ old('email') }}">
+                                        <input id="email" type="email" class="form-control" name="email" tabindex="1"
+                                            required autofocus value="{{ old('email') }}">
                                         <div class="invalid-feedback">
                                             Please fill in your email
                                         </div>
@@ -97,7 +97,7 @@
                         </div>
 
                         <div class="simple-footer">
-                            Copyright websolutionus
+                            Copyright 3d Cakes
                         </div>
                     </div>
                 </div>

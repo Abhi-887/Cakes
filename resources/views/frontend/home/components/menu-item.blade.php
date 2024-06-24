@@ -95,7 +95,7 @@
                                         <span>{{ $product->reviews_count }}</span>
                                     </p>
                                 @endif
-                                <a class="title"
+                                <a class="title my-3"
                                     href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
                                 <h5
                                     class="price fw-semibold text-center position-absolute py-1 px-3 rounded-pill color-light-gray top-0">
