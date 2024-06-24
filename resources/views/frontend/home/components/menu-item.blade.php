@@ -2,13 +2,13 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
 
 <style>
-    .popularfood {
+    /* .popularfood {
         background: #262626;
-    }
+    } */
 
-    .popularfood .stars {
+    /* .popularfood .stars {
         color: #ff9800;
-    }
+    } */
 
     .popularfood .profile img {
         width: 50px;
