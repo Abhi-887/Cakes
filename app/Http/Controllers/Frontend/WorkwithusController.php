@@ -51,7 +51,7 @@ class WorkwithusController extends Controller
         $workwithus->save();
 
         // Return a JSON response
-        return redirect()->back()->with('success', 'Your Wedding Cakes has deposited  successfully!');
+        return redirect()->back()->with('success', 'Your application has been submitted successfully!');
     }
 
 }
