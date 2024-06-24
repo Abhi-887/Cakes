@@ -245,5 +245,11 @@
                 })
             })
         })
+
+        $(document).ready(function() {
+            $(".mobile-dropdown-menu").click(function() {
+                $(".drop-dropdown").slideToggle("slow");
+            });
+        });
     </script>
 @endpush
