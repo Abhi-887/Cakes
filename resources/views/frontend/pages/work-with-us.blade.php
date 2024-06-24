@@ -55,13 +55,22 @@
 
         <form class="" action="{{route('work-with-us.store')}}" method="POST">
             @csrf
-          <div class="form-group">
-            <label for="jobReference">Please select the Job Reference(s) for which you would like to apply:</label>
-            <select class="form-control" id="jobReference" name="job_reference" multiple>
-              <option value="EDIN10">EDIN10: Part Time Front-of-House Assistant (Wed - Fri)</option>
-              <option value="DRIV4">DRIV4: Full Time Delivery Driver</option>
-            </select>
-          </div>
+            <div class="form-group">
+                <label>Please select the Job Reference(s) for which you would like to apply:</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="jobReference1" name="job_reference[]" value="EDIN10">
+                    <label class="form-check-label" for="jobReference1">
+                        EDIN10: Part Time Front-of-House Assistant (Wed - Fri)
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="jobReference2" name="job_reference[]" value="DRIV4">
+                    <label class="form-check-label" for="jobReference2">
+                        DRIV4: Full Time Delivery Driver
+                    </label>
+                </div>
+            </div>
+
 
           <div class="form-group">
             <label for="name">Name *</label>
