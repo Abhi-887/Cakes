@@ -74,13 +74,13 @@ class WorkwithusDataTable extends DataTable
             Column::make('current_position_duration'),
             Column::make('portfolio'),
             Column::make('cv'),
-            Column::computed('created_at_formatted')
+            Column::computed('created_at')
             ->format(function ($model) {
                 return Carbon::parse($model->created_at)->format('d-m-Y');
             })
             ->label('Created At'),
 
-        Column::computed('updated_at_formatted')
+        Column::computed('updated_at')
             ->format(function ($model) {
                 return Carbon::parse($model->updated_at)->format('d-m-Y');
             })
