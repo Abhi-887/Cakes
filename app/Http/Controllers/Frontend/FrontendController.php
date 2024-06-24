@@ -382,7 +382,7 @@ class FrontendController extends Controller
            // Retrieve all parent categories
         $categories = Category::all();
 
-        return view('frontend.pages.product', compact('category', 'products', 'categories'));
+        return view('frontend.pages.product', compact('category', 'product', 'categories'));
     }
 
 
