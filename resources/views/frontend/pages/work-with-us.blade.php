@@ -15,7 +15,7 @@
         <div class="fp__breadcrumb_overlay">
             <div class="container">
                 <div class="fp__breadcrumb_text">
-                    <h1>Wedding Cake Deposit</h1>
+                    <h1>We're Hiring</h1>
                     <ul>
                         <li><a href="/">home</a></li>
                         <li><a href="#">Wedding Cake Deposit</a></li>
@@ -56,64 +56,63 @@
         <form>
           <div class="form-group">
             <label for="jobReference">Please select the Job Reference(s) for which you would like to apply:</label>
-            <select class="form-control" id="jobReference" multiple>
-              <option>EDIN10: Part Time Front-of-House Assistant (Wed - Fri)</option>
-              <option>DRIV4: Full Time Delivery Driver</option>
+            <select class="form-control" id="jobReference" name="job_reference" multiple>
+              <option value="EDIN10">EDIN10: Part Time Front-of-House Assistant (Wed - Fri)</option>
+              <option value="DRIV4">DRIV4: Full Time Delivery Driver</option>
             </select>
           </div>
 
           <div class="form-group">
             <label for="name">Name *</label>
-            <input type="text" class="form-control" id="name" required>
+            <input type="text" class="form-control" id="name" name="name" required>
           </div>
 
           <div class="form-group">
             <label for="email">Email Address *</label>
-            <input type="email" class="form-control" id="email" required>
+            <input type="email" class="form-control" id="email" name="email" required>
           </div>
 
           <div class="form-group">
             <label for="telephone">Telephone Number *</label>
-            <input type="tel" class="form-control" id="telephone" required>
+            <input type="tel" class="form-control" id="telephone" name="telephone" required>
           </div>
 
           <div class="form-group">
             <label for="drivingLicense">Do you hold a valid UK driving license? *</label>
-            <select class="form-control" id="drivingLicense" required>
-              <option>Yes</option>
-              <option>No</option>
+            <select class="form-control" id="drivingLicense" name="driving_license" required>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
             </select>
           </div>
 
           <div class="form-group">
             <label for="whyIdeal">Please detail why you think you would be ideal for the role(s): *</label>
-            <textarea class="form-control" id="whyIdeal" rows="3" required></textarea>
+            <textarea class="form-control" id="whyIdeal" name="why_ideal" rows="3" required></textarea>
           </div>
 
           <div class="form-group">
             <label for="relevantExperience">Please detail any relevant experience that you feel would be beneficial for the role(s): *</label>
-            <textarea class="form-control" id="relevantExperience" rows="3" required></textarea>
+            <textarea class="form-control" id="relevantExperience" name="relevant_experience" rows="3" required></textarea>
           </div>
 
           <div class="form-group">
             <label for="currentPosition">Length of time in current position *</label>
-            <input type="text" class="form-control" id="currentPosition" required>
+            <input type="text" class="form-control" id="currentPosition" name="current_position_duration" required>
           </div>
 
           <div class="form-group">
             <label for="portfolio">Examples of Your Work</label>
-            <input type="file" class="form-control-file" id="portfolio" accept=".pdf, .bmp, .jpeg, .png">
+            <input type="file" class="form-control-file" id="portfolio" name="portfolio" accept=".pdf, .bmp, .jpeg, .png">
           </div>
 
           <div class="form-group">
-            <label for="cv">Please attach your CV</label>
-            <input type="file" class="form-control-file" id="cv" accept=".pdf, .bmp, .jpeg, .png" required>
+            <label for="cv">Please attach your CV *</label>
+            <input type="file" class="form-control-file" id="cv" name="cv" accept=".pdf, .bmp, .jpeg, .png" required>
           </div>
 
           <button type="submit" class="btn btn-primary">Submit Application</button>
         </form>
       </div>
-
 
 
 
