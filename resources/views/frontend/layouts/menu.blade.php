@@ -51,15 +51,16 @@
                 <div class="offcanvas-body">
                     <ul class="mt-3">
                         @if ($MainMenu)
-                            @foreach ($MainMenu as $menu)
+                            @foreach ($MainMenu as $index => $menu)
                                 <li class="nav-item my-3">
                                     <a class="nav-link fw-semibold" href="{{ $menu['link'] }}">{{ $menu['label'] }}
                                     </a>
                                     @if ($menu['child'])
-                                        <i class="far fa-angle-down mobile-dropdown-menu"></i>
+                                        <i class="far fa-angle-down mobile-dropdown-menu"
+                                            data-index="{{ $index }}"></i>
                                     @endif
                                     @if ($menu['child'])
-                                        <ul class="drop-dropdown bg-light">
+                                        <ul class="drop-dropdown bg-light" id="dropdown-{{ $index }}">
                                             @foreach ($menu['child'] as $item)
                                                 <li>
                                                     <a class="dropdown-item border-bottom fw-semibold p-2"
@@ -72,6 +73,7 @@
                             @endforeach
                         @endif
                     </ul>
+
                     <ul class="d-flex menu_icon my-3">
                         <li>
                             <a class="fs-5" href="{{ route('login') }}"><i class="fas fa-user"></i></a>
@@ -288,7 +290,8 @@
 
         $(document).ready(function() {
             $(".mobile-dropdown-menu").click(function() {
-                $(".drop-dropdown").slideToggle("slow");
+                var index = $(this).data("index");
+                $("#dropdown-" + index).slideToggle("slow");
             });
         });
     </script>
