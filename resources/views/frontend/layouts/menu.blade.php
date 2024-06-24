@@ -52,16 +52,18 @@
                         @if ($MainMenu)
                             @foreach ($MainMenu as $menu)
                                 <li class="nav-item my-2">
-                                    <a class="nav-link fw-semibold" href="{{ $menu['link'] }}">{{ $menu['label'] }}
-                                    </a>
+                                    <div class="">
+                                        <a class="nav-link fw-semibold" href="{{ $menu['link'] }}">{{ $menu['label'] }}
+                                        </a>
+                                        @if ($menu['child'])
+                                            <i class="far fa-angle-down mobile-dropdown-menu"></i>
+                                        @endif
+                                    </div>
                                     @if ($menu['child'])
-                                        <i class="far fa-angle-down mobile-dropdown-menu"></i>
-                                    @endif
-                                    @if ($menu['child'])
-                                        <ul class="bg-light">
+                                        <ul class="drop-dropdown bg-light">
                                             @foreach ($menu['child'] as $item)
                                                 <li>
-                                                    <a class="border-bottom fw-semibold p-2"
+                                                    <a class="dropdown-item border-bottom fw-semibold p-2"
                                                         href="{{ $item['link'] }}">{{ $item['label'] }}</a>
                                                 </li>
                                             @endforeach
@@ -110,13 +112,12 @@
                             class="sunseen-message-count bg-gray position-absolute text-light fw-semibold text-center end-25 ms-1 rounded-circle">{{ $unseenMessages > 0 ? 1 : 0 }}</span>
                     </a>
                 </li>
-                {{--
+
                 <li>
-                    <a href="{{ route('login') }}" style="color: white"
-                    ><i class="fas fa-user"></i
-                    ></a>
+                    <a href="{{ route('login') }}" style="color: white"><i class="fas fa-user"></i></a>
                 </li>
-                --}} {{--
+
+                {{--
                 <li>
                     <a
                     class="common_btn d-inline ms-3 position-relative fw-semibold transitions"
