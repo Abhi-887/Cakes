@@ -135,6 +135,7 @@
         {{-- <a class="checkout" href="check_out.html">checkout</a> --}}
     </div>
 </div>
+
 @php
     $reservationTimes = \App\Models\ReservationTime::where('status', 1)->get();
 @endphp
