@@ -24,7 +24,7 @@
 
     <section class="fp__search_menu mt_120 xs_mt_90 mb_100 xs_mb_70">
         <div class="container">
-            <form class="" method="GET" action="{{ route('product.index') }}">
+            <form class="fp__search_menu_form" method="GET" action="{{ route('product.index') }}">
                 <div class="row justify-content-around align-items-center">
                     <div class="col-xl-3 col-md-5">
                         <input class="py-2 form-control rounded-pill" type="text" placeholder="Search..." name="search"
@@ -87,15 +87,14 @@
                     </script>
 
                     <div class="col-xl-2 col-md-3">
-                        <button type="submit"
-                            class="wedding-cake-button px-3 py-2 border border-0 rounded-pill">Search</button>
+                        <button type="submit" class="wedding-cake-button border border-0 rounded-pill">Search</button>
                     </div>
                 </div>
             </form>
 
             <div class="row">
                 @foreach ($products as $product)
-                    <div class="col-xl-4 col-sm-6 col-lg-4 wow fadeInUp" data-wow-duration="1s">
+                    <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-duration="1s">
                         <div class="fp__menu_item">
                             <div class="fp__menu_item_img">
                                 <img src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}"
