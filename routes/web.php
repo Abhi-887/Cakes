@@ -14,6 +14,7 @@ use App\Http\Controllers\Frontend\ProfileController;
 use App\Http\Controllers\Frontend\WishlistController;
 use App\Http\Controllers\Frontend\ConsultationController;
 use App\Http\Controllers\Frontend\WeddingcakesdepositController;
+use App\Http\Controllers\Frontend\WorkwithusController;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\ProductOption;
@@ -99,6 +100,10 @@ Route::post('/consultations/store', [ConsultationController::class, 'store'])->n
 /** wedding-cake-deposit page */
 Route::get('/wedding-cake-deposit', [WeddingcakesdepositController::class, 'create'])->name('wedding-cake-deposit');
 Route::post('/wedding-cake-deposit/store', [WeddingcakesdepositController::class, 'store'])->name('wedding-cake-deposit.store');
+
+/** work-with-us page */
+Route::get('/work-with-us', [WorkwithusController::class, 'create'])->name('work-with-us.create');
+Route::post('/work-with-us', [WorkwithusController::class, 'store'])->name('work-with-us.store');
 
 /** Blogs Routes */
 Route::get('/blogs', [FrontendController::class, 'blog'])->name('blogs');

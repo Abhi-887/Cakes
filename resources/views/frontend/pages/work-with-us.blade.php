@@ -18,7 +18,7 @@
                     <h1>We're Hiring</h1>
                     <ul>
                         <li><a href="/">home</a></li>
-                        <li><a href="#">Wedding Cake Deposit</a></li>
+                        <li><a href="#">We're Hiring</a></li>
                     </ul>
                 </div>
             </div>
