@@ -36,7 +36,7 @@
 
             <a class="ms-auto d-xxl-none d-block" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
                 aria-controls="offcanvasExample">
-                <i class="fas fa-bars"></i>
+                <i class="fas fa-bars fs-3 mt-2 ms-3 color-light-gray"></i>
             </a>
 
             <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
@@ -52,15 +52,13 @@
                         @if ($MainMenu)
                             @foreach ($MainMenu as $menu)
                                 <li class="nav-item my-2">
-                                    <div class="d-flex">
-                                        <a class="nav-link fw-semibold" href="{{ $menu['link'] }}">{{ $menu['label'] }}
-                                        </a>
-                                        @if ($menu['child'])
-                                            <i class="far fa-angle-down mobile-dropdown-menu"></i>
-                                        @endif
-                                    </div>
+                                    <a class="nav-link fw-semibold" href="{{ $menu['link'] }}">{{ $menu['label'] }}
+                                    </a>
                                     @if ($menu['child'])
-                                        <ul class="bg-light d-none">
+                                        <i class="far fa-angle-down mobile-dropdown-menu"></i>
+                                    @endif
+                                    @if ($menu['child'])
+                                        <ul class="bg-light">
                                             @foreach ($menu['child'] as $item)
                                                 <li>
                                                     <a class="border-bottom fw-semibold p-2"
