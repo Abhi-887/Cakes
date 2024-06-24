@@ -273,7 +273,7 @@ button {
     background: #4b637f !important;
 }
 .sticky-top{
-    z-index: 1 !important;
+    z-index: 2 !important;
 }
 
 #sticky_sidebar{
@@ -1161,9 +1161,6 @@ button {
     /* padding: 3px 15px; */
     box-shadow: var(--boxShadow);
     border-radius: 30px;
-}
-.z-index-0{
-    z-index: 0 !important;
 }
 
 .fp__menu_item .fp__menu_item_text {
