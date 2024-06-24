@@ -72,8 +72,18 @@ class WorkwithusDataTable extends DataTable
             Column::make('why_ideal'),
             Column::make('relevant_experience'),
             Column::make('current_position_duration'),
-            Column::make('portfolio'),
-            Column::make('cv'),
+            Column::computed('portfolio')
+            ->exportable(false)
+            ->printable(false)
+            ->width(60)
+            ->addClass('text-center')
+            ->view('frontend.datatables.portfolio'), // Assuming you have a blade view for portfolio
+        Column::computed('cv')
+            ->exportable(false)
+            ->printable(false)
+            ->width(60)
+            ->addClass('text-center')
+            ->view('frontend.datatables.cv'), // Assuming you have a blade view for cv
 
         ];
     }
