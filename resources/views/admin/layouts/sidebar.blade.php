@@ -101,8 +101,8 @@
 
             <li class="dropdown {{ setSidebarActive([
 			'admin.slider.index'
-                
-                
+
+
             ]) }}">
 
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-images"></i>
@@ -149,7 +149,11 @@
 			<span>Wedding Booking Schedule </span>
 			</a>
 		</li>
-	
+        <li class="{{ setSidebarActive(['admin.work-with-us.index']) }}">
+			<a class="nav-link" href="{{ route('admin.work-with-us.index') }}"><i class="far fa-clock"></i>
+			<span>Work With Us </span>
+			</a>
+		</li>
 
 
 
@@ -306,13 +310,13 @@
                         Conditions</a></li>
                 <li class="{{ setSidebarActive(['admin.contact.index']) }}"><a class="nav-link"
                         href="{{ route('admin.contact.index') }}">Contact</a></li>
-						
+
 				<li class="{{ setSidebarActive(['admin.contact2.index']) }}"><a class="nav-link"
                         href="{{ route('admin.contact2.index') }}">Second Contact</a></li>
 
             </ul>
         </li>
-		
+
 		<li class="dropdown {{ setSidebarActive([
                 'admin.footer-info.index',
 				'admin.footer-info-two.index',
@@ -326,7 +330,7 @@
                         <ul class="dropdown-menu">
                                 <li class="{{ setSidebarActive(['admin.footer-info.index']) }}"><a class="nav-link"
                                                 href="{{ route('admin.footer-info.index') }}">Footer Info</a></li>
-												
+
 						<li class="{{ setSidebarActive(['admin.footer-info-two.index']) }}"><a class="nav-link"
                                                 href="{{ route('admin.footer-info-two.index') }}">Footer Info Two</a></li>
 
@@ -340,7 +344,7 @@
                                 <li class="{{ setSidebarActive(['admin.footer-grid-three.*']) }}"><a class="nav-link"
                                                 href="{{ route('admin.footer-grid-three.index') }}">Footer Grid
                                                 Three</a></li>
-								
+
 								<li class="{{ setSidebarActive(['admin.footer-grid-four.*']) }}"><a class="nav-link"
                                                 href="{{ route('admin.footer-grid-four.index') }}">Footer Grid Four
                                                 </a></li>
@@ -356,7 +360,7 @@
                 href="{{ route('admin.social-link.index') }}"><i class="fas fa-link"></i>
                 <span>Social Links</span></a></li>
 
-        
+
 
         <li class="{{ setSidebarActive(['admin.menu-builder.index']) }}"><a class="nav-link"
                 href="{{ route('admin.menu-builder.index') }}"><i class="fas fa-list-alt"></i>

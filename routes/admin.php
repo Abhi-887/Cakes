@@ -31,6 +31,7 @@ use App\Http\Controllers\Admin\MenuBuilderController;
 use App\Http\Controllers\Admin\NewsLetterController;
 use App\Http\Controllers\Admin\ConsultationController;
 use App\Http\Controllers\Admin\WeddingcakesdepositController;
+use App\Http\Controllers\Admin\WorkwithusController;
 use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\PaymentGatewaySettingController;
 use App\Http\Controllers\Admin\PrivacyPolicyController;
@@ -230,7 +231,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     /** Contact Routes */
     Route::get('contact', [ContactController::class, 'index'])->name('contact.index');
     Route::put('contact', [ContactController::class, 'update'])->name('contact.update');
-	
+
     /** Contact Routes */
     Route::get('contact2', [Contact2Controller::class, 'index'])->name('contact2.index');
     Route::put('contact2', [Contact2Controller::class, 'update'])->name('contact2.update');
@@ -247,10 +248,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
 	/** consultation Routes */
     Route::get('consultation', [ConsultationController::class, 'index'])->name('consultation.index');
-	
+
 	/** wedding-cakes-deposit Routes */
 	Route::get('wedding-cakes-deposit', [WeddingcakesdepositController::class, 'index'])->name('Weddingcakesdeposit.index');
 
+    	/** wedding-cakes-deposit Routes */
+	Route::get('work-with-us', [WorkwithusController::class, 'index'])->name('work-with-us.index');
 
     /** Social Links Routes */
     Route::resource('social-link', SocialLinkController::class);
@@ -268,7 +271,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::put('footer-grid-three/change-status', [FooterGridThreeController::class, 'changeStatus'])->name('footer-grid-three.change-status');
     Route::put('footer-grid-three/change-title', [FooterGridThreeController::class, 'changeTitle'])->name('footer-grid-three.change-title');
     Route::resource('footer-grid-three', FooterGridThreeController::class);
-	
+
 	Route::put('footer-grid-four/change-status', [FooterGridFourController::class, 'changeStatus'])->name('footer-grid-four.change-status');
     Route::put('footer-grid-four/change-title', [FooterGridFourController::class, 'changeTitle'])->name('footer-grid-four.change-title');
     Route::resource('footer-grid-four', FooterGridFourController::class);
