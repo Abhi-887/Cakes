@@ -1156,7 +1156,7 @@ button {
     position: absolute;
     /* top: 59% !important; */
     left: 10px;
-    z-index: 0;
+    z-index: 1;
     /* background: var(--colorWhite); */
     /* padding: 3px 15px; */
     box-shadow: var(--boxShadow);
