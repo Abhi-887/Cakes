@@ -27,7 +27,7 @@ class FooterInfoTwoController extends Controller
             'name' => ['max:100'],
 			'phone' => ['max:100'],
             'email' => ['max:100'],
-            'address' => ['max:300'],
+            'address' => ['max:3000'],
             'copyright' => ['max:200']
         ]);
 
