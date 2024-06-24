@@ -1,6 +1,14 @@
 @extends('frontend.layouts.master')
 
 @section('content')
+<?php
+print_r($products);
+
+dd($products);
+?>
+
+
+
 <!--=============================
                             BREADCRUMB START
                         ==============================-->
@@ -35,11 +43,11 @@
         <form class="fp__search_menu_form" method="GET" action="{{ route('product.index') }}">
             <div class="row align-items-center">
                 <div class="col-xl-3 col-md-5">
-                    <input class="form-control rounded-pill py-2" type="text" placeholder="Search..." name="search"
+                    <input class="py-2 form-control rounded-pill" type="text" placeholder="Search..." name="search"
                         value="{{ request()->search }}">
                 </div>
                 <div class="col-xl-3 col-md-4">
-                    <select class="form-control rounded-pill py-2" name="parent_category" id="parent_category">
+                    <select class="py-2 form-control rounded-pill" name="parent_category" id="parent_category">
                         <option value="">All</option>
                         @foreach ($categories as $category)
                         @if ($category->parent == 0)
@@ -49,7 +57,7 @@
                     </select>
                 </div>
                 <div class="col-xl-3 col-md-4">
-                    <select class="form-control rounded-pill py-2" name="sub_category" id="sub_category">
+                    <select class="py-2 form-control rounded-pill" name="sub_category" id="sub_category">
                         <option value="">All</option>
                         @foreach ($categories as $category)
                         @if ($category->parent != 0)
@@ -85,7 +93,7 @@
                 </script>
 
                 <div class="col-xl-2 col-md-3">
-                    <button type="submit" class="border border-0 py-2 px-4 rounded-pill">Search</button>
+                    <button type="submit" class="px-4 py-2 border border-0 rounded-pill">Search</button>
                 </div>
             </div>
         </form>
@@ -117,7 +125,7 @@
                             {{ currencyPosition($product->price) }}
                             @endif
                         </h5>
-                        <ul class="d-flex flex-wrap justify-content-center">
+                        <ul class="flex-wrap d-flex justify-content-center">
                             <li><a href="javascript:;" onclick="loadProductModal('{{ $product->id }}')"><i
                                         class="fas fa-shopping-basket"></i></a></li>
                             <li><a href="#"><i class="fal fa-heart"></i></a></li>
@@ -130,7 +138,7 @@
             @endforeach
 
             @if ($products->isEmpty())
-            <h4 class="text-center mt-5">No Product Found!</h4>
+            <h4 class="mt-5 text-center">No Product Found!</h4>
             @endif
         </div>
 
