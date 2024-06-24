@@ -52,7 +52,7 @@
           </div>
         </div>
 
-        <form class="" action="{{route('work-with-us.store')}}" method="POST">
+        <form class="" action="{{route('work-with-us.store')}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group mt-3">
                 <label class="mt-2">Please select the Job Reference(s) for which you would like to apply:</label>
