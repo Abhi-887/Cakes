@@ -66,7 +66,7 @@
                                             style="display: none;">
                                             @foreach ($menu['child'] as $item)
                                                 <li>
-                                                    <a class="dropdown-item border-bottom fw-semibold p-2"
+                                                    <a class="dropdown-item fw-semibold p-2"
                                                         href="{{ $item['link'] }}">{{ $item['label'] }}</a>
                                                 </li>
                                             @endforeach
