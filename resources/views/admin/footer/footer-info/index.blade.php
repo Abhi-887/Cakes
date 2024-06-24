@@ -20,7 +20,7 @@
                     <form action="{{route('admin.footer-info.update', 1)}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
-                       
+
                         <div class="row">
 						<div class="col-md-6">
                                 <div class="form-group">
@@ -28,7 +28,7 @@
                                     <input type="text" class="form-control" name="name" value="{{@$footerInfo->name}}">
                                 </div>
                         </div>
-						
+
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label>phone</label>
@@ -43,10 +43,11 @@
                             </div>
                         </div>
 
-                        
+
                         <div class="form-group">
                             <label>address</label>
-                            <input type="text" class="form-control" name="address" value="{{@$footerInfo->address}}">
+
+                            <textarea name="address"   class="form-control summernote">{{@$footerInfo->address}}</textarea>
                         </div>
 
                         <div class="form-group">

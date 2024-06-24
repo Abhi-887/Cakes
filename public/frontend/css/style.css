@@ -6565,6 +6565,7 @@ CHECKOUT PAGE START
     background-color: var(--colorPrimary);
     border-color: var(--colorPrimary);
     color: white !important;
+    font-weight: bold;
   }
 
 
@@ -6577,4 +6578,7 @@ CHECKOUT PAGE START
     border-radius: 30px;
     font-size: 16px;
     font-weight: 300;
+  }
+  .wedding-cake-button {
+    background: #86a4ba !important;
   }
