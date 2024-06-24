@@ -34,9 +34,9 @@
                 @endif
             </ul>
 
-            <a class="btn btn-primary ms-auto d-xxl-none d-block" data-bs-toggle="offcanvas" href="#offcanvasExample"
-                role="button" aria-controls="offcanvasExample">
-                <i class="fa-solid fa-bars"></i>
+            <a class="ms-auto d-xxl-none d-block" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+                aria-controls="offcanvasExample">
+                <i class="fas fa-bars"></i>
             </a>
 
             <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
