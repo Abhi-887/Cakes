@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                                                                                                                                                        BREADCRUMB START
-                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                BREADCRUMB START
+                                                                                                                                                                                                            ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,13 +18,13 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                        BREADCRUMB END
-                                                                                                                            ==============================-->
+                                                                                                                                                                BREADCRUMB END
+                                                                                                                                                    ==============================-->
 
 
     <!--=============================
-                                                                                                                                        CONTACT PAGE START
-                                                                                                                             ==============================-->
+                                                                                                                                                                CONTACT PAGE START
+                                                                                                                                                     ==============================-->
 
 
     <style>
@@ -38,10 +38,6 @@
 
         .contact-card img {
             transition: transform 0.3s;
-        }
-
-        .imgcontact {
-            border-radius: 20px;
         }
 
         .contact-card:hover img {
@@ -123,7 +119,7 @@
                         <p class="text-muted fw-semibold"><small>20 Roseburn Terrace<br>Edinburgh Midlothian EH12
                                 6AW</small></p>
                     </div>
-                    <div class="img-container overflow-hidden imgcontact">
+                    <div class="img-container overflow-hidden rounded-2">
                         <iframe src="{{ @$contact->map_link }}" style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
@@ -172,38 +168,41 @@
                 </div>
             </div>
 
-            <div class="contact-card">
-                <h2>Opening Times</h2>
+            <div class="contact-card py-5">
+                <h2 class="color-dark-gray">Opening Times</h2>
                 <div class="row align-items-center">
                     <div class="col-4">
-                        <h4>Cake orders & collections:</h4>
-                        <p>Monday - Friday 9am - 5pm (please call 0131 337 9990 upon arrival if collecting after
+                        <h4 class="color-light-gray">Cake orders & collections:</h4>
+                        <p class="fw-semibold">Monday - Friday 9am - 5pm (please call 0131 337 9990 upon arrival if
+                            collecting after
                             2pm)<br>Saturday: 9am - 4pm<br>Sunday: 10am - 3pm (by appointment only)</p>
                     </div>
                     <div class="col-4">
-                        <h4>Coffee & Cake:</h4>
-                        <p>Monday - Friday 9am - 2pm<br>Saturday: 9am - 4pm<br>Sunday: Closed</p>
+                        <h4 class="color-light-gray">Coffee & Cake:</h4>
+                        <p class="fw-semibold">Monday - Friday 9am - 2pm<br>Saturday: 9am - 4pm<br>Sunday: Closed</p>
                     </div>
                     <div class="col-4">
-                        <h4>7-Day Cake Delivery:</h4>
-                        <p>Cake design consultations are available 7 days a week<br>by appointment only (In store, via
+                        <h4 class="color-light-gray">7-Day Cake Delivery:</h4>
+                        <p class="fw-semibold">Cake design consultations are available 7 days a week<br>by appointment only
+                            (In store, via
                             telephone or Zoom).</p>
                     </div>
 
                 </div>
-                <div class="row align-items-center">
+                <div class="row py-5">
                     <div class="col-6">
                         <h3>David Duncan Sugarcraft School Edinburgh</h3>
                         <a href="">www.davidduncansugarcraftschool.co.uk</a>
                         <h3>Opening Times:</h3>
-                        <p>Access available 30 minutes prior to class start time. For a list of class dates/times please see
+                        <p class="fw-semibold">Access available 30 minutes prior to class start time. For a list of class
+                            dates/times please see
                             website.</p>
                         <p><code>Email:</code><a
                                 href="hello@davidduncansugarcraftschool.co.uk">hello@davidduncansugarcraftschool.co.uk</a>
                         </p>
                     </div>
                     <div class="col-6">
-                        <div class="">
+                        <div class="overflow-hidden">
                             <img src="https://www.3d-cakes.co.uk/media/wysiwyg/contact/edinburgh-store.jpg" alt="">
                         </div>
                     </div>
@@ -306,8 +305,8 @@
             </div>
         </div>
         <!--=============================
-                                                                                                                                                                                        CONTACT PAGE END
-                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                CONTACT PAGE END
+                                                                                                                                                                                                            ==============================-->
     @endsection
 
     @push('scripts')
