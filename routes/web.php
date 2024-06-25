@@ -88,6 +88,10 @@ Route::get('/voucher-redemption', function () {
     return view('frontend.pages.voucher-redemption');
 });
 
+// web.php (Routes file)
+Route::get('/products/{slug}', [FrontendController::class, 'showCategoryProducts'])->name('category.show');
+
+
 /** Chef page */
 Route::get('/chef', [FrontendController::class, 'chef'])->name('chef');
 /** Testimonial page */
