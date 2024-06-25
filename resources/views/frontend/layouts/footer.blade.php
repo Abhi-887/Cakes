@@ -14,7 +14,7 @@
             <div class="row py-5">
                 <div class="col-lg-3 col-md-12 footer-info">
                     <h5 class="mb-xl-3 mb-1 fw-normal text-black mt-xl-0 mt-2">{{ @$footerInfo->name }}</h5>
-                    <div class="pb-3">{!! @$footerInfo->address !!}</div>
+                    <div class="">{!! @$footerInfo->address !!}</div>
                     <div><strong class="me-2">Email:</strong><span class="text-muted">{{ @$footerInfo->email }}</span></div>
                     <div><strong class="me-2">Phone:</strong><span class="text-muted">{{ @$footerInfo->phone }}</span>
                     </div>
@@ -22,7 +22,7 @@
 
                 <div class="col-lg-3 col-md-12 footer-info">
                     <h5 class="mb-xl-3 mb-1 fw-normal text-black mt-xl-0 mt-2">{{ @$footerInfoTwo->name }}</h5>
-                    <div class="pb-3">{!! @$footerInfoTwo->address !!}</div>
+                    <div class="">{!! @$footerInfoTwo->address !!}</div>
                     <div><strong class="me-2">Email:</strong>{{ @$footerInfoTwo->email }}</div>
                     <div><strong class="me-2">Phone:</strong>{{ @$footerInfoTwo->phone }}</div>
                 </div>
