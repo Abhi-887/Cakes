@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                                                                                                                                                                                                                                                        BREADCRUMB START
-                                                                                                                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                                                                                                BREADCRUMB START
+                                                                                                                                                                                                                                                                                            ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,13 +18,13 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                        BREADCRUMB END
-                                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                                                BREADCRUMB END
+                                                                                                                                                                                                                                    ==============================-->
 
 
     <!--=============================
-                                                                                                                                                                                                                                        CONTACT PAGE START
-                                                                                                                                                                                                                             ==============================-->
+                                                                                                                                                                                                                                                CONTACT PAGE START
+                                                                                                                                                                                                                                     ==============================-->
 
 
     <style>
@@ -195,7 +195,7 @@
                     </div>
 
                 </div>
-                <div class="row py-5">
+                <div class="row pt-5">
                     <div class="col-6">
                         <h3 class="my-2 mb-3">David Duncan Sugarcraft School Edinburgh</h3>
                         <a class="my-2 text-muted fw-semibold" href="">www.davidduncansugarcraftschool.co.uk</a>
@@ -313,8 +313,8 @@
             </div>
         </div>
         <!--=============================
-                                                                                                                                                                                                                                                                                        CONTACT PAGE END
-                                                                                                                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                                                                                                CONTACT PAGE END
+                                                                                                                                                                                                                                                                                            ==============================-->
     @endsection
 
     @push('scripts')
