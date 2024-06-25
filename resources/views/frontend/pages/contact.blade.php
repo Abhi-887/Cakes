@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,13 +18,13 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                                        BREADCRUMB END
-                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                BREADCRUMB END
+                                                                                                                                                                                                                                                                        ==============================-->
 
 
     <!--=============================
-                                                                                                                                                                                                                                                                        CONTACT PAGE START
-                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                CONTACT PAGE START
+                                                                                                                                                                                                                                                                        ==============================-->
 
 
     <style>
@@ -333,46 +333,69 @@
     </div>
 
     <div class="container">
-        <div class="row mt-5">
-            <div class="col-xl-12 wow fadeInUp" data-wow-duration="1s">
-                <form class="fp__contact_form">
-                    @csrf
-                    <h3>Contact</h3>
-                    <div class="row">
-                        <div class="col-xl-6 col-lg-6">
-                            <div class="fp__contact_form_input">
-                                <span><i class="fal fa-user-alt"></i></span>
-                                <input type="text" placeholder="Name" name="name">
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6">
-                            <div class="fp__contact_form_input">
-                                <span><i class="fal fa-envelope"></i></span>
-                                <input type="email" placeholder="Email" name="email">
-                            </div>
-                        </div>
+        <div class="row my-5">
+            <div class="col-md-6">
+                <h4 class="fw-bold lightblue">Contact Us</h4>
+                <div class="mb-4">
+                    <h1 class="fw-bold darkblack">Get in touch with us today</h1>
+                    <p class="text-secondary fw-semibold">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                        accusantium,
+                        totam rem aperiam, eaque
+                        ipsa
+                        quae ab illo inventore et.</p>
+                </div>
 
-                        <div class="col-xl-12 col-lg-12">
-                            <div class="fp__contact_form_input">
-                                <span><i class="fal fa-book"></i></span>
-                                <input type="text" placeholder="Subject" name="subject">
-                            </div>
-                        </div>
-                        <div class="col-xl-12">
-                            <div class="fp__contact_form_input textarea">
-                                <span><i class="fal fa-book"></i></span>
-                                <textarea rows="8" placeholder="Message" name="message"></textarea>
-                            </div>
-                            <button type="submit" class="submit_btn">Send Message</button>
-                        </div>
+                <div class="mt-4">
+                    <h5>Follow Us:</h5>
+                    <div class="social-icons">
+                        <a href="#"><img src="https://img.icons8.com/color/48/000000/facebook-new.png" /></a>
+                        <a href="#"><img src="https://img.icons8.com/color/48/000000/instagram-new.png" /></a>
+                        <a href="#"><img src="https://img.icons8.com/color/48/000000/linkedin.png" /></a>
+                        <a href="#"><img src="https://img.icons8.com/color/48/000000/twitter.png" /></a>
                     </div>
-                </form>
+                </div>
+            </div>
+            <div class="col-md-6 wow fadeInUp" data-wow-duration="1s">
+                <div class="formbg p-5 rounded-4">
+                    <form class="fp__contact_form">
+                        @csrf
+                        <h3>Contact</h3>
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-6">
+                                <div class="fp__contact_form_input">
+                                    <span><i class="fal fa-user-alt"></i></span>
+                                    <input type="text" placeholder="Name" name="name">
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6">
+                                <div class="fp__contact_form_input">
+                                    <span><i class="fal fa-envelope"></i></span>
+                                    <input type="email" placeholder="Email" name="email">
+                                </div>
+                            </div>
+
+                            <div class="col-xl-12 col-lg-12">
+                                <div class="fp__contact_form_input">
+                                    <span><i class="fal fa-book"></i></span>
+                                    <input type="text" placeholder="Subject" name="subject">
+                                </div>
+                            </div>
+                            <div class="col-xl-12">
+                                <div class="fp__contact_form_input textarea">
+                                    <span><i class="fal fa-book"></i></span>
+                                    <textarea rows="8" placeholder="Message" name="message"></textarea>
+                                </div>
+                                <button type="submit" class="submit_btn">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    CONTACT PAGE END
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            CONTACT PAGE END
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
 @endsection
 
 @push('scripts')
