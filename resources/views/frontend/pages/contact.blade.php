@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                BREADCRUMB START
-                            ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,151 +18,401 @@
         </div>
     </section>
     <!--=============================
-                                BREADCRUMB END
-                            ==============================-->
+                                                                                                                                                                BREADCRUMB END
+                                                                                                                                                        ==============================-->
 
 
     <!--=============================
-                                CONTACT PAGE START
-                            ==============================-->
-    <section class="fp__contact mt_100 xs_mt_70 mb_100 xs_mb_70">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-12 wow fadeInUp" data-wow-duration="1s">
-                            <div class="fp__contact_info">
-                                <span><i class="fal fa-phone-alt"></i></span>
-                                <div class="text">
-                                    <h3>Call</h3>
-                                    <p>{{ @$contact->phone_one }}</p>
-                                    <p>{{ @$contact->phone_two }}</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 wow fadeInUp" data-wow-duration="1s">
-                            <div class="fp__contact_info">
-                                <span><i class="fal fa-envelope"></i></span>
-                                <div class="text">
-                                    <h3>Mail</h3>
-                                    <p>{{ @$contact->mail_one }}</p>
-                                    <p>{{ @$contact->mail_two }}</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- <div class="col-12 wow fadeInUp" data-wow-duration="1s">
-                              <div class="fp__contact_info">
-                               <span><i class="fas fa-street-view"></i></span>
-                               <div class="text">
-                                <h3>location</h3>
+                                                                                                                                                                CONTACT PAGE START
+                                                                                                                                                        ==============================-->
 
-                               </div>
-                              </div>
-                             </div>-->
-                        {{-- <div class="mt-3">{!! @$contact->address !!}</div> --}}
+
+    <style>
+        .contact-card {
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            background-color: #f7f8fd !important;
+        }
+
+        .contact-card img {
+            transition: transform 0.3s;
+        }
+
+        .contact-card:hover img {
+            transform: scale(1.1);
+            border-radius: 20px;
+        }
+
+        .contact-card2:hover img {
+            transform: scale(1.1) !important;
+            border-radius: 20px !important;
+        }
+
+        .location-icon {
+            width: 50px;
+            height: 50px;
+            transition: 0.4s;
+        }
+
+        .viewallcontact {
+            border: 1px solid #01b9eb !important;
+        }
+
+        .viewallcontact>i {
+            transition: 0.4s;
+        }
+
+        .viewallcontact:hover {
+            color: #01b9eb !important;
+        }
+
+        .service-content {
+            flex: 1;
+        }
+
+        .img-container {
+            margin-top: auto;
+        }
+
+
+        .formbg {
+            background-color: #f7f8fd !important;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-section {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 40px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        .social-icons a {
+            margin-right: 15px;
+        }
+
+        .btn-primary {
+            background-color: #6c5ce7;
+            border-color: #6c5ce7;
+        }
+
+        .form-control,
+        .btn-primary {
+            border-radius: 5px;
+        }
+    </style>
+
+    <div class="container py-5">
+        <h1 class="fw-bold">Address Line 1</h1>
+        <h4 class="fw-bold color-light-gray">3D Cakes Edinburgh</h4>
+
+        <div class="row mt-5">
+            <div class="col-md-4 mb-4">
+                <div class="contact-card rounded-3 p-4">
+                    <div class="contact-content">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h4 class="fw-bold color-dark-gray">Address</h4>
+                            <div
+                                class="location-icon d-flex justify-content-center align-items-center btnbackground rounded-circle text-center fs-4">
+                                <a href=""><i class="fa-solid fa-location-dot text-light"></i></a>
+                            </div>
+                        </div>
+                        <hr>
+                        <p class="text-muted fw-semibold"><small>20 Roseburn Terrace<br>Edinburgh Midlothian EH12
+                                6AW</small></p>
                     </div>
-                    <div class="fp__contact_form_area mt_100 xs_mt_70">
-
-                        <div class="row mt_100 xs_mt_70">
-                            <div class="col-xl-12 wow fadeInUp" data-wow-duration="1s">
-                                <div class="fp__contact_map">
-                                    <iframe src="{{ @$contact->map_link }}" style="border:0;" allowfullscreen=""
-                                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="img-container overflow-hidden rounded-3">
+                        <iframe src="{{ @$contact->map_link }}" style="border:0; width:100%;" allowfullscreen=""
+                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-12 wow fadeInUp" data-wow-duration="1s">
-                            <div class="fp__contact_info">
-                                <span><i class="fal fa-phone-alt"></i></span>
-                                <div class="text">
-                                    <h3>Call</h3>
-                                    <p>{{ $contact2->phone_one }}</p>
-                                    <p>{{ @$contact2->phone_two }}</p>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 wow fadeInUp" data-wow-duration="1s">
-                            <div class="fp__contact_info">
-                                <span><i class="fal fa-envelope"></i></span>
-                                <div class="text">
-                                    <h3>Mail</h3>
-                                    <p>{{ @$contact2->mail_one }}</p>
-                                    <p>{{ @$contact2->mail_two }}</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- <div class="col-12 wow fadeInUp" data-wow-duration="1s">
-                              <div class="fp__contact_info">
-                               <span><i class="fas fa-street-view"></i></span>
-                               <div class="text">
-                                <h3>location</h3>
-
-                               </div>
-                              </div>
-                             </div>-->
-                        <div class="mt-3">{!! @$contact2->address !!}</div>
-                    </div>
-                    <div class="fp__contact_form_area mt_100 xs_mt_70">
-
-                        <div class="row mt_100 xs_mt_70">
-                            <div class="col-xl-12 wow fadeInUp" data-wow-duration="1s">
-                                <div class="fp__contact_map">
-                                    <iframe src="{{ @$contact2->map_link }}" style="border:0;" allowfullscreen=""
-                                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
-            <div class="row mt-5">
-                <div class="col-xl-12 wow fadeInUp" data-wow-duration="1s">
-                    <form class="fp__contact_form">
-                        @csrf
-                        <h3>Contact</h3>
-                        <div class="row">
-                            <div class="col-xl-6 col-lg-6">
-                                <div class="fp__contact_form_input">
-                                    <span><i class="fal fa-user-alt"></i></span>
-                                    <input type="text" placeholder="Name" name="name">
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-6">
-                                <div class="fp__contact_form_input">
-                                    <span><i class="fal fa-envelope"></i></span>
-                                    <input type="email" placeholder="Email" name="email">
-                                </div>
-                            </div>
-
-                            <div class="col-xl-12 col-lg-12">
-                                <div class="fp__contact_form_input">
-                                    <span><i class="fal fa-book"></i></span>
-                                    <input type="text" placeholder="Subject" name="subject">
-                                </div>
-                            </div>
-                            <div class="col-xl-12">
-                                <div class="fp__contact_form_input textarea">
-                                    <span><i class="fal fa-book"></i></span>
-                                    <textarea rows="8" placeholder="Message" name="message"></textarea>
-                                </div>
-                                <button type="submit" class="submit_btn">Send Message</button>
+            <div class="col-md-4 mb-4">
+                <div class="contact-card rounded-3 p-4">
+                    <div class="contact-content">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h4 class="fw-bold color-dark-gray">Call Now</h4>
+                            <div
+                                class="location-icon d-flex justify-content-center align-items-center btnbackground rounded-circle text-center fs-4">
+                                <a href=""><i class="fa-solid fa-phone text-light"></i></a>
                             </div>
                         </div>
-                    </form>
+                        <hr>
+                        <p class="text-muted fw-semibold">
+                            <small>Phone: service available Monday - Sunday 0131 337 9990.</small>
+                        </p>
+                    </div>
+                    <div class="img-container overflow-hidden rounded-3">
+                        <img src="https://demo.awaikenthemes.com/weebix/wp-content/uploads/2024/04/contact-info-2.jpg"
+                            class="img-fluid" alt="contact">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="contact-card rounded-3 p-4">
+                    <div class="contact-content">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h4 class="fw-bold color-dark-gray">Email Us</h4>
+                            <div
+                                class="location-icon d-flex justify-content-center align-items-center btnbackground rounded-circle text-center fs-4">
+                                <a href=""><i class="fa-solid fa-envelope text-light"></i></a>
+                            </div>
+                        </div>
+                        <hr>
+                        <p class="text-muted fw-semibold">
+                            <small>Email: enquiries@3d-cakes.co.uk</small>
+                        </p>
+                    </div>
+                    <div class="img-container overflow-hidden rounded-3">
+                        <img src=https://demo.awaikenthemes.com/weebix/wp-content/uploads/2024/04/contact-info-3.jpg"
+                            class="img-fluid" alt="email">
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-card py-5">
+                <h2 class="color-dark-gray text-center fw-bold">Opening Times</h2>
+                <div class="row py-5">
+                    <div class="col-md-4">
+                        <h4 class="color-light-gray mb-3">Cake orders & collections:</h4>
+                        <p class="fw-semibold">Monday - Friday 9am - 5pm (please call 0131 337 9990 upon arrival if
+                            collecting after 2pm)<br>Saturday: 9am - 4pm<br>Sunday: 10am - 3pm (by appointment only)</p>
+                    </div>
+                    <div class="col-md-4 d-flex justify-content-center">
+                        <div>
+                            <h4 class="color-light-gray mb-3">Coffee & Cake:</h4>
+                            <p class="fw-semibold">Monday - Friday 9am - 2pm<br>Saturday: 9am - 4pm<br>Sunday: Closed</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h4 class="color-light-gray mb-3">7-Day Cake Delivery:</h4>
+                        <p class="fw-semibold">Cake design consultations are available 7 days a week<br>by appointment only
+                            (In store, via telephone or Zoom).</p>
+                    </div>
+                </div>
+            </div>
+            {{-- <div class="row mt-5 pt-5">
+                <div class="col-6">
+                    <h4 class="fw-bold lightblue">Contact Us</h4>
+                    <div class="mb-4">
+                        <h1 class="fw-bold darkblack">Get in touch with us today</h1>
+                        <p class="text-secondary fw-semibold">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                            accusantium,
+                            totam rem aperiam, eaque
+                            ipsa
+                            quae ab illo inventore et.</p>
+                    </div>
+
+                    <div class="mt-4">
+                        <h5>Follow Us:</h5>
+                        <div class="social-icons">
+                            <a href="#"><img src="https://img.icons8.com/color/48/000000/facebook-new.png" /></a>
+                            <a href="#"><img src="https://img.icons8.com/color/48/000000/instagram-new.png" /></a>
+                            <a href="#"><img src="https://img.icons8.com/color/48/000000/linkedin.png" /></a>
+                            <a href="#"><img src="https://img.icons8.com/color/48/000000/twitter.png" /></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="formbg p-5 rounded-4">
+                        <form>
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="First Name">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Last Name">
+                                </div>
+                            </div>
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Phone">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" class="form-control" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Subjects">
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="4" placeholder="Message"></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">Send A Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div> --}}
+        </div>
+    </div>
+
+    <div class="container py-5">
+        <h1 class="fw-bold">Address Line 2</h1>
+        <h4 class="fw-bold color-light-gray">3D Cakes Milngavie</h4>
+
+        <div class="row mt-5">
+            <div class="col-md-4 mb-4">
+                <div class="contact-card rounded-3 p-4">
+                    <div class="contact-content">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h4 class="fw-bold color-dark-gray">Address</h4>
+                            <div
+                                class="location-icon d-flex justify-content-center align-items-center btnbackground rounded-circle text-center fs-4">
+                                <a href=""><i class="fa-solid fa-location-dot text-light"></i></a>
+                            </div>
+                        </div>
+                        <hr>
+                        <p class="text-muted fw-semibold"><small>38 Station Road<br>G62 8AB
+                                6AW</small></p>
+                    </div>
+                    <div class="img-container overflow-hidden rounded-3">
+                        <iframe src="{{ @$contact2->map_link }}" style="border:0; width:100%;" allowfullscreen=""
+                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="contact-card rounded-3 p-4">
+                    <div class="contact-content">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h4 class="fw-bold color-dark-gray">Call Now</h4>
+                            <div
+                                class="location-icon d-flex justify-content-center align-items-center btnbackground rounded-circle text-center fs-4">
+                                <a href=""><i class="fa-solid fa-phone text-light"></i></a>
+                            </div>
+                        </div>
+                        <hr>
+                        <p class="text-muted fw-semibold">
+                            <small>Phone: service available Monday - Sunday 0141 378 0027.
+                            </small>
+                        </p>
+                    </div>
+                    <div class="img-container overflow-hidden rounded-3">
+                        <img src="https://demo.awaikenthemes.com/weebix/wp-content/uploads/2024/04/contact-info-2.jpg"
+                            class="img-fluid" alt="contact">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="contact-card rounded-3 p-4">
+                    <div class="contact-content">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h4 class="fw-bold color-dark-gray">Email Us</h4>
+                            <div
+                                class="location-icon d-flex justify-content-center align-items-center btnbackground rounded-circle text-center fs-4">
+                                <a href=""><i class="fa-solid fa-envelope text-light"></i></a>
+                            </div>
+                        </div>
+                        <hr>
+                        <p class="text-muted fw-semibold">
+                            <small>Email: glasgow@3d-cakes.co.uk</small>
+                        </p>
+                    </div>
+                    <div class="img-container overflow-hidden rounded-3">
+                        <img src=https://demo.awaikenthemes.com/weebix/wp-content/uploads/2024/04/contact-info-3.jpg"
+                            class="img-fluid" alt="email">
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-card py-5">
+                <h2 class="color-dark-gray text-center fw-bold">Opening Times</h2>
+                <div class="row py-5">
+                    <div class="col-md-4">
+                        <h4 class="color-light-gray mb-3">Cake orders & collections:</h4>
+                        <p class="fw-semibold">Monday - Friday 9am - 5pm<br>Saturday: 9am - 4pm<br>Sunday: 10am - 3pm (by
+                            appointment only)</p>
+                    </div>
+                    <div class="col-md-4 d-flex justify-content-center">
+                        <div>
+                            <h4 class="color-light-gray mb-3">Coffee & Cake:</h4>
+                            <p class="fw-semibold">Monday - Friday 9am - 4pm<br>Saturday: 9am - 4pm<br>Sunday: Closed</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h4 class="color-light-gray mb-3">7-Day Cake Delivery:</h4>
+                        <p class="fw-semibold">Cake design consultations are available<br>7 days a week by appointment
+                            only.</p>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
+    <hr>
+    <div class="container">
+        <div class="row align-items-center pt-5">
+            <div class="col-6">
+                <h4 class="color-dark-gray my-3">David Duncan Sugarcraft School Edinburgh</h4>
+                <a class="my-3 text-muted fw-semibold" href="">www.davidduncansugarcraftschool.co.uk</a>
+                <h4 class="fw-bold my-3">Opening Times:</h4>
+                <p class="fw-semibold my-3">Access available 30 minutes prior to class start time. For a list of
+                    class
+                    dates/times please see
+                    website.</p>
+                <p class="my-3"><code>Email: </code><a
+                        href="hello@davidduncansugarcraftschool.co.uk">hello@davidduncansugarcraftschool.co.uk</a>
+                </p>
+            </div>
+            <div class="col-6">
+                <div class="d-flex">
+                    <div class="overflow-hidden contact-card2">
+                        <img class="text-muted fw-semibold"
+                            src="https://www.3d-cakes.co.uk/media/wysiwyg/contact/edinburgh-store.jpg" alt="">
+                    </div>
+                    <div class="overflow-hidden contact-card2">
+                        <img class="text-muted fw-semibold"
+                            src="https://lh3.googleusercontent.com/p/AF1QipNAlr9-Yeu7MjzvFARmi6vy0Xuyxmz_A2mST_lt=s680-w680-h510"
+                            alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    </section>
+    {{-- <div class="row mt-5">
+        <div class="col-xl-12 wow fadeInUp" data-wow-duration="1s">
+            <form class="fp__contact_form">
+                @csrf
+                <h3>Contact</h3>
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="fp__contact_form_input">
+                            <span><i class="fal fa-user-alt"></i></span>
+                            <input type="text" placeholder="Name" name="name">
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6">
+                        <div class="fp__contact_form_input">
+                            <span><i class="fal fa-envelope"></i></span>
+                            <input type="email" placeholder="Email" name="email">
+                        </div>
+                    </div>
+
+                    <div class="col-xl-12 col-lg-12">
+                        <div class="fp__contact_form_input">
+                            <span><i class="fal fa-book"></i></span>
+                            <input type="text" placeholder="Subject" name="subject">
+                        </div>
+                    </div>
+                    <div class="col-xl-12">
+                        <div class="fp__contact_form_input textarea">
+                            <span><i class="fal fa-book"></i></span>
+                            <textarea rows="8" placeholder="Message" name="message"></textarea>
+                        </div>
+                        <button type="submit" class="submit_btn">Send Message</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div> --}}
     <!--=============================
-                                CONTACT PAGE END
-                            ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            CONTACT PAGE END
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
 @endsection
 
 @push('scripts')
