@@ -6205,17 +6205,14 @@ CHECKOUT PAGE START
     width: 100%;
 }
 
-.subscribe_form input {
-    padding: 20px 30px;
-    border: none;
-}
+
 
 .subscribe_form button {
     position: absolute;
     top: 50%;
-    right: 12px;
+
     transform: translateY(-50%);
-    padding: 10px 25px !important;
+
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
