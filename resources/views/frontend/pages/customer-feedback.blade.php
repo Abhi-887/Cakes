@@ -42,7 +42,7 @@ input[type="radio"]:checked ~ .fa-star {
        Customer-Feedback PAGE START
     ==============================-->
 
-    <div class="container mt-5">
+    <div class="container my-5">
         <h2>Feedback</h2>
         <p>Please fill out our feedback form to help us improve our services or simply let us know where we're doing well.</p>
         <form action="{{route('customer-feedback.store')}}" method="POST">

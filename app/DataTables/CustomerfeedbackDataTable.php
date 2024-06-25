@@ -21,14 +21,8 @@ class CustomerfeedbackDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
-            ->addColumn('action', 'work-with-us.action')
-            ->setRowId('id')
-            ->addColumn('portfolio', function($row) {
-                return '<img width="100px" src="'.asset($row->portfolio).'">';
-            })
-            ->addColumn('cv', function($row) {
-                return '<img width="100px" src="'.asset($row->cv).'">';
-            });
+            ->addColumn('action', 'customer-feedback.action')
+            ->setRowId('id');
     }
 
     /**
@@ -45,7 +39,7 @@ class CustomerfeedbackDataTable extends DataTable
     public function html(): HtmlBuilder
     {
         return $this->builder()
-                    ->setTableId('Workwithus-table')
+                    ->setTableId('customerfeedback-table')
                     ->columns($this->getColumns())
                     ->minifiedAjax()
                     ->orderBy(0)
@@ -94,6 +88,6 @@ class CustomerfeedbackDataTable extends DataTable
      */
     protected function filename(): string
     {
-        return 'Workwithus_' . date('YmdHis');
+        return 'customerfeedback_' . date('YmdHis');
     }
 }
