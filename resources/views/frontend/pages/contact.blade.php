@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                                                                                                                                                                                                                                                                BREADCRUMB START
-                                                                                                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                                                                                                                                                BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                            ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,18 +18,18 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                BREADCRUMB END
-                                                                                                                                                                                                                                    ==============================-->
+                    BREADCRUMB END
+            ==============================-->
 
 
     <!--=============================
-                                                                                                                                                                                                                                                CONTACT PAGE START
-                                                                                                                                                                                                                                     ==============================-->
+                    CONTACT PAGE START
+            ==============================-->
 
 
     <style>
         .contact-card {
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s;
             display: flex;
             flex-direction: column;
@@ -46,8 +46,8 @@
         }
 
         .contact-card2:hover img {
-            transform: scale(1.1);
-            border-radius: 20px;
+            transform: scale(1.1) !important;
+            border-radius: 20px !important;
         }
 
         .location-icon {
@@ -106,12 +106,12 @@
     </style>
 
     <div class="container py-5">
-        <h1 class="fw-bold darkblack">Address Line 1</h1>
+        <h1 class="fw-bold">Address Line 1</h1>
         <h4 class="fw-bold color-light-gray">3D Cakes Edinburgh</h4>
 
         <div class="row mt-5">
             <div class="col-md-4 mb-4">
-                <div class="contact-card rounded-2 p-4">
+                <div class="contact-card rounded-3 p-4">
                     <div class="contact-content">
                         <div class="d-flex justify-content-between align-items-center">
                             <h4 class="fw-bold color-dark-gray">Address</h4>
@@ -131,7 +131,7 @@
                 </div>
             </div>
             <div class="col-md-4 mb-4">
-                <div class="contact-card rounded-5 p-4">
+                <div class="contact-card rounded-3 p-4">
                     <div class="contact-content">
                         <div class="d-flex justify-content-between align-items-center">
                             <h4 class="fw-bold color-dark-gray">Call Now</h4>
@@ -152,7 +152,7 @@
                 </div>
             </div>
             <div class="col-md-4 mb-4">
-                <div class="contact-card rounded-5 p-4">
+                <div class="contact-card rounded-3 p-4">
                     <div class="contact-content">
                         <div class="d-flex justify-content-between align-items-center">
                             <h4 class="fw-bold color-dark-gray">Email Us</h4>
@@ -174,8 +174,8 @@
             </div>
 
             <div class="contact-card py-5">
-                <h2 class="text-center">Opening Times</h2>
-                <div class="row align-items-center py-5">
+                <h2 class="color-dark-gray text-center fw-bold">Opening Times</h2>
+                <div class="row py-5">
                     <div class="col-4">
                         <h4 class="color-light-gray mb-3">Cake orders & collections:</h4>
                         <p class="fw-semibold">Monday - Friday 9am - 5pm (please call 0131 337 9990 upon arrival if
@@ -188,18 +188,18 @@
                     </div>
                     <div class="col-4">
                         <h4 class="color-light-gray mb-3">7-Day Cake Delivery:</h4>
-                        <p class="fw-semibold text-muted">Cake design consultations are available 7 days a week<br>by
+                        <p class="fw-semibold">Cake design consultations are available 7 days a week<br>by
                             appointment only
                             (In store, via
                             telephone or Zoom).</p>
                     </div>
 
                 </div>
-                <div class="row pt-5">
+                <div class="row align-items-center pt-5">
                     <div class="col-6">
-                        <h3 class="my-2 mb-3">David Duncan Sugarcraft School Edinburgh</h3>
+                        <h3 class="my-2">David Duncan Sugarcraft School Edinburgh</h3>
                         <a class="my-2 text-muted fw-semibold" href="">www.davidduncansugarcraftschool.co.uk</a>
-                        <h4 class="my-2">Opening Times:</h4>
+                        <h4 class="fw-bold my-2">Opening Times:</h4>
                         <p class="fw-semibold my-2">Access available 30 minutes prior to class start time. For a list of
                             class
                             dates/times please see
@@ -313,8 +313,8 @@
             </div>
         </div>
         <!--=============================
-                                                                                                                                                                                                                                                                                                CONTACT PAGE END
-                                                                                                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                                                                                                                                                CONTACT PAGE END
+                                                                                                                                                                                                                                                                                                                                            ==============================-->
     @endsection
 
     @push('scripts')
