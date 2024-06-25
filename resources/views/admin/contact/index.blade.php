@@ -28,14 +28,18 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="">Phone Image</label>
-                        <input type="file" class="form-control" name="phone_image" value="{{ @$contact->phone_image }}">
+                        <label>Phone Image</label>
+                        <div id="image-preview" class="image-preview">
+                            <label for="image-upload" id="image-label">Choose File</label>
+                            <input type="file" name="phone_image" id="image-upload" value="{{ @$contact->phone_image }}"/>
+                        </div>
                     </div>
 
                     <div class="form-group">
                         <label for="">Email One</label>
                         <input type="text" class="form-control" name="mail_one" value="{{ @$contact->mail_one }}">
                     </div>
+
 
                     <div class="form-group">
                         <label for="">Email Two</label>
@@ -44,8 +48,11 @@
 
 
                     <div class="form-group">
-                        <label for="">Email Image</label>
-                        <input type="file" class="form-control" name="email_image" value="{{ @$contact->email_image }}">
+                        <label>Email Image</label>
+                        <div id="image-preview" class="image-preview">
+                            <label for="image-upload" id="image-label">Choose File</label>
+                            <input type="file" name="email_image" id="image-upload" value="{{ @$contact->email_image }}"/>
+                        </div>
                     </div>
 
                     <div class="form-group">
