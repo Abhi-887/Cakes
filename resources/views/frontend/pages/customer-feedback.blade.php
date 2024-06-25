@@ -103,7 +103,7 @@ input[type="radio"]:checked ~ .fa-star {
                 <label for="feedback" class="mb-1">Your Feedback *</label>
                 <textarea class="form-control" id="feedback" name="feedback" rows="4" required></textarea>
             </div>
-            <div class="form-group form-check mt-2">
+            <div class="form-group form-check mt-2 align-items-center">
                 <input type="checkbox" class="form-check-input" id="privacyPolicy" name="privacyPolicy" required>
                 <label class="form-check-label ms-2" for="privacyPolicy">I have read and accepted the <a href="#">privacy policy</a> *</label>
             </div>
