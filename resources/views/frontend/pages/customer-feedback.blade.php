@@ -53,16 +53,16 @@ input[type="radio"]:checked ~ .fa-star {
             <div class="form-group mt-2">
                 <label for="rating">Star Rating *</label>
                 <div id="rating" name="rating">
-                    <input type="radio" id="star5" name="rating" value="5" class="d-none">
-                    <label for="star5" class="fa fa-star"></label>
-                    <input type="radio" id="star4" name="rating" value="4" class="d-none">
-                    <label for="star4" class="fa fa-star"></label>
-                    <input type="radio" id="star3" name="rating" value="3" class="d-none">
-                    <label for="star3" class="fa fa-star"></label>
-                    <input type="radio" id="star2" name="rating" value="2" class="d-none">
-                    <label for="star2" class="fa fa-star"></label>
                     <input type="radio" id="star1" name="rating" value="1" class="d-none">
                     <label for="star1" class="fa fa-star"></label>
+                    <input type="radio" id="star2" name="rating" value="2" class="d-none">
+                    <label for="star2" class="fa fa-star"></label>
+                    <input type="radio" id="star3" name="rating" value="3" class="d-none">
+                    <label for="star3" class="fa fa-star"></label>
+                    <input type="radio" id="star4" name="rating" value="4" class="d-none">
+                    <label for="star4" class="fa fa-star"></label>
+                    <input type="radio" id="star5" name="rating" value="5" class="d-none">
+                    <label for="star5" class="fa fa-star"></label>
                 </div>
             </div>
             <div class="form-group mt-2">
