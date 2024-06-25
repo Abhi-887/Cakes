@@ -87,6 +87,7 @@ class FooterGridThreeDataTable extends DataTable
 
             Column::make('id'),
             Column::make('name'),
+            Column::make('url'),
             Column::make('status'),
             Column::computed('action')
             ->exportable(false)
