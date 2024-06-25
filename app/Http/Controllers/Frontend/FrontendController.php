@@ -296,7 +296,7 @@ class FrontendController extends Controller
         }
 
         if ($request->has('sub_category') && $request->filled('sub_category')) {
-            $products->where('sub_category', $request->sub_category);
+            $products->where('category_id', $request->sub_category);
         }
 
         $products = $products->with([
@@ -306,11 +306,24 @@ class FrontendController extends Controller
             }
         ])->withAvg('reviews', 'rating')->withCount('reviews')->paginate(12);
 
-        // Set a default category or null for subcategories filtering
-        $category = null;
-
-        return view('frontend.pages.product', compact('products', 'categories', 'category'));
+        return view('frontend.pages.product', compact('products', 'categories'));
     }
+
+    public function showCategoryProducts($slug)
+    {
+        // Retrieve the category by slug and fail if not found
+        $category = Category::where('slug', $slug)->firstOrFail();
+
+        // Retrieve subcategories of the selected parent category
+        $categories = Category::where('parent', $category->id)->get();
+
+        // Retrieve all products associated with the category, paginated
+        $products = Product::where('category_id', $category->id)->paginate(12); // Adjust per page as needed
+
+        // Pass the category, products, and subcategories to the view
+        return view('frontend.pages.product', compact('category', 'products', 'categories'));
+    }
+
 
 
     function showProduct(string $slug): View
@@ -418,19 +431,6 @@ class FrontendController extends Controller
 
         }
     }
-    public function showCategoryProducts($slug)
-    {
-        // Retrieve the category by slug and fail if not found
-        $category = Category::where('slug', $slug)->firstOrFail();
 
-        // Retrieve all categories
-        $categories = Category::all();
-
-        // Retrieve all products associated with the category, paginated
-        $products = Product::where('category_id', $category->id)->paginate(12); // Adjust per page as needed
-
-        // Pass the category, products, and categories to the view
-        return view('frontend.pages.product', compact('category', 'products', 'categories'));
-    }
 
 }

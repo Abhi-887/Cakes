@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,13 +18,13 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                            BREADCRUMB END
-                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                        BREADCRUMB END
+                                                                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
 
 
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                            CONTACT PAGE START
-                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                        CONTACT PAGE START
+                                                                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
 
 
     <style>
@@ -63,6 +63,10 @@
             color: #788a9f !important;
             transition: transform 0.6s;
         }
+
+        .rotate90 {
+            rotate: 90deg;
+        }
     </style>
 
     <div class="container py-5">
@@ -97,7 +101,7 @@
                             <h4 class="fw-bold color-dark-gray">Call Now</h4>
                             <div
                                 class="location-icon d-flex justify-content-center align-items-center btnbackground rounded-circle text-center fs-4">
-                                <a href=""><i class="fas fa-phone text-light"></i></a>
+                                <a href=""><i class="fas fa-phone text-light rotate90"></i></a>
                             </div>
                         </div>
                         <hr>
@@ -193,7 +197,7 @@
                             <h4 class="fw-bold color-dark-gray">Call Now</h4>
                             <div
                                 class="location-icon d-flex justify-content-center align-items-center btnbackground rounded-circle text-center fs-4">
-                                <a href=""><i class="fas fa-phone text-light"></i></a>
+                                <a href=""><i class="fas fa-phone text-light rotate90"></i></a>
                             </div>
                         </div>
                         <hr>
@@ -306,9 +310,9 @@
                 <div class="mt-4">
                     <h4 class="fw-bold">Follow Us:</h4>
                     <div class="social-icons contact-social-icons mt-3">
-                        <a href="#"><i class="fab fa-facebook fs-3 color-dark-gray"></i></a>
-                        <a href="#"><i class="fab fa-google-plus-g fs-3 color-dark-gray"></i></a>
-                        <a href="#"><i class="fab fa-twitter fs-3 color-dark-gray"></i></a>
+                        <a class="me-2" href="#"><i class="fab fa-facebook fs-3 color-dark-gray"></i></a>
+                        <a class="me-2" href="#"><i class="fab fa-google-plus-g fs-3 color-dark-gray"></i></a>
+                        <a class="me-2" href="#"><i class="fab fa-twitter fs-3 color-dark-gray"></i></a>
                     </div>
                 </div>
             </div>
@@ -351,8 +355,8 @@
         </div>
     </div>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        CONTACT PAGE END
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    CONTACT PAGE END
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
 @endsection
 
 @push('scripts')
