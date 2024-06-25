@@ -57,6 +57,37 @@
                         <input type="text" class="form-control" name="map_link" value="{{ @$contact->map_link }}">
                     </div>
 
+                    <div class="form-group">
+                        <label for="">Title One</label>
+                        <input type="text" class="form-control" name="title" value="{{ @$contact->title }}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Description</label>
+                        <textarea name="text"   class="form-control summernote">{{@$contact->Description}}</textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Title Two</label>
+                        <input type="text" class="form-control" name="title" value="{{ @$contact->title }}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Description</label>
+                        <textarea name="text"   class="form-control summernote">{{@$contact->Description}}</textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Title Three</label>
+                        <input type="text" class="form-control" name="title" value="{{ @$contact->title }}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Description</label>
+                        <textarea name="text"   class="form-control summernote">{{@$contact->Description}}</textarea>
+                    </div>
+
+
                     <button type="submit" class="btn btn-primary">Update</button>
                 </form>
             </div>
