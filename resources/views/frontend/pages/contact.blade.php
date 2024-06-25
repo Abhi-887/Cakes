@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                            BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,13 +18,13 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                    BREADCRUMB END
-                                                                                                            ==============================-->
+                                                                                                                                BREADCRUMB END
+                                                                                                                        ==============================-->
 
 
     <!--=============================
-                                                                                                                    CONTACT PAGE START
-                                                                                                            ==============================-->
+                                                                                                                                CONTACT PAGE START
+                                                                                                                        ==============================-->
 
 
     <style>
@@ -358,13 +358,15 @@
             </p>
         </div>
         <div class="col-6">
-            <div class="overflow-hidden contact-card2">
-                <img class="text-muted fw-semibold"
-                    src="https://www.3d-cakes.co.uk/media/wysiwyg/contact/edinburgh-store.jpg" alt="">
-            </div>
-            <div class="overflow-hidden contact-card2">
-                <img class="text-muted fw-semibold"
-                    src="https://s3.geograph.org.uk/geophotos/06/84/96/6849671_3b57f20d_1024x1024.jpg" alt="">
+            <div class="d-flex w-50">
+                <div class="overflow-hidden contact-card2">
+                    <img class="text-muted fw-semibold"
+                        src="https://www.3d-cakes.co.uk/media/wysiwyg/contact/edinburgh-store.jpg" alt="">
+                </div>
+                <div class="overflow-hidden contact-card2">
+                    <img class="text-muted fw-semibold"
+                        src="https://s3.geograph.org.uk/geophotos/06/84/96/6849671_3b57f20d_1024x1024.jpg" alt="">
+                </div>
             </div>
         </div>
     </div>
@@ -406,8 +408,8 @@
         </div>
     </div>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                CONTACT PAGE END
-                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                            CONTACT PAGE END
+                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
 @endsection
 
 @push('scripts')
