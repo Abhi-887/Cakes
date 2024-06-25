@@ -296,12 +296,12 @@ button {
 .droap_menu{
     box-shadow: var(--boxShadow);
     width: 250px;
-    top: 30px !important;
-    transition: ease 0.3s;
+    top: 25px !important;
+    /* transition: ease 0.4s;
     -webkit-transition: ease 0.3s;
     -moz-transition: ease 0.3s;
     -ms-transition: ease 0.3s;
-    -o-transition: ease 0.3s;
+    -o-transition: ease 0.3s; */
 }
 
 .droap_menu li a {
