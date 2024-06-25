@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                    BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,13 +18,13 @@
         </div>
     </section>
     <!--=============================
-                                                                    BREADCRUMB END
-                                                            ==============================-->
+                                                                                                        BREADCRUMB END
+                                                                                                ==============================-->
 
 
     <!--=============================
-                                                                    CONTACT PAGE START
-                                                            ==============================-->
+                                                                                                        CONTACT PAGE START
+                                                                                                ==============================-->
 
 
     <style>
@@ -142,7 +142,7 @@
                         </div>
                         <hr>
                         <p class="text-muted fw-semibold">
-                            <small>Phone service available Monday - Sunday 0131 337 9990.</small>
+                            <small>Phone: service available Monday - Sunday 0131 337 9990.</small>
                         </p>
                     </div>
                     <div class="img-container overflow-hidden rounded-3">
@@ -163,7 +163,7 @@
                         </div>
                         <hr>
                         <p class="text-muted fw-semibold">
-                            <small>enquiries@3d-cakes.co.uk</small>
+                            <small>Email: enquiries@3d-cakes.co.uk</small>
                         </p>
                     </div>
                     <div class="img-container overflow-hidden rounded-3">
@@ -191,28 +191,6 @@
                         <h4 class="color-light-gray mb-3">7-Day Cake Delivery:</h4>
                         <p class="fw-semibold">Cake design consultations are available 7 days a week<br>by appointment only
                             (In store, via telephone or Zoom).</p>
-                    </div>
-                </div>
-
-                <hr>
-                <div class="row align-items-center pt-5">
-                    <div class="col-6">
-                        <h4 class="color-dark-gray my-3">David Duncan Sugarcraft School Edinburgh</h4>
-                        <a class="my-3 text-muted fw-semibold" href="">www.davidduncansugarcraftschool.co.uk</a>
-                        <h4 class="fw-bold my-3">Opening Times:</h4>
-                        <p class="fw-semibold my-3">Access available 30 minutes prior to class start time. For a list of
-                            class
-                            dates/times please see
-                            website.</p>
-                        <p class="my-3"><code>Email: </code><a
-                                href="hello@davidduncansugarcraftschool.co.uk">hello@davidduncansugarcraftschool.co.uk</a>
-                        </p>
-                    </div>
-                    <div class="col-6">
-                        <div class="overflow-hidden contact-card2">
-                            <img class="text-muted fw-semibold"
-                                src="https://www.3d-cakes.co.uk/media/wysiwyg/contact/edinburgh-store.jpg" alt="">
-                        </div>
                     </div>
                 </div>
             </div>
@@ -275,7 +253,7 @@
 
     <div class="container py-5">
         <h1 class="fw-bold">Address Line 2</h1>
-        <h4 class="fw-bold color-light-gray">3D Cakes Edinburgh</h4>
+        <h4 class="fw-bold color-light-gray">3D Cakes Milngavie</h4>
 
         <div class="row mt-5">
             <div class="col-md-4 mb-4">
@@ -289,7 +267,7 @@
                             </div>
                         </div>
                         <hr>
-                        <p class="text-muted fw-semibold"><small>20 Roseburn Terrace<br>Edinburgh Midlothian EH12
+                        <p class="text-muted fw-semibold"><small>38 Station Road<br>G62 8AB
                                 6AW</small></p>
                     </div>
                     <div class="img-container overflow-hidden rounded-3">
@@ -310,7 +288,8 @@
                         </div>
                         <hr>
                         <p class="text-muted fw-semibold">
-                            <small>Phone service available Monday - Sunday 0131 337 9990.</small>
+                            <small>Phone: service available Monday - Sunday 0141 378 0027.
+                            </small>
                         </p>
                     </div>
                     <div class="img-container overflow-hidden rounded-3">
@@ -331,7 +310,7 @@
                         </div>
                         <hr>
                         <p class="text-muted fw-semibold">
-                            <small>enquiries@3d-cakes.co.uk</small>
+                            <small>Email: glasgow@3d-cakes.co.uk</small>
                         </p>
                     </div>
                     <div class="img-container overflow-hidden rounded-3">
@@ -346,102 +325,49 @@
                 <div class="row py-5">
                     <div class="col-md-4">
                         <h4 class="color-light-gray mb-3">Cake orders & collections:</h4>
-                        <p class="fw-semibold">Monday - Friday 9am - 5pm (please call 0131 337 9990 upon arrival if
-                            collecting after 2pm)<br>Saturday: 9am - 4pm<br>Sunday: 10am - 3pm (by appointment only)</p>
+                        <p class="fw-semibold">Monday - Friday 9am - 5pm<br>Saturday: 9am - 4pm<br>Sunday: 10am - 3pm (by
+                            appointment only)</p>
                     </div>
                     <div class="col-md-4 d-flex justify-content-center">
                         <div>
                             <h4 class="color-light-gray mb-3">Coffee & Cake:</h4>
-                            <p class="fw-semibold">Monday - Friday 9am - 2pm<br>Saturday: 9am - 4pm<br>Sunday: Closed</p>
+                            <p class="fw-semibold">Monday - Friday 9am - 4pm<br>Saturday: 9am - 4pm<br>Sunday: Closed</p>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <h4 class="color-light-gray mb-3">7-Day Cake Delivery:</h4>
-                        <p class="fw-semibold">Cake design consultations are available 7 days a week<br>by appointment only
-                            (In store, via telephone or Zoom).</p>
-                    </div>
-                </div>
-
-                <hr>
-                <div class="row align-items-center pt-5">
-                    <div class="col-6">
-                        <h4 class="color-dark-gray my-3">David Duncan Sugarcraft School Edinburgh</h4>
-                        <a class="my-3 text-muted fw-semibold" href="">www.davidduncansugarcraftschool.co.uk</a>
-                        <h4 class="fw-bold my-3">Opening Times:</h4>
-                        <p class="fw-semibold my-3">Access available 30 minutes prior to class start time. For a list of
-                            class
-                            dates/times please see
-                            website.</p>
-                        <p class="my-3"><code>Email: </code><a
-                                href="hello@davidduncansugarcraftschool.co.uk">hello@davidduncansugarcraftschool.co.uk</a>
-                        </p>
-                    </div>
-                    <div class="col-6">
-                        <div class="overflow-hidden contact-card2">
-                            <img class="text-muted fw-semibold"
-                                src="https://www.3d-cakes.co.uk/media/wysiwyg/contact/edinburgh-store.jpg" alt="">
-                        </div>
+                        <p class="fw-semibold">Cake design consultations are available<br>7 days a week by appointment
+                            only.</p>
                     </div>
                 </div>
             </div>
-            {{-- <div class="row mt-5 pt-5">
-                <div class="col-6">
-                    <h4 class="fw-bold lightblue">Contact Us</h4>
-                    <div class="mb-4">
-                        <h1 class="fw-bold darkblack">Get in touch with us today</h1>
-                        <p class="text-secondary fw-semibold">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                            accusantium,
-                            totam rem aperiam, eaque
-                            ipsa
-                            quae ab illo inventore et.</p>
-                    </div>
-
-                    <div class="mt-4">
-                        <h5>Follow Us:</h5>
-                        <div class="social-icons">
-                            <a href="#"><img src="https://img.icons8.com/color/48/000000/facebook-new.png" /></a>
-                            <a href="#"><img src="https://img.icons8.com/color/48/000000/instagram-new.png" /></a>
-                            <a href="#"><img src="https://img.icons8.com/color/48/000000/linkedin.png" /></a>
-                            <a href="#"><img src="https://img.icons8.com/color/48/000000/twitter.png" /></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="formbg p-5 rounded-4">
-                        <form>
-                            <div class="row g-3 mb-3">
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="First Name">
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="Last Name">
-                                </div>
-                            </div>
-                            <div class="row g-3 mb-3">
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="Phone">
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="email" class="form-control" placeholder="Email">
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <input type="text" class="form-control" placeholder="Subjects">
-                            </div>
-                            <div class="mb-3">
-                                <textarea class="form-control" rows="4" placeholder="Message"></textarea>
-                            </div>
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-primary">Send A Message</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div> --}}
         </div>
     </div>
-
-
+    <hr>
+    <div class="row align-items-center pt-5">
+        <div class="col-6">
+            <h4 class="color-dark-gray my-3">David Duncan Sugarcraft School Edinburgh</h4>
+            <a class="my-3 text-muted fw-semibold" href="">www.davidduncansugarcraftschool.co.uk</a>
+            <h4 class="fw-bold my-3">Opening Times:</h4>
+            <p class="fw-semibold my-3">Access available 30 minutes prior to class start time. For a list of
+                class
+                dates/times please see
+                website.</p>
+            <p class="my-3"><code>Email: </code><a
+                    href="hello@davidduncansugarcraftschool.co.uk">hello@davidduncansugarcraftschool.co.uk</a>
+            </p>
+        </div>
+        <div class="col-6">
+            <div class="overflow-hidden contact-card2">
+                <img class="text-muted fw-semibold"
+                    src="https://www.3d-cakes.co.uk/media/wysiwyg/contact/edinburgh-store.jpg" alt="">
+            </div>
+            <div class="overflow-hidden contact-card2">
+                <img class="text-muted fw-semibold"
+                    src="https://s3.geograph.org.uk/geophotos/06/84/96/6849671_3b57f20d_1024x1024.jpg" alt="">
+            </div>
+        </div>
+    </div>
 
     <div class="row mt-5">
         <div class="col-xl-12 wow fadeInUp" data-wow-duration="1s">
@@ -480,8 +406,8 @@
         </div>
     </div>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                CONTACT PAGE END
-                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                    CONTACT PAGE END
+                                                                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
 @endsection
 
 @push('scripts')
