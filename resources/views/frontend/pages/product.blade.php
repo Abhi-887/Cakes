@@ -5,11 +5,19 @@
     <div class="fp__breadcrumb_overlay">
         <div class="container">
             <div class="fp__breadcrumb_text">
+                @if(isset($category))
                 <h1>{{ $category->name }}</h1>
                 <ul>
                     <li><a href="{{ url('/') }}">Home</a></li>
                     <li><a href="javascript:;">{{ $category->name }}</a></li>
                 </ul>
+                @else
+                <h1>All Products</h1>
+                <ul>
+                    <li><a href="{{ url('/') }}">Home</a></li>
+                    <li><a href="javascript:;">All Products</a></li>
+                </ul>
+                @endif
             </div>
         </div>
     </div>
@@ -21,7 +29,6 @@
         -moz-appearance: button;
     }
 </style>
-
 
 <section class="fp__search_menu mt_120 xs_mt_90 mb_100 xs_mb_70">
     <div class="container">
