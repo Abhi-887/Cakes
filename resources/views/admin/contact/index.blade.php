@@ -37,6 +37,15 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="">Image</label>
+                        <input type="file" class="form-control" name="image" value="{{ @$contact->image }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Image</label>
+                        <input type="file" class="form-control" name="image" value="{{ @$contact->image }}">
+                    </div>
+
+                    <div class="form-group">
                         <label for="">Address</label>
 
 						<textarea name="address" class="form-control summernote">{{ @$contact->address }}</textarea>
@@ -44,7 +53,6 @@
 
                     <div class="form-group">
                         <label for="">Image</label>
-
                         <input type="file" class="form-control" name="image" value="{{ @$contact->image }}">
                     </div>
 
