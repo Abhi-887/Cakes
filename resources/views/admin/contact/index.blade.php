@@ -18,12 +18,18 @@
 
                     <div class="form-group">
                         <label for="">Phone One</label>
-                        <input type="text" class="form-control" name="phone_one" value="{{ @$contact->phone_one }}">
+                        <textarea name="text"   class="form-control summernote">{{@$contact->phone_one}}</textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="">Phone Two</label>
-                        <input type="text" class="form-control" name="phone_two" value="{{ @$contact->phone_two }}">
+
+                        <textarea name="text"   class="form-control summernote">{{@$contact->phone_two}}</textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Image</label>
+                        <input type="file" class="form-control" name="image" value="{{ @$contact->image }}">
                     </div>
 
                     <div class="form-group">
@@ -36,10 +42,7 @@
                         <input type="text" class="form-control" name="mail_two" value="{{ @$contact->mail_two }}">
                     </div>
 
-                    <div class="form-group">
-                        <label for="">Image</label>
-                        <input type="file" class="form-control" name="image" value="{{ @$contact->image }}">
-                    </div>
+
                     <div class="form-group">
                         <label for="">Image</label>
                         <input type="file" class="form-control" name="image" value="{{ @$contact->image }}">
