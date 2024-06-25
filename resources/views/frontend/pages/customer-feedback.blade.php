@@ -96,7 +96,7 @@ input[type="radio"]:checked ~ .fa-star {
                 <label for="store">Which store did you use? *</label>
                 <select class="form-control" id="store" name="store" required>
                     <option value="Edinburgh">Edinburgh</option>
-                    <!-- Add other store locations as needed -->
+                    <option value="Glasgow">Glasgow</option>
                 </select>
             </div>
             <div class="form-group mt-2">
