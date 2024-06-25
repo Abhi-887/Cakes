@@ -41,11 +41,11 @@
                 <div class="col-xl-4 col-md-5">
                     <select class="py-2 form-control rounded-pill" name="sub_category" id="sub_category">
                         <option value="">All</option>
-                        @foreach ($categories as $category)
-                        @if ($parentCategory && $category->parent == $parentCategory)
-                        <option value="{{ $category->id }}" {{ request()->sub_category == $category->id ? 'selected' :
-                            '' }}>
-                            {{ $category->name }}
+                        @foreach ($categories as $subCategory)
+                        @if ($subCategory->parent == $category->id)
+                        <option value="{{ $subCategory->id }}" {{ request()->sub_category == $subCategory->id ?
+                            'selected' : '' }}>
+                            {{ $subCategory->name }}
                         </option>
                         @endif
                         @endforeach
@@ -71,6 +71,7 @@
         }
     });
 </script>
+
 
 
 <div class="row">
