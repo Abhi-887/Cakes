@@ -10,6 +10,7 @@
 .fa-star {
     font-size: 24px;
     color: #ddd;
+    cursor: pointer;
 }
 
 .fa-star:hover,
@@ -44,33 +45,27 @@ input[type="radio"]:checked ~ .fa-star {
     <div class="container mt-5">
         <h2>Feedback</h2>
         <p>Please fill out our feedback form to help us improve our services or simply let us know where we're doing well.</p>
-        <form class="" action="{{route('customer-feedback.store')}}" method="POST">
+        <form action="{{route('customer-feedback.store')}}" method="POST">
             @csrf
             <div class="form-group mt-2">
-                <label for="name">Your Name *</label>
+                <label for="name" class="mb-1">Your Name *</label>
                 <input type="text" class="form-control" id="name" name="name" required>
             </div>
             <div class="form-group mt-2">
-                <label for="rating">Star Rating *</label>
+                <label for="rating" class="mb-1">Star Rating *</label>
                 <div id="rating" name="rating">
-                    <input type="radio" id="star1" name="rating" value="1" class="d-none">
-                    <label for="star1" class="fa fa-star"></label>
-                    <input type="radio" id="star2" name="rating" value="2" class="d-none">
-                    <label for="star2" class="fa fa-star"></label>
-                    <input type="radio" id="star3" name="rating" value="3" class="d-none">
-                    <label for="star3" class="fa fa-star"></label>
-                    <input type="radio" id="star4" name="rating" value="4" class="d-none">
-                    <label for="star4" class="fa fa-star"></label>
-                    <input type="radio" id="star5" name="rating" value="5" class="d-none">
-                    <label for="star5" class="fa fa-star"></label>
+                    @for ($i = 1; $i <= 5; $i++)
+                        <input type="radio" id="star{{ $i }}" name="rating" value="{{ $i }}" class="d-none">
+                        <label for="star{{ $i }}" class="fa fa-star" aria-label="{{ $i }} stars"></label>
+                    @endfor
                 </div>
             </div>
             <div class="form-group mt-2">
-                <label for="email">Your Email Address *</label>
+                <label for="email" class="mb-1">Your Email Address *</label>
                 <input type="email" class="form-control" id="email" name="email" required>
             </div>
             <div class="form-group mt-2">
-                <label>Which service(s) did you use? *</label>
+                <label class="mb-1">Which service(s) did you use? *</label>
                 <div class="form-check d-flex align-items-center">
                     <input class="form-check-input" type="checkbox" value="Cakes Store" id="cakesStore" name="services[]">
                     <label class="form-check-label ms-2" for="cakesStore">Cakes Store</label>
@@ -93,27 +88,23 @@ input[type="radio"]:checked ~ .fa-star {
                 </div>
             </div>
             <div class="form-group mt-2">
-                <label for="store">Which store did you use? *</label>
+                <label for="store" class="mb-1">Which store did you use? *</label>
                 <select class="form-control" id="store" name="store" required>
                     <option value="Edinburgh">Edinburgh</option>
                     <option value="Glasgow">Glasgow</option>
                 </select>
             </div>
             <div class="form-group mt-2">
-                <label for="feedback">Your Feedback *</label>
+                <label for="feedback" class="mb-1">Your Feedback *</label>
                 <textarea class="form-control" id="feedback" name="feedback" rows="4" required></textarea>
             </div>
-            <div class="form-group form-check mt-2">
+            <div class="form-group form-check mt-2 align-items-center">
                 <input type="checkbox" class="form-check-input" id="privacyPolicy" name="privacyPolicy" required>
-                <label class="form-check-label" for="privacyPolicy">I have read and accepted the <a href="#">privacy policy</a> *</label>
+                <label class="form-check-label ms-2" for="privacyPolicy">I have read and accepted the <a href="#">privacy policy</a> *</label>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="mt-5"><button type="submit" class="btn btn-primary">Submit</button></div>
         </form>
     </div>
-
-
-
-
 
     <!--=============================
         Customer-Feedback  PAGE END
