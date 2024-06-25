@@ -28,7 +28,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="">Image</label>
+                        <label for="">Phone Image</label>
                         <input type="file" class="form-control" name="image" value="{{ @$contact->image }}">
                     </div>
 
@@ -44,7 +44,7 @@
 
 
                     <div class="form-group">
-                        <label for="">Image</label>
+                        <label for="">Email Image</label>
                         <input type="file" class="form-control" name="image" value="{{ @$contact->image }}">
                     </div>
 
