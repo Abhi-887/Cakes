@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                            BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                    BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,13 +18,13 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                BREADCRUMB END
-                                                                                                                        ==============================-->
+                                                                                                                                        BREADCRUMB END
+                                                                                                                                ==============================-->
 
 
     <!--=============================
-                                                                                                                                CONTACT PAGE START
-                                                                                                                        ==============================-->
+                                                                                                                                        CONTACT PAGE START
+                                                                                                                                ==============================-->
 
 
     <style>
@@ -344,28 +344,31 @@
         </div>
     </div>
     <hr>
-    <div class="row align-items-center pt-5">
-        <div class="col-6">
-            <h4 class="color-dark-gray my-3">David Duncan Sugarcraft School Edinburgh</h4>
-            <a class="my-3 text-muted fw-semibold" href="">www.davidduncansugarcraftschool.co.uk</a>
-            <h4 class="fw-bold my-3">Opening Times:</h4>
-            <p class="fw-semibold my-3">Access available 30 minutes prior to class start time. For a list of
-                class
-                dates/times please see
-                website.</p>
-            <p class="my-3"><code>Email: </code><a
-                    href="hello@davidduncansugarcraftschool.co.uk">hello@davidduncansugarcraftschool.co.uk</a>
-            </p>
-        </div>
-        <div class="col-6">
-            <div class="d-flex w-50">
-                <div class="overflow-hidden contact-card2">
-                    <img class="text-muted fw-semibold"
-                        src="https://www.3d-cakes.co.uk/media/wysiwyg/contact/edinburgh-store.jpg" alt="">
-                </div>
-                <div class="overflow-hidden contact-card2">
-                    <img class="text-muted fw-semibold"
-                        src="https://s3.geograph.org.uk/geophotos/06/84/96/6849671_3b57f20d_1024x1024.jpg" alt="">
+    <div class="container">
+        <div class="row align-items-center pt-5">
+            <div class="col-6">
+                <h4 class="color-dark-gray my-3">David Duncan Sugarcraft School Edinburgh</h4>
+                <a class="my-3 text-muted fw-semibold" href="">www.davidduncansugarcraftschool.co.uk</a>
+                <h4 class="fw-bold my-3">Opening Times:</h4>
+                <p class="fw-semibold my-3">Access available 30 minutes prior to class start time. For a list of
+                    class
+                    dates/times please see
+                    website.</p>
+                <p class="my-3"><code>Email: </code><a
+                        href="hello@davidduncansugarcraftschool.co.uk">hello@davidduncansugarcraftschool.co.uk</a>
+                </p>
+            </div>
+            <div class="col-6">
+                <div class="d-flex">
+                    <div class="overflow-hidden contact-card2">
+                        <img class="text-muted fw-semibold"
+                            src="https://www.3d-cakes.co.uk/media/wysiwyg/contact/edinburgh-store.jpg" alt="">
+                    </div>
+                    <div class="overflow-hidden contact-card2">
+                        <img class="text-muted fw-semibold"
+                            src="https://s3.geograph.org.uk/geophotos/06/84/96/6849671_3b57f20d_1024x1024.jpg"
+                            alt="">
+                    </div>
                 </div>
             </div>
         </div>
@@ -408,8 +411,8 @@
         </div>
     </div>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                            CONTACT PAGE END
-                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                    CONTACT PAGE END
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
 @endsection
 
 @push('scripts')

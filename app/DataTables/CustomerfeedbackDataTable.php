@@ -61,25 +61,12 @@ class CustomerfeedbackDataTable extends DataTable
     {
         return [
             Column::make('id'),
-            Column::make('job_reference'),
             Column::make('name'),
             Column::make('email'),
-            Column::make('telephone'),
-            Column::make('driving_license'),
-            Column::make('why_ideal'),
-            Column::make('relevant_experience'),
-            Column::make('current_position_duration'),
-            Column::computed('portfolio')
-                ->exportable(false)
-                ->printable(false)
-                ->width(60)
-                ->addClass('text-center'),
-
-            Column::computed('cv')
-                ->exportable(false)
-                ->printable(false)
-                ->width(60)
-                ->addClass('text-center'),
+            Column::make('rating'),
+            Column::make('services'),
+            Column::make('store'),
+            Column::make('feedback'),
         ];
     }
 
