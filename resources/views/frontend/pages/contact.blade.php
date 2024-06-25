@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,13 +18,13 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                BREADCRUMB END
-                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                            BREADCRUMB END
+                                                                                                                                                                                                                                                                                                                    ==============================-->
 
 
     <!--=============================
-                                                                                                                                                                                                                                                                                                                CONTACT PAGE START
-                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                            CONTACT PAGE START
+                                                                                                                                                                                                                                                                                                                    ==============================-->
 
 
     <style>
@@ -331,10 +331,10 @@
     </div>
 
     <div class="container">
-        <div class="row my-5">
+        <div class="row align-items-center my-5">
             <div class="col-md-6">
                 <div class="mb-4">
-                    <h1 class="fw-bold darkblack">Get in touch with us today</h1>
+                    <h1 class="fw-bold color-dark-gray">Get in touch with us today</h1>
                     <p class="text-secondary fw-semibold my-4">Sed ut perspiciatis unde omnis iste natus error sit
                         voluptatem
                         accusantium,
@@ -345,10 +345,10 @@
 
                 <div class="mt-4">
                     <h4 class="fw-bold">Follow Us:</h4>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-google-plus-g"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    <div class="social-icons mt-3">
+                        <a href="#"><i class="fab fa-facebook fs-3"></i></a>
+                        <a href="#"><i class="fab fa-google-plus-g fs-3"></i></a>
+                        <a href="#"><i class="fab fa-twitter fs-3"></i></a>
                     </div>
                 </div>
             </div>
@@ -356,7 +356,7 @@
                 <div class="formbg rounded-4">
                     <form class="formbg fp__contact_form">
                         @csrf
-                        <h3>Contact</h3>
+                        <h3 class="color-dark-gray">Contact</h3>
                         <div class="row">
                             <div class="col-xl-6 col-lg-6">
                                 <div class="fp__contact_form_input">
@@ -391,8 +391,8 @@
         </div>
     </div>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            CONTACT PAGE END
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        CONTACT PAGE END
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
 @endsection
 
 @push('scripts')
