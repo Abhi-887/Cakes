@@ -47,7 +47,7 @@
                         <div class="form-group">
                             <label>address</label>
 
-                            <textarea name="address"   class="form-control summernote">{{@$footerInfo->address}}</textarea>
+                            <textarea name="address"   class="form-control summernote">{{@$footerInfo-> }}</textarea>
                         </div>
 
 
