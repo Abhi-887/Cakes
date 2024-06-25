@@ -16,7 +16,8 @@
                 </div>
             </div>
             <div class="card-body">
-                {{ $dataTable->table() }}
+
+                {!! $dataTable->table(['class' => 'table table-bordered table-hover table-striped']) !!}
             </div>
         </div>
     </section>
