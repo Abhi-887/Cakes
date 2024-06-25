@@ -426,7 +426,7 @@ class FrontendController extends Controller
         // Retrieve the category by slug and fail if not found
         $category = Category::where('slug', $slug)->firstOrFail();
 
-        // Retrieve all parent categories
+        // Retrieve all categories
         $categories = Category::all();
 
         // Retrieve all products associated with the category, paginated
