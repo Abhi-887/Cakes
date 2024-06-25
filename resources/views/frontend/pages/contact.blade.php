@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,13 +18,13 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                            BREADCRUMB END
-                                                                                                                                                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                                                                                                                                            BREADCRUMB END
+                                                                                                                                                                                                                                                                                                                                    ==============================-->
 
 
     <!--=============================
-                                                                                                                                                                                                                                                                                                                            CONTACT PAGE START
-                                                                                                                                                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                                                                                                                                            CONTACT PAGE START
+                                                                                                                                                                                                                                                                                                                                    ==============================-->
 
 
     <style>
@@ -139,7 +139,7 @@
                         </div>
                         <hr>
                         <p class="text-muted fw-semibold">
-                            Phone: service available Monday - Sunday 0131 337 9990.
+                            Phone: service available Monday - Sunday <a href="tel:01313379990"></a>0131 337 9990.
                         </p>
                     </div>
                     <div class="img-container overflow-hidden rounded-3">
@@ -160,7 +160,7 @@
                         </div>
                         <hr>
                         <p class="text-muted fw-semibold">
-                            Email: enquiries@3d-cakes.co.uk
+                            <a href="mailto:enquiries@3d-cakes.co.uk"></a>Email: enquiries@3d-cakes.co.uk
                         </p>
                     </div>
                     <div class="img-container overflow-hidden rounded-3">
@@ -235,7 +235,7 @@
                         </div>
                         <hr>
                         <p class="text-muted fw-semibold">
-                            Phone: service available Monday - Sunday 0141 378 0027.
+                            Phone: service available Monday - Sunday <a href="tel:01413780027"></a>0141 378 0027.
                         </p>
                     </div>
                     <div class="img-container overflow-hidden rounded-3">
@@ -256,7 +256,7 @@
                         </div>
                         <hr>
                         <p class="text-muted fw-semibold">
-                            Email: glasgow@3d-cakes.co.uk
+                            <a href="mailto:glasgow@3d-cakes.co.uk"></a>Email: glasgow@3d-cakes.co.uk
                         </p>
                     </div>
                     <div class="img-container overflow-hidden rounded-3">
@@ -391,8 +391,8 @@
         </div>
     </div>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        CONTACT PAGE END
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        CONTACT PAGE END
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
 @endsection
 
 @push('scripts')
