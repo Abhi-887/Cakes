@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,13 +18,13 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                        BREADCRUMB END
-                                                                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                BREADCRUMB END
+                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
 
 
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                        CONTACT PAGE START
-                                                                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                CONTACT PAGE START
+                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
 
 
     <style>
@@ -138,27 +138,32 @@
             </div>
 
             <div class="contact-card py-5">
-                <h2 class="color-dark-gray text-center fw-bold">Opening Times</h2>
-                <div class="row pt-5">
-                    <div class="col-md-4 d-flex justify-content-center text-center text-md-start">
-                        <div>
-                            <h4 class="color-light-gray mb-3">Cake orders & collections:</h4>
-                            <p class="fw-semibold">Monday - Friday 9am - 5pm (please call 0131 337 9990 upon arrival if
-                                collecting after 2pm)<br>Saturday: 9am - 4pm<br>Sunday: 10am - 3pm (by appointment only)</p>
+                <div class="row">
+                    <h2 class="color-dark-gray text-center fw-bold">Opening Times</h2>
+                    <div class="row pt-5">
+                        <div class="col-md-4 d-flex justify-content-center text-center text-md-start">
+                            <div>
+                                <h4 class="color-light-gray mb-3">Cake orders & collections:</h4>
+                                <p class="fw-semibold">Monday - Friday 9am - 5pm (please call 0131 337 9990 upon arrival if
+                                    collecting after 2pm)<br>Saturday: 9am - 4pm<br>Sunday: 10am - 3pm (by appointment only)
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-4 d-flex justify-content-md-center text-center text-md-start">
-                        <div>
-                            <h4 class="color-light-gray mb-3">Coffee & Cake:</h4>
-                            <p class="fw-semibold">Monday - Friday 9am - 2pm<br>Saturday: 9am - 4pm<br>Sunday: Closed</p>
+                        <div class="col-md-4 d-flex justify-content-md-center text-center text-md-start">
+                            <div>
+                                <h4 class="color-light-gray mb-3">Coffee & Cake:</h4>
+                                <p class="fw-semibold">Monday - Friday 9am - 2pm<br>Saturday: 9am - 4pm<br>Sunday: Closed
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-4 d-flex justify-content-md-center text-center text-md-start">
-                        <div>
-                            <h4 class="color-light-gray mb-3">7-Day Cake Delivery:</h4>
-                            <p class="fw-semibold">Cake design consultations are available 7 days a week<br>by appointment
-                                only
-                                (In store, via telephone or Zoom).</p>
+                        <div class="col-md-4 d-flex justify-content-md-center text-center text-md-start">
+                            <div>
+                                <h4 class="color-light-gray mb-3">7-Day Cake Delivery:</h4>
+                                <p class="fw-semibold">Cake design consultations are available 7 days a week<br>by
+                                    appointment
+                                    only
+                                    (In store, via telephone or Zoom).</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -234,27 +239,32 @@
             </div>
 
             <div class="contact-card py-5">
-                <h2 class="color-dark-gray text-center fw-bold">Opening Times</h2>
-                <div class="row pt-5">
-                    <div class="col-md-4 d-flex justify-content-center text-center text-md-start">
-                        <div>
-                            <h4 class="color-light-gray mb-3">Cake orders & collections:</h4>
-                            <p class="fw-semibold">Monday - Friday 9am - 5pm<br>Saturday: 9am - 4pm<br>Sunday: 10am - 3pm
-                                (by
-                                appointment only)</p>
+                <div class="row">
+                    <h2 class="color-dark-gray text-center fw-bold">Opening Times</h2>
+                    <div class="row pt-5">
+                        <div class="col-md-4 d-flex justify-content-center text-center text-md-start">
+                            <div>
+                                <h4 class="color-light-gray mb-3">Cake orders & collections:</h4>
+                                <p class="fw-semibold">Monday - Friday 9am - 5pm<br>Saturday: 9am - 4pm<br>Sunday: 10am -
+                                    3pm
+                                    (by
+                                    appointment only)</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-4 d-flex justify-content-center text-center text-md-start">
-                        <div>
-                            <h4 class="color-light-gray mb-3">Coffee & Cake:</h4>
-                            <p class="fw-semibold">Monday - Friday 9am - 4pm<br>Saturday: 9am - 4pm<br>Sunday: Closed</p>
+                        <div class="col-md-4 d-flex justify-content-center text-center text-md-start">
+                            <div>
+                                <h4 class="color-light-gray mb-3">Coffee & Cake:</h4>
+                                <p class="fw-semibold">Monday - Friday 9am - 4pm<br>Saturday: 9am - 4pm<br>Sunday: Closed
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-4 d-flex justify-content-center text-center text-md-start">
-                        <div>
-                            <h4 class="color-light-gray mb-3">7-Day Cake Delivery:</h4>
-                            <p class="fw-semibold">Cake design consultations are available<br>7 days a week by appointment
-                                only.</p>
+                        <div class="col-md-4 d-flex justify-content-center text-center text-md-start">
+                            <div>
+                                <h4 class="color-light-gray mb-3">7-Day Cake Delivery:</h4>
+                                <p class="fw-semibold">Cake design consultations are available<br>7 days a week by
+                                    appointment
+                                    only.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -355,8 +365,8 @@
         </div>
     </div>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    CONTACT PAGE END
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            CONTACT PAGE END
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
 @endsection
 
 @push('scripts')
