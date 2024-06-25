@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,13 +18,13 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                        BREADCRUMB END
-                                                                                                                                ==============================-->
+                                                                                                                                                                BREADCRUMB END
+                                                                                                                                                        ==============================-->
 
 
     <!--=============================
-                                                                                                                                        CONTACT PAGE START
-                                                                                                                                ==============================-->
+                                                                                                                                                                CONTACT PAGE START
+                                                                                                                                                        ==============================-->
 
 
     <style>
@@ -125,8 +125,8 @@
                                 6AW</small></p>
                     </div>
                     <div class="img-container overflow-hidden rounded-3">
-                        <iframe src="{{ @$contact->map_link }}" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="{{ @$contact->map_link }}" style="border:0; width:100%;" allowfullscreen=""
+                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
@@ -147,7 +147,7 @@
                     </div>
                     <div class="img-container overflow-hidden rounded-3">
                         <img src="https://demo.awaikenthemes.com/weebix/wp-content/uploads/2024/04/contact-info-2.jpg"
-                            class="img-fluid" alt="Web Development">
+                            class="img-fluid" alt="contact">
                     </div>
                 </div>
             </div>
@@ -168,7 +168,7 @@
                     </div>
                     <div class="img-container overflow-hidden rounded-3">
                         <img src=https://demo.awaikenthemes.com/weebix/wp-content/uploads/2024/04/contact-info-3.jpg"
-                            class="img-fluid" alt="Web Development">
+                            class="img-fluid" alt="email">
                     </div>
                 </div>
             </div>
@@ -271,8 +271,8 @@
                                 6AW</small></p>
                     </div>
                     <div class="img-container overflow-hidden rounded-3">
-                        <iframe src="{{ @$contact2->map_link }}" style="border:0;" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="{{ @$contact2->map_link }}" style="border:0; width:100%;" allowfullscreen=""
+                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
@@ -294,7 +294,7 @@
                     </div>
                     <div class="img-container overflow-hidden rounded-3">
                         <img src="https://demo.awaikenthemes.com/weebix/wp-content/uploads/2024/04/contact-info-2.jpg"
-                            class="img-fluid" alt="Web Development">
+                            class="img-fluid" alt="contact">
                     </div>
                 </div>
             </div>
@@ -315,7 +315,7 @@
                     </div>
                     <div class="img-container overflow-hidden rounded-3">
                         <img src=https://demo.awaikenthemes.com/weebix/wp-content/uploads/2024/04/contact-info-3.jpg"
-                            class="img-fluid" alt="Web Development">
+                            class="img-fluid" alt="email">
                     </div>
                 </div>
             </div>
@@ -366,7 +366,7 @@
                     </div>
                     <div class="overflow-hidden contact-card2">
                         <img class="text-muted fw-semibold"
-                            src="https://s3.geograph.org.uk/geophotos/06/84/96/6849671_3b57f20d_1024x1024.jpg"
+                            src="https://lh3.googleusercontent.com/p/AF1QipNAlr9-Yeu7MjzvFARmi6vy0Xuyxmz_A2mST_lt=s680-w680-h510"
                             alt="">
                     </div>
                 </div>
@@ -374,7 +374,7 @@
         </div>
     </div>
 
-    <div class="row mt-5">
+    {{-- <div class="row mt-5">
         <div class="col-xl-12 wow fadeInUp" data-wow-duration="1s">
             <form class="fp__contact_form">
                 @csrf
@@ -409,10 +409,10 @@
                 </div>
             </form>
         </div>
-    </div>
+    </div> --}}
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    CONTACT PAGE END
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            CONTACT PAGE END
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
 @endsection
 
 @push('scripts')
