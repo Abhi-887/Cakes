@@ -155,7 +155,7 @@
 			</a>
 		</li>
         <li class="{{ setSidebarActive(['admin.customer-feedback.*']) }}">
-			<a class="nav-link" href="{{ route('admin.customer-feedback.index') }}"><i class="fa-solid fa-business-time"></i></i>
+			<a class="nav-link" href="{{ route('admin.customer-feedback.index') }}"><i class="fa-solid fa-comment-dots"></i></i>
 				<span>Customer Feedback</span>
 			</a>
 		</li>
