@@ -30,7 +30,6 @@
         -moz-appearance: button;
     }
 </style>
-
 <section class="fp__search_menu mt_120 xs_mt_90 mb_100 xs_mb_70">
     <div class="container">
         <form class="fp__search_menu_form" method="GET" action="{{ route('product.index') }}">
@@ -56,6 +55,7 @@
                 </div>
             </div>
         </form>
+
 
 
 
@@ -87,6 +87,7 @@
         subSelect.value = selectedSubCategory;
     }
 });
+
 
         </script>
 
