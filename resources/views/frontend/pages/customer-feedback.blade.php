@@ -1,27 +1,27 @@
 @extends('frontend.layouts.master')
 
 @section('content')
+    <style>
+        .form-control {
+            -webkit-appearance: button;
+            -moz-appearance: button;
+        }
 
-<style>
-.form-control {
-  -webkit-appearance: button;
-  -moz-appearance: button;
-}
-.fa-star {
-    font-size: 24px;
-    color: #ddd;
-    cursor: pointer;
-}
+        .fa-star {
+            font-size: 24px;
+            color: #ddd;
+            cursor: pointer;
+        }
 
-.fa-star:hover,
-.fa-star:hover ~ .fa-star,
-input[type="radio"]:checked ~ .fa-star {
-    color: orange;
-}
-</style>
+        .fa-star:hover,
+        .fa-star:hover~.fa-star,
+        input[type="radio"]:checked~.fa-star {
+            color: rgb(255, 255, 255);
+        }
+    </style>
     <!--=============================
-        BREADCRUMB START
-    ==============================-->
+                BREADCRUMB START
+            ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -36,16 +36,19 @@ input[type="radio"]:checked ~ .fa-star {
         </div>
     </section>
     <!--=============================
-        BREADCRUMB END
-    ==============================-->
+                BREADCRUMB END
+            ==============================-->
     <!--=============================
-       Customer-Feedback PAGE START
-    ==============================-->
+               Customer-Feedback PAGE START
+            ==============================-->
 
     <div class="container my-5">
-       <div class="text-center"> <h2 class="mb-2">Feedback Request Form</h2>
-        <p>Please fill out our feedback form to help us improve our services or simply let us know where we're doing well.</p></div>
-        <form action="{{route('customer-feedback.store')}}" method="POST">
+        <div class="text-center">
+            <h2 class="mb-2">Feedback Request Form</h2>
+            <p>Please fill out our feedback form to help us improve our services or simply let us know where we're doing
+                well.</p>
+        </div>
+        <form action="{{ route('customer-feedback.store') }}" method="POST">
             @csrf
             <div class="form-group mt-2">
                 <label for="name" class="mb-1">Your Name *</label>
@@ -55,8 +58,10 @@ input[type="radio"]:checked ~ .fa-star {
                 <label for="rating" class="mb-1">Star Rating *</label>
                 <div id="rating" name="rating">
                     @for ($i = 1; $i <= 5; $i++)
-                        <input type="radio" id="star{{ $i }}" name="rating" value="{{ $i }}" class="d-none">
-                        <label for="star{{ $i }}" class="fa fa-star" aria-label="{{ $i }} stars"></label>
+                        <input type="radio" id="star{{ $i }}" name="rating" value="{{ $i }}"
+                            class="d-none">
+                        <label for="star{{ $i }}" class="fa fa-star"
+                            aria-label="{{ $i }} stars"></label>
                     @endfor
                 </div>
             </div>
@@ -71,15 +76,18 @@ input[type="radio"]:checked ~ .fa-star {
                     <label class="form-check-label ms-2" for="cakesStore">Cakes Store</label>
                 </div>
                 <div class="form-check d-flex align-items-center">
-                    <input class="form-check-input" type="checkbox" value="Sugarcraft School" id="sugarcraftSchool" name="services[]">
+                    <input class="form-check-input" type="checkbox" value="Sugarcraft School" id="sugarcraftSchool"
+                        name="services[]">
                     <label class="form-check-label ms-2" for="sugarcraftSchool">Sugarcraft School</label>
                 </div>
                 <div class="form-check d-flex align-items-center">
-                    <input class="form-check-input" type="checkbox" value="Online Tutorials" id="onlineTutorials" name="services[]">
+                    <input class="form-check-input" type="checkbox" value="Online Tutorials" id="onlineTutorials"
+                        name="services[]">
                     <label class="form-check-label ms-2" for="onlineTutorials">Online Tutorials</label>
                 </div>
                 <div class="form-check d-flex align-items-center">
-                    <input class="form-check-input" type="checkbox" value="David Duncan Cake Supplies" id="davidDuncan" name="services[]">
+                    <input class="form-check-input" type="checkbox" value="David Duncan Cake Supplies" id="davidDuncan"
+                        name="services[]">
                     <label class="form-check-label ms-2" for="davidDuncan">David Duncan Cake Supplies</label>
                 </div>
                 <div class="form-check d-flex align-items-center">
@@ -100,13 +108,15 @@ input[type="radio"]:checked ~ .fa-star {
             </div>
             <div class="form-group form-check mt-2 align-items-center">
                 <input type="checkbox" class="form-check-input" id="privacyPolicy" name="privacyPolicy" required>
-                <label class="form-check-label ms-2" for="privacyPolicy">I have read and accepted the <a href="#">privacy policy</a> *</label>
+                <label class="form-check-label ms-2" for="privacyPolicy">I have read and accepted the <a
+                        href="#">privacy policy</a> *</label>
             </div>
-            <div class="mt-5 text-center"><button type="submit" class=" common_btn v_submit_button px-5">Submit</button></div>
+            <div class="mt-5 text-center"><button type="submit" class=" common_btn v_submit_button px-5">Submit</button>
+            </div>
         </form>
     </div>
 
     <!--=============================
-        Customer-Feedback  PAGE END
-    ==============================-->
+                Customer-Feedback  PAGE END
+            ==============================-->
 @endsection
