@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,33 +18,33 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                    BREADCRUMB END
-                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                            BREADCRUMB END
+                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
 
 
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                    CONTACT PAGE START
-                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                            CONTACT PAGE START
+                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
 
 
     <style>
         .contact-card {
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
+            transition: transform 0.6s;
             display: flex;
             flex-direction: column;
             background-color: #f7f8fd !important;
         }
 
         .contact-card img {
-            transition: transform 0.3s;
+            transition: transform 0.5s;
         }
 
         .contact-card:hover img,
         .contact-card2:hover img {
             transform: scale(1.1);
             border-radius: 20px;
-            transition: transform 0.3s;
+            transition: transform 0.5s;
         }
 
         .location-icon {
@@ -53,52 +53,9 @@
             transition: 0.4s;
         }
 
-        .viewallcontact {
-            border: 1px solid #01b9eb !important;
-        }
-
-        .viewallcontact>i {
-            transition: 0.4s;
-        }
-
-        .viewallcontact:hover {
-            color: #01b9eb !important;
-        }
-
-        .service-content {
-            flex: 1;
-        }
-
-        .img-container {
-            margin-top: auto;
-        }
-
-
         .formbg {
             background-color: #f7f8fd !important;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
-        }
-
-        .contact-section {
-            background-color: #fff;
-            border-radius: 8px;
-            padding: 40px;
-            margin: 20px auto;
-            max-width: 800px;
-        }
-
-        .social-icons a {
-            margin-right: 15px;
-        }
-
-        .btn-primary {
-            background-color: #6c5ce7;
-            border-color: #6c5ce7;
-        }
-
-        .form-control,
-        .btn-primary {
-            border-radius: 5px;
         }
 
         .contact-social-icons i:hover {
@@ -392,8 +349,8 @@
         </div>
     </div>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                CONTACT PAGE END
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        CONTACT PAGE END
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
 @endsection
 
 @push('scripts')
