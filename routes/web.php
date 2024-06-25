@@ -109,6 +109,10 @@ Route::post('/wedding-cake-deposit/store', [WeddingcakesdepositController::class
 Route::get('/work-with-us', [WorkwithusController::class, 'create'])->name('work-with-us.create');
 Route::post('/work-with-us', [WorkwithusController::class, 'store'])->name('work-with-us.store');
 
+/** customer-feedback page */
+Route::get('/customer-feedback', [WorkwithusController::class, 'create'])->name('customer-feedback.create');
+Route::post('/customer-feedback', [WorkwithusController::class, 'store'])->name('customer-feedback.store');
+
 /** Blogs Routes */
 Route::get('/blogs', [FrontendController::class, 'blog'])->name('blogs');
 Route::get('/blogs/{slug}', [FrontendController::class, 'blogDetails'])->name('blogs.details');
