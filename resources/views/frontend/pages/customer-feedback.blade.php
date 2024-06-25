@@ -16,7 +16,7 @@
         .fa-star:hover,
         .fa-star:hover~.fa-star,
         input[type="radio"]:checked~.fa-star {
-            color: rgb(255, 255, 255);
+            color: orange;
         }
     </style>
     <!--=============================
