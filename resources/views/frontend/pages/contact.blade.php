@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,13 +18,13 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                    BREADCRUMB END
-                                                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                                                                        BREADCRUMB END
+                                                                                                                                                                                                                                                                ==============================-->
 
 
     <!--=============================
-                                                                                                                                                                                                                                                    CONTACT PAGE START
-                                                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                                                                        CONTACT PAGE START
+                                                                                                                                                                                                                                                                ==============================-->
 
 
     <style>
@@ -40,14 +40,10 @@
             transition: transform 0.3s;
         }
 
-        .contact-card:hover img {
+        .contact-card:hover img,
+        .contact-card2:hover img {
             transform: scale(1.1);
             border-radius: 20px;
-        }
-
-        .contact-card2:hover img {
-            transform: scale(1.1) !important;
-            border-radius: 20px !important;
             transition: transform 0.3s;
         }
 
@@ -118,7 +114,7 @@
                             <h4 class="fw-bold color-dark-gray">Address</h4>
                             <div
                                 class="location-icon d-flex justify-content-center align-items-center btnbackground rounded-circle text-center fs-4">
-                                <a href=""><i class="fa-solid fa-location-dot text-light"></i></a>
+                                <a href=""><i class="fas fa-map-marker-alt text-light"></i></a>
                             </div>
                         </div>
                         <hr>
@@ -138,7 +134,7 @@
                             <h4 class="fw-bold color-dark-gray">Call Now</h4>
                             <div
                                 class="location-icon d-flex justify-content-center align-items-center btnbackground rounded-circle text-center fs-4">
-                                <a href=""><i class="fa-solid fa-phone text-light"></i></a>
+                                <a href=""><i class="fas fa-phone text-light"></i></a>
                             </div>
                         </div>
                         <hr>
@@ -159,7 +155,7 @@
                             <h4 class="fw-bold color-dark-gray">Email Us</h4>
                             <div
                                 class="location-icon d-flex justify-content-center align-items-center btnbackground rounded-circle text-center fs-4">
-                                <a href=""><i class="fa-solid fa-envelope text-light"></i></a>
+                                <a href=""><i class="fas fa-paper-plane text-light"></i></a>
                             </div>
                         </div>
                         <hr>
@@ -200,60 +196,6 @@
                     </div>
                 </div>
             </div>
-            {{-- <div class="row mt-5 pt-5">
-                <div class="col-6">
-                    <h4 class="fw-bold lightblue">Contact Us</h4>
-                    <div class="mb-4">
-                        <h1 class="fw-bold darkblack">Get in touch with us today</h1>
-                        <p class="text-secondary fw-semibold">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                            accusantium,
-                            totam rem aperiam, eaque
-                            ipsa
-                            quae ab illo inventore et.</p>
-                    </div>
-
-                    <div class="mt-4">
-                        <h5>Follow Us:</h5>
-                        <div class="social-icons">
-                            <a href="#"><img src="https://img.icons8.com/color/48/000000/facebook-new.png" /></a>
-                            <a href="#"><img src="https://img.icons8.com/color/48/000000/instagram-new.png" /></a>
-                            <a href="#"><img src="https://img.icons8.com/color/48/000000/linkedin.png" /></a>
-                            <a href="#"><img src="https://img.icons8.com/color/48/000000/twitter.png" /></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="formbg p-5 rounded-4">
-                        <form>
-                            <div class="row g-3 mb-3">
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="First Name">
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="Last Name">
-                                </div>
-                            </div>
-                            <div class="row g-3 mb-3">
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="Phone">
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="email" class="form-control" placeholder="Email">
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <input type="text" class="form-control" placeholder="Subjects">
-                            </div>
-                            <div class="mb-3">
-                                <textarea class="form-control" rows="4" placeholder="Message"></textarea>
-                            </div>
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-primary">Send A Message</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div> --}}
         </div>
     </div>
 
@@ -269,7 +211,7 @@
                             <h4 class="fw-bold color-dark-gray">Address</h4>
                             <div
                                 class="location-icon d-flex justify-content-center align-items-center btnbackground rounded-circle text-center fs-4">
-                                <a href=""><i class="fa-solid fa-location-dot text-light"></i></a>
+                                <a href=""><i class="fas fa-map-marker-alt text-light"></i></a>
                             </div>
                         </div>
                         <hr>
@@ -289,7 +231,7 @@
                             <h4 class="fw-bold color-dark-gray">Call Now</h4>
                             <div
                                 class="location-icon d-flex justify-content-center align-items-center btnbackground rounded-circle text-center fs-4">
-                                <a href=""><i class="fa-solid fa-phone text-light"></i></a>
+                                <a href=""><i class="fas fa-phone text-light"></i></a>
                             </div>
                         </div>
                         <hr>
@@ -311,7 +253,7 @@
                             <h4 class="fw-bold color-dark-gray">Email Us</h4>
                             <div
                                 class="location-icon d-flex justify-content-center align-items-center btnbackground rounded-circle text-center fs-4">
-                                <a href=""><i class="fa-solid fa-envelope text-light"></i></a>
+                                <a href=""><i class="fas fa-paper-plane text-light"></i></a>
                             </div>
                         </div>
                         <hr>
@@ -390,45 +332,47 @@
         </div>
     </div>
 
-    {{-- <div class="row mt-5">
-        <div class="col-xl-12 wow fadeInUp" data-wow-duration="1s">
-            <form class="fp__contact_form">
-                @csrf
-                <h3>Contact</h3>
-                <div class="row">
-                    <div class="col-xl-6 col-lg-6">
-                        <div class="fp__contact_form_input">
-                            <span><i class="fal fa-user-alt"></i></span>
-                            <input type="text" placeholder="Name" name="name">
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-xl-12 wow fadeInUp" data-wow-duration="1s">
+                <form class="fp__contact_form">
+                    @csrf
+                    <h3>Contact</h3>
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="fp__contact_form_input">
+                                <span><i class="fal fa-user-alt"></i></span>
+                                <input type="text" placeholder="Name" name="name">
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6">
-                        <div class="fp__contact_form_input">
-                            <span><i class="fal fa-envelope"></i></span>
-                            <input type="email" placeholder="Email" name="email">
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="fp__contact_form_input">
+                                <span><i class="fal fa-envelope"></i></span>
+                                <input type="email" placeholder="Email" name="email">
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="col-xl-12 col-lg-12">
-                        <div class="fp__contact_form_input">
-                            <span><i class="fal fa-book"></i></span>
-                            <input type="text" placeholder="Subject" name="subject">
+                        <div class="col-xl-12 col-lg-12">
+                            <div class="fp__contact_form_input">
+                                <span><i class="fal fa-book"></i></span>
+                                <input type="text" placeholder="Subject" name="subject">
+                            </div>
+                        </div>
+                        <div class="col-xl-12">
+                            <div class="fp__contact_form_input textarea">
+                                <span><i class="fal fa-book"></i></span>
+                                <textarea rows="8" placeholder="Message" name="message"></textarea>
+                            </div>
+                            <button type="submit" class="submit_btn">Send Message</button>
                         </div>
                     </div>
-                    <div class="col-xl-12">
-                        <div class="fp__contact_form_input textarea">
-                            <span><i class="fal fa-book"></i></span>
-                            <textarea rows="8" placeholder="Message" name="message"></textarea>
-                        </div>
-                        <button type="submit" class="submit_btn">Send Message</button>
-                    </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
-    </div> --}}
+    </div>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                CONTACT PAGE END
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    CONTACT PAGE END
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
 @endsection
 
 @push('scripts')
