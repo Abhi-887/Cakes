@@ -62,33 +62,35 @@
 
                     <div class="form-group">
                         <label for="">Title One</label>
-                        <input type="text" class="form-control" name="title" value="{{ @$contact->title }}">
+                        <input type="text" class="form-control" name="title" value="{{ @$contact->title_one }}">
                     </div>
 
                     <div class="form-group">
                         <label for="">Description</label>
-                        <textarea name="text"   class="form-control summernote">{{@$contact->Description}}</textarea>
+                        <textarea name="text"   class="form-control summernote">{{@$contact->Description_one}}</textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="">Title Two</label>
-                        <input type="text" class="form-control" name="title" value="{{ @$contact->title }}">
+                        <input type="text" class="form-control" name="title" value="{{ @$contact->title_two }}">
                     </div>
 
                     <div class="form-group">
                         <label for="">Description</label>
-                        <textarea name="text"   class="form-control summernote">{{@$contact->Description}}</textarea>
+                        <textarea name="text"   class="form-control summernote">{{@$contact->Description_two}}</textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="">Title Three</label>
-                        <input type="text" class="form-control" name="title" value="{{ @$contact->title }}">
+                        <input type="text" class="form-control" name="title" value="{{ @$contact->title_three}}">
                     </div>
 
                     <div class="form-group">
                         <label for="">Description</label>
-                        <textarea name="text"   class="form-control summernote">{{@$contact->Description}}</textarea>
+                        <textarea name="text"   class="form-control summernote">{{@$contact->Description_three}}</textarea>
                     </div>
+
+
 
                     <button type="submit" class="btn btn-primary">Update</button>
                 </form>
