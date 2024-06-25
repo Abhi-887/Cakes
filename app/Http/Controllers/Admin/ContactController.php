@@ -11,38 +11,32 @@ use Illuminate\View\View;
 
 class ContactController extends Controller
 {
-    function index(): View
+    public function index(): View
     {
         $contact = Contact::first();
         return view('admin.contact.index', compact('contact'));
     }
 
-    function update(ContactUpdateRequest $request): RedirectResponse
+    public function update(ContactUpdateRequest $request): RedirectResponse
     {
-        Contact::updateOrCreate(
-            ['id' => 1],
-            [
-                'phone_one' => $request->phone_one,
-                'phone_two' => $request->phone_two,
-                'phone_image' => $request->phone_image,
-                'mail_one' => $request->mail_one,
-                'mail_two' => $request->mail_two,
-                'email_image' => $request->email_image,
-                'address' => $request->address,
-                'map_link' => $request->map_link,
-                'title_one' => $request->title_one,
-                'Description_one' => $request->Description_one,
-                'title_two' => $request->title_two,
-                'Description_two' => $request->Description_two,
-                'title_three' => $request->title_three,
-                'Description_three' => $request->Description_three
+        $data = $request->only([
+            'phone_one', 'phone_two', 'mail_one', 'mail_two', 'address',
+            'map_link', 'title_one', 'Description_one', 'title_two',
+            'Description_two', 'title_three', 'Description_three'
+        ]);
 
+        // Handle file uploads
+        if ($request->hasFile('phone_image')) {
+            $data['phone_image'] = $request->file('phone_image')->store('images/contacts', 'public');
+        }
 
+        if ($request->hasFile('email_image')) {
+            $data['email_image'] = $request->file('email_image')->store('images/contacts', 'public');
+        }
 
-            ]
-        );
+        Contact::updateOrCreate(['id' => 1], $data);
 
-        toastr()->success('Created Successfully');
+        toastr()->success('Updated Successfully');
 
         return redirect()->back();
     }
