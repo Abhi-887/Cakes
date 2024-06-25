@@ -28,7 +28,12 @@
                     <div class="form-group">
                         <label for="phone_image">Phone Image</label>
                         <div id="phone-image-preview" class="image-preview">
-                            <label for="phone-image-upload" id="phone-image-label">Choose File</label>
+                            @if (@$contact->phone_image)
+                                <img src="{{ asset('storage/' . $contact->phone_image) }}" alt="Phone Image" style="max-width: 100%; height: auto;">
+                                <label for="phone-image-upload" id="phone-image-label">Change File</label>
+                            @else
+                                <label for="phone-image-upload" id="phone-image-label">Choose File</label>
+                            @endif
                             <input type="file" name="phone_image" id="phone-image-upload" value="{{ old('phone_image', @$contact->phone_image) }}"/>
                         </div>
                     </div>
@@ -46,7 +51,12 @@
                     <div class="form-group">
                         <label for="email_image">Email Image</label>
                         <div id="email-image-preview" class="image-preview">
-                            <label for="email-image-upload" id="email-image-label">Choose File</label>
+                            @if (@$contact->email_image)
+                                <img src="{{ asset('storage/' . $contact->email_image) }}" alt="Email Image" style="max-width: 100%; height: auto;">
+                                <label for="email-image-upload" id="email-image-label">Change File</label>
+                            @else
+                                <label for="email-image-upload" id="email-image-label">Choose File</label>
+                            @endif
                             <input type="file" name="email_image" id="email-image-upload" value="{{ old('email_image', @$contact->email_image) }}"/>
                         </div>
                     </div>
@@ -112,27 +122,26 @@
                     let reader = new FileReader();
 
                     reader.onload = function (e) {
-                        $(previewSelector).css({
-                            'background-image': 'url(' + e.target.result + ')',
-                            'background-size': 'cover',
-                            'background-position': 'center center'
-                        });
-                        $(labelSelector).text('Change File');
+                        $(previewSelector).find('img').attr('src', e.target.result); // Update img src
+                        $(previewSelector).find(labelSelector).text('Change File');
                     };
 
                     reader.readAsDataURL(input.files[0]);
                 }
             }
 
-            // Update image preview on file input change for phone image
+            // Preload existing images on edit page
             $('#phone-image-upload').on('change', function(){
                 updateImagePreview(this, '#phone-image-preview', '#phone-image-label');
             });
 
-            // Update image preview on file input change for email image
             $('#email-image-upload').on('change', function(){
                 updateImagePreview(this, '#email-image-preview', '#email-image-label');
             });
+
+            // Trigger change event to preload images on page load (if editing)
+            $('#phone-image-upload').trigger('change');
+            $('#email-image-upload').trigger('change');
         });
     </script>
 @endpush
