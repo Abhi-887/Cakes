@@ -39,7 +39,7 @@ class CustomerfeedbackDataTable extends DataTable
     public function html(): HtmlBuilder
     {
         return $this->builder()
-                    ->setTableId('customerfeedback-table')
+                    ->setTableId('customerfeedbacks-table')
                     ->columns($this->getColumns())
                     ->minifiedAjax()
                     ->orderBy(0)
