@@ -306,11 +306,9 @@ class FrontendController extends Controller
             }
         ])->withAvg('reviews', 'rating')->withCount('reviews')->paginate(12);
 
-        // No need to set parent category, only subcategories
-        $category = null;
-
-        return view('frontend.pages.product', compact('products', 'categories', 'category'));
+        return view('frontend.pages.product', compact('products', 'categories'));
     }
+
     public function showCategoryProducts($slug)
     {
         // Retrieve the category by slug and fail if not found
