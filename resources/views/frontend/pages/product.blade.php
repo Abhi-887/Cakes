@@ -30,22 +30,21 @@
         -moz-appearance: button;
     }
 </style>
-
 <section class="fp__search_menu mt_120 xs_mt_90 mb_100 xs_mb_70">
     <div class="container">
         <form class="fp__search_menu_form" method="GET" action="{{ route('product.index') }}">
             <div class="row justify-content-around align-items-center">
-                <div class="col-xl-4 col-md-5">
+                <div class="col-xl-3 col-md-5">
                     <input class="py-2 form-control rounded-pill" type="text" placeholder="Search..." name="search"
                         value="{{ request()->search }}">
                 </div>
-                <div class="col-xl-4 col-md-5">
+                <div class="col-xl-3 col-md-4">
                     <select class="py-2 form-control rounded-pill" name="sub_category" id="sub_category">
                         <option value="">All</option>
-                        @foreach ($categories as $subCategory)
-                        <option value="{{ $subCategory->id }}" {{ request()->sub_category == $subCategory->id ?
+                        @foreach ($subcategories as $subcategory)
+                        <option value="{{ $subcategory->id }}" {{ request()->sub_category == $subcategory->id ?
                             'selected' : '' }}>
-                            {{ $subCategory->name }}
+                            {{ $subcategory->name }}
                         </option>
                         @endforeach
                     </select>
@@ -59,16 +58,37 @@
 
 
 
+
         <script>
             document.addEventListener('DOMContentLoaded', function() {
-        const subSelect = document.getElementById('sub_category');
+    const parentSelect = document.getElementById('parent_category');
+    const subSelect = document.getElementById('sub_category');
+    const subOptions = Array.from(subSelect.options);
 
-        // Maintain selected subcategory on page load
-        const selectedSubCategory = '{{ request()->sub_category }}';
-        if (selectedSubCategory) {
-            subSelect.value = selectedSubCategory;
-        }
+    parentSelect.addEventListener('change', function() {
+        const selectedParent = this.value;
+
+        // Clear current subcategories
+        subSelect.innerHTML = '<option value="">All</option>';
+
+        // Filter subcategories based on selected parent
+        const filteredOptions = subOptions.filter(option => option.dataset.parent == selectedParent);
+
+        // Add filtered subcategories to the subcategory select
+        filteredOptions.forEach(option => subSelect.appendChild(option));
     });
+
+    // Trigger change event on page load to set initial state
+    parentSelect.dispatchEvent(new Event('change'));
+
+    // Maintain selected subcategory on page load
+    const selectedSubCategory = '{{ request()->sub_category }}';
+    if (selectedSubCategory) {
+        subSelect.value = selectedSubCategory;
+    }
+});
+
+
         </script>
 
 

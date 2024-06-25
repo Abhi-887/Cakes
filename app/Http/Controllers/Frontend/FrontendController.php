@@ -288,6 +288,15 @@ class FrontendController extends Controller
         // Retrieve all categories
         $categories = Category::all();
 
+        $subcategories = collect();
+        if ($request->has('parent_category') && $request->filled('parent_category')) {
+            // Retrieve subcategories for the selected parent category
+            $subcategories = Category::where('parent', $request->parent_category)->get();
+        } else {
+            // Retrieve all subcategories if no parent category is selected
+            $subcategories = Category::whereNotNull('parent')->get();
+        }
+
         if ($request->has('search') && $request->filled('search')) {
             $products->where(function ($query) use ($request) {
                 $query->where('name', 'like', '%' . $request->search . '%')
@@ -296,7 +305,7 @@ class FrontendController extends Controller
         }
 
         if ($request->has('sub_category') && $request->filled('sub_category')) {
-            $products->where('category_id', $request->sub_category);
+            $products->where('sub_category', $request->sub_category);
         }
 
         $products = $products->with([
@@ -306,7 +315,7 @@ class FrontendController extends Controller
             }
         ])->withAvg('reviews', 'rating')->withCount('reviews')->paginate(12);
 
-        return view('frontend.pages.product', compact('products', 'categories'));
+        return view('frontend.pages.product', compact('products', 'categories', 'subcategories'));
     }
 
     public function showCategoryProducts($slug)
@@ -314,15 +323,19 @@ class FrontendController extends Controller
         // Retrieve the category by slug and fail if not found
         $category = Category::where('slug', $slug)->firstOrFail();
 
-        // Retrieve subcategories of the selected parent category
-        $categories = Category::where('parent', $category->id)->get();
+        // Retrieve all categories
+        $categories = Category::all();
+
+        // Retrieve subcategories for the current main category
+        $subcategories = Category::where('parent', $category->id)->get();
 
         // Retrieve all products associated with the category, paginated
         $products = Product::where('category_id', $category->id)->paginate(12); // Adjust per page as needed
 
-        // Pass the category, products, and subcategories to the view
-        return view('frontend.pages.product', compact('category', 'products', 'categories'));
+        // Pass the category, products, categories, and subcategories to the view
+        return view('frontend.pages.product', compact('category', 'products', 'categories', 'subcategories'));
     }
+
 
 
 
