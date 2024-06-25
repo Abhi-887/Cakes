@@ -102,7 +102,7 @@ input[type="radio"]:checked ~ .fa-star {
                 <input type="checkbox" class="form-check-input" id="privacyPolicy" name="privacyPolicy" required>
                 <label class="form-check-label ms-2" for="privacyPolicy">I have read and accepted the <a href="#">privacy policy</a> *</label>
             </div>
-            <div class="mt-5"><button type="submit" class="btn btn-primary">Submit</button></div>
+            <div class="mt-5"><button type="submit" class=" common_btn v_submit_button px-5">Submit</button></div>
         </form>
     </div>
 

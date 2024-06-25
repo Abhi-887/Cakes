@@ -35,7 +35,7 @@
         <p class="text-center mb-2">Fill out your details below to book a free consultation and cake tasting with our award-winning team.</p>
         <p class="text-center mb-2">Personal Design Service: Our skilled team will help take you through the process to create a design tailored to your requirements.</p>
         <p class="text-center mb-2">Full details on our ordering process and terms & conditions of booking can be viewed <a href="#">here</a>.</p>
-        
+
         <div class="my-5 py-5">
             <form action="{{ route('consultations.store') }}" method="POST">
                 @csrf
@@ -76,7 +76,7 @@
                             <input type="text" class="form-control" id="venue" name="venue">
                         </div>
                     </div>
-                    
+
                     <div class="row mb-2">
                         <div class="form-group col-md-6">
                             <label for="numberGuests" class="mb-1">Number of Guests</label>
@@ -98,7 +98,7 @@
                             <input type="text" class="form-control" id="otherInfo" name="other_information">
                         </div>
                     </div>
-                    
+
                     <div class="row mb-2">
                         <div class="form-group col-md-6">
                             <label for="cakeBudget" class="mb-1">Cake Budget <span class="text-danger">*</span></label>
@@ -135,7 +135,7 @@
                             </select>
                         </div>
                     </div>
-                    
+
                     <div class="row mb-2">
                         <div class="form-group col-md-6">
                             <label for="existingOrder" class="mb-1">Is this for an existing booking or new order? <span class="text-danger">*</span></label>
@@ -179,7 +179,7 @@
                         <input type="date" class="form-control" id="consultationDate" name="consultation_date" required>
                     </div>
                 </div>
-                
+
                 <div class="row mb-2">
                     <div class="form-group col-md-6">
                         <label for="consultationTime" class="mb-1">Consultation Time <span class="text-danger">*</span></label>
@@ -196,8 +196,8 @@
                         </select>
                     </div>
                 </div>
-                
-                <div class="mt-5 text-center"><button type="submit" class="btn btn-primary px-5">Book Now</button></div>
+
+                <div class="mt-5 text-center"><button type="submit" class=" common_btn v_submit_button px-5">Book Now</button></div>
             </form>
         </div>
     </div>
