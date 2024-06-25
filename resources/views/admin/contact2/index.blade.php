@@ -29,7 +29,7 @@
 
                     <div class="form-group">
                         <label for="">Phone Image</label>
-                        <input type="file" class="form-control" name="image" value="{{ @$contact->image }}">
+                        <input type="file" class="form-control" name="phone_image" value="{{ @$contact->phone_image }}">
                     </div>
 
                     <div class="form-group">
@@ -44,7 +44,7 @@
 
                     <div class="form-group">
                         <label for="">Email Image</label>
-                        <input type="file" class="form-control" name="image" value="{{ @$contact->image }}">
+                        <input type="file" class="form-control" name="email_image" value="{{ @$contact->email_image }}">
                     </div>
 
                     <div class="form-group">
@@ -59,32 +59,37 @@
 
                     <div class="form-group">
                         <label for="">Title One</label>
-                        <input type="text" class="form-control" name="title" value="{{ @$contact->title_one }}">
+                        <input type="text" class="form-control" name="title_one" value="{{ @$contact->title_one }}">
                     </div>
 
                     <div class="form-group">
                         <label for="">Description</label>
-                        <textarea name="text"   class="form-control summernote">{{@$contact->Description_one}}</textarea>
+                        <textarea name="Description_one"   class="form-control summernote">{{@$contact->Description_one}}</textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="">Title Two</label>
-                        <input type="text" class="form-control" name="title" value="{{ @$contact->title_two }}">
+                        <input type="text" class="form-control" name="title_two" value="{{ @$contact->title_two }}">
                     </div>
 
                     <div class="form-group">
                         <label for="">Description</label>
-                        <textarea name="text"   class="form-control summernote">{{@$contact->Description_two}}</textarea>
+                        <textarea name="Description_two"   class="form-control summernote">{{@$contact->Description_two}}</textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="">Title Three</label>
-                        <input type="text" class="form-control" name="title" value="{{ @$contact->title_three}}">
+                        <input type="text" class="form-control" name="title_three" value="{{ @$contact->title_three}}">
                     </div>
 
                     <div class="form-group">
                         <label for="">Description</label>
-                        <textarea name="text"   class="form-control summernote">{{@$contact->Description_three}}</textarea>
+                        <textarea name="Description_three"   class="form-control summernote">{{@$contact->Description_three}}</textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Description</label>
+                        <textarea name="Description"   class="form-control summernote">{{@$contact->Description}}</textarea>
                     </div>
 
 
