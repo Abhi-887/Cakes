@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                                                                                                                                                                                                                                                    BREADCRUMB START
-                                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                        BREADCRUMB START
+                                                                                                                                                                                                                                                                                    ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,13 +18,13 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                    BREADCRUMB END
-                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                        BREADCRUMB END
+                                                                                                                                                                                                                            ==============================-->
 
 
     <!--=============================
-                                                                                                                                                                                                                                    CONTACT PAGE START
-                                                                                                                                                                                                                         ==============================-->
+                                                                                                                                                                                                                                        CONTACT PAGE START
+                                                                                                                                                                                                                             ==============================-->
 
 
     <style>
@@ -41,6 +41,11 @@
         }
 
         .contact-card:hover img {
+            transform: scale(1.1);
+            border-radius: 20px;
+        }
+
+        .contact-card2:hover img {
             transform: scale(1.1);
             border-radius: 20px;
         }
@@ -204,7 +209,7 @@
                         </p>
                     </div>
                     <div class="col-6">
-                        <div class="overflow-hidden">
+                        <div class="overflow-hidden contact-card2">
                             <img class="text-muted fw-semibold"
                                 src="https://www.3d-cakes.co.uk/media/wysiwyg/contact/edinburgh-store.jpg" alt="">
                         </div>
@@ -308,8 +313,8 @@
             </div>
         </div>
         <!--=============================
-                                                                                                                                                                                                                                                                                    CONTACT PAGE END
-                                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                        CONTACT PAGE END
+                                                                                                                                                                                                                                                                                    ==============================-->
     @endsection
 
     @push('scripts')
