@@ -88,7 +88,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="">Description</label>
+                        <label for="">Main Description</label>
                         <textarea name="Description"   class="form-control summernote">{{@$contact->Description}}</textarea>
                     </div>
 
