@@ -66,6 +66,10 @@ body {
     color: #8caabf !important;
 }
 
+.fp__search_form button:hover{
+    background-color: #788a9f !important;
+}
+
 img {
     width: 100% !important;
     height: 100% !important;
@@ -351,7 +355,7 @@ button {
 .fp__search_form button {
     right: 7px;
     transform: translateY(-50%);
-    background: #86a4ba !important;
+    background: #4b637f !important;
     color: var(--colorWhite);
 }
 /* New Navbar Custom End */
