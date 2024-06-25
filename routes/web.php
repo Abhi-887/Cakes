@@ -22,6 +22,7 @@ use App\Models\ProductSize;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Frontend\CustomerfeedbackController;
 
 Route::get('/admin/subcategories/{categoryId}', [ProductController::class, 'getSubcategories'])->name('admin.subcategories');
 
@@ -108,6 +109,10 @@ Route::post('/wedding-cake-deposit/store', [WeddingcakesdepositController::class
 /** work-with-us page */
 Route::get('/work-with-us', [WorkwithusController::class, 'create'])->name('work-with-us.create');
 Route::post('/work-with-us', [WorkwithusController::class, 'store'])->name('work-with-us.store');
+
+/** customer-feedback page */
+Route::get('/customer-feedback', [CustomerfeedbackController::class, 'create'])->name('customer-feedback.create');
+Route::post('/customer-feedback', [CustomerfeedbackController::class, 'store'])->name('customer-feedback.store');
 
 /** Blogs Routes */
 Route::get('/blogs', [FrontendController::class, 'blog'])->name('blogs');
