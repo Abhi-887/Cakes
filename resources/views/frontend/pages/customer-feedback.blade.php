@@ -46,11 +46,11 @@ input[type="radio"]:checked ~ .fa-star {
         <p>Please fill out our feedback form to help us improve our services or simply let us know where we're doing well.</p>
         <form class="" action="{{route('customer-feedback.store')}}" method="POST">
             @csrf
-            <div class="form-group">
+            <div class="form-group mt-2">
                 <label for="name">Your Name *</label>
                 <input type="text" class="form-control" id="name" name="name" required>
             </div>
-            <div class="form-group">
+            <div class="form-group mt-2">
                 <label for="rating">Star Rating *</label>
                 <div id="rating" name="rating">
                     <input type="radio" id="star5" name="rating" value="5" class="d-none">
@@ -65,11 +65,11 @@ input[type="radio"]:checked ~ .fa-star {
                     <label for="star1" class="fa fa-star"></label>
                 </div>
             </div>
-            <div class="form-group">
+            <div class="form-group mt-2">
                 <label for="email">Your Email Address *</label>
                 <input type="email" class="form-control" id="email" name="email" required>
             </div>
-            <div class="form-group">
+            <div class="form-group mt-2">
                 <label>Which service(s) did you use? *</label>
                 <div class="form-check d-flex align-items-center">
                     <input class="form-check-input" type="checkbox" value="Cakes Store" id="cakesStore" name="services[]">
@@ -92,18 +92,18 @@ input[type="radio"]:checked ~ .fa-star {
                     <label class="form-check-label ms-2" for="deals">24 Hour Deals</label>
                 </div>
             </div>
-            <div class="form-group">
+            <div class="form-group mt-2">
                 <label for="store">Which store did you use? *</label>
                 <select class="form-control" id="store" name="store" required>
                     <option value="Edinburgh">Edinburgh</option>
                     <!-- Add other store locations as needed -->
                 </select>
             </div>
-            <div class="form-group">
+            <div class="form-group mt-2">
                 <label for="feedback">Your Feedback *</label>
                 <textarea class="form-control" id="feedback" name="feedback" rows="4" required></textarea>
             </div>
-            <div class="form-group form-check">
+            <div class="form-group form-check mt-2">
                 <input type="checkbox" class="form-check-input" id="privacyPolicy" name="privacyPolicy" required>
                 <label class="form-check-label" for="privacyPolicy">I have read and accepted the <a href="#">privacy policy</a> *</label>
             </div>
