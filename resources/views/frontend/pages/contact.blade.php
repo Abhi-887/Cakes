@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                                                                                                                                                                                BREADCRUMB START
-                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                                                                                    BREADCRUMB START
+                                                                                                                                                                                                                                                                                ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,13 +18,13 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                BREADCRUMB END
-                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                                    BREADCRUMB END
+                                                                                                                                                                                                                        ==============================-->
 
 
     <!--=============================
-                                                                                                                                                                CONTACT PAGE START
-                                                                                                                                                     ==============================-->
+                                                                                                                                                                                                                                    CONTACT PAGE START
+                                                                                                                                                                                                                         ==============================-->
 
 
     <style>
@@ -102,14 +102,14 @@
 
     <div class="container py-5">
         <h1 class="fw-bold darkblack">Address Line 1</h1>
-        <h4 class="fw-bold lightblue">3D Cakes Edinburgh</h4>
+        <h4 class="fw-bold color-light-gray">3D Cakes Edinburgh</h4>
 
         <div class="row mt-5">
             <div class="col-md-4 mb-4">
-                <div class="contact-card rounded-5 p-4">
+                <div class="contact-card rounded-2 p-4">
                     <div class="contact-content">
                         <div class="d-flex justify-content-between align-items-center">
-                            <h4 class="fw-bold">Address</h4>
+                            <h4 class="fw-bold color-dark-gray">Address</h4>
                             <div
                                 class="location-icon d-flex justify-content-center align-items-center btnbackground rounded-circle text-center fs-4">
                                 <a href=""><i class="fa-solid fa-location-dot text-light"></i></a>
@@ -119,7 +119,7 @@
                         <p class="text-muted fw-semibold"><small>20 Roseburn Terrace<br>Edinburgh Midlothian EH12
                                 6AW</small></p>
                     </div>
-                    <div class="img-container overflow-hidden rounded-2">
+                    <div class="img-container overflow-hidden rounded-3">
                         <iframe src="{{ @$contact->map_link }}" style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
@@ -129,7 +129,7 @@
                 <div class="contact-card rounded-5 p-4">
                     <div class="contact-content">
                         <div class="d-flex justify-content-between align-items-center">
-                            <h4 class="fw-bold">Call Now</h4>
+                            <h4 class="fw-bold color-dark-gray">Call Now</h4>
                             <div
                                 class="location-icon d-flex justify-content-center align-items-center btnbackground rounded-circle text-center fs-4">
                                 <a href=""><i class="fa-solid fa-phone text-light"></i></a>
@@ -140,7 +140,7 @@
                             <small>Phone service available Monday - Sunday 0131 337 9990.</small>
                         </p>
                     </div>
-                    <div class="img-container overflow-hidden imgcontact">
+                    <div class="img-container overflow-hidden rounded-3">
                         <img src="https://demo.awaikenthemes.com/weebix/wp-content/uploads/2024/04/contact-info-2.jpg"
                             class="img-fluid" alt="Web Development">
                     </div>
@@ -150,7 +150,7 @@
                 <div class="contact-card rounded-5 p-4">
                     <div class="contact-content">
                         <div class="d-flex justify-content-between align-items-center">
-                            <h4 class="fw-bold">Email Us</h4>
+                            <h4 class="fw-bold color-dark-gray">Email Us</h4>
                             <div
                                 class="location-icon d-flex justify-content-center align-items-center btnbackground rounded-circle text-center fs-4">
                                 <a href=""><i class="fa-solid fa-envelope text-light"></i></a>
@@ -161,7 +161,7 @@
                             <small>enquiries@3d-cakes.co.uk</small>
                         </p>
                     </div>
-                    <div class="img-container overflow-hidden imgcontact">
+                    <div class="img-container overflow-hidden rounded-3">
                         <img src=https://demo.awaikenthemes.com/weebix/wp-content/uploads/2024/04/contact-info-3.jpg"
                             class="img-fluid" alt="Web Development">
                     </div>
@@ -169,10 +169,10 @@
             </div>
 
             <div class="contact-card py-5">
-                <h2 class="color-dark-gray">Opening Times</h2>
-                <div class="row align-items-center">
+                <h2 class="text-center">Opening Times</h2>
+                <div class="row align-items-center py-5">
                     <div class="col-4">
-                        <h4 class="color-light-gray">Cake orders & collections:</h4>
+                        <h4 class="color-light-gray mb-3">Cake orders & collections:</h4>
                         <p class="fw-semibold">Monday - Friday 9am - 5pm (please call 0131 337 9990 upon arrival if
                             collecting after
                             2pm)<br>Saturday: 9am - 4pm<br>Sunday: 10am - 3pm (by appointment only)</p>
@@ -182,8 +182,9 @@
                         <p class="fw-semibold">Monday - Friday 9am - 2pm<br>Saturday: 9am - 4pm<br>Sunday: Closed</p>
                     </div>
                     <div class="col-4">
-                        <h4 class="color-light-gray">7-Day Cake Delivery:</h4>
-                        <p class="fw-semibold">Cake design consultations are available 7 days a week<br>by appointment only
+                        <h4 class="color-light-gray mb-3">7-Day Cake Delivery:</h4>
+                        <p class="fw-semibold text-muted">Cake design consultations are available 7 days a week<br>by
+                            appointment only
                             (In store, via
                             telephone or Zoom).</p>
                     </div>
@@ -191,19 +192,21 @@
                 </div>
                 <div class="row py-5">
                     <div class="col-6">
-                        <h3>David Duncan Sugarcraft School Edinburgh</h3>
-                        <a href="">www.davidduncansugarcraftschool.co.uk</a>
-                        <h3>Opening Times:</h3>
-                        <p class="fw-semibold">Access available 30 minutes prior to class start time. For a list of class
+                        <h3 class="my-2 mb-3">David Duncan Sugarcraft School Edinburgh</h3>
+                        <a class="my-2 text-muted fw-semibold" href="">www.davidduncansugarcraftschool.co.uk</a>
+                        <h4 class="my-2">Opening Times:</h4>
+                        <p class="fw-semibold my-2">Access available 30 minutes prior to class start time. For a list of
+                            class
                             dates/times please see
                             website.</p>
-                        <p><code>Email:</code><a
+                        <p class="my-2"><code>Email: </code><a
                                 href="hello@davidduncansugarcraftschool.co.uk">hello@davidduncansugarcraftschool.co.uk</a>
                         </p>
                     </div>
                     <div class="col-6">
                         <div class="overflow-hidden">
-                            <img src="https://www.3d-cakes.co.uk/media/wysiwyg/contact/edinburgh-store.jpg" alt="">
+                            <img class="text-muted fw-semibold"
+                                src="https://www.3d-cakes.co.uk/media/wysiwyg/contact/edinburgh-store.jpg" alt="">
                         </div>
                     </div>
                 </div>
@@ -305,8 +308,8 @@
             </div>
         </div>
         <!--=============================
-                                                                                                                                                                                                                CONTACT PAGE END
-                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                                                                                    CONTACT PAGE END
+                                                                                                                                                                                                                                                                                ==============================-->
     @endsection
 
     @push('scripts')
