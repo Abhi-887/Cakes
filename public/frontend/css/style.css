@@ -68,6 +68,11 @@ body {
 
 .fp__search_form button:hover{
     background-color: #788a9f !important;
+    transition: all linear 0.3s;
+    -webkit-transition: all linear 0.3s;
+    -moz-transition: all linear 0.3s;
+    -ms-transition: all linear 0.3s;
+    -o-transition: all linear 0.3s;
 }
 
 img {
@@ -2669,7 +2674,7 @@ footer .wrapper a:hover {
 }
 
 .fp__contact_form button {
-    background: var(--colorPrimary);
+    background: #4b637f !important;
     text-transform: capitalize !important;
     color: var(--colorWhite) !important;
     padding: 10px 20px;
@@ -2685,7 +2690,7 @@ footer .wrapper a:hover {
 }
 
 .fp__contact_form button:hover {
-    background: var(--colorBlack);
+    background: #788a9f !important;
 }
 
 .fp__contact_map {
