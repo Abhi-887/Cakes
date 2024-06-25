@@ -54,6 +54,7 @@ use App\Http\Controllers\Admin\TramsAndConditionController;
 use App\Http\Controllers\Admin\TramsAndCondtionController;
 use App\Http\Controllers\Admin\WhyChooseUsController;
 use App\Http\Controllers\Admin\AttributeController;
+use App\Http\Controllers\Admin\CustomerfeedbackController;
 use App\Models\AppDownloadSection;
 use App\Models\BannerSlider;
 use App\Models\PrivacyPolicy;
@@ -252,8 +253,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 	/** wedding-cakes-deposit Routes */
 	Route::get('wedding-cakes-deposit', [WeddingcakesdepositController::class, 'index'])->name('Weddingcakesdeposit.index');
 
-    	/** wedding-cakes-deposit Routes */
+    /** wedding-cakes-deposit Routes */
 	Route::get('work-with-us', [WorkwithusController::class, 'index'])->name('work-with-us.index');
+
+    /** wedding-cakes-deposit Routes */
+	Route::get('customer-feedback', [CustomerfeedbackController::class, 'index'])->name('customer-feedback.index');
 
     /** Social Links Routes */
     Route::resource('social-link', SocialLinkController::class);
