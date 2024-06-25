@@ -16,42 +16,29 @@ class CustomerfeedbackController extends Controller
 
     public function store(Request $request)
     {
-        // Validate the request data
-        $request->validate([
-            'job_reference' => 'required|array',
+        $validated = $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|email|max:255',
-            'telephone' => 'required|string|max:15',
-            'driving_license' => 'required|string|in:yes,no',
-            'why_ideal' => 'required|string',
-            'relevant_experience' => 'required|string',
-            'current_position_duration' => 'required|string|max:255',
-            'portfolio' => 'nullable', // Updated validation rule
-            'cv' => 'nullable', // Updated validation rule
+            'rating' => 'required|integer|between:1,5',
+            'email' => 'required|email',
+            'services' => 'required|array',
+            'store' => 'required|string',
+            'feedback' => 'required|string|max:1000',
+            'privacyPolicy' => 'accepted',
         ]);
 
-        // Handle file uploads
-        $portfolioPath = $request->file('portfolio') ? $request->file('portfolio')->store('portfolios') : null;
-        $cvPath = $request->file('cv') ? $request->file('cv')->store('cvs') : null;
-
-        // Create a new Workwithus instance and fill it with validated data
+        // Create a new Customerfeedback instance and fill it with validated data
         $customerfeedback = new Customerfeedback();
-        $customerfeedback->job_reference = implode(',', $request->job_reference);
         $customerfeedback->name = $request->name;
+        $customerfeedback->rating = $request->rating;
         $customerfeedback->email = $request->email;
-        $customerfeedback->telephone = $request->telephone;
-        $customerfeedback->driving_license = $request->driving_license;
-        $customerfeedback->why_ideal = $request->why_ideal;
-        $customerfeedback->relevant_experience = $request->relevant_experience;
-        $customerfeedback->current_position_duration = $request->current_position_duration;
-        $customerfeedback->portfolio = $portfolioPath;
-        $customerfeedback->cv = $cvPath;
+        $customerfeedback->services = implode(',', $request->services);
+        $customerfeedback->store = $request->store;
+        $customerfeedback->feedback = $request->feedback;
 
-        // Save the Workwithus instance to the database
+        // Save the Customerfeedback instance to the database
         $customerfeedback->save();
 
-        // Return a JSON response
-        return redirect()->back()->with('success', 'Your application has been submitted successfully!');
+        // Redirect back with a success message
+        return redirect()->back()->with('success', 'Your feedback has been submitted successfully!');
     }
-
 }

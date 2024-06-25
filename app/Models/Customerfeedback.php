@@ -10,15 +10,11 @@ class Customerfeedback extends Model
     use HasFactory;
 
     protected $fillable = [
-        'job_reference',
         'name',
+        'rating',
         'email',
-        'telephone',
-        'driving_license',
-        'why_ideal',
-        'relevant_experience',
-        'current_position_duration',
-        'portfolio',
-        'cv',
+        'services',
+        'store',
+        'feedback',
     ];
 }
