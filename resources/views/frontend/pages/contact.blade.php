@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,13 +18,13 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                                                        BREADCRUMB END
-                                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                                BREADCRUMB END
+                                                                                                                                                                                                                                                                                                        ==============================-->
 
 
     <!--=============================
-                                                                                                                                                                                                                                                                                        CONTACT PAGE START
-                                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                                CONTACT PAGE START
+                                                                                                                                                                                                                                                                                                        ==============================-->
 
 
     <style>
@@ -118,8 +118,8 @@
                             </div>
                         </div>
                         <hr>
-                        <p class="text-muted fw-semibold"><small>20 Roseburn Terrace Edinburgh Midlothian EH12
-                                6AW</small></p>
+                        <p class="text-muted fw-semibold">20 Roseburn Terrace Edinburgh Midlothian EH12
+                            6AW</p>
                     </div>
                     <div class="img-container overflow-hidden rounded-3">
                         <iframe src="{{ @$contact->map_link }}" style="border:0; width:100%; height:100%;"
@@ -139,7 +139,7 @@
                         </div>
                         <hr>
                         <p class="text-muted fw-semibold">
-                            <small>Phone: service available Monday - Sunday 0131 337 9990.</small>
+                            Phone: service available Monday - Sunday 0131 337 9990.
                         </p>
                     </div>
                     <div class="img-container overflow-hidden rounded-3">
@@ -160,7 +160,7 @@
                         </div>
                         <hr>
                         <p class="text-muted fw-semibold">
-                            <small>Email: enquiries@3d-cakes.co.uk</small>
+                            Email: enquiries@3d-cakes.co.uk
                         </p>
                     </div>
                     <div class="img-container overflow-hidden rounded-3">
@@ -215,8 +215,7 @@
                             </div>
                         </div>
                         <hr>
-                        <p class="text-muted fw-semibold"><small>38 Station Road G62 8AB
-                                6AW</small></p>
+                        <p class="text-muted fw-semibold">38 Station Road G62 8AB 6AW</p>
                     </div>
                     <div class="img-container overflow-hidden rounded-3">
                         <iframe src="{{ @$contact2->map_link }}" style="border:0; width:100%; height:100%;"
@@ -236,8 +235,7 @@
                         </div>
                         <hr>
                         <p class="text-muted fw-semibold">
-                            <small>Phone: service available Monday - Sunday 0141 378 0027.
-                            </small>
+                            Phone: service available Monday - Sunday 0141 378 0027.
                         </p>
                     </div>
                     <div class="img-container overflow-hidden rounded-3">
@@ -258,7 +256,7 @@
                         </div>
                         <hr>
                         <p class="text-muted fw-semibold">
-                            <small>Email: glasgow@3d-cakes.co.uk</small>
+                            Email: glasgow@3d-cakes.co.uk
                         </p>
                     </div>
                     <div class="img-container overflow-hidden rounded-3">
@@ -298,7 +296,7 @@
     </div>
 
     <div class="container">
-        <div class="row align-items-center">
+        <div class="row align-items-center py-5">
             <div class="col-md-5">
                 <h4 class="color-dark-gray my-2">David Duncan Sugarcraft School Edinburgh</h4>
                 <h4 class="color-dark-gray my-2">David Duncan Sugarcraft School Glasgow</h4>
@@ -335,10 +333,10 @@
     <div class="container">
         <div class="row my-5">
             <div class="col-md-6">
-                <h4 class="fw-bold lightblue">Contact Us</h4>
                 <div class="mb-4">
                     <h1 class="fw-bold darkblack">Get in touch with us today</h1>
-                    <p class="text-secondary fw-semibold">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                    <p class="text-secondary fw-semibold my-4">Sed ut perspiciatis unde omnis iste natus error sit
+                        voluptatem
                         accusantium,
                         totam rem aperiam, eaque
                         ipsa
@@ -346,12 +344,11 @@
                 </div>
 
                 <div class="mt-4">
-                    <h5>Follow Us:</h5>
+                    <h4 class="fw-bold">Follow Us:</h4>
                     <div class="social-icons">
-                        <a href="#"><img src="https://img.icons8.com/color/48/000000/facebook-new.png" /></a>
-                        <a href="#"><img src="https://img.icons8.com/color/48/000000/instagram-new.png" /></a>
-                        <a href="#"><img src="https://img.icons8.com/color/48/000000/linkedin.png" /></a>
-                        <a href="#"><img src="https://img.icons8.com/color/48/000000/twitter.png" /></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
             </div>
@@ -394,8 +391,8 @@
         </div>
     </div>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    CONTACT PAGE END
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            CONTACT PAGE END
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
 @endsection
 
 @push('scripts')
