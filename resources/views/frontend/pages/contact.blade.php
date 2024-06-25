@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                BREADCRUMB START
-                            ==============================-->
+                                                                    BREADCRUMB START
+                                                                ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,187 +18,297 @@
         </div>
     </section>
     <!--=============================
-                                BREADCRUMB END
-                            ==============================-->
+                    BREADCRUMB END
+        ==============================-->
 
 
     <!--=============================
-                                CONTACT PAGE START
-                            ==============================-->
-    <section class="fp__contact mt_100 xs_mt_70 mb_100 xs_mb_70">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-12 wow fadeInUp" data-wow-duration="1s">
-                            <div class="fp__contact_info">
-                                <span><i class="fal fa-phone-alt"></i></span>
-                                <div class="text">
-                                    <h3>Call</h3>
-                                    <p>{{ @$contact->phone_one }}</p>
-                                    <p>{{ @$contact->phone_two }}</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 wow fadeInUp" data-wow-duration="1s">
-                            <div class="fp__contact_info">
-                                <span><i class="fal fa-envelope"></i></span>
-                                <div class="text">
-                                    <h3>Mail</h3>
-                                    <p>{{ @$contact->mail_one }}</p>
-                                    <p>{{ @$contact->mail_two }}</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- <div class="col-12 wow fadeInUp" data-wow-duration="1s">
-                              <div class="fp__contact_info">
-                               <span><i class="fas fa-street-view"></i></span>
-                               <div class="text">
-                                <h3>location</h3>
+                    CONTACT PAGE START
+         ==============================-->
 
-                               </div>
-                              </div>
-                             </div>-->
-                        {{-- <div class="mt-3">{!! @$contact->address !!}</div> --}}
+
+    <style>
+        .contact-card {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            background-color: #f7f8fd !important;
+        }
+
+        .contact-card img {
+            transition: transform 0.3s;
+        }
+
+        .imgcontact {
+            border-radius: 20px;
+        }
+
+        .contact-card:hover img {
+            transform: scale(1.1);
+            border-radius: 20px;
+        }
+
+        .location-icon {
+            width: 50px;
+            height: 50px;
+            transition: 0.4s;
+        }
+
+        .viewallcontact {
+            border: 1px solid #01b9eb !important;
+        }
+
+        .viewallcontact>i {
+            transition: 0.4s;
+        }
+
+        .viewallcontact:hover {
+            color: #01b9eb !important;
+        }
+
+        .service-content {
+            flex: 1;
+        }
+
+        .img-container {
+            margin-top: auto;
+        }
+
+
+        .formbg {
+            background-color: #f7f8fd !important;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-section {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 40px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        .social-icons a {
+            margin-right: 15px;
+        }
+
+        .btn-primary {
+            background-color: #6c5ce7;
+            border-color: #6c5ce7;
+        }
+
+        .form-control,
+        .btn-primary {
+            border-radius: 5px;
+        }
+    </style>
+
+    <div class="container py-5">
+        <h4 class="fw-bold lightblue">Contact Us</h4>
+        <h1 class="fw-bold darkblack">Support and Assistance</h1>
+
+        <div class="row mt-5">
+            <div class="col-md-4 mb-4">
+                <div class="contact-card rounded-5 p-4">
+                    <div class="contact-content">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h4 class="fw-bold">Address</h4>
+                            <div
+                                class="location-icon d-flex justify-content-center align-items-center btnbackground rounded-circle text-center fs-4">
+                                <a href=""><i class="fa-solid fa-location-dot text-light"></i></a>
+                            </div>
+                        </div>
+                        <hr>
+                        <p>3D Cakes Edinburgh</p>
+                        <p class="text-muted fw-semibold"><small>20 Roseburn Terrace
+                                Edinburgh
+                                Midlothian
+                                EH12 6AW</small></p>
                     </div>
-                    <div class="fp__contact_form_area mt_100 xs_mt_70">
-
-                        <div class="row mt_100 xs_mt_70">
-                            <div class="col-xl-12 wow fadeInUp" data-wow-duration="1s">
-                                <div class="fp__contact_map">
-                                    <iframe src="{{ @$contact->map_link }}" style="border:0;" allowfullscreen=""
-                                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="img-container overflow-hidden imgcontact">
+                        <img src="https://demo.awaikenthemes.com/weebix/wp-content/uploads/2024/04/service-img-1.jpg"
+                            class="img-fluid" alt="Web Development">
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-12 wow fadeInUp" data-wow-duration="1s">
-                            <div class="fp__contact_info">
-                                <span><i class="fal fa-phone-alt"></i></span>
-                                <div class="text">
-                                    <h3>Call</h3>
-                                    <p>{{ $contact2->phone_one }}</p>
-                                    <p>{{ @$contact2->phone_two }}</p>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 wow fadeInUp" data-wow-duration="1s">
-                            <div class="fp__contact_info">
-                                <span><i class="fal fa-envelope"></i></span>
-                                <div class="text">
-                                    <h3>Mail</h3>
-                                    <p>{{ @$contact2->mail_one }}</p>
-                                    <p>{{ @$contact2->mail_two }}</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- <div class="col-12 wow fadeInUp" data-wow-duration="1s">
-                              <div class="fp__contact_info">
-                               <span><i class="fas fa-street-view"></i></span>
-                               <div class="text">
-                                <h3>location</h3>
-
-                               </div>
-                              </div>
-                             </div>-->
-                        <div class="mt-3">{!! @$contact2->address !!}</div>
-                    </div>
-                    <div class="fp__contact_form_area mt_100 xs_mt_70">
-
-                        <div class="row mt_100 xs_mt_70">
-                            <div class="col-xl-12 wow fadeInUp" data-wow-duration="1s">
-                                <div class="fp__contact_map">
-                                    <iframe src="{{ @$contact2->map_link }}" style="border:0;" allowfullscreen=""
-                                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="row mt-5">
-                <div class="col-xl-12 wow fadeInUp" data-wow-duration="1s">
-                    <form class="fp__contact_form">
-                        @csrf
-                        <h3>Contact</h3>
-                        <div class="row">
-                            <div class="col-xl-6 col-lg-6">
-                                <div class="fp__contact_form_input">
-                                    <span><i class="fal fa-user-alt"></i></span>
-                                    <input type="text" placeholder="Name" name="name">
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-6">
-                                <div class="fp__contact_form_input">
-                                    <span><i class="fal fa-envelope"></i></span>
-                                    <input type="email" placeholder="Email" name="email">
-                                </div>
-                            </div>
-
-                            <div class="col-xl-12 col-lg-12">
-                                <div class="fp__contact_form_input">
-                                    <span><i class="fal fa-book"></i></span>
-                                    <input type="text" placeholder="Subject" name="subject">
-                                </div>
-                            </div>
-                            <div class="col-xl-12">
-                                <div class="fp__contact_form_input textarea">
-                                    <span><i class="fal fa-book"></i></span>
-                                    <textarea rows="8" placeholder="Message" name="message"></textarea>
-                                </div>
-                                <button type="submit" class="submit_btn">Send Message</button>
-                            </div>
-                        </div>
-                    </form>
                 </div>
             </div>
+            <div class="col-md-4 mb-4">
+                <div class="contact-card rounded-5 p-4">
+                    <div class="contact-content">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h4 class="fw-bold">Call Now</h4>
+                            <div
+                                class="location-icon d-flex justify-content-center align-items-center btnbackground rounded-circle text-center fs-4">
+                                <a href=""><i class="fa-solid fa-phone text-light"></i></a>
+                            </div>
+                        </div>
+                        <hr>
+                        <p class="text-muted fw-semibold">
+                            <small>Phone service available Monday - Sunday 0131 337 9990.</small>
+                        </p>
+                    </div>
+                    <div class="img-container overflow-hidden imgcontact">
+                        <img src="https://demo.awaikenthemes.com/weebix/wp-content/uploads/2024/04/service-img-1.jpg"
+                            class="img-fluid" alt="Web Development">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="contact-card rounded-5 p-4">
+                    <div class="contact-content">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h4 class="fw-bold">Email Us</h4>
+                            <div
+                                class="location-icon d-flex justify-content-center align-items-center btnbackground rounded-circle text-center fs-4">
+                                <a href=""><i class="fa-solid fa-envelope text-light"></i></a>
+                            </div>
+                        </div>
+                        <hr>
+                        <p class="text-muted fw-semibold">
+                            <small>enquiries@3d-cakes.co.uk</small>
+                        </p>
+                    </div>
+                    <div class="img-container overflow-hidden imgcontact">
+                        <img src="https://demo.awaikenthemes.com/weebix/wp-content/uploads/2024/04/service-img-1.jpg"
+                            class="img-fluid" alt="Web Development">
+                    </div>
+                </div>
+            </div>
+            {{-- <div class="row mt-5 pt-5">
+                <div class="col-6">
+                    <h4 class="fw-bold lightblue">Contact Us</h4>
+                    <div class="mb-4">
+                        <h1 class="fw-bold darkblack">Get in touch with us today</h1>
+                        <p class="text-secondary fw-semibold">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                            accusantium,
+                            totam rem aperiam, eaque
+                            ipsa
+                            quae ab illo inventore et.</p>
+                    </div>
+
+                    <div class="mt-4">
+                        <h5>Follow Us:</h5>
+                        <div class="social-icons">
+                            <a href="#"><img src="https://img.icons8.com/color/48/000000/facebook-new.png" /></a>
+                            <a href="#"><img src="https://img.icons8.com/color/48/000000/instagram-new.png" /></a>
+                            <a href="#"><img src="https://img.icons8.com/color/48/000000/linkedin.png" /></a>
+                            <a href="#"><img src="https://img.icons8.com/color/48/000000/twitter.png" /></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="formbg p-5 rounded-4">
+                        <form>
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="First Name">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Last Name">
+                                </div>
+                            </div>
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Phone">
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" class="form-control" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Subjects">
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="4" placeholder="Message"></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">Send A Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div> --}}
         </div>
 
-    </section>
-    <!--=============================
-                                CONTACT PAGE END
-                            ==============================-->
-@endsection
 
-@push('scripts')
-    <script>
-        $(document).ready(function() {
-            $('.fp__contact_form').on('submit', function(e) {
-                e.preventDefault();
-                let formData = $(this).serialize();
-                $.ajax({
-                    method: 'POST',
-                    url: '{{ route('contact.send-message') }}',
-                    data: formData,
-                    beforeSend: function() {
-                        $('.submit_btn').attr('disabled', true)
-                        $('.submit_btn').html(`
+
+
+
+        <div class="row mt-5">
+            <div class="col-xl-12 wow fadeInUp" data-wow-duration="1s">
+                <form class="fp__contact_form">
+                    @csrf
+                    <h3>Contact</h3>
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="fp__contact_form_input">
+                                <span><i class="fal fa-user-alt"></i></span>
+                                <input type="text" placeholder="Name" name="name">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="fp__contact_form_input">
+                                <span><i class="fal fa-envelope"></i></span>
+                                <input type="email" placeholder="Email" name="email">
+                            </div>
+                        </div>
+
+                        <div class="col-xl-12 col-lg-12">
+                            <div class="fp__contact_form_input">
+                                <span><i class="fal fa-book"></i></span>
+                                <input type="text" placeholder="Subject" name="subject">
+                            </div>
+                        </div>
+                        <div class="col-xl-12">
+                            <div class="fp__contact_form_input textarea">
+                                <span><i class="fal fa-book"></i></span>
+                                <textarea rows="8" placeholder="Message" name="message"></textarea>
+                            </div>
+                            <button type="submit" class="submit_btn">Send Message</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!--=============================
+                                                                    CONTACT PAGE END
+                                                                ==============================-->
+    @endsection
+
+    @push('scripts')
+        <script>
+            $(document).ready(function() {
+                $('.fp__contact_form').on('submit', function(e) {
+                    e.preventDefault();
+                    let formData = $(this).serialize();
+                    $.ajax({
+                        method: 'POST',
+                        url: '{{ route('contact.send-message') }}',
+                        data: formData,
+                        beforeSend: function() {
+                            $('.submit_btn').attr('disabled', true)
+                            $('.submit_btn').html(`
                         <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                         Sending...
                         `);
-                    },
-                    success: function(response) {
-                        toastr.success(response.message);
-                        $('.fp__contact_form').trigger('reset');
-                        $('.submit_btn').attr('disabled', false)
-                        $('.submit_btn').html(`Send Message`);
-                    },
-                    error: function(xhr, status, error) {
-                        let errors = xhr.responseJSON.errors;
-                        $.each(errors, function(index, value) {
-                            toastr.error(value);
-                        });
+                        },
+                        success: function(response) {
+                            toastr.success(response.message);
+                            $('.fp__contact_form').trigger('reset');
+                            $('.submit_btn').attr('disabled', false)
+                            $('.submit_btn').html(`Send Message`);
+                        },
+                        error: function(xhr, status, error) {
+                            let errors = xhr.responseJSON.errors;
+                            $.each(errors, function(index, value) {
+                                toastr.error(value);
+                            });
 
-                        $('.submit_btn').attr('disabled', false)
-                        $('.submit_btn').html(`Send Message`);
-                    }
+                            $('.submit_btn').attr('disabled', false)
+                            $('.submit_btn').html(`Send Message`);
+                        }
+                    })
                 })
             })
-        })
-    </script>
-@endpush
+        </script>
+    @endpush
