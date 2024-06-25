@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                                    BREADCRUMB START
-                                                                ==============================-->
+                                                                                                                                                                                        BREADCRUMB START
+                                                                                                                                                                                    ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,13 +18,13 @@
         </div>
     </section>
     <!--=============================
-                    BREADCRUMB END
-        ==============================-->
+                                                                                                                                        BREADCRUMB END
+                                                                                                                            ==============================-->
 
 
     <!--=============================
-                    CONTACT PAGE START
-         ==============================-->
+                                                                                                                                        CONTACT PAGE START
+                                                                                                                             ==============================-->
 
 
     <style>
@@ -105,8 +105,8 @@
     </style>
 
     <div class="container py-5">
-        <h4 class="fw-bold lightblue">Contact Us</h4>
-        <h1 class="fw-bold darkblack">Support and Assistance</h1>
+        <h1 class="fw-bold darkblack">Address Line 1</h1>
+        <h4 class="fw-bold lightblue">3D Cakes Edinburgh</h4>
 
         <div class="row mt-5">
             <div class="col-md-4 mb-4">
@@ -120,15 +120,12 @@
                             </div>
                         </div>
                         <hr>
-                        <p>3D Cakes Edinburgh</p>
-                        <p class="text-muted fw-semibold"><small>20 Roseburn Terrace
-                                Edinburgh
-                                Midlothian
-                                EH12 6AW</small></p>
+                        <p class="text-muted fw-semibold"><small>20 Roseburn Terrace<br>Edinburgh Midlothian EH12
+                                6AW</small></p>
                     </div>
                     <div class="img-container overflow-hidden imgcontact">
-                        <img src="https://demo.awaikenthemes.com/weebix/wp-content/uploads/2024/04/service-img-1.jpg"
-                            class="img-fluid" alt="Web Development">
+                        <iframe src="{{ @$contact->map_link }}" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
@@ -148,7 +145,7 @@
                         </p>
                     </div>
                     <div class="img-container overflow-hidden imgcontact">
-                        <img src="https://demo.awaikenthemes.com/weebix/wp-content/uploads/2024/04/service-img-1.jpg"
+                        <img src="https://demo.awaikenthemes.com/weebix/wp-content/uploads/2024/04/contact-info-2.jpg"
                             class="img-fluid" alt="Web Development">
                     </div>
                 </div>
@@ -169,8 +166,46 @@
                         </p>
                     </div>
                     <div class="img-container overflow-hidden imgcontact">
-                        <img src="https://demo.awaikenthemes.com/weebix/wp-content/uploads/2024/04/service-img-1.jpg"
+                        <img src=https://demo.awaikenthemes.com/weebix/wp-content/uploads/2024/04/contact-info-3.jpg"
                             class="img-fluid" alt="Web Development">
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-card">
+                <h2>Opening Times</h2>
+                <div class="row align-items-center">
+                    <div class="col-4">
+                        <h4>Cake orders & collections:</h4>
+                        <p>Monday - Friday 9am - 5pm (please call 0131 337 9990 upon arrival if collecting after
+                            2pm)<br>Saturday: 9am - 4pm<br>Sunday: 10am - 3pm (by appointment only)</p>
+                    </div>
+                    <div class="col-4">
+                        <h4>Coffee & Cake:</h4>
+                        <p>Monday - Friday 9am - 2pm<br>Saturday: 9am - 4pm<br>Sunday: Closed</p>
+                    </div>
+                    <div class="col-4">
+                        <h4>7-Day Cake Delivery:</h4>
+                        <p>Cake design consultations are available 7 days a week<br>by appointment only (In store, via
+                            telephone or Zoom).</p>
+                    </div>
+
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-6">
+                        <h3>David Duncan Sugarcraft School Edinburgh</h3>
+                        <a href="">www.davidduncansugarcraftschool.co.uk</a>
+                        <h3>Opening Times:</h3>
+                        <p>Access available 30 minutes prior to class start time. For a list of class dates/times please see
+                            website.</p>
+                        <p><code>Email:</code><a
+                                href="hello@davidduncansugarcraftschool.co.uk">hello@davidduncansugarcraftschool.co.uk</a>
+                        </p>
+                    </div>
+                    <div class="col-6">
+                        <div class="">
+                            <img src="https://www.3d-cakes.co.uk/media/wysiwyg/contact/edinburgh-store.jpg" alt="">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -271,8 +306,8 @@
             </div>
         </div>
         <!--=============================
-                                                                    CONTACT PAGE END
-                                                                ==============================-->
+                                                                                                                                                                                        CONTACT PAGE END
+                                                                                                                                                                                    ==============================-->
     @endsection
 
     @push('scripts')
