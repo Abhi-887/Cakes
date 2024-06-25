@@ -89,6 +89,7 @@ class FooterSocialDataTable extends DataTable
             Column::make('id'),
             Column::make('icon'),
             Column::make('name'),
+            Column::make('url'),
             Column::make('status'),
 
             Column::computed('action')
