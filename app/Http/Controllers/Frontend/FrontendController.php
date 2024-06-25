@@ -285,7 +285,7 @@ class FrontendController extends Controller
     {
         $products = Product::where('status', 1)->orderBy('id', 'DESC');
 
-        // Retrieve all parent categories
+        // Retrieve all categories
         $categories = Category::all();
 
         if ($request->has('search') && $request->filled('search')) {
@@ -293,10 +293,6 @@ class FrontendController extends Controller
                 $query->where('name', 'like', '%' . $request->search . '%')
                     ->orWhere('long_description', 'like', '%' . $request->search . '%');
             });
-        }
-
-        if ($request->has('parent_category') && $request->filled('parent_category')) {
-            $products->where('category_id', $request->parent_category);
         }
 
         if ($request->has('sub_category') && $request->filled('sub_category')) {
@@ -310,11 +306,12 @@ class FrontendController extends Controller
             }
         ])->withAvg('reviews', 'rating')->withCount('reviews')->paginate(12);
 
-        // Pass a default category or null
+        // Set a default category or null for subcategories filtering
         $category = null;
 
         return view('frontend.pages.product', compact('products', 'categories', 'category'));
     }
+
 
     function showProduct(string $slug): View
     {
