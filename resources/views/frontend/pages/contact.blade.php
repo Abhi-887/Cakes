@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                    BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,13 +18,13 @@
         </div>
     </section>
     <!--=============================
-                                                                                                        BREADCRUMB END
-                                                                                                ==============================-->
+                                                                                                                    BREADCRUMB END
+                                                                                                            ==============================-->
 
 
     <!--=============================
-                                                                                                        CONTACT PAGE START
-                                                                                                ==============================-->
+                                                                                                                    CONTACT PAGE START
+                                                                                                            ==============================-->
 
 
     <style>
@@ -271,7 +271,7 @@
                                 6AW</small></p>
                     </div>
                     <div class="img-container overflow-hidden rounded-3">
-                        <iframe src="{{ @$contact->map_link }}" style="border:0;" allowfullscreen="" loading="lazy"
+                        <iframe src="{{ @$contact2->map_link }}" style="border:0;" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
@@ -406,8 +406,8 @@
         </div>
     </div>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                    CONTACT PAGE END
-                                                                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                CONTACT PAGE END
+                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
 @endsection
 
 @push('scripts')
