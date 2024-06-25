@@ -72,23 +72,23 @@ input[type="radio"]:checked ~ .fa-star {
             <div class="form-group">
                 <label>Which service(s) did you use? *</label>
                 <div class="form-check d-flex align-items-center">
-                    <input class="form-check-input" type="checkbox" value="Cakes Store" id="cakesStore" name="services[]">
+                    <input class="form-check-input ms-2" type="checkbox" value="Cakes Store" id="cakesStore" name="services[]">
                     <label class="form-check-label" for="cakesStore">Cakes Store</label>
                 </div>
                 <div class="form-check d-flex align-items-center">
-                    <input class="form-check-input" type="checkbox" value="Sugarcraft School" id="sugarcraftSchool" name="services[]">
+                    <input class="form-check-input ms-2" type="checkbox" value="Sugarcraft School" id="sugarcraftSchool" name="services[]">
                     <label class="form-check-label" for="sugarcraftSchool">Sugarcraft School</label>
                 </div>
                 <div class="form-check d-flex align-items-center">
-                    <input class="form-check-input" type="checkbox" value="Online Tutorials" id="onlineTutorials" name="services[]">
+                    <input class="form-check-input ms-2" type="checkbox" value="Online Tutorials" id="onlineTutorials" name="services[]">
                     <label class="form-check-label" for="onlineTutorials">Online Tutorials</label>
                 </div>
                 <div class="form-check d-flex align-items-center">
-                    <input class="form-check-input" type="checkbox" value="David Duncan Cake Supplies" id="davidDuncan" name="services[]">
+                    <input class="form-check-input ms-2" type="checkbox" value="David Duncan Cake Supplies" id="davidDuncan" name="services[]">
                     <label class="form-check-label" for="davidDuncan">David Duncan Cake Supplies</label>
                 </div>
                 <div class="form-check d-flex align-items-center">
-                    <input class="form-check-input" type="checkbox" value="24 Hour Deals" id="deals" name="services[]">
+                    <input class="form-check-input ms-2" type="checkbox" value="24 Hour Deals" id="deals" name="services[]">
                     <label class="form-check-label" for="deals">24 Hour Deals</label>
                 </div>
             </div>
