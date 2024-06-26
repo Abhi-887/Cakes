@@ -21,7 +21,7 @@
                     <textarea name="phone_one" class="form-control summernote">{{ @$contact->phone_one}}</textarea>
                 </div>
 
-                <div class="form-group">
+                {{-- <div class="form-group">
                     <label for="">Phone Two</label>
 
                     <textarea name="phone_two" class="form-control summernote">{{@$contact->phone_two}}</textarea>
@@ -106,6 +106,6 @@
                 <button type="submit" class="btn btn-primary">Update</button>
             </form>
         </div>
-    </div>
+    </div>--}}
 </section>
 @endsection
