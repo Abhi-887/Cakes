@@ -109,3 +109,17 @@
     </div>
 </section>
 @endsection
+
+@push('scripts')
+<script>
+    $(document).ready(function(){
+            $('.image-preview').css({
+                'phone_image': 'url({{ asset(@$contact->phone_image) }})',
+                'email_image':'url({{ asset(@$contact->email_image) }})',
+
+                'background-size': 'cover',
+                'background-position': 'center center'
+            })
+        })
+</script>
+@endpush
