@@ -85,8 +85,7 @@
                             </div>
                         </div>
                         <hr>
-                        <p class="text-muted fw-semibold">20 Roseburn Terrace Edinburgh Midlothian EH12
-                            6AW</p>
+                        <p class="text-muted fw-semibold">{{ @$contact->address }}</p>
                     </div>
                     <div class="img-container overflow-hidden rounded-3">
                         <iframe src="{{ @$contact->map_link }}" style="border:0; width:100%; height:100%;"
@@ -105,9 +104,7 @@
                             </div>
                         </div>
                         <hr>
-                        <p class="text-muted fw-semibold">
-                            Phone: service available Monday - Sunday <a href="tel:01313379990"></a>0131 337 9990.
-                        </p>
+                        <p class="text-muted fw-semibold">{{ @$contact->phone_one }}</p>
                     </div>
                     <div class="img-container overflow-hidden rounded-3">
                         <img src="https://demo.awaikenthemes.com/weebix/wp-content/uploads/2024/04/contact-info-2.jpg"
@@ -127,7 +124,7 @@
                         </div>
                         <hr>
                         <p class="text-muted fw-semibold">
-                            <a href="mailto:enquiries@3d-cakes.co.uk"></a>Email: enquiries@3d-cakes.co.uk
+                            {{ @$contact->mail_one }}
                         </p>
                     </div>
                     <div class="img-container overflow-hidden rounded-3">
@@ -143,23 +140,20 @@
             <div class="row pt-5">
                 <div class="col-md-4 d-flex justify-content-center text-center text-md-start">
                     <div>
-                        <h4 class="color-light-gray mb-3">Cake orders & collections:</h4>
-                        <p class="fw-semibold">Monday - Friday 9am - 5pm (please call 0131 337 9990 upon arrival if
-                            collecting after 2pm)<br>Saturday: 9am - 4pm<br>Sunday: 10am - 3pm (by appointment only)</p>
+                        <h4 class="color-light-gray mb-3"> {{ @$contact->title_one }}/h4>
+                        <p class="fw-semibold">{{ @$contact->Description_one }}</p>
                     </div>
                 </div>
                 <div class="col-md-4 d-flex justify-content-md-center text-center text-md-start">
                     <div>
-                        <h4 class="color-light-gray mb-3">Coffee & Cake:</h4>
-                        <p class="fw-semibold">Monday - Friday 9am - 2pm<br>Saturday: 9am - 4pm<br>Sunday: Closed</p>
+                        <h4 class="color-light-gray mb-3">{{ @$contact->title_two }}</h4>
+                        <p class="fw-semibold">{{ @$contact->Description_two }}</p>
                     </div>
                 </div>
                 <div class="col-md-4 d-flex justify-content-md-center text-center text-md-start">
                     <div>
-                        <h4 class="color-light-gray mb-3">7-Day Cake Delivery:</h4>
-                        <p class="fw-semibold">Cake design consultations are available 7 days a week<br>by appointment
-                            only
-                            (In store, via telephone or Zoom).</p>
+                        <h4 class="color-light-gray mb-3">{{ @$contact->title_three }}</h4>
+                        <p class="fw-semibold">{{ @$contact->Description_three }}</p>
                     </div>
                 </div>
             </div>
