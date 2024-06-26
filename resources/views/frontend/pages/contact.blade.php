@@ -252,38 +252,7 @@
     </div>
 
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-5 text-center text-md-start">
-                <h4 class="color-dark-gray my-2">David Duncan Sugarcraft School Edinburgh</h4>
-                <h4 class="color-dark-gray my-2">David Duncan Sugarcraft School Glasgow</h4>
-                <a class="my-2 text-muted fw-semibold" href="">www.davidduncansugarcraftschool.co.uk</a>
-                <h4 class="fw-bold my-2">Opening Times:</h4>
-                <p class="fw-semibold my-2">Access available 30 minutes prior to class start time. For a list of
-                    class
-                    dates/times please see
-                    website.</p>
-                <p class="my-2"><code>Email: </code><a
-                        href="hello@davidduncansugarcraftschool.co.uk">hello@davidduncansugarcraftschool.co.uk</a>
-                </p>
-            </div>
-            <div class="col-md-7">
-                <div class="row">
-                    <div class="col-md-7 contact-card2 d-flex align-items-stretch my-3 my-md-0">
-                        <div class="overflow-hidden position-relative rounded-3 w-100">
-                            <img class="img-fluid w-100 h-100"
-                                src="https://www.3d-cakes.co.uk/media/wysiwyg/contact/edinburgh-store.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="col-md-5 contact-card2 d-flex align-items-stretch my-3 my-md-0">
-                        <div class="overflow-hidden rounded-3 w-100">
-                            <img class="img-fluid w-100 h-100"
-                                src="https://lh3.googleusercontent.com/p/AF1QipNAlr9-Yeu7MjzvFARmi6vy0Xuyxmz_A2mST_lt=s680-w680-h510"
-                                alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {!! @$contact2->Description !!}
     </div>
 
     <div class="container">
