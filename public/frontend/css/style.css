@@ -2671,7 +2671,8 @@ footer .wrapper a:hover {
 }
 
 .fp__contact_form_input input,
-.fp__contact_form_input textarea {
+.fp__contact_form_input textarea,
+.fp__contact_form_input select {
     padding: 12px 20px 12px 65px;
     border-radius: 5px;
 }
