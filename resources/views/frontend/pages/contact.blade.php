@@ -219,7 +219,7 @@
                         </p>
                     </div>
                     <div class="img-container overflow-hidden rounded-3">
-                        <img src="{{ asset('storage/' . $contact->email_image) }}"
+                        <img src=https://demo.awaikenthemes.com/weebix/wp-content/uploads/2024/04/contact-info-3.jpg"
                             class="img-fluid" alt="email">
                     </div>
                 </div>
