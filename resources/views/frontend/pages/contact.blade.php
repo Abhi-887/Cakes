@@ -107,7 +107,7 @@
                         <p class="text-muted fw-semibold">{!! @$contact->phone_one !!}</p>
                     </div>
                     <div class="img-container overflow-hidden rounded-3">
-                        {{ @$contact->phone_image }}
+                        <img src=" {{ @$contact->phone_image }}"class="img-fluid" alt="email">
                     </div>
                 </div>
             </div>
@@ -127,7 +127,7 @@
                         </p>
                     </div>
                     <div class="img-container overflow-hidden rounded-3">
-                        {{ @$contact->email_image }}
+                        <img src=" {{ @$contact->email_image }}"class="img-fluid" alt="email">
                     </div>
                 </div>
             </div>
