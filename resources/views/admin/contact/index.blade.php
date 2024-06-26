@@ -18,10 +18,10 @@
 
                 <div class="form-group">
                     <label for="">Phone One</label>
-                    <textarea name="phone_one" class="form-control summernote">{{ @$contact->phone_one}}</textarea>
+                    <textarea name="phone_one" class="form-control summernote">{!! @$contact->phone_one !!}</textarea>
                 </div>
 
-                {{-- <div class="form-group">
+                <div class="form-group">
                     <label for="">Phone Two</label>
 
                     <textarea name="phone_two" class="form-control summernote">{{@$contact->phone_two}}</textarea>
@@ -99,7 +99,7 @@
                     <label for="">Description</label>
                     <textarea name="Description_three"
                         class="form-control summernote">{{@$contact->Description_three}}</textarea>
-                </div>--}}
+                </div>
 
 
 
