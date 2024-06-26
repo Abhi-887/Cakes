@@ -23,13 +23,13 @@ Route::get('/products', function () {
     return $products;
 });
 // Retrieve a specific product by ID
-Route::middleware('auth:sanctum')->get('/products/{id}', function ($id) {
+Route::get('/products/{id}', function ($id) {
     $product = Product::findOrFail($id);
     return response()->json($product);
 });
 
 // Update a specific product by ID
-Route::middleware('auth:sanctum')->put('/products/{id}', function (Request $request, $id) {
+Route::put('/products/{id}', function (Request $request, $id) {
     $product = Product::findOrFail($id);
 
     // Validate the request data
