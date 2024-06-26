@@ -99,9 +99,9 @@
                             <div class="fp__menu_item_img">
                                 <img src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}"
                                     class="img-fluid w-100">
-                                <a class="px-3 py-1 mt-3 category z-1"
-                                    href="#">{{ $product->subCategory->name ?? '' }}</a>
                             </div>
+                            <a class="category bg-light px-2 py-1"
+                                href="#">{{ $product->subCategory->name ?? '' }}</a>
                             <div class="fp__menu_item_text">
                                 @if ($product->reviews_avg_rating)
                                     <p class="rating">
@@ -113,7 +113,8 @@
                                 @endif
                                 <a class="title"
                                     href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
-                                <h5 class="mb-3">
+                                <h5
+                                    class="price fw-semibold text-center position-absolute py-1 px-3 rounded-pill color-light-gray top-0">
                                     @if ($product->offer_price > 0)
                                         {{ currencyPosition($product->offer_price) }}
                                         <del>{{ currencyPosition($product->price) }}</del>
