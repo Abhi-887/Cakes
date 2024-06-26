@@ -17,89 +17,89 @@
 
                     <div class="form-group">
                         <label for="phone_one">Phone One</label>
-                        <textarea name="phone_one" class="form-control summernote">{{ old('phone_one', $contact->phone_one) }}</textarea>
+                        <textarea name="phone_one" class="form-control summernote">{{ $contact->phone_one  }}</textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="phone_two">Phone Two</label>
-                        <textarea name="phone_two" class="form-control summernote">{{ old('phone_two', $contact->phone_two) }}</textarea>
+                        <textarea name="phone_two" class="form-control summernote">{{ $contact->phone_two }}</textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="phone_image">Phone Image</label>
                         <div>
-                            <label for="phone_image_upload" id="phone_image_label">Choose File</label>
-                            <input type="file" name="phone_image" id="phone_image_upload"/>
+                            <label for="image-upload" id="image-label">Choose File</label>
+                            <input type="file" name="phone_image" id="image-upload"/>
                         </div>
                         @if($contact && $contact->phone_image)
-                            <img src="{{ Storage::url($contact->phone_image) }}" alt="Phone Image" style="max-width: 200px;">
+                            <img src="{{ Storage::url($contact->phone_image) }}" alt="Phone Image">
                         @endif
                     </div>
 
                     <div class="form-group">
                         <label for="mail_one">Email One</label>
-                        <input type="text" class="form-control" name="mail_one" value="{{ old('mail_one', $contact->mail_one) }}">
+                        <input type="text" class="form-control" name="mail_one" value="{{ $contact->mail_one}}">
                     </div>
 
                     <div class="form-group">
                         <label for="mail_two">Email Two</label>
-                        <input type="text" class="form-control" name="mail_two" value="{{ old('mail_two', $contact->mail_two) }}">
+                        <input type="text" class="form-control" name="mail_two" value="{{ $contact->mail_two }}">
                     </div>
 
                     <div class="form-group">
                         <label for="email_image">Email Image</label>
                         <div>
-                            <label for="email_image_upload" id="email_image_label">Choose File</label>
-                            <input type="file" name="email_image" id="email_image_upload"/>
+                            <label for="image-upload" id="image-label">Choose File</label>
+                            <input type="file" name="email_image" id="image-upload"></input>
                         </div>
                         @if($contact && $contact->email_image)
-                            <img src="{{ Storage::url($contact->email_image) }}" alt="Email Image" style="max-width: 200px;">
+                            <img src="{{ Storage::url($contact->email_image) }}" alt="Email Image">
                         @endif
                     </div>
 
                     <div class="form-group">
                         <label for="address">Address</label>
-                        <textarea name="address" class="form-control summernote">{{ old('address', $contact->address) }}</textarea>
+                        <textarea name="address" class="form-control summernote">{{ $contact->address  }}</textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="map_link">Google Map Link</label>
-                        <input type="text" class="form-control" name="map_link" value="{{ old('map_link', $contact->map_link) }}">
+                        <input type="text" class="form-control" name="map_link" value="{{ $contact->map_link  }}">
                     </div>
 
                     <div class="form-group">
                         <label for="title_one">Title One</label>
-                        <input type="text" class="form-control" name="title_one" value="{{ old('title_one', $contact->title_one) }}">
+                        <input type="text" class="form-control" name="title_one" value="{{ $contact->title_one }}">
                     </div>
 
                     <div class="form-group">
                         <label for="description_one">Description One</label>
-                        <textarea name="description_one" class="form-control summernote">{{ old('description_one', $contact->description_one) }}</textarea>
+                        <textarea name="description_one" class="form-control summernote">{{ $contact->description_one ?? '' }}</textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="title_two">Title Two</label>
-                        <input type="text" class="form-control" name="title_two" value="{{ old('title_two', $contact->title_two) }}">
+                        <input type="text" class="form-control" name="title_two" value="{{ $contact->title_two }}">
                     </div>
 
                     <div class="form-group">
                         <label for="description_two">Description Two</label>
-                        <textarea name="description_two" class="form-control summernote">{{ old('description_two', $contact->description_two) }}</textarea>
+                        <textarea name="description_two" class="form-control summernote">{{ $contact->description_two  }}</textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="title_three">Title Three</label>
-                        <input type="text" class="form-control" name="title_three" value="{{ old('title_three', $contact->title_three) }}">
+                        <input type="text" class="form-control" name="title_three" value="{{ $contact->title_three}}">
                     </div>
 
                     <div class="form-group">
                         <label for="description_three">Description Three</label>
-                        <textarea name="description_three" class="form-control summernote">{{ old('description_three', $contact->description_three) }}</textarea>
+                        <textarea name="description_three" class="form-control summernote">{{ $contact->description_three  }}</textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="main_description">Main Description</label>
-                        <textarea name="main_description" class="form-control summernote">{{ old('main_description', $contact->main_description) }}</textarea>
+                        <textarea name="main_description" class="form-control summernote">{{ $contact->main_description }}</textarea>
                     </div>
 
                     <button type="submit" class="btn btn-primary">Update</button>
