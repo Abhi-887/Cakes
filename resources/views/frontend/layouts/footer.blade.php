@@ -106,6 +106,10 @@
 </footer>
 
 <style>
+    .social-links a {
+        color: #4b637f !important;
+    }
+
     footer {
         background-color: #f9f9f9 !important;
     }
