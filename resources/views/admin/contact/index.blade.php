@@ -99,13 +99,13 @@
                     <label for="">Description</label>
                     <textarea name="Description_three"
                         class="form-control summernote">{{@$contact->Description_three}}</textarea>
-                </div>
+                </div>--}}
 
 
 
                 <button type="submit" class="btn btn-primary">Update</button>
             </form>
         </div>
-    </div>--}}
+    </div>
 </section>
 @endsection
