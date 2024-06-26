@@ -107,8 +107,7 @@
                         <p class="text-muted fw-semibold">{!! @$contact->phone_one !!}</p>
                     </div>
                     <div class="img-container overflow-hidden rounded-3">
-                        <img src="https://demo.awaikenthemes.com/weebix/wp-content/uploads/2024/04/contact-info-2.jpg"
-                            class="img-fluid" alt="contact">
+                        {{ @$contact->phone_image }}
                     </div>
                 </div>
             </div>
@@ -128,8 +127,7 @@
                         </p>
                     </div>
                     <div class="img-container overflow-hidden rounded-3">
-                        <img src=https://demo.awaikenthemes.com/weebix/wp-content/uploads/2024/04/contact-info-3.jpg"
-                            class="img-fluid" alt="email">
+                        {{ @$contact->email_image }}
                     </div>
                 </div>
             </div>
