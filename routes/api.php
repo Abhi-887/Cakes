@@ -22,22 +22,25 @@ Route::get('/products', function () {
     $products = Product::all();
     return $products;
 });
+// Retrieve a specific product by ID
+Route::middleware('auth:sanctum')->get('/products/{id}', function ($id) {
+    $product = Product::findOrFail($id);
+    return response()->json($product);
+});
+
+// Update a specific product by ID
 Route::middleware('auth:sanctum')->put('/products/{id}', function (Request $request, $id) {
+    $product = Product::findOrFail($id);
+
     // Validate the request data
     $request->validate([
-        'name' => 'required|string',
-        'description' => 'required|string',
         'price' => 'required|numeric',
     ]);
 
-    // Find the product by ID
-    $product = Product::findOrFail($id);
-
     // Update the product with validated data
-    $product->name = $request->input('name');
-    $product->description = $request->input('description');
-    $product->price = $request->input('price');
-    $product->save();
+    $product->update([
+        'price' => $request->input('price'),
+    ]);
 
     return response()->json($product);
 });
