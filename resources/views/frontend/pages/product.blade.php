@@ -126,7 +126,11 @@
 
                             <li onclick="addToWishlist('{{ $product->id }}')"><a class="background-light-gray"
                                     href="javascript:;"><i class="fal fa-heart"></i></a></li>
-                            <li><a href="{{ route('product.show', $product->slug) }}"><i class="far fa-eye"></i></a>
+
+
+                            <li><a class="background-light-gray" href="{{ route('product.show', $product->slug) }}"><i
+                                        class="far fa-eye"></i></a></li>
+
                             </li>
                         </ul>
                     </div>
