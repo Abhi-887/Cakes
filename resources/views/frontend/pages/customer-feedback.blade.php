@@ -4,7 +4,7 @@
     <style>
         .form-check-input:checked {
             background-color: #788a9f !important;
-            border-color: #788a9f !important;
+            border-color: #4a5f76 !important;
         }
 
         .form-check-input {
@@ -13,8 +13,8 @@
         }
     </style>
     <!--=============================
-                                                                                                                                                                                                                    BREADCRUMB START
-                                                                                                                                                                           ==============================-->
+                                                                                                                                                                                                                            BREADCRUMB START
+                                                                                                                                                                                   ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -29,26 +29,26 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                    BREADCRUMB END
-                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                            BREADCRUMB END
+                                                                                                                                                                                                                        ==============================-->
     <!--=============================
-                                                                                                                                                                                                                   Customer-Feedback PAGE START
-                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                           Customer-Feedback PAGE START
+                                                                                                                                                                                                                        ==============================-->
 
 
     <div class="container mt-5">
         <div class="row justify-content-center align-items-center">
-            <div class="col-6 text-center">
+            <div class="col-6">
                 <a class="" href="{{ url('/') }}">
                     <img src="{{ asset('uploads/web-logo1.png') }}" alt="3D-Cakes Logo" class="img-fluid" />
                 </a>
                 <div class="my-3">
-                    <h5 class="feedback-title mb-2">How was 3D Cakes?</h5>
-                    <p>We appreciate feedback about your experience.</p>
+                    <h5 class="feedback-title mb-2 text-center">How was 3D Cakes?</h5>
+                    <p class="text-center">We appreciate feedback about your experience.</p>
                 </div>
                 <hr>
                 <div class="my-4">
-                    <h6>How likely are you to recommend 3D Cakes to others?</h6>
+                    <h6 class="text-center">How likely are you to recommend 3D Cakes to others?</h6>
                     <div class="form-group mt-2">
                         <div id="rating" name="rating">
                             @for ($i = 1; $i <= 5; $i++)
@@ -59,7 +59,7 @@
                             @endfor
                         </div>
                     </div>
-                    <div class="rating-text mt-2">
+                    <div class="rating-text mt-2 text-center">
                         <span>Not Likely</span>
                         <span class="float-right">Very Likely</span>
                     </div>
@@ -75,7 +75,7 @@
                     <input type="email" placeholder="Email" name="email">
                 </div>
 
-                <h6 class="float-start">Which store did you use? *</h6>
+                <h6 class="">Which store did you use? *</h6>
                 <div class="fp__contact_form_input form-group mt-2">
                     <span><i class="far fa-caret-square-down"></i></span>
                     <select class="form-control" id="store" name="store" required>
@@ -128,6 +128,6 @@
 
 
     <!--=============================
-                                                                                                                                                                                                                    Customer-Feedback  PAGE END
-                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                            Customer-Feedback  PAGE END
+                                                                                                                                                                                                                        ==============================-->
 @endsection
