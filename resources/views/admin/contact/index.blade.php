@@ -31,13 +31,12 @@
                     <div class="form-group">
                         <label for="phone_image">Phone Image</label>
                         <input type="file" name="phone_image" id="phone_image">
-                        @if ($contact->phone_image)
+                        @if ($contact && $contact->phone_image)
                             <div>
                                 <img src="{{ asset('storage/' . $contact->phone_image) }}" alt="Phone Image" width="100">
                             </div>
                         @endif
                     </div>
-
 
                     <div class="form-group">
                         <label for="">Email One</label>
@@ -54,7 +53,7 @@
                     <div class="form-group">
                         <label for="email_image">Email Image</label>
                         <input type="file" name="email_image" id="email_image">
-                        @if ($contact->email_image)
+                        @if ($contact && $contact->email_image)
                             <div>
                                 <img src="{{ asset('storage/' . $contact->email_image) }}" alt="Email Image" width="100">
                             </div>
