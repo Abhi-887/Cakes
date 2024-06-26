@@ -32,7 +32,7 @@
                             <input type="file" name="phone_image" id="image-upload"/>
                         </div>
                         @if($contact && $contact->phone_image)
-                            <img src="{{ Storage::url($contact->phone_image) }}" alt="Phone Image" style="max-width: 100px; margin-top: 10px;">
+                            <img src="{{ Storage::url($contact->phone_image) }}" alt="Phone Image">
                         @endif
                     </div>
 
@@ -53,7 +53,7 @@
                             <input type="file" name="email_image" id="image-upload"></input>
                         </div>
                         @if($contact && $contact->email_image)
-                            <img src="{{ Storage::url($contact->email_image) }}" alt="Email Image" style="max-width: 100px; margin-top: 10px;">
+                            <img src="{{ Storage::url($contact->email_image) }}" alt="Email Image">
                         @endif
                     </div>
 
