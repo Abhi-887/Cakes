@@ -98,7 +98,33 @@
 		</div>
 	  </div>
 
+<script>
 
+let formData = $(this).serialize();
+                $.ajax({
+                    method: 'POST',
+                    url: '{{ route('add-to-cart') }}',
+                    data: formData,
+                    beforeSend: function() {
+                        $('.v_submit_button').attr('disabled', true);
+                        $('.v_submit_button').html(
+                            '<span class="spinner-border spinner-border-sm text-light" role="status" aria-hidden="true"></span> Loading...'
+                        )
+                    },
+                    success: function(response) {
+                        updateSidebarCart();
+                        toastr.success(response.message);
+                    },
+                    error: function(xhr, status, error) {
+                        let errorMessage = xhr.responseJSON.message;
+                        toastr.error(errorMessage);
+                    },
+                    complete: function() {
+                        $('.v_submit_button').html('Add to Cart');
+                        $('.v_submit_button').attr('disabled', false);
+                    }
+                })
+</script>
 
     <!--=============================
          Wedding-cake-deposit PAGE END
