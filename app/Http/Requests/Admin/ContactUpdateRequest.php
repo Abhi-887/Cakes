@@ -22,8 +22,8 @@ class ContactUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'phone_one' => ['nullable', 'max:50'],
-            'phone_two' => ['nullable', 'max:50'],
+            'phone_one' => ['nullable'],
+            'phone_two' => ['nullable'],
             'mail_one' => ['nullable', 'max:255'],
             'mail_two' => ['nullable', 'max:255'],
             'address' => ['nullable'],
