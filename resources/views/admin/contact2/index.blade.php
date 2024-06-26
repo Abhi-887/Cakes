@@ -18,13 +18,13 @@
 
                     <div class="form-group">
                         <label for="">Phone One</label>
-                        <textarea name="phone_one"   class="form-control summernote">{{@$contact->phone_one}}</textarea>
+                        <textarea name="phone_one"   class="form-control summernote">{!! @$contact->phone_one !!}</textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="">Phone Two</label>
 
-                        <textarea name="phone_two"   class="form-control summernote">{{@$contact->phone_two}}</textarea>
+                        <textarea name="phone_two"   class="form-control summernote">{!! @$contact->phone_two !!}</textarea>
                     </div>
 
                     <div class="form-group">
@@ -57,7 +57,7 @@
 
                     <div class="form-group">
                         <label for="">Address</label>
-						<textarea name="address" class="form-control summernote">{{ @$contact->address }}</textarea>
+						<textarea name="address" class="form-control summernote">{!! $contact->address !!}</textarea>
                     </div>
 
                     <div class="form-group">
@@ -72,7 +72,7 @@
 
                     <div class="form-group">
                         <label for="">Description</label>
-                        <textarea name="Description_one"   class="form-control summernote">{{@$contact->Description_one}}</textarea>
+                        <textarea name="Description_one"   class="form-control summernote">{!! @$contact->Description_one !!}</textarea>
                     </div>
 
                     <div class="form-group">
@@ -82,7 +82,7 @@
 
                     <div class="form-group">
                         <label for="">Description</label>
-                        <textarea name="Description_two"   class="form-control summernote">{{@$contact->Description_two}}</textarea>
+                        <textarea name="Description_two"   class="form-control summernote">{!! @$contact->Description_one !!}</textarea>
                     </div>
 
                     <div class="form-group">
@@ -92,12 +92,12 @@
 
                     <div class="form-group">
                         <label for="">Description</label>
-                        <textarea name="Description_three"   class="form-control summernote">{{@$contact->Description_three}}</textarea>
+                        <textarea name="Description_three"   class="form-control summernote">{!! @$contact->Description_two !!}</textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="">Main Description</label>
-                        <textarea name="Description"   class="form-control summernote">{{@$contact->Description}}</textarea>
+                        <textarea name="Description"   class="form-control summernote">{!! @$contact->Description_three !!}</textarea>
                     </div>
 
 
