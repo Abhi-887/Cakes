@@ -27,22 +27,16 @@
                     <textarea name="phone_two" class="form-control summernote">{{@$contact->phone_two}}</textarea>
                 </div>
 
-                {{-- <div class="form-group">
-                    <label>Phone Image</label>
-                    <div id="image-preview" class="image-preview">
-                        <label for="image-upload" id="image-label">Choose File</label>
-                        <input type="file" name="phone_image" id="image-upload" value="{{ @$contact->phone_image }}" />
-                    </div>
-                </div> --}}
+
                 <div class="form-group">
                     <label>Phone Image</label>
-                    <div id="image-preview" class="image-preview">
-                        <label for="image-upload" id="image-label">Choose File</label>
-                        <input type="file" name="phone_image" id="image-upload" />
-                        <input type="hidden" name="old_phone_image" id="image-upload"
-                            value="{{ @$counter->phone_image }}" />
+                    <div>
+                        <label for="image-upload" id="image-label1">Choose File</label>
+                        @if($contact && $contact->phone_image)
+                        <img src="{{ Storage::url($contact->phone_image) }}" alt="Phone Image">
+                    @endif
                     </div>
-
+                </div>
 
 
                     <div class="form-group">
@@ -59,12 +53,15 @@
 
                     <div class="form-group">
                         <label>Email Image</label>
-                        <div id="image-preview" class="image-preview">
+                        <div>
                             <label for="image-upload" id="image-label1">Choose File</label>
-                            <input type="file" name="email_image" id="image-uploads"
-                                value="{{ @$contact->email_image }}" />
+                            @if($contact && $contact->email_image)
+                            <img src="{{ Storage::url($contact->email_image) }}" alt="Phone Image">
+                        @endif
                         </div>
                     </div>
+
+
 
                     <div class="form-group">
                         <label for="">Address</label>
