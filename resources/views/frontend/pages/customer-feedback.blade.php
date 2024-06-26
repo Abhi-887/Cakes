@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                                BREADCRUMB START
-                                                            ==============================-->
+                                                                                            BREADCRUMB START
+                                                                                        ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,11 +18,11 @@
         </div>
     </section>
     <!--=============================
-                                                                BREADCRUMB END
-                                                            ==============================-->
+                                                                                            BREADCRUMB END
+                                                                                        ==============================-->
     <!--=============================
-                                                               Customer-Feedback PAGE START
-                                                            ==============================-->
+                                                                                           Customer-Feedback PAGE START
+                                                                                        ==============================-->
 
 
     <div class="container mt-5">
@@ -41,33 +41,10 @@
                     <span><i class="fal fa-user-alt"></i></span>
                     <input type="text" placeholder="Name" name="name">
                 </div>
+
                 <div class="fp__contact_form_input">
                     <span><i class="fal fa-envelope"></i></span>
                     <input type="email" placeholder="Email" name="email">
-                </div>
-                <div class="form-floating">
-                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                        <option selected>Open this select menu</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                    <label for="floatingSelect">Works with selects</label>
-                </div>
-                <div class="mb-4">
-                    <h6>How likely are you to recommend 3D Cakes to others?</h6>
-                    <div class="star-rating">
-                        <span class="fa fa-star-o" data-rating="1"></span>
-                        <span class="fa fa-star-o" data-rating="2"></span>
-                        <span class="fa fa-star-o" data-rating="3"></span>
-                        <span class="fa fa-star-o" data-rating="4"></span>
-                        <span class="fa fa-star-o" data-rating="5"></span>
-                        <input type="hidden" name="rating" class="rating-value" value="1">
-                    </div>
-                    <div class="rating-text mt-2">
-                        <span>Not Likely</span>
-                        <span class="float-right">Very Likely</span>
-                    </div>
                 </div>
 
                 <div class="mb-4">
@@ -91,6 +68,39 @@
                     </div>
                 </div>
 
+                <div class="form-group mt-2">
+                    <label for="store" class="mb-1">Which store did you use? *</label>
+                    <select class="form-control" id="store" name="store" required>
+                        <option value="Edinburgh">Select Store</option>
+                        <option value="Edinburgh">Edinburgh</option>
+                        <option value="Glasgow">Glasgow</option>
+                    </select>
+                </div>
+
+                <div class="fp__contact_form_input textarea">
+                    <span><i class="fal fa-book"></i></span>
+                    <textarea rows="8" placeholder="Feedback" name="message"></textarea>
+                </div>
+
+                <div class="mb-4">
+                    <h6>How likely are you to recommend 3D Cakes to others?</h6>
+                    <div class="form-group mt-2">
+                        <label for="rating" class="mb-1">Star Rating *</label>
+                        <div id="rating" name="rating">
+                            @for ($i = 1; $i <= 5; $i++)
+                                <input type="radio" id="star{{ $i }}" name="rating"
+                                    value="{{ $i }}" class="d-none">
+                                <label for="star{{ $i }}" class="fa fa-star"
+                                    aria-label="{{ $i }} stars"></label>
+                            @endfor
+                        </div>
+                    </div>
+                    <div class="rating-text mt-2">
+                        <span>Not Likely</span>
+                        <span class="float-right">Very Likely</span>
+                    </div>
+                </div>
+
                 <div class="mb-4">
                     <h6>Anything else? (optional)</h6>
                     <textarea class="form-control" rows="3" placeholder="Share your experience or offer suggestions to the staff..."></textarea>
@@ -103,6 +113,6 @@
 
 
     <!--=============================
-                                                                Customer-Feedback  PAGE END
-                                                            ==============================-->
+                                                                                            Customer-Feedback  PAGE END
+                                                                                        ==============================-->
 @endsection
