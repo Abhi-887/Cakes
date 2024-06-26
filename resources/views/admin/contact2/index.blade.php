@@ -50,7 +50,7 @@
                         <label for="email_image">Email Image</label>
                         <div id="image-preview" class="image-preview">
                             <label for="image-upload" id="image-label">Choose File</label>
-                            <input type="file" name="email_image" id="image-upload"/>
+                            <input type="file" name="email_image" id="image-upload"></input>
                         </div>
                         @if($contact && $contact->email_image)
                             <img src="{{ Storage::url($contact->email_image) }}" alt="Email Image" style="max-width: 100px; margin-top: 10px;">
