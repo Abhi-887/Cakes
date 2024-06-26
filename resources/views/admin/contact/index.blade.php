@@ -29,13 +29,14 @@
 
 
                 <div class="form-group">
-                    <label>Phone Image</label>
+                    <label for="phone_image">Phone Image</label>
                     <div>
-                        <label for="image-upload" id="image-label1">Choose File</label>
-                        @if($contact && $contact->phone_image)
+                        <label for="image-upload" id="image-label">Choose File</label>
+                        <input type="file" name="phone_image" id="image-upload" accept="image/*">
+                    </div>
+                    @if($contact && $contact->phone_image)
                         <img src="{{ Storage::url($contact->phone_image) }}" alt="Phone Image">
                     @endif
-                    </div>
                 </div>
 
 
@@ -52,15 +53,15 @@
 
 
                     <div class="form-group">
-                        <label>Email Image</label>
+                        <label for="email_image">Email Image</label>
                         <div>
-                            <label for="image-upload" id="image-label1">Choose File</label>
-                            @if($contact && $contact->email_image)
-                            <img src="{{ Storage::url($contact->email_image) }}" alt="Phone Image">
-                        @endif
+                            <label for="image-upload" id="image-label">Choose File</label>
+                            <input type="file" name="email_image" id="image-upload"></input>
                         </div>
+                        @if($contact && $contact->email_image)
+                            <img src="{{ Storage::url($contact->email_image) }}" alt="Email Image">
+                        @endif
                     </div>
-
 
 
                     <div class="form-group">
