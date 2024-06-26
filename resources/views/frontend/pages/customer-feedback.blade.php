@@ -1,24 +1,9 @@
 @extends('frontend.layouts.master')
 
 @section('content')
-    <style>
-        .star-rating .fa-star {
-            color: #f2b600;
-        }
-
-        .fa-star-o {
-            color: #d3d3d3;
-        }
-
-        .rating-text {
-            display: inline-block;
-            width: 100%;
-            text-align: center;
-        }
-    </style>
     <!--=============================
-                    BREADCRUMB START
-                ==============================-->
+                                    BREADCRUMB START
+                                ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -33,23 +18,24 @@
         </div>
     </section>
     <!--=============================
-                    BREADCRUMB END
-                ==============================-->
+                                    BREADCRUMB END
+                                ==============================-->
     <!--=============================
-                   Customer-Feedback PAGE START
-                ==============================-->
+                                   Customer-Feedback PAGE START
+                                ==============================-->
 
 
     <div class="container mt-5">
-        <div class="card">
-            <div class="card-body text-center">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Resy_logo.svg/1200px-Resy_logo.svg.png"
-                    class="mb-3" alt="RESY" style="max-width: 100px;">
-                <h5 class="card-title">How was Tin Shed Garden Cafe?</h5>
+        <div class="row justify-content-center align-items-center">
+            <div class="col-6 text-center">
+                <a class="" href="{{ url('/') }}">
+                    <img src="{{ asset('uploads/web-logo1.png') }}" alt="3D-Cakes Logo" class="img-fluid" />
+                </a>
+                <h5 class="feedback-title">How was 3D Cakes?</h5>
                 <p>We appreciate feedback about your experience.</p>
 
                 <div class="mb-4">
-                    <h6>How likely are you to recommend Tin Shed Garden Cafe to others?</h6>
+                    <h6>How likely are you to recommend 3D Cakes to others?</h6>
                     <div class="star-rating">
                         <span class="fa fa-star-o" data-rating="1"></span>
                         <span class="fa fa-star-o" data-rating="2"></span>
@@ -65,19 +51,22 @@
                 </div>
 
                 <div class="mb-4">
-                    <h6>What's driving your review? (optional)</h6>
+                    <h6>Which Services Did You Use? *</h6>
                     <div class="btn-group-toggle" data-toggle="buttons">
                         <label class="btn btn-outline-secondary">
-                            <input type="checkbox" autocomplete="off"> Food
+                            <input type="checkbox" autocomplete="off">Cakes Store
                         </label>
                         <label class="btn btn-outline-secondary">
-                            <input type="checkbox" autocomplete="off"> Service
+                            <input type="checkbox" autocomplete="off">Sugarcraft School
                         </label>
                         <label class="btn btn-outline-secondary">
-                            <input type="checkbox" autocomplete="off"> Vibe
+                            <input type="checkbox" autocomplete="off">Online Tutorials
                         </label>
                         <label class="btn btn-outline-secondary">
-                            <input type="checkbox" autocomplete="off"> Other
+                            <input type="checkbox" autocomplete="off">David Ducan Cakes Supplies
+                        </label>
+                        <label class="btn btn-outline-secondary">
+                            <input type="checkbox" autocomplete="off">24 Hour Deals
                         </label>
                     </div>
                 </div>
@@ -92,31 +81,8 @@
         </div>
     </div>
 
-    <script>
-        $(document).ready(function() {
-            var $star_rating = $('.star-rating .fa');
-
-            var SetRatingStar = function() {
-                return $star_rating.each(function() {
-                    if (parseInt($(this).siblings('input.rating-value').val()) >= parseInt($(this).data(
-                            'rating'))) {
-                        return $(this).removeClass('fa-star-o').addClass('fa-star');
-                    } else {
-                        return $(this).removeClass('fa-star').addClass('fa-star-o');
-                    }
-                });
-            };
-
-            $star_rating.on('click', function() {
-                $(this).siblings('input.rating-value').val($(this).data('rating'));
-                return SetRatingStar();
-            });
-
-            SetRatingStar();
-        });
-    </script>
 
     <!--=============================
-                    Customer-Feedback  PAGE END
-                ==============================-->
+                                    Customer-Feedback  PAGE END
+                                ==============================-->
 @endsection

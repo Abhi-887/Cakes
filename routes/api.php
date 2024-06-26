@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,13 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('/products', function () {
+    $products = Product::all();
+    return $products;
+});
+// Retrieve a specific product by ID
+Route::get('/products/{id}', function ($id) {
+    $product = Product::findOrFail($id);
+    return response()->json($product);
+});
+
