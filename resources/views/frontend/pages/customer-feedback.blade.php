@@ -13,8 +13,8 @@
         }
     </style>
     <!--=============================
-                                                                                                                                                                                                                            BREADCRUMB START
-                                                                                                                                                                                   ==============================-->
+                                                                                                                                                                                                                                    BREADCRUMB START
+                                                                                                                                                                                           ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -29,11 +29,11 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                            BREADCRUMB END
-                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                    BREADCRUMB END
+                                                                                                                                                                                                                                ==============================-->
     <!--=============================
-                                                                                                                                                                                                                           Customer-Feedback PAGE START
-                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                   Customer-Feedback PAGE START
+                                                                                                                                                                                                                                ==============================-->
 
 
     <div class="container mt-5">
@@ -49,7 +49,7 @@
                 <hr>
                 <div class="my-4">
                     <h6 class="text-center">How likely are you to recommend 3D Cakes to others?</h6>
-                    <div class="form-group mt-2">
+                    <div class="form-group mt-2 text-center">
                         <div id="rating" name="rating">
                             @for ($i = 1; $i <= 5; $i++)
                                 <input type="radio" id="star{{ $i }}" name="rating"
@@ -75,7 +75,7 @@
                     <input type="email" placeholder="Email" name="email">
                 </div>
 
-                <h6 class="">Which store did you use? *</h6>
+                <h6 class="my-4">Which store did you use? *</h6>
                 <div class="fp__contact_form_input form-group mt-2">
                     <span><i class="far fa-caret-square-down"></i></span>
                     <select class="form-control" id="store" name="store" required>
@@ -86,7 +86,7 @@
                 </div>
 
                 <div class="mb-4">
-                    <h6 class="">Which Services Did You Use? *</h6>
+                    <h6 class="my-4">Which Services Did You Use? *</h6>
                     <div class="form-group mt-2">
                         <div class="form-check d-flex align-items-center">
                             <input class="form-check-input rounded-circle" type="checkbox" value="Cakes Store"
@@ -116,8 +116,8 @@
                     </div>
                 </div>
 
+                <h6 class="my-4">Anything else? (optional)</h6>
                 <div class="fp__contact_form_input textarea">
-                    <h6 class="">Anything else? (optional)</h6>
                     <span><i class="fal fa-book"></i></span>
                     <textarea rows="8" placeholder="Share your experience or offer suggestions to us..." name="message"></textarea>
                 </div>
@@ -128,6 +128,6 @@
 
 
     <!--=============================
-                                                                                                                                                                                                                            Customer-Feedback  PAGE END
-                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                    Customer-Feedback  PAGE END
+                                                                                                                                                                                                                                ==============================-->
 @endsection
