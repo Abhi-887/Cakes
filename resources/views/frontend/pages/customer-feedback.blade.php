@@ -13,8 +13,8 @@
         }
     </style>
     <!--=============================
-                                                                                                                                                                                                                BREADCRUMB START
-                                                                                                                                                                       ==============================-->
+                                                                                                                                                                                                                    BREADCRUMB START
+                                                                                                                                                                           ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -29,11 +29,11 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                BREADCRUMB END
-                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                    BREADCRUMB END
+                                                                                                                                                                                                                ==============================-->
     <!--=============================
-                                                                                                                                                                                                               Customer-Feedback PAGE START
-                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                   Customer-Feedback PAGE START
+                                                                                                                                                                                                                ==============================-->
 
 
     <div class="container mt-5">
@@ -86,7 +86,7 @@
                 </div>
 
                 <div class="mb-4">
-                    <h6 class="float-start">Which Services Did You Use? *</h6>
+                    <h6 class="">Which Services Did You Use? *</h6>
                     <div class="form-group mt-2">
                         <div class="form-check d-flex align-items-center">
                             <input class="form-check-input rounded-circle" type="checkbox" value="Cakes Store"
@@ -117,7 +117,7 @@
                 </div>
 
                 <div class="fp__contact_form_input textarea">
-                    <h6 class="float-start">Anything else? (optional)</h6>
+                    <h6 class="">Anything else? (optional)</h6>
                     <span><i class="fal fa-book"></i></span>
                     <textarea rows="8" placeholder="Share your experience or offer suggestions to us..." name="message"></textarea>
                 </div>
@@ -128,6 +128,6 @@
 
 
     <!--=============================
-                                                                                                                                                                                                                Customer-Feedback  PAGE END
-                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                    Customer-Feedback  PAGE END
+                                                                                                                                                                                                                ==============================-->
 @endsection
