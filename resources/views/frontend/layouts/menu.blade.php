@@ -35,7 +35,7 @@
             </ul>
             <ul class="ms-auto d-flex menu_icon d-xxl-none d-block">
                 <li>
-                    <a class="fs-5 me-2" href="{{ route('login') }}"><i class="fas fa-user"></i></a>
+                    <a class="fs-5 me-4" href="{{ route('login') }}"><i class="fas fa-user"></i></a>
                 </li>
                 <li>
                     <a class="cart_icon me-4 position-relative fw-semibold fs-5 transitions"><i
