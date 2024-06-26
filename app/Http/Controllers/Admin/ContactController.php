@@ -19,7 +19,8 @@ class ContactController extends Controller
 
     public function update(ContactUpdateRequest $request): RedirectResponse
     {
-        $imagePath = $this->uploadImage($request, 'phone_image', $request->old_phone_image);
+        $phoneImagePath = $this->uploadImage($request, 'phone_image', $request->old_phone_image);
+        $emailImagePath = $this->uploadImage($request, 'email_image', $request->old_email_image);
 
         $data = $request->only([
             'phone_one',
@@ -36,7 +37,8 @@ class ContactController extends Controller
             'Description_three'
         ]);
 
-        $data['phone_image'] = !empty($imagePath) ? $imagePath : $request->old_phone_image;
+        $data['phone_image'] = $phoneImagePath;
+        $data['email_image'] = $emailImagePath;
 
         Contact::updateOrCreate(['id' => 1], $data);
 
@@ -49,7 +51,7 @@ class ContactController extends Controller
     {
         if ($request->hasFile($fieldName)) {
             $file = $request->file($fieldName);
-            $path = $file->store('public/images');
+            $path = $file->store('public/uploads');
 
             return $path;
         }
