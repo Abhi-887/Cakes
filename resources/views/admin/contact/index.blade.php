@@ -27,13 +27,16 @@
                         <textarea name="phone_two"   class="form-control summernote">{{@$contact->phone_two}}</textarea>
                     </div>
 
+
                     <div class="form-group">
-                        <label>Phone Image</label>
-                        <div id="image-preview" class="image-preview">
-                            <label for="image-upload" id="image-label">Choose File</label>
-                            <input type="file" name="phone_image" id="image-upload" value="{{ @$contact->phone_image }}"/>
-                        </div>
+                        <label for="phone_image">Phone Image</label>
+                        <input type="file" name="phone_image" id="phone_image">
+                        @if ($contact->phone_image)
+                            <img src="{{ asset('storage/' . $contact->phone_image) }}" alt="Phone Image" width="100">
+                        @endif
                     </div>
+
+
 
                     <div class="form-group">
                         <label for="">Email One</label>
@@ -48,12 +51,13 @@
 
 
                     <div class="form-group">
-                        <label>Email Image</label>
-                        <div id="image-preview" class="image-preview">
-                            <label for="image-upload" id="image-label">Choose File</label>
-                            <input type="file" name="email_image" id="image-uploads" value="{{ @$contact->email_image }}"/>
-                        </div>
+                        <label for="email_image">Email Image</label>
+                        <input type="file" name="email_image" id="email_image">
+                        @if ($contact->email_image)
+                            <img src="{{ asset('storage/' . $contact->email_image) }}" alt="Email Image" width="100">
+                        @endif
                     </div>
+
 
                     <div class="form-group">
                         <label for="">Address</label>
