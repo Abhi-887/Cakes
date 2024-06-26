@@ -51,7 +51,7 @@
                         <label>Email Image</label>
                         <div id="image-preview" class="image-preview">
                             <label for="image-upload" id="image-label">Choose File</label>
-                            <input type="file" name="email_image" id="image-upload" value="{{ @$contact->email_image }}"/>
+                            <input type="file" name="email_image" id="image-uploads" value="{{ @$contact->email_image }}"/>
                         </div>
                     </div>
 

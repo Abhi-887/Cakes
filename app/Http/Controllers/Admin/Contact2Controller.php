@@ -28,11 +28,11 @@ class Contact2Controller extends Controller
 
         // Handle file uploads
         if ($request->hasFile('phone_image')) {
-            $data['phone_image'] = $request->file('phone_image')->store('images/contacts', 'public');
+            $data['phone_image'] = $request->file('phone_image')->store('uploads', 'public');
         }
 
         if ($request->hasFile('email_image')) {
-            $data['email_image'] = $request->file('email_image')->store('images/contacts', 'public');
+            $data['email_image'] = $request->file('email_image')->store('uploads', 'public');
         }
 
         Contact2::updateOrCreate(['id' => 1], $data);
