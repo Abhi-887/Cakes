@@ -22,21 +22,9 @@ Route::get('/products', function () {
     $products = Product::all();
     return $products;
 });
-
-
-// Update a specific product by ID
-Route::put('/products/{id}', function (Request $request, $id) {
+// Retrieve a specific product by ID
+Route::get('/products/{id}', function ($id) {
     $product = Product::findOrFail($id);
-
-    // Validate the request data
-    $request->validate([
-        'price' => 'required|numeric',
-    ]);
-
-    // Update the product with validated data
-    $product->update([
-        'price' => $request->input('price'),
-    ]);
-
     return response()->json($product);
 });
+
