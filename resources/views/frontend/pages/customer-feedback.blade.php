@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                    BREADCRUMB START
-                                ==============================-->
+                                                                BREADCRUMB START
+                                                            ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,11 +18,11 @@
         </div>
     </section>
     <!--=============================
-                                    BREADCRUMB END
-                                ==============================-->
+                                                                BREADCRUMB END
+                                                            ==============================-->
     <!--=============================
-                                   Customer-Feedback PAGE START
-                                ==============================-->
+                                                               Customer-Feedback PAGE START
+                                                            ==============================-->
 
 
     <div class="container mt-5">
@@ -31,9 +31,29 @@
                 <a class="" href="{{ url('/') }}">
                     <img src="{{ asset('uploads/web-logo1.png') }}" alt="3D-Cakes Logo" class="img-fluid" />
                 </a>
-                <h5 class="feedback-title">How was 3D Cakes?</h5>
-                <p>We appreciate feedback about your experience.</p>
+                <div class="my-3">
+                    <h5 class="feedback-title mb-2">How was 3D Cakes?</h5>
+                    <p>We appreciate feedback about your experience.</p>
+                </div>
+                <hr>
 
+                <div class="fp__contact_form_input">
+                    <span><i class="fal fa-user-alt"></i></span>
+                    <input type="text" placeholder="Name" name="name">
+                </div>
+                <div class="fp__contact_form_input">
+                    <span><i class="fal fa-envelope"></i></span>
+                    <input type="email" placeholder="Email" name="email">
+                </div>
+                <div class="form-floating">
+                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                    <label for="floatingSelect">Works with selects</label>
+                </div>
                 <div class="mb-4">
                     <h6>How likely are you to recommend 3D Cakes to others?</h6>
                     <div class="star-rating">
@@ -83,6 +103,6 @@
 
 
     <!--=============================
-                                    Customer-Feedback  PAGE END
-                                ==============================-->
+                                                                Customer-Feedback  PAGE END
+                                                            ==============================-->
 @endsection
