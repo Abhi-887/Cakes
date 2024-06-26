@@ -1,11 +1,11 @@
 @php
-$footerInfo = \App\Models\FooterInfo::first();
-$footerInfoTwo = \App\Models\FooterInfoTwo::first();
-$footerSocials = \App\Models\FooterSocial::where('status', 1)->get();
-$footerGridTwoLinks = \App\Models\FooterGridTwo::where('status', 1)->get();
-$footerTitle = \App\Models\FooterTitle::first();
-$footerGridThreeLinks = \App\Models\FooterGridThree::where('status', 1)->get();
-$footerGridFourLinks = \App\Models\FooterGridFour::where('status', 1)->get();
+    $footerInfo = \App\Models\FooterInfo::first();
+    $footerInfoTwo = \App\Models\FooterInfoTwo::first();
+    $footerSocials = \App\Models\FooterSocial::where('status', 1)->get();
+    $footerGridTwoLinks = \App\Models\FooterGridTwo::where('status', 1)->get();
+    $footerTitle = \App\Models\FooterTitle::first();
+    $footerGridThreeLinks = \App\Models\FooterGridThree::where('status', 1)->get();
+    $footerGridFourLinks = \App\Models\FooterGridFour::where('status', 1)->get();
 @endphp
 
 <footer>
@@ -33,7 +33,8 @@ $footerGridFourLinks = \App\Models\FooterGridFour::where('status', 1)->get();
                         {{ @$footerTitle->footer_grid_two_title }}</h5>
                     <div class="d-none d-xl-inline d-lg-none d-md-none d-sm-none">
                         @foreach ($footerGridTwoLinks as $link)
-                        <a class="text-decoration-none black-colour" href="{{ $link->url }}">{{ $link->name }}</a><br>
+                            <a class="text-decoration-none black-colour"
+                                href="{{ $link->url }}">{{ $link->name }}</a><br>
                         @endforeach
                     </div>
                 </div>
@@ -43,7 +44,8 @@ $footerGridFourLinks = \App\Models\FooterGridFour::where('status', 1)->get();
                         {{ @$footerTitle->footer_grid_three_title }}</h5>
                     <div class="d-none d-xl-inline d-lg-none d-md-none">
                         @foreach ($footerGridThreeLinks as $link)
-                        <a class="text-decoration-none black-colour" href="{{ $link->url }}">{{ $link->name }}</a><br>
+                            <a class="text-decoration-none black-colour"
+                                href="{{ $link->url }}">{{ $link->name }}</a><br>
                         @endforeach
                     </div>
                 </div>
@@ -53,7 +55,8 @@ $footerGridFourLinks = \App\Models\FooterGridFour::where('status', 1)->get();
                         {{ @$footerTitle->footer_grid_four_title }}</h5>
                     <div class="d-none d-xl-inline d-lg-none d-md-none">
                         @foreach ($footerGridFourLinks as $link)
-                        <a class="text-decoration-none black-colour" href="{{ $link->url }}">{{ $link->name }}</a><br>
+                            <a class="text-decoration-none black-colour"
+                                href="{{ $link->url }}">{{ $link->name }}</a><br>
                         @endforeach
                     </div>
                 </div>
@@ -85,13 +88,13 @@ $footerGridFourLinks = \App\Models\FooterGridFour::where('status', 1)->get();
         </div>
         <hr class="mt-5">
         <div class="pb-3 row d-flex justify-content-center align-items-center">
-            <div class="p-0 col-md-6">
+            <div class="col-md-6">
                 <span class="color-dark-gray fw-semibold">© 3D Cakes. All Rights Reserved.</span>
             </div>
             <div class="col-md-6 text-end">
                 <div class="social-links">
                     @foreach ($footerSocials as $link)
-                    <a href="{{ $link->url }}" class="{{ $link->icon }} fs-3 mx-2"></a>
+                        <a href="{{ $link->url }}" class="{{ $link->icon }} fs-3 mx-2"></a>
                     @endforeach
                 </div>
             </div>
@@ -118,8 +121,8 @@ $footerGridFourLinks = \App\Models\FooterGridFour::where('status', 1)->get();
 </style>
 
 @push('scripts')
-<script>
-    $(document).ready(function() {
+    <script>
+        $(document).ready(function() {
             $('.subscribe_form').on('submit', function(e) {
                 e.preventDefault();
                 let formData = $(this).serialize();
@@ -150,5 +153,5 @@ $footerGridFourLinks = \App\Models\FooterGridFour::where('status', 1)->get();
                 })
             })
         })
-</script>
+    </script>
 @endpush
