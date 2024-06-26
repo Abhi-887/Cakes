@@ -16,36 +16,21 @@ class ContactController extends Controller
         $contact = Contact::first();
         return view('admin.contact.index', compact('contact'));
     }
-
     function update(ContactUpdateRequest $request): RedirectResponse
     {
-        $data = $request->only([
-            'phone_one' => $request->phone_one,
-            'phone_two',
-            'mail_one',
-            'mail_two',
-            'address',
-            'map_link',
-            'title_one',
-            'Description_one',
-            'title_two',
-            'Description_two',
-            'title_three',
-            'Description_three'
-        ]);
+        Contact::updateOrCreate(
+            ['id' => 1],
+            [
+                'phone_one' => $request->phone_one,
+                'phone_two' => $request->phone_two,
+                'mail_one' => $request->mail_one,
+                'mail_two' => $request->mail_two,
+                'address' => $request->address,
+                'map_link' => $request->map_link
+            ]
+        );
 
-        // Handle file uploads
-        if ($request->hasFile('phone_image')) {
-            $data['phone_image'] = $request->file('phone_image')->store('images/contacts', 'public');
-        }
-
-        if ($request->hasFile('email_image')) {
-            $data['email_image'] = $request->file('email_image')->store('images/contacts', 'public');
-        }
-
-        Contact::updateOrCreate(['id' => 1], $data);
-
-        toastr()->success('Updated Successfully');
+        toastr()->success('Created Successfully');
 
         return redirect()->back();
     }
