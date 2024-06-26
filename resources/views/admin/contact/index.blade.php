@@ -27,13 +27,21 @@
                     <textarea name="phone_two" class="form-control summernote">{{@$contact->phone_two}}</textarea>
                 </div>
 
-                <div class="form-group">
+                {{-- <div class="form-group">
                     <label>Phone Image</label>
                     <div id="image-preview" class="image-preview">
                         <label for="image-upload" id="image-label">Choose File</label>
                         <input type="file" name="phone_image" id="image-upload" value="{{ @$contact->phone_image }}" />
                     </div>
+                </div> --}}
+                <div id="image-preview" class="image-preview">
+                    <label for="image-upload" id="image-label">Choose File</label>
+                    <input type="file" name="phone_image" id="image-upload" />
+                    <input type="hidden" name="old_phone_image" id="image-upload"
+                        value="{{ @$counter->phone_image }}" />
                 </div>
+
+
 
                 <div class="form-group">
                     <label for="">Email One</label>
