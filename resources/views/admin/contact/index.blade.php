@@ -9,6 +9,7 @@
     <div class="card card-primary">
         <div class="card-header">
             <h4>Updated Contact</h4>
+
         </div>
         <div class="card-body">
             <form action="{{ route('admin.contact.update') }}" method="POST" enctype="multipart/form-data">
@@ -22,83 +23,98 @@
 
                 <div class="form-group">
                     <label for="">Phone Two</label>
+
                     <textarea name="phone_two" class="form-control summernote">{{@$contact->phone_two}}</textarea>
                 </div>
 
+                {{-- <div class="form-group">
+                    <label>Phone Image</label>
+                    <div id="image-preview" class="image-preview">
+                        <label for="image-upload" id="image-label">Choose File</label>
+                        <input type="file" name="phone_image" id="image-upload" value="{{ @$contact->phone_image }}" />
+                    </div>
+                </div> --}}
                 <div class="form-group">
                     <label>Phone Image</label>
-                    <div id="phone-image-preview" class="image-preview"
-                        style="background-image: url('{{ asset(@$contact->phone_image) }}');">
-                        <label for="phone-image-upload" id="phone-image-label">Choose File</label>
-                        <input type="file" name="phone_image" id="phone-image-upload" />
-                        <input type="hidden" name="old_phone_image" value="{{ @$contact->phone_image }}" />
+                    <div id="image-preview" class="image-preview">
+                        <label for="image-upload" id="image-label">Choose File</label>
+                        <input type="file" name="phone_image" id="image-upload" />
+                        <input type="hidden" name="old_phone_image" id="image-upload"
+                            value="{{ @$counter->phone_image }}" />
                     </div>
-                </div>
 
-                <div class="form-group">
-                    <label for="">Email One</label>
-                    <input type="text" class="form-control" name="mail_one" value="{{ @$contact->mail_one }}">
-                </div>
 
-                <div class="form-group">
-                    <label for="">Email Two</label>
-                    <input type="text" class="form-control" name="mail_two" value="{{ @$contact->mail_two }}">
-                </div>
 
-                <div class="form-group">
-                    <label>Email Image</label>
-                    <div id="email-image-preview" class="image-preview"
-                        style="background-image: url('{{ asset(@$contact->email_image) }}');">
-                        <label for="email-image-upload" id="email-image-label">Choose File</label>
-                        <input type="file" name="email_image" id="email-image-upload"
-                            value="{{ @$contact->email_image }}" />
+                    <div class="form-group">
+                        <label for="">Email One</label>
+                        <input type="text" class="form-control" name="mail_one" value="{{ @$contact->mail_one }}">
                     </div>
-                </div>
 
-                <div class="form-group">
-                    <label for="">Address</label>
-                    <textarea name="address" class="form-control summernote">{{ @$contact->address }}</textarea>
-                </div>
 
-                <div class="form-group">
-                    <label for="">Google Map Link</label>
-                    <input type="text" class="form-control" name="map_link" value="{{ @$contact->map_link }}">
-                </div>
+                    <div class="form-group">
+                        <label for="">Email Two</label>
+                        <input type="text" class="form-control" name="mail_two" value="{{ @$contact->mail_two }}">
+                    </div>
 
-                <div class="form-group">
-                    <label for="">Title One</label>
-                    <input type="text" class="form-control" name="title_one" value="{{ @$contact->title_one }}">
-                </div>
 
-                <div class="form-group">
-                    <label for="">Description One</label>
-                    <textarea name="Description_one"
-                        class="form-control summernote">{{@$contact->Description_one}}</textarea>
-                </div>
+                    <div class="form-group">
+                        <label>Email Image</label>
+                        <div id="image-preview" class="image-preview">
+                            <label for="image-upload" id="image-label1">Choose File</label>
+                            <input type="file" name="email_image" id="image-uploads"
+                                value="{{ @$contact->email_image }}" />
+                        </div>
+                    </div>
 
-                <div class="form-group">
-                    <label for="">Title Two</label>
-                    <input type="text" class="form-control" name="title_two" value="{{ @$contact->title_two }}">
-                </div>
+                    <div class="form-group">
+                        <label for="">Address</label>
 
-                <div class="form-group">
-                    <label for="">Description Two</label>
-                    <textarea name="Description_two"
-                        class="form-control summernote">{{@$contact->Description_two}}</textarea>
-                </div>
+                        <textarea name="address" class="form-control summernote">{{ @$contact->address }}</textarea>
+                    </div>
 
-                <div class="form-group">
-                    <label for="">Title Three</label>
-                    <input type="text" class="form-control" name="title_three" value="{{ @$contact->title_three }}">
-                </div>
+                    <div class="form-group">
+                        <label for="">Google Map Link</label>
+                        <input type="text" class="form-control" name="map_link" value="{{ @$contact->map_link }}">
+                    </div>
 
-                <div class="form-group">
-                    <label for="">Description Three</label>
-                    <textarea name="Description_three"
-                        class="form-control summernote">{{@$contact->Description_three}}</textarea>
-                </div>
 
-                <button type="submit" class="btn btn-primary">Update</button>
+
+                    <div class="form-group">
+                        <label for="">Title One</label>
+                        <input type="text" class="form-control" name="title_one" value="{{ @$contact->title_one }}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Description</label>
+                        <textarea name="Description_one"
+                            class="form-control summernote">{{@$contact->Description_one}}</textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Title Two</label>
+                        <input type="text" class="form-control" name="title_two" value="{{ @$contact->title_two }}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Description</label>
+                        <textarea name="Description_two"
+                            class="form-control summernote">{{@$contact->Description_two}}</textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Title Three</label>
+                        <input type="text" class="form-control" name="title_three" value="{{ @$contact->title_three}}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Description</label>
+                        <textarea name="Description_three"
+                            class="form-control summernote">{{@$contact->Description_three}}</textarea>
+                    </div>
+
+
+
+                    <button type="submit" class="btn btn-primary">Update</button>
             </form>
         </div>
     </div>
@@ -108,16 +124,13 @@
 @push('scripts')
 <script>
     $(document).ready(function(){
-        $('#phone-image-preview').css({
-            'background-image': 'url({{ asset(@$contact->phone_image) }})',
-            'background-size': 'cover',
-            'background-position': 'center center'
-        });
-        $('#email-image-preview').css({
-            'background-image': 'url({{ asset(@$contact->email_image) }})',
-            'background-size': 'cover',
-            'background-position': 'center center'
-        });
-    });
+            $('.image-preview').css({
+                'phone_image': 'url({{ asset(@$contact->phone_image) }})',
+                'email_image':'url({{ asset(@$contact->email_image) }})',
+
+                'background-size': 'cover',
+                'background-position': 'center center'
+            })
+        })
 </script>
 @endpush
