@@ -34,14 +34,7 @@ class ContactController extends Controller
             'Description_three'
         ]);
 
-        // Handle file uploads
-        if ($request->hasFile('phone_image')) {
-            $data['phone_image'] = $request->file('phone_image')->store('images/contacts', 'public');
-        }
-
-        if ($request->hasFile('email_image')) {
-            $data['email_image'] = $request->file('email_image')->store('images/contacts', 'public');
-        }
+        $data['phone_image'] = !empty($imagePath) ? $imagePath : $request->old_phone_image;
 
         Contact::updateOrCreate(['id' => 1], $data);
 
