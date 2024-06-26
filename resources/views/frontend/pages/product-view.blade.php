@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                            BREADCRUMB START
-                                        ==============================-->
+                                                BREADCRUMB START
+                                            ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,13 +18,13 @@
         </div>
     </section>
     <!--=============================
-                                            BREADCRUMB END
-                                        ==============================-->
+                                                BREADCRUMB END
+                                            ==============================-->
 
 
     <!--=============================
-                                            MENU DETAILS START
-                                        ==============================-->
+                                                MENU DETAILS START
+                                            ==============================-->
     <section class="fp__menu_details mt_115 xs_mt_85 mb_95 xs_mb_65">
         <div class="container">
             <div class="row">
@@ -263,8 +263,9 @@
                                     <div class="fp__menu_item_img">
                                         <img src="{{ asset($relatedProduct->thumb_image) }}"
                                             alt="{{ $relatedProduct->name }}" class="img-fluid w-100">
-                                        <a class="category" href="#">{{ @$relatedProduct->category->name }}</a>
                                     </div>
+                                    <a class="category bg-light px-2 py-1"
+                                        href="#">{{ @$relatedProduct->category->name }}</a>
                                     <div class="fp__menu_item_text">
                                         <p class="rating">
                                             @if ($relatedProduct->reviews_avg_rating)
@@ -277,9 +278,10 @@
                                                 </p>
                                             @endif
                                         </p>
-                                        <a class="title"
+                                        <a class="title my-3"
                                             href="{{ route('product.show', $relatedProduct->slug) }}">{!! $relatedProduct->name !!}</a>
-                                        <h5 class="mb-3">
+                                        <h5
+                                            class="price fw-semibold text-center position-absolute py-1 px-3 rounded-pill color-light-gray top-0">
                                             @if ($relatedProduct->offer_price > 0)
                                                 {{ currencyPosition($relatedProduct->offer_price) }}
                                                 <del>{{ currencyPosition($relatedProduct->price) }}</del>
