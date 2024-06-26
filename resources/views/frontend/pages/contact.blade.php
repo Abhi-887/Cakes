@@ -196,7 +196,7 @@
                         <p class="text-muted fw-semibold">{!! @$contact2->phone_one !!}</p>
                     </div>
                     <div class="img-container overflow-hidden rounded-3">
-                        <img src=" {{ asset(@$contact2->phone_image) }}"class="img-fluid" alt="Image">
+                        <img src=" {{ asset/storage(@$contact2->phone_image) }}"class="img-fluid" alt="Image">
                     </div>
                 </div>
             </div>
@@ -216,7 +216,7 @@
                         </p>
                     </div>
                     <div class="img-container overflow-hidden rounded-3">
-                        <img src="{{ asset(@$contact2->email_image) }}" class="img-fluid" alt="Image">
+                        <img src="{{ asset/storage(@$contact2->email_image) }}" class="img-fluid" alt="Image">
                     </div>
 
                 </div>
