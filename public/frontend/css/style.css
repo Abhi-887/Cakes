@@ -49,7 +49,9 @@ body {
 .background-light-gray{
     background: #788a9f !important;
 }
-
+.searchformbackground-light-gray{
+    background: #faf6f3fa;
+}
 .color-dark-gray{
     color: #4b637f !important;
 }
@@ -270,7 +272,7 @@ button {
 }
 
 .header-logo img {
-    max-width: 200px;
+    max-width: 170px;
 }
 
 .nav-item a,
@@ -362,6 +364,13 @@ button {
     transform: translateY(-50%);
     background: #4b637f !important;
     color: var(--colorWhite);
+}
+
+.searchformbackground-light-gray button {
+    background: #4b637f !important;
+}
+.searchformbackground-light-gray button:hover {
+    background: #86a4ba !important;
 }
 /* New Navbar Custom End */
 
