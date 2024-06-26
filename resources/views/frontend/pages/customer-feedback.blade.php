@@ -16,10 +16,18 @@
             background-color: #f7f8fd !important;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
         }
+
+        .fa-star::before {
+            font-size: 25px !important;
+        }
+
+        .feedbackbutton {
+            background: #4b637f;
+        }
     </style>
     <!--=============================
-                                                                                                                                                                                                                                                        BREADCRUMB START
-                                                                                                                                                                                                               ==============================-->
+                                                                                                                                                                                                                                                                        BREADCRUMB START
+                                                                                                                                                                                                                               ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -34,11 +42,11 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                        BREADCRUMB END
-                                                                                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                                                                        BREADCRUMB END
+                                                                                                                                                                                                                                                                    ==============================-->
     <!--=============================
-                                                                                                                                                                                                                                                       Customer-Feedback PAGE START
-                                                                                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                                                                       Customer-Feedback PAGE START
+                                                                                                                                                                                                                                                                    ==============================-->
 
 
     <div class="container mt-5">
@@ -52,7 +60,7 @@
                     <p class="text-center">We appreciate feedback about your experience.</p>
                 </div>
                 <hr>
-                <form action="formbg">
+                <form class="formbg" action="">
                     <div class="my-4">
                         <h6 class="text-center">How likely are you to recommend 3D Cakes to others?</h6>
                         <div class="form-group mt-2">
@@ -127,7 +135,7 @@
                         <span><i class="fal fa-book"></i></span>
                         <textarea rows="8" placeholder="Share your experience or offer suggestions to us..." name="message"></textarea>
                     </div>
-                    <button class="background-dark-gray fw-semibold rounded-5 px-4 py-2 transitions mt-4">Submit</button>
+                    <button class="feedbackbutton fw-semibold rounded-5 px-4 py-2 transitions mt-4">Submit</button>
                 </form>
             </div>
         </div>
@@ -135,6 +143,6 @@
 
 
     <!--=============================
-                                                                                                                                                                                                                                                        Customer-Feedback  PAGE END
-                                                                                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                                                                        Customer-Feedback  PAGE END
+                                                                                                                                                                                                                                                                    ==============================-->
 @endsection

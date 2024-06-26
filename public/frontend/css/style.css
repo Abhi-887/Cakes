@@ -170,11 +170,6 @@ button {
     padding: 0px 60px;
 }
 
-.form-check-input:focus {
-    border-color: #eb002975;
-    box-shadow: none;
-}
-
 /*============================
     COMMON CSS END
 ============================*/
