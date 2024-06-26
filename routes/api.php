@@ -22,3 +22,22 @@ Route::get('/products', function () {
     $products = Product::all();
     return $products;
 });
+Route::middleware('auth:sanctum')->put('/products/{id}', function (Request $request, $id) {
+    // Validate the request data
+    $request->validate([
+        'name' => 'required|string',
+        'description' => 'required|string',
+        'price' => 'required|numeric',
+    ]);
+
+    // Find the product by ID
+    $product = Product::findOrFail($id);
+
+    // Update the product with validated data
+    $product->name = $request->input('name');
+    $product->description = $request->input('description');
+    $product->price = $request->input('price');
+    $product->save();
+
+    return response()->json($product);
+});
