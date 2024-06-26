@@ -26,11 +26,12 @@ class Contact2Controller extends Controller
             'Description_two', 'title_three', 'Description_three', 'Description'
         ]);
 
-        // Handle file uploads
+        // Handle file uploads for phone_image
         if ($request->hasFile('phone_image')) {
             $data['phone_image'] = $request->file('phone_image')->store('uploads', 'public');
         }
 
+        // Handle file uploads for email_image
         if ($request->hasFile('email_image')) {
             $data['email_image'] = $request->file('email_image')->store('uploads', 'public');
         }
