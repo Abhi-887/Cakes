@@ -1,9 +1,58 @@
 @extends('frontend.layouts.master')
 
 @section('content')
+    <style>
+        .form-check-input {
+            width: 28px;
+            height: 28px;
+            position: relative;
+            margin: 20px auto;
+            background: #fcfff4;
+            background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+            box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
+
+            label {
+                width: 20px;
+                height: 20px;
+                cursor: pointer;
+                position: absolute;
+                left: 4px;
+                top: 4px;
+                background: linear-gradient(top, #222 0%, #45484d 100%);
+                box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 1);
+
+                &:after {
+                    content: '';
+                    width: 9px;
+                    height: 5px;
+                    position: absolute;
+                    top: 4px;
+                    left: 4px;
+                    border: 3px solid #fcfff4;
+                    border-top: none;
+                    border-right: none;
+                    background: transparent;
+                    opacity: 0;
+                    transform: rotate(-45deg);
+                }
+
+                &:hover::after {
+                    opacity: 0.3;
+                }
+            }
+
+            input[type=checkbox] {
+                visibility: hidden;
+
+                &:checked+label:after {
+                    opacity: 1;
+                }
+            }
+        }
+    </style>
     <!--=============================
-                                                                                                                                                    BREADCRUMB START
-                                                                                                                                                ==============================-->
+                                                                                                                                                                BREADCRUMB START
+                                                                                                                                                            ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,11 +67,11 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                    BREADCRUMB END
-                                                                                                                                                ==============================-->
+                                                                                                                                                                BREADCRUMB END
+                                                                                                                                                            ==============================-->
     <!--=============================
-                                                                                                                                                   Customer-Feedback PAGE START
-                                                                                                                                                ==============================-->
+                                                                                                                                                               Customer-Feedback PAGE START
+                                                                                                                                                            ==============================-->
 
 
     <div class="container mt-5">
@@ -83,6 +132,15 @@
                                 name="services[]">
                             <label class="form-check-label ms-2" for="cakesStore">Cakes Store</label>
                         </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="Cakes Store" id="cakesStore"
+                                name="services[]" />
+                            <label class="form-check-label ms-2" for="cakesStore">Cakes Store</label>
+                        </div>
+
+
+
                         <div class="form-check d-flex align-items-center">
                             <input class="form-check-input" type="checkbox" value="Sugarcraft School" id="sugarcraftSchool"
                                 name="services[]">
@@ -118,6 +176,6 @@
 
 
     <!--=============================
-                                                                                                                                                    Customer-Feedback  PAGE END
-                                                                                                                                                ==============================-->
+                                                                                                                                                                Customer-Feedback  PAGE END
+                                                                                                                                                            ==============================-->
 @endsection
