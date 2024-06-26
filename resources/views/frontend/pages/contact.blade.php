@@ -85,7 +85,7 @@
                             </div>
                         </div>
                         <hr>
-                        <p class="text-muted fw-semibold">{{ !!@$contact->address !! }}</p>
+                        <p class="text-muted fw-semibold">{!! @$contact->address !!}</p>
                     </div>
                     <div class="img-container overflow-hidden rounded-3">
                         <iframe src="{{ @$contact->map_link }}" style="border:0; width:100%; height:100%;"
@@ -104,7 +104,7 @@
                             </div>
                         </div>
                         <hr>
-                        <p class="text-muted fw-semibold">{{!! @$contact->phone_one !!}}</p>
+                        <p class="text-muted fw-semibold">{!! @$contact->phone_one !!}</p>
                     </div>
                     <div class="img-container overflow-hidden rounded-3">
                         <img src="https://demo.awaikenthemes.com/weebix/wp-content/uploads/2024/04/contact-info-2.jpg"
@@ -124,7 +124,7 @@
                         </div>
                         <hr>
                         <p class="text-muted fw-semibold">
-                            {{ !!@$contact->mail_one!! }}
+                            {!! @$contact->mail_one !!}
                         </p>
                     </div>
                     <div class="img-container overflow-hidden rounded-3">
@@ -140,20 +140,20 @@
             <div class="row pt-5">
                 <div class="col-md-4 d-flex justify-content-center text-center text-md-start">
                     <div>
-                        <h4 class="color-light-gray mb-3"> {{ !!@$contact->title_one !! }}/h4>
-                        <p class="fw-semibold">{{ !!@$contact->Description_one!! }}</p>
+                        <h4 class="color-light-gray mb-3"> {!! @$contact->title_one !!}/h4>
+                        <p class="fw-semibold">{!! @$contact->Description_one !!}</p>
                     </div>
                 </div>
                 <div class="col-md-4 d-flex justify-content-md-center text-center text-md-start">
                     <div>
-                        <h4 class="color-light-gray mb-3">{{!!  !!}$contact->title_two !!}}</h4>
-                        <p class="fw-semibold">{{ !!@$contact->Description_two!!}}</p>
+                        <h4 class="color-light-gray mb-3">{!! @$contact->title_two !!}</h4>
+                        <p class="fw-semibold">{!! @$contact->Description_two !!}</p>
                     </div>
                 </div>
                 <div class="col-md-4 d-flex justify-content-md-center text-center text-md-start">
                     <div>
-                        <h4 class="color-light-gray mb-3">{{ !!@$contact->title_three!! }}</h4>
-                        <p class="fw-semibold">{{ !!@$contact->Description_three !!}}</p>
+                        <h4 class="color-light-gray mb-3">{!! @$contact->title_three !!}</h4>
+                        <p class="fw-semibold">{!! @$contact->Description_three !!}</p>
                     </div>
                 </div>
             </div>
