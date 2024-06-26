@@ -19,6 +19,8 @@ class ContactController extends Controller
 
     public function update(ContactUpdateRequest $request): RedirectResponse
     {
+        $imagePath = $this->uploadImage($request, 'phone_image', $request->old_phone_image);
+
         $data = $request->only([
             'phone_one',
             'phone_two',
