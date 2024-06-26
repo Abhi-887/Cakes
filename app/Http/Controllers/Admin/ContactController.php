@@ -44,4 +44,16 @@ class ContactController extends Controller
 
         return redirect()->back();
     }
+
+    private function uploadImage($request, $fieldName, $defaultImage)
+    {
+        if ($request->hasFile($fieldName)) {
+            $file = $request->file($fieldName);
+            $path = $file->store('public/images');
+
+            return $path;
+        }
+
+        return $defaultImage;
+    }
 }
