@@ -37,7 +37,7 @@ class ContactController extends Controller
             $data['email_image'] = $request->file('email_image')->store('uploads', 'public');
         }
 
-        Contact2::updateOrCreate(['id' => 1], $data);
+        Contact::updateOrCreate(['id' => 1], $data);
 
         toastr()->success('Updated Successfully');
 
