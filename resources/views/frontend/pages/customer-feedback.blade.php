@@ -1,9 +1,20 @@
 @extends('frontend.layouts.master')
 
 @section('content')
+    <style>
+        .form-check-input:checked {
+            background-color: #788a9f !important;
+            border-color: #788a9f !important;
+        }
+
+        .form-check-input {
+            background-size: 16px !important;
+            height: 2.5em !important;
+        }
+    </style>
     <!--=============================
-                                                                                                                                                        BREADCRUMB START
-                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                BREADCRUMB START
+                                                                                                                                                                       ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,11 +29,11 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                        BREADCRUMB END
-                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                BREADCRUMB END
+                                                                                                                                                                                                            ==============================-->
     <!--=============================
-                                                                                                                                                       Customer-Feedback PAGE START
-                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                               Customer-Feedback PAGE START
+                                                                                                                                                                                                            ==============================-->
 
 
     <div class="container mt-5">
@@ -64,7 +75,7 @@
                     <input type="email" placeholder="Email" name="email">
                 </div>
 
-                <label for="store" class="mb-1">Which store did you use? *</label>
+                <h6 class="float-start">Which store did you use? *</h6>
                 <div class="fp__contact_form_input form-group mt-2">
                     <span><i class="far fa-caret-square-down"></i></span>
                     <select class="form-control" id="store" name="store" required>
@@ -75,39 +86,38 @@
                 </div>
 
                 <div class="mb-4">
-                    <h6>Which Services Did You Use? *</h6>
+                    <h6 class="float-start">Which Services Did You Use? *</h6>
                     <div class="form-group mt-2">
-                        <label class="mb-1">Which service(s) did you use? *</label>
                         <div class="form-check d-flex align-items-center">
-                            <input class="form-check-input" type="checkbox" value="Cakes Store" id="cakesStore"
-                                name="services[]">
+                            <input class="form-check-input rounded-circle" type="checkbox" value="Cakes Store"
+                                id="cakesStore" name="services[]">
                             <label class="form-check-label ms-2" for="cakesStore">Cakes Store</label>
                         </div>
                         <div class="form-check d-flex align-items-center">
-                            <input class="form-check-input" type="checkbox" value="Sugarcraft School" id="sugarcraftSchool"
-                                name="services[]">
+                            <input class="form-check-input rounded-circle" type="checkbox" value="Sugarcraft School"
+                                id="sugarcraftSchool" name="services[]">
                             <label class="form-check-label ms-2" for="sugarcraftSchool">Sugarcraft School</label>
                         </div>
                         <div class="form-check d-flex align-items-center">
-                            <input class="form-check-input" type="checkbox" value="Online Tutorials" id="onlineTutorials"
-                                name="services[]">
+                            <input class="form-check-input rounded-circle" type="checkbox" value="Online Tutorials"
+                                id="onlineTutorials" name="services[]">
                             <label class="form-check-label ms-2" for="onlineTutorials">Online Tutorials</label>
                         </div>
                         <div class="form-check d-flex align-items-center">
-                            <input class="form-check-input" type="checkbox" value="David Duncan Cake Supplies"
-                                id="davidDuncan" name="services[]">
+                            <input class="form-check-input rounded-circle" type="checkbox"
+                                value="David Duncan Cake Supplies" id="davidDuncan" name="services[]">
                             <label class="form-check-label ms-2" for="davidDuncan">David Duncan Cake Supplies</label>
                         </div>
                         <div class="form-check d-flex align-items-center">
-                            <input class="form-check-input" type="checkbox" value="24 Hour Deals" id="deals"
-                                name="services[]">
+                            <input class="form-check-input rounded-circle" type="checkbox" value="24 Hour Deals"
+                                id="deals" name="services[]">
                             <label class="form-check-label ms-2" for="deals">24 Hour Deals</label>
                         </div>
                     </div>
                 </div>
 
                 <div class="fp__contact_form_input textarea">
-                    <h6>Anything else? (optional)</h6>
+                    <h6 class="float-start">Anything else? (optional)</h6>
                     <span><i class="fal fa-book"></i></span>
                     <textarea rows="8" placeholder="Share your experience or offer suggestions to us..." name="message"></textarea>
                 </div>
@@ -118,6 +128,6 @@
 
 
     <!--=============================
-                                                                                                                                                        Customer-Feedback  PAGE END
-                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                Customer-Feedback  PAGE END
+                                                                                                                                                                                                            ==============================-->
 @endsection
