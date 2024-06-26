@@ -37,6 +37,12 @@ class ContactController extends Controller
         }
 
         // Update or create a Contact record with id = 1
+        Contact::updateOrCreate(['id' => 1], $data);
 
+        // Display success message using toastr
+        toastr()->success('Updated Successfully');
+
+        // Redirect back to the previous page
+        return redirect()->back();
     }
 }
