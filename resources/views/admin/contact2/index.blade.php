@@ -29,12 +29,13 @@
                         <label for="phone_image">Phone Image</label>
                         <div>
                             <label for="image-upload" id="image-label">Choose File</label>
-                            <input type="file" name="phone_image" id="image-upload"/>
+                            <input type="file" name="phone_image" id="image-upload" accept="image/*">
                         </div>
                         @if($contact && $contact->phone_image)
                             <img src="{{ Storage::url($contact->phone_image) }}" alt="Phone Image">
                         @endif
                     </div>
+
 
                     <div class="form-group">
                         <label for="mail_one">Email One</label>
