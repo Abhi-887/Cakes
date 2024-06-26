@@ -84,7 +84,7 @@
                     <a class="w-50" href="{{ url('/') }}">
                         <img src="{{ asset('uploads/web-logo1.png') }}" alt="3D-Cakes Logo" class="img-fluid" />
                     </a>
-                    <button type="button" class="btn-close fs-4 color-light-gray" data-bs-dismiss="offcanvas"
+                    <button type="button" class="btn-close fs-4 background-dark-gray" data-bs-dismiss="offcanvas"
                         aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
@@ -92,13 +92,13 @@
                         @if ($MainMenu)
                             @foreach ($MainMenu as $index => $menu)
                                 <li class="nav-item my-3">
-                                    <div class="d-flex ms-2">
+                                    <div class="d-flex ms-2 lh-lg">
                                         <a class="nav-link fw-semibold"
                                             href="{{ $menu['link'] }}">{{ $menu['label'] }}
                                         </a>
                                         @if ($menu['child'])
                                             <span class="mobile-dropdown-menu ms-2" data-index="{{ $index }}">
-                                                <i class="far fa-angle-down"></i></span>
+                                                <i class="far fa-angle-down color-light-gray"></i></span>
                                         @endif
                                     </div>
                                     @if ($menu['child'])
