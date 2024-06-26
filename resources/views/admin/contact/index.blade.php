@@ -18,24 +18,21 @@
 
                     <div class="form-group">
                         <label for="">Phone One</label>
-                        <textarea type="text" name="phone_one"   class="form-control summernote">{{@$contact->phone_one}}</textarea>
+                        <textarea name="phone_one"   class="form-control summernote">{{@$contact->phone_one}}</textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="">Phone Two</label>
 
-                        <textarea  type="text" name="phone_two"   class="form-control summernote">{{@$contact->phone_two}}</textarea>
+                        <textarea name="phone_two"   class="form-control summernote">{{@$contact->phone_two}}</textarea>
                     </div>
 
-
                     <div class="form-group">
-                        <label for="phone_image">Phone Image</label>
-                        <input type="file" name="phone_image" id="phone_image">
-                        @if ($contact && $contact->phone_image)
-                            <div>
-                                <img src="{{ asset('storage/' . $contact->phone_image) }}" alt="Phone Image" width="100">
-                            </div>
-                        @endif
+                        <label>Phone Image</label>
+                        <div id="image-preview" class="image-preview">
+                            <label for="image-upload" id="image-label">Choose File</label>
+                            <input type="file" name="phone_image" id="image-upload" value="{{ @$contact->phone_image }}"/>
+                        </div>
                     </div>
 
                     <div class="form-group">
@@ -51,13 +48,11 @@
 
 
                     <div class="form-group">
-                        <label for="email_image">Email Image</label>
-                        <input type="file" name="email_image" id="email_image">
-                        @if ($contact && $contact->email_image)
-                            <div>
-                                <img src="{{ asset('storage/' . $contact->email_image) }}" alt="Email Image" width="100">
-                            </div>
-                        @endif
+                        <label>Email Image</label>
+                        <div id="image-preview" class="image-preview">
+                            <label for="image-upload" id="image-label">Choose File</label>
+                            <input type="file" name="email_image" id="image-uploads" value="{{ @$contact->email_image }}"/>
+                        </div>
                     </div>
 
                     <div class="form-group">

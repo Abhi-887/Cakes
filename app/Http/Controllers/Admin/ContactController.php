@@ -14,11 +14,6 @@ class ContactController extends Controller
     public function index(): View
     {
         $contact = Contact::first();
-
-        if (!$contact) {
-            $contact = Contact::create(); // Create an empty contact record
-        }
-
         return view('admin.contact.index', compact('contact'));
     }
 
