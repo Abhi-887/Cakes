@@ -44,14 +44,14 @@
                             class="cart_count bg-gray position-absolute text-light fw-semibold text-center bottom-50 end-25 rounded-circle">{{ count(Cart::content()) }}</span></a>
                 </li>
                 @php @$unseenMessages = \App\Models\Chat::where(['sender_id' => 1, 'receiver_id' => auth()->user()->id, 'seen' => 0])->count(); @endphp
-                <li>
+                {{-- <li>
                     <a class="message_icon me-4 position-relative fw-semibold fs-5 transitions"
                         href="{{ route('dashboard') }}">
                         <i class="fas fa-comment-alt-dots"></i>
                         <span
                             class="sunseen-message-count bg-gray position-absolute text-light fw-semibold text-center bottom-50 end-25 ms-1 rounded-circle">{{ $unseenMessages > 0 ? 1 : 0 }}</span>
                     </a>
-                </li>
+                </li> --}}
                 <li>
                     <a href="#" class="menu_search me-4 position-relative fw-semibold fs-5 transitions"><i
                             class="far fa-search"></i></a>
@@ -121,7 +121,7 @@
 
             <ul class="menu_icon d-none d-xxl-flex align-items-center flex-wrap">
                 <li>
-                    <a href="#" class="menu_search mx-3 position-relative fw-semibold fs-5 transitions"><i
+                    <a href="#" class="menu_search me-4 position-relative fw-semibold fs-5 transitions"><i
                             class="far fa-search"></i></a>
                     <div
                         class="fp__search_form position-fixed w-100 top-0 end-0 justify-content-center align-items-center transitions vh-100">
@@ -141,20 +141,20 @@
                     </div>
                 </li>
                 <li>
-                    <a class="cart_icon mx-3 position-relative fw-semibold fs-5 transitions"><i
+                    <a class="cart_icon me-4 position-relative fw-semibold fs-5 transitions"><i
                             class="fas fa-shopping-basket"></i>
                         <span
                             class="cart_count bg-gray position-absolute text-light fw-semibold text-center bottom-50 end-25 rounded-circle">{{ count(Cart::content()) }}</span></a>
                 </li>
                 @php @$unseenMessages = \App\Models\Chat::where(['sender_id' => 1, 'receiver_id' => auth()->user()->id, 'seen' => 0])->count(); @endphp
-                <li>
+                {{-- <li>
                     <a class="message_icon mx-3 position-relative fw-semibold fs-5 transitions"
                         href="{{ route('dashboard') }}">
                         <i class="fas fa-comment-alt-dots"></i>
                         <span
                             class="sunseen-message-count bg-gray position-absolute text-light fw-semibold text-center bottom-50 end-25 ms-1 rounded-circle">{{ $unseenMessages > 0 ? 1 : 0 }}</span>
                     </a>
-                </li>
+                </li> --}}
 
                 <li>
                     <a class="ms-3 fs-5" href="{{ route('login') }}"><i class="fas fa-user"></i></a>
