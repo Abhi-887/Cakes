@@ -92,7 +92,7 @@
                         @if ($MainMenu)
                             @foreach ($MainMenu as $index => $menu)
                                 <li class="nav-item my-3">
-                                    <div class="d-flex ms-2">
+                                    <div class="d-flex ms-2 lh-lg">
                                         <a class="nav-link fw-semibold"
                                             href="{{ $menu['link'] }}">{{ $menu['label'] }}
                                         </a>
