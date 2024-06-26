@@ -365,6 +365,13 @@ button {
     background: #4b637f !important;
     color: var(--colorWhite);
 }
+
+.searchformbackground-light-gray button {
+    background: #4b637f !important;
+}
+.searchformbackground-light-gray button:hover {
+    background: #86a4ba !important;
+}
 /* New Navbar Custom End */
 
 
