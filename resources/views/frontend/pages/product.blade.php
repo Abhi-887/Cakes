@@ -90,8 +90,6 @@
                 });
             </script>
 
-
-
             <div class="row">
                 @foreach ($products as $product)
                     <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-duration="1s">
