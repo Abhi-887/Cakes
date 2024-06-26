@@ -52,98 +52,100 @@
                 <div class="col-xl-2 col-md-3">
                     <button type="submit"
                         class="border border-0 wedding-cake-button rounded-pill text-light">Search</button>
-                    <a href="{{ route('product.index') }}"
-                        class="ml-2 border border-0 wedding-cake-button rounded-pill text-light">Reset</a>
                 </div>
             </div>
         </form>
-    </div>
-</section>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const parentSelect = document.getElementById('parent_category');
-        const subSelect = document.getElementById('sub_category');
-        const subOptions = Array.from(subSelect.options);
 
-        parentSelect.addEventListener('change', function() {
-            const selectedParent = this.value;
 
-            // Clear current subcategories
-            subSelect.innerHTML = '<option value="">All</option>';
 
-            // Filter subcategories based on selected parent
-            const filteredOptions = subOptions.filter(option => option.dataset.parent == selectedParent);
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+    const parentSelect = document.getElementById('parent_category');
+    const subSelect = document.getElementById('sub_category');
+    const subOptions = Array.from(subSelect.options);
 
-            // Add filtered subcategories to the subcategory select
-            filteredOptions.forEach(option => subSelect.appendChild(option));
-        });
+    parentSelect.addEventListener('change', function() {
+        const selectedParent = this.value;
 
-        // Trigger change event on page load to set initial state
-        parentSelect.dispatchEvent(new Event('change'));
+        // Clear current subcategories
+        subSelect.innerHTML = '<option value="">All</option>';
 
-        // Maintain selected subcategory on page load
-        const selectedSubCategory = '{{ request()->sub_category }}';
-        if (selectedSubCategory) {
-            subSelect.value = selectedSubCategory;
-        }
+        // Filter subcategories based on selected parent
+        const filteredOptions = subOptions.filter(option => option.dataset.parent == selectedParent);
+
+        // Add filtered subcategories to the subcategory select
+        filteredOptions.forEach(option => subSelect.appendChild(option));
     });
-</script>
+
+    // Trigger change event on page load to set initial state
+    parentSelect.dispatchEvent(new Event('change'));
+
+    // Maintain selected subcategory on page load
+    const selectedSubCategory = '{{ request()->sub_category }}';
+    if (selectedSubCategory) {
+        subSelect.value = selectedSubCategory;
+    }
+});
+
+
+        </script>
 
 
 
-<div class="row">
-    @foreach ($products as $product)
-    <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-duration="1s">
-        <div class="fp__menu_item">
-            <div class="fp__menu_item_img">
-                <img src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}" class="img-fluid w-100">
-                <a class="px-3 py-1 mt-3 category z-1" href="#">{{ $product->subCategory->name ?? '' }}</a>
+        <div class="row">
+            @foreach ($products as $product)
+            <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-duration="1s">
+                <div class="fp__menu_item">
+                    <div class="fp__menu_item_img">
+                        <img src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}"
+                            class="img-fluid w-100">
+                        <a class="px-3 py-1 mt-3 category z-1" href="#">{{ $product->subCategory->name ?? '' }}</a>
+                    </div>
+                    <div class="fp__menu_item_text">
+                        @if ($product->reviews_avg_rating)
+                        <p class="rating">
+                            @for ($i = 1; $i <= $product->reviews_avg_rating; $i++)
+                                <i class="fas fa-star"></i>
+                                @endfor
+                                <span>{{ $product->reviews_count }}</span>
+                        </p>
+                        @endif
+                        <a class="title" href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
+                        <h5 class="mb-3">
+                            @if ($product->offer_price > 0)
+                            {{ currencyPosition($product->offer_price) }}
+                            <del>{{ currencyPosition($product->price) }}</del>
+                            @else
+                            {{ currencyPosition($product->price) }}
+                            @endif
+                        </h5>
+                        <ul class="flex-wrap d-flex justify-content-center">
+                            <li><a href="javascript:;" onclick="loadProductModal('{{ $product->id }}')"><i
+                                        class="fas fa-shopping-basket"></i></a></li>
+                            <li><a href="#"><i class="fal fa-heart"></i></a></li>
+                            <li><a href="{{ route('product.show', $product->slug) }}"><i class="far fa-eye"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="fp__menu_item_text">
-                @if ($product->reviews_avg_rating)
-                <p class="rating">
-                    @for ($i = 1; $i <= $product->reviews_avg_rating; $i++)
-                        <i class="fas fa-star"></i>
-                        @endfor
-                        <span>{{ $product->reviews_count }}</span>
-                </p>
-                @endif
-                <a class="title" href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
-                <h5 class="mb-3">
-                    @if ($product->offer_price > 0)
-                    {{ currencyPosition($product->offer_price) }}
-                    <del>{{ currencyPosition($product->price) }}</del>
-                    @else
-                    {{ currencyPosition($product->price) }}
-                    @endif
-                </h5>
-                <ul class="flex-wrap d-flex justify-content-center">
-                    <li><a href="javascript:;" onclick="loadProductModal('{{ $product->id }}')"><i
-                                class="fas fa-shopping-basket"></i></a></li>
-                    <li><a href="#"><i class="fal fa-heart"></i></a></li>
-                    <li><a href="{{ route('product.show', $product->slug) }}"><i class="far fa-eye"></i></a>
-                    </li>
-                </ul>
+            @endforeach
+
+            @if ($products->isEmpty())
+            <h4 class="mt-5 text-center">No Product Found!</h4>
+            @endif
+        </div>
+
+        @if ($products->hasPages())
+        <div class="fp__pagination mt_60">
+            <div class="row">
+                <div class="col-12">
+                    {{ $products->links() }}
+                </div>
             </div>
         </div>
+        @endif
     </div>
-    @endforeach
-
-    @if ($products->isEmpty())
-    <h4 class="mt-5 text-center">No Product Found!</h4>
-    @endif
-</div>
-
-@if ($products->hasPages())
-<div class="fp__pagination mt_60">
-    <div class="row">
-        <div class="col-12">
-            {{ $products->links() }}
-        </div>
-    </div>
-</div>
-@endif
-</div>
 </section>
 @endsection
