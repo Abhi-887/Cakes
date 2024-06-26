@@ -27,7 +27,7 @@
 
                     <div class="form-group">
                         <label for="phone_image">Phone Image</label>
-                        <div id="image-preview" class="image-preview">
+                        <div>
                             <label for="image-upload" id="image-label">Choose File</label>
                             <input type="file" name="phone_image" id="image-upload"/>
                         </div>
@@ -48,7 +48,7 @@
 
                     <div class="form-group">
                         <label for="email_image">Email Image</label>
-                        <div id="image-preview" class="">
+                        <div>
                             <label for="image-upload" id="image-label">Choose File</label>
                             <input type="file" name="email_image" id="image-upload"></input>
                         </div>
