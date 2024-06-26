@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                                                                    BREADCRUMB START
-                                                                                                ==============================-->
+                                                                                                        BREADCRUMB START
+                                                                                                    ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,11 +18,11 @@
         </div>
     </section>
     <!--=============================
-                                                                                                    BREADCRUMB END
-                                                                                                ==============================-->
+                                                                                                        BREADCRUMB END
+                                                                                                    ==============================-->
     <!--=============================
-                                                                                                   Customer-Feedback PAGE START
-                                                                                                ==============================-->
+                                                                                                       Customer-Feedback PAGE START
+                                                                                                    ==============================-->
 
 
     <div class="container mt-5">
@@ -68,8 +68,9 @@
                     </div>
                 </div>
 
+
+                <label for="store" class="mb-1">Which store did you use? *</label>
                 <div class="fp__contact_form_input form-group mt-2">
-                    <label for="store" class="mb-1">Which store did you use? *</label>
                     <span><i class="fal fa-user-alt"></i></span>
                     <select class="form-control" id="store" name="store" required>
                         <option value="Edinburgh">Select Store</option>
@@ -114,6 +115,6 @@
 
 
     <!--=============================
-                                                                                                    Customer-Feedback  PAGE END
-                                                                                                ==============================-->
+                                                                                                        Customer-Feedback  PAGE END
+                                                                                                    ==============================-->
 @endsection
