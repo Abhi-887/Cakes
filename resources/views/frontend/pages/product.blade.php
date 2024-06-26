@@ -29,7 +29,7 @@
             -moz-appearance: button;
         }
     </style>
-    <section class="fp__search_menu mt_120 xs_mt_90 mb_100 xs_mb_70">
+    <section class="fp__search_menu mt-5 pt-lg-5 pt-0">
         <div class="container">
             <form class="searchformbackground-light-gray p-3 rounded-pill" method="GET"
                 action="{{ route('product.index') }}">
@@ -51,7 +51,7 @@
                     </div>
                     <div class="col-md-2 col-10 my-2">
                         <button type="submit"
-                            class="border border-0 wedding-cake-button rounded-pill text-light fs-5 w-100">Search</button>
+                            class="border border-0 wedding-cake-button rounded-pill text-light fs-5 w-100 form-control">Search</button>
                     </div>
                 </div>
             </form>
