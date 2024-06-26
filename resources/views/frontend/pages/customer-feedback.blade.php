@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                                                                                                BREADCRUMB START
-                                                                                                                            ==============================-->
+                                                                                                                                                    BREADCRUMB START
+                                                                                                                                                ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,11 +18,11 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                BREADCRUMB END
-                                                                                                                            ==============================-->
+                                                                                                                                                    BREADCRUMB END
+                                                                                                                                                ==============================-->
     <!--=============================
-                                                                                                                               Customer-Feedback PAGE START
-                                                                                                                            ==============================-->
+                                                                                                                                                   Customer-Feedback PAGE START
+                                                                                                                                                ==============================-->
 
 
     <div class="container mt-5">
@@ -39,7 +39,6 @@
                 <div class="my-4">
                     <h6>How likely are you to recommend 3D Cakes to others?</h6>
                     <div class="form-group mt-2">
-                        <label for="rating" class="mb-1">Star Rating *</label>
                         <div id="rating" name="rating">
                             @for ($i = 1; $i <= 5; $i++)
                                 <input type="radio" id="star{{ $i }}" name="rating"
@@ -77,22 +76,33 @@
 
                 <div class="mb-4">
                     <h6>Which Services Did You Use? *</h6>
-                    <div class="btn-group-toggle" data-toggle="buttons">
-                        <label class="btn btn-outline-secondary">
-                            <input type="checkbox" autocomplete="off">Cakes Store
-                        </label>
-                        <label class="btn btn-outline-secondary">
-                            <input type="checkbox" autocomplete="off">Sugarcraft School
-                        </label>
-                        <label class="btn btn-outline-secondary">
-                            <input type="checkbox" autocomplete="off">Online Tutorials
-                        </label>
-                        <label class="btn btn-outline-secondary">
-                            <input type="checkbox" autocomplete="off">David Ducan Cakes Supplies
-                        </label>
-                        <label class="btn btn-outline-secondary">
-                            <input type="checkbox" autocomplete="off">24 Hour Deals
-                        </label>
+                    <div class="form-group mt-2">
+                        <label class="mb-1">Which service(s) did you use? *</label>
+                        <div class="form-check d-flex align-items-center">
+                            <input class="form-check-input" type="checkbox" value="Cakes Store" id="cakesStore"
+                                name="services[]">
+                            <label class="form-check-label ms-2" for="cakesStore">Cakes Store</label>
+                        </div>
+                        <div class="form-check d-flex align-items-center">
+                            <input class="form-check-input" type="checkbox" value="Sugarcraft School" id="sugarcraftSchool"
+                                name="services[]">
+                            <label class="form-check-label ms-2" for="sugarcraftSchool">Sugarcraft School</label>
+                        </div>
+                        <div class="form-check d-flex align-items-center">
+                            <input class="form-check-input" type="checkbox" value="Online Tutorials" id="onlineTutorials"
+                                name="services[]">
+                            <label class="form-check-label ms-2" for="onlineTutorials">Online Tutorials</label>
+                        </div>
+                        <div class="form-check d-flex align-items-center">
+                            <input class="form-check-input" type="checkbox" value="David Duncan Cake Supplies"
+                                id="davidDuncan" name="services[]">
+                            <label class="form-check-label ms-2" for="davidDuncan">David Duncan Cake Supplies</label>
+                        </div>
+                        <div class="form-check d-flex align-items-center">
+                            <input class="form-check-input" type="checkbox" value="24 Hour Deals" id="deals"
+                                name="services[]">
+                            <label class="form-check-label ms-2" for="deals">24 Hour Deals</label>
+                        </div>
                     </div>
                 </div>
 
@@ -108,6 +118,6 @@
 
 
     <!--=============================
-                                                                                                                                Customer-Feedback  PAGE END
-                                                                                                                            ==============================-->
+                                                                                                                                                    Customer-Feedback  PAGE END
+                                                                                                                                                ==============================-->
 @endsection
