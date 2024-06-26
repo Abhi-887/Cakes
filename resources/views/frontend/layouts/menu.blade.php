@@ -38,14 +38,14 @@
                     <a class="fs-5 me-2" href="{{ route('login') }}"><i class="fas fa-user"></i></a>
                 </li>
                 <li>
-                    <a class="cart_icon mx-2 position-relative fw-semibold fs-5 transitions"><i
+                    <a class="cart_icon me-4 position-relative fw-semibold fs-5 transitions"><i
                             class="fas fa-shopping-basket"></i>
                         <span
                             class="cart_count bg-gray position-absolute text-light fw-semibold text-center bottom-50 end-25 rounded-circle">{{ count(Cart::content()) }}</span></a>
                 </li>
                 @php @$unseenMessages = \App\Models\Chat::where(['sender_id' => 1, 'receiver_id' => auth()->user()->id, 'seen' => 0])->count(); @endphp
                 <li>
-                    <a class="message_icon mx-2 position-relative fw-semibold fs-5 transitions"
+                    <a class="message_icon me-4 position-relative fw-semibold fs-5 transitions"
                         href="{{ route('dashboard') }}">
                         <i class="fas fa-comment-alt-dots"></i>
                         <span
@@ -53,7 +53,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="menu_search mx-2 position-relative fw-semibold fs-5 transitions"><i
+                    <a href="#" class="menu_search me-4 position-relative fw-semibold fs-5 transitions"><i
                             class="far fa-search"></i></a>
                     <div
                         class="fp__search_form position-fixed w-100 top-0 end-0 justify-content-center align-items-center transitions vh-100">
