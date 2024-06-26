@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                                                                        BREADCRUMB START
-                                                                                                    ==============================-->
+                                                                                                                    BREADCRUMB START
+                                                                                                                ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,11 +18,11 @@
         </div>
     </section>
     <!--=============================
-                                                                                                        BREADCRUMB END
-                                                                                                    ==============================-->
+                                                                                                                    BREADCRUMB END
+                                                                                                                ==============================-->
     <!--=============================
-                                                                                                       Customer-Feedback PAGE START
-                                                                                                    ==============================-->
+                                                                                                                   Customer-Feedback PAGE START
+                                                                                                                ==============================-->
 
 
     <div class="container mt-5">
@@ -47,6 +47,16 @@
                     <input type="email" placeholder="Email" name="email">
                 </div>
 
+                <label for="store" class="mb-1">Which store did you use? *</label>
+                <div class="fp__contact_form_input form-group mt-2">
+                    <span><i class="fas fa-caret-square-down"></i></i></span>
+                    <select class="form-control" id="store" name="store" required>
+                        <option value="Edinburgh">Select Store</option>
+                        <option value="Edinburgh">Edinburgh</option>
+                        <option value="Glasgow">Glasgow</option>
+                    </select>
+                </div>
+
                 <div class="mb-4">
                     <h6>Which Services Did You Use? *</h6>
                     <div class="btn-group-toggle" data-toggle="buttons">
@@ -66,17 +76,6 @@
                             <input type="checkbox" autocomplete="off">24 Hour Deals
                         </label>
                     </div>
-                </div>
-
-
-                <label for="store" class="mb-1">Which store did you use? *</label>
-                <div class="fp__contact_form_input form-group mt-2">
-                    <span><i class="fal fa-user-alt"></i></span>
-                    <select class="form-control" id="store" name="store" required>
-                        <option value="Edinburgh">Select Store</option>
-                        <option value="Edinburgh">Edinburgh</option>
-                        <option value="Glasgow">Glasgow</option>
-                    </select>
                 </div>
 
                 <div class="fp__contact_form_input textarea">
@@ -115,6 +114,6 @@
 
 
     <!--=============================
-                                                                                                        Customer-Feedback  PAGE END
-                                                                                                    ==============================-->
+                                                                                                                    Customer-Feedback  PAGE END
+                                                                                                                ==============================-->
 @endsection
