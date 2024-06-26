@@ -28,14 +28,13 @@ class ContactController extends Controller
 
         // Handle file uploads for phone_image
         if ($request->hasFile('phone_image')) {
-            $data['phone_image'] = $request->file('phone_image')->store('uploads');
+            $data['phone_image'] = $request->file('phone_image')->store('uploads', 'public');
         }
 
         // Handle file uploads for email_image
         if ($request->hasFile('email_image')) {
-            $data['email_image'] = $request->file('email_image')->store('uploads');
+            $data['email_image'] = $request->file('email_image')->store('uploads', 'public');
         }
-
         // Update or create a Contact record with id = 1
         Contact::updateOrCreate(['id' => 1], $data);
 
