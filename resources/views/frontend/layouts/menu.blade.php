@@ -98,7 +98,7 @@
                                         </a>
                                         @if ($menu['child'])
                                             <span class="mobile-dropdown-menu ms-2" data-index="{{ $index }}">
-                                                <i class="far fa-angle-down"></i></span>
+                                                <i class="far fa-angle-down color-light-gray"></i></span>
                                         @endif
                                     </div>
                                     @if ($menu['child'])
