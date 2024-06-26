@@ -34,11 +34,11 @@
             <form class="searchformbackground-light-gray p-3 rounded-pill" method="GET"
                 action="{{ route('product.index') }}">
                 <div class="row justify-content-around align-items-center">
-                    <div class="col-sm-5 col-12">
+                    <div class="col-md-5 col-10 my-2">
                         <input class="py-2 form-control rounded-pill" type="text" placeholder="Search..." name="search"
                             value="{{ request()->search }}">
                     </div>
-                    <div class="col-sm-5 col-12">
+                    <div class="col-md-5 col-10 my-2">
                         <select class="py-2 form-control rounded-pill" name="sub_category" id="sub_category">
                             <option value="">All</option>
                             @foreach ($subcategories as $subcategory)
@@ -49,9 +49,9 @@
                             @endforeach
                         </select>
                     </div>
-                    <div class="col-sm-2 col-12">
+                    <div class="col-md-2 col-10 my-2">
                         <button type="submit"
-                            class="border border-0 wedding-cake-button rounded-pill text-light fs-5">Search</button>
+                            class="border border-0 wedding-cake-button rounded-pill text-light fs-5 w-100">Search</button>
                     </div>
                 </div>
             </form>
