@@ -31,9 +31,9 @@
     </style>
     <section class="fp__search_menu mt_120 xs_mt_90 mb_100 xs_mb_70">
         <div class="container">
-            <form class="fp__search_menu_form" method="GET" action="{{ route('product.index') }}">
+            <form class="" method="GET" action="{{ route('product.index') }}">
                 <div class="row justify-content-around">
-                    <div class="col-4">
+                    <div class="col-5">
                         <select class="py-2 form-control rounded-pill" name="sub_category" id="sub_category">
                             <option value="">All</option>
                             @foreach ($subcategories as $subcategory)
@@ -44,13 +44,13 @@
                             @endforeach
                         </select>
                     </div>
-                    <div class="col-4">
+                    <div class="col-5">
                         <input class="py-2 form-control rounded-pill" type="text" placeholder="Search..." name="search"
                             value="{{ request()->search }}">
                     </div>
                     <div class="col-2">
                         <button type="submit"
-                            class="w-100 border border-0 wedding-cake-button rounded-pill text-light form-control">Search</button>
+                            class="w-100 border border-0 wedding-cake-button rounded-pill text-light form-control py-1 fs-4">Search</button>
                     </div>
                 </div>
             </form>
