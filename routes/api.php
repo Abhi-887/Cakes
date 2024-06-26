@@ -22,11 +22,7 @@ Route::get('/products', function () {
     $products = Product::all();
     return $products;
 });
-// Retrieve a specific product by ID
-Route::get('/products/{id}', function ($id) {
-    $product = Product::findOrFail($id);
-    return response()->json($product);
-});
+
 
 // Update a specific product by ID
 Route::put('/products/{id}', function (Request $request, $id) {
