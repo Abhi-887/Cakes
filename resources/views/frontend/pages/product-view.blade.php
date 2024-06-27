@@ -8,8 +8,8 @@
         }
     </style>
     <!--=============================
-                                                                                                                                                                                                                                                                                                    BREADCRUMB START
-                                                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                        BREADCRUMB START
+                                                                                                                                                                                                                                                                                                    ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -24,13 +24,13 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                                                                    BREADCRUMB END
-                                                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                        BREADCRUMB END
+                                                                                                                                                                                                                                                                                                    ==============================-->
 
 
     <!--=============================
-                                                                                                                                                                                                                                                                                                    MENU DETAILS START
-                                                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                        MENU DETAILS START
+                                                                                                                                                                                                                                                                                                    ==============================-->
     <section class="fp__menu_details mt-5 pt-5">
         <div class="container">
             <div class="row">
@@ -237,7 +237,7 @@
                             @else
                                 <li><a class="common_btn v_submit_button" href="#">Add To Cart</a></li>
                             @endif
-                            <li><a class="wishlist" href="#"><i class="far fa-heart"></i></a></li>
+                            <li><a class="wishlist" href="javascript:;"><i class="far fa-heart"></i></a></li>
                         </ul>
                     </div>
                 </div>
