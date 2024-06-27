@@ -111,7 +111,7 @@
                     @foreach ($sliders as $key => $slider)
                         @if ($slider->show_at_home == $selectedOption || $selectedOption === null || $selectedOption === '')
                             <div class="carousel-item{{ $key === 0 ? ' active' : '' }} background{{ $key + 1 }}">
-                                <div class="width_Global">
+                                <div class="container width_Global">
                                     <img src="{{ asset($slider->image) }}" class="d-block img-fluid front_image"
                                         alt="">
                                 </div>
@@ -139,7 +139,7 @@
 <style>
     .fp__banner {
         padding-top: 0 !important;
-        height: 100% !important;
+        height: auto !important;
     }
 
     .new-slider-item {
@@ -151,7 +151,7 @@
     }
 
     .front_image {
-        height: 100% !important;
+        height: auto !important;
     }
 
     /* @media (max-width: 991px) {
@@ -171,8 +171,7 @@
             background-size: cover;
             background-position: center center;
             position: relative;
-            /* height: 645px !important; */
-            height: auto !important;
+            height: 645px !important;
         }
     @endforeach
 
@@ -180,9 +179,9 @@
         position: relative;
     }
 
-    /* .background6 {
+    .background6 {
         height: 550px !important;
-    } */
+    }
 
     .slider-img img {
         width: 100%;
