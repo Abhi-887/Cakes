@@ -230,19 +230,19 @@
                 <div class="col-md-4 d-flex justify-content-center text-center text-md-start">
                     <div>
                         <h4 class="color-light-gray mb-3">{!! @$contact2->title_one !!}</h4>
-                        <p class="fw-semibold">{!! @$contact2->Description_one !!}</p>
+                        <p class="fw-semibold">{!! @$contact2->description_one !!}</p>
                     </div>
                 </div>
                 <div class="col-md-4 d-flex justify-content-center text-center text-md-start">
                     <div>
                         <h4 class="color-light-gray mb-3">{!! @$contact2->title_two !!}</h4>
-                        <p class="fw-semibold">{!! @$contact2->Description_two !!}</p>
+                        <p class="fw-semibold">{!! @$contact2->description_two !!}</p>
                     </div>
                 </div>
                 <div class="col-md-4 d-flex justify-content-center text-center text-md-start">
                     <div>
                         <h4 class="color-light-gray mb-3">{!! @$contact2->title_three !!}</h4>
-                        <p class="fw-semibold">{!! @$contact2->Description_three !!}</p>
+                        <p class="fw-semibold">{!! @$contact2->description_three !!}</p>
                     </div>
                 </div>
             </div>
