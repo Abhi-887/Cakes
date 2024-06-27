@@ -28,7 +28,8 @@ class WorkwithusDataTable extends DataTable
             })
             ->addColumn('cv', function($row) {
                 return '<img width="100px" src="'.asset($row->cv).'">';
-            });
+            })
+            ->rawColumns(['image', 'action']);
     }
 
     /**
