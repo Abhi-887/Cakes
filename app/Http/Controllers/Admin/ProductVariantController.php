@@ -36,12 +36,14 @@ class ProductVariantController extends Controller
         $request->validate([
             'product' => ['integer', 'required'],
             'name' => ['required', 'max:200'],
+            'attribute_type' => 'required|string|in:text,dropdown,textarea,radio,checkbox',
             'status' => ['required']
         ]);
 
         $varinat = new ProductVariant();
         $varinat->product_id = $request->product;
         $varinat->name = $request->name;
+        $varinat->attributeType = $request->attributeType;
         $varinat->status = $request->status;
         $varinat->save();
 
@@ -75,12 +77,14 @@ class ProductVariantController extends Controller
     {
         $request->validate([
             'name' => ['required', 'max:200'],
-            'status' => ['required']
+            'status' => ['required'],
+            'attribute_type' => 'required|string|in:text,dropdown,textarea,radio,checkbox',
         ]);
 
         $varinat = ProductVariant::findOrFail($id);
         $varinat->name = $request->name;
         $varinat->status = $request->status;
+        $varinat->attribute_type = $request->attribute_type;
         $varinat->save();
 
         toastr('Updated Successfully!', 'success', 'success');

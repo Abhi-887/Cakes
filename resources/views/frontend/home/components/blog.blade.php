@@ -25,7 +25,8 @@
                                     {{ date('d M Y', strtotime($blog->created_at)) }}</li>
                                 <li><i class="fas fa-comments"></i> {{ $blog->comments_count }} comment</li>
                             </ul>
-                            <a class="title" href="{{ route('blogs.details', $blog->slug) }}">{{ $blog->title }}</a>
+                            <a class="title" href="{{ route('blogs.details', $blog->slug) }}">{{ truncate($blog->title,
+                                70) }}</a>
                         </div>
                     </div>
                 </div>
