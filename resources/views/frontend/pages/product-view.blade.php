@@ -1,9 +1,22 @@
 @extends('frontend.layouts.master')
 
 @section('content')
+
+    <style>
+        .form-check-input:checked {
+            background-color: #788a9f !important;
+            border-color: #4a5f76 !important;
+        }
+
+        .form-check-input {
+            background-size: 25px !important;
+            height: 2.5em !important;
+        }
+    </style>
+
     <!--=============================
-                                                                                                                                                                                                            BREADCRUMB START
-                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                    BREADCRUMB START
+                                                                                                                                                                                                                                ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,13 +31,13 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                            BREADCRUMB END
-                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                    BREADCRUMB END
+                                                                                                                                                                                                                                ==============================-->
 
 
     <!--=============================
-                                                                                                                                                                                                            MENU DETAILS START
-                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                    MENU DETAILS START
+                                                                                                                                                                                                                                ==============================-->
     <section class="fp__menu_details mt-5 pt-5">
         <div class="container">
             <div class="row">
@@ -96,58 +109,67 @@
                                 </div>
                             @endif
 
-                            <div class="form-group">
-                                <label for="portions">Portions (based on a portion size of 2"x1")</label>
-                                <select id="portions" required>
-                                    <option value="4-tiers">4 Tiers (3 layers of cake per tier) - 140 Portions (as shown 4",
-                                        6",
-                                        8",
-                                        10"
-                                        sized tiers)</option>
+                            <h6 class="my-4">Portions (based on a portion size of 2"x1")</h6>
+                            <div class="fp__contact_form_input form-group mt-2">
+                                <input type="radio" name="" id=""><label for="">4 Tiers (3 layers
+                                    of cake per tier) - 140 Portions (as shown 4", 6", 8", 10" sized tiers)</label>
+                            </div>
+
+                            <h6 class="my-4">Top Tier Flavour *</h6>
+                            <div class="fp__contact_form_input form-group mt-2">
+                                <span><i class="far fa-caret-square-down"></i></span>
+                                <select class="form-control" id="store" name="store" required>
+                                    <option value="Edinburgh" selected>-- Please Select --</option>
+                                    <option value="Edinburgh">Edinburgh</option>
+                                    <option value="Glasgow">Glasgow</option>
                                 </select>
                             </div>
-                            <div class="form-group">
-                                <h5 for="top-tier-flavour">Top Tier Flavour</h5>
-                                <select id="top-tier-flavour" required>
-                                    <option value="" disabled selected>-- Please Select --</option>
-                                    <!-- Add options here -->
+
+                            <h6 class="my-4">Top 2 Flavour *</h6>
+                            <div class="fp__contact_form_input form-group mt-2">
+                                <span><i class="far fa-caret-square-down"></i></span>
+                                <select class="form-control" id="store" name="store" required>
+                                    <option value="Edinburgh" selected>-- Please Select --</option>
+                                    <option value="Edinburgh">Edinburgh</option>
+                                    <option value="Glasgow">Glasgow</option>
                                 </select>
                             </div>
-                            <div class="form-group">
-                                <h5 for="tier-2-flavour">Tier 2 Flavour</h5>
-                                <select id="tier-2-flavour" required>
-                                    <option value="" disabled selected>-- Please Select --</option>
-                                    <!-- Add options here -->
+
+                            <h6 class="my-4">Top 3 Flavour</h6>
+                            <div class="fp__contact_form_input form-group mt-2">
+                                <span><i class="far fa-caret-square-down"></i></span>
+                                <select class="form-control" id="store" name="store" required>
+                                    <option value="Edinburgh" selected>-- Please Select --</option>
+                                    <option value="Edinburgh">Edinburgh</option>
+                                    <option value="Glasgow">Glasgow</option>
                                 </select>
                             </div>
-                            <div class="form-group">
-                                <h5 for="tier-3-flavour">Tier 3 Flavour</h5>
-                                <select id="tier-3-flavour">
-                                    <option value="" disabled selected>-- Please Select --</option>
-                                    <!-- Add options here -->
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <h5 for="tier-4-flavour">Tier 4 Flavour</h5>
-                                <select id="tier-4-flavour">
-                                    <option value="" disabled selected>-- Please Select --</option>
-                                    <!-- Add options here -->
+
+                            <h6 class="my-4">Top 4 Flavour</h6>
+                            <div class="fp__contact_form_input form-group mt-2">
+                                <span><i class="far fa-caret-square-down"></i></span>
+                                <select class="form-control" id="store" name="store" required>
+                                    <option value="Edinburgh" selected>-- Please Select --</option>
+                                    <option value="Edinburgh">Edinburgh</option>
+                                    <option value="Glasgow">Glasgow</option>
                                 </select>
                             </div>
                             <div class="extra-options">
-                                <p>Short of portions? Add a 50 portion cutting cake at cost price!</p>
-                                <h5><input type="checkbox" name="extra-plain-sponge" value="35"> Plain Sponge
-                                    +£35.00</h5>
-                                <h5><input type="checkbox" name="extra-chocolate" value="35"> Chocolate
-                                    +£35.00</h5>
-                                <h5><input type="checkbox" name="extra-toffee" value="35"> Toffee +£35.00</h5>
+                                <h5>Short of portions? Add a 50 portion cutting cake at cost price!</h5>
+                                <input type="checkbox" name="extra-plain-sponge" value="35"> Plain Sponge +£35.00
+                                <input type="checkbox" name="extra-plain-sponge" value="35"> Chocolate +£35.00
+                                <input type="checkbox" name="extra-plain-sponge" value="35"> Toffee +£35.00
                             </div>
                             <div class="form-group">
                                 <h5 for="cake-coating">How would you like your cake coated?</h5>
-                                <select id="cake-coating">
-                                    <option value="" disabled selected>-- Please Select --</option>
-                                    <!-- Add options here -->
-                                </select>
+                                <div class="fp__contact_form_input form-group mt-2">
+                                    <span><i class="far fa-caret-square-down"></i></span>
+                                    <select class="form-control" id="store" name="store" required>
+                                        <option value="Edinburgh" selected>-- Please Select --</option>
+                                        <option value="Edinburgh">Edinburgh</option>
+                                        <option value="Glasgow">Glasgow</option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <h5 for="design-specification">Design Specification (e.g. Colour Scheme, Ribbon, Flowers,
