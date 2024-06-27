@@ -23,7 +23,17 @@ class CakesstandDataTable extends DataTable
     {
         return (new EloquentDataTable($query))
             ->addColumn('action', 'subscriber.action')
-            ->setRowId('id');
+            ->setRowId('id')
+
+            ->addColumn('action', function ($query) {
+
+
+                $edit = "<a href='" . route('admin.cakes-stand.edit', $query->id) . "' class='btn btn-primary'><i class='fas fa-edit'></i></a>";
+                $delete = "<a href='" . route('admin.cakes-stand.destroy', $query->id) . "' class='mx-2 btn btn-danger delete-item'><i class='fas fa-trash'></i></a>";
+
+
+                return  $edit . $delete ;
+            });
     }
 
     /**
@@ -66,6 +76,7 @@ class CakesstandDataTable extends DataTable
             Column::make('id'),
             Column::make('image'),
 			Column::make('name'),
+            Column::make('status'),
         ];
     }
 
