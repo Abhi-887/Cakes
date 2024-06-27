@@ -123,7 +123,7 @@ button {
     COMMON CSS START
 ============================*/
 .common_btn {
-    background: var(--colorPrimary);
+    background: #4b637f;
     text-transform: capitalize !important;
     color: var(--colorWhite) !important;
     padding: 10px 25px !important;
@@ -139,7 +139,7 @@ button {
 }
 
 .common_btn:hover {
-    background: var(--colorBlack);
+    background: #788a9f;
 }
 
 .fp__section_heading h4 {
@@ -3453,8 +3453,8 @@ footer .wrapper a:hover {
     height: 35px;
     font-size: 15px;
     color: #fff;
-	background-color: #adcdde !important;
-	border-color: #adcdde !important;
+	background-color: #4b637f  !important;
+	border-color: #4b637f  !important;
     padding: 0;
     border-radius: 3px;
     -webkit-border-radius: 3px;
@@ -3496,7 +3496,7 @@ footer .wrapper a:hover {
     text-align: center;
     line-height: 45px;
     margin-right: 0;
-    background: #adcdde !important;
+    background: #4b637f !important;
     color: var(--colorWhite);
     border-radius: 50%;
     transition: all linear 0.3s;
@@ -3507,7 +3507,7 @@ footer .wrapper a:hover {
 }
 
 .details_button_area .wishlist:hover {
-    background: #4b637f !important);
+    background: #788a9f !important;
 }
 
 .fp__menu_description_area .nav {
