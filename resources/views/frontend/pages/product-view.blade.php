@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                                                                                                                                                        BREADCRUMB START
-                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                    BREADCRUMB START
+                                                                                                                                                                                                ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,13 +18,13 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                        BREADCRUMB END
-                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                    BREADCRUMB END
+                                                                                                                                                                                                ==============================-->
 
 
     <!--=============================
-                                                                                                                                                                                        MENU DETAILS START
-                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                    MENU DETAILS START
+                                                                                                                                                                                                ==============================-->
     <section class="fp__menu_details mt-5 pt-5">
         <div class="container">
             <div class="row">
@@ -371,160 +371,102 @@
 
 
 
-
-    <style>
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .cake-image {
-            text-align: center;
-        }
-
-        .cake-image img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .cake-description {
-            margin: 20px 0;
-        }
-
-        .price {
-            font-size: 1.5em;
-            color: #333;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        .form-group select,
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .extra-options {
-            margin-bottom: 20px;
-        }
-
-        .extra-options label {
-            display: inline-block;
-            margin-right: 10px;
-        }
-
-        .form-actions {
-            text-align: center;
-        }
-
-        .form-actions button {
-            padding: 10px 20px;
-            border: none;
-            background-color: #333;
-            color: #fff;
-            font-size: 1em;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .form-actions button:hover {
-            background-color: #555;
-        }
-    </style>
     <div class="container">
-        <div class="cake-image">
-            <img src="path/to/your/cake-image.png" alt="Wedding Cake">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="https://www.3d-cakes.co.uk/media/catalog/product/cache/1/image/482x/9df78eab33525d08d6e5fb8d27136e95/3/d/3d_cakes-8218_-_wedding_cake_1.jpg"
+                    alt="Wedding Cake">
+            </div>
+            <div class="col-md-6">
+                <div class="cake-description">
+                    <p>Our Angel design comprises of textured and shimmer tiers, hand-crafted sugar roses alongside angelic
+                        white
+                        feathers.</p>
+                    <p>Our stunning wedding cakes (ANGEL - With Sugarcraft Flowers) are freshly baked with the finest
+                        ingredients,
+                        individually designed and hand crafted by our multiple award winning team. To make this cake perfect
+                        for
+                        your big day, detail your colour scheme and any changes you would like to make in the design
+                        specification
+                        box. Generally minimum 6 month’s notice is required; however if you require your cake at short
+                        notice we
+                        will endeavour to make this possible. With 28 delicious flavours available each tasting as good as
+                        they
+                        look!</p>
+                    <p class="price">£916.00</p>
+                </div>
+                <form>
+                    <div class="form-group">
+                        <label for="portions">Portions (based on a portion size of 2"x1")</label>
+                        <select id="portions" required>
+                            <option value="4-tiers">4 Tiers (3 layers of cake per tier) - 140 Portions (as shown 4", 6",
+                                8",
+                                10"
+                                sized tiers)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="top-tier-flavour">Top Tier Flavour</label>
+                        <select id="top-tier-flavour" required>
+                            <option value="" disabled selected>-- Please Select --</option>
+                            <!-- Add options here -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="tier-2-flavour">Tier 2 Flavour</label>
+                        <select id="tier-2-flavour" required>
+                            <option value="" disabled selected>-- Please Select --</option>
+                            <!-- Add options here -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="tier-3-flavour">Tier 3 Flavour</label>
+                        <select id="tier-3-flavour">
+                            <option value="" disabled selected>-- Please Select --</option>
+                            <!-- Add options here -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="tier-4-flavour">Tier 4 Flavour</label>
+                        <select id="tier-4-flavour">
+                            <option value="" disabled selected>-- Please Select --</option>
+                            <!-- Add options here -->
+                        </select>
+                    </div>
+                    <div class="extra-options">
+                        <p>Short of portions? Add a 50 portion cutting cake at cost price!</p>
+                        <label><input type="checkbox" name="extra-plain-sponge" value="35"> Plain Sponge
+                            +£35.00</label>
+                        <label><input type="checkbox" name="extra-chocolate" value="35"> Chocolate +£35.00</label>
+                        <label><input type="checkbox" name="extra-toffee" value="35"> Toffee +£35.00</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="cake-coating">How would you like your cake coated?</label>
+                        <select id="cake-coating">
+                            <option value="" disabled selected>-- Please Select --</option>
+                            <!-- Add options here -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="design-specification">Design Specification (e.g. Colour Scheme, Ribbon, Flowers,
+                            etc)</label>
+                        <textarea id="design-specification" rows="4"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="cake-stand-hire">Cake Stand Hire (£30 Hire Fee + £50 fully refundable deposit) -
+                            Purchase
+                            Options Also Available - See Gallery Below</label>
+                        <select id="cake-stand-hire">
+                            <option value="" disabled selected>-- Please Select --</option>
+                            <!-- Add options here -->
+                        </select>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit">Add to Cart</button>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="cake-description">
-            <p>Our Angel design comprises of textured and shimmer tiers, hand-crafted sugar roses alongside angelic white
-                feathers.</p>
-            <p>Our stunning wedding cakes (ANGEL - With Sugarcraft Flowers) are freshly baked with the finest ingredients,
-                individually designed and hand crafted by our multiple award winning team. To make this cake perfect for
-                your big day, detail your colour scheme and any changes you would like to make in the design specification
-                box. Generally minimum 6 month’s notice is required; however if you require your cake at short notice we
-                will endeavour to make this possible. With 28 delicious flavours available each tasting as good as they
-                look!</p>
-            <p class="price">£916.00</p>
-        </div>
-        <form>
-            <div class="form-group">
-                <label for="portions">Portions (based on a portion size of 2"x1")</label>
-                <select id="portions" required>
-                    <option value="4-tiers">4 Tiers (3 layers of cake per tier) - 140 Portions (as shown 4", 6", 8", 10"
-                        sized tiers)</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="top-tier-flavour">Top Tier Flavour</label>
-                <select id="top-tier-flavour" required>
-                    <option value="" disabled selected>-- Please Select --</option>
-                    <!-- Add options here -->
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="tier-2-flavour">Tier 2 Flavour</label>
-                <select id="tier-2-flavour" required>
-                    <option value="" disabled selected>-- Please Select --</option>
-                    <!-- Add options here -->
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="tier-3-flavour">Tier 3 Flavour</label>
-                <select id="tier-3-flavour">
-                    <option value="" disabled selected>-- Please Select --</option>
-                    <!-- Add options here -->
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="tier-4-flavour">Tier 4 Flavour</label>
-                <select id="tier-4-flavour">
-                    <option value="" disabled selected>-- Please Select --</option>
-                    <!-- Add options here -->
-                </select>
-            </div>
-            <div class="extra-options">
-                <p>Short of portions? Add a 50 portion cutting cake at cost price!</p>
-                <label><input type="checkbox" name="extra-plain-sponge" value="35"> Plain Sponge +£35.00</label>
-                <label><input type="checkbox" name="extra-chocolate" value="35"> Chocolate +£35.00</label>
-                <label><input type="checkbox" name="extra-toffee" value="35"> Toffee +£35.00</label>
-            </div>
-            <div class="form-group">
-                <label for="cake-coating">How would you like your cake coated?</label>
-                <select id="cake-coating">
-                    <option value="" disabled selected>-- Please Select --</option>
-                    <!-- Add options here -->
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="design-specification">Design Specification (e.g. Colour Scheme, Ribbon, Flowers, etc)</label>
-                <textarea id="design-specification" rows="4"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="cake-stand-hire">Cake Stand Hire (£30 Hire Fee + £50 fully refundable deposit) - Purchase
-                    Options Also Available - See Gallery Below</label>
-                <select id="cake-stand-hire">
-                    <option value="" disabled selected>-- Please Select --</option>
-                    <!-- Add options here -->
-                </select>
-            </div>
-            <div class="form-actions">
-                <button type="submit">Add to Cart</button>
-            </div>
-        </form>
     </div>
 
 @endsection
