@@ -94,7 +94,7 @@
             <div class="col-md-6 text-end">
                 <div class="social-links">
                     @foreach ($footerSocials as $link)
-                        <a href="{{ $link->url }}" class="{{ $link->icon }} fs-3 mx-2"></a>
+                        <a href="{{ $link->url }}" class="{{ $link->icon }} fs-3 ms-2"></a>
                     @endforeach
                 </div>
             </div>

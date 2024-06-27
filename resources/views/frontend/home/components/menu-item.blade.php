@@ -84,7 +84,8 @@
                                 <img src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}"
                                     class="img-fluid w-100">
                             </div>
-                            <a class="category bg-light px-2 py-1" href="{{ route('category.show', ['slug' => $product->category->slug]) }}">{{ @$product->category->name }}</a>
+                            <a class="category bg-light px-2 py-1 fw-semibold"
+                                href="{{ route('category.show', ['slug' => $product->category->slug]) }}">{{ @$product->category->name }}</a>
                             <div class="fp__menu_item_text">
                                 @if ($product->reviews_avg_rating)
                                     <p class="rating">
@@ -97,7 +98,7 @@
                                 @endif
                                 <a class="title my-3"
                                     href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
-                                <h5
+                                <p
                                     class="price fw-semibold text-center position-absolute py-1 px-3 rounded-pill color-light-gray top-0">
                                     @if ($product->offer_price > 0)
                                         {{ currencyPosition($product->offer_price) }}
@@ -105,7 +106,7 @@
                                     @else
                                         {{ currencyPosition($product->price) }}
                                     @endif
-                                </h5>
+                                </p>
                                 <ul class="d-flex flex-wrap justify-content-center">
                                     <li><a class="background-light-gray" href="javascript:;"
                                             onclick="loadProductModal('{{ $product->id }}')"><i

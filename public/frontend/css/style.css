@@ -1165,7 +1165,7 @@ button {
     /* text-transform: capitalize; */
     /* font-size: 16px; */
     color: #788a9f !important;
-    font-family: var(--cursiveFont);
+    font-family: var(--headingFont);
     position: absolute;
     /* top: 59% !important; */
     left: 10px;
@@ -1236,7 +1236,7 @@ button {
     right: 10px;
     /* text-transform: capitalize;
     color: var(--colorPrimary); */
-    font-family: var(--cursiveFont);
+    font-family: var(--headingFont);
     /* position: absolute;
     background: var(--colorWhite);
     padding: 8px 15px; */
