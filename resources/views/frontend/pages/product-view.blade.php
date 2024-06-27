@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                    BREADCRUMB START
-                                                ==============================-->
+                                                        BREADCRUMB START
+                                                    ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,13 +18,13 @@
         </div>
     </section>
     <!--=============================
-                                                    BREADCRUMB END
-                                                ==============================-->
+                                                        BREADCRUMB END
+                                                    ==============================-->
 
 
     <!--=============================
-                                                    MENU DETAILS START
-                                                ==============================-->
+                                                        MENU DETAILS START
+                                                    ==============================-->
     <section class="fp__menu_details mt_115 xs_mt_85 mb_95 xs_mb_65">
         <div class="container">
             <div class="row">
@@ -280,7 +280,7 @@
                                         </p>
                                         <a class="title my-3"
                                             href="{{ route('product.show', $relatedProduct->slug) }}">{!! $relatedProduct->name !!}</a>
-                                        <h5
+                                        <p
                                             class="price fw-semibold text-center position-absolute py-1 px-3 rounded-pill color-light-gray top-0">
                                             @if ($relatedProduct->offer_price > 0)
                                                 {{ currencyPosition($relatedProduct->offer_price) }}
@@ -288,7 +288,7 @@
                                             @else
                                                 {{ currencyPosition($relatedProduct->price) }}
                                             @endif
-                                        </h5>
+                                        </p>
                                         <ul class="d-flex flex-wrap justify-content-center">
                                             <li><a href="javascript:;"
                                                     onclick="loadProductModal('{{ $relatedProduct->id }}')"><i

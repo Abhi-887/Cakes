@@ -98,7 +98,7 @@
                                 @endif
                                 <a class="title my-3"
                                     href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
-                                <h5
+                                <p
                                     class="price fw-semibold text-center position-absolute py-1 px-3 rounded-pill color-light-gray top-0">
                                     @if ($product->offer_price > 0)
                                         {{ currencyPosition($product->offer_price) }}
@@ -106,7 +106,7 @@
                                     @else
                                         {{ currencyPosition($product->price) }}
                                     @endif
-                                </h5>
+                                </p>
                                 <ul class="d-flex flex-wrap justify-content-center">
                                     <li><a class="background-light-gray" href="javascript:;"
                                             onclick="loadProductModal('{{ $product->id }}')"><i
