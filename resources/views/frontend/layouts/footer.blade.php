@@ -115,7 +115,7 @@
     }
 
     .form-control:focus {
-        border-color: white !important;
+        border-color: #ced4da !important;
         box-shadow: none !important;
     }
 
