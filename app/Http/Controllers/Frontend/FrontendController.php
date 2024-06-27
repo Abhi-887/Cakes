@@ -11,6 +11,7 @@ use App\Models\BannerSlider;
 use App\Models\Blog;
 use App\Models\BlogCategory;
 use App\Models\BlogComment;
+use App\Models\Cakesstand;
 use App\Models\Category;
 use App\Models\Chef;
 use App\Models\Contact;
@@ -354,6 +355,12 @@ class FrontendController extends Controller
         $reviews = ProductRating::where(['product_id' => $product->id, 'status' => 1])->paginate(30);
         return view('frontend.pages.product-view', compact('product', 'relatedProducts', 'reviews'));
     }
+
+    function cakesstands(){
+        $cakesstans = Cakesstand::all();
+        return view('frontend.pages.product-view',compact('cakesstans'));
+    }
+
 
     function loadProductModal($productId)
     {

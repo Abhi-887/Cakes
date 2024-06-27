@@ -8,8 +8,8 @@
         }
     </style>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                            BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                    BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                                ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -24,13 +24,13 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                            BREADCRUMB END
-                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                    BREADCRUMB END
+                                                                                                                                                                                                                                                                                                                                                                ==============================-->
 
 
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                            MENU DETAILS START
-                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                    MENU DETAILS START
+                                                                                                                                                                                                                                                                                                                                                                ==============================-->
     <section class="fp__menu_details mt-5 pt-5">
         <div class="container">
             <div class="row">
@@ -93,7 +93,8 @@
                                             <input class="form-check-input v_product_size" type="radio"
                                                 name="product_size" id="size-{{ $productSize->id }}"
                                                 data-price="{{ $productSize->price }}" value="{{ $productSize->id }}">
-                                            <label class="form-check-label" for="size-{{ $productSize->id }}">
+                                            <label class="form-check-label" for="size-{{ $productSize->id }}"
+                                                style="max-width: 100%;">
                                                 {{ $productSize->name }} <span>+
                                                     {{ currencyPosition($productSize->price) }}</span>
                                             </label>
@@ -111,7 +112,8 @@
                                                 type="checkbox" value="{{ $productOption->id }}"
                                                 id="option-{{ $productOption->id }}"
                                                 data-price="{{ $productOption->price }}">
-                                            <label class="form-check-label" for="option-{{ $productOption->id }}">
+                                            <label class="form-check-label"
+                                                for="option-{{ $productOption->id }} "style="max-width: 100%;">
                                                 {{ $productOption->name }} <span>+
                                                     {{ currencyPosition($productOption->price) }}</span>
                                             </label>
@@ -273,15 +275,19 @@
                                 aria-labelledby="pills-cake-stand-gallery-tab" tabindex="0">
                                 <div class="gallery">
                                     <div class="row">
+                                        @foreach ($cakesstans as $cakesstand)
+
                                         <div class="col-md-4 my-3">
                                             <div class="cake-stand">
                                                 <img class="rounded-3"
                                                     src="https://www.3d-cakes.co.uk/skin/frontend/default/MAG090181/images/stand6.JPG"
                                                     alt="">
                                             </div>
-                                            <h5 class="color-dark-gray fw-semibold my-3">Frosted Glass Block</h5>
+                                            <h5 class="color-dark-gray fw-semibold my-3">{{$cakesstand->name}}</h5>
                                         </div>
-                                        <div class="col-md-4 my-3">
+                                        @endforeach
+
+                                        {{-- <div class="col-md-4 my-3">
                                             <div class="cake-stand">
                                                 <img class="rounded-3"
                                                     src="https://www.3d-cakes.co.uk/skin/frontend/default/MAG090181/images/stand7.JPG"
@@ -323,7 +329,7 @@
                                                     alt="">
                                             </div>
                                             <h5 class="color-dark-gray fw-semibold my-3">Low Chrome</h5>
-                                        </div>
+                                        </div> --}}
                                     </div>
                                 </div>
                             </div>

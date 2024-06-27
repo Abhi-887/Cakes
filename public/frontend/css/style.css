@@ -3438,7 +3438,7 @@ footer .wrapper a:hover {
     font-weight: 400;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     /* max-width: 25%; */
 }
 
