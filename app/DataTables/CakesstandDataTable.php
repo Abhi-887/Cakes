@@ -1,5 +1,4 @@
 <?php
-
 namespace App\DataTables;
 
 use App\Models\Cakesstand;
@@ -8,8 +7,6 @@ use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Html\Builder as HtmlBuilder;
 use Yajra\DataTables\Html\Button;
 use Yajra\DataTables\Html\Column;
-use Yajra\DataTables\Html\Editor\Editor;
-use Yajra\DataTables\Html\Editor\Fields;
 use Yajra\DataTables\Services\DataTable;
 
 class CakesstandDataTable extends DataTable
@@ -29,7 +26,8 @@ class CakesstandDataTable extends DataTable
                 return $edit . $delete;
             })
             ->addColumn('image', function ($query) {
-                return '<img width="100px" src="' . asset($query->image) . '">';
+                $imageUrl = asset('images/cakesstands/' . $query->image); // Ensure correct path
+                return '<img width="100px" src="' . $imageUrl . '">';
             })
             ->rawColumns(['image', 'action', 'status'])
             ->setRowId('id');
@@ -52,7 +50,6 @@ class CakesstandDataTable extends DataTable
             ->setTableId('cakesstand-table')
             ->columns($this->getColumns())
             ->minifiedAjax()
-            //->dom('Bfrtip')
             ->orderBy(0)
             ->selectStyleSingle()
             ->buttons([
