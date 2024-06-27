@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                                                    BREADCRUMB START
-                                                                                ==============================-->
+                                                                                            BREADCRUMB START
+                                                                                        ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,13 +18,13 @@
         </div>
     </section>
     <!--=============================
-                                                                                    BREADCRUMB END
-                                                                                ==============================-->
+                                                                                            BREADCRUMB END
+                                                                                        ==============================-->
 
 
     <!--=============================
-                                                                                    MENU DETAILS START
-                                                                                ==============================-->
+                                                                                            MENU DETAILS START
+                                                                                        ==============================-->
     <section class="fp__menu_details mt-5 pt-5">
         <div class="container">
             <div class="row">
@@ -153,6 +153,11 @@
                                     data-bs-target="#pills-contact" type="button" role="tab"
                                     aria-controls="pills-contact" aria-selected="false">Reviews</button>
                             </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="cake-stand-gallery" data-bs-toggle="pill"
+                                    data-bs-target="#cake-stand-gallery" type="button" role="tab"
+                                    aria-controls="cake-stand-gallery" aria-selected="false">Cake Stand Gallery</button>
+                            </li>
                         </ul>
                         <div class="tab-content" id="pills-tabContent">
                             <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
@@ -166,7 +171,7 @@
                                 <div class="fp__review_area">
                                     <div class="row">
                                         <div class="col-lg-8">
-                                            <h4>{{ count($reviews) }} reviews</h4>
+                                            <h4>{{ count($reviews) }} Reviews</h4>
                                             <div class="fp__comment pt-0 mt_20">
                                                 @foreach ($reviews as $review)
                                                     <div class="fp__single_comment m-0 border-0">
@@ -246,6 +251,12 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="tab-pane fade show" id="cake-stand-gallery" role="tabpanel"
+                                aria-labelledby="cake-stand-gallery" tabindex="0">
+                                <div class="gallery">
+                                    {!! $product->long_description !!}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -253,7 +264,7 @@
 
             @if (count($relatedProducts) > 0)
                 <div class="fp__related_menu mt_90 xs_mt_60">
-                    <h2>related item</h2>
+                    <h2>Related Item</h2>
                     <div class="row related_product_slider">
                         @foreach ($relatedProducts as $relatedProduct)
                             <div class="col-lg-4 wow fadeInUp" data-wow-duration="1s">
