@@ -48,8 +48,8 @@
         }
     </style>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                            BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                                   ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                        BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                               ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -64,16 +64,16 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                            BREADCRUMB END
-                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                        BREADCRUMB END
+                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                           Customer-Feedback PAGE START
-                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                       Customer-Feedback PAGE START
+                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
 
 
     <div class="container my-5">
         <div class="row justify-content-center align-items-center">
-            <div class="col-6">
+            <div class="col-md-6">
                 <div class="formbg p-4">
                     <div class="text-center">
                         <a class="" href="{{ url('/') }}">
@@ -168,7 +168,7 @@
                             <textarea rows="8" placeholder="Share your experience or offer suggestions to us..." name="feedback"></textarea>
                         </div>
 
-                        <div class="form-group form-check mt-2 align-items-center">
+                        <div class="form-group form-check mt-2 d-flex align-items-center">
                             <input type="checkbox" class="form-check-input" id="privacyPolicy" name="privacyPolicy"
                                 required>
                             <label class="form-check-label ms-2" for="privacyPolicy">I have read and accepted the <a
@@ -181,9 +181,7 @@
             </div>
         </div>
     </div>
-
-
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                            Customer-Feedback  PAGE END
-                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                        Customer-Feedback  PAGE END
+                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
 @endsection

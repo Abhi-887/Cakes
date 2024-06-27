@@ -29,31 +29,31 @@
             -moz-appearance: button;
         }
     </style>
-    <section class="fp__search_menu mt-5 pt-lg-5 pt-0">
+    <section class="fp__search_menu pt-lg-5 pt-0">
         <div class="container">
             <div class="">
-                <h1>Wedding Cakes</h1>
-                <h5>Edinburgh | Glasgow | Scotland</h5>
+                <h1 class="fw-semibold">Wedding Cakes</h1>
+                <h5 class="color-light-gray mt-3 mb-5">Edinburgh | Glasgow | Scotland</h5>
             </div>
             <div class="row">
-                <div class="col-md-6">
-                    <div class="">
+                <div class="col-md-4">
+                    <div class="rounded-3">
                         <a href="">
                             <img src="https://www.3d-cakes.co.uk/media/wysiwyg/boxes/categories/weddings/Book-a-free-consultation.jpg"
                                 alt="">
                         </a>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="">
+                <div class="col-md-4">
+                    <div class="rounded-3">
                         <a href="">
                             <img src="https://www.3d-cakes.co.uk/media/wysiwyg/boxes/categories/weddings/3D_BOX_-_why-choose-3d-cakes.jpg"
                                 alt="">
                         </a>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="">
+                <div class="col-md-4">
+                    <div class="rounded-3">
                         <a href="">
                             <img src="https://www.3d-cakes.co.uk/media/wysiwyg/boxes/categories/weddings/flavour-guide-new.png"
                                 alt="">
