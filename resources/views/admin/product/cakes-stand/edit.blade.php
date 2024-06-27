@@ -46,7 +46,7 @@
     <script type="text/javascript">
         $(document).ready(function() {
             $('.image-preview').css({
-                'background-image': 'url({{ asset($cakesstands->thumb_image) }})',
+                'background-image': 'url('{{ isset($cakesstands->thumb_image) ? asset('images/cakesstands/' . $cakesstands->thumb_image) : '' }}')',
                 'background-size': 'cover',
                 'background-position': 'center center'
             })
