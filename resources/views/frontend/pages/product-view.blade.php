@@ -8,8 +8,8 @@
         }
     </style>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                        BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                                                                                                                            BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                        ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -24,13 +24,13 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                        BREADCRUMB END
-                                                                                                                                                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                                                                                                                            BREADCRUMB END
+                                                                                                                                                                                                                                                                                                                        ==============================-->
 
 
     <!--=============================
-                                                                                                                                                                                                                                                                                                                        MENU DETAILS START
-                                                                                                                                                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                                                                                                                            MENU DETAILS START
+                                                                                                                                                                                                                                                                                                                        ==============================-->
     <section class="fp__menu_details mt-5 pt-5">
         <div class="container">
             <div class="row">
@@ -93,7 +93,8 @@
                                             <input class="form-check-input v_product_size" type="radio"
                                                 name="product_size" id="size-{{ $productSize->id }}"
                                                 data-price="{{ $productSize->price }}" value="{{ $productSize->id }}">
-                                            <p class="form-check-label" for="size-{{ $productSize->id }}">
+                                            <p for="size-{{ $productSize->id }}" class="form-check-label"
+                                                for="size-{{ $productSize->id }}">
                                                 {{ $productSize->name }} <span>+
                                                     {{ currencyPosition($productSize->price) }}</span>
                                             </p>
