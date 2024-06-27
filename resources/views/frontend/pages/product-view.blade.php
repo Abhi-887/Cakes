@@ -281,7 +281,7 @@
                                         <div class="col-md-4 my-3">
                                             <div class="cake-stand">
                                                 <img class="rounded-3"
-                                                    src="{{ $cakesstand->image }}"
+                                                    src="asset('images/cakesstands/' . $query->image);"
                                                     alt="{{$cakesstand->name}}">
                                             </div>
                                             <h5 class="color-dark-gray fw-semibold my-3">{{$cakesstand->name}}</h5>
