@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                BREADCRUMB START
-                                            ==============================-->
+                                                    BREADCRUMB START
+                                                ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,13 +18,13 @@
         </div>
     </section>
     <!--=============================
-                                                BREADCRUMB END
-                                            ==============================-->
+                                                    BREADCRUMB END
+                                                ==============================-->
 
 
     <!--=============================
-                                                MENU DETAILS START
-                                            ==============================-->
+                                                    MENU DETAILS START
+                                                ==============================-->
     <section class="fp__menu_details mt_115 xs_mt_85 mb_95 xs_mb_65">
         <div class="container">
             <div class="row">
@@ -264,7 +264,7 @@
                                         <img src="{{ asset($relatedProduct->thumb_image) }}"
                                             alt="{{ $relatedProduct->name }}" class="img-fluid w-100">
                                     </div>
-                                    <a class="category bg-light px-2 py-1"
+                                    <a class="category bg-light px-2 py-1 fw-semibold"
                                         href="#">{{ @$relatedProduct->category->name }}</a>
                                     <div class="fp__menu_item_text">
                                         <p class="rating">
