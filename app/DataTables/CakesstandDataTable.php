@@ -49,7 +49,7 @@ class CakesstandDataTable extends DataTable
     public function html(): HtmlBuilder
     {
         return $this->builder()
-            ->setTableId('subscriber-table')
+            ->setTableId('cakesstand-table')
             ->columns($this->getColumns())
             ->minifiedAjax()
             //->dom('Bfrtip')
