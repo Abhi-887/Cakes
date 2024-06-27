@@ -276,7 +276,7 @@
                                 <div class="gallery">
                                     <div class="row">
                                         <pre>
-                                        <?php print_r($cakesstans) ?>
+                                        <?php print_r($cakesstand) ?>
                                         </pre>
                                         {{-- @foreach ($cakesstans as $cakesstand)
 
