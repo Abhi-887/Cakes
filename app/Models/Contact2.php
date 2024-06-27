@@ -21,9 +21,9 @@ class Contact2 extends Model
         'title_one',
         'description_one',
         'title_two',
-        'Description_two',
+        'description_two',
         'title_three',
         'description_three',
-        'Description'
+        'main_description'
     ];
 }

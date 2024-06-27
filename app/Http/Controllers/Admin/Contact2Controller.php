@@ -32,10 +32,10 @@ class Contact2Controller extends Controller
         'title_one',
         'description_one',
         'title_two',
-        'Description_two',
+        'description_two',
         'title_three',
         'description_three',
-        'Description'
+        'main_description'
         ]);
 
         // Handle file uploads for phone_image
