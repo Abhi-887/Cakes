@@ -42,4 +42,9 @@ class Product extends Model
         return $this->belongsTo(Category::class, 'sub_category');
     }
 
+    public function variants()
+    {
+        return $this->hasMany(ProductVariant::class);
+    }
+
 }
