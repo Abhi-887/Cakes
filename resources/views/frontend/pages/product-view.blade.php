@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                        BREADCRUMB START
-                                                    ==============================-->
+                                                                                    BREADCRUMB START
+                                                                                ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,14 +18,14 @@
         </div>
     </section>
     <!--=============================
-                                                        BREADCRUMB END
-                                                    ==============================-->
+                                                                                    BREADCRUMB END
+                                                                                ==============================-->
 
 
     <!--=============================
-                                                        MENU DETAILS START
-                                                    ==============================-->
-    <section class="fp__menu_details mt_115 xs_mt_85 mb_95 xs_mb_65">
+                                                                                    MENU DETAILS START
+                                                                                ==============================-->
+    <section class="fp__menu_details mt-5 pt-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 col-md-9 wow fadeInUp" data-wow-duration="1s">
@@ -72,7 +72,7 @@
                             @endif
                         </h3>
                         <p class="short_description">{!! $product->short_description !!}</p>
-
+                        <hr class="my-4">
                         <form action="" id="v_add_to_cart_form">
                             @csrf
                             <input type="hidden" name="base_price" class="v_base_price"
@@ -81,43 +81,41 @@
 
                             @if ($product->productSizes()->exists())
                                 <div class="details_size">
-                                    <h5>select size</h5>
-
+                                    <h5>Select Size</h5>
                                     @foreach ($product->productSizes as $productSize)
                                         <div class="form-check">
                                             <input class="form-check-input v_product_size" type="radio"
                                                 name="product_size" id="size-{{ $productSize->id }}"
                                                 data-price="{{ $productSize->price }}" value="{{ $productSize->id }}">
-                                            <label class="form-check-label" for="size-{{ $productSize->id }}">
+                                            <p class="form-check-label" for="size-{{ $productSize->id }}">
                                                 {{ $productSize->name }} <span>+
                                                     {{ currencyPosition($productSize->price) }}</span>
-                                            </label>
+                                            </p>
                                         </div>
                                     @endforeach
-
                                 </div>
                             @endif
 
                             @if ($product->productOptions()->exists())
                                 <div class="details_extra_item">
-                                    <h5>select option <span>(optional)</span></h5>
+                                    <h5>Select Option <span>(Optional)</span></h5>
                                     @foreach ($product->productOptions as $productOption)
                                         <div class="form-check">
                                             <input class="form-check-input v_product_option" name="product_option[]"
                                                 type="checkbox" value="{{ $productOption->id }}"
                                                 id="option-{{ $productOption->id }}"
                                                 data-price="{{ $productOption->price }}">
-                                            <label class="form-check-label" for="option-{{ $productOption->id }}">
+                                            <p class="form-check-label" for="option-{{ $productOption->id }}">
                                                 {{ $productOption->name }} <span>+
                                                     {{ currencyPosition($productOption->price) }}</span>
-                                            </label>
+                                            </p>
                                         </div>
                                     @endforeach
                                 </div>
                             @endif
 
                             <div class="details_quentity">
-                                <h5>select quantity</h5>
+                                <h5>Select Quantity</h5>
                                 <div class="quentity_btn_area d-flex flex-wrapa align-items-center">
                                     <div class="quentity_btn">
                                         <button class="btn btn-danger v_decrement"><i class="fal fa-minus"></i></button>
@@ -136,7 +134,7 @@
                             @if ($product->quantity === 0)
                                 <li><a class="common_btn bg-danger" href="javascript:;">Stock Out</a></li>
                             @else
-                                <li><a class="common_btn v_submit_button" href="#">add to cart</a></li>
+                                <li><a class="common_btn v_submit_button" href="#">Add To Cart</a></li>
                             @endif
                             <li><a class="wishlist" href="#"><i class="far fa-heart"></i></a></li>
                         </ul>
