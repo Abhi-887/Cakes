@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                                                                                                            BREADCRUMB START
-                                                                                                                                        ==============================-->
+                                                                                                                                                                BREADCRUMB START
+                                                                                                                                                            ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,13 +18,13 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                            BREADCRUMB END
-                                                                                                                                        ==============================-->
+                                                                                                                                                                BREADCRUMB END
+                                                                                                                                                            ==============================-->
 
 
     <!--=============================
-                                                                                                                                            MENU DETAILS START
-                                                                                                                                        ==============================-->
+                                                                                                                                                                MENU DETAILS START
+                                                                                                                                                            ==============================-->
     <section class="fp__menu_details mt-5 pt-5">
         <div class="container">
             <div class="row">
@@ -250,7 +250,7 @@
                                 aria-labelledby="pills-cake-stand-gallery-tab" tabindex="0">
                                 <div class="gallery">
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-md-4 my-2">
                                             <div class="cake-stand">
                                                 <img class="rounded-3"
                                                     src="https://www.3d-cakes.co.uk/skin/frontend/default/MAG090181/images/stand6.JPG"
@@ -258,7 +258,7 @@
                                             </div>
                                             <h4 class="color-dark-gray fw-semibold mt-3">Frosted Glass Block</h4>
                                         </div>
-                                        <div class="col-md-4 my-2 my-md-0">
+                                        <div class="col-md-4 my-2">
                                             <div class="cake-stand">
                                                 <img class="rounded-3"
                                                     src="https://www.3d-cakes.co.uk/skin/frontend/default/MAG090181/images/stand7.JPG"
@@ -266,7 +266,7 @@
                                             </div>
                                             <h4 class="color-dark-gray fw-semibold mt-3">Low Frosted Glass Block</h4>
                                         </div>
-                                        <div class="col-md-4 my-2 my-md-0">
+                                        <div class="col-md-4 my-2">
                                             <div class="cake-stand">
                                                 <img class="rounded-3"
                                                     src="https://www.3d-cakes.co.uk/skin/frontend/default/MAG090181/images/stand8.JPG"
@@ -275,7 +275,7 @@
                                             <h4 class="color-dark-gray fw-semibold mt-3">Hovering Black Glass</h4>
                                         </div>
 
-                                        my-md-0 my-2 <div class="col-md-4">
+                                        <div class="col-md-4 my-2">
                                             <div class="cake-stand">
                                                 <img class="rounded-3"
                                                     src="https://www.3d-cakes.co.uk/skin/frontend/default/MAG090181/images/stand9.JPG"
@@ -283,7 +283,8 @@
                                             </div>
                                             <h4 class="color-dark-gray fw-semibold mt-3">Chrome Mirror</h4>
                                         </div>
-                                        <div class="col-md-4 my-2 my-md-0">
+
+                                        <div class="col-md-4 my-2">
                                             <div class="cake-stand">
                                                 <img class="rounded-3"
                                                     src="https://www.3d-cakes.co.uk/skin/frontend/default/MAG090181/images/stand10.JPG"
@@ -291,7 +292,8 @@
                                             </div>
                                             <h4 class="color-dark-gray fw-semibold mt-3">Chrome</h4>
                                         </div>
-                                        <div class="col-md-4 my-2 my-md-0">
+
+                                        <div class="col-md-4 my-2">
                                             <div class="cake-stand">
                                                 <img class="rounded-3"
                                                     src="https://www.3d-cakes.co.uk/skin/frontend/default/MAG090181/images/stand11.JPG"
@@ -300,71 +302,68 @@
                                             <h4 class="color-dark-gray fw-semibold mt-3">Low Chrome</h4>
                                         </div>
                                     </div>
-                                    my-2
-                                    my-md-0
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            @if (count($relatedProducts) > 0)
-                <div class="fp__related_menu mt_90 xs_mt_60">
-                    <h2>Related Item</h2>
-                    <div class="row related_product_slider">
-                        @foreach ($relatedProducts as $relatedProduct)
-                            <div class="col-lg-4 wow fadeInUp" data-wow-duration="1s">
-                                <div class="fp__menu_item">
-                                    <div class="fp__menu_item_img">
-                                        <img src="{{ asset($relatedProduct->thumb_image) }}"
-                                            alt="{{ $relatedProduct->name }}" class="img-fluid w-100">
-                                    </div>
-                                    <a class="category bg-light px-2 py-1 fw-semibold"
-                                        href="#">{{ @$relatedProduct->category->name }}</a>
-                                    <div class="fp__menu_item_text">
-                                        <p class="rating">
-                                            @if ($relatedProduct->reviews_avg_rating)
-                                                <p class="rating">
-                                                    @for ($i = 1; $i <= $relatedProduct->reviews_avg_rating; $i++)
-                                                        <i class="fas fa-star"></i>
-                                                    @endfor
+                @if (count($relatedProducts) > 0)
+                    <div class="fp__related_menu mt_90 xs_mt_60">
+                        <h2>Related Item</h2>
+                        <div class="row related_product_slider">
+                            @foreach ($relatedProducts as $relatedProduct)
+                                <div class="col-lg-4 wow fadeInUp" data-wow-duration="1s">
+                                    <div class="fp__menu_item">
+                                        <div class="fp__menu_item_img">
+                                            <img src="{{ asset($relatedProduct->thumb_image) }}"
+                                                alt="{{ $relatedProduct->name }}" class="img-fluid w-100">
+                                        </div>
+                                        <a class="category bg-light px-2 py-1 fw-semibold"
+                                            href="#">{{ @$relatedProduct->category->name }}</a>
+                                        <div class="fp__menu_item_text">
+                                            <p class="rating">
+                                                @if ($relatedProduct->reviews_avg_rating)
+                                                    <p class="rating">
+                                                        @for ($i = 1; $i <= $relatedProduct->reviews_avg_rating; $i++)
+                                                            <i class="fas fa-star"></i>
+                                                        @endfor
 
-                                                    <span>({{ $relatedProduct->reviews_count }})</span>
-                                                </p>
-                                            @endif
-                                        </p>
-                                        <a class="title my-3"
-                                            href="{{ route('product.show', $relatedProduct->slug) }}">{!! $relatedProduct->name !!}</a>
-                                        <p
-                                            class="price fw-semibold text-center position-absolute py-1 px-3 rounded-pill color-light-gray top-0">
-                                            @if ($relatedProduct->offer_price > 0)
-                                                {{ currencyPosition($relatedProduct->offer_price) }}
-                                                <del>{{ currencyPosition($relatedProduct->price) }}</del>
-                                            @else
-                                                {{ currencyPosition($relatedProduct->price) }}
-                                            @endif
-                                        </p>
-                                        <ul class="d-flex flex-wrap justify-content-center">
-                                            <li><a href="javascript:;"
-                                                    onclick="loadProductModal('{{ $relatedProduct->id }}')"><i
-                                                        class="fas fa-shopping-basket"></i></a></li>
-                                            <li onclick="addToWishlist('{{ $relatedProduct->id }}')"><a
-                                                    class="background-light-gray" href="javascript:;"><i
-                                                        class="fal fa-heart"></i></a></li>
+                                                        <span>({{ $relatedProduct->reviews_count }})</span>
+                                                    </p>
+                                                @endif
+                                            </p>
+                                            <a class="title my-3"
+                                                href="{{ route('product.show', $relatedProduct->slug) }}">{!! $relatedProduct->name !!}</a>
+                                            <p
+                                                class="price fw-semibold text-center position-absolute py-1 px-3 rounded-pill color-light-gray top-0">
+                                                @if ($relatedProduct->offer_price > 0)
+                                                    {{ currencyPosition($relatedProduct->offer_price) }}
+                                                    <del>{{ currencyPosition($relatedProduct->price) }}</del>
+                                                @else
+                                                    {{ currencyPosition($relatedProduct->price) }}
+                                                @endif
+                                            </p>
+                                            <ul class="d-flex flex-wrap justify-content-center">
+                                                <li><a href="javascript:;"
+                                                        onclick="loadProductModal('{{ $relatedProduct->id }}')"><i
+                                                            class="fas fa-shopping-basket"></i></a></li>
+                                                <li onclick="addToWishlist('{{ $relatedProduct->id }}')"><a
+                                                        class="background-light-gray" href="javascript:;"><i
+                                                            class="fal fa-heart"></i></a></li>
 
-                                            <li><a class="background-light-gray"
-                                                    href="{{ route('product.show', $relatedProduct->slug) }}"><i
-                                                        class="far fa-eye"></i></a></li>
-                                        </ul>
+                                                <li><a class="background-light-gray"
+                                                        href="{{ route('product.show', $relatedProduct->slug) }}"><i
+                                                            class="far fa-eye"></i></a></li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        @endforeach
+                            @endforeach
+                        </div>
                     </div>
-                </div>
-            @endif
-        </div>
+                @endif
+            </div>
     </section>
 @endsection
 
