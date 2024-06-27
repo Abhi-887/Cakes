@@ -37,7 +37,7 @@
         }
 
         .fa-star {
-            color: #ddd;
+            color: rgb(245, 156, 40);
             cursor: pointer;
         }
 
@@ -48,8 +48,8 @@
         }
     </style>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                        BREADCRUMB START
-                                                                                                                                                                                                                                                                                               ==============================-->
+                                                                                                                                                                                                                                                                                                                                                    BREADCRUMB START
+                                                                                                                                                                                                                                                                                                           ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -64,22 +64,22 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                        BREADCRUMB END
-                                                                                                                                                                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                                                                                                                                                    BREADCRUMB END
+                                                                                                                                                                                                                                                                                                                                                ==============================-->
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                       Customer-Feedback PAGE START
-                                                                                                                                                                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                                                                                                                                                   Customer-Feedback PAGE START
+                                                                                                                                                                                                                                                                                                                                                ==============================-->
 
 
     <div class="container my-5">
         <div class="row justify-content-center align-items-center">
-            <div class="col-6 text-center">
+            <div class="col-6">
                 <div class="formbg p-4">
                     <a class="" href="{{ url('/') }}">
                         <img src="{{ asset('uploads/web-logo1.png') }}" alt="3D-Cakes Logo" class="img-fluid" />
                     </a>
                     <div class="my-3">
-                        <h5 class="feedback-title mb-2">How was 3D Cakes?</h5>
+                        <h5 class="feedback-title mb-2 text-center">How was 3D Cakes?</h5>
                         <p class="text-center">We appreciate feedback about your experience.</p>
                     </div>
                     <hr>
@@ -100,7 +100,6 @@
                             </div>
                             <div class="rating-text mt-2">
                                 <span>Not Likely</span>
-                                <hr>
                                 <span class="float-right">Very Likely</span>
                             </div>
                         </div>
@@ -161,7 +160,7 @@
                             </div>
                         </div>
 
-                        <h6 class="my-4">Your Feedback *</h6>
+                        <h6 class="my-4">Your Feedback</h6>
                         <div class="fp__contact_form_input textarea">
                             <span><i class="fal fa-book"></i></span>
                             <textarea rows="8" placeholder="Share your experience or offer suggestions to us..." name="message"></textarea>
@@ -183,6 +182,6 @@
 
 
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                        Customer-Feedback  PAGE END
-                                                                                                                                                                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                                                                                                                                                    Customer-Feedback  PAGE END
+                                                                                                                                                                                                                                                                                                                                                ==============================-->
 @endsection
