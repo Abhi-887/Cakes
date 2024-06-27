@@ -86,8 +86,8 @@ class ProductVariantDataTable extends DataTable
     {
         return [
             Column::make('id')->width(60),
-            Column::make('attribute_type'),
             Column::make('name'),
+            Column::make('attribute_type'),
             Column::make('status'),
             Column::computed('action')
                 ->exportable(false)
