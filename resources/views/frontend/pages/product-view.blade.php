@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                                                            BREADCRUMB START
-                                                                                        ==============================-->
+                                                                                                BREADCRUMB START
+                                                                                            ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,13 +18,13 @@
         </div>
     </section>
     <!--=============================
-                                                                                            BREADCRUMB END
-                                                                                        ==============================-->
+                                                                                                BREADCRUMB END
+                                                                                            ==============================-->
 
 
     <!--=============================
-                                                                                            MENU DETAILS START
-                                                                                        ==============================-->
+                                                                                                MENU DETAILS START
+                                                                                            ==============================-->
     <section class="fp__menu_details mt-5 pt-5">
         <div class="container">
             <div class="row">
@@ -253,7 +253,7 @@
                             </div>
                             <div class="tab-pane fade show" id="cake-stand-gallery" role="tabpanel"
                                 aria-labelledby="cake-stand-gallery" tabindex="0">
-                                <div class="gallery">
+                                <div class="menu_det_description">
                                     {!! $product->long_description !!}
                                 </div>
                             </div>
