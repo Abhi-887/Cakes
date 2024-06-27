@@ -13,8 +13,8 @@
         }
     </style>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                    BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                        BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -29,13 +29,13 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                    BREADCRUMB END
-                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                        BREADCRUMB END
+                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
 
 
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                    MENU DETAILS START
-                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                        MENU DETAILS START
+                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
 
 
 
@@ -137,109 +137,222 @@
                                     8", 10" sized tiers)</label>
                             </div>
 
-                            <h6 class="my-4">Top Tier Flavour *</h6>
-                            <div class="mt-2 fp__contact_form_input form-group">
-                                <span><i class="far fa-caret-square-down"></i></span>
-                                <select class="form-control" id="store" name="store" required>
-                                    <option value="Edinburgh" selected>-- Please Select --</option>
-                                    <option value="Edinburgh">Edinburgh</option>
-                                    <option value="Glasgow">Glasgow</option>
-                                </select>
-                            </div>
+                            <<<<<<< HEAD <h6 class="my-4">Top Tier Flavour *</h6>
+                                =======
+                                @if ($product->productOptions()->exists())
+                                    <div class="details_extra_item">
+                                        <h5>Select Option <span>(Optional)</span></h5>
+                                        @foreach ($product->productOptions as $productOption)
+                                            <div class="form-check">
+                                                <input class="form-check-input v_product_option" name="product_option[]"
+                                                    type="checkbox" value="{{ $productOption->id }}"
+                                                    id="option-{{ $productOption->id }}"
+                                                    data-price="{{ $productOption->price }}">
+                                                <label class="form-check-label" for="option-{{ $productOption->id }} "
+                                                    style="max-width: 100%;">
+                                                    {{ $productOption->name }} <span>+
+                                                        {{ currencyPosition($productOption->price) }}</span>
+                                                </label>
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                @endif
 
-                            <h6 class="my-4">Top 2 Flavour *</h6>
-                            <div class="mt-2 fp__contact_form_input form-group">
-                                <span><i class="far fa-caret-square-down"></i></span>
-                                <select class="form-control" id="store" name="store" required>
-                                    <option value="Edinburgh" selected>-- Please Select --</option>
-                                    <option value="Edinburgh">Edinburgh</option>
-                                    <option value="Glasgow">Glasgow</option>
-                                </select>
-                            </div>
+                                <h6 class="my-4">Portions (based on a portion size of 2"x1")</h6>
+                                <div class="mt-2 fp__contact_form_input form-group">
+                                    <input class="w-0 me-2" type="radio" name="" id="Tiers">
+                                    <label for="Tiers">4 Tiers (3 layers of cake per tier) - 140 Portions (as shown 4",
+                                        6",
+                                        8", 10" sized tiers)</label>
+                                </div>
 
-                            <h6 class="my-4">Top 3 Flavour</h6>
-                            <div class="mt-2 fp__contact_form_input form-group">
-                                <span><i class="far fa-caret-square-down"></i></span>
-                                <select class="form-control" id="store" name="store" required>
-                                    <option value="Edinburgh" selected>-- Please Select --</option>
-                                    <option value="Edinburgh">Edinburgh</option>
-                                    <option value="Glasgow">Glasgow</option>
-                                </select>
-                            </div>
 
-                            <h6 class="my-4">Top 4 Flavour</h6>
-                            <div class="mt-2 fp__contact_form_input form-group">
-                                <span><i class="far fa-caret-square-down"></i></span>
-                                <select class="form-control" id="store" name="store" required>
-                                    <option value="Edinburgh" selected>-- Please Select --</option>
-                                    <option value="Edinburgh">Edinburgh</option>
-                                    <option value="Glasgow">Glasgow</option>
-                                </select>
-                            </div>
-
-                            <div class="my-4">
-                                <h5>Short of portions? Add a 50 portion cutting cake at cost price!</h5>
                                 <div class="my-4">
-                                    <input class="w-0 me-2" type="checkbox" name="extra-plain-sponge" value="35"
-                                        id="extra-plain-sponge">
-                                    <label for="extra-plain-sponge">Plain Sponge +£35.00</label>
+                                    <div class="row">
+                                        <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                        @foreach ($product->variants as $variant)
+                                            @if ($variant->status != 0)
+                                                <div class="col-xl-6 col-sm-6">
+                                                    <h6 class="my-4">{{ $variant->name }} *</h6>
+                                                    <div class="mt-2 fp__contact_form_input form-group">
+                                                        <span><i class="far fa-caret-square-down"></i></span>
+                                                        <select class="form-control" name="variants_items[]" required>
+                                                            <option value="" selected>-- Please Select --</option>
+                                                            @foreach ($variant->productVariantItems as $variantItem)
+                                                                @if ($variantItem->status != 0)
+                                                                    <option value="{{ $variantItem->id }}"
+                                                                        {{ $variantItem->is_default == 1 ? 'selected' : '' }}>
+                                                                        {{ $variantItem->name }}
+                                                                        (${{ $variantItem->price }})
+                                                                    </option>
+                                                                @endif
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            @endif
+                                        @endforeach
+                                    </div>
                                 </div>
-                                <div class="my-4">
-                                    <input class="w-0 me-2" type="checkbox" name="chocolate" value="35"
-                                        id="chocolate">
-                                    <label for="chocolate">Chocolate +£35.00</label>
-                                </div>
-                                <div class="">
-                                    <input class="w-0 me-2" type="checkbox" name="toffee" value="35"
-                                        id="toffee">
-                                    <label for="toffee">Toffee +£35.00</label>
-                                </div>
-                            </div>
 
-                            <div class="form-group">
-                                <h5 for="cake-coating">How would you like your cake coated?</h5>
+
+                                <h6 class="my-4">Top 2 Flavour *</h6>
                                 <div class="mt-2 fp__contact_form_input form-group">
                                     <span><i class="far fa-caret-square-down"></i></span>
-                                    <select class="my-4 form-control" id="store" name="store" required>
+                                    <select class="form-control" id="store" name="store" required>
                                         <option value="Edinburgh" selected>-- Please Select --</option>
                                         <option value="Edinburgh">Edinburgh</option>
                                         <option value="Glasgow">Glasgow</option>
                                     </select>
                                 </div>
-                            </div>
 
-                            <h6 class="my-4">Design Specification (e.g. Colour Scheme, Ribbon, Flowers, etc)</h6>
-                            <div class="my-4 fp__contact_form_input textarea">
-                                <span><i class="fal fa-book"></i></span>
-                                <textarea rows="8" placeholder="Share your design..." name="design"></textarea>
-                            </div>
-
-                            <h5 for="cake-stand-hire">Cake Stand Hire (£30 Hire Fee + £50 fully refundable deposit) -
-                                Purchase
-                                Options Also Available - See Gallery Below</h5>
-                            <div class="fp__contact_form_input form-group">
-                                <span><i class="far fa-caret-square-down"></i></span>
-                                <select class="my-4 form-control" id="store" name="store" required>
-                                    <option value="Edinburgh" selected>-- Please Select --</option>
-                                    <option value="Edinburgh">Edinburgh</option>
-                                    <option value="Glasgow">Glasgow</option>
-                                </select>
-                            </div>
-
-                            <div class="details_quentity">
-                                <h5 class="my-4">Select Quantity</h5>
-                                <div class="quentity_btn_area d-flex flex-wrapa align-items-center">
-                                    <div class="quentity_btn">
-                                        <button class="btn btn-danger v_decrement"><i class="fal fa-minus"></i></button>
-                                        <input type="text" name="quantity" placeholder="1" value="1" readonly
-                                            id="v_quantity">
-                                        <button class="btn btn-success v_increment"><i class="fal fa-plus"></i></button>
-                                    </div>
-                                    <h3 id="v_total_price">
-                                        {{ $product->offer_price > 0 ? currencyPosition($product->offer_price) : currencyPosition($product->price) }}
-                                    </h3>
+                                <h6 class="my-4">Top 3 Flavour</h6>
+                                <div class="mt-2 fp__contact_form_input form-group">
+                                    <span><i class="far fa-caret-square-down"></i></span>
+                                    <select class="form-control" id="store" name="store" required>
+                                        <option value="Edinburgh" selected>-- Please Select --</option>
+                                        <option value="Edinburgh">Edinburgh</option>
+                                        <option value="Glasgow">Glasgow</option>
+                                    </select>
                                 </div>
-                            </div>
+
+                                <h6 class="my-4">Top 4 Flavour</h6>
+                                <div class="mt-2 fp__contact_form_input form-group">
+                                    <span><i class="far fa-caret-square-down"></i></span>
+                                    <select class="form-control" id="store" name="store" required>
+                                        <option value="Edinburgh" selected>-- Please Select --</option>
+                                        <option value="Edinburgh">Edinburgh</option>
+                                        <option value="Glasgow">Glasgow</option>
+                                    </select>
+                                </div>
+
+                                <div class="my-4">
+                                    <h5>Short of portions? Add a 50 portion cutting cake at cost price!</h5>
+                                    <div class="my-4">
+                                        <input class="w-0 me-2" type="checkbox" name="extra-plain-sponge" value="35"
+                                            id="extra-plain-sponge">
+                                        <label for="extra-plain-sponge">Plain Sponge +£35.00</label>
+                                    </div>
+                                    <div class="my-4">
+                                        <input class="w-0 me-2" type="checkbox" name="chocolate" value="35"
+                                            id="chocolate">
+                                        <label for="chocolate">Chocolate +£35.00</label>
+                                    </div>
+                                    <div class="">
+                                        <input class="w-0 me-2" type="checkbox" name="toffee" value="35"
+                                            id="toffee">
+                                        <label for="toffee">Toffee +£35.00</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <h5 for="cake-coating">How would you like your cake coated?</h5>
+                                    >>>>>>> b9e64411e14826ec35fece0e5e4d75dd44a827c5
+                                    <div class="mt-2 fp__contact_form_input form-group">
+                                        <span><i class="far fa-caret-square-down"></i></span>
+                                        <select class="form-control" id="store" name="store" required>
+                                            <option value="Edinburgh" selected>-- Please Select --</option>
+                                            <option value="Edinburgh">Edinburgh</option>
+                                            <option value="Glasgow">Glasgow</option>
+                                        </select>
+                                    </div>
+
+                                    <h6 class="my-4">Top 2 Flavour *</h6>
+                                    <div class="mt-2 fp__contact_form_input form-group">
+                                        <span><i class="far fa-caret-square-down"></i></span>
+                                        <select class="form-control" id="store" name="store" required>
+                                            <option value="Edinburgh" selected>-- Please Select --</option>
+                                            <option value="Edinburgh">Edinburgh</option>
+                                            <option value="Glasgow">Glasgow</option>
+                                        </select>
+                                    </div>
+
+                                    <h6 class="my-4">Top 3 Flavour</h6>
+                                    <div class="mt-2 fp__contact_form_input form-group">
+                                        <span><i class="far fa-caret-square-down"></i></span>
+                                        <select class="form-control" id="store" name="store" required>
+                                            <option value="Edinburgh" selected>-- Please Select --</option>
+                                            <option value="Edinburgh">Edinburgh</option>
+                                            <option value="Glasgow">Glasgow</option>
+                                        </select>
+                                    </div>
+
+                                    <h6 class="my-4">Top 4 Flavour</h6>
+                                    <div class="mt-2 fp__contact_form_input form-group">
+                                        <span><i class="far fa-caret-square-down"></i></span>
+                                        <select class="form-control" id="store" name="store" required>
+                                            <option value="Edinburgh" selected>-- Please Select --</option>
+                                            <option value="Edinburgh">Edinburgh</option>
+                                            <option value="Glasgow">Glasgow</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="my-4">
+                                        <h5>Short of portions? Add a 50 portion cutting cake at cost price!</h5>
+                                        <div class="my-4">
+                                            <input class="w-0 me-2" type="checkbox" name="extra-plain-sponge"
+                                                value="35" id="extra-plain-sponge">
+                                            <label for="extra-plain-sponge">Plain Sponge +£35.00</label>
+                                        </div>
+                                        <div class="my-4">
+                                            <input class="w-0 me-2" type="checkbox" name="chocolate" value="35"
+                                                id="chocolate">
+                                            <label for="chocolate">Chocolate +£35.00</label>
+                                        </div>
+                                        <div class="">
+                                            <input class="w-0 me-2" type="checkbox" name="toffee" value="35"
+                                                id="toffee">
+                                            <label for="toffee">Toffee +£35.00</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <h5 for="cake-coating">How would you like your cake coated?</h5>
+                                        <div class="mt-2 fp__contact_form_input form-group">
+                                            <span><i class="far fa-caret-square-down"></i></span>
+                                            <select class="my-4 form-control" id="store" name="store" required>
+                                                <option value="Edinburgh" selected>-- Please Select --</option>
+                                                <option value="Edinburgh">Edinburgh</option>
+                                                <option value="Glasgow">Glasgow</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <h6 class="my-4">Design Specification (e.g. Colour Scheme, Ribbon, Flowers, etc)</h6>
+                                    <div class="my-4 fp__contact_form_input textarea">
+                                        <span><i class="fal fa-book"></i></span>
+                                        <textarea rows="8" placeholder="Share your design..." name="design"></textarea>
+                                    </div>
+
+                                    <h5 for="cake-stand-hire">Cake Stand Hire (£30 Hire Fee + £50 fully refundable deposit)
+                                        -
+                                        Purchase
+                                        Options Also Available - See Gallery Below</h5>
+                                    <div class="fp__contact_form_input form-group">
+                                        <span><i class="far fa-caret-square-down"></i></span>
+                                        <select class="my-4 form-control" id="store" name="store" required>
+                                            <option value="Edinburgh" selected>-- Please Select --</option>
+                                            <option value="Edinburgh">Edinburgh</option>
+                                            <option value="Glasgow">Glasgow</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="details_quentity">
+                                        <h5 class="my-4">Select Quantity</h5>
+                                        <div class="quentity_btn_area d-flex flex-wrapa align-items-center">
+                                            <div class="quentity_btn">
+                                                <button class="btn btn-danger v_decrement"><i
+                                                        class="fal fa-minus"></i></button>
+                                                <input type="text" name="quantity" placeholder="1" value="1"
+                                                    readonly id="v_quantity">
+                                                <button class="btn btn-success v_increment"><i
+                                                        class="fal fa-plus"></i></button>
+                                            </div>
+                                            <h3 id="v_total_price">
+                                                {{ $product->offer_price > 0 ? currencyPosition($product->offer_price) : currencyPosition($product->price) }}
+                                            </h3>
+                                        </div>
+                                    </div>
                         </form>
 
                         <ul class="flex-wrap details_button_area d-flex">
