@@ -131,15 +131,33 @@
                                 8", 10" sized tiers)</label>
                         </div>
 
-                        <h6 class="my-4">Top Tier Flavour *</h6>
-                        <div class="mt-2 fp__contact_form_input form-group">
-                            <span><i class="far fa-caret-square-down"></i></span>
-                            <select class="form-control" id="store" name="store" required>
-                                <option value="Edinburgh" selected>-- Please Select --</option>
-                                <option value="Edinburgh">Edinburgh</option>
-                                <option value="Glasgow">Glasgow</option>
-                            </select>
+
+                        <div class="my-4">
+                            <div class="row">
+                                <input type="hidden" name="product_id" value="{{$product->id}}">
+                                @foreach ($product->variants as $variant)
+                                @if ($variant->status != 0)
+                                <div class="col-xl-6 col-sm-6">
+                                    <h6 class="my-4">{{$variant->name}} *</h6>
+                                    <div class="mt-2 fp__contact_form_input form-group">
+                                        <span><i class="far fa-caret-square-down"></i></span>
+                                        <select class="form-control" name="variants_items[]" required>
+                                            <option value="" selected>-- Please Select --</option>
+                                            @foreach ($variant->productVariantItems as $variantItem)
+                                            @if ($variantItem->status != 0)
+                                            <option value="{{$variantItem->id}}" {{$variantItem->is_default == 1 ?
+                                                'selected' : ''}}>{{$variantItem->name}} (${{$variantItem->price}})
+                                            </option>
+                                            @endif
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                @endif
+                                @endforeach
+                            </div>
                         </div>
+
 
                         <h6 class="my-4">Top 2 Flavour *</h6>
                         <div class="mt-2 fp__contact_form_input form-group">
