@@ -1,9 +1,15 @@
 @extends('frontend.layouts.master')
 
 @section('content')
+
+    <style>
+        .w-0 {
+            width: 0px !important;
+        }
+    </style>
     <!--=============================
-                                                                                                                                                                                                                                        BREADCRUMB START
-                                                                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                                                BREADCRUMB START
+                                                                                                                                                                                                                                            ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,13 +24,13 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                        BREADCRUMB END
-                                                                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                                                BREADCRUMB END
+                                                                                                                                                                                                                                            ==============================-->
 
 
     <!--=============================
-                                                                                                                                                                                                                                        MENU DETAILS START
-                                                                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                                                MENU DETAILS START
+                                                                                                                                                                                                                                            ==============================-->
     <section class="fp__menu_details mt-5 pt-5">
         <div class="container">
             <div class="row">
@@ -98,8 +104,9 @@
 
                             <h6 class="my-4">Portions (based on a portion size of 2"x1")</h6>
                             <div class="fp__contact_form_input form-group mt-2">
-                                <input type="radio" name="" id=""><label for="">4 Tiers (3 layers
-                                    of cake per tier) - 140 Portions (as shown 4", 6", 8", 10" sized tiers)</label>
+                                <input class="w-0" type="radio" name="" id="">
+                                <label for="">4 Tiers (3 layers of cake per tier) - 140 Portions (as shown 4", 6",
+                                    8", 10" sized tiers)</label>
                             </div>
 
                             <h6 class="my-4">Top Tier Flavour *</h6>
