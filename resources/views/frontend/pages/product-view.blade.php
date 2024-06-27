@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                                                                BREADCRUMB START
-                                                                                            ==============================-->
+                                                                                                    BREADCRUMB START
+                                                                                                ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,13 +18,13 @@
         </div>
     </section>
     <!--=============================
-                                                                                                BREADCRUMB END
-                                                                                            ==============================-->
+                                                                                                    BREADCRUMB END
+                                                                                                ==============================-->
 
 
     <!--=============================
-                                                                                                MENU DETAILS START
-                                                                                            ==============================-->
+                                                                                                    MENU DETAILS START
+                                                                                                ==============================-->
     <section class="fp__menu_details mt-5 pt-5">
         <div class="container">
             <div class="row">
@@ -154,9 +154,10 @@
                                     aria-controls="pills-contact" aria-selected="false">Reviews</button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="cake-stand-gallery" data-bs-toggle="pill"
-                                    data-bs-target="#cake-stand-gallery" type="button" role="tab"
-                                    aria-controls="cake-stand-gallery" aria-selected="false">Cake Stand Gallery</button>
+                                <button class="nav-link" id="pills-cake-stand-gallery" data-bs-toggle="pill"
+                                    data-bs-target="#pills-cake-stand-gallery" type="button" role="tab"
+                                    aria-controls="pills-cake-stand-gallery" aria-selected="false">Cake Stand
+                                    Gallery</button>
                             </li>
                         </ul>
                         <div class="tab-content" id="pills-tabContent">
@@ -251,8 +252,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane fade show" id="cake-stand-gallery" role="tabpanel"
-                                aria-labelledby="cake-stand-gallery" tabindex="0">
+                            <div class="tab-pane fade show" id="pills-cake-stand-gallery" role="tabpanel"
+                                aria-labelledby="pills-cake-stand-gallery" tabindex="0">
                                 <div class="menu_det_description">
                                     {!! $product->long_description !!}
                                 </div>
