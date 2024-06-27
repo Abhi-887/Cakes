@@ -1,4 +1,5 @@
 <?php
+
 namespace App\DataTables;
 
 use App\Models\Cakesstand;
@@ -29,7 +30,7 @@ class CakesstandDataTable extends DataTable
                 $imageUrl = asset('images/cakesstands/' . $query->image); // Ensure correct path
                 return '<img width="100px" src="' . $imageUrl . '">';
             })
-            ->rawColumns(['image', 'action', 'status'])
+            ->rawColumns(['image', 'action']) // Ensure 'action' is included here
             ->setRowId('id');
     }
 
@@ -72,6 +73,11 @@ class CakesstandDataTable extends DataTable
             Column::make('image'),
             Column::make('name'),
             Column::make('status'),
+            Column::computed('action')
+                ->exportable(false)
+                ->printable(false)
+                ->width(200)
+                ->addClass('text-center'),
         ];
     }
 
@@ -83,3 +89,4 @@ class CakesstandDataTable extends DataTable
         return 'Cakesstand_' . date('YmdHis');
     }
 }
+
