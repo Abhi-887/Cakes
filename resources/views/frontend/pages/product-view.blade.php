@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                                                                                                                                BREADCRUMB START
-                                                                                                                                                            ==============================-->
+                                                                                                                                                                                    BREADCRUMB START
+                                                                                                                                                                                ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,13 +18,13 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                BREADCRUMB END
-                                                                                                                                                            ==============================-->
+                                                                                                                                                                                    BREADCRUMB END
+                                                                                                                                                                                ==============================-->
 
 
     <!--=============================
-                                                                                                                                                                MENU DETAILS START
-                                                                                                                                                            ==============================-->
+                                                                                                                                                                                    MENU DETAILS START
+                                                                                                                                                                                ==============================-->
     <section class="fp__menu_details mt-5 pt-5">
         <div class="container">
             <div class="row">
@@ -149,15 +149,15 @@
                                     aria-selected="true">Description</button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
-                                    data-bs-target="#pills-contact" type="button" role="tab"
-                                    aria-controls="pills-contact" aria-selected="false">Reviews</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="pills-cake-stand-gallery-tab" data-bs-toggle="pill"
                                     data-bs-target="#pills-cake-stand-gallery" type="button" role="tab"
                                     aria-controls="pills-cake-stand-gallery" aria-selected="false">Cake Stand
                                     Gallery</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-contact" type="button" role="tab"
+                                    aria-controls="pills-contact" aria-selected="false">Reviews</button>
                             </li>
                         </ul>
                         <div class="tab-content" id="pills-tabContent">
@@ -165,6 +165,64 @@
                                 aria-labelledby="pills-home-tab" tabindex="0">
                                 <div class="menu_det_description">
                                     {!! $product->long_description !!}
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="pills-cake-stand-gallery" role="tabpanel"
+                                aria-labelledby="pills-cake-stand-gallery-tab" tabindex="0">
+                                <div class="gallery">
+                                    <div class="row">
+                                        <div class="col-md-4 my-3">
+                                            <div class="cake-stand">
+                                                <img class="rounded-3"
+                                                    src="https://www.3d-cakes.co.uk/skin/frontend/default/MAG090181/images/stand6.JPG"
+                                                    alt="">
+                                            </div>
+                                            <h5 class="color-dark-gray fw-semibold my-3">Frosted Glass Block</h5>
+                                        </div>
+                                        <div class="col-md-4 my-3">
+                                            <div class="cake-stand">
+                                                <img class="rounded-3"
+                                                    src="https://www.3d-cakes.co.uk/skin/frontend/default/MAG090181/images/stand7.JPG"
+                                                    alt="">
+                                            </div>
+                                            <h5 class="color-dark-gray fw-semibold my-3">Low Frosted Glass Block</h5>
+                                        </div>
+                                        <div class="col-md-4 my-3">
+                                            <div class="cake-stand">
+                                                <img class="rounded-3"
+                                                    src="https://www.3d-cakes.co.uk/skin/frontend/default/MAG090181/images/stand8.JPG"
+                                                    alt="">
+                                            </div>
+                                            <h5 class="color-dark-gray fw-semibold my-3">Hovering Black Glass</h5>
+                                        </div>
+
+                                        <div class="col-md-4 my-3">
+                                            <div class="cake-stand">
+                                                <img class="rounded-3"
+                                                    src="https://www.3d-cakes.co.uk/skin/frontend/default/MAG090181/images/stand9.JPG"
+                                                    alt="">
+                                            </div>
+                                            <h5 class="color-dark-gray fw-semibold my-3">Chrome Mirror</h5>
+                                        </div>
+
+                                        <div class="col-md-4 my-3">
+                                            <div class="cake-stand">
+                                                <img class="rounded-3"
+                                                    src="https://www.3d-cakes.co.uk/skin/frontend/default/MAG090181/images/stand10.JPG"
+                                                    alt="">
+                                            </div>
+                                            <h5 class="color-dark-gray fw-semibold my-3">Chrome</h5>
+                                        </div>
+
+                                        <div class="col-md-4 my-3">
+                                            <div class="cake-stand">
+                                                <img class="rounded-3"
+                                                    src="https://www.3d-cakes.co.uk/skin/frontend/default/MAG090181/images/stand11.JPG"
+                                                    alt="">
+                                            </div>
+                                            <h5 class="color-dark-gray fw-semibold my-3">Low Chrome</h5>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="pills-contact" role="tabpanel"
@@ -243,64 +301,6 @@
                                                 <div class="alert alert-warning mt-4">Please login first to add review.</div>
                                             </div>
                                         @endauth
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="pills-cake-stand-gallery" role="tabpanel"
-                                aria-labelledby="pills-cake-stand-gallery-tab" tabindex="0">
-                                <div class="gallery">
-                                    <div class="row">
-                                        <div class="col-md-4 my-2">
-                                            <div class="cake-stand">
-                                                <img class="rounded-3"
-                                                    src="https://www.3d-cakes.co.uk/skin/frontend/default/MAG090181/images/stand6.JPG"
-                                                    alt="">
-                                            </div>
-                                            <h4 class="color-dark-gray fw-semibold mt-3">Frosted Glass Block</h4>
-                                        </div>
-                                        <div class="col-md-4 my-2">
-                                            <div class="cake-stand">
-                                                <img class="rounded-3"
-                                                    src="https://www.3d-cakes.co.uk/skin/frontend/default/MAG090181/images/stand7.JPG"
-                                                    alt="">
-                                            </div>
-                                            <h4 class="color-dark-gray fw-semibold mt-3">Low Frosted Glass Block</h4>
-                                        </div>
-                                        <div class="col-md-4 my-2">
-                                            <div class="cake-stand">
-                                                <img class="rounded-3"
-                                                    src="https://www.3d-cakes.co.uk/skin/frontend/default/MAG090181/images/stand8.JPG"
-                                                    alt="">
-                                            </div>
-                                            <h4 class="color-dark-gray fw-semibold mt-3">Hovering Black Glass</h4>
-                                        </div>
-
-                                        <div class="col-md-4 my-2">
-                                            <div class="cake-stand">
-                                                <img class="rounded-3"
-                                                    src="https://www.3d-cakes.co.uk/skin/frontend/default/MAG090181/images/stand9.JPG"
-                                                    alt="">
-                                            </div>
-                                            <h4 class="color-dark-gray fw-semibold mt-3">Chrome Mirror</h4>
-                                        </div>
-
-                                        <div class="col-md-4 my-2">
-                                            <div class="cake-stand">
-                                                <img class="rounded-3"
-                                                    src="https://www.3d-cakes.co.uk/skin/frontend/default/MAG090181/images/stand10.JPG"
-                                                    alt="">
-                                            </div>
-                                            <h4 class="color-dark-gray fw-semibold mt-3">Chrome</h4>
-                                        </div>
-
-                                        <div class="col-md-4 my-2">
-                                            <div class="cake-stand">
-                                                <img class="rounded-3"
-                                                    src="https://www.3d-cakes.co.uk/skin/frontend/default/MAG090181/images/stand11.JPG"
-                                                    alt="">
-                                            </div>
-                                            <h4 class="color-dark-gray fw-semibold mt-3">Low Chrome</h4>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
