@@ -17,7 +17,7 @@
 
                     <div class="form-group">
                         <label for="phone_one">Phone One</label>
-                        <textarea name="phone_one" class="form-control summernote">{{ $contact->phone_one  }}</textarea>
+                        <textarea name="phone_one" class="form-control summernote">{{ $contact->phone_one }}</textarea>
                     </div>
 
                     <div class="form-group">
@@ -28,18 +28,17 @@
                     <div class="form-group">
                         <label for="phone_image">Phone Image</label>
                         <div>
-                            <label for="image-upload" id="image-label">Choose File</label>
-                            <input type="file" name="phone_image" id="image-upload" accept="image/*">
+                            <label for="image-upload-phone" id="image-label-phone">Choose File</label>
+                            <input type="file" name="phone_image" id="image-upload-phone" accept="image/*">
                         </div>
                         @if($contact && $contact->phone_image)
                             <img src="{{ Storage::url($contact->phone_image) }}" alt="Phone Image">
                         @endif
                     </div>
 
-
                     <div class="form-group">
                         <label for="mail_one">Email One</label>
-                        <input type="text" class="form-control" name="mail_one" value="{{ $contact->mail_one}}">
+                        <input type="text" class="form-control" name="mail_one" value="{{ $contact->mail_one }}">
                     </div>
 
                     <div class="form-group">
@@ -50,8 +49,8 @@
                     <div class="form-group">
                         <label for="email_image">Email Image</label>
                         <div>
-                            <label for="image-upload" id="image-label">Choose File</label>
-                            <input type="file" name="email_image" id="image-upload"></input>
+                            <label for="image-upload-email" id="image-label-email">Choose File</label>
+                            <input type="file" name="email_image" id="image-upload-email" accept="image/*">
                         </div>
                         @if($contact && $contact->email_image)
                             <img src="{{ Storage::url($contact->email_image) }}" alt="Email Image">
@@ -60,12 +59,12 @@
 
                     <div class="form-group">
                         <label for="address">Address</label>
-                        <textarea name="address" class="form-control summernote">{{ $contact->address  }}</textarea>
+                        <textarea name="address" class="form-control summernote">{{ $contact->address }}</textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="map_link">Google Map Link</label>
-                        <input type="text" class="form-control" name="map_link" value="{{ $contact->map_link  }}">
+                        <input type="text" class="form-control" name="map_link" value="{{ $contact->map_link }}">
                     </div>
 
                     <div class="form-group">
@@ -75,7 +74,7 @@
 
                     <div class="form-group">
                         <label for="description_one">Description One</label>
-                        <textarea name="description_one" class="form-control summernote">{{ $contact->description_one ?? '' }}</textarea>
+                        <textarea name="description_one" class="form-control summernote">{{ $contact->description_one }}</textarea>
                     </div>
 
                     <div class="form-group">
@@ -85,17 +84,17 @@
 
                     <div class="form-group">
                         <label for="description_two">Description Two</label>
-                        <textarea name="description_two" class="form-control summernote">{{ $contact->description_two  }}</textarea>
+                        <textarea name="description_two" class="form-control summernote">{{ $contact->description_two }}</textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="title_three">Title Three</label>
-                        <input type="text" class="form-control" name="title_three" value="{{ $contact->title_three}}">
+                        <input type="text" class="form-control" name="title_three" value="{{ $contact->title_three }}">
                     </div>
 
                     <div class="form-group">
                         <label for="description_three">Description Three</label>
-                        <textarea name="description_three" class="form-control summernote">{{ $contact->description_three  }}</textarea>
+                        <textarea name="description_three" class="form-control summernote">{{ $contact->description_three }}</textarea>
                     </div>
 
                     <div class="form-group">
