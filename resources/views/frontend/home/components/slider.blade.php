@@ -139,7 +139,7 @@
 <style>
     .fp__banner {
         padding-top: 0 !important;
-        height: auto !important;
+        height: 100% !important;
     }
 
     .new-slider-item {
@@ -151,7 +151,7 @@
     }
 
     .front_image {
-        height: auto !important;
+        height: 100% !important;
     }
 
     /* @media (max-width: 991px) {
@@ -172,7 +172,7 @@
             background-position: center center;
             position: relative;
             /* height: 645px !important; */
-            height: 550px !important;
+            height: auto !important;
         }
     @endforeach
 
