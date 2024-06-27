@@ -55,6 +55,8 @@ use App\Http\Controllers\Admin\TramsAndCondtionController;
 use App\Http\Controllers\Admin\WhyChooseUsController;
 use App\Http\Controllers\Admin\AttributeController;
 use App\Http\Controllers\Admin\CustomerfeedbackController;
+use App\Http\Controllers\Admin\ProductVariantController;
+use App\Http\Controllers\Admin\ProductVariantItemController;
 use App\Models\AppDownloadSection;
 use App\Models\BannerSlider;
 use App\Models\PrivacyPolicy;
@@ -96,6 +98,26 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
     /** Product Routes */
     Route::resource('product', ProductController::class);
+
+    Route::resource('products-image-gallery', ProductImageGalleryController::class);
+
+    /** Products variant route */
+    Route::put('products-variant/change-status', [ProductVariantController::class, 'changeStatus'])->name('products-variant.change-status');
+    Route::resource('products-variant', ProductVariantController::class);
+
+    /** Products variant item route */
+    Route::get('products-variant-item/{productId}/{variantId}', [ProductVariantItemController::class, 'index'])->name('products-variant-item.index');
+
+    Route::get('products-variant-item/create/{productId}/{variantId}', [ProductVariantItemController::class, 'create'])->name('products-variant-item.create');
+    Route::post('products-variant-item', [ProductVariantItemController::class, 'store'])->name('products-variant-item.store');
+
+    Route::get('products-variant-item-edit/{variantItemId}', [ProductVariantItemController::class, 'edit'])->name('products-variant-item.edit');
+
+    Route::put('products-variant-item-update/{variantItemId}', [ProductVariantItemController::class, 'update'])->name('products-variant-item.update');
+
+    Route::delete('products-variant-item/{variantItemId}', [ProductVariantItemController::class, 'destroy'])->name('products-variant-item.destroy');
+
+    Route::put('products-variant-item-status', [ProductVariantItemController::class, 'chageStatus'])->name('products-variant-item.chages-status');
 
 
     // /** Mange Attributes Routes */
@@ -247,17 +269,17 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get('news-letter', [NewsLetterController::class, 'index'])->name('news-letter.index');
     Route::post('news-letter', [NewsLetterController::class, 'sendNewsLetter'])->name('news-letter.send');
 
-	/** consultation Routes */
+    /** consultation Routes */
     Route::get('consultation', [ConsultationController::class, 'index'])->name('consultation.index');
 
-	/** wedding-cakes-deposit Routes */
-	Route::get('wedding-cakes-deposit', [WeddingcakesdepositController::class, 'index'])->name('Weddingcakesdeposit.index');
+    /** wedding-cakes-deposit Routes */
+    Route::get('wedding-cakes-deposit', [WeddingcakesdepositController::class, 'index'])->name('Weddingcakesdeposit.index');
 
     /** wedding-cakes-deposit Routes */
-	Route::get('work-with-us', [WorkwithusController::class, 'index'])->name('work-with-us.index');
+    Route::get('work-with-us', [WorkwithusController::class, 'index'])->name('work-with-us.index');
 
     /** wedding-cakes-deposit Routes */
-	Route::get('customer-feedback', [CustomerfeedbackController::class, 'index'])->name('customer-feedback.index');
+    Route::get('customer-feedback', [CustomerfeedbackController::class, 'index'])->name('customer-feedback.index');
 
     /** Social Links Routes */
     Route::resource('social-link', SocialLinkController::class);
@@ -276,7 +298,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::put('footer-grid-three/change-title', [FooterGridThreeController::class, 'changeTitle'])->name('footer-grid-three.change-title');
     Route::resource('footer-grid-three', FooterGridThreeController::class);
 
-	Route::put('footer-grid-four/change-status', [FooterGridFourController::class, 'changeStatus'])->name('footer-grid-four.change-status');
+    Route::put('footer-grid-four/change-status', [FooterGridFourController::class, 'changeStatus'])->name('footer-grid-four.change-status');
     Route::put('footer-grid-four/change-title', [FooterGridFourController::class, 'changeTitle'])->name('footer-grid-four.change-title');
     Route::resource('footer-grid-four', FooterGridFourController::class);
 
