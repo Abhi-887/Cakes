@@ -3439,7 +3439,7 @@ footer .wrapper a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    max-width: 25%;
+    /* max-width: 25%; */
 }
 
 .quentity_btn {

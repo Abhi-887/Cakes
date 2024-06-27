@@ -8,8 +8,8 @@
         }
     </style>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                        BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                                                                                                                                                            BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                        ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -24,13 +24,13 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                        BREADCRUMB END
-                                                                                                                                                                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                                                                                                                                                            BREADCRUMB END
+                                                                                                                                                                                                                                                                                                                                                        ==============================-->
 
 
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                        MENU DETAILS START
-                                                                                                                                                                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                                                                                                                                                            MENU DETAILS START
+                                                                                                                                                                                                                                                                                                                                                        ==============================-->
     <section class="fp__menu_details mt-5 pt-5">
         <div class="container">
             <div class="row">
@@ -111,10 +111,10 @@
                                                 type="checkbox" value="{{ $productOption->id }}"
                                                 id="option-{{ $productOption->id }}"
                                                 data-price="{{ $productOption->price }}">
-                                            <p class="form-check-label" for="option-{{ $productOption->id }}">
+                                            <label class="form-check-label" for="option-{{ $productOption->id }}">
                                                 {{ $productOption->name }} <span>+
                                                     {{ currencyPosition($productOption->price) }}</span>
-                                            </p>
+                                            </label>
                                         </div>
                                     @endforeach
                                 </div>
@@ -122,8 +122,8 @@
 
                             <h6 class="my-4">Portions (based on a portion size of 2"x1")</h6>
                             <div class="fp__contact_form_input form-group mt-2">
-                                <input class="w-0 me-2" type="radio" name="" id="">
-                                <label for="">4 Tiers (3 layers of cake per tier) - 140 Portions (as shown 4", 6",
+                                <input class="w-0 me-2" type="radio" name="" id="Tiers">
+                                <label for="Tiers">4 Tiers (3 layers of cake per tier) - 140 Portions (as shown 4", 6",
                                     8", 10" sized tiers)</label>
                             </div>
 
@@ -170,18 +170,19 @@
                             <div class="my-4">
                                 <h5>Short of portions? Add a 50 portion cutting cake at cost price!</h5>
                                 <div class="my-4">
-                                    <input class="w-0 me-2" type="checkbox" name="extra-plain-sponge" value="35">
-                                    Plain
-                                    Sponge +£35.00
+                                    <input class="w-0 me-2" type="checkbox" name="extra-plain-sponge" value="35"
+                                        id="extra-plain-sponge">
+                                    <label for="extra-plain-sponge">Plain Sponge +£35.00</label>
                                 </div>
                                 <div class="my-4">
-                                    <input class="w-0 me-2" type="checkbox" name="extra-plain-sponge" value="35">
-                                    Chocolate +£35.00
+                                    <input class="w-0 me-2" type="checkbox" name="chocolate" value="35"
+                                        id="chocolate">
+                                    <label for="chocolate">Chocolate +£35.00</label>
                                 </div>
                                 <div class="">
-                                    <input class="w-0 me-2" type="checkbox" name="extra-plain-sponge" value="35">
-                                    Toffee
-                                    +£35.00
+                                    <input class="w-0 me-2" type="checkbox" name="toffee" value="35"
+                                        id="toffee">
+                                    <label for="toffee">Toffee +£35.00</label>
                                 </div>
                             </div>
 
