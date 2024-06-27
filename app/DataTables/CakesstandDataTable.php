@@ -22,18 +22,17 @@ class CakesstandDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
-            ->addColumn('action', 'subscriber.action')
-            ->setRowId('id')
-
             ->addColumn('action', function ($query) {
-
-
                 $edit = "<a href='" . route('admin.cakes-stand.edit', $query->id) . "' class='btn btn-primary'><i class='fas fa-edit'></i></a>";
-                $delete = "<a href='" . route('admin.cakes-stand.destroy', $query->id) . "' class='mx-2 btn btn-danger delete-item'><i class='fas fa-trash'></i></a>";
+                $delete = "<a href='" . route('admin.cakes-stand.destroy', $query->id) . "' class='btn btn-danger delete-item ml-2'><i class='fas fa-trash'></i></a>";
 
-
-                return  $edit . $delete ;
-            });
+                return $edit . $delete;
+            })
+            ->addColumn('image', function ($query) {
+                return '<img width="100px" src="' . asset($query->image) . '">';
+            })
+            ->rawColumns(['image', 'action', 'status'])
+            ->setRowId('id');
     }
 
     /**
@@ -50,20 +49,20 @@ class CakesstandDataTable extends DataTable
     public function html(): HtmlBuilder
     {
         return $this->builder()
-                    ->setTableId('subscriber-table')
-                    ->columns($this->getColumns())
-                    ->minifiedAjax()
-                    //->dom('Bfrtip')
-                    ->orderBy(0)
-                    ->selectStyleSingle()
-                    ->buttons([
-                        Button::make('excel'),
-                        Button::make('csv'),
-                        Button::make('pdf'),
-                        Button::make('print'),
-                        Button::make('reset'),
-                        Button::make('reload')
-                    ]);
+            ->setTableId('cakesstand-table')
+            ->columns($this->getColumns())
+            ->minifiedAjax()
+            //->dom('Bfrtip')
+            ->orderBy(0)
+            ->selectStyleSingle()
+            ->buttons([
+                Button::make('excel'),
+                Button::make('csv'),
+                Button::make('pdf'),
+                Button::make('print'),
+                Button::make('reset'),
+                Button::make('reload')
+            ]);
     }
 
     /**
@@ -72,10 +71,9 @@ class CakesstandDataTable extends DataTable
     public function getColumns(): array
     {
         return [
-
             Column::make('id'),
             Column::make('image'),
-			Column::make('name'),
+            Column::make('name'),
             Column::make('status'),
         ];
     }
