@@ -54,6 +54,7 @@ use App\Http\Controllers\Admin\TramsAndConditionController;
 use App\Http\Controllers\Admin\TramsAndCondtionController;
 use App\Http\Controllers\Admin\WhyChooseUsController;
 use App\Http\Controllers\Admin\AttributeController;
+use App\Http\Controllers\Admin\CakesstandController;
 use App\Http\Controllers\Admin\CustomerfeedbackController;
 use App\Http\Controllers\Admin\ProductVariantController;
 use App\Http\Controllers\Admin\ProductVariantItemController;
@@ -206,6 +207,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
     /** Banner Slider Routes */
     Route::resource('banner-slider', BannerSliderController::class);
+
+    /** Cakes Stand Routes */
+    Route::resource('cakes-stand', CakesstandController::class);
 
 
     /** Chefs Routes */
