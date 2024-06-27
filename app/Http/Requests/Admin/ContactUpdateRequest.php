@@ -22,12 +22,20 @@ class ContactUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'phone_one' => ['nullable'],
-            'phone_two' => ['nullable'],
-            'mail_one' => ['nullable', 'max:255'],
-            'mail_two' => ['nullable', 'max:255'],
-            'address' => ['nullable'],
+            'phone_one' => ['nullable', 'string', 'max:255'],
+            'phone_two' => ['nullable', 'string', 'max:255'],
+            'mail_one' => ['nullable', 'email', 'max:255'],
+            'mail_two' => ['nullable', 'email', 'max:255'],
+            'address' => ['nullable', 'string'],
             'map_link' => ['nullable'],
+            'title_one' => ['nullable', 'string', 'max:255'],
+            'Description_one' => ['nullable', 'string', 'max:3000'],
+            'title_two' => ['nullable', 'string', 'max:3000'],
+            'Description_two' => ['nullable', 'string', 'max:3000'],
+            'title_three' => ['nullable', 'string', 'max:255'],
+            'Description_three' => ['nullable', 'string' , 'max:3000'],
+            'phone_image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
+            'email_image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
         ];
     }
 }
