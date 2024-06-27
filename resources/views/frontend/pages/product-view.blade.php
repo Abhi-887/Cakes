@@ -280,8 +280,8 @@
                                         <div class="col-md-4 my-3">
                                             <div class="cake-stand">
                                                 <img class="rounded-3"
-                                                    src="https://www.3d-cakes.co.uk/skin/frontend/default/MAG090181/images/stand6.JPG"
-                                                    alt="">
+                                                    src="{{ $cakesstand->image_url }}"
+                                                    alt="{{$cakesstand->name}}">
                                             </div>
                                             <h5 class="color-dark-gray fw-semibold my-3">{{$cakesstand->name}}</h5>
                                         </div>

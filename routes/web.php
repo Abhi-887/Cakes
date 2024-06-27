@@ -144,6 +144,9 @@ Route::get('about/{slug}', CustomPageController::class);
 /** Product page Route*/
 Route::get('/products', [FrontendController::class, 'products'])->name('product.index');
 
+/**  page Route*/
+Route::get('/cakesstand', [FrontendController::class, 'cakesstands'])->name('cakesstands.index');
+
 /** Show Product details page */
 Route::get('/product/{slug}', [FrontendController::class, 'showProduct'])->name('product.show');
 
