@@ -22,16 +22,16 @@ class WorkwithusDataTable extends DataTable
     {
         return (new EloquentDataTable($query))
             ->addColumn('action', 'work-with-us.action')
-
             ->addColumn('portfolio', function($row) {
                 return '<img width="100px" src="'.asset($row->portfolio).'">';
             })
             ->addColumn('cv', function($row) {
                 return '<img width="100px" src="'.asset($row->cv).'">';
             })
-            ->rawColumns(['image', 'action'])
+            ->rawColumns(['portfolio', 'cv', 'action']) // Corrected 'image' to 'portfolio' and 'cv'
             ->setRowId('id');
     }
+
 
     /**
      * Get the query source of dataTable.
