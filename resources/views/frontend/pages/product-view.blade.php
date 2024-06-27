@@ -1,22 +1,9 @@
 @extends('frontend.layouts.master')
 
 @section('content')
-
-    <style>
-        .form-check-input:checked {
-            background-color: #788a9f !important;
-            border-color: #4a5f76 !important;
-        }
-
-        .form-check-input {
-            background-size: 25px !important;
-            height: 2.5em !important;
-        }
-    </style>
-
     <!--=============================
-                                                                                                                                                                                                                                    BREADCRUMB START
-                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                        BREADCRUMB START
+                                                                                                                                                                                                                                    ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -31,13 +18,13 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                    BREADCRUMB END
-                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                        BREADCRUMB END
+                                                                                                                                                                                                                                    ==============================-->
 
 
     <!--=============================
-                                                                                                                                                                                                                                    MENU DETAILS START
-                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                        MENU DETAILS START
+                                                                                                                                                                                                                                    ==============================-->
     <section class="fp__menu_details mt-5 pt-5">
         <div class="container">
             <div class="row">
