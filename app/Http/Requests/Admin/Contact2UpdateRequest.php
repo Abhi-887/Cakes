@@ -29,7 +29,7 @@ class Contact2UpdateRequest extends FormRequest
             'address' => ['nullable', 'string'],
             'map_link' => ['nullable'],
             'title_one' => ['nullable', 'string', 'max:255'],
-            'description_one' => ['nullable', 'string'],
+            'description_one' => ['nullable', 'string', 'max:255'],
             'title_two' => ['nullable', 'string', 'max:255'],
             'description_two' => ['nullable', 'string'],
             'title_three' => ['nullable', 'string', 'max:255'],
