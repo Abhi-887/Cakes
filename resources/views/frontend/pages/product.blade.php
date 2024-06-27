@@ -37,9 +37,10 @@
             </div>
             <div class="row my-5">
                 <div class="col-md-4">
-                    <div class="rounded-3">
+                    <div>
                         <a href="">
-                            <img src="https://www.3d-cakes.co.uk/media/wysiwyg/boxes/categories/weddings/Book-a-free-consultation.jpg"
+                            <img class="rounded-3"
+                                src="https://www.3d-cakes.co.uk/media/wysiwyg/boxes/categories/weddings/Book-a-free-consultation.jpg"
                                 alt="">
                         </a>
                     </div>
