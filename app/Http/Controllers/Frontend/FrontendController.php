@@ -357,11 +357,6 @@ class FrontendController extends Controller
         return view('frontend.pages.product-view', compact('product', 'relatedProducts', 'reviews', 'cakesstans'));
     }
 
-    // function cakesstands()
-    // {
-    //     $cakesstans = Cakesstand::all();
-    //     return view('frontend.pages.product-view', compact('cakesstans'));
-    // }
 
 
     function loadProductModal($productId)
