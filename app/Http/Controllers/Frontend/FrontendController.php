@@ -358,7 +358,7 @@ class FrontendController extends Controller
 
     function cakesstands(){
         $cakesstans = Cakesstand::all();
-        return view('frontend.pages.product-view',compact('cakesstands'));
+        return view('frontend.pages.product-view',compact('cakesstans'));
     }
 
 
