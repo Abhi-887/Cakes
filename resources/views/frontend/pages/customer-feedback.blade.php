@@ -48,8 +48,8 @@
         }
     </style>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                    BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                           ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                            BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                   ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -64,11 +64,11 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                    BREADCRUMB END
-                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                            BREADCRUMB END
+                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                   Customer-Feedback PAGE START
-                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                           Customer-Feedback PAGE START
+                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
 
 
     <div class="container my-5">
@@ -165,7 +165,7 @@
                         <h6 class="my-4">Your Feedback</h6>
                         <div class="fp__contact_form_input textarea">
                             <span><i class="fal fa-book"></i></span>
-                            <textarea rows="8" placeholder="Share your experience or offer suggestions to us..." name="message"></textarea>
+                            <textarea rows="8" placeholder="Share your experience or offer suggestions to us..." name="feedback"></textarea>
                         </div>
 
                         <div class="form-group form-check mt-2 align-items-center">
@@ -184,6 +184,6 @@
 
 
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                    Customer-Feedback  PAGE END
-                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                            Customer-Feedback  PAGE END
+                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
 @endsection

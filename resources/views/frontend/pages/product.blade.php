@@ -31,6 +31,36 @@
     </style>
     <section class="fp__search_menu mt-5 pt-lg-5 pt-0">
         <div class="container">
+            <div class="">
+                <h1>Wedding Cakes</h1>
+                <h5>Edinburgh | Glasgow | Scotland</h5>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="">
+                        <a href="">
+                            <img src="https://www.3d-cakes.co.uk/media/wysiwyg/boxes/categories/weddings/Book-a-free-consultation.jpg"
+                                alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="">
+                        <a href="">
+                            <img src="https://www.3d-cakes.co.uk/media/wysiwyg/boxes/categories/weddings/3D_BOX_-_why-choose-3d-cakes.jpg"
+                                alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="">
+                        <a href="">
+                            <img src="https://www.3d-cakes.co.uk/media/wysiwyg/boxes/categories/weddings/flavour-guide-new.png"
+                                alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
             <form class="searchformbackground-light-gray p-3 rounded-pill" method="GET"
                 action="{{ route('product.index') }}">
                 <div class="row justify-content-around align-items-center">
@@ -55,9 +85,6 @@
                     </div>
                 </div>
             </form>
-
-
-
 
             <script>
                 document.addEventListener('DOMContentLoaded', function() {
