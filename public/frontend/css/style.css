@@ -1236,7 +1236,7 @@ button {
     right: 10px;
     /* text-transform: capitalize;
     color: var(--colorPrimary); */
-    font-family: var(--headingFont)
+    font-family: var(--headingFont);
     /* position: absolute;
     background: var(--colorWhite);
     padding: 8px 15px; */
