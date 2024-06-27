@@ -22,8 +22,8 @@ class Contact2Controller extends Controller
     {
         $data = $request->only([
             'phone_one', 'phone_two', 'mail_one', 'mail_two', 'address',
-            'map_link', 'title_one', 'description_one', 'title_two',
-            'description_two', 'title_three', 'description_three', 'main_description'
+            'map_link', 'title_one', 'Description_one', 'title_two',
+            'Description_two', 'title_three', 'Description_three'
         ]);
 
         // Handle file uploads for phone_image
