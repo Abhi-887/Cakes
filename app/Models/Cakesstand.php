@@ -14,7 +14,6 @@ class Cakesstand extends Model
 
     // Specify the fields that are mass assignable
     protected $fillable = [
-        'image',
-        'name',
+       'name', 'image', 'status'
     ];
 }

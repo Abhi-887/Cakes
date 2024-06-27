@@ -12,7 +12,7 @@
 
             </div>
             <div class="card-body">
-                <form action="{{ route('admin.product.update', $product->id) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('admin.cakes-stand.update', $cakesstands->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="form-group">
@@ -25,13 +25,13 @@
 
                     <div class="form-group">
                         <label>Name</label>
-                        <input type="text" name="name" class="form-control" value="{{ $product->name }}">
+                        <input type="text" name="name" class="form-control" value="{{ $cakesstands->name }}">
                     </div>
                     <div class="form-group">
                         <label>Status</label>
                         <select name="status" class="form-control" id="">
-                            <option @selected($product->status === 1) value="1">Active</option>
-                            <option @selected($product->status === 0) value="0">Inactive</option>
+                            <option @selected($cakesstands->status === 1) value="1">Active</option>
+                            <option @selected($cakesstands->status === 0) value="0">Inactive</option>
                         </select>
                     </div>
 
@@ -46,7 +46,7 @@
     <script type="text/javascript">
         $(document).ready(function() {
             $('.image-preview').css({
-                'background-image': 'url({{ asset($product->thumb_image) }})',
+                'background-image': 'url({{ asset($cakesstands->thumb_image) }})',
                 'background-size': 'cover',
                 'background-position': 'center center'
             })
