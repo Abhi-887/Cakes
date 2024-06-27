@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend;
+namespace App\Http\Controllers\Admin;
 
 use App\DataTables\ProductVariantDataTable;
 use App\Http\Controllers\Controller;
@@ -95,7 +95,7 @@ class ProductVariantController extends Controller
     {
         $varinat = ProductVariant::findOrFail($id);
         $variantItemCheck = ProductVariantItem::where('product_variant_id', $varinat->id)->count();
-        if($variantItemCheck > 0){
+        if ($variantItemCheck > 0) {
             return response(['status' => 'error', 'message' => 'This variant contain variant items in it delete the variant items first for delete this variant!']);
         }
         $varinat->delete();
