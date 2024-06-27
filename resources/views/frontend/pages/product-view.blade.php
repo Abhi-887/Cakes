@@ -8,8 +8,8 @@
         }
     </style>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                    BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                                        BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                    ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -24,13 +24,13 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                    BREADCRUMB END
-                                                                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                                        BREADCRUMB END
+                                                                                                                                                                                                                                                                                                                    ==============================-->
 
 
     <!--=============================
-                                                                                                                                                                                                                                                                                                                    MENU DETAILS START
-                                                                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                                        MENU DETAILS START
+                                                                                                                                                                                                                                                                                                                    ==============================-->
     <section class="fp__menu_details mt-5 pt-5">
         <div class="container">
             <div class="row">
@@ -198,17 +198,17 @@
                             </div>
 
                             <h6 class="my-4">Design Specification (e.g. Colour Scheme, Ribbon, Flowers, etc)</h6>
-                            <div class="fp__contact_form_input textarea">
+                            <div class="fp__contact_form_input textarea my-4">
                                 <span><i class="fal fa-book"></i></span>
                                 <textarea rows="8" placeholder="Share your design..." name="design"></textarea>
                             </div>
 
-                            <h5 for="cake-stand-hire my-4">Cake Stand Hire (£30 Hire Fee + £50 fully refundable deposit) -
+                            <h5 for="cake-stand-hire">Cake Stand Hire (£30 Hire Fee + £50 fully refundable deposit) -
                                 Purchase
                                 Options Also Available - See Gallery Below</h5>
-                            <div class="fp__contact_form_input form-group mt-2">
+                            <div class="fp__contact_form_input form-group">
                                 <span><i class="far fa-caret-square-down"></i></span>
-                                <select class="form-control" id="store" name="store" required>
+                                <select class="form-control my-4" id="store" name="store" required>
                                     <option value="Edinburgh" selected>-- Please Select --</option>
                                     <option value="Edinburgh">Edinburgh</option>
                                     <option value="Glasgow">Glasgow</option>
