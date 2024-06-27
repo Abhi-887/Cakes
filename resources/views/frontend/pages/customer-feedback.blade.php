@@ -8,7 +8,7 @@
         }
 
         .form-check-input {
-            background-size: 16px !important;
+            background-size: 25px !important;
             height: 2.5em !important;
         }
 
@@ -48,8 +48,8 @@
         }
     </style>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                        BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                                                               ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                                                       ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -64,11 +64,11 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                        BREADCRUMB END
-                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                BREADCRUMB END
+                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                       Customer-Feedback PAGE START
-                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                               Customer-Feedback PAGE START
+                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
 
 
     <div class="container my-5">
@@ -179,6 +179,6 @@
         </div>
     </div>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                        Customer-Feedback  PAGE END
-                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                Customer-Feedback  PAGE END
+                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
 @endsection
