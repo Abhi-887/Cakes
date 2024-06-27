@@ -8,8 +8,8 @@
         }
     </style>
     <!--=============================
-                                                                                                                                                                                                                                                                    BREADCRUMB START
-                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                    BREADCRUMB START
+                                                                                                                                                                                                                                                                                                ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -24,13 +24,13 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                                    BREADCRUMB END
-                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                    BREADCRUMB END
+                                                                                                                                                                                                                                                                                                ==============================-->
 
 
     <!--=============================
-                                                                                                                                                                                                                                                                    MENU DETAILS START
-                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                    MENU DETAILS START
+                                                                                                                                                                                                                                                                                                ==============================-->
     <section class="fp__menu_details mt-5 pt-5">
         <div class="container">
             <div class="row">
@@ -166,20 +166,30 @@
                                     <option value="Glasgow">Glasgow</option>
                                 </select>
                             </div>
-                            <div class="extra-options">
+
+                            <div class="my-4">
                                 <h5>Short of portions? Add a 50 portion cutting cake at cost price!</h5>
-                                <input class="w-0 me-2" type="checkbox" name="extra-plain-sponge" value="35"> Plain
-                                Sponge +£35.00
-                                <input class="w-0 me-2" type="checkbox" name="extra-plain-sponge" value="35">
-                                Chocolate +£35.00
-                                <input class="w-0 me-2" type="checkbox" name="extra-plain-sponge" value="35"> Toffee
-                                +£35.00
+                                <div class="my-4">
+                                    <input class="w-0 me-2" type="checkbox" name="extra-plain-sponge" value="35">
+                                    Plain
+                                    Sponge +£35.00
+                                </div>
+                                <div class="my-4">
+                                    <input class="w-0 me-2" type="checkbox" name="extra-plain-sponge" value="35">
+                                    Chocolate +£35.00
+                                </div>
+                                <div class="">
+                                    <input class="w-0 me-2" type="checkbox" name="extra-plain-sponge" value="35">
+                                    Toffee
+                                    +£35.00
+                                </div>
                             </div>
+
                             <div class="form-group">
                                 <h5 for="cake-coating">How would you like your cake coated?</h5>
                                 <div class="fp__contact_form_input form-group mt-2">
                                     <span><i class="far fa-caret-square-down"></i></span>
-                                    <select class="form-control" id="store" name="store" required>
+                                    <select class="form-control my-4" id="store" name="store" required>
                                         <option value="Edinburgh" selected>-- Please Select --</option>
                                         <option value="Edinburgh">Edinburgh</option>
                                         <option value="Glasgow">Glasgow</option>
@@ -187,12 +197,13 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <h5 for="design-specification">Design Specification (e.g. Colour Scheme, Ribbon, Flowers,
+                                <h5 class="my-4" for="design-specification">Design Specification (e.g. Colour Scheme,
+                                    Ribbon, Flowers,
                                     etc)</h5>
                                 <textarea id="design-specification" rows="4"></textarea>
                             </div>
 
-                            <h5 for="cake-stand-hire">Cake Stand Hire (£30 Hire Fee + £50 fully refundable deposit) -
+                            <h5 for="cake-stand-hire my-4">Cake Stand Hire (£30 Hire Fee + £50 fully refundable deposit) -
                                 Purchase
                                 Options Also Available - See Gallery Below</h5>
                             <div class="fp__contact_form_input form-group mt-2">
@@ -205,7 +216,7 @@
                             </div>
 
                             <div class="details_quentity">
-                                <h5>Select Quantity</h5>
+                                <h5 class="my-4">Select Quantity</h5>
                                 <div class="quentity_btn_area d-flex flex-wrapa align-items-center">
                                     <div class="quentity_btn">
                                         <button class="btn btn-danger v_decrement"><i class="fal fa-minus"></i></button>
