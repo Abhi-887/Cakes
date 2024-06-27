@@ -130,8 +130,7 @@ class FrontendController extends Controller
             'testimonial_sub_title'
         ];
 
-        $sectionTitles = SectionTitle::whereIn('key', $keys)->pluck('value', 'key');
-        ;
+        $sectionTitles = SectionTitle::whereIn('key', $keys)->pluck('value', 'key');;
         $about = About::first();
         $whyChooseUs = WhyChooseUs::where('status', 1)->get();
         $chefs = Chef::where(['show_at_home' => 1, 'status' => 1])->get();
@@ -356,9 +355,10 @@ class FrontendController extends Controller
         return view('frontend.pages.product-view', compact('product', 'relatedProducts', 'reviews'));
     }
 
-    function cakesstands(){
+    function cakesstands()
+    {
         $cakesstans = Cakesstand::all();
-        return view('frontend.pages.product-view',compact('cakesstans'));
+        return view('frontend.pages.product-view', compact('cakesstans'));
     }
 
 
@@ -437,7 +437,6 @@ class FrontendController extends Controller
         session()->put('coupon', ['code' => $code, 'discount' => $discount]);
 
         return response(['message' => 'Coupon Applied Successfully.', 'discount' => $discount, 'finalTotal' => $finalTotal, 'coupon_code' => $code]);
-
     }
 
     function destroyCoupon()
@@ -448,9 +447,6 @@ class FrontendController extends Controller
         } catch (\Exception $e) {
             logger($e);
             return response(['message' => 'Something went wrong']);
-
         }
     }
-
-
 }
