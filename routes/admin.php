@@ -99,6 +99,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
     /** Product Routes */
     Route::resource('product', ProductController::class);
+    Route::resource('products', ProductController::class);
+
+
 
     Route::resource('products-image-gallery', ProductImageGalleryController::class);
 
