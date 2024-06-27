@@ -11,8 +11,8 @@
 <footer>
     <div class="px-2 mx-auto wrapper w-100">
         <div class="">
-            <div class="py-5 row">
-                <div class="col-md-4 col-lg-3 d-flex justify-content-center my-2 footer-info">
+            <div class="row py-5 px-2">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center my-2 footer-info">
                     <div>
                         <h5 class="mt-2 mb-1 text-black mb-xl-3 fw-normal mt-xl-0">{{ @$footerInfo->name }}</h5>
                         <div class="">{!! @$footerInfo->address !!}</div>
@@ -25,7 +25,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-4 col-lg-3 d-flex justify-content-center my-2 footer-info">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center my-2 footer-info">
                     <div>
                         <h5 class="mt-2 mb-1 text-black mb-xl-3 fw-normal mt-xl-0">{{ @$footerInfoTwo->name }}</h5>
                         <div class="">{!! @$footerInfoTwo->address !!}</div>
@@ -34,7 +34,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-4 col-lg-2 d-flex justify-content-center my-2 lh-lg footer-hover">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2 d-flex justify-content-center my-2 lh-lg footer-hover">
                     <div>
                         <h5 class="mt-2 mb-1 text-black mb-xl-3 fw-normal mt-xl-0">
                             {{ @$footerTitle->footer_grid_two_title }}</h5>
@@ -47,9 +47,9 @@
                     </div>
                 </div>
 
-                <div class="col-md-4 col-lg-2 d-flex justify-content-center my-2 lh-lg footer-hover">
+                <div class="col-12 col-sm-6 col-lg-2 d-flex justify-content-center my-2 lh-lg footer-hover">
                     <div>
-                        <h5 class="mt-3 mb-0 text-black mb-xl-3 fw-normal mt-xl-0">
+                        <h5 class="mb-0 text-black mb-xl-3 fw-normal mt-xl-0">
                             {{ @$footerTitle->footer_grid_three_title }}</h5>
                         <div class="">
                             @foreach ($footerGridThreeLinks as $link)
@@ -60,9 +60,9 @@
                     </div>
                 </div>
 
-                <div class="col-md-4 col-lg-2 d-flex justify-content-center my-2 lh-lg footer-hover">
+                <div class="col-12 col-sm-6 col-lg-2 d-flex justify-content-center my-2 lh-lg footer-hover">
                     <div>
-                        <h5 class="mt-3 mb-0 text-black mb-xl-3 fw-normal mt-xl-0">
+                        <h5 class="mb-0 text-black mb-xl-3 fw-normal mt-xl-0">
                             {{ @$footerTitle->footer_grid_four_title }}</h5>
                         <div class="">
                             @foreach ($footerGridFourLinks as $link)
