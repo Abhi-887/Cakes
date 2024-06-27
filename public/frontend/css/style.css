@@ -3518,7 +3518,7 @@ footer .wrapper a:hover {
 }
 
 .fp__menu_description_area .nav .nav-item {
-    width: 50%;
+    width: 33.33%;
     border-right: 1px solid var(--colorPrimary);
 }
 
@@ -3531,7 +3531,6 @@ footer .wrapper a:hover {
     border-radius: 0;
     text-align: center;
     text-transform: capitalize;
-    font-size: 18px;
     font-weight: 600;
     color: var(--colorBlack);
     transition: all linear 0.3s;
