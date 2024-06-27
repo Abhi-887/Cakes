@@ -31,7 +31,7 @@
                 <div class="col-xl-2 lh-lg footer-hover">
                     <h5 class="mt-2 mb-1 text-black mb-xl-3 fw-normal mt-xl-0">
                         {{ @$footerTitle->footer_grid_two_title }}</h5>
-                    <div class="d-none d-xl-inline d-lg-none d-md-none d-sm-none">
+                    <div class="">
                         @foreach ($footerGridTwoLinks as $link)
                             <a class="text-decoration-none black-colour"
                                 href="{{ $link->url }}">{{ $link->name }}</a><br>
@@ -42,7 +42,7 @@
                 <div class="col-xl-2 lh-lg footer-hover">
                     <h5 class="mt-3 mb-0 text-black mb-xl-3 fw-normal mt-xl-0">
                         {{ @$footerTitle->footer_grid_three_title }}</h5>
-                    <div class="d-none d-xl-inline d-lg-none d-md-none">
+                    <div class="">
                         @foreach ($footerGridThreeLinks as $link)
                             <a class="text-decoration-none black-colour"
                                 href="{{ $link->url }}">{{ $link->name }}</a><br>
@@ -53,7 +53,7 @@
                 <div class="col-xl-2 lh-lg footer-hover">
                     <h5 class="mt-3 mb-0 text-black mb-xl-3 fw-normal mt-xl-0">
                         {{ @$footerTitle->footer_grid_four_title }}</h5>
-                    <div class="d-none d-xl-inline d-lg-none d-md-none">
+                    <div class="">
                         @foreach ($footerGridFourLinks as $link)
                             <a class="text-decoration-none black-colour"
                                 href="{{ $link->url }}">{{ $link->name }}</a><br>

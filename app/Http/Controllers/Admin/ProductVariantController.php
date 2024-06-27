@@ -43,7 +43,7 @@ class ProductVariantController extends Controller
         $varinat = new ProductVariant();
         $varinat->product_id = $request->product;
         $varinat->name = $request->name;
-        $varinat->attributeType = $request->attributeType;
+        $varinat->attribute_type = $request->attribute_type;
         $varinat->status = $request->status;
         $varinat->save();
 
