@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                                                    BREADCRUMB START
-                                                                                ==============================-->
+                                                                                        BREADCRUMB START
+                                                                                    ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,13 +18,13 @@
         </div>
     </section>
     <!--=============================
-                                                                                    BREADCRUMB END
-                                                                                ==============================-->
+                                                                                        BREADCRUMB END
+                                                                                    ==============================-->
 
 
     <!--=============================
-                                                                                    MENU DETAILS START
-                                                                                ==============================-->
+                                                                                        MENU DETAILS START
+                                                                                    ==============================-->
     <section class="fp__menu_details mt-5 pt-5">
         <div class="container">
             <div class="row">
@@ -95,7 +95,7 @@
                                     @endforeach
                                 </div>
                             @endif
-
+                            <hr class="my-4">
                             @if ($product->productOptions()->exists())
                                 <div class="details_extra_item">
                                     <h5>Select Option <span>(Optional)</span></h5>
@@ -113,7 +113,7 @@
                                     @endforeach
                                 </div>
                             @endif
-
+                            <hr class="my-4">
                             <div class="details_quentity">
                                 <h5>Select Quantity</h5>
                                 <div class="quentity_btn_area d-flex flex-wrapa align-items-center">
@@ -145,8 +145,8 @@
                         <ul class="nav nav-pills" id="pills-tab" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
-                                    data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
-                                    aria-selected="true">Description</button>
+                                    data-bs-target="#pills-home" type="button" role="tab"
+                                    aria-controls="pills-home" aria-selected="true">Description</button>
                             </li>
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
