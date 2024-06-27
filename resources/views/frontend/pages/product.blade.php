@@ -38,7 +38,7 @@
             <div class="row my-5">
                 <div class="col-md-4">
                     <div>
-                        <a href="">
+                        <a href="/consultations">
                             <img class="rounded-3"
                                 src="https://www.3d-cakes.co.uk/media/wysiwyg/boxes/categories/weddings/Book-a-free-consultation.jpg"
                                 alt="">
@@ -47,7 +47,7 @@
                 </div>
                 <div class="col-md-4">
                     <div>
-                        <a href="">
+                        <a href="/wedding-cake-deposit">
                             <img class="rounded-3"
                                 src="https://www.3d-cakes.co.uk/media/wysiwyg/boxes/categories/weddings/3D_BOX_-_why-choose-3d-cakes.jpg"
                                 alt="">
