@@ -275,7 +275,10 @@
                                 aria-labelledby="pills-cake-stand-gallery-tab" tabindex="0">
                                 <div class="gallery">
                                     <div class="row">
-                                        @foreach ($cakesstans as $cakesstand)
+                                        <pre>
+                                        <?php print_r($cakesstans) ?>
+                                        </pre>
+                                        {{-- @foreach ($cakesstans as $cakesstand)
 
                                         <div class="col-md-4 my-3">
                                             <div class="cake-stand">
@@ -285,7 +288,7 @@
                                             </div>
                                             <h5 class="color-dark-gray fw-semibold my-3">{{$cakesstand->name}}</h5>
                                         </div>
-                                        @endforeach
+                                        @endforeach --}}
 
                                         {{-- <div class="col-md-4 my-3">
                                             <div class="cake-stand">
