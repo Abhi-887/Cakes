@@ -352,14 +352,11 @@ class FrontendController extends Controller
             ->withCount('reviews')
             ->latest()->get();
         $reviews = ProductRating::where(['product_id' => $product->id, 'status' => 1])->paginate(30);
-        return view('frontend.pages.product-view', compact('product', 'relatedProducts', 'reviews'));
+
+        $cakesstans = Cakesstand::all();
+        return view('frontend.pages.product-view', compact('product', 'relatedProducts', 'reviews', 'cakesstans'));
     }
 
-    function cakesstands()
-    {
-        $cakesstans = Cakesstand::all();
-        return view('frontend.pages.product-view', compact('cakesstans'));
-    }
 
 
     function loadProductModal($productId)
