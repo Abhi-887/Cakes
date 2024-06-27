@@ -48,8 +48,8 @@
         }
     </style>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                                                       ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                        BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                                               ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -64,11 +64,11 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                BREADCRUMB END
-                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                        BREADCRUMB END
+                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                               Customer-Feedback PAGE START
-                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                       Customer-Feedback PAGE START
+                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
 
 
     <div class="container my-5">
@@ -99,10 +99,6 @@
                                             aria-label="{{ $i }} stars"></label>
                                     @endfor
                                 </div>
-                            </div>
-                            <div class="rating-text mt-2">
-                                <span>Not Likely</span>
-                                <span class="float-right">Very Likely</span>
                             </div>
                         </div>
 
@@ -183,6 +179,6 @@
         </div>
     </div>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                Customer-Feedback  PAGE END
-                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                        Customer-Feedback  PAGE END
+                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
 @endsection
