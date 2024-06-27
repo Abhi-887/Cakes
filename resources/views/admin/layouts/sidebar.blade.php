@@ -198,7 +198,7 @@
                 <li class="{{ setSidebarActive(['admin.product.*']) }}"><a class="nav-link"
                         href="{{ route('admin.product.index') }}">Products</a></li>
                  <li class=""><a class="nav-link"
-                            href="">Products</a></li>
+                            href="">Cakes Stand Type</a></li>
                 <li class="{{ setSidebarActive(['admin.product-reviews.index']) }}"><a class="nav-link"
                         href="{{ route('admin.product-reviews.index') }}">Product Reviews</a>
                 </li>
