@@ -18,7 +18,7 @@ class Contact2Controller extends Controller
         return view('admin.contact2.index', compact('contact'));
     }
 
-    public function update(ContactUpdateRequest $request): RedirectResponse
+    public function update(Contact2UpdateRequest $request): RedirectResponse
     {
         // Retrieve validated data from the request
         $data = $request->only([
@@ -27,15 +27,26 @@ class Contact2Controller extends Controller
             'Description_two', 'title_three', 'Description_three'
         ]);
 
+        $contact = Contact2::first();
+
         // Handle file uploads for phone_image
         if ($request->hasFile('phone_image')) {
+            // Delete old phone_image if exists
+            if ($contact && $contact->phone_image) {
+                Storage::disk('public')->delete($contact->phone_image);
+            }
             $data['phone_image'] = $request->file('phone_image')->store('uploads', 'public');
         }
 
         // Handle file uploads for email_image
         if ($request->hasFile('email_image')) {
+            // Delete old email_image if exists
+            if ($contact && $contact->email_image) {
+                Storage::disk('public')->delete($contact->email_image);
+            }
             $data['email_image'] = $request->file('email_image')->store('uploads', 'public');
         }
+
         // Update or create a Contact record with id = 1
         Contact2::updateOrCreate(['id' => 1], $data);
 
