@@ -28,8 +28,8 @@ class CakesstandController extends Controller
 
 public function create(): View
 {
-    $cakesstands = Cakesstand::where('parent', 0)->get();
-    return view('admin.product.cakes-stand.create', compact('cakesstands'));
+
+    return view('admin.product.cakes-stand.create');
 }
 
 
