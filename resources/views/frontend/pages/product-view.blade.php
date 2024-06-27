@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                                                                    BREADCRUMB START
-                                                                                                ==============================-->
+                                                                                                        BREADCRUMB START
+                                                                                                    ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,13 +18,13 @@
         </div>
     </section>
     <!--=============================
-                                                                                                    BREADCRUMB END
-                                                                                                ==============================-->
+                                                                                                        BREADCRUMB END
+                                                                                                    ==============================-->
 
 
     <!--=============================
-                                                                                                    MENU DETAILS START
-                                                                                                ==============================-->
+                                                                                                        MENU DETAILS START
+                                                                                                    ==============================-->
     <section class="fp__menu_details mt-5 pt-5">
         <div class="container">
             <div class="row">
@@ -154,7 +154,7 @@
                                     aria-controls="pills-contact" aria-selected="false">Reviews</button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="pills-cake-stand-gallery" data-bs-toggle="pill"
+                                <button class="nav-link" id="pills-cake-stand-gallery-tab" data-bs-toggle="pill"
                                     data-bs-target="#pills-cake-stand-gallery" type="button" role="tab"
                                     aria-controls="pills-cake-stand-gallery" aria-selected="false">Cake Stand
                                     Gallery</button>
@@ -180,15 +180,12 @@
                                                             class="img-fluid">
                                                         <div class="fp__single_comm_text">
                                                             <h3>{{ $review->user->name }}
-                                                                <span>{{ date('d m Y', strtotime($review->created_at)) }}
-                                                                </span>
+                                                                <span>{{ date('d m Y', strtotime($review->created_at)) }}</span>
                                                             </h3>
                                                             <span class="rating">
                                                                 @for ($i = 1; $i <= $review->rating; $i++)
                                                                     <i class="fas fa-star"></i>
                                                                 @endfor
-
-
                                                             </span>
                                                             <p>{{ $review->review }}</p>
                                                         </div>
@@ -206,9 +203,7 @@
                                                 @if (count($reviews) === 0)
                                                     <div class="alert alert-warning mt-4">No review found!</div>
                                                 @endif
-
                                             </div>
-
                                         </div>
                                         @auth
                                             <div class="col-lg-4">
@@ -218,9 +213,9 @@
                                                         @csrf
                                                         <div class="row">
                                                             <div class="col-xl-12 mt-3">
-                                                                <label> Choose a rating</label>
+                                                                <label>Choose a rating</label>
                                                                 <select name="rating" id="rating_input"
-                                                                    class="form-control ">
+                                                                    class="form-control">
                                                                     <option value="5">5</option>
                                                                     <option value="4">4</option>
                                                                     <option value="3">3</option>
@@ -230,7 +225,6 @@
                                                                 <input type="hidden" name="product_id"
                                                                     value="{{ $product->id }}">
                                                             </div>
-
                                                             <div class="col-xl-12">
                                                                 <label for="">Review</label>
                                                                 <textarea style="margin-top: 2px" name="review" rows="3" placeholder="Write your review"></textarea>
@@ -252,14 +246,15 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane fade show" id="pills-cake-stand-gallery" role="tabpanel"
-                                aria-labelledby="pills-cake-stand-gallery" tabindex="0">
-                                <div class="menu_det_description">
-                                    {!! $product->long_description !!}
+                            <div class="tab-pane fade" id="pills-cake-stand-gallery" role="tabpanel"
+                                aria-labelledby="pills-cake-stand-gallery-tab" tabindex="0">
+                                <div class="gallery">
+                                    abhi
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
 
