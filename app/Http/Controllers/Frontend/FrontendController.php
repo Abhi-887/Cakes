@@ -130,7 +130,8 @@ class FrontendController extends Controller
             'testimonial_sub_title'
         ];
 
-        $sectionTitles = SectionTitle::whereIn('key', $keys)->pluck('value', 'key');;
+        $sectionTitles = SectionTitle::whereIn('key', $keys)->pluck('value', 'key');
+        ;
         $about = About::first();
         $whyChooseUs = WhyChooseUs::where('status', 1)->get();
         $chefs = Chef::where(['show_at_home' => 1, 'status' => 1])->get();
@@ -341,7 +342,7 @@ class FrontendController extends Controller
 
     function showProduct(string $slug): View
     {
-        $product = Product::with(['productImages', 'productSizes', 'productOptions'])->where(['slug' => $slug, 'status' => 1])
+        $product = Product::with(['productImages', 'variants', 'productSizes', 'productOptions'])->where(['slug' => $slug, 'status' => 1])
             ->withAvg('reviews', 'rating')
             ->withCount('reviews')
             ->firstOrFail();
