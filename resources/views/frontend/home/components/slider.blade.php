@@ -172,7 +172,7 @@
             background-position: center center;
             position: relative;
             /* height: 645px !important; */
-            height: 100vh !important;
+            height: 550px !important;
         }
     @endforeach
 
