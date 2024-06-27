@@ -46,17 +46,19 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="rounded-3">
+                    <div>
                         <a href="">
-                            <img src="https://www.3d-cakes.co.uk/media/wysiwyg/boxes/categories/weddings/3D_BOX_-_why-choose-3d-cakes.jpg"
+                            <img class="rounded-3"
+                                src="https://www.3d-cakes.co.uk/media/wysiwyg/boxes/categories/weddings/3D_BOX_-_why-choose-3d-cakes.jpg"
                                 alt="">
                         </a>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="rounded-3">
+                    <div>
                         <a href="">
-                            <img src="https://www.3d-cakes.co.uk/media/wysiwyg/boxes/categories/weddings/flavour-guide-new.png"
+                            <img class="rounded-3"
+                                src="https://www.3d-cakes.co.uk/media/wysiwyg/boxes/categories/weddings/flavour-guide-new.png"
                                 alt="">
                         </a>
                     </div>
