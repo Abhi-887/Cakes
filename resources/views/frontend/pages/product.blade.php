@@ -33,9 +33,9 @@
         <div class="container">
             <div class="">
                 <h1 class="fw-semibold">Wedding Cakes</h1>
-                <h5 class="color-light-gray mt-3 mb-5">Edinburgh | Glasgow | Scotland</h5>
+                <h5 class="color-light-gray mt-3">Edinburgh | Glasgow | Scotland</h5>
             </div>
-            <div class="row">
+            <div class="row my-5">
                 <div class="col-md-4">
                     <div class="rounded-3">
                         <a href="">
