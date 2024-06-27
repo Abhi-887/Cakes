@@ -69,11 +69,12 @@
 
 		<div class="row mt-5">
 		  <div class="col-md-6">
-			<h3>£100.00 <input type="hidden" value="100" name="booking_amount"></h3>
+			<h3>£100.00 </h3>
 		  </div>
 		  <div class="col-md-6">
 			<form method="post" action="{{route('wedding-cake-deposit.store')}}">
 			@csrf
+            <input type="hidden" value="100" name="booking_amount">
 			  <div class="form-group mb-3">
 				<label for="consultationPreference" class="mb-2">Consultation preference:<span class="text-danger">*</span></label>
 				<select class="form-control" id="consultationPreference" name="consultationPreference" required>
