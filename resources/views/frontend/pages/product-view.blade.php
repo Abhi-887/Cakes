@@ -4,12 +4,12 @@
 
     <style>
         .w-0 {
-            width: 0px !important;
+            width: auto !important;
         }
     </style>
     <!--=============================
-                                                                                                                                                                                                                                                BREADCRUMB START
-                                                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                                                                    BREADCRUMB START
+                                                                                                                                                                                                                                                                ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -24,13 +24,13 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                BREADCRUMB END
-                                                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                                                                    BREADCRUMB END
+                                                                                                                                                                                                                                                                ==============================-->
 
 
     <!--=============================
-                                                                                                                                                                                                                                                MENU DETAILS START
-                                                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                                                                    MENU DETAILS START
+                                                                                                                                                                                                                                                                ==============================-->
     <section class="fp__menu_details mt-5 pt-5">
         <div class="container">
             <div class="row">
@@ -102,9 +102,27 @@
                                 </div>
                             @endif
 
+                            @if ($product->productOptions()->exists())
+                                <div class="details_extra_item">
+                                    <h5>Select Option <span>(Optional)</span></h5>
+                                    @foreach ($product->productOptions as $productOption)
+                                        <div class="form-check">
+                                            <input class="form-check-input v_product_option" name="product_option[]"
+                                                type="checkbox" value="{{ $productOption->id }}"
+                                                id="option-{{ $productOption->id }}"
+                                                data-price="{{ $productOption->price }}">
+                                            <p class="form-check-label" for="option-{{ $productOption->id }}">
+                                                {{ $productOption->name }} <span>+
+                                                    {{ currencyPosition($productOption->price) }}</span>
+                                            </p>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            @endif
+
                             <h6 class="my-4">Portions (based on a portion size of 2"x1")</h6>
                             <div class="fp__contact_form_input form-group mt-2">
-                                <input class="w-0" type="radio" name="" id="">
+                                <input class="w-0 me-2" type="radio" name="" id="">
                                 <label for="">4 Tiers (3 layers of cake per tier) - 140 Portions (as shown 4", 6",
                                     8", 10" sized tiers)</label>
                             </div>
@@ -150,9 +168,12 @@
                             </div>
                             <div class="extra-options">
                                 <h5>Short of portions? Add a 50 portion cutting cake at cost price!</h5>
-                                <input type="checkbox" name="extra-plain-sponge" value="35"> Plain Sponge +£35.00
-                                <input type="checkbox" name="extra-plain-sponge" value="35"> Chocolate +£35.00
-                                <input type="checkbox" name="extra-plain-sponge" value="35"> Toffee +£35.00
+                                <input class="w-0 me-2" type="checkbox" name="extra-plain-sponge" value="35"> Plain
+                                Sponge +£35.00
+                                <input class="w-0 me-2" type="checkbox" name="extra-plain-sponge" value="35">
+                                Chocolate +£35.00
+                                <input class="w-0 me-2" type="checkbox" name="extra-plain-sponge" value="35"> Toffee
+                                +£35.00
                             </div>
                             <div class="form-group">
                                 <h5 for="cake-coating">How would you like your cake coated?</h5>
@@ -170,33 +191,18 @@
                                     etc)</h5>
                                 <textarea id="design-specification" rows="4"></textarea>
                             </div>
-                            <div class="form-group">
-                                <h5 for="cake-stand-hire">Cake Stand Hire (£30 Hire Fee + £50 fully refundable deposit) -
-                                    Purchase
-                                    Options Also Available - See Gallery Below</h5>
-                                <select id="cake-stand-hire">
-                                    <option value="" disabled selected>-- Please Select --</option>
-                                    <!-- Add options here -->
+
+                            <h5 for="cake-stand-hire">Cake Stand Hire (£30 Hire Fee + £50 fully refundable deposit) -
+                                Purchase
+                                Options Also Available - See Gallery Below</h5>
+                            <div class="fp__contact_form_input form-group mt-2">
+                                <span><i class="far fa-caret-square-down"></i></span>
+                                <select class="form-control" id="store" name="store" required>
+                                    <option value="Edinburgh" selected>-- Please Select --</option>
+                                    <option value="Edinburgh">Edinburgh</option>
+                                    <option value="Glasgow">Glasgow</option>
                                 </select>
                             </div>
-
-                            @if ($product->productOptions()->exists())
-                                <div class="details_extra_item">
-                                    <h5>Select Option <span>(Optional)</span></h5>
-                                    @foreach ($product->productOptions as $productOption)
-                                        <div class="form-check">
-                                            <input class="form-check-input v_product_option" name="product_option[]"
-                                                type="checkbox" value="{{ $productOption->id }}"
-                                                id="option-{{ $productOption->id }}"
-                                                data-price="{{ $productOption->price }}">
-                                            <p class="form-check-label" for="option-{{ $productOption->id }}">
-                                                {{ $productOption->name }} <span>+
-                                                    {{ currencyPosition($productOption->price) }}</span>
-                                            </p>
-                                        </div>
-                                    @endforeach
-                                </div>
-                            @endif
 
                             <div class="details_quentity">
                                 <h5>Select Quantity</h5>
