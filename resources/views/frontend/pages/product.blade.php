@@ -29,8 +29,41 @@
             -moz-appearance: button;
         }
     </style>
-    <section class="fp__search_menu mt-5 pt-lg-5 pt-0">
+    <section class="fp__search_menu pt-lg-5 pt-0">
         <div class="container">
+            <div class="">
+                <h1 class="fw-semibold">Wedding Cakes</h1>
+                <h5 class="color-light-gray mt-3">Edinburgh | Glasgow | Scotland</h5>
+            </div>
+            <div class="row my-5">
+                <div class="col-md-4">
+                    <div>
+                        <a href="/consultations">
+                            <img class="rounded-3"
+                                src="https://www.3d-cakes.co.uk/media/wysiwyg/boxes/categories/weddings/Book-a-free-consultation.jpg"
+                                alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div>
+                        <a href="/wedding-cake-deposit">
+                            <img class="rounded-3"
+                                src="https://www.3d-cakes.co.uk/media/wysiwyg/boxes/categories/weddings/3D_BOX_-_why-choose-3d-cakes.jpg"
+                                alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div>
+                        <a href="">
+                            <img class="rounded-3"
+                                src="https://www.3d-cakes.co.uk/media/wysiwyg/boxes/categories/weddings/flavour-guide-new.png"
+                                alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
             <form class="searchformbackground-light-gray p-3 rounded-pill" method="GET"
                 action="{{ route('product.index') }}">
                 <div class="row justify-content-around align-items-center">
@@ -55,9 +88,6 @@
                     </div>
                 </div>
             </form>
-
-
-
 
             <script>
                 document.addEventListener('DOMContentLoaded', function() {
@@ -98,7 +128,7 @@
                                 <img src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}"
                                     class="img-fluid w-100">
                             </div>
-                            <a class="category bg-light px-2 py-1"
+                            <a class="category bg-light px-2 py-1 fw-semibold"
                                 href="#">{{ $product->subCategory->name ?? '' }}</a>
                             <div class="fp__menu_item_text">
                                 @if ($product->reviews_avg_rating)
@@ -111,7 +141,7 @@
                                 @endif
                                 <a class="title my-3"
                                     href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
-                                <h5
+                                <p
                                     class="price fw-semibold text-center position-absolute py-1 px-3 rounded-pill color-light-gray top-0">
                                     @if ($product->offer_price > 0)
                                         {{ currencyPosition($product->offer_price) }}
@@ -119,7 +149,7 @@
                                     @else
                                         {{ currencyPosition($product->price) }}
                                     @endif
-                                </h5>
+                                </p>
                                 <ul class="flex-wrap d-flex justify-content-center">
                                     <li><a href="javascript:;" onclick="loadProductModal('{{ $product->id }}')"><i
                                                 class="fas fa-shopping-basket"></i></a></li>

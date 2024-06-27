@@ -19,11 +19,11 @@ class Contact2 extends Model
         'address',
         'map_link',
         'title_one',
-        'Description_one',
+        'description_one',
         'title_two',
-        'Description_two',
+        'description_two',
         'title_three',
-        'Description_three',
-        'Description'
+        'description_three',
+        'main_description'
     ];
 }

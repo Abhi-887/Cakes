@@ -123,7 +123,7 @@ button {
     COMMON CSS START
 ============================*/
 .common_btn {
-    background: var(--colorPrimary);
+    background: #4b637f;
     text-transform: capitalize !important;
     color: var(--colorWhite) !important;
     padding: 10px 25px !important;
@@ -139,7 +139,7 @@ button {
 }
 
 .common_btn:hover {
-    background: var(--colorBlack);
+    background: #788a9f;
 }
 
 .fp__section_heading h4 {
@@ -168,11 +168,6 @@ button {
     text-align: center;
     margin-top: 10px;
     padding: 0px 60px;
-}
-
-.form-check-input:focus {
-    border-color: #eb002975;
-    box-shadow: none;
 }
 
 /*============================
@@ -1170,7 +1165,7 @@ button {
     /* text-transform: capitalize; */
     /* font-size: 16px; */
     color: #788a9f !important;
-    font-family: var(--cursiveFont);
+    font-family: var(--headingFont);
     position: absolute;
     /* top: 59% !important; */
     left: 10px;
@@ -1241,7 +1236,7 @@ button {
     right: 10px;
     /* text-transform: capitalize;
     color: var(--colorPrimary); */
-    font-family: var(--cursiveFont);
+    font-family: var(--headingFont);
     /* position: absolute;
     background: var(--colorWhite);
     padding: 8px 15px; */
@@ -2671,7 +2666,8 @@ footer .wrapper a:hover {
 }
 
 .fp__contact_form_input input,
-.fp__contact_form_input textarea {
+.fp__contact_form_input textarea,
+.fp__contact_form_input select {
     padding: 12px 20px 12px 65px;
     border-radius: 5px;
 }
@@ -3457,8 +3453,8 @@ footer .wrapper a:hover {
     height: 35px;
     font-size: 15px;
     color: #fff;
-	background-color: #adcdde !important;
-	border-color: #adcdde !important;
+	background-color: #4b637f  !important;
+	border-color: #4b637f  !important;
     padding: 0;
     border-radius: 3px;
     -webkit-border-radius: 3px;
@@ -3500,7 +3496,7 @@ footer .wrapper a:hover {
     text-align: center;
     line-height: 45px;
     margin-right: 0;
-    background: #adcdde !important;
+    background: #4b637f !important;
     color: var(--colorWhite);
     border-radius: 50%;
     transition: all linear 0.3s;
@@ -3511,7 +3507,7 @@ footer .wrapper a:hover {
 }
 
 .details_button_area .wishlist:hover {
-    background: #4b637f !important);
+    background: #788a9f !important;
 }
 
 .fp__menu_description_area .nav {
@@ -3522,7 +3518,7 @@ footer .wrapper a:hover {
 }
 
 .fp__menu_description_area .nav .nav-item {
-    width: 50%;
+    width: 33.33%;
     border-right: 1px solid var(--colorPrimary);
 }
 
@@ -3535,7 +3531,6 @@ footer .wrapper a:hover {
     border-radius: 0;
     text-align: center;
     text-transform: capitalize;
-    font-size: 18px;
     font-weight: 600;
     color: var(--colorBlack);
     transition: all linear 0.3s;

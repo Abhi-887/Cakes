@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                BREADCRUMB START
-                                            ==============================-->
+                                                                                                                                                                                                    BREADCRUMB START
+                                                                                                                                                                                                ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,14 +18,14 @@
         </div>
     </section>
     <!--=============================
-                                                BREADCRUMB END
-                                            ==============================-->
+                                                                                                                                                                                                    BREADCRUMB END
+                                                                                                                                                                                                ==============================-->
 
 
     <!--=============================
-                                                MENU DETAILS START
-                                            ==============================-->
-    <section class="fp__menu_details mt_115 xs_mt_85 mb_95 xs_mb_65">
+                                                                                                                                                                                                    MENU DETAILS START
+                                                                                                                                                                                                ==============================-->
+    <section class="fp__menu_details mt-5 pt-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 col-md-9 wow fadeInUp" data-wow-duration="1s">
@@ -72,7 +72,7 @@
                             @endif
                         </h3>
                         <p class="short_description">{!! $product->short_description !!}</p>
-
+                        <hr class="my-4">
                         <form action="" id="v_add_to_cart_form">
                             @csrf
                             <input type="hidden" name="base_price" class="v_base_price"
@@ -81,43 +81,41 @@
 
                             @if ($product->productSizes()->exists())
                                 <div class="details_size">
-                                    <h5>select size</h5>
-
+                                    <h5>Select Size</h5>
                                     @foreach ($product->productSizes as $productSize)
                                         <div class="form-check">
                                             <input class="form-check-input v_product_size" type="radio"
                                                 name="product_size" id="size-{{ $productSize->id }}"
                                                 data-price="{{ $productSize->price }}" value="{{ $productSize->id }}">
-                                            <label class="form-check-label" for="size-{{ $productSize->id }}">
+                                            <p class="form-check-label" for="size-{{ $productSize->id }}">
                                                 {{ $productSize->name }} <span>+
                                                     {{ currencyPosition($productSize->price) }}</span>
-                                            </label>
+                                            </p>
                                         </div>
                                     @endforeach
-
                                 </div>
                             @endif
 
                             @if ($product->productOptions()->exists())
                                 <div class="details_extra_item">
-                                    <h5>select option <span>(optional)</span></h5>
+                                    <h5>Select Option <span>(Optional)</span></h5>
                                     @foreach ($product->productOptions as $productOption)
                                         <div class="form-check">
                                             <input class="form-check-input v_product_option" name="product_option[]"
                                                 type="checkbox" value="{{ $productOption->id }}"
                                                 id="option-{{ $productOption->id }}"
                                                 data-price="{{ $productOption->price }}">
-                                            <label class="form-check-label" for="option-{{ $productOption->id }}">
+                                            <p class="form-check-label" for="option-{{ $productOption->id }}">
                                                 {{ $productOption->name }} <span>+
                                                     {{ currencyPosition($productOption->price) }}</span>
-                                            </label>
+                                            </p>
                                         </div>
                                     @endforeach
                                 </div>
                             @endif
 
                             <div class="details_quentity">
-                                <h5>select quantity</h5>
+                                <h5>Select Quantity</h5>
                                 <div class="quentity_btn_area d-flex flex-wrapa align-items-center">
                                     <div class="quentity_btn">
                                         <button class="btn btn-danger v_decrement"><i class="fal fa-minus"></i></button>
@@ -136,7 +134,7 @@
                             @if ($product->quantity === 0)
                                 <li><a class="common_btn bg-danger" href="javascript:;">Stock Out</a></li>
                             @else
-                                <li><a class="common_btn v_submit_button" href="#">add to cart</a></li>
+                                <li><a class="common_btn v_submit_button" href="#">Add To Cart</a></li>
                             @endif
                             <li><a class="wishlist" href="#"><i class="far fa-heart"></i></a></li>
                         </ul>
@@ -151,6 +149,12 @@
                                     aria-selected="true">Description</button>
                             </li>
                             <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-cake-stand-gallery-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-cake-stand-gallery" type="button" role="tab"
+                                    aria-controls="pills-cake-stand-gallery" aria-selected="false">Cake Stand
+                                    Gallery</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
                                     data-bs-target="#pills-contact" type="button" role="tab"
                                     aria-controls="pills-contact" aria-selected="false">Reviews</button>
@@ -163,12 +167,70 @@
                                     {!! $product->long_description !!}
                                 </div>
                             </div>
+                            <div class="tab-pane fade" id="pills-cake-stand-gallery" role="tabpanel"
+                                aria-labelledby="pills-cake-stand-gallery-tab" tabindex="0">
+                                <div class="gallery">
+                                    <div class="row">
+                                        <div class="col-md-4 my-3">
+                                            <div class="cake-stand">
+                                                <img class="rounded-3"
+                                                    src="https://www.3d-cakes.co.uk/skin/frontend/default/MAG090181/images/stand6.JPG"
+                                                    alt="">
+                                            </div>
+                                            <h5 class="color-dark-gray fw-semibold my-3">Frosted Glass Block</h5>
+                                        </div>
+                                        <div class="col-md-4 my-3">
+                                            <div class="cake-stand">
+                                                <img class="rounded-3"
+                                                    src="https://www.3d-cakes.co.uk/skin/frontend/default/MAG090181/images/stand7.JPG"
+                                                    alt="">
+                                            </div>
+                                            <h5 class="color-dark-gray fw-semibold my-3">Low Frosted Glass Block</h5>
+                                        </div>
+                                        <div class="col-md-4 my-3">
+                                            <div class="cake-stand">
+                                                <img class="rounded-3"
+                                                    src="https://www.3d-cakes.co.uk/skin/frontend/default/MAG090181/images/stand8.JPG"
+                                                    alt="">
+                                            </div>
+                                            <h5 class="color-dark-gray fw-semibold my-3">Hovering Black Glass</h5>
+                                        </div>
+
+                                        <div class="col-md-4 my-3">
+                                            <div class="cake-stand">
+                                                <img class="rounded-3"
+                                                    src="https://www.3d-cakes.co.uk/skin/frontend/default/MAG090181/images/stand9.JPG"
+                                                    alt="">
+                                            </div>
+                                            <h5 class="color-dark-gray fw-semibold my-3">Chrome Mirror</h5>
+                                        </div>
+
+                                        <div class="col-md-4 my-3">
+                                            <div class="cake-stand">
+                                                <img class="rounded-3"
+                                                    src="https://www.3d-cakes.co.uk/skin/frontend/default/MAG090181/images/stand10.JPG"
+                                                    alt="">
+                                            </div>
+                                            <h5 class="color-dark-gray fw-semibold my-3">Chrome</h5>
+                                        </div>
+
+                                        <div class="col-md-4 my-3">
+                                            <div class="cake-stand">
+                                                <img class="rounded-3"
+                                                    src="https://www.3d-cakes.co.uk/skin/frontend/default/MAG090181/images/stand11.JPG"
+                                                    alt="">
+                                            </div>
+                                            <h5 class="color-dark-gray fw-semibold my-3">Low Chrome</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="tab-pane fade" id="pills-contact" role="tabpanel"
                                 aria-labelledby="pills-contact-tab" tabindex="0">
                                 <div class="fp__review_area">
                                     <div class="row">
                                         <div class="col-lg-8">
-                                            <h4>{{ count($reviews) }} reviews</h4>
+                                            <h4>{{ count($reviews) }} Reviews</h4>
                                             <div class="fp__comment pt-0 mt_20">
                                                 @foreach ($reviews as $review)
                                                     <div class="fp__single_comment m-0 border-0">
@@ -176,15 +238,12 @@
                                                             class="img-fluid">
                                                         <div class="fp__single_comm_text">
                                                             <h3>{{ $review->user->name }}
-                                                                <span>{{ date('d m Y', strtotime($review->created_at)) }}
-                                                                </span>
+                                                                <span>{{ date('d m Y', strtotime($review->created_at)) }}</span>
                                                             </h3>
                                                             <span class="rating">
                                                                 @for ($i = 1; $i <= $review->rating; $i++)
                                                                     <i class="fas fa-star"></i>
                                                                 @endfor
-
-
                                                             </span>
                                                             <p>{{ $review->review }}</p>
                                                         </div>
@@ -202,9 +261,7 @@
                                                 @if (count($reviews) === 0)
                                                     <div class="alert alert-warning mt-4">No review found!</div>
                                                 @endif
-
                                             </div>
-
                                         </div>
                                         @auth
                                             <div class="col-lg-4">
@@ -214,9 +271,9 @@
                                                         @csrf
                                                         <div class="row">
                                                             <div class="col-xl-12 mt-3">
-                                                                <label> Choose a rating</label>
+                                                                <label>Choose a rating</label>
                                                                 <select name="rating" id="rating_input"
-                                                                    class="form-control ">
+                                                                    class="form-control">
                                                                     <option value="5">5</option>
                                                                     <option value="4">4</option>
                                                                     <option value="3">3</option>
@@ -226,7 +283,6 @@
                                                                 <input type="hidden" name="product_id"
                                                                     value="{{ $product->id }}">
                                                             </div>
-
                                                             <div class="col-xl-12">
                                                                 <label for="">Review</label>
                                                                 <textarea style="margin-top: 2px" name="review" rows="3" placeholder="Write your review"></textarea>
@@ -251,65 +307,168 @@
                         </div>
                     </div>
                 </div>
-            </div>
 
-            @if (count($relatedProducts) > 0)
-                <div class="fp__related_menu mt_90 xs_mt_60">
-                    <h2>related item</h2>
-                    <div class="row related_product_slider">
-                        @foreach ($relatedProducts as $relatedProduct)
-                            <div class="col-lg-4 wow fadeInUp" data-wow-duration="1s">
-                                <div class="fp__menu_item">
-                                    <div class="fp__menu_item_img">
-                                        <img src="{{ asset($relatedProduct->thumb_image) }}"
-                                            alt="{{ $relatedProduct->name }}" class="img-fluid w-100">
-                                    </div>
-                                    <a class="category bg-light px-2 py-1"
-                                        href="#">{{ @$relatedProduct->category->name }}</a>
-                                    <div class="fp__menu_item_text">
-                                        <p class="rating">
-                                            @if ($relatedProduct->reviews_avg_rating)
-                                                <p class="rating">
-                                                    @for ($i = 1; $i <= $relatedProduct->reviews_avg_rating; $i++)
-                                                        <i class="fas fa-star"></i>
-                                                    @endfor
+                @if (count($relatedProducts) > 0)
+                    <div class="fp__related_menu mt_90 xs_mt_60">
+                        <h2>Related Item</h2>
+                        <div class="row related_product_slider">
+                            @foreach ($relatedProducts as $relatedProduct)
+                                <div class="col-lg-4 wow fadeInUp" data-wow-duration="1s">
+                                    <div class="fp__menu_item">
+                                        <div class="fp__menu_item_img">
+                                            <img src="{{ asset($relatedProduct->thumb_image) }}"
+                                                alt="{{ $relatedProduct->name }}" class="img-fluid w-100">
+                                        </div>
+                                        <a class="category bg-light px-2 py-1 fw-semibold"
+                                            href="#">{{ @$relatedProduct->category->name }}</a>
+                                        <div class="fp__menu_item_text">
+                                            <p class="rating">
+                                                @if ($relatedProduct->reviews_avg_rating)
+                                                    <p class="rating">
+                                                        @for ($i = 1; $i <= $relatedProduct->reviews_avg_rating; $i++)
+                                                            <i class="fas fa-star"></i>
+                                                        @endfor
 
-                                                    <span>({{ $relatedProduct->reviews_count }})</span>
-                                                </p>
-                                            @endif
-                                        </p>
-                                        <a class="title my-3"
-                                            href="{{ route('product.show', $relatedProduct->slug) }}">{!! $relatedProduct->name !!}</a>
-                                        <h5
-                                            class="price fw-semibold text-center position-absolute py-1 px-3 rounded-pill color-light-gray top-0">
-                                            @if ($relatedProduct->offer_price > 0)
-                                                {{ currencyPosition($relatedProduct->offer_price) }}
-                                                <del>{{ currencyPosition($relatedProduct->price) }}</del>
-                                            @else
-                                                {{ currencyPosition($relatedProduct->price) }}
-                                            @endif
-                                        </h5>
-                                        <ul class="d-flex flex-wrap justify-content-center">
-                                            <li><a href="javascript:;"
-                                                    onclick="loadProductModal('{{ $relatedProduct->id }}')"><i
-                                                        class="fas fa-shopping-basket"></i></a></li>
-                                            <li onclick="addToWishlist('{{ $relatedProduct->id }}')"><a
-                                                    class="background-light-gray" href="javascript:;"><i
-                                                        class="fal fa-heart"></i></a></li>
+                                                        <span>({{ $relatedProduct->reviews_count }})</span>
+                                                    </p>
+                                                @endif
+                                            </p>
+                                            <a class="title my-3"
+                                                href="{{ route('product.show', $relatedProduct->slug) }}">{!! $relatedProduct->name !!}</a>
+                                            <p
+                                                class="price fw-semibold text-center position-absolute py-1 px-3 rounded-pill color-light-gray top-0">
+                                                @if ($relatedProduct->offer_price > 0)
+                                                    {{ currencyPosition($relatedProduct->offer_price) }}
+                                                    <del>{{ currencyPosition($relatedProduct->price) }}</del>
+                                                @else
+                                                    {{ currencyPosition($relatedProduct->price) }}
+                                                @endif
+                                            </p>
+                                            <ul class="d-flex flex-wrap justify-content-center">
+                                                <li><a href="javascript:;"
+                                                        onclick="loadProductModal('{{ $relatedProduct->id }}')"><i
+                                                            class="fas fa-shopping-basket"></i></a></li>
+                                                <li onclick="addToWishlist('{{ $relatedProduct->id }}')"><a
+                                                        class="background-light-gray" href="javascript:;"><i
+                                                            class="fal fa-heart"></i></a></li>
 
-                                            <li><a class="background-light-gray"
-                                                    href="{{ route('product.show', $relatedProduct->slug) }}"><i
-                                                        class="far fa-eye"></i></a></li>
-                                        </ul>
+                                                <li><a class="background-light-gray"
+                                                        href="{{ route('product.show', $relatedProduct->slug) }}"><i
+                                                            class="far fa-eye"></i></a></li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        @endforeach
+                            @endforeach
+                        </div>
                     </div>
-                </div>
-            @endif
-        </div>
+                @endif
+            </div>
     </section>
+
+
+
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="https://www.3d-cakes.co.uk/media/catalog/product/cache/1/image/482x/9df78eab33525d08d6e5fb8d27136e95/3/d/3d_cakes-8218_-_wedding_cake_1.jpg"
+                    alt="Wedding Cake">
+            </div>
+            <div class="col-md-6">
+                <div class="cake-description">
+                    <p>Our Angel design comprises of textured and shimmer tiers, hand-crafted sugar roses alongside angelic
+                        white
+                        feathers.</p>
+                    <p>Our stunning wedding cakes (ANGEL - With Sugarcraft Flowers) are freshly baked with the finest
+                        ingredients,
+                        individually designed and hand crafted by our multiple award winning team. To make this cake perfect
+                        for
+                        your big day, detail your colour scheme and any changes you would like to make in the design
+                        specification
+                        box. Generally minimum 6 month’s notice is required; however if you require your cake at short
+                        notice we
+                        will endeavour to make this possible. With 28 delicious flavours available each tasting as good as
+                        they
+                        look!</p>
+                    <p class="price">£916.00</p>
+                </div>
+                <form>
+                    <div class="form-group">
+                        <label for="portions">Portions (based on a portion size of 2"x1")</label>
+                        <select id="portions" required>
+                            <option value="4-tiers">4 Tiers (3 layers of cake per tier) - 140 Portions (as shown 4", 6",
+                                8",
+                                10"
+                                sized tiers)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="top-tier-flavour">Top Tier Flavour</label>
+                        <select id="top-tier-flavour" required>
+                            <option value="" disabled selected>-- Please Select --</option>
+                            <!-- Add options here -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="tier-2-flavour">Tier 2 Flavour</label>
+                        <select id="tier-2-flavour" required>
+                            <option value="" disabled selected>-- Please Select --</option>
+                            <!-- Add options here -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="tier-3-flavour">Tier 3 Flavour</label>
+                        <select id="tier-3-flavour">
+                            <option value="" disabled selected>-- Please Select --</option>
+                            <!-- Add options here -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="tier-4-flavour">Tier 4 Flavour</label>
+                        <select id="tier-4-flavour">
+                            <option value="" disabled selected>-- Please Select --</option>
+                            <!-- Add options here -->
+                        </select>
+                    </div>
+                    <div class="extra-options">
+                        <p>Short of portions? Add a 50 portion cutting cake at cost price!</p>
+                        <label><input type="checkbox" name="extra-plain-sponge" value="35"> Plain Sponge
+                            +£35.00</label>
+                        <label><input type="checkbox" name="extra-chocolate" value="35"> Chocolate +£35.00</label>
+                        <label><input type="checkbox" name="extra-toffee" value="35"> Toffee +£35.00</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="cake-coating">How would you like your cake coated?</label>
+                        <select id="cake-coating">
+                            <option value="" disabled selected>-- Please Select --</option>
+                            <!-- Add options here -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="design-specification">Design Specification (e.g. Colour Scheme, Ribbon, Flowers,
+                            etc)</label>
+                        <textarea id="design-specification" rows="4"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="cake-stand-hire">Cake Stand Hire (£30 Hire Fee + £50 fully refundable deposit) -
+                            Purchase
+                            Options Also Available - See Gallery Below</label>
+                        <select id="cake-stand-hire">
+                            <option value="" disabled selected>-- Please Select --</option>
+                            <!-- Add options here -->
+                        </select>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit">Add to Cart</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
 @endsection
 
 @push('scripts')
