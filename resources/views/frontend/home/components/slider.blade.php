@@ -171,8 +171,7 @@
             background-size: cover;
             background-position: center center;
             position: relative;
-            /* height: 645px !important; */
-            height: 37vh !important;
+            height: 645px !important;
         }
     @endforeach
 
@@ -180,9 +179,9 @@
         position: relative;
     }
 
-    /* .background6 {
+    .background6 {
         height: 550px !important;
-    } */
+    }
 
     .slider-img img {
         width: 100%;
