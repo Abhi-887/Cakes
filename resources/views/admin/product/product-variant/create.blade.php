@@ -39,11 +39,30 @@
                             <div class="form-group">
                                 <label for="attributeType">Attribute Type</label>
                                 <select id="attributeType" class="form-control" name="attribute_type">
-                                    <option value="text">Text</option>
+                                    {{-- <option value="text">Text</option>
                                     <option value="dropdown">Dropdown</option>
                                     <option value="textarea">Text Area</option>
                                     <option value="radio">Radio Box</option>
                                     <option value="checkbox">Checkbox</option>
+                                    <option value="shortorder">Short Order</option>
+                                    <option value="isrequired">Required</option>
+                                    <option value="checkbox">Checkbox</option> --}}
+
+                                    {{-- <option value="0">--Please Select--</option> --}}
+                                    <optgroup label="Text">
+                                        <option value="field">Field</option>
+                                        <option value="area">Area</option>
+                                    </optgroup>
+                                    <optgroup label="Select">
+                                        <option value="dropdown">Drop-Down</option>
+                                        <option value="radio">Radio Button</option>
+                                        <option value="checkbox">Checkbox</option>
+                                        <option value="multipleselect">Multiple Select</option>
+                                    </optgroup>
+                                    <optgroup label="Date">
+                                        <option value="date">Date</option>
+                                        <option value="datetime">Date & Time</option>
+                                        <option value="time">Time</option>
                                 </select>
                             </div>
 

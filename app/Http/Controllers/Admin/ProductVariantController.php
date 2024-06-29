@@ -36,7 +36,7 @@ class ProductVariantController extends Controller
         $request->validate([
             'product' => ['integer', 'required'],
             'name' => ['required', 'max:200'],
-            'attribute_type' => 'required|string|in:text,dropdown,textarea,radio,checkbox',
+            'attribute_type' => 'required|string',
             'status' => ['required']
         ]);
 
