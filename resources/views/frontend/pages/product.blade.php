@@ -5,19 +5,11 @@
         <div class="fp__breadcrumb_overlay">
             <div class="container">
                 <div class="fp__breadcrumb_text">
-                    @if (isset($category))
-                        <h1>{{ $category->name }}</h1>
-                        <ul>
-                            <li><a href="{{ url('/') }}">Home</a></li>
-                            <li><a href="javascript:;">{{ $category->name }}</a></li>
-                        </ul>
-                    @else
-                        <h1>All Products</h1>
-                        <ul>
-                            <li><a href="{{ url('/') }}">Home</a></li>
-                            <li><a href="javascript:;">All Products</a></li>
-                        </ul>
-                    @endif
+                    <h1>{{ $category->name }}</h1>
+                    <ul>
+                        <li><a href="{{ url('/') }}">Home</a></li>
+                        <li><a href="javascript:;">{{ $category->name }}</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -29,10 +21,11 @@
             -moz-appearance: button;
         }
     </style>
+
     <section class="fp__search_menu pt-lg-5 pt-0">
         <div class="container">
             <div class="">
-                <h1 class="fw-semibold">Wedding Cakes</h1>
+                <h1 class="fw-semibold">{{ $category->name }}</h1>
                 <h5 class="color-light-gray mt-3">Edinburgh | Glasgow | Scotland</h5>
             </div>
             <div class="row my-5">
@@ -65,7 +58,7 @@
                 </div>
             </div>
             <form class="searchformbackground-light-gray p-3 rounded-pill" method="GET"
-                action="{{ route('product.index') }}">
+                action="{{ route('category.products', $category->slug) }}">
                 <div class="row justify-content-around align-items-center">
                     <div class="col-md-5 col-10 my-2">
                         <input class="py-2 form-control rounded-pill" type="text" placeholder="Search..." name="search"
@@ -119,6 +112,11 @@
                     }
                 });
             </script>
+        </div>
+    </section>
+
+
+
 
             <div class="row">
                 @foreach ($products as $product)
