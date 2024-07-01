@@ -13,29 +13,29 @@
         }
     </style>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                        BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
                 <div class="fp__breadcrumb_text">
-                    <h1>menu Details</h1>
+                    <h1>{!! $product->name !!}</h1>
                     <ul>
                         <li><a href="{{ url('/') }}">home</a></li>
-                        <li><a href="javascript:;">menu Details</a></li>
+                        <li><a href="javascript:;">{!! $product->name !!}</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                BREADCRUMB END
-                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                        BREADCRUMB END
+                                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
     <!--=============================
-                                        MENU DETAILS START
-                                        ==============================-->
+                                                MENU DETAILS START
+                                                ==============================-->
 
-                                        {{-- <div class="my-4">
+    {{-- <div class="my-4">
                                             <div class="row">
                                                 <input type="hidden" name="product_id" value="{{ $product->id }}">
                                                 @foreach ($product->variants as $variant)
