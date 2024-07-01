@@ -6220,12 +6220,10 @@ CHECKOUT PAGE START
 
 
 
-.subscribe_form button {
+/* .subscribe_form button {
     position: absolute;
     top: 50%;
-
     transform: translateY(-50%);
-
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
@@ -6234,7 +6232,7 @@ CHECKOUT PAGE START
 
 .subscribe_form button i {
     margin-left: 10px;
-}
+} */
 
 .subscribe_form button::after,
 .subscribe_form button::before {

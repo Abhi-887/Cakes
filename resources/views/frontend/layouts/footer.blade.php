@@ -80,7 +80,7 @@
                     </div>
                     <div class="col-xl-2">
                         <button type="submit"
-                            class="px-5 mt-3 text-white border border-0 subscribe_btn background-light-gray btn btn-dark mt-sm-3 mt-md-3 mt-xl-0 subscribe">Subscribe
+                            class="px-5 mt-3 text-white border border-0 subscribe_btn background-light-gray btn btn-dark subscribe">Subscribe
                         </button>
                     </div>
                 </div>
