@@ -13,8 +13,8 @@
         }
     </style>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                            BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                    BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -29,13 +29,22 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                            BREADCRUMB END
-                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                    BREADCRUMB END
+                                                                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
     <!--=============================
-                                    MENU DETAILS START
-                                    ==============================-->
+                                            MENU DETAILS START
+                                            ==============================-->
 
-
+    <style>
+        .fixed-top {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 
     <section class="pt-5 mt-5 fp__menu_details">
         <div class="container">
@@ -617,5 +626,18 @@
                 })
             })
         })
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const exzoom = document.getElementById('exzoom');
+            const exzoomOffsetTop = exzoom.offsetTop;
+
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > exzoomOffsetTop) {
+                    exzoom.classList.add('fixed-top');
+                } else {
+                    exzoom.classList.remove('fixed-top');
+                }
+            });
+        });
     </script>
 @endpush
