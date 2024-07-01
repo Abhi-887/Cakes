@@ -88,10 +88,10 @@
         </div>
         <hr class="mt-5">
         <div class="pb-3 row d-flex justify-content-center align-items-center">
-            <div class="col-md-6">
+            <div class="col-md-7">
                 <span class="color-dark-gray fw-semibold">© 3D Cakes. All Rights Reserved.</span>
             </div>
-            <div class="col-md-6 text-end">
+            <div class="col-md-5 text-end">
                 <div class="social-links">
                     @foreach ($footerSocials as $link)
                         <a href="{{ $link->url }}" class="{{ $link->icon }} fs-3 ms-2"></a>
