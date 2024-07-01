@@ -35,32 +35,59 @@
                                         MENU DETAILS START
                                         ==============================-->
 
+                                        <div class="my-4">
+                                            <div class="row">
+                                                <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                                @foreach ($product->variants as $variant)
+                                                    @if ($variant->status != 0)
+                                                        <div class="col-xl-6 col-sm-6">
+                                                            <h6 class="my-4">{{ $variant->name }} *</h6>
+                                                            <div class="mt-2 fp__contact_form_input form-group">
+                                                                <span><i class="far fa-caret-square-down"></i></span>
 
-                                        @foreach($product->variants as $variant)
-                                        <div class="variant">
-                                            <label>{{ $variant->name }}</label>
-
-                                            @if($variant->attribute_type == 'radio')
-                                                @foreach($variant->options as $option)
-                                                    <input type="radio" name="variant_{{ $variant->id }}" value="{{ $option->id }}" required="{{ $variant->isrequired }}">
-                                                    <label>{{ $option->name }}</label>
+                                                                @if ($variant->attribute_type == 'dropdown')
+                                                                    <select class="form-control" name="variants_items[]" required>
+                                                                        <option value="" selected>-- Please Select --</option>
+                                                                        @foreach ($variant->productVariantItems as $variantItem)
+                                                                            @if ($variantItem->status != 0)
+                                                                                <option value="{{ $variantItem->id }}" {{ $variantItem->is_default == 1 ? 'selected' : '' }}>
+                                                                                    {{ $variantItem->name }} (${{ $variantItem->price }})
+                                                                                </option>
+                                                                            @endif
+                                                                        @endforeach
+                                                                    </select>
+                                                                @elseif ($variant->attribute_type == 'radio')
+                                                                    @foreach ($variant->productVariantItems as $variantItem)
+                                                                        @if ($variantItem->status != 0)
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input" type="radio" name="variant_{{ $variant->id }}" id="variant_{{ $variant->id }}_{{ $variantItem->id }}" value="{{ $variantItem->id }}" {{ $variantItem->is_default == 1 ? 'checked' : '' }} required>
+                                                                                <label class="form-check-label" for="variant_{{ $variant->id }}_{{ $variantItem->id }}">
+                                                                                    {{ $variantItem->name }} (${{ $variantItem->price }})
+                                                                                </label>
+                                                                            </div>
+                                                                        @endif
+                                                                    @endforeach
+                                                                @elseif ($variant->attribute_type == 'checkbox')
+                                                                    @foreach ($variant->productVariantItems as $variantItem)
+                                                                        @if ($variantItem->status != 0)
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input" type="checkbox" name="variant_{{ $variant->id }}[]" id="variant_{{ $variant->id }}_{{ $variantItem->id }}" value="{{ $variantItem->id }}" {{ $variantItem->is_default == 1 ? 'checked' : '' }}>
+                                                                                <label class="form-check-label" for="variant_{{ $variant->id }}_{{ $variantItem->id }}">
+                                                                                    {{ $variantItem->name }} (${{ $variantItem->price }})
+                                                                                </label>
+                                                                            </div>
+                                                                        @endif
+                                                                    @endforeach
+                                                                @elseif ($variant->attribute_type == 'textarea')
+                                                                    <textarea class="form-control" name="variant_{{ $variant->id }}" rows="4" required></textarea>
+                                                                @endif
+                                                            </div>
+                                                        </div>
+                                                    @endif
                                                 @endforeach
-                                            @elseif($variant->attribute_type == 'checkbox')
-                                                @foreach($variant->options as $option)
-                                                    <input type="checkbox" name="variant_{{ $variant->id }}[]" value="{{ $option->id }}" required="{{ $variant->isrequired }}">
-                                                    <label>{{ $option->name }}</label>
-                                                @endforeach
-                                            @elseif($variant->attribute_type == 'dropdown')
-                                                <select name="variant_{{ $variant->id }}" required="{{ $variant->isrequired }}">
-                                                    @foreach($variant->options as $option)
-                                                        <option value="{{ $option->id }}">{{ $option->name }}</option>
-                                                    @endforeach
-                                                </select>
-                                            @elseif($variant->attribute_type == 'textarea')
-                                                <textarea name="variant_{{ $variant->id }}" required="{{ $variant->isrequired }}"></textarea>
-                                            @endif
+                                            </div>
                                         </div>
-                                    @endforeach
+
 
     <section class="pt-5 mt-5 fp__menu_details">
         <div class="container">
