@@ -36,12 +36,32 @@
                                         ==============================-->
 
 
-<pre>
-<?php
-    print_r($product);
-    ?>
+                                        @foreach($product->variants as $variant)
+                                        <div class="variant">
+                                            <label>{{ $variant->name }}</label>
 
-</pre>
+                                            @if($variant->attribute_type == 'radio')
+                                                @foreach($variant->options as $option)
+                                                    <input type="radio" name="variant_{{ $variant->id }}" value="{{ $option->id }}" required="{{ $variant->isrequired }}">
+                                                    <label>{{ $option->name }}</label>
+                                                @endforeach
+                                            @elseif($variant->attribute_type == 'checkbox')
+                                                @foreach($variant->options as $option)
+                                                    <input type="checkbox" name="variant_{{ $variant->id }}[]" value="{{ $option->id }}" required="{{ $variant->isrequired }}">
+                                                    <label>{{ $option->name }}</label>
+                                                @endforeach
+                                            @elseif($variant->attribute_type == 'dropdown')
+                                                <select name="variant_{{ $variant->id }}" required="{{ $variant->isrequired }}">
+                                                    @foreach($variant->options as $option)
+                                                        <option value="{{ $option->id }}">{{ $option->name }}</option>
+                                                    @endforeach
+                                                </select>
+                                            @elseif($variant->attribute_type == 'textarea')
+                                                <textarea name="variant_{{ $variant->id }}" required="{{ $variant->isrequired }}"></textarea>
+                                            @endif
+                                        </div>
+                                    @endforeach
+
     <section class="pt-5 mt-5 fp__menu_details">
         <div class="container">
             <div class="row">
