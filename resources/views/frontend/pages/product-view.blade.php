@@ -36,7 +36,12 @@
                                         ==============================-->
 
 
+<pre>
+<?php
+    print_r($product);
+    ?>
 
+</pre>
     <section class="pt-5 mt-5 fp__menu_details">
         <div class="container">
             <div class="row">
