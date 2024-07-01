@@ -58,7 +58,7 @@
                 </div>
             </div>
             <form class="searchformbackground-light-gray p-3 rounded-pill" method="GET"
-                action="{{ route('product.show', $category->slug) }}">
+                action="{{ route('category.products', $category->slug) }}">
                 <div class="row justify-content-around align-items-center">
                     <div class="col-md-5 col-10 my-2">
                         <input class="py-2 form-control rounded-pill" type="text" placeholder="Search..." name="search"
