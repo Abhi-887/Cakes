@@ -35,7 +35,7 @@
                                         MENU DETAILS START
                                         ==============================-->
 
-                                        <div class="my-4">
+                                        {{-- <div class="my-4">
                                             <div class="row">
                                                 <input type="hidden" name="product_id" value="{{ $product->id }}">
                                                 @foreach ($product->variants as $variant)
@@ -86,7 +86,7 @@
                                                     @endif
                                                 @endforeach
                                             </div>
-                                        </div>
+                                        </div> --}}
 
 
     <section class="pt-5 mt-5 fp__menu_details">
