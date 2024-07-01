@@ -64,7 +64,28 @@
                                         <option value="datetime">Date & Time</option>
                                         <option value="time">Time</option>
                                 </select>
+
                             </div>
+
+
+                            <div class="form-group">
+                                <label for="inputState">Is Required</label>
+                                <select id="inputState" class="form-control" name="isrequired">
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Sort Order</label>
+                                <input type="number" class="form-control" name="shotorder" value="">
+                            </div>
+
+                            {{-- <div class="form-group">
+                                <label>Option Description</label>
+                                <input type="text" class="form-control" name="name" value="">
+                            </div> --}}
+
 
                             <button type="submit" class="btn btn-primary">Create</button>
                         </form>

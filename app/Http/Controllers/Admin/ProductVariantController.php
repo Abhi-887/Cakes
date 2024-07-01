@@ -37,7 +37,10 @@ class ProductVariantController extends Controller
             'product' => ['integer', 'required'],
             'name' => ['required', 'max:200'],
             'attribute_type' => 'required|string',
-            'status' => ['required']
+            'status' => ['required'],
+            'isrequired' => ['required'],
+            'shotorder' => ['required'],
+
         ]);
 
         $varinat = new ProductVariant();
@@ -45,6 +48,8 @@ class ProductVariantController extends Controller
         $varinat->name = $request->name;
         $varinat->attribute_type = $request->attribute_type;
         $varinat->status = $request->status;
+        $varinat->isrequired = $request->isrequired;
+        $varinat->shotorder = $request->shotorder;
         $varinat->save();
 
         toastr('Created Successfully!', 'success', 'success');
@@ -78,13 +83,20 @@ class ProductVariantController extends Controller
         $request->validate([
             'name' => ['required', 'max:200'],
             'status' => ['required'],
-            'attribute_type' => 'required|string|in:text,dropdown,textarea,radio,checkbox',
+            'attribute_type' => 'required|string',
+
+            'isrequired' => ['required'],
+            'shotorder' => ['required'],
+
         ]);
 
         $varinat = ProductVariant::findOrFail($id);
         $varinat->name = $request->name;
         $varinat->status = $request->status;
         $varinat->attribute_type = $request->attribute_type;
+        $varinat->isrequired = $request->isrequired;
+        $varinat->shotorder = $request->shotorder;
+
         $varinat->save();
 
         toastr('Updated Successfully!', 'success', 'success');
