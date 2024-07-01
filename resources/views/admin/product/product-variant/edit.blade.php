@@ -47,22 +47,6 @@
                             </div>
 
 
-                            <!-- Attribute Type Dropdown -->
-                            <div class="form-group">
-                                <label for="attributeType">Attribute Type</label>
-                                <select id="attributeType" class="form-control" name="attribute_type">
-                                    <option value="text" {{$variant->attribute_type == 'text' ? 'selected' : ''}}>Text
-                                    </option>
-                                    <option value="dropdown" {{$variant->attribute_type == 'dropdown' ? 'selected' :
-                                        ''}}>Dropdown</option>
-                                    <option value="textarea" {{$variant->attribute_type == 'textarea' ? 'selected' :
-                                        ''}}>Text Area</option>
-                                    <option value="radio" {{$variant->attribute_type == 'radio' ? 'selected' :
-                                        ''}}>Radio Box</option>
-                                    <option value="checkbox" {{$variant->attribute_type == 'checkbox' ? 'selected' :
-                                        ''}}>Checkbox</option>
-                                </select>
-                            </div>
 
                             <!-- Attribute Type Dropdown -->
                             <div class="form-group">
