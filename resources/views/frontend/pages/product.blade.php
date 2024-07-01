@@ -126,8 +126,9 @@
                     <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-duration="1s">
                         <div class="fp__menu_item">
                             <div class="fp__menu_item_img">
-                                <img src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}"
-                                    class="img-fluid w-100">
+                                <a href="{{ route('product.show', $product->slug) }}" class="title my-3"><img
+                                        src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}"
+                                        class="img-fluid w-100"></a>
                             </div>
                             <a class="category bg-light px-2 py-1 fw-semibold"
                                 href="#">{{ $product->subCategory->name ?? '' }}</a>
