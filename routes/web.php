@@ -144,8 +144,11 @@ Route::get('about/{slug}', CustomPageController::class);
 /** Product page Route*/
 Route::get('/products', [FrontendController::class, 'products'])->name('product.index');
 
+
 /** Show Product details page */
 Route::get('/product/{slug}', [FrontendController::class, 'showProduct'])->name('product.show');
+
+Route::get('/category/{slug}', [FrontendController::class, 'showCategoryProducts'])->name('category.products');
 
 /** Product Modal Route */
 Route::get('/load-product-modal/{productId}', [FrontendController::class, 'loadProductModal'])->name('load-product-modal');
