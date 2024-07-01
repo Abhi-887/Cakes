@@ -13,8 +13,8 @@
         }
     </style>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                    BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                    BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -29,11 +29,11 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                    BREADCRUMB END
-                                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                    BREADCRUMB END
+                                                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
     <!--=============================
-            MENU DETAILS START
-            ==============================-->
+                            MENU DETAILS START
+                            ==============================-->
 
 
 
@@ -91,45 +91,7 @@
                                 value="{{ $product->offer_price > 0 ? $product->offer_price : $product->price }}">
                             <input type="hidden" name="product_id" value="{{ $product->id }}">
 
-                            {{-- @if ($product->productSizes()->exists())
-                                <div class="details_size">
-                                    <h5>Select Size</h5>
-                                    @foreach ($product->productSizes as $productSize)
-                                        <div class="form-check">
-                                            <input class="form-check-input v_product_size" type="radio"
-                                                name="product_size" id="size-{{ $productSize->id }}"
-                                                data-price="{{ $productSize->price }}" value="{{ $productSize->id }}">
-                                            <label class="form-check-label" for="size-{{ $productSize->id }}"
-                                                style="max-width: 100%;">
-                                                {{ $productSize->name }} <span>+
-                                                    {{ currencyPosition($productSize->price) }}</span>
-                                            </label>
-                                        </div>
-                                    @endforeach
-                                </div>
-                            @endif --}}
-
-                            {{-- @if ($product->productOptions()->exists())
-                                <div class="details_extra_item">
-                                    <h5>Select Option <span>(Optional)</span></h5>
-                                    @foreach ($product->productOptions as $productOption)
-                                        <div class="form-check">
-                                            <input class="form-check-input v_product_option" name="product_option[]"
-                                                type="checkbox" value="{{ $productOption->id }}"
-                                                id="option-{{ $productOption->id }}"
-                                                data-price="{{ $productOption->price }}">
-                                            <label class="form-check-label" for="option-{{ $productOption->id }} "
-                                                style="max-width: 100%;">
-                                                {{ $productOption->name }} <span>+
-                                                    {{ currencyPosition($productOption->price) }}</span>
-                                            </label>
-                                        </div>
-                                    @endforeach
-                                </div>
-                            @endif --}}
-
                             <h5 class="my-4">Top Tier Flavour *</h5>
-
                             <h6 class="my-4">Portions (based on a portion size of 2"x1")</h6>
                             <div class="mt-2 fp__contact_form_input form-group">
                                 <input class="w-0 me-2" type="radio" name="" id="Tiers">
@@ -219,7 +181,6 @@
 
                             <div class="form-group">
                                 <h5 for="cake-coating">How would you like your cake coated?</h5>
-                                >>>>>>> b9e64411e14826ec35fece0e5e4d75dd44a827c5
                                 <div class="mt-2 fp__contact_form_input form-group">
                                     <span><i class="far fa-caret-square-down"></i></span>
                                     <select class="form-control" id="store" name="store" required>
