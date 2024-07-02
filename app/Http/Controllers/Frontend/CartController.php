@@ -15,70 +15,102 @@ use Illuminate\View\View;
 class CartController extends Controller
 {
 
-    function index() : View {
+    function index(): View
+    {
         return view('frontend.pages.cart-view');
     }
 
     /**
      *  Add product in to cart
      */
-    function addToCart(Request $request)
+    // function addToCart(Request $request)
+    // {
+    //     $product = Product::with(['productSizes', 'productOptions'])->findOrFail($request->product_id);
+    //     if($product->quantity < $request->quantity){
+    //         throw ValidationException::withMessages(['Quantity is not available!']);
+    //     }
+
+    //     try {
+    //         $productSize = $product->productSizes->where('id', $request->product_size)->first();
+    //         $productOptions = $product->productOptions->whereIn('id', $request->product_option);
+
+    //         $options = [
+    //             'product_size' => [],
+    //             'product_options' => [],
+    //             'product_info' => [
+    //                 'image' => $product->thumb_image,
+    //                 'slug' => $product->slug
+    //             ]
+    //         ];
+
+    //         if ($productSize !== null) {
+    //             $options['product_size'] = [
+    //                 'id' => $productSize?->id,
+    //                 'name' => $productSize?->name,
+    //                 'price' => $productSize?->price
+    //             ];
+    //         }
+
+    //         foreach ($productOptions as $option) {
+    //             $options['product_options'][] = [
+    //                 'id' => $option->id,
+    //                 'name' => $option->name,
+    //                 'price' => $option->price
+    //             ];
+    //         }
+
+    //         Cart::add([
+    //             'id' => $product->id,
+    //             'name' => $product->name,
+    //             'qty' => $request->quantity,
+    //             'price' => $product->offer_price > 0 ? $product->offer_price : $product->price,
+    //             'weight' => 0,
+    //             'options' => $options
+    //         ]);
+
+    //         return response(['status' => 'success', 'message' => 'Product added into cart!'], 200);
+    //     } catch (\Exception $e) {
+    //         logger($e);
+    //         return response(['status' => 'error', 'message' => 'Something went wrong!'], 500);
+    //     }
+    // }
+
+    public function addToCart(Request $request)
     {
-        $product = Product::with(['productSizes', 'productOptions'])->findOrFail($request->product_id);
-        if($product->quantity < $request->quantity){
-            throw ValidationException::withMessages(['Quantity is not available!']);
-        }
+        $validated = $request->validate([
+            'product_id' => 'required|integer',
+            'total_price' => 'required|numeric',
+            'variants_items' => 'array',
+            'quantity' => 'required|integer|min=1',
+        ]);
 
-        try {
-            $productSize = $product->productSizes->where('id', $request->product_size)->first();
-            $productOptions = $product->productOptions->whereIn('id', $request->product_option);
+        $product = Product::findOrFail($validated['product_id']);
 
-            $options = [
-                'product_size' => [],
-                'product_options' => [],
-                'product_info' => [
-                    'image' => $product->thumb_image,
-                    'slug' => $product->slug
-                ]
-            ];
+        $cartItem = [
+            'id' => $product->id,
+            'name' => $product->name,
+            'qty' => $validated['quantity'],
+            'price' => $validated['total_price'],
+            'options' => [
+                'product_info' => $product,
+                'product_size' => $validated['variants_items']['size'] ?? null,
+                'product_options' => $validated['variants_items']['options'] ?? [],
+            ],
+        ];
 
-            if ($productSize !== null) {
-                $options['product_size'] = [
-                    'id' => $productSize?->id,
-                    'name' => $productSize?->name,
-                    'price' => $productSize?->price
-                ];
-            }
+        Cart::add($cartItem);
 
-            foreach ($productOptions as $option) {
-                $options['product_options'][] = [
-                    'id' => $option->id,
-                    'name' => $option->name,
-                    'price' => $option->price
-                ];
-            }
-
-            Cart::add([
-                'id' => $product->id,
-                'name' => $product->name,
-                'qty' => $request->quantity,
-                'price' => $product->offer_price > 0 ? $product->offer_price : $product->price,
-                'weight' => 0,
-                'options' => $options
-            ]);
-
-            return response(['status' => 'success', 'message' => 'Product added into cart!'], 200);
-        } catch (\Exception $e) {
-            logger($e);
-            return response(['status' => 'error', 'message' => 'Something went wrong!'], 500);
-        }
+        return response()->json(['message' => 'Product added to cart successfully!']);
     }
 
-    function getCartProduct() {
+
+    function getCartProduct()
+    {
         return view('frontend.layouts.ajax-files.sidebar-cart-item')->render();
     }
 
-    function cartProductRemove($rowId) {
+    function cartProductRemove($rowId)
+    {
         try {
             Cart::remove($rowId);
             return response([
@@ -87,20 +119,21 @@ class CartController extends Controller
                 'cart_total' => cartTotal(),
                 'grand_cart_total' => grandCartTotal()
             ], 200);
-        }catch(\Exception $e){
+        } catch (\Exception $e) {
             return response(['status' => 'error', 'message' => 'Sorry something went wrong!'], 500);
         }
     }
 
-    function cartQtyUpdate(Request $request) : Response {
+    function cartQtyUpdate(Request $request): Response
+    {
         $cartItem = Cart::get($request->rowId);
         $product = Product::findOrFail($cartItem->id);
 
-        if($product->quantity < $request->qty){
+        if ($product->quantity < $request->qty) {
             return response(['status' => 'error', 'message' => 'Quantity is not available!', 'qty' => $cartItem->qty]);
         }
 
-        try{
+        try {
             $cart = Cart::update($request->rowId, $request->qty);
             return response([
                 'status' => 'success',
@@ -110,13 +143,14 @@ class CartController extends Controller
                 'grand_cart_total' => grandCartTotal()
             ], 200);
 
-        }catch(\Exception $e){
+        } catch (\Exception $e) {
             logger($e);
             return response(['status' => 'error', 'message' => 'Something went wrong please reload the page.'], 500);
         }
     }
 
-    function cartDestroy() {
+    function cartDestroy()
+    {
         Cart::destroy();
         session()->forget('coupon');
         return redirect()->back();
