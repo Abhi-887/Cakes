@@ -48,8 +48,20 @@
     }
 
     .popularfood .slick-prev::before {
-        position: absolute !important;
+        position: relative !important;
         right: 0rem !important;
+    }
+
+    @media (max-width: 567px) {
+        .slick-prev.slick-arrow {
+            top: 100%;
+            left: 40%;
+        }
+
+        .slick-next.slick-arrow {
+            top: 100%;
+            right: 40%;
+        }
     }
 </style>
 
