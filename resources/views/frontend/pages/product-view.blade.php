@@ -407,11 +407,18 @@
 @push('scripts')
 <script>
     $(document).ready(function() {
-    function updateTotalPrice() {
+    // Initial setup
+    $('.v_product_size').prop('checked', false);
+    $('.v_product_option').prop('checked', false);
+    $('#v_quantity').val(1);
+
+    // Function to update the total price based on selected options
+    function v_updateTotalPrice() {
         let basePrice = parseFloat('{{ $product->offer_price > 0 ? $product->offer_price : $product->price }}');
         let selectedAttributesPrice = 0;
         let quantity = parseFloat($('#v_quantity').val());
 
+        // Calculate selected attributes price
         $('select[name="variants_items[]"], input[name="variants_items[]"]:checked, input[name^="variants_items["]:checked').each(function() {
             let price = 0;
             if ($(this).is('select')) {
@@ -422,25 +429,34 @@
             selectedAttributesPrice += price;
         });
 
+        // Calculate the total price
         let totalPrice = (basePrice + selectedAttributesPrice) * quantity;
         $('#v_total_price').text("{{ config('settings.site_currency_icon') }}" + totalPrice.toFixed(2));
-        $('#v_hidden_total_price').val(totalPrice.toFixed(2));
+        $('#v_hidden_total_price').val(totalPrice.toFixed(2)); // Update hidden input with total price
     }
 
-    $('.v_increment, .v_decrement').on('click', function(e) {
+    // Event handlers for increment and decrement buttons
+    $('.v_increment').on('click', function(e) {
         e.preventDefault();
         let quantity = $('#v_quantity');
         let currentQuantity = parseFloat(quantity.val());
-        if ($(this).hasClass('v_increment')) {
-            quantity.val(currentQuantity + 1);
-        } else if (currentQuantity > 1) {
-            quantity.val(currentQuantity - 1);
-        }
-        updateTotalPrice();
+        quantity.val(currentQuantity + 1);
+        v_updateTotalPrice();
     });
 
+    $('.v_decrement').on('click', function(e) {
+        e.preventDefault();
+        let quantity = $('#v_quantity');
+        let currentQuantity = parseFloat(quantity.val());
+        if (currentQuantity > 1) {
+            quantity.val(currentQuantity - 1);
+            v_updateTotalPrice();
+        }
+    });
+
+    // Event handlers for attribute changes
     $('select[name="variants_items[]"], input[name="variants_items[]"], input[name^="variants_items["]').on('change', function() {
-        updateTotalPrice();
+        v_updateTotalPrice();
     });
 
     $('.v_submit_button').on('click', function(e) {
@@ -448,13 +464,18 @@
         $("#v_add_to_cart_form").submit();
     });
 
+    // Add to cart function
     $("#v_add_to_cart_form").on('submit', function(e) {
         e.preventDefault();
 
+        // Validation
         let selectedSize = $(".v_product_size");
-        if (selectedSize.length > 0 && $(".v_product_size:checked").val() === undefined) {
-            toastr.error('Please select a size');
-            return;
+        if (selectedSize.length > 0) {
+            if ($(".v_product_size:checked").val() === undefined) {
+                toastr.error('Please select a size');
+                console.error('Please select a size');
+                return;
+            }
         }
 
         let formData = $(this).serialize();
@@ -463,24 +484,29 @@
             url: '{{ route('add-to-cart') }}',
             data: formData,
             beforeSend: function() {
-                $('.v_submit_button').attr('disabled', true).html('<span class="spinner-border spinner-border-sm text-light" role="status" aria-hidden="true"></span> Loading...');
+                $('.v_submit_button').attr('disabled', true);
+                $('.v_submit_button').html(
+                    '<span class="spinner-border spinner-border-sm text-light" role="status" aria-hidden="true"></span> Loading...'
+                );
             },
             success: function(response) {
                 updateSidebarCart();
                 toastr.success(response.message);
             },
             error: function(xhr, status, error) {
-                toastr.error(xhr.responseJSON.message);
+                let errorMessage = xhr.responseJSON.message;
+                toastr.error(errorMessage);
             },
             complete: function() {
-                $('.v_submit_button').html('Add to Cart').attr('disabled', false);
+                $('.v_submit_button').html('Add to Cart');
+                $('.v_submit_button').attr('disabled', false);
             }
         });
     });
 
-    updateTotalPrice();
+    // Initial price calculation
+    v_updateTotalPrice();
 });
-
 
 
 
