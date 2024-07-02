@@ -30,7 +30,13 @@
 
     {{-- <style>
         :root {
-            --colorPrimary: {{ config('settings.site_color') }};
+            --colorPrimary: {
+                    {
+                    config('settings.site_color')
+                }
+            }
+
+            ;
         }
 
         .main_logo3dcake {
@@ -84,9 +90,9 @@
         TOPBAR START
     ==============================-->
     <div class="header-top">
-        <section class="wrapper px-3 mx-auto w-100">
-            <div class="row align-items-center py-2">
-                <div class="col-md-7 m-0">
+        <section class="px-3 mx-auto wrapper w-100">
+            <div class="py-2 row align-items-center">
+                <div class="m-0 col-md-7">
                     <div class="row">
                         <div class="col-md-auto col-6">
                             <h6><b>Edinburgh:</b> 0131 337 9990</h6>
@@ -97,7 +103,7 @@
                     </div>
                 </div>
                 <div class="col-md-5">
-                    <ul class="text-uppercase d-none d-md-flex d-lg-flex justify-content-end m-0">
+                    <ul class="m-0 text-uppercase d-none d-md-flex d-lg-flex justify-content-end">
                         <li class="pe-3"><a class="text-decoration-none black text-dark" href="/login">My
                                 Account</a></li>
                         <li class="pe-3"><a class="text-decoration-none black text-dark" href="/">My
@@ -107,14 +113,14 @@
                     </ul>
                 </div>
             </div>
-            {{-- <div class="row d-md-none d-lg-none mt-5 px-5">
-                <div class="col-6 p-0 text-end">
+            {{-- <div class="px-5 mt-5 row d-md-none d-lg-none">
+                <div class="p-0 col-6 text-end">
                     <div class="dropdown">
-                        <button class="btn btn-secondary rounded-0 bg-black dropdown-toggle w-100 menu-btn"
+                        <button class="bg-black btn btn-secondary rounded-0 dropdown-toggle w-100 menu-btn"
                             type="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <img class="menu-icon" src="image/menu(1).png" alt="">
                         </button>
-                        <ul class="dropdown-menu slider w-75 p-0">
+                        <ul class="p-0 dropdown-menu slider w-75">
                             <li><a class="dropdown-item" href="#">MY ACCOUNT</a></li>
                             <li><a class="dropdown-item" href="#">MY WISHLIST</a></li>
                             <li><a class="dropdown-item" href="#">LOG IN</a></li>
@@ -123,17 +129,17 @@
                 </div>
                 <p>hello</p>
 
-                <div class="col-6 p-0">
+                <div class="p-0 col-6">
                     <div class="dropdown">
-                        <button class="btn btn-secondary rounded-0 bg-black dropdown-toggle w-100" type="button"
-                            data-bs-toggle="dropdown" aria-expanded="false"><img class="menu-icon1 p-1 "
+                        <button class="bg-black btn btn-secondary rounded-0 dropdown-toggle w-100" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="false"><img class="p-1 menu-icon1 "
                                 src="image/cart.png" alt=""></button>
 
-                        <ul class="dropdown-menu  p-0">
-                            <li class="px-3 py-1"><a class="dropdown-item p-0" href="#">You have no
+                        <ul class="p-0 dropdown-menu">
+                            <li class="px-3 py-1"><a class="p-0 dropdown-item" href="#">You have no
                                     items in your</a>
                             </li>
-                            <li class="px-3 py-1"><a class="dropdown-item p-0" href="#">shopping
+                            <li class="px-3 py-1"><a class="p-0 dropdown-item" href="#">shopping
                                     cart.</a></li>
                         </ul>
                     </div>
@@ -172,7 +178,7 @@
         SCROLL BUTTON START
     ==============================-->
     <div class="fp__scroll_btn">
-        Go To Top
+        ^
     </div>
     <!--=============================
         SCROLL BUTTON END
