@@ -30,12 +30,14 @@
             </div>
             <div class="row my-5">
                 <div class="col-md-4">
-                    <div>
-                        <a href="/consultations">
+                    <a href="/consultations">
+                        <div class="position-relative">
                             <img class="rounded-3" src="{{ asset('uploads/book-a-consultation.jpg') }}" alt="">
-                        </a>
-                        <h4 class="mt-3">Book Free Consultation</h4>
-                    </div>
+                            <h4
+                                class="mt-3 position-absolute w-100 h-100 d-flex top-0 start-0 justify-content-center align-items-center">
+                                Book Free Consultation</h4>
+                        </div>
+                    </a>
                 </div>
                 <div class="col-md-4">
                     <div>
