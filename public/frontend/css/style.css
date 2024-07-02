@@ -286,9 +286,9 @@ button {
     z-index: 0 !important;
 }
 
-.slick-list{
+/* .slick-list{
     margin-left: .5rem !important;
-}
+} */
 
 .droap_menu{
     box-shadow: var(--boxShadow);
