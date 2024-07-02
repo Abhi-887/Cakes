@@ -34,9 +34,14 @@
 <!--=============================
                                                 MENU DETAILS START
                                                 ==============================-->
-<?php
-dd($product);
-?>
+
+<pre>
+    <?php
+    print_r($product);
+    ?>
+    </pre>
+
+
 {{-- <div class="my-4">
     <div class="row">
         <input type="hidden" name="product_id" value="{{ $product->id }}">
