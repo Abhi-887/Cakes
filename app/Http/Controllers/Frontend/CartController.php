@@ -1,9 +1,9 @@
 <?php
+
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
-use App\Models\ProductVariantItem; // Import the ProductVariantItem model
 use Cart;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -14,19 +14,9 @@ use Illuminate\View\View;
 
 class CartController extends Controller
 {
-<<<<<<< HEAD
+
     function index(): View
     {
-        return view('frontend.pages.cart-view');
-    }
-
-    function addToCart(Request $request)
-    {
-        $product = Product::with(['productSizes', 'productOptions'])->findOrFail($request->product_id);
-        if ($product->quantity < $request->quantity) {
-=======
-
-    function index() : View {
         return view('frontend.pages.cart-view');
     }
 
@@ -36,41 +26,11 @@ class CartController extends Controller
     function addToCart(Request $request)
     {
         $product = Product::with(['productSizes', 'productOptions'])->findOrFail($request->product_id);
-        if($product->quantity < $request->quantity){
->>>>>>> parent of 5d5f89f9 (s)
+        if ($product->quantity < $request->quantity) {
             throw ValidationException::withMessages(['Quantity is not available!']);
         }
 
         try {
-<<<<<<< HEAD
-            $basePrice = $product->offer_price > 0 ? $product->offer_price : $product->price;
-            $totalPrice = $basePrice;
-            $variantDetails = [];
-
-            // Process selected variant items
-            $selectedVariants = $request->input('variants_items', []);
-            foreach ($selectedVariants as $variantId) {
-                $variantItem = ProductVariantItem::find($variantId);
-                if ($variantItem) {
-                    $totalPrice += $variantItem->price;
-                    $variantDetails[] = [
-                        'id' => $variantItem->id,
-                        'name' => $variantItem->name,
-                        'price' => $variantItem->price
-                    ];
-                }
-            }
-
-            $totalPrice *= $request->quantity;
-
-            $options = [
-                'product_variants' => $variantDetails,
-                'product_info' => [
-                    'image' => $product->thumb_image,
-                    'slug' => $product->slug
-                ]
-            ];
-=======
             $productSize = $product->productSizes->where('id', $request->product_size)->first();
             $productOptions = $product->productOptions->whereIn('id', $request->product_option);
 
@@ -98,17 +58,12 @@ class CartController extends Controller
                     'price' => $option->price
                 ];
             }
->>>>>>> parent of 5d5f89f9 (s)
 
             Cart::add([
                 'id' => $product->id,
                 'name' => $product->name,
                 'qty' => $request->quantity,
-<<<<<<< HEAD
-                'price' => $totalPrice / $request->quantity, // Store price per item
-=======
                 'price' => $product->offer_price > 0 ? $product->offer_price : $product->price,
->>>>>>> parent of 5d5f89f9 (s)
                 'weight' => 0,
                 'options' => $options
             ]);
@@ -120,16 +75,13 @@ class CartController extends Controller
         }
     }
 
-<<<<<<< HEAD
     function getCartProduct()
     {
-=======
-    function getCartProduct() {
->>>>>>> parent of 5d5f89f9 (s)
         return view('frontend.layouts.ajax-files.sidebar-cart-item')->render();
     }
 
-    function cartProductRemove($rowId) {
+    function cartProductRemove($rowId)
+    {
         try {
             Cart::remove($rowId);
             return response([
@@ -138,20 +90,21 @@ class CartController extends Controller
                 'cart_total' => cartTotal(),
                 'grand_cart_total' => grandCartTotal()
             ], 200);
-        }catch(\Exception $e){
+        } catch (\Exception $e) {
             return response(['status' => 'error', 'message' => 'Sorry something went wrong!'], 500);
         }
     }
 
-    function cartQtyUpdate(Request $request) : Response {
+    function cartQtyUpdate(Request $request): Response
+    {
         $cartItem = Cart::get($request->rowId);
         $product = Product::findOrFail($cartItem->id);
 
-        if($product->quantity < $request->qty){
+        if ($product->quantity < $request->qty) {
             return response(['status' => 'error', 'message' => 'Quantity is not available!', 'qty' => $cartItem->qty]);
         }
 
-        try{
+        try {
             $cart = Cart::update($request->rowId, $request->qty);
             return response([
                 'status' => 'success',
@@ -161,13 +114,14 @@ class CartController extends Controller
                 'grand_cart_total' => grandCartTotal()
             ], 200);
 
-        }catch(\Exception $e){
+        } catch (\Exception $e) {
             logger($e);
             return response(['status' => 'error', 'message' => 'Something went wrong please reload the page.'], 500);
         }
     }
 
-    function cartDestroy() {
+    function cartDestroy()
+    {
         Cart::destroy();
         session()->forget('coupon');
         return redirect()->back();

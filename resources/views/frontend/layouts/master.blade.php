@@ -178,7 +178,7 @@
         SCROLL BUTTON START
     ==============================-->
     <div class="fp__scroll_btn">
-        ^
+        Go To Top
     </div>
     <!--=============================
         SCROLL BUTTON END
