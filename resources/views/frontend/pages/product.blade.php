@@ -34,26 +34,30 @@
                         <div class="position-relative">
                             <img class="rounded-3" src="{{ asset('uploads/book-a-consultation.jpg') }}" alt="">
                             <h4
-                                class="mt-3 position-absolute w-100 h-100 d-flex top-0 start-0 justify-content-center align-items-center">
+                                class="position-absolute w-100 h-100 d-flex top-0 start-0 justify-content-center align-items-center text-light fw-semibold">
                                 Book Free Consultation</h4>
                         </div>
                     </a>
                 </div>
                 <div class="col-md-4">
-                    <div>
-                        <a href="/wedding-cake-deposit">
+                    <a href="/wedding-cake-deposit">
+                        <div class="position-relative">
                             <img class="rounded-3" src="{{ asset('uploads/secure-wedding-date.jpg') }}" alt="">
-                        </a>
-                        <h4 class="mt-3">Secure Your Wedding Date Here</h4>
-                    </div>
+                            <h4
+                                class="position-absolute w-100 h-100 d-flex top-0 start-0 justify-content-center align-items-center text-light fw-semibold">
+                                Secure Your Wedding Date Here</h4>
+                        </div>
+                    </a>
                 </div>
                 <div class="col-md-4">
-                    <div>
-                        <a href="">
+                    <a href="">
+                        <div class="position-relative">
                             <img class="rounded-3" src="{{ asset('uploads/delicious-flavour-cake.jpg') }}" alt="">
-                        </a>
-                        <h4 class="mt-3">Delicious Flavour Cake</h4>
-                    </div>
+                            <h4
+                                class="position-absolute w-100 h-100 d-flex top-0 start-0 justify-content-center align-items-center text-light fw-semibold">
+                                Delicious Flavour Cake</h4>
+                        </div>
+                    </a>
                 </div>
             </div>
             <form class="searchformbackground-light-gray p-3 rounded-pill" method="GET"
