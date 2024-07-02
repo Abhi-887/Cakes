@@ -266,8 +266,7 @@
                 <div class="mt-4">
                     <h4 class="fw-bold">Follow Us:</h4>
                     <div class="social-icons contact-social-icons mt-3">
-                        <a class="me-2" href="#"><i
-                                class="fa-brands fa-square-facebook fs-3 color-dark-gray"></i></a>
+                        <a class="me-2" href="#"><i class="fab fa-facebook fs-3 color-dark-gray"></i></a>
                         <a class="me-2" href="#"><i class="fab fa-google-plus-g fs-3 color-dark-gray"></i></a>
                         <a class="me-2" href="#"><i class="fab fa-twitter fs-3 color-dark-gray"></i></a>
                     </div>
