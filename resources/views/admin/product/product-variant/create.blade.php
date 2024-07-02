@@ -4,7 +4,7 @@
 <!-- Main Content -->
 <section class="section">
     <div class="section-header">
-        <h1>Product Variant</h1>
+        <h1>Product Attributes</h1>
     </div>
 
     <div class="section-body">
@@ -13,7 +13,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Create Variant</h4>
+                        <h4>Create attribute</h4>
 
                     </div>
                     <div class="card-body">
@@ -39,16 +39,7 @@
                             <div class="form-group">
                                 <label for="attributeType">Attribute Type</label>
                                 <select id="attributeType" class="form-control" name="attribute_type">
-                                    {{-- <option value="text">Text</option>
-                                    <option value="dropdown">Dropdown</option>
-                                    <option value="textarea">Text Area</option>
-                                    <option value="radio">Radio Box</option>
-                                    <option value="checkbox">Checkbox</option>
-                                    <option value="shortorder">Short Order</option>
-                                    <option value="isrequired">Required</option>
-                                    <option value="checkbox">Checkbox</option> --}}
 
-                                    {{-- <option value="0">--Please Select--</option> --}}
                                     <optgroup label="Text">
                                         <option value="field">Field</option>
                                         <option value="area">Area</option>

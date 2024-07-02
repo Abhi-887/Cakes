@@ -45,7 +45,7 @@ class ProductVariantDataTable extends DataTable
                 return $button;
             })
 
-            ->rawColumns(['attribute_type', 'status', 'action'])
+            ->rawColumns(['status', 'action'])
             ->setRowId('id');
     }
 
