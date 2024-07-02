@@ -417,7 +417,7 @@
         let quantity = parseFloat($('#v_quantity').val());
 
         // Calculate selected attributes price
-        $('select[name="variants_items[]"], input[name="variants_items[]"]:checked, input[name="variants_items[{{ $variant->id }}][]"]:checked').each(function() {
+        $('select[name="variants_items[]"], input[name="variants_items[]"]:checked, input[name^="variants_items["]:checked').each(function() {
             let price = 0;
             if ($(this).is('select')) {
                 price = parseFloat($(this).find('option:selected').data('price')) || 0;
@@ -452,7 +452,7 @@
     });
 
     // Event handlers for attribute changes
-    $('select[name="variants_items[]"], input[name="variants_items[]"], input[name="variants_items[{{ $variant->id }}][]"]').on('change', function() {
+    $('select[name="variants_items[]"], input[name="variants_items[]"], input[name^="variants_items["]').on('change', function() {
         v_updateTotalPrice();
     });
 
@@ -504,6 +504,7 @@
     // Initial price calculation
     v_updateTotalPrice();
 });
+
 
 </script>
 @endpush
