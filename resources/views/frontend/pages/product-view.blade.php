@@ -395,6 +395,8 @@
 <script>
     $(document).ready(function() {
     // Initial setup
+    $('.v_product_size').prop('checked', false);
+    $('.v_product_option').prop('checked', false);
     $('#v_quantity').val(1);
 
     // Function to update the total price based on selected options
@@ -404,13 +406,9 @@
         let quantity = parseFloat($('#v_quantity').val());
 
         // Calculate selected attributes price
-        $('select[name="variants_items[]"], input[name="variants_items[]"]:checked, input[name="variants_items[{{ $variant->id }}][]"]:checked').each(function() {
-            if ($(this).is(':checked') || $(this).is('option:selected')) {
-                let priceText = $(this).is('option:selected') ? $(this).text() : $(this).next('label').text();
-                let priceMatch = priceText.match(/\$(\d+(\.\d+)?)/);
-                let price = priceMatch ? parseFloat(priceMatch[1]) : 0;
-                selectedAttributesPrice += price;
-            }
+        $('select[name="variants_items[]"], input[name="variants_items[]"]:checked, input[name="variants_items[][]"]:checked').each(function() {
+            let price = parseFloat($(this).find('option:selected').text().match(/\$(\d+(\.\d+)?)/)?.[1] || $(this).next('label').text().match(/\$(\d+(\.\d+)?)/)?.[1] || 0);
+            selectedAttributesPrice += price;
         });
 
         // Calculate the total price
@@ -438,7 +436,7 @@
     });
 
     // Event handlers for attribute changes
-    $('select[name="variants_items[]"], input[name="variants_items[]"], input[name="variants_items[{{ $variant->id }}][]"]').on('change', function() {
+    $('select[name="variants_items[]"], input[name="variants_items[]"], input[name="variants_items[][]"]').on('change', function() {
         v_updateTotalPrice();
     });
 
@@ -489,7 +487,6 @@
 
     // Initial price calculation
     v_updateTotalPrice();
-});
-
+  });
 </script>
 @endpush
