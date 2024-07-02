@@ -75,10 +75,10 @@
             <form class="subscribe_form position-relative row justify-content-center">
                 @csrf
                 <div class="row justify-content-center">
-                    <div class="col-xl-4 ps-xl-5">
+                    <div class="col-md-4 ps-xl-5">
                         <input class="form-control" type="text" name="email" placeholder="Email Address">
                     </div>
-                    <div class="col-xl-2 text-center text-lg-start mt-3 mt-lg-0">
+                    <div class="col-md-2 text-center text-lg-start mt-3 mt-lg-0">
                         <button type="submit"
                             class="px-5 text-white border border-0 subscribe_btn background-light-gray btn btn-dark subscribe">Subscribe
                         </button>
