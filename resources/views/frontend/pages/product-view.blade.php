@@ -96,6 +96,7 @@
                         <input type="hidden" name="base_price" class="v_base_price"
                             value="{{ $product->offer_price > 0 ? $product->offer_price : $product->price }}">
                         <input type="hidden" name="product_id" value="{{ $product->id }}">
+                        <input type="hidden" name="total_price" id="v_hidden_total_price">
 
                         <div class="selectbox">
                             <div class="row">
@@ -202,6 +203,7 @@
                             @endif
                             <li><a class="wishlist" href="#"><i class="far fa-heart"></i></a></li>
                         </ul>
+
                     </form>
                 </div>
             </div>
@@ -430,6 +432,7 @@
         // Calculate the total price
         let totalPrice = (basePrice + selectedAttributesPrice) * quantity;
         $('#v_total_price').text("{{ config('settings.site_currency_icon') }}" + totalPrice.toFixed(2));
+        $('#v_hidden_total_price').val(totalPrice.toFixed(2)); // Update hidden input with total price
     }
 
     // Event handlers for increment and decrement buttons
@@ -504,6 +507,7 @@
     // Initial price calculation
     v_updateTotalPrice();
 });
+
 
 
 </script>
