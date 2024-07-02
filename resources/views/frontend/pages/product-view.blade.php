@@ -192,6 +192,15 @@
                             </div>
                         </div>
 
+                        <ul class="flex-wrap details_button_area d-flex">
+                            @if ($product->quantity === 0)
+                            <li><a class="common_btn bg-danger" href="javascript:;">Stock Out</a></li>
+                            @else
+                            <li><a class="common_btn v_submit_button" href="#">Add To Cart</a></li>
+                            @endif
+                            <li><a class="wishlist" href="#"><i class="far fa-heart"></i></a></li>
+                        </ul>
+
                         <div class="row wow fadeInUp" data-wow-duration="1s">
                             <div class="fp__menu_description_area mt_100 xs_mt_70">
                                 <ul class="nav nav-pills" id="pills-tab" role="tablist">
@@ -384,6 +393,8 @@
                             </div>
                             @endif
                         </div>
+
+
 </section>
 
 
