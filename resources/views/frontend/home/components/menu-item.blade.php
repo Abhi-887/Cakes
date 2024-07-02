@@ -46,6 +46,11 @@
         color: #4b637f !important;
         font-size: 35px !important;
     }
+
+    .popularfood .slick-prev::before {
+        position: absolute;
+        right: 1rem !important;
+    }
 </style>
 
 <div class="container pt-5">
