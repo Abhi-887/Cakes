@@ -11,24 +11,27 @@
 <footer>
     <div class="px-2 mx-auto wrapper w-100">
         <div class="">
-            <div class="py-5 row">
-                <div class="col-lg-3 col-md-12 footer-info">
+            <div class="py-5 row gx-5"> <!-- Added gx-5 for equal gaps -->
+                <div class="col-lg-3 col-md-6 mb-4 footer-info">
+                    <!-- Added mb-4 for equal bottom margin on smaller screens -->
                     <h5 class="mt-2 mb-1 text-black mb-xl-3 fw-normal mt-xl-0">{{ @$footerInfo->name }}</h5>
-                    <div class="">{!! @$footerInfo->address !!}</div>
+                    <div>{!! @$footerInfo->address !!}</div>
                     <div><strong class="me-2">Email:</strong><span class="text-muted">{{ @$footerInfo->email }}</span>
                     </div>
                     <div><strong class="me-2">Phone:</strong><span class="text-muted">{{ @$footerInfo->phone }}</span>
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-12 footer-info">
+                <div class="col-lg-3 col-md-6 mb-4 footer-info">
+                    <!-- Added mb-4 for equal bottom margin on smaller screens -->
                     <h5 class="mt-2 mb-1 text-black mb-xl-3 fw-normal mt-xl-0">{{ @$footerInfoTwo->name }}</h5>
-                    <div class="">{!! @$footerInfoTwo->address !!}</div>
+                    <div>{!! @$footerInfoTwo->address !!}</div>
                     <div><strong class="me-2">Email:</strong>{{ @$footerInfoTwo->email }}</div>
                     <div><strong class="me-2">Phone:</strong>{{ @$footerInfoTwo->phone }}</div>
                 </div>
 
-                <div class="col-xl-2 lh-lg footer-hover">
+                <div class="col-lg-2 col-md-6 mb-4 lh-lg footer-hover">
+                    <!-- Added mb-4 for equal bottom margin on smaller screens -->
                     <h5 class="mt-2 mb-1 text-black mb-xl-3 fw-normal mt-xl-0">
                         {{ @$footerTitle->footer_grid_two_title }}</h5>
                     <div class="d-none d-xl-inline d-lg-none d-md-none d-sm-none">
@@ -39,7 +42,8 @@
                     </div>
                 </div>
 
-                <div class="col-xl-2 lh-lg footer-hover">
+                <div class="col-lg-2 col-md-6 mb-4 lh-lg footer-hover">
+                    <!-- Added mb-4 for equal bottom margin on smaller screens -->
                     <h5 class="mt-3 mb-0 text-black mb-xl-3 fw-normal mt-xl-0">
                         {{ @$footerTitle->footer_grid_three_title }}</h5>
                     <div class="d-none d-xl-inline d-lg-none d-md-none">
@@ -50,7 +54,8 @@
                     </div>
                 </div>
 
-                <div class="col-xl-2 lh-lg footer-hover">
+                <div class="col-lg-2 col-md-6 mb-4 lh-lg footer-hover">
+                    <!-- Added mb-4 for equal bottom margin on smaller screens -->
                     <h5 class="mt-3 mb-0 text-black mb-xl-3 fw-normal mt-xl-0">
                         {{ @$footerTitle->footer_grid_four_title }}</h5>
                     <div class="d-none d-xl-inline d-lg-none d-md-none">
@@ -61,6 +66,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
         <hr class="pb-4">
         <div class="container">
