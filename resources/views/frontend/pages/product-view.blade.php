@@ -38,7 +38,7 @@
 
 
 
-<div class="wsus__selectbox">
+<div class="selectbox">
     <div class="row">
         <input type="hidden" name="product_id" value="{{ $product->id }}">
 
@@ -48,44 +48,54 @@
 
         @foreach ($variants as $variant)
         <div class="col-xl-6 col-sm-6">
-            <h5 class="mb-2">
+            <h6 class="my-4">
                 {{ $variant->name }}:
                 @if ($variant->isrequired)
                 <span style="color: red;">*</span>
                 @endif
-            </h5>
+            </h6>
 
             @switch($variant->attribute_type)
             @case('field')
-            <input type="text" name="variants_items[]" class="form-control" {{ $variant->isrequired ? 'required' : ''
-            }}>
+            <div class="mt-2 fp__contact_form_input form-group">
+                <input type="text" name="variants_items[]" class="form-control" placeholder="Enter {{ $variant->name }}"
+                    {{ $variant->isrequired ? 'required' : '' }}>
+            </div>
             @break
 
             @case('area')
-            <textarea name="variants_items[]" class="form-control" {{
-                $variant->isrequired ? 'required' : '' }}></textarea>
+            <div class="my-4 fp__contact_form_input textarea">
+                <span><i class="fal fa-book"></i></span>
+                <textarea rows="8" placeholder="Share your {{ $variant->name }}" name="variants_items[]" {{
+                    $variant->isrequired ? 'required' : '' }}></textarea>
+            </div>
             @break
 
             @case('dropdown')
-            <select class="form-control" name="variants_items[]" {{ $variant->isrequired ? 'required' : '' }}>
-                @foreach ($variant->productVariantItems as $variantItem)
-                @if ($variantItem->status != 0)
-                <option value="{{ $variantItem->id }}" {{ $variantItem->is_default == 1 ? 'selected' : '' }}>
-                    {{ $variantItem->name }} (${{ $variantItem->price }})
-                </option>
-                @endif
-                @endforeach
-            </select>
+            <div class="mt-2 fp__contact_form_input form-group">
+                <span><i class="far fa-caret-square-down" aria-hidden="true"></i></span>
+                <select class="form-control" name="variants_items[]" {{ $variant->isrequired ? 'required' : '' }}>
+                    <option value="" selected="">-- Please Select --</option>
+                    @foreach ($variant->productVariantItems as $variantItem)
+                    @if ($variantItem->status != 0)
+                    <option value="{{ $variantItem->id }}" {{ $variantItem->is_default == 1 ? 'selected' : '' }}>
+                        {{ $variantItem->name }} (${{ $variantItem->price }})
+                    </option>
+                    @endif
+                    @endforeach
+                </select>
+            </div>
             @break
 
             @case('radio')
             @foreach ($variant->productVariantItems as $variantItem)
             @if ($variantItem->status != 0)
-            <div class="form-check">
-                <input type="radio" name="variants_items[{{ $variant->id }}]" value="{{ $variantItem->id }}"
-                    class="form-check-input" {{ $variantItem->is_default == 1 ? 'checked' : '' }} {{
-                $variant->isrequired ? 'required' : '' }}>
-                <label class="form-check-label">{{ $variantItem->name }} (${{ $variantItem->price }})</label>
+            <div class="mt-2 fp__contact_form_input form-group">
+                <input class="w-0 me-2" type="radio" name="variants_items[{{ $variant->id }}]"
+                    value="{{ $variantItem->id }}" id="variantItem_{{ $variantItem->id }}" {{ $variantItem->is_default
+                == 1 ? 'checked' : '' }} {{ $variant->isrequired ? 'required' : '' }}>
+                <label for="variantItem_{{ $variantItem->id }}">{{ $variantItem->name }} (${{ $variantItem->price
+                    }})</label>
             </div>
             @endif
             @endforeach
@@ -94,52 +104,67 @@
             @case('checkbox')
             @foreach ($variant->productVariantItems as $variantItem)
             @if ($variantItem->status != 0)
-            <div class="form-check">
-                <input type="checkbox" name="variants_items[{{ $variant->id }}][]" value="{{ $variantItem->id }}"
-                    class="form-check-input" {{ $variant->isrequired ? 'required' : '' }}>
-                <label class="form-check-label">{{ $variantItem->name }} (${{ $variantItem->price }})</label>
+            <div class="my-4">
+                <input class="w-0 me-2" type="checkbox" name="variants_items[{{ $variant->id }}][]"
+                    value="{{ $variantItem->id }}" id="variantItem_{{ $variantItem->id }}" {{ $variant->isrequired ?
+                'required' : '' }}>
+                <label for="variantItem_{{ $variantItem->id }}">{{ $variantItem->name }} (${{ $variantItem->price
+                    }})</label>
             </div>
             @endif
             @endforeach
             @break
 
             @case('multipleselect')
-            <select class="form-control" name="variants_items[{{ $variant->id }}][]" multiple {{ $variant->isrequired ?
-                'required' : '' }}>
-                @foreach ($variant->productVariantItems as $variantItem)
-                @if ($variantItem->status != 0)
-                <option value="{{ $variantItem->id }}" {{ $variantItem->is_default == 1 ? 'selected' : '' }}>
-                    {{ $variantItem->name }} (${{ $variantItem->price }})
-                </option>
-                @endif
-                @endforeach
-            </select>
+            <div class="mt-2 fp__contact_form_input form-group">
+                <span><i class="far fa-caret-square-down" aria-hidden="true"></i></span>
+                <select class="form-control" name="variants_items[{{ $variant->id }}][]" multiple {{
+                    $variant->isrequired ? 'required' : '' }}>
+                    <option value="" selected="">-- Please Select --</option>
+                    @foreach ($variant->productVariantItems as $variantItem)
+                    @if ($variantItem->status != 0)
+                    <option value="{{ $variantItem->id }}" {{ $variantItem->is_default == 1 ? 'selected' : '' }}>
+                        {{ $variantItem->name }} (${{ $variantItem->price }})
+                    </option>
+                    @endif
+                    @endforeach
+                </select>
+            </div>
             @break
 
             @case('date')
-            <input type="date" name="variants_items[]" class="form-control" {{ $variant->isrequired ? 'required' : ''
-            }}>
+            <div class="mt-2 fp__contact_form_input form-group">
+                <input type="date" name="variants_items[]" class="form-control" {{ $variant->isrequired ? 'required' :
+                '' }}>
+            </div>
             @break
 
             @case('datetime')
-            <input type="datetime-local" name="variants_items[]" class="form-control" {{ $variant->isrequired ?
-            'required' : '' }}>
+            <div class="mt-2 fp__contact_form_input form-group">
+                <input type="datetime-local" name="variants_items[]" class="form-control" {{ $variant->isrequired ?
+                'required' : '' }}>
+            </div>
             @break
 
             @case('time')
-            <input type="time" name="variants_items[]" class="form-control" {{ $variant->isrequired ? 'required' : ''
-            }}>
+            <div class="mt-2 fp__contact_form_input form-group">
+                <input type="time" name="variants_items[]" class="form-control" {{ $variant->isrequired ? 'required' :
+                '' }}>
+            </div>
             @break
 
             @default
-            <input type="text" name="variants_items[]" class="form-control" {{ $variant->isrequired ? 'required' : ''
-            }}>
+            <div class="mt-2 fp__contact_form_input form-group">
+                <input type="text" name="variants_items[]" class="form-control" placeholder="Enter {{ $variant->name }}"
+                    {{ $variant->isrequired ? 'required' : '' }}>
+            </div>
             @endswitch
 
         </div>
         @endforeach
     </div>
 </div>
+
 
 
 
