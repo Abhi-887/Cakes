@@ -48,8 +48,8 @@
     }
 
     .popularfood .slick-prev::before {
-        position: absolute;
-        right: 1rem !important;
+        position: absolute !important;
+        right: 0rem !important;
     }
 </style>
 
