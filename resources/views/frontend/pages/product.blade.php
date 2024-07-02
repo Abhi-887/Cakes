@@ -32,9 +32,7 @@
                 <div class="col-md-4">
                     <div>
                         <a href="/consultations">
-                            <img class="rounded-3"
-                                src="https://img.freepik.com/free-photo/couple-cafe-looking-smartphone-screen_23-2147826834.jpg?t=st=1719837254~exp=1719840854~hmac=15c7d8cafe8add60ed237d56c93ba7960b4a813b23ec853c77ea4a37ef4e5a18&w=1380"
-                                alt="">
+                            <img class="rounded-3" src="{{ asset('uploads/book-a-consultation.jpg') }}" alt="">
                         </a>
                         <h4 class="mt-3">Book Free Consultation</h4>
                     </div>
@@ -42,9 +40,7 @@
                 <div class="col-md-4">
                     <div>
                         <a href="/wedding-cake-deposit">
-                            <img class="rounded-3"
-                                src="https://img.freepik.com/free-photo/side-view-bride-wearing-wedding-ring_23-2149617163.jpg?t=st=1719837397~exp=1719840997~hmac=5d5a8bfccc56431f4d85a9160271a843815bd7b32d340bc7366e4b659feea537&w=1380"
-                                alt="">
+                            <img class="rounded-3" src="{{ asset('uploads/secure-wedding-date.jpg') }}" alt="">
                         </a>
                         <h4 class="mt-3">Secure Your Wedding Date Here</h4>
                     </div>
@@ -52,11 +48,9 @@
                 <div class="col-md-4">
                     <div>
                         <a href="">
-                            <img class="rounded-3"
-                                src="https://img.freepik.com/free-photo/close-uf-delicious-souffle-dessert-decorated-with-raspberies-fresh-mint-leaves-served-white-square-plate-photo-was-taken-black-wall-tasty-sweet-buffet-catering_7502-5866.jpg?t=st=1719837466~exp=1719841066~hmac=d62696a58bf5362289af12753885c687f1d111b2b0841b9363263bded96130c9&w=1380"
-                                alt="">
+                            <img class="rounded-3" src="{{ asset('uploads/delicious-flavour-cake.jpg') }}" alt="">
                         </a>
-                        <h4 class="mt-3">Delisious Flavour Cake</h4>
+                        <h4 class="mt-3">Delicious Flavour Cake</h4>
                     </div>
                 </div>
             </div>
