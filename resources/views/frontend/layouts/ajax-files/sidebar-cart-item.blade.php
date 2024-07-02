@@ -2,14 +2,16 @@
 <input type="hidden" value="{{ count(Cart::content()) }}" id="cart_product_count">
 
 @foreach (Cart::content() as $cartProduct)
-<pre>
-<?php
-print_r($cartProduct);
-?></pre>
+
 <li>
     <div class="menu_cart_img">
         <img src="{{ asset($cartProduct->options->product_info['image']) }}" alt="menu" class="img-fluid w-100">
     </div>
+
+    <pre>
+        <?php
+        print_r($cartProduct);
+        ?></pre>
     <div class="menu_cart_text">
         <a class="title" href="{{ route('product.show', $cartProduct->options->product_info['slug']) }}">{!!
             $cartProduct->name !!}
