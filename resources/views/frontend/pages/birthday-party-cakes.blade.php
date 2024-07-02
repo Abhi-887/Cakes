@@ -2,9 +2,9 @@
 
 @section('content')
     <!--=============================
-        BREADCRUMB START
-    ==============================-->
-    <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
+            BREADCRUMB START
+        ==============================-->
+    <section class="fp__breadcrumb py-5" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
                 <div class="fp__breadcrumb_text">
@@ -17,5 +17,4 @@
             </div>
         </div>
     </section>
-	
-@endsection	
+@endsection

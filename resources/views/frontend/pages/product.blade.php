@@ -22,7 +22,7 @@
         }
     </style>
 
-    <section class="fp__search_menu pt-lg-5 pt-0">
+    <section class="fp__search_menu py-lg-5 py-0">
         <div class="container">
             <div class="">
                 <h1 class="fw-semibold">{{ $category->name }}</h1>
