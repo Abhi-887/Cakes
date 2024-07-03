@@ -75,8 +75,8 @@
         }
     </style>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -91,11 +91,11 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    BREADCRUMB END
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                BREADCRUMB END
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
     <!--=============================
-                                                                                                                                                                                            MENU DETAILS START
-                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                        MENU DETAILS START
+                                                                                                                                                                                                        ==============================-->
 
 
     <section class="pt-5 mt-5 fp__menu_details">
@@ -455,8 +455,8 @@
                 @endif
             </div> --}}
 
-            <div class="related-product-slider related-product">
-                <div class="row mt-5 mx-2">
+            <div class="related-product">
+                <div class="related-product-slider mt-5 mx-2">
                     @if (count($relatedProducts) > 0)
                         <div class="">
                             <h2>Related Item</h2>
@@ -525,7 +525,7 @@
 @push('scripts')
     <script>
         $(document).ready(function() {
-            $('.testimonial-slider .row').slick({
+            $('.related-product-slider .row').slick({
                 dots: true,
                 arrows: true,
                 infinite: true,
