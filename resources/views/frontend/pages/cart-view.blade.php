@@ -21,7 +21,6 @@
                 BREADCRUMB END
             ==============================-->
 
-
 <!--============================
                 CART VIEW START
             ==============================-->
@@ -34,35 +33,28 @@
                         <table>
                             <tbody>
                                 <tr>
-                                    <th class="fp__pro_img">
-                                        Image
-                                    </th>
-
-                                    <th class="fp__pro_name">
-                                        details
-                                    </th>
-
-                                    <th class="fp__pro_status">
-                                        price
-                                    </th>
-
-                                    <th class="fp__pro_select">
-                                        quantity
-                                    </th>
-
-                                    <th class="fp__pro_tk">
-                                        total
-                                    </th>
-
+                                    <th class="fp__pro_img">Image</th>
+                                    <th class="fp__pro_name">Details</th>
+                                    <th class="fp__pro_status">Price</th>
+                                    <th class="fp__pro_select">Quantity</th>
+                                    <th class="fp__pro_tk">Total</th>
                                     <th class="fp__pro_icon">
-                                        <a class="clear_all" href="{{ route('cart.destroy') }}">clear all</a>
+                                        <a class="clear_all" href="{{ route('cart.destroy') }}">Clear All</a>
                                     </th>
                                 </tr>
 
                                 @foreach (Cart::content() as $product)
+                                @php
+                                $productTotal = $product->price; // Base product price
+
+                                foreach ($product->options->product_variants as $variant) {
+                                $productTotal += $variant['item_price'];
+                                }
+                                @endphp
                                 <tr>
-                                    <td class="fp__pro_img"><img src="{{ $product->options->product_info['image'] }}"
-                                            alt="product" class="img-fluid w-100">
+                                    <td class="fp__pro_img">
+                                        <img src="{{ $product->options->product_info['image'] }}" alt="product"
+                                            class="img-fluid w-100">
                                     </td>
 
                                     <td class="fp__pro_name">
@@ -70,12 +62,15 @@
                                             $product->name }}</a>
                                         <span>{{ @$product->options->product_size['name'] }}
                                             {{ @$product->options->product_size['price'] ? '(' .
-                                            currencyPosition(@$product->options->product_size['price']) . ')' : ''
-                                            }}</span>
+                                            currencyPosition(@$product->options->product_size['price']) . ')' : '' }}
+                                        </span>
                                         @foreach ($product->options->product_options as $option)
                                         <p>{{ $option['name'] }} ({{ currencyPosition($option['price']) }})</p>
                                         @endforeach
-
+                                        @foreach ($product->options->product_variants as $variant)
+                                        <p>{{ $variant['variant_name'] }}: {{ $variant['item_name'] }} ({{
+                                            currencyPosition($variant['item_price']) }})</p>
+                                        @endforeach
                                     </td>
 
                                     <td class="fp__pro_status">
@@ -94,12 +89,12 @@
                                     </td>
 
                                     <td class="fp__pro_tk">
-                                        <h6 class="produt_cart_total">
-                                            {{ currencyPosition(productTotal($product->rowId)) }}</h6>
+                                        <h6 class="product_cart_total">{{ currencyPosition($productTotal *
+                                            $product->qty) }}</h6>
                                     </td>
 
                                     <td class="fp__pro_icon">
-                                        <a href="#" class="reomove_cart_product" data-id="{{ $product->rowId }}"><i
+                                        <a href="#" class="remove_cart_product" data-id="{{ $product->rowId }}"><i
                                                 class="far fa-times"></i></a>
                                     </td>
                                 </tr>
@@ -117,17 +112,17 @@
             </div>
             <div class="col-lg-4 wow fadeInUp" data-wow-duration="1s">
                 <div class="fp__cart_list_footer_button">
-                    <h6>total cart</h6>
-                    <p>subtotal: <span id="subtotal">{{ currencyPosition(cartTotal()) }}</span></p>
-                    <p>delivery: <span>$00.00</span></p>
-                    <p>discount: <span id="discount">
+                    <h6>Total Cart</h6>
+                    <p>Subtotal: <span id="subtotal">{{ currencyPosition(cartTotal()) }}</span></p>
+                    <p>Delivery: <span>$00.00</span></p>
+                    <p>Discount: <span id="discount">
                             @if (isset(session()->get('coupon')['discount']))
                             {{ config('settings.site_currency_icon') }} {{ session()->get('coupon')['discount'] }}
                             @else
                             {{ config('settings.site_currency_icon') }}0
                             @endif
                         </span></p>
-                    <p class="total"><span>total:</span> <span id="final_total">
+                    <p class="total"><span>Total:</span> <span id="final_total">
                             @if (isset(session()->get('coupon')['discount']))
                             {{ config('settings.site_currency_icon') }} {{ cartTotal() -
                             session()->get('coupon')['discount'] }}
@@ -137,25 +132,24 @@
                         </span></p>
                     <form id="coupon_form">
                         <input type="text" id="coupon_code" name="code" placeholder="Coupon Code">
-                        <button type="submit">apply</button>
+                        <button type="submit">Apply</button>
                     </form>
 
                     <div class="coupon_card">
                         @if (session()->has('coupon'))
                         <div class="mt-2 card">
                             <div class="m-3">
-                                <span><b class="v_coupon_code">Applied Couppon: {{ session()->get('coupon')['code']
+                                <span><b class="v_coupon_code">Applied Coupon: {{ session()->get('coupon')['code']
                                         }}</b></span>
                                 <span>
                                     <button id="destroy_coupon"><i class="far fa-times"></i></button>
                                 </span>
-
                             </div>
                         </div>
                         @endif
                     </div>
 
-                    <a class="common_btn" href="{{ route('checkout.index') }}">checkout</a>
+                    <a class="common_btn" href="{{ route('checkout.index') }}">Checkout</a>
                 </div>
             </div>
         </div>
@@ -171,23 +165,6 @@
     $(document).ready(function() {
             var cartTotal = parseInt("{{ cartTotal() }}");
 
-            function updateCartView(response) {
-                if (response.status === 'success') {
-                    let productRow = $('input[data-id="' + response.rowId + '"]').closest("tr");
-
-                    let productTotal = response.product_total;
-                    productRow.find(".produt_cart_total").text("{{ currencyPosition(':productTotal') }}"
-                        .replace(":productTotal", productTotal));
-
-                    cartTotal = response.cart_total;
-                    $('#subtotal').text("{{ config('settings.site_currency_icon') }}" + cartTotal);
-                    $("#final_total").text("{{ config('settings.site_currency_icon') }}" + response.grand_cart_total);
-
-                } else if (response.status === 'error') {
-                    toastr.error(response.message);
-                }
-            }
-
             $('.increment').on('click', function() {
                 let inputField = $(this).siblings(".quantity");
                 let currentValue = parseInt(inputField.val());
@@ -196,7 +173,24 @@
                 inputField.val(currentValue + 1);
 
                 cartQtyUpdate(rowId, inputField.val(), function(response) {
-                    updateCartView(response);
+                    if (response.status === 'success') {
+                        inputField.val(response.qty);
+
+                        let productTotal = response.product_total;
+                        inputField.closest("tr")
+                            .find(".product_cart_total")
+                            .text("{{ currencyPosition(':productTotal') }}"
+                            .replace(":productTotal", productTotal));
+
+                        cartTotal = response.cart_total;
+                        $('#subtotal').text("{{ config('settings.site_currency_icon') }}" + cartTotal);
+
+                        $("#final_total").text("{{ config('settings.site_currency_icon') }}" + response.grand_cart_total)
+
+                    } else if (response.status === 'error') {
+                        inputField.val(response.qty);
+                        toastr.error(response.message);
+                    }
                 });
             });
 
@@ -205,11 +199,27 @@
                 let currentValue = parseInt(inputField.val());
                 let rowId = inputField.data("id");
 
-                if (currentValue > 1) {
-                    inputField.val(currentValue - 1);
+                inputField.val(currentValue - 1);
 
+                if (inputField.val() > 1) {
                     cartQtyUpdate(rowId, inputField.val(), function(response) {
-                        updateCartView(response);
+                        if (response.status === 'success') {
+                            inputField.val(response.qty);
+
+                            let productTotal = response.product_total;
+                            inputField.closest("tr")
+                                .find(".product_cart_total")
+                                .text("{{ currencyPosition(':productTotal') }}"
+                                    .replace(":productTotal", productTotal));
+
+                            cartTotal = response.cart_total;
+                            $('#subtotal').text("{{ config('settings.site_currency_icon') }}" + cartTotal);
+                            $("#final_total").text("{{ config('settings.site_currency_icon') }}" + response.grand_cart_total)
+
+                        } else if (response.error === 'error') {
+                            inputField.val(response.qty);
+                            toastr.error(response.message);
+                        }
                     });
                 }
             });
@@ -241,7 +251,7 @@
                 })
             }
 
-            $('.reomove_cart_product').on('click', function(e) {
+            $('.remove_cart_product').on('click', function(e) {
                 e.preventDefault();
                 let rowId = $(this).data('id');
                 removeCartProduct(rowId);
@@ -259,86 +269,111 @@
                         updateSidebarCart();
                         cartTotal = response.cart_total;
                         $('#subtotal').text("{{ config('settings.site_currency_icon') }}" + cartTotal);
-                        $("#final_total").text("{{ config('settings.site_currency_icon') }}" + response.grand_cart_total);
-                        hideLoader();
+                        $("#final_total").text("{{ config('settings.site_currency_icon') }}" + response.grand_cart_total)
+
                     },
                     error: function(xhr, status, error) {
                         let errorMessage = xhr.responseJSON.message;
                         hideLoader();
                         toastr.error(errorMessage);
+                    },
+                    complete: function() {
+                        hideLoader();
                     }
                 })
             }
 
-            $("#coupon_form").on("submit", function(e) {
+            $('#coupon_form').on('submit', function(e){
                 e.preventDefault();
-                var code = $("#coupon_code").val();
-                if (code) {
-                    applyCoupon(code);
-                } else {
-                    toastr.error("Please enter a coupon code.");
-                }
-            });
+                let code = $("#coupon_code").val();
+                let subtotal = cartTotal;
 
-            $("#destroy_coupon").on("click", function(e) {
-                e.preventDefault();
+                couponApply(code, subtotal);
+            })
+
+            function couponApply(code, subtotal) {
+                $.ajax({
+                    method: 'POST',
+                    url: '{{ route("apply-coupon") }}',
+                    data: {
+                        code: code,
+                        subtotal: subtotal
+                    },
+                    beforeSend: function(){
+                        showLoader()
+                    },
+                    success: function(response){
+                        $("#coupon_code").val("");
+                        $('#discount').text("{{ config('settings.site_currency_icon') }}"+response.discount);
+                        $('#final_total').text("{{ config('settings.site_currency_icon') }}"+response.finalTotal);
+                        $couponCartHtml = `<div class="mt-2 card">
+                            <div class="m-3">
+                                <span><b class="v_coupon_code">Applied Coupon: ${response.coupon_code}</b></span>
+                                <span>
+                                    <button id="destroy_coupon"><i class="far fa-times"></i></button>
+                                </span>
+                            </div>
+                        </div>`
+                        $('.coupon_card').html($couponCartHtml);
+                        toastr.success(response.message);
+                    },
+                    error: function(xhr, status, error){
+                        let errorMessage = xhr.responseJSON.message;
+                        hideLoader()
+                        toastr.error(errorMessage);
+                    },
+                    complete: function(){
+                        hideLoader()
+                    }
+                })
+            }
+
+            $(document).on('click', "#destroy_coupon", function(){
                 destroyCoupon();
             });
 
-            function applyCoupon(code) {
+            function destroyCoupon(){
                 $.ajax({
+<<<<<<< HEAD
                     method: 'post',
                     url: '{{ route("apply-coupon") }}',
                     data: {
                         'code': code
                     },
                     beforeSend: function() {
+=======
+                    method: 'GET',
+                    url: '{{ route("destroy-coupon") }}',
+                    beforeSend: function(){
+>>>>>>> parent of a0601fa8 (Update cart-view.blade.php)
                         showLoader();
                     },
-                    success: function(response) {
-                        if (response.status === 'success') {
-                            toastr.success(response.message);
-                            location.reload();
-                        } else {
-                            toastr.error(response.message);
-                        }
-                    },
-                    error: function(xhr, status, error) {
-                        let errorMessage = xhr.responseJSON.message;
-                        hideLoader();
-                        toastr.error(errorMessage);
-                    },
-                    complete: function() {
-                        hideLoader();
-                    }
-                });
-            }
+                    success: function(response){
+                        $('#discount').text("{{ config('settings.site_currency_icon') }}"+0);
+                        $("#final_total").text("{{ config('settings.site_currency_icon') }}" + response.grand_cart_total);
+                        $('.coupon_card').html("");
 
+<<<<<<< HEAD
             function destroyCoupon() {
                 $.ajax({
                     method: 'get',
                     url: '{{ route("destroy-coupon") }}',
                     beforeSend: function() {
                         showLoader();
+=======
+                        toastr.success(response.message);
+>>>>>>> parent of a0601fa8 (Update cart-view.blade.php)
                     },
-                    success: function(response) {
-                        if (response.status === 'success') {
-                            toastr.success(response.message);
-                            location.reload();
-                        } else {
-                            toastr.error(response.message);
-                        }
-                    },
-                    error: function(xhr, status, error) {
+                    error: function(xhr, status, error){
                         let errorMessage = xhr.responseJSON.message;
-                        hideLoader();
+                        hideLoader()
                         toastr.error(errorMessage);
                     },
-                    complete: function() {
+                    complete: function(){
                         hideLoader();
                     }
-                });
+                })
             }
-        });
+        })
 </script>
 @endpush
