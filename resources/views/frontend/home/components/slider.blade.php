@@ -153,7 +153,7 @@
     }
 
     .carousel-item {
-        height: 645px !important;
+        height: 100vh !important;
     }
 
     @foreach ($sliders as $key => $slider)
@@ -164,6 +164,7 @@
             background-size: cover;
             background-position: center center;
             position: relative;
+            height: 100vh;
         }
     @endforeach
 
@@ -171,9 +172,9 @@
         position: relative;
     }
 
-    .background6 {
+    /* .background6 {
         height: 550px !important;
-    }
+    } */
 
     .slider-img img {
         width: 100%;
