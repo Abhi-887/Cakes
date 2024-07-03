@@ -152,9 +152,9 @@
         height: auto !important;
     }
 
-    /* .carousel-item {
+    .carousel-item {
         height: 645px !important;
-    } */
+    }
 
     @foreach ($sliders as $key => $slider)
         .background{{ $key + 1 }} {
@@ -253,7 +253,7 @@
 
         @foreach ($sliders as $key => $slider)
             .background{{ $key + 1 }} {
-                height: 100% !important;
+                height: 400px !important;
             }
         @endforeach
 
@@ -268,6 +268,12 @@
         .carousel-item {
             height: 300px !important;
         }
+
+        @foreach ($sliders as $key => $slider)
+            .background{{ $key + 1 }} {
+                height: 300px !important;
+            }
+        @endforeach
 
         .slider-content h1 {
             font-size: 28px;
