@@ -47,6 +47,10 @@
 <style>
     .blog-btn:hover {
         background: #788a9f !important;
-        transition: ease 5s;
+        transition: all linear 0.6s;
+        -webkit-transition: all linear 0.6s;
+        -moz-transition: all linear 0.6s;
+        -ms-transition: all linear 0.6s;
+        -o-transition: all linear 0.6s;
     }
 </style>
