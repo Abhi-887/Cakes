@@ -2,14 +2,19 @@
 <input type="hidden" value="{{ count(Cart::content()) }}" id="cart_product_count">
 
 @foreach (Cart::content() as $cartProduct)
+@php
+$totalPrice = $cartProduct->price; // Base product price
+
+// Add the prices of the variants to the total price
+foreach ($cartProduct->options->product_variants as $cartProductVariant) {
+$totalPrice += $cartProductVariant['item_price'];
+}
+@endphp
 <li>
     <div class="menu_cart_img">
         <img src="{{ asset($cartProduct->options->product_info['image']) }}" alt="menu" class="img-fluid w-100">
     </div>
 
-    <pre>
-            <?php print_r($cartProduct); ?>
-        </pre>
     <div class="menu_cart_text">
         <a class="title" href="{{ route('product.show', $cartProduct->options->product_info['slug']) }}">{!!
             $cartProduct->name !!}</a>
@@ -33,7 +38,7 @@
         </p>
         @endforeach
 
-        <p class="price">{{ currencyPosition($cartProduct->price) }}</p>
+        <p class="price">{{ currencyPosition($totalPrice) }}</p>
     </div>
     <span class="del_icon" onclick="removeProductFromSidebar('{{ $cartProduct->rowId }}')"><i
             class="fal fa-times"></i></span>
