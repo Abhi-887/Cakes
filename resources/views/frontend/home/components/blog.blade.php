@@ -27,6 +27,7 @@
                             </ul>
                             <a class="title" href="{{ route('blogs.details', $blog->slug) }}">{{ truncate($blog->title,
                                 70) }}</a>
+                            <p>{{ truncate($blog->description, 150) }}</p>
                         </div>
                     </div>
                 </div>
