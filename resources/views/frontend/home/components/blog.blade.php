@@ -17,16 +17,17 @@
                             <img src="{{ asset($blog->image) }}" alt="{{ $blog->title }}" class="img-fluid w-100">
                         </a>
                         <div class="fp__single_blog_text">
-                            <a class="category" href="{{ route('blogs', ['category' => $blog->category->slug]) }}">{{
-                                $blog->category->name }}</a>
+                            <a class="category" href="{{ route('blogs', ['category' => $blog->category->slug]) }}">
+                                {{ $blog->category->name }}
+                            </a>
                             <ul class="flex-wrap d-flex mt_15">
                                 <li><i class="fas fa-user"></i>{{ $blog->user->name }}</li>
-                                <li><i class="fas fa-calendar-alt"></i>
-                                    {{ date('d M Y', strtotime($blog->created_at)) }}</li>
+                                <li><i class="fas fa-calendar-alt"></i>{{ date('d M Y', strtotime($blog->created_at)) }}</li>
                                 <li><i class="fas fa-comments"></i> {{ $blog->comments_count }} comment</li>
                             </ul>
-                            <a class="title" href="{{ route('blogs.details', $blog->slug) }}">{{ truncate($blog->title) }}</a>
+                            <a class="title" href="{{ route('blogs.details', $blog->slug) }}">{{ $blog->title }}</a>
                             <p>{{ truncate($blog->description, 150) }}</p>
+                            <a href="{{ route('blogs.details', $blog->slug) }}" class="btn btn-primary mt-2">Read More</a>
                         </div>
                     </div>
                 </div>
