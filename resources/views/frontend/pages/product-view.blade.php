@@ -79,8 +79,8 @@
         }
     </style>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -95,11 +95,11 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                BREADCRUMB END
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            BREADCRUMB END
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
     <!--=============================
-                                                                                                                                                        MENU DETAILS START
-                                                                                                                                                        ==============================-->
+                                                                                                                                                                                    MENU DETAILS START
+                                                                                                                                                                                    ==============================-->
 
 
     <section class="pt-5 mt-5 fp__menu_details">
@@ -461,67 +461,61 @@
 
             <div class="testimonial-slider popularfood">
                 <div class="row mt-5 mx-2">
-                    @foreach ($categories as $category)
-                        @php
-                            $products = \App\Models\Product::where([
-                                'show_at_home' => 1,
-                                'status' => 1,
-                                'category_id' => $category->id,
-                            ])
-                                ->orderBy('id', 'DESC')
-                                ->take(8)
-                                ->withAvg('reviews', 'rating')
-                                ->withCount('reviews')
-                                ->get();
+                    @if (count($relatedProducts) > 0)
+                        <div class="">
+                            <h2>Related Item</h2>
+                            <div class="row">
+                                @foreach ($relatedProducts as $relatedProduct)
+                                    <div class="col-md-4">
+                                        <div class="fp__menu_item m-3">
+                                            <div class="fp__menu_item_img">
+                                                <img src="{{ asset($relatedProduct->thumb_image) }}"
+                                                    alt="{{ $relatedProduct->name }}" class="img-fluid w-100">
+                                            </div>
+                                            <a class="category bg-light px-2 py-1 fw-semibold"
+                                                href="">{{ @$relatedProduct->category->name }}</a>
+                                            <div class="fp__menu_item_text">
+                                                <p class="rating">
+                                                    @if ($relatedProduct->reviews_avg_rating)
+                                                        <p class="rating">
+                                                            @for ($i = 1; $i <= $relatedProduct->reviews_avg_rating; $i++)
+                                                                <i class="fas fa-star"></i>
+                                                            @endfor
 
-                        @endphp
+                                                            <span>({{ $relatedProduct->reviews_count }})</span>
+                                                        </p>
+                                                    @endif
+                                                </p>
+                                                <a class="title my-3"
+                                                    href="{{ route('product.show', $relatedProduct->slug) }}">{!! $relatedProduct->name !!}</a>
+                                                <p
+                                                    class="top-0 px-3 py-1 text-center price fw-semibold position-absolute rounded-pill color-light-gray">
+                                                    @if ($relatedProduct->offer_price > 0)
+                                                        {{ currencyPosition($relatedProduct->offer_price) }}
+                                                        <del>{{ currencyPosition($relatedProduct->price) }}</del>
+                                                    @else
+                                                        {{ currencyPosition($relatedProduct->price) }}
+                                                    @endif
+                                                </p>
+                                                <ul class="flex-wrap d-flex justify-content-center">
+                                                    <li><a href="javascript:;"
+                                                            onclick="loadProductModal('{{ $relatedProduct->id }}')"><i
+                                                                class="fas fa-shopping-basket"></i></a></li>
+                                                    <li onclick="addToWishlist('{{ $relatedProduct->id }}')"><a
+                                                            class="background-light-gray" href="javascript:;"><i
+                                                                class="fal fa-heart"></i></a></li>
 
-                        @foreach ($products as $product)
-                            <div class="col-md-4 {{ $category->slug }}">
-                                <div class="fp__menu_item m-3">
-                                    <div class="fp__menu_item_img">
-                                        <img src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}"
-                                            class="img-fluid w-100">
+                                                    <li><a class="background-light-gray"
+                                                            href="{{ route('product.show', $relatedProduct->slug) }}"><i
+                                                                class="far fa-eye"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <a class="category bg-light px-2 py-1 fw-semibold"
-                                        href="{{ route('category.show', ['slug' => $product->category->slug]) }}">{{ @$product->category->name }}</a>
-                                    <div class="fp__menu_item_text">
-                                        @if ($product->reviews_avg_rating)
-                                            <p class="rating">
-                                                @for ($i = 1; $i <= $product->reviews_avg_rating; $i++)
-                                                    <i class="fas fa-star"></i>
-                                                @endfor
-
-                                                <span>{{ $product->reviews_count }}</span>
-                                            </p>
-                                        @endif
-                                        <a class="title my-3"
-                                            href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
-                                        <p
-                                            class="price fw-semibold text-center position-absolute py-1 px-3 rounded-pill color-light-gray top-0">
-                                            @if ($product->offer_price > 0)
-                                                {{ currencyPosition($product->offer_price) }}
-                                                <del>{{ currencyPosition($product->price) }}</del>
-                                            @else
-                                                {{ currencyPosition($product->price) }}
-                                            @endif
-                                        </p>
-                                        <ul class="d-flex flex-wrap justify-content-center">
-                                            <li><a class="background-light-gray" href="javascript:;"
-                                                    onclick="loadProductModal('{{ $product->id }}')"><i
-                                                        class="fas fa-shopping-basket"></i></a></li>
-                                            <li onclick="addToWishlist('{{ $product->id }}')"><a
-                                                    class="background-light-gray" href="javascript:;"><i
-                                                        class="fal fa-heart"></i></a></li>
-                                            <li><a class="background-light-gray"
-                                                    href="{{ route('product.show', $product->slug) }}"><i
-                                                        class="far fa-eye"></i></a></li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                @endforeach
                             </div>
-                        @endforeach
-                    @endforeach
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
