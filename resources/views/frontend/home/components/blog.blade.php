@@ -26,7 +26,7 @@
                                 <li><i class="fas fa-comments"></i> {{ $blog->comments_count }} comment</li>
                             </ul>
                             <a class="title" href="{{ route('blogs.details', $blog->slug) }}">{{ $blog->title }}</a>
-                            <p>{{ truncate($blog->description, 150) }}</p>
+                            <p>{!! truncate($blog->description, 150) !!}</p>
                             <a href="{{ route('blogs.details', $blog->slug) }}" class="btn btn-primary mt-2">Read More</a>
                         </div>
                     </div>
