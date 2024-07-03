@@ -132,9 +132,9 @@ if (!function_exists('grandCartTotal')) {
             $total += $totalPrice;
         }
 
-        // Include tax, discount, etc.
-        $tax = $total * 0.21; // For example, 21% tax
-        $total += $tax;
+        // // Include tax, discount, etc.
+        // $tax = $total * 0.21; // For example, 21% tax
+        // $total += $tax;
 
         return $total;
     }
