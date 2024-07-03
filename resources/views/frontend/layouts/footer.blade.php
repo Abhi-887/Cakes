@@ -86,8 +86,8 @@
                 </div>
             </form>
         </div>
-        <hr class="mt-5">
-        <div class="pb-3 row d-flex justify-content-center align-items-center">
+        <hr class="mt-5 mb-0">
+        <div class="row d-flex justify-content-center align-items-center py-4">
             <div class="col-7">
                 <span class="color-dark-gray fw-semibold">© 3D Cakes. All Rights Reserved.</span>
             </div>
