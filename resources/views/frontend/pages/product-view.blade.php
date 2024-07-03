@@ -13,8 +13,8 @@
         }
     </style>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -29,11 +29,11 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        BREADCRUMB END
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        BREADCRUMB END
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
     <!--=============================
-                                                                                MENU DETAILS START
-                                                                                ==============================-->
+                                                                                                MENU DETAILS START
+                                                                                                ==============================-->
 
 
 
@@ -409,6 +409,32 @@
 
 @push('scripts')
     <script>
+        $(document).ready(function() {
+            $('.fp__related_menu .row').slick({
+                dots: false,
+                arrows: true,
+                infinite: true,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                responsive: [{
+                        breakpoint: 1400,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 991,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+        });
         $(document).ready(function() {
             // Initial setup
             $('.v_product_size').prop('checked', false);
