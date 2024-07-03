@@ -12,10 +12,6 @@
             border-color: #788a9f !important;
         }
 
-        .related-product {
-            background: #262626;
-        }
-
         .related-product .stars {
             color: #ff9800;
         }
@@ -75,8 +71,8 @@
         }
     </style>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -91,11 +87,11 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            BREADCRUMB END
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                BREADCRUMB END
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
     <!--=============================
-                                                                                                                                    MENU DETAILS START
-                                                                                                                                    ==============================-->
+                                                                                                                                        MENU DETAILS START
+                                                                                                                                        ==============================-->
 
 
     <section class="pt-5 mt-5 fp__menu_details">
