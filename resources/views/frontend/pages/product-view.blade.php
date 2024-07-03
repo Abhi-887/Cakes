@@ -11,10 +11,28 @@
             background-color: #788a9f !important;
             border-color: #788a9f !important;
         }
+
+        .fa-long-arrow-right::before {
+            content: "\f054" !important;
+            font-weight: bolder !important;
+        }
+
+        .fa-long-arrow-left::before {
+            content: "\f053";
+            font-weight: bolder !important;
+        }
+
+        .prevArrow .slick-arrow {
+            left: -45px !important;
+        }
+
+        .nextArrow.slick-arrow {
+            right: -45px !important;
+        }
     </style>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
