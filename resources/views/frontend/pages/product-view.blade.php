@@ -13,8 +13,8 @@
         }
     </style>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -390,7 +390,7 @@
     </section>
 
 
-    <div class="wrapper">
+    <div class="container">
         @if (count($relatedProducts) > 0)
             <div class="related-products">
                 <h2>Related Item</h2>
@@ -456,7 +456,8 @@
         $(document).ready(function() {
             $('.related-products row').slick({
                 slidesToShow: 3,
-                dots: true,
+                dots: false,
+                arrow: true,
                 centerMode: true,
             });
         });
