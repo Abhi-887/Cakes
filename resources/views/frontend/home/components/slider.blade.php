@@ -152,9 +152,9 @@
         height: auto !important;
     }
 
-    .carousel-item {
+    /* .carousel-item {
         height: 645px !important;
-    }
+    } */
 
     @foreach ($sliders as $key => $slider)
         .background{{ $key + 1 }} {
