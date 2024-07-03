@@ -11,10 +11,76 @@
             background-color: #788a9f !important;
             border-color: #788a9f !important;
         }
+
+        .testimonial {
+            background: #262626;
+        }
+
+        .testimonial .stars {
+            color: #ff9800;
+        }
+
+        .testimonial .profile img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .testimonial .profile .name {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .testimonial .profile .company {
+            font-size: 12px;
+            color: #999;
+        }
+
+        .slick-dots li button::before {
+            font-size: 14px !important;
+        }
+
+        .slick-dots li.slick-active button::before {
+            color: #000000 !important;
+        }
+
+        .slick-dots li button:hover::before {
+            color: #000000 !important;
+        }
+
+        .popularfood .slick-dots {
+            display: none !important;
+        }
+
+        .popularfood .slick-next::before,
+        .popularfood .slick-prev::before {
+            color: #4b637f !important;
+            font-size: 35px !important;
+        }
+
+        .popularfood .slick-prev::before {
+            position: absolute !important;
+            right: 0rem !important;
+        }
+
+        @media (max-width: 567px) {
+            .slick-prev.slick-arrow {
+                top: 100%;
+                left: 40%;
+            }
+
+            .slick-next.slick-arrow {
+                top: 100%;
+                right: 40%;
+            }
+
+            .popularfood .slick-prev::before {
+                position: relative !important;
+            }
+        }
     </style>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -29,11 +95,11 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            BREADCRUMB END
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                BREADCRUMB END
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
     <!--=============================
-                                                                                                                    MENU DETAILS START
-                                                                                                                    ==============================-->
+                                                                                                                        MENU DETAILS START
+                                                                                                                        ==============================-->
 
 
 
@@ -464,6 +530,36 @@
 
 @push('scripts')
     <script>
+        $(document).ready(function() {
+            $('.testimonial-slider .row').slick({
+                dots: true,
+                arrows: true,
+                infinite: true,
+                autoplay: false,
+                autoplaySpeed: 2000,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                responsive: [{
+                        breakpoint: 1400,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 991,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+        });
+
+
+
+
         $(document).ready(function() {
             // Initial setup
             $('.v_product_size').prop('checked', false);
