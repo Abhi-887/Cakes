@@ -2,33 +2,37 @@
 <input type="hidden" value="{{ count(Cart::content()) }}" id="cart_product_count">
 
 @foreach (Cart::content() as $cartProduct)
-
 <li>
     <div class="menu_cart_img">
         <img src="{{ asset($cartProduct->options->product_info['image']) }}" alt="menu" class="img-fluid w-100">
     </div>
 
     <pre>
-        <?php
-        print_r($cartProduct);
-        ?></pre>
+            <?php print_r($cartProduct); ?>
+        </pre>
     <div class="menu_cart_text">
         <a class="title" href="{{ route('product.show', $cartProduct->options->product_info['slug']) }}">{!!
-            $cartProduct->name !!}
-        </a>
+            $cartProduct->name !!}</a>
         <p class="size">Qty: {{ $cartProduct->qty }}</p>
 
-        <p class="size">{{ @$cartProduct->options->product_size['name'] }}
-            {{ @$cartProduct->options->product_size['price'] ? '(' .
-            currencyPosition(@$cartProduct->options->product_size['price']) . ')' : '' }}
-        </p>
-
-
+        @if (!empty($cartProduct->options->product_size))
+        <p class="size">{{ $cartProduct->options->product_size['name'] }} {{
+            $cartProduct->options->product_size['price'] ? '(' .
+            currencyPosition($cartProduct->options->product_size['price']) . ')' : '' }}</p>
+        @endif
 
         @foreach ($cartProduct->options->product_options as $cartProductOption)
-        <span class="extra">{{ $cartProductOption['name'] }}
-            ({{ currencyPosition($cartProductOption['price']) }})</span>
+        <span class="extra">{{ $cartProductOption['name'] }} ({{ currencyPosition($cartProductOption['price'])
+            }})</span>
         @endforeach
+
+        @foreach ($cartProduct->options->product_variants as $cartProductVariant)
+        <p class="variant">
+            {{ $cartProductVariant['variant_name'] }}: {{ $cartProductVariant['item_name'] }} ({{
+            currencyPosition($cartProductVariant['item_price']) }})
+        </p>
+        @endforeach
+
         <p class="price">{{ currencyPosition($cartProduct->price) }}</p>
     </div>
     <span class="del_icon" onclick="removeProductFromSidebar('{{ $cartProduct->rowId }}')"><i
