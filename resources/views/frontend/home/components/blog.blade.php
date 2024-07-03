@@ -29,7 +29,7 @@
                                 </ul>
                                 <a class="title"
                                     href="{{ route('blogs.details', $blog->slug) }}">{{ $blog->title }}</a>
-                                <p>{!! truncate($blog->description, 150) !!}</p>
+                                <p class="fw-semibold">{!! truncate($blog->description, 150) !!}</p>
                                 <a href="{{ route('blogs.details', $blog->slug) }}"
                                     class="blog-btn rounded-3 mt-2 background-dark-gray py-2 px-3 text-light">
                                     Read More <i class="fas fa-arrow-right ms-1"></i>
