@@ -22,8 +22,8 @@
             ==============================-->
 
 <!--============================
-                CART VIEW START
-            ==============================-->
+            CART VIEW START
+        ==============================-->
 <section class="fp__cart_view mt_125 xs_mt_95 mb_100 xs_mb_70">
     <div class="container">
         <div class="row">
@@ -34,27 +34,28 @@
                             <tbody>
                                 <tr>
                                     <th class="fp__pro_img">Image</th>
-                                    <th class="fp__pro_name">Details</th>
-                                    <th class="fp__pro_status">Price</th>
-                                    <th class="fp__pro_select">Quantity</th>
-                                    <th class="fp__pro_tk">Total</th>
+                                    <th class="fp__pro_name">details</th>
+                                    <th class="fp__pro_status">price</th>
+                                    <th class="fp__pro_select">quantity</th>
+                                    <th class="fp__pro_tk">total</th>
                                     <th class="fp__pro_icon">
-                                        <a class="clear_all" href="{{ route('cart.destroy') }}">Clear All</a>
+                                        <a class="clear_all" href="{{ route('cart.destroy') }}">clear all</a>
                                     </th>
                                 </tr>
 
                                 @foreach (Cart::content() as $product)
                                 @php
-                                $productTotal = $product->price; // Base product price
-
-                                foreach ($product->options->product_variants as $variant) {
-                                $productTotal += $variant['item_price'];
+                                $productTotalPrice = $product->price;
+                                if(isset($product->options->product_size['price'])) {
+                                $productTotalPrice += $product->options->product_size['price'];
+                                }
+                                foreach ($product->options->product_options as $option) {
+                                $productTotalPrice += $option['price'];
                                 }
                                 @endphp
                                 <tr>
-                                    <td class="fp__pro_img">
-                                        <img src="{{ $product->options->product_info['image'] }}" alt="product"
-                                            class="img-fluid w-100">
+                                    <td class="fp__pro_img"><img src="{{ $product->options->product_info['image'] }}"
+                                            alt="product" class="img-fluid w-100">
                                     </td>
 
                                     <td class="fp__pro_name">
@@ -62,19 +63,16 @@
                                             $product->name }}</a>
                                         <span>{{ @$product->options->product_size['name'] }}
                                             {{ @$product->options->product_size['price'] ? '(' .
-                                            currencyPosition(@$product->options->product_size['price']) . ')' : '' }}
-                                        </span>
+                                            currencyPosition(@$product->options->product_size['price']) . ')' : ''
+                                            }}</span>
                                         @foreach ($product->options->product_options as $option)
                                         <p>{{ $option['name'] }} ({{ currencyPosition($option['price']) }})</p>
                                         @endforeach
-                                        @foreach ($product->options->product_variants as $variant)
-                                        <p>{{ $variant['variant_name'] }}: {{ $variant['item_name'] }} ({{
-                                            currencyPosition($variant['item_price']) }})</p>
-                                        @endforeach
+
                                     </td>
 
                                     <td class="fp__pro_status">
-                                        <h6>{{ currencyPosition($product->price) }}</h6>
+                                        <h6>{{ currencyPosition($productTotalPrice) }}</h6>
                                     </td>
 
                                     <td class="fp__pro_select">
@@ -89,12 +87,12 @@
                                     </td>
 
                                     <td class="fp__pro_tk">
-                                        <h6 class="product_cart_total">{{ currencyPosition($productTotal *
-                                            $product->qty) }}</h6>
+                                        <h6 class="produt_cart_total">{{ currencyPosition(productTotal($product->rowId))
+                                            }}</h6>
                                     </td>
 
                                     <td class="fp__pro_icon">
-                                        <a href="#" class="remove_cart_product" data-id="{{ $product->rowId }}"><i
+                                        <a href="#" class="reomove_cart_product" data-id="{{ $product->rowId }}"><i
                                                 class="far fa-times"></i></a>
                                     </td>
                                 </tr>
@@ -112,17 +110,17 @@
             </div>
             <div class="col-lg-4 wow fadeInUp" data-wow-duration="1s">
                 <div class="fp__cart_list_footer_button">
-                    <h6>Total Cart</h6>
-                    <p>Subtotal: <span id="subtotal">{{ currencyPosition(cartTotal()) }}</span></p>
-                    <p>Delivery: <span>$00.00</span></p>
-                    <p>Discount: <span id="discount">
+                    <h6>total cart</h6>
+                    <p>subtotal: <span id="subtotal">{{ currencyPosition(cartTotal()) }}</span></p>
+                    <p>delivery: <span>$00.00</span></p>
+                    <p>discount: <span id="discount">
                             @if (isset(session()->get('coupon')['discount']))
                             {{ config('settings.site_currency_icon') }} {{ session()->get('coupon')['discount'] }}
                             @else
                             {{ config('settings.site_currency_icon') }}0
                             @endif
                         </span></p>
-                    <p class="total"><span>Total:</span> <span id="final_total">
+                    <p class="total"><span>total:</span> <span id="final_total">
                             @if (isset(session()->get('coupon')['discount']))
                             {{ config('settings.site_currency_icon') }} {{ cartTotal() -
                             session()->get('coupon')['discount'] }}
@@ -132,33 +130,35 @@
                         </span></p>
                     <form id="coupon_form">
                         <input type="text" id="coupon_code" name="code" placeholder="Coupon Code">
-                        <button type="submit">Apply</button>
+                        <button type="submit">apply</button>
                     </form>
 
                     <div class="coupon_card">
                         @if (session()->has('coupon'))
                         <div class="mt-2 card">
                             <div class="m-3">
-                                <span><b class="v_coupon_code">Applied Coupon: {{ session()->get('coupon')['code']
+                                <span><b class="v_coupon_code">Applied Couppon: {{ session()->get('coupon')['code']
                                         }}</b></span>
                                 <span>
                                     <button id="destroy_coupon"><i class="far fa-times"></i></button>
                                 </span>
+
                             </div>
                         </div>
                         @endif
                     </div>
 
-                    <a class="common_btn" href="{{ route('checkout.index') }}">Checkout</a>
+                    <a class="common_btn" href="{{ route('checkout.index') }}">checkout</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
 <!--============================
-                CART VIEW END
-            ==============================-->
+                    CART VIEW END
+                ==============================-->
 @endsection
+
 
 @push('scripts')
 <script>
