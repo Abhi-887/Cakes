@@ -334,18 +334,9 @@
 
             function destroyCoupon(){
                 $.ajax({
-<<<<<<< HEAD
-                    method: 'post',
-                    url: '{{ route("apply-coupon") }}',
-                    data: {
-                        'code': code
-                    },
-                    beforeSend: function() {
-=======
                     method: 'GET',
                     url: '{{ route("destroy-coupon") }}',
                     beforeSend: function(){
->>>>>>> parent of a0601fa8 (Update cart-view.blade.php)
                         showLoader();
                     },
                     success: function(response){
@@ -353,16 +344,7 @@
                         $("#final_total").text("{{ config('settings.site_currency_icon') }}" + response.grand_cart_total);
                         $('.coupon_card').html("");
 
-<<<<<<< HEAD
-            function destroyCoupon() {
-                $.ajax({
-                    method: 'get',
-                    url: '{{ route("destroy-coupon") }}',
-                    beforeSend: function() {
-                        showLoader();
-=======
                         toastr.success(response.message);
->>>>>>> parent of a0601fa8 (Update cart-view.blade.php)
                     },
                     error: function(xhr, status, error){
                         let errorMessage = xhr.responseJSON.message;
