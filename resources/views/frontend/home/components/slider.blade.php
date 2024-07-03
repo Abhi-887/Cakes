@@ -134,6 +134,8 @@
     </div>
 </section>
 
+
+
 <style>
     .fp__banner {
         padding-top: 0 !important;
@@ -152,11 +154,16 @@
         height: auto !important;
     }
 
-    .carousel-item {
-        height: 100vh !important;
+    /* @media (max-width: 991px) {
+
+        @foreach ($sliders as $key => $slider)
+    .background{{ $key + 1 }} {
+        height: 100% !important;
+    }
+    @endforeach
     }
 
-    @foreach ($sliders as $key => $slider)
+    */ @foreach ($sliders as $key => $slider)
         .background{{ $key + 1 }} {
             background-image: url("{{ asset($slider->background_image) }}");
             background-color: rgba(0, 0, 0, 0);
@@ -164,7 +171,7 @@
             background-size: cover;
             background-position: center center;
             position: relative;
-            height: 100vh;
+            height: 645px !important;
         }
     @endforeach
 
@@ -172,9 +179,9 @@
         position: relative;
     }
 
-    /* .background6 {
+    .background6 {
         height: 550px !important;
-    } */
+    }
 
     .slider-img img {
         width: 100%;
@@ -222,21 +229,24 @@
         display: inline-block;
     }
 
-    .carousel-control-next-icon,
+    .carousel-control-next-icon {
+        z-index: 100;
+        cursor: pointer;
+        position: relative;
+        background: url('{{ asset('uploads/arrow4.png') }}') no-repeat 0 0 !important;
+        width: 70px;
+        height: 70px;
+        left: 20px !important;
+    }
+
     .carousel-control-prev-icon {
         z-index: 100;
         cursor: pointer;
         position: relative;
+        background: url('{{ asset('uploads/arrow3.png') }}') no-repeat 0 0 !important;
         width: 70px;
         height: 70px;
-    }
-
-    .carousel-control-next-icon {
-        background: url('{{ asset('uploads/arrow4.png') }}') no-repeat 0 0 !important;
-    }
-
-    .carousel-control-prev-icon {
-        background: url('{{ asset('uploads/arrow3.png') }}') no-repeat 0 0 !important;
+        left: 20px !important;
     }
 
     .carousel-control-prev-icon:hover {
@@ -245,58 +255,5 @@
 
     .carousel-control-next-icon:hover {
         background: url('{{ asset('uploads/arrow2.png') }}') no-repeat 0 0 !important;
-    }
-
-    @media (max-width: 991px) {
-        .carousel-item {
-            height: 400px !important;
-        }
-
-        @foreach ($sliders as $key => $slider)
-            .background{{ $key + 1 }} {
-                height: 400px !important;
-            }
-        @endforeach
-
-        .carousel-control-next-icon,
-        .carousel-control-prev-icon {
-            width: 50px;
-            height: 50px;
-        }
-    }
-
-    @media (max-width: 768px) {
-        .carousel-item {
-            height: 300px !important;
-        }
-
-        @foreach ($sliders as $key => $slider)
-            .background{{ $key + 1 }} {
-                height: 300px !important;
-            }
-        @endforeach
-
-        .slider-content h1 {
-            font-size: 28px;
-        }
-
-        .slider-content h3 {
-            font-size: 20px;
-        }
-
-        .slider-content p {
-            font-size: 14px;
-        }
-
-        .custom-btn {
-            padding: 8px 16px;
-            font-size: 14px;
-        }
-
-        .carousel-control-next-icon,
-        .carousel-control-prev-icon {
-            width: 40px;
-            height: 40px;
-        }
     }
 </style>
