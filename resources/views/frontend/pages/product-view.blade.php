@@ -12,67 +12,67 @@
             border-color: #788a9f !important;
         }
 
-        .related-product .stars {
-            color: #ff9800;
-        }
-
-        .related-product .profile img {
-            width: 50px;
-            height: 50px;
-        }
-
-        .related-product .profile .name {
-            font-weight: bold;
-            color: #333;
-        }
-
-        .related-product .profile .company {
-            font-size: 12px;
-            color: #999;
-        }
-
-        .slick-dots li button::before {
-            font-size: 14px !important;
-        }
-
-        .slick-dots li.slick-active button::before {
-            color: #000000 !important;
-        }
-
-        .slick-dots li button:hover::before {
-            color: #000000 !important;
-        }
-
-        .related-product .slick-next::before,
-        .related-product .slick-prev::before {
-            color: #4b637f !important;
-            font-size: 35px !important;
-        }
-
-        .related-product .slick-prev::before {
-            position: absolute !important;
-            right: 0rem !important;
-        }
-
-        @media (max-width: 567px) {
-            .slick-prev.slick-arrow {
-                top: 100%;
-                left: 40%;
+        /* .related-product .stars {
+                color: #ff9800;
             }
 
-            .slick-next.slick-arrow {
-                top: 100%;
-                right: 40%;
+            .related-product .profile img {
+                width: 50px;
+                height: 50px;
+            }
+
+            .related-product .profile .name {
+                font-weight: bold;
+                color: #333;
+            }
+
+            .related-product .profile .company {
+                font-size: 12px;
+                color: #999;
+            }
+
+            .slick-dots li button::before {
+                font-size: 14px !important;
+            }
+
+            .slick-dots li.slick-active button::before {
+                color: #000000 !important;
+            }
+
+            .slick-dots li button:hover::before {
+                color: #000000 !important;
+            }
+
+            .related-product .slick-next::before,
+            .related-product .slick-prev::before {
+                color: #4b637f !important;
+                font-size: 35px !important;
             }
 
             .related-product .slick-prev::before {
-                position: relative !important;
+                position: absolute !important;
+                right: 0rem !important;
             }
-        }
+
+            @media (max-width: 567px) {
+                .slick-prev.slick-arrow {
+                    top: 100%;
+                    left: 40%;
+                }
+
+                .slick-next.slick-arrow {
+                    top: 100%;
+                    right: 40%;
+                }
+
+                .related-product .slick-prev::before {
+                    position: relative !important;
+                }
+            } */
     </style>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -87,11 +87,11 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                BREADCRUMB END
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    BREADCRUMB END
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
     <!--=============================
-                                                                                                                                        MENU DETAILS START
-                                                                                                                                        ==============================-->
+                                                                                                                                            MENU DETAILS START
+                                                                                                                                            ==============================-->
 
 
     <section class="pt-5 mt-5 fp__menu_details">
