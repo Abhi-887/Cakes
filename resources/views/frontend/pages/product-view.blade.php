@@ -12,25 +12,25 @@
             border-color: #788a9f !important;
         }
 
-        .testimonial {
+        .related-product {
             background: #262626;
         }
 
-        .testimonial .stars {
+        .related-product .stars {
             color: #ff9800;
         }
 
-        .testimonial .profile img {
+        .related-product .profile img {
             width: 50px;
             height: 50px;
         }
 
-        .testimonial .profile .name {
+        .related-product .profile .name {
             font-weight: bold;
             color: #333;
         }
 
-        .testimonial .profile .company {
+        .related-product .profile .company {
             font-size: 12px;
             color: #999;
         }
@@ -47,17 +47,13 @@
             color: #000000 !important;
         }
 
-        .popularfood .slick-dots {
-            display: none !important;
-        }
-
-        .popularfood .slick-next::before,
-        .popularfood .slick-prev::before {
+        .related-product .slick-next::before,
+        .related-product .slick-prev::before {
             color: #4b637f !important;
             font-size: 35px !important;
         }
 
-        .popularfood .slick-prev::before {
+        .related-product .slick-prev::before {
             position: absolute !important;
             right: 0rem !important;
         }
@@ -73,14 +69,14 @@
                 right: 40%;
             }
 
-            .popularfood .slick-prev::before {
+            .related-product .slick-prev::before {
                 position: relative !important;
             }
         }
     </style>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -95,18 +91,11 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                BREADCRUMB END
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            BREADCRUMB END
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
     <!--=============================
-                                                                                                                        MENU DETAILS START
-                                                                                                                        ==============================-->
-
-
-
-
-
-
-
+                                                                                                                                    MENU DETAILS START
+                                                                                                                                    ==============================-->
 
 
     <section class="pt-5 mt-5 fp__menu_details">
@@ -466,7 +455,7 @@
                 @endif
             </div> --}}
 
-            <div class="testimonial-slider popularfood">
+            <div class="related-product-slider related-product">
                 @if (count($relatedProducts) > 0)
                     <div class="row mt-5 mx-2">
                         @foreach ($relatedProducts as $relatedProduct)
@@ -531,11 +520,11 @@
 @push('scripts')
     <script>
         $(document).ready(function() {
-            $('.testimonial-slider .row').slick({
-                dots: true,
+            $('.related-product-slider .row').slick({
+                dots: false,
                 arrows: true,
                 infinite: true,
-                autoplay: false,
+                autoplay: true,
                 autoplaySpeed: 2000,
                 slidesToShow: 3,
                 slidesToScroll: 1,
