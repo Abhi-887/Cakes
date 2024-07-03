@@ -288,7 +288,7 @@
             function applyCoupon(code) {
                 $.ajax({
                     method: 'post',
-                    url: '{{ route("coupon.apply") }}',
+                    url: '{{ route("apply-coupon") }}',
                     data: {
                         'code': code
                     },
@@ -317,7 +317,7 @@
             function destroyCoupon() {
                 $.ajax({
                     method: 'get',
-                    url: '{{ route("coupon.destroy") }}',
+                    url: '{{ route("destroy-coupon") }}',
                     beforeSend: function() {
                         showLoader();
                     },
