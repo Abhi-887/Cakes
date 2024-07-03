@@ -25,7 +25,7 @@ class CartController extends Controller
      */
     function addToCart(Request $request)
     {
-        $product = Product::with(['productSizes', 'productOptions'])->findOrFail($request->product_id);
+        $product = Product::with(['productSizes', 'productOptions', 'variants.productVariantItems'])->findOrFail($request->product_id);
         if ($product->quantity < $request->quantity) {
             throw ValidationException::withMessages(['Quantity is not available!']);
         }
@@ -33,10 +33,12 @@ class CartController extends Controller
         try {
             $productSize = $product->productSizes->where('id', $request->product_size)->first();
             $productOptions = $product->productOptions->whereIn('id', $request->product_option);
+            $variantItems = $request->input('variants_items', []);
 
             $options = [
                 'product_size' => [],
                 'product_options' => [],
+                'product_variants' => [],
                 'product_info' => [
                     'image' => $product->thumb_image,
                     'slug' => $product->slug
@@ -59,6 +61,21 @@ class CartController extends Controller
                 ];
             }
 
+            foreach ($variantItems as $variantId => $itemIds) {
+                foreach ((array) $itemIds as $itemId) {
+                    $variantItem = $product->variants->flatMap->productVariantItems->where('id', $itemId)->first();
+                    if ($variantItem) {
+                        $options['product_variants'][] = [
+                            'variant_id' => $variantItem->productVariant->id,
+                            'variant_name' => $variantItem->productVariant->name,
+                            'item_id' => $variantItem->id,
+                            'item_name' => $variantItem->name,
+                            'item_price' => $variantItem->price
+                        ];
+                    }
+                }
+            }
+
             Cart::add([
                 'id' => $product->id,
                 'name' => $product->name,
@@ -74,6 +91,7 @@ class CartController extends Controller
             return response(['status' => 'error', 'message' => 'Something went wrong!'], 500);
         }
     }
+
 
     function getCartProduct()
     {
