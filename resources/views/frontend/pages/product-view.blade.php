@@ -11,76 +11,10 @@
             background-color: #788a9f !important;
             border-color: #788a9f !important;
         }
-
-        .testimonial {
-            background: #262626;
-        }
-
-        .testimonial .stars {
-            color: #ff9800;
-        }
-
-        .testimonial .profile img {
-            width: 50px;
-            height: 50px;
-        }
-
-        .testimonial .profile .name {
-            font-weight: bold;
-            color: #333;
-        }
-
-        .testimonial .profile .company {
-            font-size: 12px;
-            color: #999;
-        }
-
-        .slick-dots li button::before {
-            font-size: 14px !important;
-        }
-
-        .slick-dots li.slick-active button::before {
-            color: #000000 !important;
-        }
-
-        .slick-dots li button:hover::before {
-            color: #000000 !important;
-        }
-
-        .popularfood .slick-dots {
-            display: none !important;
-        }
-
-        .popularfood .slick-next::before,
-        .popularfood .slick-prev::before {
-            color: #4b637f !important;
-            font-size: 35px !important;
-        }
-
-        .popularfood .slick-prev::before {
-            position: absolute !important;
-            right: 0rem !important;
-        }
-
-        @media (max-width: 567px) {
-            .slick-prev.slick-arrow {
-                top: 100%;
-                left: 40%;
-            }
-
-            .slick-next.slick-arrow {
-                top: 100%;
-                right: 40%;
-            }
-
-            .popularfood .slick-prev::before {
-                position: relative !important;
-            }
-        }
     </style>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                        BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -95,11 +29,11 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                BREADCRUMB END
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                        BREADCRUMB END
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
     <!--=============================
-                                                                                                        MENU DETAILS START
-                                                                                                        ==============================-->
+                                                                                MENU DETAILS START
+                                                                                ==============================-->
 
 
 
@@ -278,6 +212,7 @@
                 </div>
             </div>
 
+
             <div class="row wow fadeInUp" data-wow-duration="1s">
                 <div class="fp__menu_description_area mt_100 xs_mt_70">
                     <ul class="nav nav-pills" id="pills-tab" role="tablist">
@@ -407,63 +342,62 @@
                     </div>
                 </div>
             </div>
-            <div class="testimonial-slider popularfood">
-                <div class="row">
-                    @if (count($relatedProducts) > 0)
-                        <div class="fp__related_menu mt_90 xs_mt_60">
-                            <h2>Related Item</h2>
-                            <div class="row related_product_slider">
-                                @foreach ($relatedProducts as $relatedProduct)
-                                    <div class="col-lg-4 wow fadeInUp" data-wow-duration="1s">
-                                        <div class="fp__menu_item m-3">
-                                            <div class="fp__menu_item_img">
-                                                <img src="{{ asset($relatedProduct->thumb_image) }}"
-                                                    alt="{{ $relatedProduct->name }}" class="img-fluid w-100">
-                                            </div>
-                                            <a class="px-2 py-1 category bg-light fw-semibold"
-                                                href="#">{{ @$relatedProduct->category->name }}</a>
-                                            <div class="fp__menu_item_text">
-                                                <p class="rating">
-                                                    @if ($relatedProduct->reviews_avg_rating)
-                                                        <p class="rating">
-                                                            @for ($i = 1; $i <= $relatedProduct->reviews_avg_rating; $i++)
-                                                                <i class="fas fa-star"></i>
-                                                            @endfor
+            <div class="row">
+                @if (count($relatedProducts) > 0)
+                    <div class="fp__related_menu mt_90 xs_mt_60">
+                        <h2>Related Item</h2>
+                        <div class="row related_product_slider">
+                            @foreach ($relatedProducts as $relatedProduct)
+                                <div class="col-lg-4 wow fadeInUp" data-wow-duration="1s">
+                                    <div class="fp__menu_item">
+                                        <div class="fp__menu_item_img">
+                                            <img src="{{ asset($relatedProduct->thumb_image) }}"
+                                                alt="{{ $relatedProduct->name }}" class="img-fluid w-100">
+                                        </div>
+                                        <a class="px-2 py-1 category bg-light fw-semibold"
+                                            href="#">{{ @$relatedProduct->category->name }}</a>
+                                        <div class="fp__menu_item_text">
+                                            <p class="rating">
+                                                @if ($relatedProduct->reviews_avg_rating)
+                                                    <p class="rating">
+                                                        @for ($i = 1; $i <= $relatedProduct->reviews_avg_rating; $i++)
+                                                            <i class="fas fa-star"></i>
+                                                        @endfor
 
-                                                            <span>({{ $relatedProduct->reviews_count }})</span>
-                                                        </p>
-                                                    @endif
-                                                    <a class="my-3 title"
-                                                        href="{{ route('product.show', $relatedProduct->slug) }}">{!! $relatedProduct->name !!}</a>
-                                                <p
-                                                    class="top-0 px-3 py-1 text-center price fw-semibold position-absolute rounded-pill color-light-gray">
-                                                    @if ($relatedProduct->offer_price > 0)
-                                                        {{ currencyPosition($relatedProduct->offer_price) }}
-                                                        <del>{{ currencyPosition($relatedProduct->price) }}</del>
-                                                    @else
-                                                        {{ currencyPosition($relatedProduct->price) }}
-                                                    @endif
-                                                </p>
-                                                <ul class="flex-wrap d-flex justify-content-center">
-                                                    <li><a href="javascript:;"
-                                                            onclick="loadProductModal('{{ $relatedProduct->id }}')"><i
-                                                                class="fas fa-shopping-basket"></i></a></li>
-                                                    <li onclick="addToWishlist('{{ $relatedProduct->id }}')"><a
-                                                            class="background-light-gray" href="javascript:;"><i
-                                                                class="fal fa-heart"></i></a></li>
+                                                        <span>({{ $relatedProduct->reviews_count }})</span>
+                                                    </p>
+                                                @endif
+                                            </p>
+                                            <a class="my-3 title"
+                                                href="{{ route('product.show', $relatedProduct->slug) }}">{!! $relatedProduct->name !!}</a>
+                                            <p
+                                                class="top-0 px-3 py-1 text-center price fw-semibold position-absolute rounded-pill color-light-gray">
+                                                @if ($relatedProduct->offer_price > 0)
+                                                    {{ currencyPosition($relatedProduct->offer_price) }}
+                                                    <del>{{ currencyPosition($relatedProduct->price) }}</del>
+                                                @else
+                                                    {{ currencyPosition($relatedProduct->price) }}
+                                                @endif
+                                            </p>
+                                            <ul class="flex-wrap d-flex justify-content-center">
+                                                <li><a href="javascript:;"
+                                                        onclick="loadProductModal('{{ $relatedProduct->id }}')"><i
+                                                            class="fas fa-shopping-basket"></i></a></li>
+                                                <li onclick="addToWishlist('{{ $relatedProduct->id }}')"><a
+                                                        class="background-light-gray" href="javascript:;"><i
+                                                            class="fal fa-heart"></i></a></li>
 
-                                                    <li><a class="background-light-gray"
-                                                            href="{{ route('product.show', $relatedProduct->slug) }}"><i
-                                                                class="far fa-eye"></i></a></li>
-                                                </ul>
-                                            </div>
+                                                <li><a class="background-light-gray"
+                                                        href="{{ route('product.show', $relatedProduct->slug) }}"><i
+                                                            class="far fa-eye"></i></a></li>
+                                            </ul>
                                         </div>
                                     </div>
-                                @endforeach
-                            </div>
+                                </div>
+                            @endforeach
                         </div>
-                    @endif
-                </div>
+                    </div>
+                @endif
             </div>
         </div>
     </section>
