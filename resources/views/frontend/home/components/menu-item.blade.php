@@ -155,7 +155,7 @@
             dots: true,
             arrows: true,
             infinite: true,
-            autoplay: false,
+            autoplay: true,
             autoplaySpeed: 2000,
             slidesToShow: 3,
             slidesToScroll: 1,
