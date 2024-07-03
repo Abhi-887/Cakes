@@ -13,8 +13,8 @@
         }
     </style>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -388,78 +388,15 @@
             </div>
         </div>
     </section>
-
-
-    <div class="container">
-        @if (count($relatedProducts) > 0)
-            <div class="related-products">
-                <h2>Related Item</h2>
-                <div class="row">
-                    @foreach ($relatedProducts as $relatedProduct)
-                        <div class="col-lg-4 wow fadeInUp" data-wow-duration="1s">
-                            <div class="fp__menu_item">
-                                <div class="fp__menu_item_img">
-                                    <img src="{{ asset($relatedProduct->thumb_image) }}"
-                                        alt="{{ $relatedProduct->name }}" class="img-fluid w-100">
-                                </div>
-                                <a class="px-2 py-1 category bg-light fw-semibold"
-                                    href="#">{{ @$relatedProduct->category->name }}</a>
-                                <div class="fp__menu_item_text">
-                                    <p class="rating">
-                                        @if ($relatedProduct->reviews_avg_rating)
-                                            <p class="rating">
-                                                @for ($i = 1; $i <= $relatedProduct->reviews_avg_rating; $i++)
-                                                    <i class="fas fa-star"></i>
-                                                @endfor
-
-                                                <span>({{ $relatedProduct->reviews_count }})</span>
-                                            </p>
-                                        @endif
-                                    </p>
-                                    <a class="my-3 title"
-                                        href="{{ route('product.show', $relatedProduct->slug) }}">{!! $relatedProduct->name !!}</a>
-                                    <p
-                                        class="top-0 px-3 py-1 text-center price fw-semibold position-absolute rounded-pill color-light-gray">
-                                        @if ($relatedProduct->offer_price > 0)
-                                            {{ currencyPosition($relatedProduct->offer_price) }}
-                                            <del>{{ currencyPosition($relatedProduct->price) }}</del>
-                                        @else
-                                            {{ currencyPosition($relatedProduct->price) }}
-                                        @endif
-                                    </p>
-                                    <ul class="flex-wrap d-flex justify-content-center">
-                                        <li><a href="javascript:;"
-                                                onclick="loadProductModal('{{ $relatedProduct->id }}')"><i
-                                                    class="fas fa-shopping-basket"></i></a></li>
-                                        <li onclick="addToWishlist('{{ $relatedProduct->id }}')"><a
-                                                class="background-light-gray" href="javascript:;"><i
-                                                    class="fal fa-heart"></i></a></li>
-
-                                        <li><a class="background-light-gray"
-                                                href="{{ route('product.show', $relatedProduct->slug) }}"><i
-                                                    class="far fa-eye"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        @endif
-    </div>
-
-
 @endsection
 
 @push('scripts')
     <script>
-        $('.related-products .row').slick({
+        $('.related_product_slider').slick({
             slidesToShow: 3,
             dots: false,
-            arrows: true, // Ensure arrows are enabled
+            arrows: true,
             centerMode: true,
-            prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-chevron-left"></i></button>',
-            nextArrow: '<button type="button" class="slick-next"><i class="fa fa-chevron-right"></i></button>',
             responsive: [{
                     breakpoint: 1024,
                     settings: {
