@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
@@ -14,28 +13,27 @@ use Illuminate\View\View;
 
 class CartController extends Controller
 {
-
-    function index() : View {
+    public function index(): View
+    {
         return view('frontend.pages.cart-view');
     }
 
-    /**
-     *  Add product in to cart
-     */
-    function addToCart(Request $request)
+    public function addToCart(Request $request)
     {
-        $product = Product::with(['productSizes', 'productOptions'])->findOrFail($request->product_id);
-        if($product->quantity < $request->quantity){
+        $product = Product::with(['productSizes', 'productOptions', 'variants.productVariantItems'])->findOrFail($request->product_id);
+        if ($product->quantity < $request->quantity) {
             throw ValidationException::withMessages(['Quantity is not available!']);
         }
 
         try {
             $productSize = $product->productSizes->where('id', $request->product_size)->first();
             $productOptions = $product->productOptions->whereIn('id', $request->product_option);
+            $variantItems = $request->input('variants_items', []);
 
             $options = [
                 'product_size' => [],
                 'product_options' => [],
+                'product_variants' => [],
                 'product_info' => [
                     'image' => $product->thumb_image,
                     'slug' => $product->slug
@@ -58,6 +56,21 @@ class CartController extends Controller
                 ];
             }
 
+            foreach ($variantItems as $variantId => $itemIds) {
+                foreach ((array) $itemIds as $itemId) {
+                    $variantItem = $product->variants->flatMap->productVariantItems->where('id', $itemId)->first();
+                    if ($variantItem) {
+                        $options['product_variants'][] = [
+                            'variant_id' => $variantItem->productVariant->id,
+                            'variant_name' => $variantItem->productVariant->name,
+                            'item_id' => $variantItem->id,
+                            'item_name' => $variantItem->name,
+                            'item_price' => $variantItem->price
+                        ];
+                    }
+                }
+            }
+
             Cart::add([
                 'id' => $product->id,
                 'name' => $product->name,
@@ -74,11 +87,13 @@ class CartController extends Controller
         }
     }
 
-    function getCartProduct() {
+    public function getCartProduct()
+    {
         return view('frontend.layouts.ajax-files.sidebar-cart-item')->render();
     }
 
-    function cartProductRemove($rowId) {
+    public function cartProductRemove($rowId)
+    {
         try {
             Cart::remove($rowId);
             return response([
@@ -87,20 +102,21 @@ class CartController extends Controller
                 'cart_total' => cartTotal(),
                 'grand_cart_total' => grandCartTotal()
             ], 200);
-        }catch(\Exception $e){
+        } catch (\Exception $e) {
             return response(['status' => 'error', 'message' => 'Sorry something went wrong!'], 500);
         }
     }
 
-    function cartQtyUpdate(Request $request) : Response {
+    public function cartQtyUpdate(Request $request): Response
+    {
         $cartItem = Cart::get($request->rowId);
         $product = Product::findOrFail($cartItem->id);
 
-        if($product->quantity < $request->qty){
+        if ($product->quantity < $request->qty) {
             return response(['status' => 'error', 'message' => 'Quantity is not available!', 'qty' => $cartItem->qty]);
         }
 
-        try{
+        try {
             $cart = Cart::update($request->rowId, $request->qty);
             return response([
                 'status' => 'success',
@@ -109,14 +125,14 @@ class CartController extends Controller
                 'cart_total' => cartTotal(),
                 'grand_cart_total' => grandCartTotal()
             ], 200);
-
-        }catch(\Exception $e){
+        } catch (\Exception $e) {
             logger($e);
             return response(['status' => 'error', 'message' => 'Something went wrong please reload the page.'], 500);
         }
     }
 
-    function cartDestroy() {
+    public function cartDestroy()
+    {
         Cart::destroy();
         session()->forget('coupon');
         return redirect()->back();

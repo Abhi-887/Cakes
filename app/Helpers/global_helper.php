@@ -35,20 +35,39 @@ if (!function_exists('currencyPosition')) {
 }
 
 /** Calculate cart total price */
+// if (!function_exists('cartTotal')) {
+//     function cartTotal()
+//     {
+//         $total = 0;
+
+//         foreach (Cart::content() as $item) {
+//             $productPrice = $item->price;
+//             $sizePrice = $item->options?->product_size['price'] ?? 0;
+//             $optionsPrice = 0;
+//             foreach ($item->options->product_options as $option) {
+//                 $optionsPrice += $option['price'];
+//             }
+
+//             $total += ($productPrice + $sizePrice + $optionsPrice) * $item->qty;
+//         }
+
+//         return $total;
+//     }
+// }
 if (!function_exists('cartTotal')) {
     function cartTotal()
     {
+        $cartContent = Cart::content();
         $total = 0;
 
-        foreach (Cart::content() as $item) {
-            $productPrice = $item->price;
-            $sizePrice = $item->options?->product_size['price'] ?? 0;
-            $optionsPrice = 0;
-            foreach ($item->options->product_options as $option) {
-                $optionsPrice += $option['price'];
+        foreach ($cartContent as $cartProduct) {
+            $totalPrice = $cartProduct->price * $cartProduct->qty;
+
+            foreach ($cartProduct->options->product_variants as $variant) {
+                $totalPrice += $variant['item_price'] * $cartProduct->qty;
             }
 
-            $total += ($productPrice + $sizePrice + $optionsPrice) * $item->qty;
+            $total += $totalPrice;
         }
 
         return $total;
@@ -79,21 +98,45 @@ if (!function_exists('productTotal')) {
 }
 
 /** grand cart total */
+// if (!function_exists('grandCartTotal')) {
+//     function grandCartTotal($deliveryFee = 0)
+//     {
+//         $total = 0;
+//         $cartTotal = cartTotal();
+
+//         if (session()->has('coupon')) {
+//             $discount = session()->get('coupon')['discount'];
+//             $total = ($cartTotal + $deliveryFee) - $discount;
+
+//             return $total;
+//         } else {
+//             $total = $cartTotal + $deliveryFee;
+//             return $total;
+//         }
+//     }
+// }
+
 if (!function_exists('grandCartTotal')) {
-    function grandCartTotal($deliveryFee = 0)
+    function grandCartTotal()
     {
+        $cartContent = Cart::content();
         $total = 0;
-        $cartTotal = cartTotal();
 
-        if (session()->has('coupon')) {
-            $discount = session()->get('coupon')['discount'];
-            $total = ($cartTotal + $deliveryFee) - $discount;
+        foreach ($cartContent as $cartProduct) {
+            $totalPrice = $cartProduct->price * $cartProduct->qty;
 
-            return $total;
-        } else {
-            $total = $cartTotal + $deliveryFee;
-            return $total;
+            foreach ($cartProduct->options->product_variants as $variant) {
+                $totalPrice += $variant['item_price'] * $cartProduct->qty;
+            }
+
+            $total += $totalPrice;
         }
+
+        // // Include tax, discount, etc.
+        // $tax = $total * 0.21; // For example, 21% tax
+        // $total += $tax;
+
+        return $total;
     }
 }
 
@@ -153,8 +196,8 @@ if (!function_exists('getYtThumbnail')) {
     if (!function_exists('setSidebarActive')) {
         function setSidebarActive(array $routes)
         {
-            foreach($routes as $route){
-                if(request()->routeIs($route)){
+            foreach ($routes as $route) {
+                if (request()->routeIs($route)) {
                     return 'active';
                 }
             }

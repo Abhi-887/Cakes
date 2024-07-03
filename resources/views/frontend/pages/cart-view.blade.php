@@ -1,173 +1,169 @@
 @extends('frontend.layouts.master')
 
 @section('content')
-    <!--=============================
+<!--=============================
                 BREADCRUMB START
             ==============================-->
-    <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
-        <div class="fp__breadcrumb_overlay">
-            <div class="container">
-                <div class="fp__breadcrumb_text">
-                    <h1>cart view</h1>
-                    <ul>
-                        <li><a href="index.html">home</a></li>
-                        <li><a href="#">cart view</a></li>
-                    </ul>
-                </div>
+<section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
+    <div class="fp__breadcrumb_overlay">
+        <div class="container">
+            <div class="fp__breadcrumb_text">
+                <h1>cart view</h1>
+                <ul>
+                    <li><a href="index.html">home</a></li>
+                    <li><a href="#">cart view</a></li>
+                </ul>
             </div>
         </div>
-    </section>
-    <!--=============================
+    </div>
+</section>
+<!--=============================
                 BREADCRUMB END
             ==============================-->
 
-
-    <!--============================
+<!--============================
                 CART VIEW START
             ==============================-->
-    <section class="fp__cart_view mt_125 xs_mt_95 mb_100 xs_mb_70">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 wow fadeInUp" data-wow-duration="1s">
-                    <div class="fp__cart_list">
-                        <div class="table-responsive">
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <th class="fp__pro_img">
-                                            Image
-                                        </th>
+<section class="fp__cart_view mt_125 xs_mt_95 mb_100 xs_mb_70">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 wow fadeInUp" data-wow-duration="1s">
+                <div class="fp__cart_list">
+                    <div class="table-responsive">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th class="fp__pro_img">Image</th>
+                                    <th class="fp__pro_name">Details</th>
+                                    <th class="fp__pro_status">Price</th>
+                                    <th class="fp__pro_select">Quantity</th>
+                                    <th class="fp__pro_tk">Total</th>
+                                    <th class="fp__pro_icon">
+                                        <a class="clear_all" href="{{ route('cart.destroy') }}">Clear All</a>
+                                    </th>
+                                </tr>
 
-                                        <th class="fp__pro_name">
-                                            details
-                                        </th>
+                                @foreach (Cart::content() as $product)
+                                @php
+                                $productTotal = $product->price; // Base product price
 
-                                        <th class="fp__pro_status">
-                                            price
-                                        </th>
+                                foreach ($product->options->product_variants as $variant) {
+                                $productTotal += $variant['item_price'];
+                                }
+                                @endphp
+                                <tr>
+                                    <td class="fp__pro_img">
+                                        <img src="{{ $product->options->product_info['image'] }}" alt="product"
+                                            class="img-fluid w-100">
+                                    </td>
 
-                                        <th class="fp__pro_select">
-                                            quantity
-                                        </th>
+                                    <td class="fp__pro_name">
+                                        <a href="{{ route('product.show', $product->options->product_info['slug']) }}">{{
+                                            $product->name }}</a>
+                                        <span>{{ @$product->options->product_size['name'] }}
+                                            {{ @$product->options->product_size['price'] ? '(' .
+                                            currencyPosition(@$product->options->product_size['price']) . ')' : '' }}
+                                        </span>
+                                        @foreach ($product->options->product_options as $option)
+                                        <p>{{ $option['name'] }} ({{ currencyPosition($option['price']) }})</p>
+                                        @endforeach
+                                        @foreach ($product->options->product_variants as $variant)
+                                        <p>{{ $variant['variant_name'] }}: {{ $variant['item_name'] }} ({{
+                                            currencyPosition($variant['item_price']) }})</p>
+                                        @endforeach
+                                    </td>
 
-                                        <th class="fp__pro_tk">
-                                            total
-                                        </th>
+                                    <td class="fp__pro_status">
+                                        <h6>{{ currencyPosition($product->price) }}</h6>
+                                    </td>
 
-                                        <th class="fp__pro_icon">
-                                            <a class="clear_all" href="{{ route('cart.destroy') }}">clear all</a>
-                                        </th>
-                                    </tr>
+                                    <td class="fp__pro_select">
+                                        <div class="quentity_btn">
+                                            <button class="btn btn-danger decrement"><i
+                                                    class="fal fa-minus"></i></button>
+                                            <input type="text" class="quantity" data-id="{{ $product->rowId }}"
+                                                placeholder="1" value="{{ $product->qty }}" readonly>
+                                            <button class="btn btn-success increment"><i
+                                                    class="fal fa-plus"></i></button>
+                                        </div>
+                                    </td>
 
-                                    @foreach (Cart::content() as $product)
-                                        <tr>
-                                            <td class="fp__pro_img"><img
-                                                    src="{{ $product->options->product_info['image'] }}" alt="product"
-                                                    class="img-fluid w-100">
-                                            </td>
+                                    <td class="fp__pro_tk">
+                                        <h6 class="product_cart_total">{{ currencyPosition($productTotal *
+                                            $product->qty) }}</h6>
+                                    </td>
 
-                                            <td class="fp__pro_name">
-                                                <a
-                                                    href="{{ route('product.show', $product->options->product_info['slug']) }}">{{ $product->name }}</a>
-                                                <span>{{ @$product->options->product_size['name'] }}
-                                                    {{ @$product->options->product_size['price'] ? '(' . currencyPosition(@$product->options->product_size['price']) . ')' : '' }}</span>
-                                                @foreach ($product->options->product_options as $option)
-                                                    <p>{{ $option['name'] }} ({{ currencyPosition($option['price']) }})</p>
-                                                @endforeach
-
-                                            </td>
-
-                                            <td class="fp__pro_status">
-                                                <h6>{{ currencyPosition($product->price) }}</h6>
-                                            </td>
-
-                                            <td class="fp__pro_select">
-                                                <div class="quentity_btn">
-                                                    <button class="btn btn-danger decrement"><i
-                                                            class="fal fa-minus"></i></button>
-                                                    <input type="text" class="quantity" data-id="{{ $product->rowId }}"
-                                                        placeholder="1" value="{{ $product->qty }}" readonly>
-                                                    <button class="btn btn-success increment"><i
-                                                            class="fal fa-plus"></i></button>
-                                                </div>
-                                            </td>
-
-                                            <td class="fp__pro_tk">
-                                                <h6 class="produt_cart_total">
-                                                    {{ currencyPosition(productTotal($product->rowId)) }}</h6>
-                                            </td>
-
-                                            <td class="fp__pro_icon">
-                                                <a href="#" class="reomove_cart_product"
-                                                    data-id="{{ $product->rowId }}"><i class="far fa-times"></i></a>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                    @if (Cart::content()->count() === 0)
-                                        <tr>
-                                            <td colspan="6" class="text-center fp__pro_name"
-                                                style="width: 100%;display: inline;">Cart is empty!</td>
-                                        </tr>
-                                    @endif
-                                </tbody>
-                            </table>
-                        </div>
+                                    <td class="fp__pro_icon">
+                                        <a href="#" class="remove_cart_product" data-id="{{ $product->rowId }}"><i
+                                                class="far fa-times"></i></a>
+                                    </td>
+                                </tr>
+                                @endforeach
+                                @if (Cart::content()->count() === 0)
+                                <tr>
+                                    <td colspan="6" class="text-center fp__pro_name"
+                                        style="width: 100%;display: inline;">Cart is empty!</td>
+                                </tr>
+                                @endif
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-                <div class="col-lg-4 wow fadeInUp" data-wow-duration="1s">
-                    <div class="fp__cart_list_footer_button">
-                        <h6>total cart</h6>
-                        <p>subtotal: <span id="subtotal">{{ currencyPosition(cartTotal()) }}</span></p>
-                        <p>delivery: <span>$00.00</span></p>
-                        <p>discount: <span id="discount">
+            </div>
+            <div class="col-lg-4 wow fadeInUp" data-wow-duration="1s">
+                <div class="fp__cart_list_footer_button">
+                    <h6>Total Cart</h6>
+                    <p>Subtotal: <span id="subtotal">{{ currencyPosition(cartTotal()) }}</span></p>
+                    <p>Delivery: <span>$00.00</span></p>
+                    <p>Discount: <span id="discount">
                             @if (isset(session()->get('coupon')['discount']))
                             {{ config('settings.site_currency_icon') }} {{ session()->get('coupon')['discount'] }}
                             @else
                             {{ config('settings.site_currency_icon') }}0
                             @endif
                         </span></p>
-                        <p class="total"><span>total:</span> <span id="final_total">
+                    <p class="total"><span>Total:</span> <span id="final_total">
                             @if (isset(session()->get('coupon')['discount']))
-                            {{ config('settings.site_currency_icon') }} {{ cartTotal() - session()->get('coupon')['discount'] }}
+                            {{ config('settings.site_currency_icon') }} {{ cartTotal() -
+                            session()->get('coupon')['discount'] }}
                             @else
                             {{ config('settings.site_currency_icon') }} {{ cartTotal() }}
                             @endif
                         </span></p>
-                        <form id="coupon_form">
-                            <input type="text" id="coupon_code" name="code" placeholder="Coupon Code">
-                            <button type="submit">apply</button>
-                        </form>
+                    <form id="coupon_form">
+                        <input type="text" id="coupon_code" name="code" placeholder="Coupon Code">
+                        <button type="submit">Apply</button>
+                    </form>
 
-                       <div class="coupon_card">
+                    <div class="coupon_card">
                         @if (session()->has('coupon'))
-                        <div class="card mt-2">
+                        <div class="mt-2 card">
                             <div class="m-3">
-                                <span><b class="v_coupon_code">Applied Couppon: {{ session()->get('coupon')['code'] }}</b></span>
+                                <span><b class="v_coupon_code">Applied Coupon: {{ session()->get('coupon')['code']
+                                        }}</b></span>
                                 <span>
                                     <button id="destroy_coupon"><i class="far fa-times"></i></button>
                                 </span>
-
                             </div>
                         </div>
                         @endif
-                       </div>
-
-                        <a class="common_btn" href="{{ route('checkout.index') }}">checkout</a>
                     </div>
+
+                    <a class="common_btn" href="{{ route('checkout.index') }}">Checkout</a>
                 </div>
             </div>
         </div>
-    </section>
-    <!--============================
+    </div>
+</section>
+<!--============================
                 CART VIEW END
             ==============================-->
 @endsection
 
 @push('scripts')
-    <script>
-        $(document).ready(function() {
+<script>
+    $(document).ready(function() {
             var cartTotal = parseInt("{{ cartTotal() }}");
-
 
             $('.increment').on('click', function() {
                 let inputField = $(this).siblings(".quantity");
@@ -182,7 +178,7 @@
 
                         let productTotal = response.product_total;
                         inputField.closest("tr")
-                            .find(".produt_cart_total")
+                            .find(".product_cart_total")
                             .text("{{ currencyPosition(':productTotal') }}"
                             .replace(":productTotal", productTotal));
 
@@ -206,14 +202,13 @@
                 inputField.val(currentValue - 1);
 
                 if (inputField.val() > 1) {
-
                     cartQtyUpdate(rowId, inputField.val(), function(response) {
                         if (response.status === 'success') {
                             inputField.val(response.qty);
 
                             let productTotal = response.product_total;
                             inputField.closest("tr")
-                                .find(".produt_cart_total")
+                                .find(".product_cart_total")
                                 .text("{{ currencyPosition(':productTotal') }}"
                                     .replace(":productTotal", productTotal));
 
@@ -225,11 +220,9 @@
                             inputField.val(response.qty);
                             toastr.error(response.message);
                         }
-
                     });
                 }
             });
-
 
             function cartQtyUpdate(rowId, qty, callback) {
                 $.ajax({
@@ -258,7 +251,7 @@
                 })
             }
 
-            $('.reomove_cart_product').on('click', function(e) {
+            $('.remove_cart_product').on('click', function(e) {
                 e.preventDefault();
                 let rowId = $(this).data('id');
                 removeCartProduct(rowId);
@@ -298,7 +291,6 @@
                 couponApply(code, subtotal);
             })
 
-
             function couponApply(code, subtotal) {
                 $.ajax({
                     method: 'POST',
@@ -314,9 +306,9 @@
                         $("#coupon_code").val("");
                         $('#discount').text("{{ config('settings.site_currency_icon') }}"+response.discount);
                         $('#final_total').text("{{ config('settings.site_currency_icon') }}"+response.finalTotal);
-                        $couponCartHtml = `<div class="card mt-2">
+                        $couponCartHtml = `<div class="mt-2 card">
                             <div class="m-3">
-                                <span><b class="v_coupon_code">Applied Couppon: ${response.coupon_code}</b></span>
+                                <span><b class="v_coupon_code">Applied Coupon: ${response.coupon_code}</b></span>
                                 <span>
                                     <button id="destroy_coupon"><i class="far fa-times"></i></button>
                                 </span>
@@ -328,7 +320,6 @@
                     error: function(xhr, status, error){
                         let errorMessage = xhr.responseJSON.message;
                         hideLoader()
-
                         toastr.error(errorMessage);
                     },
                     complete: function(){
@@ -358,7 +349,6 @@
                     error: function(xhr, status, error){
                         let errorMessage = xhr.responseJSON.message;
                         hideLoader()
-
                         toastr.error(errorMessage);
                     },
                     complete: function(){
@@ -367,5 +357,5 @@
                 })
             }
         })
-    </script>
+</script>
 @endpush
