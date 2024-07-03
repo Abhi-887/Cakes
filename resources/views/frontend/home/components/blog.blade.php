@@ -28,6 +28,7 @@
                             <a class="title" href="{{ route('blogs.details', $blog->slug) }}">{{ truncate($blog->title,
                                 70) }}</a>
                             <p>{{ truncate($blog->description, 150) }}</p>
+                            <a href="{{ route('blogs.details', $blog->slug) }}" class="btn btn-primary mt-2">Read More</a>
                         </div>
                     </div>
                 </div>
