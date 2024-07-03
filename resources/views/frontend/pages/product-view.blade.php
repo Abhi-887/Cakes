@@ -13,8 +13,8 @@
         }
     </style>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -29,11 +29,11 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        BREADCRUMB END
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                BREADCRUMB END
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
     <!--=============================
-                                                                                                MENU DETAILS START
-                                                                                                ==============================-->
+                                                                                                        MENU DETAILS START
+                                                                                                        ==============================-->
 
 
 
@@ -342,7 +342,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            {{-- <div class="row">
                 @if (count($relatedProducts) > 0)
                     <div class="fp__related_menu mt_90 xs_mt_60">
                         <h2>Related Item</h2>
@@ -398,6 +398,72 @@
                         </div>
                     </div>
                 @endif
+            </div> --}}
+
+            <div class="testimonial-slider popularfood">
+                <div class="row mt-5 mx-2">
+                    @foreach ($categories as $category)
+                        @php
+                            $products = \App\Models\Product::where([
+                                'show_at_home' => 1,
+                                'status' => 1,
+                                'category_id' => $category->id,
+                            ])
+                                ->orderBy('id', 'DESC')
+                                ->take(8)
+                                ->withAvg('reviews', 'rating')
+                                ->withCount('reviews')
+                                ->get();
+
+                        @endphp
+
+                        @foreach ($products as $product)
+                            <div class="col-md-4 {{ $category->slug }}">
+                                <div class="fp__menu_item m-3">
+                                    <div class="fp__menu_item_img">
+                                        <img src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}"
+                                            class="img-fluid w-100">
+                                    </div>
+                                    <a class="category bg-light px-2 py-1 fw-semibold"
+                                        href="{{ route('category.show', ['slug' => $product->category->slug]) }}">{{ @$product->category->name }}</a>
+                                    <div class="fp__menu_item_text">
+                                        @if ($product->reviews_avg_rating)
+                                            <p class="rating">
+                                                @for ($i = 1; $i <= $product->reviews_avg_rating; $i++)
+                                                    <i class="fas fa-star"></i>
+                                                @endfor
+
+                                                <span>{{ $product->reviews_count }}</span>
+                                            </p>
+                                        @endif
+                                        <a class="title my-3"
+                                            href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
+                                        <p
+                                            class="price fw-semibold text-center position-absolute py-1 px-3 rounded-pill color-light-gray top-0">
+                                            @if ($product->offer_price > 0)
+                                                {{ currencyPosition($product->offer_price) }}
+                                                <del>{{ currencyPosition($product->price) }}</del>
+                                            @else
+                                                {{ currencyPosition($product->price) }}
+                                            @endif
+                                        </p>
+                                        <ul class="d-flex flex-wrap justify-content-center">
+                                            <li><a class="background-light-gray" href="javascript:;"
+                                                    onclick="loadProductModal('{{ $product->id }}')"><i
+                                                        class="fas fa-shopping-basket"></i></a></li>
+                                            <li onclick="addToWishlist('{{ $product->id }}')"><a
+                                                    class="background-light-gray" href="javascript:;"><i
+                                                        class="fal fa-heart"></i></a></li>
+                                            <li><a class="background-light-gray"
+                                                    href="{{ route('product.show', $product->slug) }}"><i
+                                                        class="far fa-eye"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    @endforeach
+                </div>
             </div>
         </div>
     </section>
@@ -409,32 +475,6 @@
 
 @push('scripts')
     <script>
-        $(document).ready(function() {
-            $('.fp__related_menu .row').slick({
-                dots: false,
-                arrows: true,
-                infinite: true,
-                autoplay: true,
-                autoplaySpeed: 2000,
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                responsive: [{
-                        breakpoint: 1400,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1
-                        }
-                    },
-                    {
-                        breakpoint: 991,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1
-                        }
-                    }
-                ]
-            });
-        });
         $(document).ready(function() {
             // Initial setup
             $('.v_product_size').prop('checked', false);
