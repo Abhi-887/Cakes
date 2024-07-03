@@ -13,8 +13,8 @@
         }
     </style>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -453,13 +453,30 @@
 
 @push('scripts')
     <script>
-        $(document).ready(function() {
-            $('.related-products row').slick({
-                slidesToShow: 3,
-                dots: false,
-                arrow: true,
-                centerMode: true,
-            });
+        $('.related-products .row').slick({
+            slidesToShow: 3,
+            dots: false,
+            arrows: true, // Ensure arrows are enabled
+            centerMode: true,
+            prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-chevron-left"></i></button>',
+            nextArrow: '<button type="button" class="slick-next"><i class="fa fa-chevron-right"></i></button>',
+            responsive: [{
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1,
+                        infinite: true,
+                        dots: true
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
         });
 
 
