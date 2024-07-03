@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
@@ -14,16 +13,12 @@ use Illuminate\View\View;
 
 class CartController extends Controller
 {
-
-    function index(): View
+    public function index(): View
     {
         return view('frontend.pages.cart-view');
     }
 
-    /**
-     *  Add product in to cart
-     */
-    function addToCart(Request $request)
+    public function addToCart(Request $request)
     {
         $product = Product::with(['productSizes', 'productOptions', 'variants.productVariantItems'])->findOrFail($request->product_id);
         if ($product->quantity < $request->quantity) {
@@ -92,13 +87,12 @@ class CartController extends Controller
         }
     }
 
-
-    function getCartProduct()
+    public function getCartProduct()
     {
         return view('frontend.layouts.ajax-files.sidebar-cart-item')->render();
     }
 
-    function cartProductRemove($rowId)
+    public function cartProductRemove($rowId)
     {
         try {
             Cart::remove($rowId);
@@ -113,7 +107,7 @@ class CartController extends Controller
         }
     }
 
-    function cartQtyUpdate(Request $request): Response
+    public function cartQtyUpdate(Request $request): Response
     {
         $cartItem = Cart::get($request->rowId);
         $product = Product::findOrFail($cartItem->id);
@@ -131,14 +125,13 @@ class CartController extends Controller
                 'cart_total' => cartTotal(),
                 'grand_cart_total' => grandCartTotal()
             ], 200);
-
         } catch (\Exception $e) {
             logger($e);
             return response(['status' => 'error', 'message' => 'Something went wrong please reload the page.'], 500);
         }
     }
 
-    function cartDestroy()
+    public function cartDestroy()
     {
         Cart::destroy();
         session()->forget('coupon');
