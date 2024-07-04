@@ -82,14 +82,14 @@
                     </a>
                 </li>
                 @php @$unseenMessages = \App\Models\Chat::where(['sender_id' => 1, 'receiver_id' => auth()->user()->id, 'seen' => 0])->count(); @endphp
-                {{-- <li>
+                {{ <li>
                     <a class="message_icon me-4 position-relative fw-semibold fs-5 transitions" href="{{ route('dashboard') }}">
                         <i class="fas fa-comment-alt-dots"></i>
                         <span class="sunseen-message-count bg-gray position-absolute text-light fw-semibold text-center bottom-50 end-25 ms-1 rounded-circle">
                             {{ $unseenMessages > 0 ? 1 : 0 }}
                         </span>
                     </a>
-                </li> --}}
+                </li> }}
                 <li>
                     <a class="fs-5 me-3 me-sm-4" href="{{ route('login') }}">
                         <i class="fas fa-user"></i>
@@ -321,20 +321,21 @@
             });
         });
 
-        document.addEventListener('DOMContentLoaded', function() {
-    const searchIcon = document.querySelector('.menu_search');
-    const searchForm = document.querySelector('.fp__search_form');
-    const closeSearch = document.querySelector('.close_search');
+       document.addEventListener('DOMContentLoaded', function() {
+            const searchIcon = document.querySelector('.menu_search');
+            const searchForm = document.querySelector('.search-form');
+            const closeSearch = document.querySelector('.search-close');
 
-    searchIcon.addEventListener('click', function(event) {
-        event.preventDefault();
-        searchForm.classList.add('active');
-    });
+            searchIcon.addEventListener('click', function(event) {
+                event.preventDefault();
+                searchForm.classList.add('active');
+            });
 
-    closeSearch.addEventListener('click', function() {
-        searchForm.classList.remove('active');
-    });
-});
+            closeSearch.addEventListener('click', function() {
+                searchForm.classList.remove('active');
+            });
+        });
+
 
     </script>
 @endpush
