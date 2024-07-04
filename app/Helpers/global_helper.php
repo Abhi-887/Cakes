@@ -117,29 +117,34 @@ if (!function_exists('productTotal')) {
 // }
 
 if (!function_exists('grandCartTotal')) {
-    function grandCartTotal($deliveryFee = 0)
+    function grandCartTotal($deliveryFee = 0, $discount = 0)
     {
         $cartContent = Cart::content();
-        $total = 0;
+        $subtotal = 0;
 
         foreach ($cartContent as $cartProduct) {
             $totalPrice = $cartProduct->price * $cartProduct->qty;
+            // Add any additional product variants or options
+            // $totalPrice += ...
 
-            foreach ($cartProduct->options->product_variants as $variant) {
-                $totalPrice += $variant['item_price'] * $cartProduct->qty;
-            }
-
-            $total += $totalPrice;
+            $subtotal += $totalPrice;
         }
 
-        // Add delivery fee to the total
-        $total += $deliveryFee;
+        // Calculate total before discount and delivery fee
+        $totalBeforeDiscountAndDelivery = $subtotal;
 
-        // // Include tax, discount, etc.
-        // $tax = $total * 0.21; // For example, 21% tax
-        // $total += $tax;
+        // Apply discount
+        $subtotal -= $discount;
 
-        return $total;
+        // Add delivery fee
+        $subtotal += $deliveryFee;
+
+        // Ensure total doesn't go below zero
+        if ($subtotal < 0) {
+            $subtotal = 0;
+        }
+
+        return $subtotal;
     }
 }
 
