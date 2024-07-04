@@ -229,24 +229,23 @@
         display: inline-block;
     }
 
+
+    .carousel-control-prev-icon,
     .carousel-control-next-icon {
         z-index: 100;
         cursor: pointer;
         position: relative;
+        width: 50px;
+        height: 50px;
+        background-size: cover !important;
+    }
+
+    .carousel-control-next-icon {
         background: url('{{ asset('uploads/arrow4.png') }}') no-repeat 0 0 !important;
-        width: 70px;
-        height: 70px;
-        /* left: 20px !important; */
     }
 
     .carousel-control-prev-icon {
-        z-index: 100;
-        cursor: pointer;
-        position: relative;
         background: url('{{ asset('uploads/arrow3.png') }}') no-repeat 0 0 !important;
-        width: 70px;
-        height: 70px;
-        /* left: 20px !important; */
     }
 
     .carousel-control-prev-icon:hover {
