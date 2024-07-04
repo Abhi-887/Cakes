@@ -106,11 +106,11 @@
 <section class="fp__banner">
     <div class="fp__banner_overlay">
         <div class="slider-body">
-            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
                 <div class="carousel-inner">
                     @foreach ($sliders as $key => $slider)
                         @if ($slider->show_at_home == $selectedOption || $selectedOption === null || $selectedOption === '')
-                            <div class="carousel-item{{ $key === 0 ? ' active' : '' }} background">
+                            <div class="carousel-item{{ $key === 0 ? ' active' : '' }} background{{ $key + 1 }}">
                                 <div class="container width_Global">
                                     <img src="{{ asset($slider->image) }}" class="d-block img-fluid front_image"
                                         alt="">
