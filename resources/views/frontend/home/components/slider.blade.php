@@ -106,7 +106,7 @@
 <section class="fp__banner">
     <div class="fp__banner_overlay">
         <div class="slider-body">
-            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div id="" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     @foreach ($sliders as $key => $slider)
                         @if ($slider->show_at_home == $selectedOption || $selectedOption === null || $selectedOption === '')
