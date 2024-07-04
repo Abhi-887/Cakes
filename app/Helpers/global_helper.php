@@ -117,7 +117,7 @@ if (!function_exists('productTotal')) {
 // }
 
 if (!function_exists('grandCartTotal')) {
-    function grandCartTotal()
+    function grandCartTotal($deliveryFee = 0)
     {
         $cartContent = Cart::content();
         $total = 0;
@@ -132,6 +132,9 @@ if (!function_exists('grandCartTotal')) {
             $total += $totalPrice;
         }
 
+        // Add delivery fee to the total
+        $total += $deliveryFee;
+
         // // Include tax, discount, etc.
         // $tax = $total * 0.21; // For example, 21% tax
         // $total += $tax;
@@ -139,6 +142,7 @@ if (!function_exists('grandCartTotal')) {
         return $total;
     }
 }
+
 
 /** Generate Invoice Id */
 if (!function_exists('generateInvoiceId')) {
