@@ -87,7 +87,7 @@
                                     aria-controls="v-pills-settings" aria-selected="false"><span><i
                                             class="fas fa-user-lock"></i></span> Change Password </button>
                   <!-- Authentication -->
-                  form id="logout-form" method="POST" action="{{ route('logout') }}">
+                  <form id="logout-form" method="POST" action="{{ route('logout') }}">
                   @csrf
 
                   <button style="width: 100%;" class="nav-link" type="button" data-toggle="modal" data-target="#logoutModal">
