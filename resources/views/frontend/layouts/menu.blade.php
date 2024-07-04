@@ -184,6 +184,14 @@
         </div>
         <ul class="cart_contents">
             @foreach (Cart::content() as $cartProduct)
+                @php
+                    $totalPrice = $cartProduct->price; // Base product price
+
+                    // Add the prices of the variants to the total price
+                    foreach ($cartProduct->options->product_variants as $cartProductVariant) {
+                        $totalPrice += $cartProductVariant['item_price'];
+                    }
+                @endphp
                 <li class="d-flex flex-wrap justify-content-between position-relative border p-2 rounded-3">
                     <div class="menu_cart_img rounded-circle">
                         <img src="{{ asset($cartProduct->options->product_info['image']) }}" alt="menu"
@@ -191,13 +199,13 @@
                     </div>
                     <div class="menu_cart_text w-75">
                         <a class="title transitions overflow-hidden fw-semibold fs-5"
-                            href="{{ route('product.show', $cartProduct->options->product_info['slug']) }}">{!! $cartProduct->name !!}
-                        </a>
+                            href="{{ route('product.show', $cartProduct->options->product_info['slug']) }}">{!! $cartProduct->name !!}</a>
                         <p class="size">Qty: {{ $cartProduct->qty }}</p>
 
-                        <p class="size">{{ @$cartProduct->options->product_size['name'] }}
-                            {{ @$cartProduct->options->product_size['price'] ? '(' . currencyPosition(@$cartProduct->options->product_size['price']) . ')' : '' }}
-                        </p>
+                        @foreach ($cartProduct->options->product_size as $size)
+                            <p class="size">{{ $size['name'] }}
+                                {{ $size['price'] ? '(' . currencyPosition($size['price']) . ')' : '' }}</p>
+                        @endforeach
 
                         @foreach ($cartProduct->options->product_options as $cartProductOption)
                             <span class="extra d-block position-relative">{{ $cartProductOption['name'] }}
@@ -205,13 +213,21 @@
                             </span>
                         @endforeach
 
-                        <p class="price fw-semibold mt-2">{{ currencyPosition($cartProduct->price) }}</p>
+                        @foreach ($cartProduct->options->product_variants as $cartProductVariant)
+                            <p class="variant">
+                                {{ $cartProductVariant['variant_name'] }}: {{ $cartProductVariant['item_name'] }}
+                                ({{ currencyPosition($cartProductVariant['item_price']) }})
+                            </p>
+                        @endforeach
+
+                        <p class="price fw-semibold mt-2">{{ currencyPosition($totalPrice) }}</p>
                     </div>
                     <span class="del_icon position-absolute top-50 text-center rounded-circle"
                         onclick="removeProductFromSidebar('{{ $cartProduct->rowId }}')"><i
                             class="fal fa-times"></i></span>
                 </li>
             @endforeach
+
 
         </ul>
         <p class="subtotal d-flex justify-content-between align-items-center fw-bold my-3 text-dark">SUB TOTAL <span
