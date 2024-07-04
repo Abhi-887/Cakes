@@ -30,7 +30,14 @@ class CakesstandDataTable extends DataTable
                 $imageUrl = asset('images/cakesstands/' . $query->image); // Ensure correct path
                 return '<img width="100px" src="' . $imageUrl . '">';
             })
-            ->rawColumns(['image', 'action']) // Ensure 'action' is included here
+            ->addColumn('status', function($query){
+                if($query->status === 1){
+                    return '<span class="badge badge-primary">Active</span>';
+                } else {
+                    return '<span class="badge badge-danger">InActive</span>';
+                }
+            })
+            ->rawColumns(['image', 'action','status']) // Ensure 'action' is included here
             ->setRowId('id');
     }
 
