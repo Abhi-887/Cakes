@@ -257,8 +257,8 @@
         z-index: 100;
         cursor: pointer;
         position: relative;
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
         background-size: cover !important;
         background-repeat: no-repeat !important;
     }
