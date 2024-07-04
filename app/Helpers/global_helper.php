@@ -76,6 +76,29 @@ if (!function_exists('cartTotal')) {
 }
 
 /** Calculate product total price */
+// if (!function_exists('productTotal')) {
+//     function productTotal($rowId)
+//     {
+//         $total = 0;
+
+//         $product = Cart::get($rowId);
+
+//         $productPrice = $product->price;
+//         $sizePrice = $product->options?->product_size['price'] ?? 0;
+//         $optionsPrice = 0;
+
+//         foreach ($product->options->product_options as $option) {
+//             $optionsPrice += $option['price'];
+//         }
+
+//         $total += ($productPrice + $sizePrice + $optionsPrice) * $product->qty;
+
+
+//         return $total;
+//     }
+// }
+
+
 if (!function_exists('productTotal')) {
     function productTotal($rowId)
     {
@@ -87,16 +110,22 @@ if (!function_exists('productTotal')) {
         $sizePrice = $product->options?->product_size['price'] ?? 0;
         $optionsPrice = 0;
 
+        // Add price of each selected option
         foreach ($product->options->product_options as $option) {
             $optionsPrice += $option['price'];
         }
 
-        $total += ($productPrice + $sizePrice + $optionsPrice) * $product->qty;
+        // Add price of each variant
+        foreach ($product->options->product_variants as $variant) {
+            $optionsPrice += $variant['item_price'];
+        }
 
+        $total += ($productPrice + $sizePrice + $optionsPrice) * $product->qty;
 
         return $total;
     }
 }
+
 
 /** grand cart total */
 // if (!function_exists('grandCartTotal')) {
