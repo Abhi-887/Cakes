@@ -238,14 +238,15 @@
         width: 50px;
         height: 50px;
         background-size: cover !important;
+        background-repeat: no-repeat !important;
     }
 
     .carousel-control-next-icon {
-        background: url('{{ asset('uploads/arrow4.png') }}') no-repeat 0 0 !important;
+        background: url('{{ asset('uploads/arrow4.png') }}') !important;
     }
 
     .carousel-control-prev-icon {
-        background: url('{{ asset('uploads/arrow3.png') }}') no-repeat 0 0 !important;
+        background: url('{{ asset('uploads/arrow3.png') }}') !important;
     }
 
     .carousel-control-prev-icon:hover {
