@@ -114,12 +114,6 @@
                                 <div class="container width_Global">
                                     <img src="{{ asset($slider->image) }}" class="d-block img-fluid front_image"
                                         alt="">
-                                    <div class="my-5">
-                                        <div class="my-5">
-                                            <h2>David Duncan Sugarcraft School</h2>
-                                            <a href="">Open Now! - Click Here</a>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         @endif
