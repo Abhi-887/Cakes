@@ -14,12 +14,12 @@ use Illuminate\View\View;
 use Srmklive\PayPal\Services\PayPal as PayPalClient;
 use Stripe\Stripe;
 use Stripe\Checkout\Session as StripeSession;
-use Razorpay\Api\Api as RazorpayApi ;
+use Razorpay\Api\Api as RazorpayApi;
 
 
 class PaymentController extends Controller
 {
-    function index(): View
+    public function index(): View
     {
         if (!session()->has('delivery_fee') || !session()->has('address')) {
             throw ValidationException::withMessages(['Something went wrong']);
@@ -29,6 +29,10 @@ class PaymentController extends Controller
         $delivery = session()->get('delivery_fee') ?? 0;
         $discount = session()->get('coupon')['discount'] ?? 0;
         $grandTotal = grandCartTotal($delivery);
+
+        // Store grand total in session
+        session()->put('grand_total', $grandTotal);
+
         return view('frontend.pages.payment', compact(
             'subtotal',
             'delivery',
@@ -37,11 +41,14 @@ class PaymentController extends Controller
         ));
     }
 
-    function paymentSuccess() : View {
+
+    function paymentSuccess(): View
+    {
         return view('frontend.pages.payment-success');
     }
 
-    function paymentCancel() : View {
+    function paymentCancel(): View
+    {
         return view('frontend.pages.payment-cancel');
     }
 
@@ -126,13 +133,13 @@ class PaymentController extends Controller
             ]
         ]);
 
-        if(isset($response['id']) && $response['id'] != NULL){
-            foreach($response['links'] as $link){
-                if($link['rel'] === 'approve'){
+        if (isset($response['id']) && $response['id'] != NULL) {
+            foreach ($response['links'] as $link) {
+                if ($link['rel'] === 'approve') {
                     return redirect()->away($link['href']);
                 }
             }
-        }else {
+        } else {
             return redirect()->route('payment.cancel')->withErrors(['error' => $response['error']['message']]);
         }
     }
@@ -146,7 +153,7 @@ class PaymentController extends Controller
         $response = $provider->capturePaymentOrder($request->token);
 
 
-        if(isset($response['status']) && $response['status'] === 'COMPLETED'){
+        if (isset($response['status']) && $response['status'] === 'COMPLETED') {
 
             $orderId = session()->get('order_id');
 
@@ -165,7 +172,7 @@ class PaymentController extends Controller
             $orderService->clearSession();
 
             return redirect()->route('payment.success');
-        }else {
+        } else {
             $this->transactionFailUpdateStatus('PayPal');
             return redirect()->route('payment.cancel')->withErrors(['error' => $response['error']['message']]);
         }
@@ -179,7 +186,8 @@ class PaymentController extends Controller
 
     /** Stripe Payment */
 
-    function payWithStripe() {
+    function payWithStripe()
+    {
         Stripe::setApiKey(config('gatewaySettings.stripe_secret_key'));
 
         /** calculate payable amount */
@@ -207,13 +215,14 @@ class PaymentController extends Controller
         return redirect()->away($response->url);
     }
 
-    function stripeSuccess(Request $request, OrderService $orderService) {
+    function stripeSuccess(Request $request, OrderService $orderService)
+    {
         $sessionId = $request->session_id;
         Stripe::setApiKey(config('gatewaySettings.stripe_secret_key'));
 
         $response = StripeSession::retrieve($sessionId);
 
-        if($response->payment_status === 'paid') {
+        if ($response->payment_status === 'paid') {
 
             $orderId = session()->get('order_id');
             $paymentInfo = [
@@ -231,42 +240,45 @@ class PaymentController extends Controller
             $orderService->clearSession();
 
             return redirect()->route('payment.success');
-        }else {
+        } else {
             $this->transactionFailUpdateStatus('Stripe');
             return redirect()->route('payment.cancel');
         }
     }
 
-    function stripeCancel() {
+    function stripeCancel()
+    {
         $this->transactionFailUpdateStatus('Stripe');
         return redirect()->route('payment.cancel');
     }
 
-    function razorpayRedirect() {
+    function razorpayRedirect()
+    {
         return view('frontend.pages.razorpay-redirect');
     }
 
-    function payWithRazorpay(Request $request, OrderService $orderService) {
+    function payWithRazorpay(Request $request, OrderService $orderService)
+    {
         $api = new RazorpayApi(
             config('gatewaySettings.razorpay_api_key'),
             config('gatewaySettings.razorpay_secret_key'),
         );
 
-        if($request->has('razorpay_payment_id') && $request->filled('razorpay_payment_id')){
+        if ($request->has('razorpay_payment_id') && $request->filled('razorpay_payment_id')) {
             $grandTotal = session()->get('grand_total');
             $payableAmount = ($grandTotal * config('gatewaySettings.razorpay_rate')) * 100;
 
-            try{
+            try {
                 $response = $api->payment
                     ->fetch($request->razorpay_payment_id)
                     ->capture(['amount' => $payableAmount]);
-            }catch(\Exception $e) {
+            } catch (\Exception $e) {
                 logger($e);
                 $this->transactionFailUpdateStatus('Razorpay');
                 return redirect()->route('payment.cancel')->withErrors($e->getMessage());
             }
 
-            if($response['status'] === 'captured'){
+            if ($response['status'] === 'captured') {
 
                 $orderId = session()->get('order_id');
                 $paymentInfo = [
@@ -284,7 +296,7 @@ class PaymentController extends Controller
                 $orderService->clearSession();
 
                 return redirect()->route('payment.success');
-            }else {
+            } else {
                 $this->transactionFailUpdateStatus('Razorpay');
                 return redirect()->route('payment.cancel')->withErrors($e->getMessage());
             }
@@ -292,7 +304,8 @@ class PaymentController extends Controller
     }
 
 
-    function transactionFailUpdateStatus($gatewayName) : void {
+    function transactionFailUpdateStatus($gatewayName): void
+    {
         $orderId = session()->get('order_id');
         $paymentInfo = [
             'transaction_id' => '',
@@ -302,5 +315,4 @@ class PaymentController extends Controller
 
         OrderPaymentUpdateEvent::dispatch($orderId, $paymentInfo, $gatewayName);
     }
-
 }
