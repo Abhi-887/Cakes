@@ -33,6 +33,14 @@ class PaymentController extends Controller
         // Store grand total in session
         session()->put('grand_total', $grandTotal);
 
+        // Log the values
+        logger()->info('Payment Page:', [
+            'subtotal' => $subtotal,
+            'delivery' => $delivery,
+            'discount' => $discount,
+            'grandTotal' => $grandTotal
+        ]);
+
         return view('frontend.pages.payment', compact(
             'subtotal',
             'delivery',
@@ -40,6 +48,7 @@ class PaymentController extends Controller
             'grandTotal'
         ));
     }
+
 
 
     function paymentSuccess(): View
