@@ -87,12 +87,12 @@
                                     aria-controls="v-pills-settings" aria-selected="false"><span><i
                                             class="fas fa-user-lock"></i></span> Change Password </button>
                   <!-- Authentication -->
-                                <form method="POST" action="{{ route('logout') }}">
+                                <form id="logout-form" method="POST" action="{{ route('logout') }}">
                                     @csrf
 
-                                    <button style="width: 100%;" class="nav-link" onclick="event.preventDefault();
-                                    this.closest('form').submit();" type="button"><span> <i class="fas fa-sign-out-alt"></i>
-                                    </span> Logout</button>
+                                    <button style="width: 100%;" class="nav-link" onclick="event.preventDefault(); confirmLogout();" type="button">
+                                        <span><i class="fas fa-sign-out-alt"></i></span> Logout
+                                    </button>
                                 </form>
                             </div>
                         </div>
@@ -237,5 +237,11 @@
                 })
             })
         })
+
+        function confirmLogout() {
+    if (confirm("Are you sure you want to log out?")) {
+        document.getElementById('logout-form').submit();
+    }
+}
     </script>
 @endpush
