@@ -1,7 +1,7 @@
 @extends('frontend.layouts.master')
 
 @section('content')
-
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-beta3/css/bootstrap.min.css" rel="stylesheet">
     <!--=============================
         BREADCRUMB START
     ==============================-->
