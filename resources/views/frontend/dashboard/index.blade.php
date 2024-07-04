@@ -87,13 +87,34 @@
                                     aria-controls="v-pills-settings" aria-selected="false"><span><i
                                             class="fas fa-user-lock"></i></span> Change Password </button>
                   <!-- Authentication -->
-                                <form id="logout-form" method="POST" action="{{ route('logout') }}">
-                                    @csrf
+                  form id="logout-form" method="POST" action="{{ route('logout') }}">
+                  @csrf
 
-                                    <button style="width: 100%;" class="nav-link" onclick="event.preventDefault(); confirmLogout();" type="button">
-                                        <span><i class="fas fa-sign-out-alt"></i></span> Logout
-                                    </button>
-                                </form>
+                  <button style="width: 100%;" class="nav-link" type="button" data-toggle="modal" data-target="#logoutModal">
+                      <span><i class="fas fa-sign-out-alt"></i></span> Logout
+                  </button>
+              </form>
+
+              <!-- Logout Confirmation Modal -->
+              <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h5 class="modal-title" id="logoutModalLabel">Confirm Logout</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                              </button>
+                          </div>
+                          <div class="modal-body">
+                              Are you sure you want to log out?
+                          </div>
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                              <button type="button" class="btn btn-primary" onclick="document.getElementById('logout-form').submit();">Yes</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
                             </div>
                         </div>
                     </div>
@@ -238,10 +259,5 @@
             })
         })
 
-        function confirmLogout() {
-    if (confirm("Are you sure you want to log out?")) {
-        document.getElementById('logout-form').submit();
-    }
-}
     </script>
 @endpush
