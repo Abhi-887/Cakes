@@ -19,6 +19,15 @@ use Razorpay\Api\Api as RazorpayApi;
 
 class PaymentController extends Controller
 {
+
+    function grandCartTotal($delivery = 0)
+    {
+        $subtotal = cartTotal();
+        $discount = session()->get('coupon')['discount'] ?? 0;
+        $grandTotal = $subtotal + $delivery - $discount;
+        return $grandTotal;
+    }
+
     public function index(): View
     {
         if (!session()->has('delivery_fee') || !session()->has('address')) {
