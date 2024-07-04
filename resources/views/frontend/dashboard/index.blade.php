@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                            BREADCRUMB START
-                        ==============================-->
+                                BREADCRUMB START
+                            ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ config('settings.breadcrumb') }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,13 +18,13 @@
         </div>
     </section>
     <!--=============================
-                            BREADCRUMB END
-                        ==============================-->
+                                BREADCRUMB END
+                            ==============================-->
 
 
     <!--=========================
-                            DASHBOARD START
-                        ==========================-->
+                                DASHBOARD START
+                            ==========================-->
     <section class="fp__dashboard mt_120 xs_mt_90 mb_100 xs_mb_70">
         <div class="container">
             <div class="fp__dashboard_area">
@@ -225,9 +225,11 @@
         </div>
     </div>
     <!-- CART POPUT END --> --}}
+
+
     <!--=========================
-                            DASHBOARD END
-                        ==========================-->
+                                DASHBOARD END
+                            ==========================-->
 @endsection
 
 @push('scripts')
