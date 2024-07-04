@@ -1,5 +1,6 @@
 <?php
 
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 /** Create unique slug */
 if (!function_exists('generateUniqueSlug')) {
@@ -117,7 +118,7 @@ if (!function_exists('productTotal')) {
 // }
 
 if (!function_exists('grandCartTotal')) {
-    function grandCartTotal($deliveryFee = 0, $discount = 0)
+    function grandCartTotal($deliveryFee = 0)
     {
         $cartContent = Cart::content();
         $subtotal = 0;
@@ -130,11 +131,11 @@ if (!function_exists('grandCartTotal')) {
             $subtotal += $totalPrice;
         }
 
-        // Calculate total before discount and delivery fee
-        $totalBeforeDiscountAndDelivery = $subtotal;
-
-        // Apply discount
-        $subtotal -= $discount;
+        // Apply discount if available
+        if (session()->has('coupon')) {
+            $discount = session()->get('coupon')['discount'];
+            $subtotal -= $discount;
+        }
 
         // Add delivery fee
         $subtotal += $deliveryFee;
@@ -147,6 +148,7 @@ if (!function_exists('grandCartTotal')) {
         return $subtotal;
     }
 }
+
 
 
 /** Generate Invoice Id */
