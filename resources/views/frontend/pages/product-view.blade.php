@@ -43,8 +43,8 @@
         }
     </style>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -360,21 +360,22 @@
                     </div>
                 </div>
             </div>
+
             <div class="row">
                 @if (count($relatedProducts) > 0)
                     <div class="fp__related_menu mt_90 xs_mt_60">
                         <h2>Related Item</h2>
                         <div class="row related_product_slider">
                             @foreach ($relatedProducts as $relatedProduct)
-                                <div class="col-lg-4 wow fadeInUp" data-wow-duration="1s">
-                                    <div class="fp__menu_item">
+                                <div class="col-lg-4 d-flex align-items-stretch wow fadeInUp" data-wow-duration="1s">
+                                    <div class="fp__menu_item d-flex flex-column">
                                         <div class="fp__menu_item_img">
                                             <img src="{{ asset($relatedProduct->thumb_image) }}"
                                                 alt="{{ $relatedProduct->name }}" class="img-fluid w-100">
                                         </div>
                                         <a class="px-2 py-1 category bg-light fw-semibold"
                                             href="#">{{ @$relatedProduct->category->name }}</a>
-                                        <div class="fp__menu_item_text">
+                                        <div class="fp__menu_item_text mt-auto">
                                             <p class="rating">
                                                 @if ($relatedProduct->reviews_avg_rating)
                                                     <p class="rating">
@@ -397,7 +398,7 @@
                                                     {{ currencyPosition($relatedProduct->price) }}
                                                 @endif
                                             </p>
-                                            <ul class="flex-wrap d-flex justify-content-center">
+                                            <ul class="flex-wrap d-flex justify-content-center mt-3">
                                                 <li><a href="javascript:;"
                                                         onclick="loadProductModal('{{ $relatedProduct->id }}')"><i
                                                             class="fas fa-shopping-basket"></i></a></li>
@@ -417,12 +418,9 @@
                     </div>
                 @endif
             </div>
+
         </div>
     </section>
-
-
-
-
 @endsection
 
 @push('scripts')
