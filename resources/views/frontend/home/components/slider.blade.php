@@ -236,7 +236,7 @@
         background: url('{{ asset('uploads/arrow4.png') }}') no-repeat 0 0 !important;
         width: 70px;
         height: 70px;
-        left: 20px !important;
+        /* left: 20px !important; */
     }
 
     .carousel-control-prev-icon {
