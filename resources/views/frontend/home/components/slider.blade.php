@@ -103,7 +103,7 @@
 @php
     $selectedOption = null;
 @endphp
-<section class="fp__banner">
+{{-- <section class="fp__banner">
     <div class="fp__banner_overlay">
         <div class="slider-body">
             <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
@@ -132,8 +132,30 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 
+
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        @foreach ($sliders as $key => $slider)
+            @if ($slider->show_at_home == $selectedOption || $selectedOption === null || $selectedOption === '')
+                <div class="carousel-item{{ $key === 0 ? ' active' : '' }} background{{ $key + 1 }}">
+                    <div class="container width_Global">
+                        <img src="{{ asset($slider->image) }}" class="d-block img-fluid front_image" alt="">
+                    </div>
+                </div>
+            @endif
+        @endforeach
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
 
 
 <style>
