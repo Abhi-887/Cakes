@@ -193,7 +193,7 @@
             background-size: cover;
             background-position: center center;
             position: relative;
-            /* height: 645px !important; */
+            height: 645px !important;
         }
     @endforeach
 
@@ -201,9 +201,9 @@
         position: relative;
     }
 
-    /* .background6 {
+    .background6 {
         height: 550px !important;
-    } */
+    }
 
     .slider-img img {
         width: 100%;
@@ -251,24 +251,24 @@
         display: inline-block;
     }
 
-
-    .carousel-control-prev-icon,
     .carousel-control-next-icon {
         z-index: 100;
         cursor: pointer;
         position: relative;
-        width: 60px;
-        height: 60px;
-        background-size: cover !important;
-        background-repeat: no-repeat !important;
-    }
-
-    .carousel-control-next-icon {
-        background: url('{{ asset('uploads/arrow4.png') }}') !important;
+        background: url('{{ asset('uploads/arrow4.png') }}') no-repeat 0 0 !important;
+        width: 70px;
+        height: 70px;
+        /* left: 20px !important; */
     }
 
     .carousel-control-prev-icon {
-        background: url('{{ asset('uploads/arrow3.png') }}') !important;
+        z-index: 100;
+        cursor: pointer;
+        position: relative;
+        background: url('{{ asset('uploads/arrow3.png') }}') no-repeat 0 0 !important;
+        width: 70px;
+        height: 70px;
+        left: 20px !important;
     }
 
     .carousel-control-prev-icon:hover {
