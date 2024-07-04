@@ -114,6 +114,7 @@
                                 <div class="container width_Global">
                                     <img src="{{ asset($slider->image) }}" class="d-block img-fluid front_image"
                                         alt="">
+                                    <h2>dddddd</h2>
                                 </div>
                             </div>
                         @endif
