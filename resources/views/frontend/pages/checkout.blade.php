@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-            BREADCRUMB START
-        ==============================-->
+                    BREADCRUMB START
+                ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,13 +18,13 @@
         </div>
     </section>
     <!--=============================
-            BREADCRUMB END
-        ==============================-->
+                    BREADCRUMB END
+                ==============================-->
 
 
     <!--============================
-            CHECK OUT PAGE START
-        ==============================-->
+                    CHECK OUT PAGE START
+                ==============================-->
     <section class="fp__cart_view mt_125 xs_mt_95 mb_100 xs_mb_70">
         <div class="container">
             <div class="row">
@@ -118,10 +118,11 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div  style="display:flex;">
+                                                            <div style="display:flex;">
                                                                 <button style="width: 200px" type="button"
                                                                     class="common_btn cancel_new_address mr-2">cancel</button>
-                                                                <button style="width: 200px" type="submit" class="common_btn">save
+                                                                <button style="width: 200px" type="submit"
+                                                                    class="common_btn">save
                                                                     address</button>
                                                             </div>
                                                         </div>
@@ -138,8 +139,8 @@
                                     <div class="col-md-6">
                                         <div class="fp__checkout_single_address">
                                             <div class="form-check">
-                                                <input class="form-check-input v_address" value="{{ $address->id }}" type="radio" name="flexRadioDefault"
-                                                    id="home">
+                                                <input class="form-check-input v_address" value="{{ $address->id }}"
+                                                    type="radio" name="flexRadioDefault" id="home">
                                                 <label class="form-check-label" for="home">
                                                     @if ($address->type === 'home')
                                                         <span class="icon"><i class="fas fa-home"></i> home</span>
@@ -164,12 +165,12 @@
                         <p>subtotal: <span>{{ currencyPosition(cartTotal()) }}</span></p>
                         <p>delivery: <span id="delivery_fee">$00.00</span></p>
                         @if (session()->has('coupon'))
-                        <p>discount: <span>{{ currencyPosition(session()->get('coupon')['discount']) }}</span></p>
+                            <p>discount: <span>{{ currencyPosition(session()->get('coupon')['discount']) }}</span></p>
                         @else
-                        <p>discount: <span>{{ currencyPosition(0) }}</span></p>
-
+                            <p>discount: <span>{{ currencyPosition(0) }}</span></p>
                         @endif
-                        <p class="total"><span>total:</span> <span id="grand_total">{{ currencyPosition(grandCartTotal()) }}</span></p>
+                        <p class="total"><span>total:</span> <span
+                                id="grand_total">{{ currencyPosition(grandCartTotal()) }}</span></p>
 
                         <a class="common_btn" id="procced_pmt_button" href=" #">Proceed to Payment</a>
                     </div>
@@ -178,8 +179,8 @@
         </div>
     </section>
     <!--============================
-            CHECK OUT PAGE END
-        ==============================-->
+                    CHECK OUT PAGE END
+                ==============================-->
 @endsection
 
 @push('scripts')
@@ -187,64 +188,67 @@
         $(document).ready(function() {
             $('.v_address').prop('checked', false);
 
-            $('.v_address').on('click', function(){
+            $('.v_address').on('click', function() {
                 let addressId = $(this).val();
                 let deliveryFee = $('#delivery_fee');
                 let grandTotal = $('#grand_total');
 
                 $.ajax({
                     method: 'GET',
-                    url: '{{ route("checkout.delivery-cal", ":id") }}'.replace(":id", addressId),
+                    url: '{{ route('checkout.delivery-cal', ':id') }}'.replace(":id", addressId),
                     beforeSend: function() {
-                        showLoader()
+                        showLoader();
                     },
                     success: function(response) {
                         deliveryFee.text("{{ currencyPosition(':amount') }}"
                             .replace(":amount", response.delivery_fee.toFixed(2)));
 
+                        // Make sure the grand total is updated correctly
                         grandTotal.text("{{ currencyPosition(':amount') }}"
-                        .replace(":amount", response.grand_total.toFixed(2)));
+                            .replace(":amount", (response.grand_total + response
+                                .delivery_fee).toFixed(2)));
                     },
-                    error: function(xhr, status, error){
+                    error: function(xhr, status, error) {
                         let errorMessage = xhr.responseJSON.message;
-                        toastr.success(errorMessage);
+                        toastr.error(errorMessage);
                     },
                     complete: function() {
-                        hideLoader()
+                        hideLoader();
                     }
-                })
-            })
+                });
+            });
 
-            $('#procced_pmt_button').on('click', function(e){
+            $('#procced_pmt_button').on('click', function(e) {
                 e.preventDefault();
                 let address = $('.v_address:checked');
                 let id = address.val();
-                if(address.length === 0){
-                    toastr.error('Please Select a Address!');
+                if (address.length === 0) {
+                    toastr.error('Please Select an Address!');
                     return;
                 }
 
                 $.ajax({
-                    method: 'Post',
-                    url: '{{ route("checkout.redirect") }}',
+                    method: 'POST',
+                    url: '{{ route('checkout.redirect') }}',
                     data: {
-                        id: id
+                        id: id,
+                        _token: '{{ csrf_token() }}'
                     },
                     beforeSend: function() {
-                        showLoader()
+                        showLoader();
                     },
                     success: function(response) {
                         window.location.href = response.redirect_url;
                     },
-                    error: function(xhr, status, error){
+                    error: function(xhr, status, error) {
                         let errorMessage = xhr.responseJSON.message;
-                        toastr.success(errorMessage);
+                        toastr.error(errorMessage);
                     },
                     complete: function() {
-                        hideLoader()
+                        hideLoader();
                     }
-                })
-            })
-        })
+                });
+            });
+        });
     </script>
 @endpush
