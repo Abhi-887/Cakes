@@ -1,26 +1,3 @@
-<style>
-.fp__search_form {
-    display: none; /* Hide by default */
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
-    z-index: 1000; /* Ensure it sits above other content */
-}
-
-.fp__search_form.active {
-    display: flex; /* Show when active */
-}
-
-.searchinput {
-    padding: 10px;
-    font-size: 16px;
-}
-
-.close_search {
-    cursor: pointer;
-    color: white;
-}
-
-</style>
-
 <section class="sticky-top">
     @php
         $MainMenu = Menu::getByName('main_menu');
@@ -58,45 +35,44 @@
             </ul>
             <ul class="ms-auto d-flex menu_icon d-xxl-none d-block">
                 <li>
-                    <a href="#" class="menu_search me-3 me-sm-4 position-relative fw-semibold fs-5 transitions">
-                        <i class="far fa-search"></i>
-                    </a>
-                    <div class="fp__search_form position-fixed w-100 top-0 end-0 justify-content-center align-items-center transitions vh-100 d-none">
-                        <form class="top-50 start-50 position-absolute" action="{{ route('product.index') }}" method="GET">
-                            <span class="close_search position-absolute text-center rounded-circle fs-3 mb-5 bottom-100 end-0 transitions">
-                                <i class="far fa-times"></i>
-                            </span>
-                            <input class="searchinput w-100 border border-0 rounded-5" type="text" placeholder="Search . . ." name="search" />
-                            <button class="position-absolute top-50 fw-semibold rounded-5 px-4 py-2 outline-0 transitions" type="submit">
+                    <a href="#" class="menu_search me-3 me-sm-4 position-relative fw-semibold fs-5 transitions"><i
+                            class="far fa-search"></i></a>
+                    <div
+                        class="fp__search_form position-fixed w-100 top-0 end-0 justify-content-center align-items-center transitions vh-100">
+                        <form class="top-50 start-50 position-absolute" action="{{ route('product.index') }}"
+                            method="GET">
+                            <span
+                                class="close_search position-absolute text-center rounded-circle fs-3 mb-5 bottom-100 end-0 transitions"><i
+                                    class="far fa-times"></i></span>
+                            <input class="searchinput w-100 border border-0 rounded-5" type="text"
+                                placeholder="Search . . ." name="search" />
+                            <button
+                                class="position-absolute top-50 fw-semibold rounded-5 px-4 py-2 outline-0 transitions"
+                                type="submit">
                                 Search
                             </button>
                         </form>
                     </div>
                 </li>
                 <li>
-                    <a class="cart_icon me-4 position-relative fw-semibold fs-5 transitions">
-                        <i class="fas fa-shopping-basket"></i>
-                        <span class="cart_count bg-gray position-absolute text-light fw-semibold text-center bottom-50 end-25 rounded-circle">
-                            {{ count(Cart::content()) }}
-                        </span>
-                    </a>
+                    <a class="cart_icon me-4 position-relative fw-semibold fs-5 transitions"><i
+                            class="fas fa-shopping-basket"></i>
+                        <span
+                            class="cart_count bg-gray position-absolute text-light fw-semibold text-center bottom-50 end-25 rounded-circle">{{ count(Cart::content()) }}</span></a>
                 </li>
                 @php @$unseenMessages = \App\Models\Chat::where(['sender_id' => 1, 'receiver_id' => auth()->user()->id, 'seen' => 0])->count(); @endphp
-                {{ <li>
-                    <a class="message_icon me-4 position-relative fw-semibold fs-5 transitions" href="{{ route('dashboard') }}">
+                {{-- <li>
+                    <a class="message_icon me-4 position-relative fw-semibold fs-5 transitions"
+                        href="{{ route('dashboard') }}">
                         <i class="fas fa-comment-alt-dots"></i>
-                        <span class="sunseen-message-count bg-gray position-absolute text-light fw-semibold text-center bottom-50 end-25 ms-1 rounded-circle">
-                            {{ $unseenMessages > 0 ? 1 : 0 }}
-                        </span>
+                        <span
+                            class="sunseen-message-count bg-gray position-absolute text-light fw-semibold text-center bottom-50 end-25 ms-1 rounded-circle">{{ $unseenMessages > 0 ? 1 : 0 }}</span>
                     </a>
-                </li> }}
+                </li> --}}
                 <li>
-                    <a class="fs-5 me-3 me-sm-4" href="{{ route('login') }}">
-                        <i class="fas fa-user"></i>
-                    </a>
+                    <a class="fs-5 me-3 me-sm-4" href="{{ route('login') }}"><i class="fas fa-user"></i></a>
                 </li>
             </ul>
-
             <a class="d-xxl-none d-block" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
                 aria-controls="offcanvasExample">
                 <i class="fas fa-bars fs-2 color-light-gray"></i>
@@ -320,22 +296,5 @@
                 $("#dropdown-" + index).slideToggle("slow");
             });
         });
-
-       document.addEventListener('DOMContentLoaded', function() {
-            const searchIcon = document.querySelector('.menu_search');
-            const searchForm = document.querySelector('.search-form');
-            const closeSearch = document.querySelector('.search-close');
-
-            searchIcon.addEventListener('click', function(event) {
-                event.preventDefault();
-                searchForm.classList.add('active');
-            });
-
-            closeSearch.addEventListener('click', function() {
-                searchForm.classList.remove('active');
-            });
-        });
-
-
     </script>
 @endpush
