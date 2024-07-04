@@ -27,35 +27,35 @@ class CartController extends Controller
         }
 
         try {
-            // $productSize = $product->productSizes->where('id', $request->product_size)->first();
-            // $productOptions = $product->productOptions->whereIn('id', $request->product_option);
+            $productSize = $product->productSizes->where('id', $request->product_size)->first();
+            $productOptions = $product->productOptions->whereIn('id', $request->product_option);
             $variantItems = $request->input('variants_items', []);
 
-            // $options = [
-            //     'product_size' => [],
-            //     'product_options' => [],
-            //     'product_variants' => [],
-            //     'product_info' => [
-            //         'image' => $product->thumb_image,
-            //         'slug' => $product->slug
-            //     ]
-            // ];
+            $options = [
+                'product_size' => [],
+                'product_options' => [],
+                'product_variants' => [],
+                'product_info' => [
+                    'image' => $product->thumb_image,
+                    'slug' => $product->slug
+                ]
+            ];
 
-            // if ($productSize !== null) {
-            //     $options['product_size'] = [
-            //         'id' => $productSize?->id,
-            //         'name' => $productSize?->name,
-            //         'price' => $productSize?->price
-            //     ];
-            // }
+            if ($productSize !== null) {
+                $options['product_size'] = [
+                    'id' => $productSize?->id,
+                    'name' => $productSize?->name,
+                    'price' => $productSize?->price
+                ];
+            }
 
-            // foreach ($productOptions as $option) {
-            //     $options['product_options'][] = [
-            //         'id' => $option->id,
-            //         'name' => $option->name,
-            //         'price' => $option->price
-            //     ];
-            // }
+            foreach ($productOptions as $option) {
+                $options['product_options'][] = [
+                    'id' => $option->id,
+                    'name' => $option->name,
+                    'price' => $option->price
+                ];
+            }
 
             foreach ($variantItems as $variantId => $itemIds) {
                 foreach ((array) $itemIds as $itemId) {
