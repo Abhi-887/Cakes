@@ -55,8 +55,6 @@ Route::group(['middleware' => 'auth'], function () {
     /** Chat Routes */
     Route::post('chat/send-message', [ChatController::class, 'sendMessage'])->name('chat.send-message');
     Route::get('chat/get-conversation/{senderId}', [ChatController::class, 'getConversation'])->name('chat.get-conversation');
-
-
 });
 
 require __DIR__ . '/auth.php';
@@ -72,6 +70,11 @@ Route::get('/brithday-&-party-cakes', function () {
 /** Cupcake*/
 Route::get('/cupcake', function () {
     return view('frontend.pages.cupcake');
+});
+
+/** Classic Wedding Cake Voucher */
+Route::get('/classic-wedding-cake-voucher', function () {
+    return view('frontend.pages.classic-wedding-cake-voucher');
 });
 
 /** Achievements-awards*/
