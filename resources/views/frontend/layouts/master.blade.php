@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/responsive.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/custom.css') }}">
+    <link rel="icon" href="{{ asset('uploads/web-logo1.png') }}" type="image/x-icon">
 
     {{-- <style>
         :root {
