@@ -246,7 +246,7 @@
     </div>
 
     <div class="container">
-        {!! @$contact2->Description !!}
+        {!! @$contact2->main_description !!}
     </div>
 
     <div class="container">
@@ -306,8 +306,7 @@
             </div>
         </div>
     </div>
-    <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        CONTACT PAGE END
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               CONTACT PAGE END
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ==============================-->
 @endsection
 
