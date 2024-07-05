@@ -201,9 +201,9 @@
         position: relative;
     }
 
-    .background6 {
+    /* .background6 {
         height: 550px !important;
-    }
+    } */
 
     .slider-img img {
         width: 100%;
