@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-        BREADCRUMB START
-    ==============================-->
+            BREADCRUMB START
+        ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -11,11 +11,10 @@
                     <h1>Achievements & Awards</h1>
                     <ul>
                         <li><a href="{{ url('/') }}">home</a></li>
-                        <li><a href="javascript:;">Achievements & Awards</a></li>
+                        <li><a href="javascript:;">Achievements & Awardss</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
-	
-@endsection	
+@endsection
