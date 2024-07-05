@@ -245,7 +245,7 @@
         </div>
     </div>
 
-    <div class="container">
+    {{-- <div class="container">
         <div class="row align-items-center">
             <div class="col-md-5 text-center text-md-start">
                 <h4 class="color-dark-gray my-2">David Duncan Sugarcraft School Edinburgh</h4>
@@ -278,7 +278,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <div class="container">
         {!! @$contact2->main_description !!}
