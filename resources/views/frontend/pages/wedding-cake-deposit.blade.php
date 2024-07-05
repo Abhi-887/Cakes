@@ -8,8 +8,8 @@
         }
     </style>
     <!--=============================
-                                BREADCRUMB START
-                            ==============================-->
+                        BREADCRUMB START
+                    ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -24,11 +24,11 @@
         </div>
     </section>
     <!--=============================
-                                BREADCRUMB END
-                            ==============================-->
+                        BREADCRUMB END
+                    ==============================-->
     <!--=============================
-                                Wedding-cake-deposit PAGE START
-                            ==============================-->
+                        Wedding-cake-deposit PAGE START
+                    ==============================-->
 
     <div class="container my-5 py-5">
         <div class="row">
@@ -136,6 +136,6 @@
     </script>
 
     <!--=============================
-                                 Wedding-cake-deposit PAGE END
-                            ==============================-->
+                         Wedding-cake-deposit PAGE END
+                    ==============================-->
 @endsection

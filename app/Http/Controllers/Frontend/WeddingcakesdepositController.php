@@ -2,20 +2,23 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\DataTables\WeddingcakesdepositDataTable;
 use App\Http\Controllers\Controller;
 use App\Models\Weddingcakesdeposit;
 use Illuminate\Http\JsonResponse;
+use Illuminate\View\View;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
+
 
 class WeddingcakesdepositController extends Controller
 {
+
+
     public function create(): View
     {
         return view('frontend.pages.wedding-cake-deposit');
     }
-
-    public function store(Request $request): JsonResponse
+    public function store(Request $request)
     {
         // Validate the request data
         $request->validate([
@@ -29,12 +32,11 @@ class WeddingcakesdepositController extends Controller
         $weddingcakesdeposit->consultation_preference = $request->consultationPreference;
         $weddingcakesdeposit->existing_design = $request->existingDesign;
         $weddingcakesdeposit->wedding_date = $request->weddingDate;
+
+        // Save the consultation to the database
         $weddingcakesdeposit->save();
 
-        // Log the addition for debugging purposes
-        Log::info('Wedding Cake Deposit added successfully', ['id' => $weddingcakesdeposit->id]);
-
-        // Return a JSON response
-        return response()->json(['message' => 'Your Wedding Cakes has deposited successfully!']);
+        // Redirect or return a response
+        return redirect()->back()->with('success', 'Your Wedding Cakes has deposited  successfully!');
     }
 }
