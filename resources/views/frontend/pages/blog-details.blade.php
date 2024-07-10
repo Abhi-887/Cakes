@@ -11,8 +11,8 @@
 
 @section('content')
     <!--=============================
-                                BREADCRUMB START
-                            ==============================-->
+                                        BREADCRUMB START
+                                    ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay py-5">
             <div class="container py-md-5 py-2">
@@ -27,13 +27,13 @@
         </div>
     </section>
     <!--=============================
-                                BREADCRUMB END
-                            ==============================-->
+                                        BREADCRUMB END
+                                    ==============================-->
 
 
     <!--=========================
-                                BLOG DETAILS START
-                            ==========================-->
+                                        BLOG DETAILS START
+                                    ==========================-->
     <section class="fp__blog_details mt_120 xs_mt_90 mb_100 xs_mb_70">
         <div class="container">
             <div class="row">
@@ -64,7 +64,7 @@
                                                     class="fab fa-facebook-square"></i></a></li>
                                         <li><a
                                                 href="https://www.linkedin.com/shareArticle?mini=true&url={{ url()->current() }}&title={{ $blog->title }}"><i
-                                                    class="fab fa-linkedin-in"></i></a></li>
+                                                    class="fab fa-linkedin"></i></a></li>
                                         <li><a
                                                 href="http://twitter.com/share?text={{ $blog->title }}&url={{ url()->current() }}"><i
                                                     class="fab fa-twitter-square"></i></a></li>
@@ -186,6 +186,6 @@
         </div>
     </section>
     <!--=========================
-                                BLOG DETAILS END
-                            ==========================-->
+                                        BLOG DETAILS END
+                                    ==========================-->
 @endsection
