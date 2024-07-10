@@ -2192,7 +2192,7 @@ footer .wrapper a:hover {
 }
 
 .fp__breadcrumb_overlay{
-	/* padding: 120px 0px !important; */
+	padding: 120px 0px !important;
 	background-color: #86a4ba !important;
 	border-color: #86a4ba !important;
 }
