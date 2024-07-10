@@ -30,7 +30,7 @@
             right: -45px !important;
         }
 
-        @media (max-width: 567px) {
+        @media (max-width: 640px) {
             .nextArrow.slick-arrow {
                 right: 40% !important;
                 top: 100% !important;

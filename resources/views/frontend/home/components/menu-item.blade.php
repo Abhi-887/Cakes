@@ -52,7 +52,7 @@
         right: 0rem !important;
     }
 
-    @media (max-width: 567px) {
+    @media (max-width: 650px) {
         .slick-prev.slick-arrow {
             top: 100%;
             left: 40%;
