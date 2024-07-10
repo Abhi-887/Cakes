@@ -6548,10 +6548,10 @@ CHECKOUT PAGE START
 }
 
 .fp__pagination ul li span {
-    width: 30px !important;
-    height: 30px !important;
+    width: 50px !important;
+    height: 50px !important;
     padding: 0 !important;
-    line-height: 30px !important;
+    line-height: 50px !important;
     text-align: center !important;
     font-size: 14px !important;
     background: var(--colorWhite);
