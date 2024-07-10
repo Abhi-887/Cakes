@@ -41,10 +41,6 @@
                 top: 103% !important;
             }
         }
-
-        .fp__menu_item {
-            height: 385px;
-        }
     </style>
     <!--============================= BREADCRUMB START ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
