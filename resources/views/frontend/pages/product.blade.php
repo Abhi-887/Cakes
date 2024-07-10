@@ -2,7 +2,7 @@
 
 @section('content')
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
-        <div class="fp__breadcrumb_overlay">
+        <div class="fp__breadcrumb_overlay py-5 my-5">
             <div class="container">
                 <div class="fp__breadcrumb_text">
                     <h1>{{ $category->name }}</h1>
