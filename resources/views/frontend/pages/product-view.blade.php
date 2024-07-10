@@ -44,11 +44,21 @@
 
         @media (max-width: 460px) {
             .nextArrow.slick-arrow {
-                right: 30% !important;
+                right: 38% !important;
             }
 
             .fp__related_menu .prevArrow {
-                left: 30% !important;
+                left: 38% !important;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .nextArrow.slick-arrow {
+                right: 35% !important;
+            }
+
+            .fp__related_menu .prevArrow {
+                left: 35% !important;
             }
         }
     </style>
