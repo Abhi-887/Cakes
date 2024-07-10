@@ -82,7 +82,7 @@
     </div>
 
     <div class="testimonial-slider popularfood">
-        <div class="row mt-5 mx-2">
+        <div class="row mt-5">
             @foreach ($categories as $category)
                 @php
                     $products = \App\Models\Product::where([
