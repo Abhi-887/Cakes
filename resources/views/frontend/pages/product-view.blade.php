@@ -31,14 +31,12 @@
         }
 
         @media (max-width: 567px) {
-            .fa-long-arrow-left.prevArrow.slick-arrow {
-                top: 100%;
-                left: 40%;
+            .nextArrow.slick-arrow {
+                right: 40% !important;
             }
 
-            .fa-long-arrow-right.prevArrow.slick-arrow {
-                top: 100%;
-                right: 40%;
+            .fp__related_menu .prevArrow {
+                left: 40% !important;
             }
         }
     </style>
@@ -60,7 +58,7 @@
     <!--============================= MENU DETAILS START ==============================-->
 
 
-    <section class="pt-5 mt-5 fp__menu_details">
+    <section class="py-5 mt-5 fp__menu_details">
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 col-md-9 wow fadeInUp" data-wow-duration="1s">
