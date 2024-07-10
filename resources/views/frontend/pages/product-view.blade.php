@@ -33,13 +33,17 @@
         @media (max-width: 640px) {
             .nextArrow.slick-arrow {
                 right: 40% !important;
-                top: 100% !important;
+                top: 103% !important;
             }
 
             .fp__related_menu .prevArrow {
                 left: 40% !important;
-                top: 100% !important;
+                top: 103% !important;
             }
+        }
+
+        .fp__menu_item {
+            height: 385px;
         }
     </style>
     <!--============================= BREADCRUMB START ==============================-->
