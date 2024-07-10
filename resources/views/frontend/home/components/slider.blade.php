@@ -258,7 +258,7 @@
         background: url('{{ asset('uploads/arrow4.png') }}') no-repeat 0 0 !important;
         width: 60px;
         height: 60px;
-        left: 20px !important;
+        /* left: 20px !important; */
     }
 
     .carousel-control-prev-icon {
@@ -268,7 +268,7 @@
         background: url('{{ asset('uploads/arrow3.png') }}') no-repeat 0 0 !important;
         width: 60px;
         height: 60px;
-        left: 20px !important;
+        /* left: 20px !important; */
     }
 
     .carousel-control-prev-icon:hover {
