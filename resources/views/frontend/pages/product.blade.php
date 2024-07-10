@@ -22,14 +22,14 @@
         }
     </style>
 
-    <section class="fp__search_menu py-lg-5 py-0">
+    <section class="fp__search_menu py-5">
         <div class="container">
             <div class="">
                 <h1 class="fw-semibold">{{ $category->name }}</h1>
                 <h5 class="color-light-gray mt-3">Edinburgh | Glasgow | Scotland</h5>
             </div>
             <div class="row my-5">
-                <div class="col-md-4">
+                <div class="col-md-4 my-3">
                     <a href="/consultations">
                         <div class="position-relative">
                             <img class="rounded-3" src="{{ asset('uploads/book-a-consultation.jpg') }}" alt="">
@@ -39,7 +39,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 my-3">
                     <a href="/wedding-cake-deposit">
                         <div class="position-relative">
                             <img class="rounded-3" src="{{ asset('uploads/secure-wedding-date.jpg') }}" alt="">
@@ -49,7 +49,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 my-3">
                     <a href="">
                         <div class="position-relative">
                             <img class="rounded-3" src="{{ asset('uploads/delicious-flavour-cake.jpg') }}" alt="">
