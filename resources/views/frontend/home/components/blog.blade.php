@@ -1,4 +1,4 @@
-<section class="pb-5 fp__blog fp__blog2">
+<section class="pb-0  pb-md-5 fp__blog fp__blog2">
     <div class="fp__blog_overlay pt-0">
         <div class="container">
             <div class="row wow fadeInUp" data-wow-duration="1s">
