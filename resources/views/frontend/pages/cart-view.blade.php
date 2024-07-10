@@ -2,11 +2,11 @@
 
 @section('content')
     <!--=============================
-                        BREADCRUMB START
-                    ==============================-->
+                                BREADCRUMB START
+                            ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
-        <div class="fp__breadcrumb_overlay">
-            <div class="container">
+        <div class="fp__breadcrumb_overlay py-5">
+            <div class="container py-md-5 py-2">
                 <div class="fp__breadcrumb_text">
                     <h1>cart view</h1>
                     <ul>
@@ -18,12 +18,12 @@
         </div>
     </section>
     <!--=============================
-                        BREADCRUMB END
-                    ==============================-->
+                                BREADCRUMB END
+                            ==============================-->
 
     <!--============================
-                        CART VIEW START
-                    ==============================-->
+                                CART VIEW START
+                            ==============================-->
     <section class="fp__cart_view mt_125 xs_mt_95 mb_100 xs_mb_70">
         <div class="container">
             <div class="row">
@@ -159,8 +159,8 @@
         </div>
     </section>
     <!--============================
-                        CART VIEW END
-                    ==============================-->
+                                CART VIEW END
+                            ==============================-->
 @endsection
 
 @push('scripts')

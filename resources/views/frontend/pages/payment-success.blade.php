@@ -1,13 +1,12 @@
-
 @extends('frontend.layouts.master')
 
 @section('content')
     <!--=============================
-        BREADCRUMB START
-    ==============================-->
+            BREADCRUMB START
+        ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
-        <div class="fp__breadcrumb_overlay">
-            <div class="container">
+        <div class="fp__breadcrumb_overlay py-5">
+            <div class="container py-md-5 py-2">
                 <div class="fp__breadcrumb_text">
                     <h1>Order</h1>
                     <ul>
@@ -19,19 +18,20 @@
         </div>
     </section>
     <!--=============================
-        BREADCRUMB END
-    ==============================-->
+            BREADCRUMB END
+        ==============================-->
 
 
     <!--============================
-        PAYMENT PAGE START
-    ==============================-->
+            PAYMENT PAGE START
+        ==============================-->
     <section class="fp__payment_page mt_100 xs_mt_70 mb_100 xs_mb_70">
         <div class="container">
             <div class="row">
                 <div class="text-center ">
                     <div class="mb-4">
-                        <i class="fas fa-check" style="font-size: 70px;
+                        <i class="fas fa-check"
+                            style="font-size: 70px;
                         background: green;
                         padding: 20px;
                         border-radius: 50%;
