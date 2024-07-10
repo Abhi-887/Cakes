@@ -33,10 +33,12 @@
         @media (max-width: 567px) {
             .nextArrow.slick-arrow {
                 right: 40% !important;
+                top: 100% !important;
             }
 
             .fp__related_menu .prevArrow {
                 left: 40% !important;
+                top: 100% !important;
             }
         }
     </style>
