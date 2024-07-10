@@ -6739,7 +6739,7 @@ fieldset:disabled .btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 15%;
+    /* width: 15%; */
     padding: 0;
     color: #fff;
     text-align: center;
