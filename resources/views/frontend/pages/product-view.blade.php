@@ -41,6 +41,16 @@
                 top: 103% !important;
             }
         }
+
+        @media (max-width: 460px) {
+            .nextArrow.slick-arrow {
+                right: 30% !important;
+            }
+
+            .fp__related_menu .prevArrow {
+                left: 30% !important;
+            }
+        }
     </style>
     <!--============================= BREADCRUMB START ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
