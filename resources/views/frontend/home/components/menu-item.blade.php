@@ -78,6 +78,17 @@
         padding: 10px 14px;
         font-size: 16px;
     }
+
+    .slick-next::before {
+        content: '\f054' !important;
+        font-family: 'Font Awesome 5 Free' !important;
+        font-weight: 600;
+        background: #4b637f !important;
+        color: white !important;
+        border-radius: 50%;
+        padding: 10px 14px;
+        font-size: 16px;
+    }
 </style>
 
 <div class="container pt-5">
