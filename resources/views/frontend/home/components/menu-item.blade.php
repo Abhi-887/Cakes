@@ -41,11 +41,11 @@
         display: none !important;
     }
 
-    .popularfood .slick-next::before,
+    /* .popularfood .slick-next::before,
     .popularfood .slick-prev::before {
         color: #4b637f !important;
         font-size: 35px !important;
-    }
+    } */
 
     .popularfood .slick-prev::before {
         position: absolute !important;
@@ -66,6 +66,17 @@
         .popularfood .slick-prev::before {
             position: relative !important;
         }
+    }
+
+    .slick-prev::before {
+        content: '\f053' !important;
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 600;
+        background: #4b637f !important;
+        color: white !important;
+        border-radius: 50%;
+        padding: 10px 14px;
+        font-size: 16px;
     }
 </style>
 
