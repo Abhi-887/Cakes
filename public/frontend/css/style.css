@@ -954,11 +954,15 @@ button {
 .offer_item_slider .prevArrow {
     width: 40px;
     height: 40px;
-    background: var(--colorPrimary);
+    font-weight: 600;
+    background: #4b637f !important;
+    color: white !important;
+    border-radius: 50%;
+    padding: 10px 14px;
+    font-size: 16px;
     line-height: 40px;
     text-align: center;
     color: var(--colorWhite);
-    border-radius: 50%;
     position: absolute;
     top: 50%;
     right: -7px;
