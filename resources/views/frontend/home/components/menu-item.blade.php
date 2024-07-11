@@ -70,7 +70,7 @@
 
     .slick-prev::before {
         content: '\f053' !important;
-        font-family: 'Font Awesome 5 Free';
+        font-family: 'Font Awesome 5 Free' !important;
         font-weight: 600;
         background: #4b637f !important;
         color: white !important;
