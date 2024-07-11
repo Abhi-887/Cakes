@@ -61,6 +61,11 @@
                 left: 35% !important;
             }
         }
+
+        .prevArrow.slick-arrow {
+            font-size: 22px !important;
+            font-weight: 600;
+        }
     </style>
     <!--============================= BREADCRUMB START ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
