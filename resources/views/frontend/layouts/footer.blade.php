@@ -28,7 +28,7 @@
                     <div><strong class="me-2">Phone:</strong>{{ @$footerInfoTwo->phone }}</div>
                 </div>
 
-                <div class="col-xl-2 lh-lg footer-hover">
+                <div class="col-lg-2 col-md-12 lh-lg footer-hover">
                     <h5 class="mt-2 mb-1 text-black mb-xl-3 fw-normal mt-xl-0">
                         {{ @$footerTitle->footer_grid_two_title }}</h5>
                     <div class="d-none d-xl-inline d-lg-none d-md-none d-sm-none">
@@ -39,7 +39,7 @@
                     </div>
                 </div>
 
-                <div class="col-xl-2 lh-lg footer-hover">
+                <div class="col-lg-2 col-md-12 lh-lg footer-hover">
                     <h5 class="mt-3 mb-0 text-black mb-xl-3 fw-normal mt-xl-0">
                         {{ @$footerTitle->footer_grid_three_title }}</h5>
                     <div class="d-none d-xl-inline d-lg-none d-md-none">
@@ -50,7 +50,7 @@
                     </div>
                 </div>
 
-                <div class="col-xl-2 lh-lg footer-hover">
+                <div class="col-lg-2 col-md-12 lh-lg footer-hover">
                     <h5 class="mt-3 mb-0 text-black mb-xl-3 fw-normal mt-xl-0">
                         {{ @$footerTitle->footer_grid_four_title }}</h5>
                     <div class="d-none d-xl-inline d-lg-none d-md-none">
@@ -88,10 +88,10 @@
         </div>
         <hr class="mt-5 mb-0">
         <div class="row d-flex justify-content-center align-items-center py-4">
-            <div class="col-sm-7 c-l-auto">
+            <div class="col-sm-7 col-auto">
                 <span class="color-dark-gray fw-semibold">© 3D Cakes. All Rights Reserved.</span>
             </div>
-            <div class="col-sm-5 c-l-auto text-end">
+            <div class="col-sm-5 col-auto text-end">
                 <div class="social-links">
                     @foreach ($footerSocials as $link)
                         <a href="{{ $link->url }}" class="{{ $link->icon }} fs-3 ms-2"></a>
