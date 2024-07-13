@@ -48,8 +48,8 @@
     } */
 
     .popularfood .slick-prev::before {
-        position: absolute !important;
-        right: 0rem !important;
+        position: relative !important;
+        right: 1rem !important;
     }
 
     @media (max-width: 650px) {
