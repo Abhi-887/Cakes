@@ -6564,7 +6564,13 @@ CHECKOUT PAGE START
     -o-border-radius: 0 !important;
     margin: 0px 10px;
     margin-left: 10px;
-
+}
+@media (max-width:768px) {
+    .fp__pagination ul li span {
+        width: 30px !important;
+        height: 30px !important;
+        line-height: 30px !important;
+    }
 }
 
 .active > .page-link, .page-link.active {
