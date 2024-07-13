@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-            BREADCRUMB START
-        ==============================-->
+                BREADCRUMB START
+            ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay py-5">
             <div class="container py-md-5 py-2">
@@ -18,13 +18,13 @@
         </div>
     </section>
     <!--=============================
-            BREADCRUMB END
-        ==============================-->
+                BREADCRUMB END
+            ==============================-->
 
 
     <!--=============================
-            BLOG PAGE START
-        ==============================-->
+                BLOG PAGE START
+            ==============================-->
     <section class="fp__blog_page fp__blog2 mt_120 xs_mt_65 mb_100 xs_mb_70">
         <div class="container">
             <form class="fp__search_menu_form mb-4" action="{{ route('blogs') }}" method="GET">
@@ -63,7 +63,8 @@
                                     <li><i class="fas fa-comments"></i> {{ $blog->comments_count }} comment</li>
                                 </ul>
                                 <a class="title"
-                                    href="{{ route('blogs.details', $blog->slug) }}">{!! truncate($blog->title, 30) !!}</a>
+                                    href="{{ route('blogs.details', $blog->slug) }}">{!! truncate($blog->title) !!}</a>
+                                <p class="fw-semibold text-muted mt-3">{!! truncate($blog->description, 100) !!}</p>
                             </div>
                         </div>
                     </div>
@@ -85,6 +86,6 @@
         </div>
     </section>
     <!--=============================
-            BLOG PAGE END
-        ==============================-->
+                BLOG PAGE END
+            ==============================-->
 @endsection
