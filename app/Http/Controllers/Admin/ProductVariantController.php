@@ -38,8 +38,8 @@ class ProductVariantController extends Controller
             'name' => ['required', 'max:200'],
             'attribute_type' => 'required|string',
             'status' => ['required'],
-            'isrequired' => ['required'],
-            'shotorder' => ['required'],
+            'isrequired' => ['nullable','required'],
+            'shotorder' => ['nullable','required'],
             'price' => ['nullable', 'numeric'], // validate price if provided
         ]);
 
