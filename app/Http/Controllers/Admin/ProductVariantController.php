@@ -38,29 +38,24 @@ class ProductVariantController extends Controller
             'name' => ['required', 'max:200'],
             'attribute_type' => 'required|string',
             'status' => ['required'],
-            'isrequired' => ['nullable','required'],
-            'shotorder' => ['nullable','required'],
-            'price' => ['nullable', 'numeric'], // validate price if provided
+            'isrequired' => ['required'],
+            'shotorder' => ['required'],
+
         ]);
 
-        $variant = new ProductVariant();
-        $variant->product_id = $request->product;
-        $variant->name = $request->name;
-        $variant->attribute_type = $request->attribute_type;
-        $variant->status = $request->status;
-        $variant->isrequired = $request->isrequired;
-        $variant->shotorder = $request->shotorder;
-
-        // Save price only if attribute_type is 'area'
-        if ($request->attribute_type == 'area') {
-            $variant->price = $request->price;
-        }
-
-        $variant->save();
+        $varinat = new ProductVariant();
+        $varinat->product_id = $request->product;
+        $varinat->name = $request->name;
+        $varinat->attribute_type = $request->attribute_type;
+        $varinat->status = $request->status;
+        $varinat->isrequired = $request->isrequired;
+        $varinat->shotorder = $request->shotorder;
+        $varinat->save();
 
         toastr('Created Successfully!', 'success', 'success');
 
         return redirect()->route('admin.products-variant.index', ['product' => $request->product]);
+
     }
 
     /**
@@ -89,30 +84,24 @@ class ProductVariantController extends Controller
             'name' => ['required', 'max:200'],
             'status' => ['required'],
             'attribute_type' => 'required|string',
+
             'isrequired' => ['required'],
             'shotorder' => ['required'],
-            'price' => ['nullable', 'numeric'], // validate price if provided
+
         ]);
 
-        $variant = ProductVariant::findOrFail($id);
-        $variant->name = $request->name;
-        $variant->status = $request->status;
-        $variant->attribute_type = $request->attribute_type;
-        $variant->isrequired = $request->isrequired;
-        $variant->shotorder = $request->shotorder;
+        $varinat = ProductVariant::findOrFail($id);
+        $varinat->name = $request->name;
+        $varinat->status = $request->status;
+        $varinat->attribute_type = $request->attribute_type;
+        $varinat->isrequired = $request->isrequired;
+        $varinat->shotorder = $request->shotorder;
 
-        // Save price only if attribute_type is 'area'
-        if ($request->attribute_type == 'area') {
-            $variant->price = $request->price;
-        } else {
-            $variant->price = null; // Clear price if attribute_type is not 'area'
-        }
-
-        $variant->save();
+        $varinat->save();
 
         toastr('Updated Successfully!', 'success', 'success');
 
-        return redirect()->route('admin.products-variant.index', ['product' => $variant->product_id]);
+        return redirect()->route('admin.products-variant.index', ['product' => $varinat->product_id]);
     }
 
     /**
@@ -120,21 +109,22 @@ class ProductVariantController extends Controller
      */
     public function destroy(string $id)
     {
-        $variant = ProductVariant::findOrFail($id);
-        $variantItemCheck = ProductVariantItem::where('product_variant_id', $variant->id)->count();
+        $varinat = ProductVariant::findOrFail($id);
+        $variantItemCheck = ProductVariantItem::where('product_variant_id', $varinat->id)->count();
         if ($variantItemCheck > 0) {
-            return response(['status' => 'error', 'message' => 'This variant contains variant items in it. Delete the variant items first to delete this variant!']);
+            return response(['status' => 'error', 'message' => 'This variant contain variant items in it delete the variant items first for delete this variant!']);
         }
-        $variant->delete();
+        $varinat->delete();
 
         return response(['status' => 'success', 'message' => 'Deleted Successfully!']);
+
     }
 
     public function changeStatus(Request $request)
     {
-        $variant = ProductVariant::findOrFail($request->id);
-        $variant->status = $request->status == 'true' ? 1 : 0;
-        $variant->save();
+        $varinat = ProductVariant::findOrFail($request->id);
+        $varinat->status = $request->status == 'true' ? 1 : 0;
+        $varinat->save();
 
         return response(['message' => 'Status has been updated!']);
     }
