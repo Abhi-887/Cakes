@@ -118,7 +118,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-duration="1s">
-                    <div class="fp__menu_details_text">
+                    <div class="fp__menu_details_text px-5">
                         <h2>{!! $product->name !!}</h2>
                         @if ($product->reviews_avg_rating)
                             <p class="rating">
@@ -156,7 +156,7 @@
 
                                     @foreach ($variants as $variant)
                                         <div class="col-12">
-                                            <div class="px-5">
+                                            <div class="">
                                                 <h6 class="my-4">
                                                     {{ $variant->name }}:
                                                     @if ($variant->isrequired)
