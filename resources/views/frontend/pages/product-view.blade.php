@@ -219,6 +219,7 @@
 
                                                 @default
                                                     <div class="mt-2 fp__contact_form_input form-group">
+                                                        <span><i class="far fa-keyboard" aria-hidden="true"></i></span>
                                                         <input type="text" name="variants_items[]" class="form-control"
                                                             placeholder="Enter {{ $variant->name }}"
                                                             {{ $variant->isrequired ? 'required' : '' }}>
