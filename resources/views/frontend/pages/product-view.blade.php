@@ -94,12 +94,12 @@
     <section class="py-5 mt-5 fp__menu_details">
         <div class="container">
             <div class="row">
-                <div class="col-lg-5 col-md-9 wow fadeInUp" data-wow-duration="1s">
-                    <div class="hidden exzoom" id="exzoom" style="width: auto;">
-                        <div class="exzoom_img_box fp__menu_details_images" style="width: auto;">
-                            <ul class="exzoom_img_ul" style="width: auto;">
-                                <li style="width: auto;"><img class="zoom img-fluid"
-                                        src="{{ asset($product->thumb_image) }}" alt="product"></li>
+                <div class="col-xl-5 wow fadeInUp" data-wow-duration="1s">
+                    <div class="hidden exzoom" id="exzoom">
+                        <div class="exzoom_img_box fp__menu_details_images">
+                            <ul class="exzoom_img_ul">
+                                <li><img class="zoom img-fluid" src="{{ asset($product->thumb_image) }}" alt="product">
+                                </li>
 
                                 @foreach ($product->productImages as $image)
                                     <li><img class="zoom img-fluid" src="{{ asset($image->image) }}" alt="product">
@@ -117,7 +117,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-lg-7 wow fadeInUp" data-wow-duration="1s">
+                <div class="col-xl-7 wow fadeInUp" data-wow-duration="1s">
                     <div class="fp__menu_details_text">
                         <h2>{!! $product->name !!}</h2>
                         @if ($product->reviews_avg_rating)
