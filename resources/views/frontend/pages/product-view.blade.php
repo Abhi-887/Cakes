@@ -94,7 +94,7 @@
     <section class="py-5 mt-5 fp__menu_details">
         <div class="container">
             <div class="row justify-content-between">
-                <div class="col-xl-5 wow fadeInUp" data-wow-duration="1s">
+                <div class="col-lg-5 wow fadeInUp" data-wow-duration="1s">
                     <div class="hidden exzoom" id="exzoom">
                         <div class="exzoom_img_box fp__menu_details_images">
                             <ul class="exzoom_img_ul">
@@ -117,7 +117,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-xl-7 wow fadeInUp" data-wow-duration="1s">
+                <div class="col-lg-6 wow fadeInUp" data-wow-duration="1s">
                     <div class="fp__menu_details_text">
                         <h2>{!! $product->name !!}</h2>
                         @if ($product->reviews_avg_rating)
@@ -155,78 +155,79 @@
                                     @endphp
 
                                     @foreach ($variants as $variant)
-                                        <div class="col-xl-6 col-sm-6">
-                                            <h6 class="my-4">
-                                                {{ $variant->name }}:
-                                                @if ($variant->isrequired)
-                                                    <span style="color: red;">*</span>
-                                                @endif
-                                            </h6>
+                                        <div class="col-auto">
+                                            <div class="p-3">
+                                                <h6 class="my-4">
+                                                    {{ $variant->name }}:
+                                                    @if ($variant->isrequired)
+                                                        <span style="color: red;">*</span>
+                                                    @endif
+                                                </h6>
 
-                                            @switch($variant->attribute_type)
-                                                @case('dropdown')
-                                                    <div class="mt-2 fp__contact_form_input form-group">
-                                                        <span><i class="far fa-caret-square-down" aria-hidden="true"></i></span>
-                                                        <select class="form-control v_product_option" name="variants_items[]"
-                                                            data-price="">
-                                                            <option value="" selected="">-- Please Select --</option>
-                                                            @foreach ($variant->productVariantItems as $variantItem)
-                                                                @if ($variantItem->status != 0)
-                                                                    <option value="{{ $variantItem->id }}"
-                                                                        data-price="{{ $variantItem->price }}">
-                                                                        {{ $variantItem->name }} (${{ $variantItem->price }})
-                                                                    </option>
-                                                                @endif
-                                                            @endforeach
-                                                        </select>
-                                                    </div>
-                                                @break
+                                                @switch($variant->attribute_type)
+                                                    @case('dropdown')
+                                                        <div class="mt-2 fp__contact_form_input form-group">
+                                                            <span><i class="far fa-caret-square-down" aria-hidden="true"></i></span>
+                                                            <select class="form-control v_product_option" name="variants_items[]"
+                                                                data-price="">
+                                                                <option value="" selected="">-- Please Select --</option>
+                                                                @foreach ($variant->productVariantItems as $variantItem)
+                                                                    @if ($variantItem->status != 0)
+                                                                        <option value="{{ $variantItem->id }}"
+                                                                            data-price="{{ $variantItem->price }}">
+                                                                            {{ $variantItem->name }} (${{ $variantItem->price }})
+                                                                        </option>
+                                                                    @endif
+                                                                @endforeach
+                                                            </select>
+                                                        </div>
+                                                    @break
 
-                                                @case('radio')
-                                                    @foreach ($variant->productVariantItems as $variantItem)
-                                                        @if ($variantItem->status != 0)
-                                                            <div class="mt-2 fp__contact_form_input form-group">
-                                                                <input class="w-0 me-2 v_product_option" type="radio"
-                                                                    name="variants_items[{{ $variant->id }}]"
-                                                                    value="{{ $variantItem->id }}"
-                                                                    data-price="{{ $variantItem->price }}"
-                                                                    id="variantItem_{{ $variantItem->id }}">
-                                                                <label
-                                                                    for="variantItem_{{ $variantItem->id }}">{{ $variantItem->name }}
-                                                                    (${{ $variantItem->price }})
-                                                                </label>
-                                                            </div>
-                                                        @endif
-                                                    @endforeach
-                                                @break
+                                                    @case('radio')
+                                                        @foreach ($variant->productVariantItems as $variantItem)
+                                                            @if ($variantItem->status != 0)
+                                                                <div class="mt-2 fp__contact_form_input form-group">
+                                                                    <input class="w-0 me-2 v_product_option" type="radio"
+                                                                        name="variants_items[{{ $variant->id }}]"
+                                                                        value="{{ $variantItem->id }}"
+                                                                        data-price="{{ $variantItem->price }}"
+                                                                        id="variantItem_{{ $variantItem->id }}">
+                                                                    <label
+                                                                        for="variantItem_{{ $variantItem->id }}">{{ $variantItem->name }}
+                                                                        (${{ $variantItem->price }})
+                                                                    </label>
+                                                                </div>
+                                                            @endif
+                                                        @endforeach
+                                                    @break
 
-                                                @case('checkbox')
-                                                    @foreach ($variant->productVariantItems as $variantItem)
-                                                        @if ($variantItem->status != 0)
-                                                            <div class="my-4">
-                                                                <input class="w-0 me-2 v_product_option" type="checkbox"
-                                                                    name="variants_items[{{ $variant->id }}][]"
-                                                                    value="{{ $variantItem->id }}"
-                                                                    data-price="{{ $variantItem->price }}"
-                                                                    id="variantItem_{{ $variantItem->id }}">
-                                                                <label
-                                                                    for="variantItem_{{ $variantItem->id }}">{{ $variantItem->name }}
-                                                                    (${{ $variantItem->price }})
-                                                                </label>
-                                                            </div>
-                                                        @endif
-                                                    @endforeach
-                                                @break
+                                                    @case('checkbox')
+                                                        @foreach ($variant->productVariantItems as $variantItem)
+                                                            @if ($variantItem->status != 0)
+                                                                <div class="my-4">
+                                                                    <input class="w-0 me-2 v_product_option" type="checkbox"
+                                                                        name="variants_items[{{ $variant->id }}][]"
+                                                                        value="{{ $variantItem->id }}"
+                                                                        data-price="{{ $variantItem->price }}"
+                                                                        id="variantItem_{{ $variantItem->id }}">
+                                                                    <label
+                                                                        for="variantItem_{{ $variantItem->id }}">{{ $variantItem->name }}
+                                                                        (${{ $variantItem->price }})
+                                                                    </label>
+                                                                </div>
+                                                            @endif
+                                                        @endforeach
+                                                    @break
 
-                                                @default
-                                                    <div class="mt-2 fp__contact_form_input form-group">
-                                                        <span><i class="far fa-keyboard" aria-hidden="true"></i></span>
-                                                        <input type="text" name="variants_items[]" class="form-control"
-                                                            placeholder="Enter {{ $variant->name }}"
-                                                            {{ $variant->isrequired ? 'required' : '' }}>
-                                                    </div>
-                                            @endswitch
-
+                                                    @default
+                                                        <div class="mt-2 fp__contact_form_input form-group">
+                                                            <span><i class="far fa-keyboard" aria-hidden="true"></i></span>
+                                                            <input type="text" name="variants_items[]" class="form-control"
+                                                                placeholder="Enter {{ $variant->name }}"
+                                                                {{ $variant->isrequired ? 'required' : '' }}>
+                                                        </div>
+                                                @endswitch
+                                            </div>
                                         </div>
                                     @endforeach
                                 </div>
