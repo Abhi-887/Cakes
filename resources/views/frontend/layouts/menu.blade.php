@@ -54,7 +54,7 @@
                     </div>
                 </li>
                 <li>
-                    <a class="cart_icon me-4 position-relative fw-semibold fs-5 transitions"><i
+                    <a class="cart_icon me-4 position-relative fw-semibold fs-5"><i
                             class="fas fa-shopping-basket transition"></i>
                         <span
                             class="cart_count bg-gray position-absolute text-light fw-semibold text-center bottom-50 end-25 rounded-circle">{{ count(Cart::content()) }}</span></a>
