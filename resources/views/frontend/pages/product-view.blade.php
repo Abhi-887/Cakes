@@ -95,14 +95,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 col-md-9 wow fadeInUp" data-wow-duration="1s">
-                    <div class="hidden exzoom" id="exzoom">
-                        <div class="exzoom_img_box fp__menu_details_images">
-                            <ul class='exzoom_img_ul'>
-                                <li><img class="zoom ing-fluid w-100" src="{{ asset($product->thumb_image) }}"
-                                        alt="product"></li>
+                    <div class="hidden exzoom w-100" id="exzoom">
+                        <div class="exzoom_img_box fp__menu_details_images w-100">
+                            <ul class='exzoom_img_ul w-100'>
+                                <li><img class="zoom img-fluid" src="{{ asset($product->thumb_image) }}" alt="product">
+                                </li>
 
                                 @foreach ($product->productImages as $image)
-                                    <li><img class="zoom ing-fluid w-100" src="{{ asset($image->image) }}" alt="product">
+                                    <li><img class="zoom img-fluid" src="{{ asset($image->image) }}" alt="product">
                                     </li>
                                 @endforeach
 
