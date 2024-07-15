@@ -55,6 +55,7 @@ if (!function_exists('currencyPosition')) {
 //         return $total;
 //     }
 // }
+
 if (!function_exists('cartTotal')) {
     function cartTotal()
     {
@@ -146,19 +147,42 @@ if (!function_exists('productTotal')) {
 //     }
 // }
 
+// if (!function_exists('grandCartTotal')) {
+//     function grandCartTotal($deliveryFee = 0)
+//     {
+//         $cartContent = Cart::content();
+//         $subtotal = 0;
+
+//         foreach ($cartContent as $cartProduct) {
+//             $totalPrice = $cartProduct->price * $cartProduct->qty;
+//             // Add any additional product variants or options
+//             // $totalPrice += ...
+
+//             $subtotal += $totalPrice;
+//         }
+
+//         // Apply discount if available
+//         if (session()->has('coupon')) {
+//             $discount = session()->get('coupon')['discount'];
+//             $subtotal -= $discount;
+//         }
+
+//         // Add delivery fee
+//         $subtotal += $deliveryFee;
+
+//         // Ensure total doesn't go below zero
+//         if ($subtotal < 0) {
+//             $subtotal = 0;
+//         }
+
+//         return $subtotal;
+//     }
+// }
+
 if (!function_exists('grandCartTotal')) {
     function grandCartTotal($deliveryFee = 0)
     {
-        $cartContent = Cart::content();
-        $subtotal = 0;
-
-        foreach ($cartContent as $cartProduct) {
-            $totalPrice = $cartProduct->price * $cartProduct->qty;
-            // Add any additional product variants or options
-            // $totalPrice += ...
-
-            $subtotal += $totalPrice;
-        }
+        $subtotal = cartTotal(); // Use cartTotal function to get the subtotal
 
         // Apply discount if available
         if (session()->has('coupon')) {
@@ -177,6 +201,7 @@ if (!function_exists('grandCartTotal')) {
         return $subtotal;
     }
 }
+
 
 
 
