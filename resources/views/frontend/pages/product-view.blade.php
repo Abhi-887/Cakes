@@ -93,7 +93,7 @@
 
     <section class="py-5 mt-5 fp__menu_details">
         <div class="container">
-            <div class="row">
+            <div class="row justify-content-between">
                 <div class="col-xl-5 wow fadeInUp" data-wow-duration="1s">
                     <div class="hidden exzoom" id="exzoom">
                         <div class="exzoom_img_box fp__menu_details_images">
