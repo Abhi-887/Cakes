@@ -1,4 +1,4 @@
-.exzoom {
+/* .exzoom {
   box-sizing: border-box;
 }
 
@@ -7,7 +7,6 @@
 }
 
 .exzoom .exzoom_img_box {
-  /* background: #eee; */
   position: relative;
 }
 
@@ -123,10 +122,8 @@
 }
 
 .exzoom .exzoom_img_ul_outer {
-  /* border: 1px solid #ddd; */
   position: absolute;
   overflow: hidden;
-  /* padding: 10px; */
 }
 
 .exzoom .exzoom_img_ul_outer .exzoom_img_ul {
@@ -155,4 +152,4 @@
   .exzoom .exzoom_zoom_outer {
     display: none;
   }
-}
+} */
