@@ -118,7 +118,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-duration="1s">
-                    <div class="fp__menu_details_text px-0 px-lg-5 ms-0 ms-lg-5 ms-xxl-5">
+                    <div class="fp__menu_details_text px-0 px-lg-5 ms-0 ms-lg-5 ms-xxl-0">
                         <h2>{!! $product->name !!}</h2>
                         @if ($product->reviews_avg_rating)
                             <p class="rating">
