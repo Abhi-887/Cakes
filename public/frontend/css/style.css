@@ -6565,13 +6565,6 @@ CHECKOUT PAGE START
     margin: 0px 10px;
     margin-left: 10px;
 }
-@media (max-width:576px) {
-    .fp__pagination ul li span {
-        width: 30px !important;
-        height: 30px !important;
-        line-height: 30px !important;
-    }
-}
 @media (max-width:767px) {
     .fp__pagination ul li span {
         width: 40px !important;
@@ -6580,6 +6573,13 @@ CHECKOUT PAGE START
     }
 }
 
+@media (max-width:576px) {
+    .fp__pagination ul li span {
+        width: 30px !important;
+        height: 30px !important;
+        line-height: 30px !important;
+    }
+}
 .active > .page-link, .page-link.active {
     z-index: -1;
     color: var(--colorWhite);
