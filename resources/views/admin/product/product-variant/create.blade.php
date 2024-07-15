@@ -57,7 +57,7 @@
 
                             <div class="form-group">
                                 <label for="inputState">Is Required</label>
-                                <select id="inputState" class="form-control" name="is_required">
+                                <select id="inputState" class="form-control" name="isrequired">
                                     <option value="1">Yes</option>
                                     <option value="0">No</option>
                                 </select>
@@ -65,7 +65,7 @@
 
                             <div class="form-group">
                                 <label>Short Order</label>
-                                <input type="number" class="form-control" name="shortorder" value="">
+                                <input type="number" class="form-control" name="shotorder" value="">
                             </div>
 
                             <!-- Price Field -->

@@ -38,8 +38,8 @@ class ProductVariantController extends Controller
             'name' => ['required', 'max:200'],
             'attribute_type' => 'required|string',
             'status' => ['required'],
-            'is_required' => ['required'],
-            'shortorder' => ['required'],
+            'isrequired' => ['required'],
+            'shotorder' => ['required'],
 
         ]);
 
@@ -49,8 +49,8 @@ class ProductVariantController extends Controller
         $varinat->name = $request->name;
         $varinat->attribute_type = $request->attribute_type;
         $varinat->status = $request->status;
-        $varinat->is_required = $request->is_required;
-        $varinat->shortorder = $request->shortorder;
+        $varinat->isrequired = $request->isrequired;
+        $varinat->shotorder = $request->shotorder;
         $varinat->save();
 
         toastr('Created Successfully!', 'success', 'success');
