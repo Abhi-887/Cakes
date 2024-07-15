@@ -11,7 +11,7 @@
 <footer>
     <div class="px-2 mx-auto wrapper w-100">
         <div class="">
-            <div class="pt-5 pb-0 pb-md-5 row">
+            <div class="pt-5 pb-0 pb-lg-5 row">
                 <div class="col-lg-3 col-md-12 footer-info">
                     <h5 class="mt-2 mb-1 text-black mb-xl-3 fw-normal mt-xl-0">{{ @$footerInfo->name }}</h5>
                     <div class="">{!! @$footerInfo->address !!}</div>

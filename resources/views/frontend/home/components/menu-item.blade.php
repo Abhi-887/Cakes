@@ -47,6 +47,10 @@
         font-size: 35px !important;
     } */
 
+    .popularfood .slick-next {
+        right: -20px !important;
+    }
+
     .popularfood .slick-prev::before {
         position: relative !important;
         right: 1rem !important;
