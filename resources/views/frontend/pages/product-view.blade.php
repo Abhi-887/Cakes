@@ -155,8 +155,8 @@
                                     @endphp
 
                                     @foreach ($variants as $variant)
-                                        <div class="col-auto">
-                                            <div class="p-3">
+                                        <div class="col-12">
+                                            <div class="px-5">
                                                 <h6 class="my-4">
                                                     {{ $variant->name }}:
                                                     @if ($variant->isrequired)
