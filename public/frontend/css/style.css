@@ -77,12 +77,12 @@ body {
     -o-transition: all linear 0.3s;
 }
 
-.fas, .far, .fa, .fab, .wedding-cake-button {
-    transition: all linear 0.7s;
-    -webkit-transition: all linear 0.7s;
-    -moz-transition: all linear 0.7s;
-    -ms-transition: all linear 0.7s;
-    -o-transition: all linear 0.7s;
+.fas, .far, .fa, .fab, .wedding-cake-button, .fp__scroll_bt6 {
+    transition: all linear 0.6s;
+    -webkit-transition: all linear 0.6s;
+    -moz-transition: all linear 0.6s;
+    -ms-transition: all linear 0.6s;
+    -o-transition: all linear 0.6s;
 }
 
 img {
