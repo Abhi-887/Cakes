@@ -32,7 +32,7 @@
   max-height: initial !important;
   left: 0;
   top: 0;
-}
+} */
 
 .exzoom .exzoom_nav {
   margin-top: 10px;
@@ -75,7 +75,7 @@
   object-fit: cover;
   left: 0 !important;
 }
-
+/*
 .exzoom .exzoom_btn {
   position: relative;
   margin: 0;
