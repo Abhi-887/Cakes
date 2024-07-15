@@ -66,6 +66,11 @@
             font-size: 22px !important;
             font-weight: 600;
         }
+
+        #exzoom {
+            position: sticky;
+            top: 100px;
+        }
     </style>
     <!--============================= BREADCRUMB START ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
