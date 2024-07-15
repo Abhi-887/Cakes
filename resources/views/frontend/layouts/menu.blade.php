@@ -22,9 +22,8 @@
                             @if ($menu['child'])
                                 <ul class="droap_menu position-absolute bg-light">
                                     @foreach ($menu['child'] as $item)
-                                        <li>
-                                            <a class="border-bottom fw-semibold p-2"
-                                                href="{{ $item['link'] }}">{{ $item['label'] }}</a>
+                                        <li class="border-bottom p-2">
+                                            <a class="fw-semibold" href="{{ $item['link'] }}">{{ $item['label'] }}</a>
                                         </li>
                                     @endforeach
                                 </ul>
