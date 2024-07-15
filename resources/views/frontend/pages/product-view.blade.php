@@ -70,6 +70,7 @@
         #exzoom {
             position: sticky;
             top: 100px;
+            z-index: 1;
         }
     </style>
     <!--============================= BREADCRUMB START ==============================-->
@@ -97,18 +98,22 @@
                     <div class="hidden exzoom" id="exzoom">
                         <div class="exzoom_img_box fp__menu_details_images">
                             <ul class='exzoom_img_ul'>
-                                <li><img class="zoom img-fluid w-100" src="{{ asset($product->thumb_image) }}"
+                                <li><img class="zoom ing-fluid w-100" src="{{ asset($product->thumb_image) }}"
                                         alt="product"></li>
+
                                 @foreach ($product->productImages as $image)
-                                    <li><img class="zoom img-fluid w-100" src="{{ asset($image->image) }}" alt="product">
+                                    <li><img class="zoom ing-fluid w-100" src="{{ asset($image->image) }}" alt="product">
                                     </li>
                                 @endforeach
+
                             </ul>
                         </div>
                         <div class="exzoom_nav"></div>
                         <p class="exzoom_btn">
-                            <a href="javascript:void(0);" class="exzoom_prev_btn"><i class="far fa-chevron-left"></i></a>
-                            <a href="javascript:void(0);" class="exzoom_next_btn"><i class="far fa-chevron-right"></i></a>
+                            <a href="javascript:void(0);" class="exzoom_prev_btn"> <i class="far fa-chevron-left"></i>
+                            </a>
+                            <a href="javascript:void(0);" class="exzoom_next_btn"> <i class="far fa-chevron-right"></i>
+                            </a>
                         </p>
                     </div>
                 </div>
@@ -120,6 +125,7 @@
                                 @for ($i = 1; $i <= $product->reviews_avg_rating; $i++)
                                     <i class="fas fa-star"></i>
                                 @endfor
+
                                 <span>({{ $product->reviews_count }})</span>
                             </p>
                         @endif
@@ -143,24 +149,27 @@
                             <div class="selectbox">
                                 <div class="row">
                                     <input type="hidden" name="product_id" value="{{ $product->id }}">
+
                                     @php
                                         $variants = $product->variants->where('status', '!=', 0)->sortBy('shortorder');
                                     @endphp
+
                                     @foreach ($variants as $variant)
-                                        <div class="col-xl-6 col-sm-12">
+                                        <div class="col-xl-6 col-sm-6">
                                             <h6 class="my-4">
                                                 {{ $variant->name }}:
                                                 @if ($variant->isrequired)
                                                     <span style="color: red;">*</span>
                                                 @endif
                                             </h6>
+
                                             @switch($variant->attribute_type)
                                                 @case('dropdown')
                                                     <div class="mt-2 fp__contact_form_input form-group">
                                                         <span><i class="far fa-caret-square-down" aria-hidden="true"></i></span>
                                                         <select class="form-control v_product_option" name="variants_items[]"
                                                             data-price="">
-                                                            <option value="" selected>-- Please Select --</option>
+                                                            <option value="" selected="">-- Please Select --</option>
                                                             @foreach ($variant->productVariantItems as $variantItem)
                                                                 @if ($variantItem->status != 0)
                                                                     <option value="{{ $variantItem->id }}"
@@ -217,15 +226,16 @@
                                                             {{ $variant->isrequired ? 'required' : '' }}>
                                                     </div>
                                             @endswitch
+
                                         </div>
                                     @endforeach
                                 </div>
                             </div>
 
-                            <div class="details_quantity">
+                            <div class="details_quentity">
                                 <h5 class="my-4">Select Quantity</h5>
-                                <div class="quantity_btn_area d-flex flex-wrap align-items-center">
-                                    <div class="quantity_btn">
+                                <div class="quentity_btn_area d-flex flex-wrapa align-items-center">
+                                    <div class="quentity_btn">
                                         <button class="btn btn-danger v_decrement"><i class="fal fa-minus"></i></button>
                                         <input type="text" name="quantity" placeholder="1" value="1" readonly
                                             id="v_quantity">
@@ -245,11 +255,11 @@
                                 @endif
                                 <li><a class="wishlist" href="#"><i class="far fa-heart"></i></a></li>
                             </ul>
+
                         </form>
                     </div>
                 </div>
             </div>
-
 
             <div class="row wow fadeInUp" data-wow-duration="1s">
                 <div class="fp__menu_description_area mt_100 xs_mt_70">
