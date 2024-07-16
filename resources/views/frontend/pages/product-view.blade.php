@@ -570,90 +570,27 @@
     </script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('v_add_to_cart_form');
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
+     document.getElementById('v_add_to_cart_form').addEventListener('submit', function(event) {
+    let valid = true;
 
-        let isValid = true;
-        let firstInvalidField = null;
-
-        // Clear previous error messages
-        const errorMessages = document.querySelectorAll('.error-message');
-        errorMessages.forEach(function(message) {
-            message.style.display = 'none';
-        });
-
-        // Validate dropdowns
-        const dropdowns = document.querySelectorAll('select[required]');
-        dropdowns.forEach(function(dropdown) {
-            if (dropdown.value === '') {
-                isValid = false;
-                dropdown.nextElementSibling.style.display = 'block';
-                if (!firstInvalidField) {
-                    firstInvalidField = dropdown;
-                }
+    // Check all required select and radio inputs
+    document.querySelectorAll('.v_product_option').forEach(function(input) {
+        if (input.closest('.form-group').querySelector('[required]')) {
+            if (input.value === '') {
+                valid = false;
+                input.closest('.form-group').classList.add('has-error');
+                input.closest('.form-group').scrollIntoView({ behavior: 'smooth' });
+            } else {
+                input.closest('.form-group').classList.remove('has-error');
             }
-        });
-
-        // Validate radio buttons
-        const radioGroups = {};
-        const radios = document.querySelectorAll('input[type="radio"][required]');
-        radios.forEach(function(radio) {
-            if (!radioGroups[radio.name]) {
-                radioGroups[radio.name] = [];
-            }
-            radioGroups[radio.name].push(radio);
-        });
-        for (const groupName in radioGroups) {
-            const group = radioGroups[groupName];
-            if (!group.some(radio => radio.checked)) {
-                isValid = false;
-                group[0].parentElement.nextElementSibling.style.display = 'block';
-                if (!firstInvalidField) {
-                    firstInvalidField = group[0];
-                }
-            }
-        }
-
-        // Validate checkboxes
-        const checkboxGroups = {};
-        const checkboxes = document.querySelectorAll('input[type="checkbox"][required]');
-        checkboxes.forEach(function(checkbox) {
-            if (!checkboxGroups[checkbox.name]) {
-                checkboxGroups[checkbox.name] = [];
-            }
-            checkboxGroups[checkbox.name].push(checkbox);
-        });
-        for (const groupName in checkboxGroups) {
-            const group = checkboxGroups[groupName];
-            if (!group.some(checkbox => checkbox.checked)) {
-                isValid = false;
-                group[0].parentElement.nextElementSibling.style.display = 'block';
-                if (!firstInvalidField) {
-                    firstInvalidField = group[0];
-                }
-            }
-        }
-
-        // Validate text inputs
-        const textInputs = document.querySelectorAll('input[type="text"][required]');
-        textInputs.forEach(function(input) {
-            if (input.value.trim() === '') {
-                isValid = false;
-                input.nextElementSibling.style.display = 'block';
-                if (!firstInvalidField) {
-                    firstInvalidField = input;
-                }
-            }
-        });
-
-        if (isValid) {
-            form.submit();
-        } else if (firstInvalidField) {
-            firstInvalidField.scrollIntoView({ behavior: 'smooth' });
         }
     });
+
+    // Prevent form submission if validation fails
+    if (!valid) {
+        event.preventDefault();
+        alert('Please fill out all required fields.');
+    }
 });
 
     </script>
