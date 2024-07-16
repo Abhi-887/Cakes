@@ -39,23 +39,12 @@
         .fa-star {
             color: rgb(245, 156, 40);
             cursor: pointer;
-            font-size: 2rem;
-            /* Adjust size if necessary */
         }
 
         .fa-star:hover,
-        .fa-star:hover~.fa-star {
+        .fa-star:hover~.fa-star,
+        input[type="radio"]:checked~.fa-star {
             color: rgb(255, 255, 255);
-        }
-
-        input[type="radio"]:checked~label {
-            color: rgb(255, 255, 255);
-        }
-
-        /* Ensure the radio buttons don't interfere with clicking */
-        input[type="radio"] {
-            position: absolute;
-            opacity: 0;
         }
     </style>
     <!--=============================
@@ -103,7 +92,7 @@
                             <div class="form-group mt-2 text-center">
                                 <h6 class="my-4">Star Rating *</h6>
                                 <div id="rating" name="rating">
-                                    @for ($i = 5; $i >= 1; $i--)
+                                    @for ($i = 1; $i >= 5; $i++)
                                         <input type="radio" id="star{{ $i }}" name="rating"
                                             value="{{ $i }}" class="d-none">
                                         <label for="star{{ $i }}" class="fa fa-star"
