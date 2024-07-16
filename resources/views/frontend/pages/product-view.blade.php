@@ -151,7 +151,7 @@
                                     <input type="hidden" name="product_id" value="{{ $product->id }}">
 
                                     @php
-                                        $variants = $product->variants->where('status', '!=', 0)->sortBy('shortorder');
+                                        $variants = $product->variants->where('status', '!=', 0)->sortBy('shotorder');
                                     @endphp
 
                                     @foreach ($variants as $variant)
