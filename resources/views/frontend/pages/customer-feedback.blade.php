@@ -39,6 +39,8 @@
         .fa-star {
             color: rgb(245, 156, 40);
             cursor: pointer;
+            font-size: 2rem;
+            /* Adjust size if necessary */
         }
 
         .fa-star:hover,
@@ -48,6 +50,12 @@
 
         input[type="radio"]:checked~label {
             color: rgb(255, 255, 255);
+        }
+
+        /* Ensure the radio buttons don't interfere with clicking */
+        input[type="radio"] {
+            position: absolute;
+            opacity: 0;
         }
     </style>
     <!--=============================
@@ -102,7 +110,6 @@
                                             aria-label="{{ $i }} stars"></label>
                                     @endfor
                                 </div>
-
                             </div>
                         </div>
 
