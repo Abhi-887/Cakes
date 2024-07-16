@@ -36,45 +36,23 @@
             -moz-appearance: button;
         }
 
-        /* .fa-star {
-                color: rgb(245, 156, 40);
-                cursor: pointer;
-            } */
-
-        /* .fa-star:hover,
-            .fa-star:hover~.fa-star,
-            input[type="radio"]:checked~.fa-star {
-                color: rgb(255, 255, 255);
-            } */
-
-        /* hide radio inputs */
-        .rating__input {
-            display: none
+        .fa-star {
+            color: rgb(245, 156, 40);
+            cursor: pointer;
         }
 
-        /* set default star color */
-        .rating__icon--star {
-            color: orange;
+        .fa-star:hover,
+        .fa-star:hover~.fa-star {
+            color: rgb(255, 255, 255);
         }
 
-        /* if any input is checked, make its following siblings grey */
-        .rating__input:checked~.rating__label .rating__icon--star {
-            color: #ddd;
-        }
-
-        /* make all stars orange on rating group hover */
-        .rating-group:hover .rating__label .rating__icon--star {
-            color: orange;
-        }
-
-        /* make hovered input's following siblings grey on hover */
-        .rating__input:hover~.rating__label .rating__icon--star {
-            color: #ddd;
+        input[type="radio"]:checked~label {
+            color: rgb(255, 255, 255);
         }
     </style>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                            BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                                                                                   ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                        BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                                                               ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay py-5">
             <div class="container py-md-5 py-2">
@@ -89,11 +67,11 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                            BREADCRUMB END
-                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                        BREADCRUMB END
+                                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                           Customer-Feedback PAGE START
-                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                       Customer-Feedback PAGE START
+                                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
 
 
     <div class="container my-5">
@@ -116,24 +94,12 @@
                             <h6 class="text-center">How likely are you to recommend 3D Cakes to others?</h6>
                             <div class="form-group mt-2 text-center">
                                 <h6 class="my-4">Star Rating *</h6>
-                                {{-- <div id="rating" name="rating">
-                                    @for ($i = 1; $i <= 5; $i++)
+                                <div id="rating" name="rating">
+                                    @for ($i = 5; $i >= 1; $i--)
                                         <input type="radio" id="star{{ $i }}" name="rating"
                                             value="{{ $i }}" class="d-none">
                                         <label for="star{{ $i }}" class="fa fa-star"
                                             aria-label="{{ $i }} stars"></label>
-                                    @endfor
-                                </div> --}}
-                                <div class="rating-group">
-                                    <input disabled checked class="rating__input rating__input--none" name="rating3"
-                                        id="rating3-none" value="0" type="radio">
-                                    @for ($i = 1; $i <= 5; $i++)
-                                        <input class="rating__input" name="rating3" id="rating3-{{ $i }}"
-                                            value="{{ $i }}" type="radio">
-                                        <label aria-label="{{ $i }} star{{ $i > 1 ? 's' : '' }}"
-                                            class="rating__label" for="rating3-{{ $i }}">
-                                            <i class="rating__icon rating__icon--star fa fa-star"></i>
-                                        </label>
                                     @endfor
                                 </div>
 
@@ -217,6 +183,6 @@
         </div>
     </div>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                            Customer-Feedback  PAGE END
-                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                        Customer-Feedback  PAGE END
+                                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
 @endsection
