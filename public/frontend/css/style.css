@@ -1282,9 +1282,9 @@ button {
     color: #788a9f !important;
 }
 
-.fp__menu_item .fp__menu_item_text ul li a:hover {
+/* .fp__menu_item .fp__menu_item_text ul li a:hover {
     background: var(--colorBlack);
-}
+} */
 
 /*============================
     MENU ITEM END
