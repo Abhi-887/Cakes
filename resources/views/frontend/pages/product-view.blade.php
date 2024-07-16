@@ -151,85 +151,92 @@
                                     <input type="hidden" name="product_id" value="{{ $product->id }}">
 
                                     @php
-                                        $variants = $product->variants->where('status', '!=', 0)->sortBy('shortorder');
+                                        $variants = $product->variants->where('status', '!=', 0)->sortBy('shotorder');
                                     @endphp
 
-                                    @foreach ($variants as $variant)
-                                        <div class="col-12">
-                                            <div class="">
-                                                <h6 class="my-4">
-                                                    {{ $variant->name }}:
-                                                    @if ($variant->isrequired)
-                                                        <span style="color: red;">*</span>
-                                                    @endif
-                                                </h6>
+@foreach ($variants as $variant)
+<div class="col-12">
+    <div class="">
+        <h6 class="my-4">
+            {{ $variant->name }}:
+            @if ($variant->isrequired)
+                <span style="color: red;">*</span>
+            @endif
+        </h6>
 
-                                                @switch($variant->attribute_type)
-                                                    @case('dropdown')
-                                                        <div class="mt-2 fp__contact_form_input form-group">
-                                                            <span><i class="far fa-caret-square-down" aria-hidden="true"></i></span>
-                                                            <select class="form-control v_product_option" name="variants_items[]"
-                                                                data-price="">
-                                                                <option value="" selected="">-- Please Select --</option>
-                                                                @foreach ($variant->productVariantItems as $variantItem)
-                                                                    @if ($variantItem->status != 0)
-                                                                        <option value="{{ $variantItem->id }}"
-                                                                            data-price="{{ $variantItem->price }}">
-                                                                            {{ $variantItem->name }} (${{ $variantItem->price }})
-                                                                        </option>
-                                                                    @endif
-                                                                @endforeach
-                                                            </select>
-                                                        </div>
-                                                    @break
+        @switch($variant->attribute_type)
+            @case('dropdown')
+                <div class="mt-2 fp__contact_form_input form-group">
+                    <span><i class="far fa-caret-square-down" aria-hidden="true"></i></span>
+                    <select class="form-control v_product_option" name="variants_items[]"
+                        data-price="" required="{{ $variant->isrequired ? 'true' : 'false' }}">
+                        <option value="" selected="">-- Please Select --</option>
+                        @foreach ($variant->productVariantItems as $variantItem)
+                            @if ($variantItem->status != 0)
+                                <option value="{{ $variantItem->id }}"
+                                    data-price="{{ $variantItem->price }}">
+                                    {{ $variantItem->name }} (${{ $variantItem->price }})
+                                </option>
+                            @endif
+                        @endforeach
+                    </select>
+                    <span class="error-message" style="color:red; display:none;">Please select an option.</span>
+                </div>
+            @break
 
-                                                    @case('radio')
-                                                        @foreach ($variant->productVariantItems as $variantItem)
-                                                            @if ($variantItem->status != 0)
-                                                                <div class="mt-2 fp__contact_form_input form-group">
-                                                                    <input class="w-0 me-2 v_product_option" type="radio"
-                                                                        name="variants_items[{{ $variant->id }}]"
-                                                                        value="{{ $variantItem->id }}"
-                                                                        data-price="{{ $variantItem->price }}"
-                                                                        id="variantItem_{{ $variantItem->id }}">
-                                                                    <label
-                                                                        for="variantItem_{{ $variantItem->id }}">{{ $variantItem->name }}
-                                                                        (${{ $variantItem->price }})
-                                                                    </label>
-                                                                </div>
-                                                            @endif
-                                                        @endforeach
-                                                    @break
+            @case('radio')
+                @foreach ($variant->productVariantItems as $variantItem)
+                    @if ($variantItem->status != 0)
+                        <div class="mt-2 fp__contact_form_input form-group">
+                            <input class="w-0 me-2 v_product_option" type="radio"
+                                name="variants_items[{{ $variant->id }}]"
+                                value="{{ $variantItem->id }}"
+                                data-price="{{ $variantItem->price }}"
+                                id="variantItem_{{ $variantItem->id }}"
+                                required="{{ $variant->isrequired ? 'true' : 'false' }}">
+                            <label
+                                for="variantItem_{{ $variantItem->id }}">{{ $variantItem->name }}
+                                (${{ $variantItem->price }})
+                            </label>
+                        </div>
+                    @endif
+                @endforeach
+                <span class="error-message" style="color:red; display:none;">Please select an option.</span>
+            @break
 
-                                                    @case('checkbox')
-                                                        @foreach ($variant->productVariantItems as $variantItem)
-                                                            @if ($variantItem->status != 0)
-                                                                <div class="my-4">
-                                                                    <input class="w-0 me-2 v_product_option" type="checkbox"
-                                                                        name="variants_items[{{ $variant->id }}][]"
-                                                                        value="{{ $variantItem->id }}"
-                                                                        data-price="{{ $variantItem->price }}"
-                                                                        id="variantItem_{{ $variantItem->id }}">
-                                                                    <label
-                                                                        for="variantItem_{{ $variantItem->id }}">{{ $variantItem->name }}
-                                                                        (${{ $variantItem->price }})
-                                                                    </label>
-                                                                </div>
-                                                            @endif
-                                                        @endforeach
-                                                    @break
+            @case('checkbox')
+                @foreach ($variant->productVariantItems as $variantItem)
+                    @if ($variantItem->status != 0)
+                        <div class="my-4">
+                            <input class="w-0 me-2 v_product_option" type="checkbox"
+                                name="variants_items[{{ $variant->id }}][]"
+                                value="{{ $variantItem->id }}"
+                                data-price="{{ $variantItem->price }}"
+                                id="variantItem_{{ $variantItem->id }}"
+                                required="{{ $variant->isrequired ? 'true' : 'false' }}">
+                            <label
+                                for="variantItem_{{ $variantItem->id }}">{{ $variantItem->name }}
+                                (${{ $variantItem->price }})
+                            </label>
+                        </div>
+                    @endif
+                @endforeach
+                <span class="error-message" style="color:red; display:none;">Please select an option.</span>
+            @break
 
-                                                    @default
-                                                        <div class="mt-2 fp__contact_form_input form-group">
-                                                            <span><i class="far fa-keyboard" aria-hidden="true"></i></span>
-                                                            <input type="text" name="variants_items[]" class="form-control"
-                                                                placeholder="Enter {{ $variant->name }}"
-                                                                {{ $variant->isrequired ? 'required' : '' }}>
-                                                        </div>
-                                                @endswitch
-                                            </div>
-                                        </div>
-                                    @endforeach
+            @default
+                <div class="mt-2 fp__contact_form_input form-group">
+                    <span><i class="far fa-keyboard" aria-hidden="true"></i></span>
+                    <input type="text" name="variants_items[]" class="form-control"
+                        placeholder="Enter {{ $variant->name }}"
+                        {{ $variant->isrequired ? 'required' : '' }}>
+                    <span class="error-message" style="color:red; display:none;">Please fill this field.</span>
+                </div>
+        @endswitch
+    </div>
+</div>
+@endforeach
+
                                 </div>
                             </div>
 
@@ -560,5 +567,31 @@
             // Initial price calculation
             v_updateTotalPrice();
         });
+    </script>
+
+    <script>
+     document.getElementById('v_add_to_cart_form').addEventListener('submit', function(event) {
+    let valid = true;
+
+    // Check all required select and radio inputs
+    document.querySelectorAll('.v_product_option').forEach(function(input) {
+        if (input.closest('.form-group').querySelector('[required]')) {
+            if (input.value === '') {
+                valid = false;
+                input.closest('.form-group').classList.add('has-error');
+                input.closest('.form-group').scrollIntoView({ behavior: 'smooth' });
+            } else {
+                input.closest('.form-group').classList.remove('has-error');
+            }
+        }
+    });
+
+    // Prevent form submission if validation fails
+    if (!valid) {
+        event.preventDefault();
+        alert('Please fill out all required fields.');
+    }
+});
+
     </script>
 @endpush
