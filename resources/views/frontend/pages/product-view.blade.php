@@ -230,7 +230,8 @@
 
                                                     @case('area')
                                                         <div class="mt-2 fp__contact_form_input form-group">
-                                                            <span><i class="fa-solid fa-paragraph" aria-hidden="true"></i></span>
+                                                            <span><i class="far fa-solid fa-paragraph"
+                                                                    aria-hidden="true"></i></span>
                                                             <textarea name="variants_items[]" class="form-control" rows="3" placeholder="Enter {{ $variant->name }}"
                                                                 {{ $variant->isrequired ? 'required' : '' }}></textarea>
                                                             <span class="error-message text-danger" style="display:none;">Please
@@ -240,6 +241,8 @@
 
                                                     @case('field')
                                                         <div class="mt-2 fp__contact_form_input form-group">
+                                                            <span><i class="far fa-solid fa-keyboard"
+                                                                    aria-hidden="true"></i></span>
                                                             <input type="text" name="variants_items[]" class="form-control"
                                                                 placeholder="Enter {{ $variant->name }}"
                                                                 {{ $variant->isrequired ? 'required' : '' }}>
@@ -250,6 +253,10 @@
 
                                                     @case('date')
                                                         <div class="mt-2 fp__contact_form_input form-group">
+
+
+                                                            <span><i class="far fa-regular fa-calendar-days"
+                                                                    aria-hidden="true"></i></span>
                                                             <input type="date" name="variants_items[]" class="form-control"
                                                                 {{ $variant->isrequired ? 'required' : '' }}>
                                                             <span class="error-message text-danger" style="display:none;">Please
@@ -259,6 +266,8 @@
 
                                                     @case('datetime')
                                                         <div class="mt-2 fp__contact_form_input form-group">
+                                                            <span><i class="far fa-regular fa-calendar-days"
+                                                                    aria-hidden="true"></i></span>
                                                             <input type="datetime-local" name="variants_items[]"
                                                                 class="form-control" {{ $variant->isrequired ? 'required' : '' }}>
                                                             <span class="error-message text-danger" style="display:none;">Please
@@ -267,6 +276,9 @@
                                                     @break
 
                                                     @case('time')
+                                                        <span><i class="far fa-solid fa-clock" aria-hidden="true"></i></span>
+
+
                                                         <div class="mt-2 fp__contact_form_input form-group">
                                                             <input type="time" name="variants_items[]" class="form-control"
                                                                 {{ $variant->isrequired ? 'required' : '' }}>
