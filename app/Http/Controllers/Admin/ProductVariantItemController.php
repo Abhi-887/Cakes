@@ -61,7 +61,7 @@ class ProductVariantItemController extends Controller
     public function update(Request $request, string $variantItemId)
     {
         $request->validate([
-            'name' => ['required', 'max:200'],
+            'name' => ['required', 'max:500'],
             'price' => ['integer', 'required'],
             'is_default' => ['required'],
             'status' => ['required']
