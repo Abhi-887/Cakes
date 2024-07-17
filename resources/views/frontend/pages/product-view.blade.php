@@ -228,11 +228,6 @@
                                                             an option.</span>
                                                     @break
 
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
                                                     @case('area')
                                                         <div class="mt-2 fp__contact_form_input form-group">
                                                             <span><i class="fa-solid fa-paragraph" aria-hidden="true"></i></span>
@@ -280,10 +275,6 @@
                                                         </div>
                                                     @break
 
-<<<<<<< Updated upstream
-=======
->>>>>>> e2f81f509f7c794932f05ce14028d624fbd46fb9
->>>>>>> Stashed changes
                                                     @default
                                                         <div class="mt-2 fp__contact_form_input form-group">
                                                             <span><i class="far fa-keyboard" aria-hidden="true"></i></span>
@@ -294,14 +285,6 @@
                                                                 fill this field.</span>
                                                         </div>
                                                 @endswitch
-<<<<<<< Updated upstream
-
-=======
-<<<<<<< HEAD
-=======
-
->>>>>>> e2f81f509f7c794932f05ce14028d624fbd46fb9
->>>>>>> Stashed changes
                                             </div>
                                         </div>
                                     @endforeach
