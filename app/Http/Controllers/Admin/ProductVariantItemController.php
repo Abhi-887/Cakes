@@ -30,7 +30,7 @@ class ProductVariantItemController extends Controller
     {
         $request->validate([
             'variant_id' => ['integer', 'required'],
-            'name' => ['required', 'max:200'],
+            'name' => ['required', 'max:500'],
             'price' => ['integer', 'required'],
             'is_default' => ['required'],
             'status' => ['required']
@@ -50,7 +50,6 @@ class ProductVariantItemController extends Controller
             'admin.products-variant-item.index',
             ['productId' => $request->product_id, 'variantId' => $request->variant_id]
         );
-
     }
 
     public function edit(string $variantItemId)
