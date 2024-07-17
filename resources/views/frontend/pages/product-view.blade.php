@@ -160,7 +160,7 @@
                                                 <h6 class="my-4">
                                                     {{ $variant->name }}:
                                                     @if ($variant->isrequired)
-                                                        <span style="color: red;">*</span>
+                                                        <span class="text-danger">*</span>
                                                     @endif
                                                 </h6>
 
@@ -181,7 +181,7 @@
                                                                     @endif
                                                                 @endforeach
                                                             </select>
-                                                            <span class="error-message" style="color:red; display:none;">Please
+                                                            <span class="error-message text-danger" style="display:none;">Please
                                                                 select an option.</span>
                                                         </div>
                                                     @break
@@ -203,7 +203,7 @@
                                                                 </div>
                                                             @endif
                                                         @endforeach
-                                                        <span class="error-message" style="color:red; display:none;">Please select
+                                                        <span class="error-message text-danger" style="display:none;">Please select
                                                             an option.</span>
                                                     @break
 
@@ -224,7 +224,7 @@
                                                                 </div>
                                                             @endif
                                                         @endforeach
-                                                        <span class="error-message" style="color:red; display:none;">Please select
+                                                        <span class="error-message text-danger" style="display:none;">Please select
                                                             an option.</span>
                                                     @break
 
@@ -233,7 +233,7 @@
                                                             <span><i class="fa-solid fa-paragraph" aria-hidden="true"></i></span>
                                                             <textarea name="variants_items[]" class="form-control" rows="3" placeholder="Enter {{ $variant->name }}"
                                                                 {{ $variant->isrequired ? 'required' : '' }}></textarea>
-                                                            <span class="error-message" style="color:red; display:none;">Please
+                                                            <span class="error-message text-danger" style="display:none;">Please
                                                                 fill this field.</span>
                                                         </div>
                                                     @break
@@ -243,7 +243,7 @@
                                                             <input type="text" name="variants_items[]" class="form-control"
                                                                 placeholder="Enter {{ $variant->name }}"
                                                                 {{ $variant->isrequired ? 'required' : '' }}>
-                                                            <span class="error-message" style="color:red; display:none;">Please
+                                                            <span class="error-message text-danger" style="display:none;">Please
                                                                 fill this field.</span>
                                                         </div>
                                                     @break
@@ -252,7 +252,7 @@
                                                         <div class="mt-2 fp__contact_form_input form-group">
                                                             <input type="date" name="variants_items[]" class="form-control"
                                                                 {{ $variant->isrequired ? 'required' : '' }}>
-                                                            <span class="error-message" style="color:red; display:none;">Please
+                                                            <span class="error-message text-danger" style="display:none;">Please
                                                                 select a date.</span>
                                                         </div>
                                                     @break
@@ -261,7 +261,7 @@
                                                         <div class="mt-2 fp__contact_form_input form-group">
                                                             <input type="datetime-local" name="variants_items[]"
                                                                 class="form-control" {{ $variant->isrequired ? 'required' : '' }}>
-                                                            <span class="error-message" style="color:red; display:none;">Please
+                                                            <span class="error-message text-danger" style="display:none;">Please
                                                                 select a date and time.</span>
                                                         </div>
                                                     @break
@@ -270,7 +270,7 @@
                                                         <div class="mt-2 fp__contact_form_input form-group">
                                                             <input type="time" name="variants_items[]" class="form-control"
                                                                 {{ $variant->isrequired ? 'required' : '' }}>
-                                                            <span class="error-message" style="color:red; display:none;">Please
+                                                            <span class="error-message text-danger" style="display:none;">Please
                                                                 select a time.</span>
                                                         </div>
                                                     @break
@@ -281,7 +281,7 @@
                                                             <input type="text" name="variants_items[]" class="form-control"
                                                                 placeholder="Enter {{ $variant->name }}"
                                                                 {{ $variant->isrequired ? 'required' : '' }}>
-                                                            <span class="error-message" style="color:red; display:none;">Please
+                                                            <span class="error-message text-danger" style="display:none;">Please
                                                                 fill this field.</span>
                                                         </div>
                                                 @endswitch
