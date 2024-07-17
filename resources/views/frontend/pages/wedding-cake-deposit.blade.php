@@ -8,8 +8,8 @@
         }
     </style>
     <!--=============================
-                            BREADCRUMB START
-                        ==============================-->
+                                                            BREADCRUMB START
+                                                        ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay py-5">
             <div class="container py-md-5 py-2">
@@ -24,11 +24,11 @@
         </div>
     </section>
     <!--=============================
-                            BREADCRUMB END
-                        ==============================-->
+                                                            BREADCRUMB END
+                                                        ==============================-->
     <!--=============================
-                            Wedding-cake-deposit PAGE START
-                        ==============================-->
+                                                            Wedding-cake-deposit PAGE START
+                                                        ==============================-->
 
     <div class="container my-5 py-5">
         <div class="row">
@@ -109,33 +109,43 @@
     </div>
 
     <script>
-        let formData = $(this).serialize();
-        $.ajax({
-            method: 'POST',
-            url: '{{ route('add-to-cart') }}',
-            data: formData,
-            beforeSend: function() {
-                $('.v_submit_button').attr('disabled', true);
-                $('.v_submit_button').html(
-                    '<span class="spinner-border spinner-border-sm text-light" role="status" aria-hidden="true"></span> Loading...'
-                )
-            },
-            success: function(response) {
-                updateSidebarCart();
-                toastr.success(response.message);
-            },
-            error: function(xhr, status, error) {
-                let errorMessage = xhr.responseJSON.message;
-                toastr.error(errorMessage);
-            },
-            complete: function() {
-                $('.v_submit_button').html('Add to Cart');
-                $('.v_submit_button').attr('disabled', false);
-            }
-        })
+        $(document).ready(function() {
+
+            $('.v_submit_button').on('click', function(e) {
+                e.preventDefault();
+                $("#v_add_to_cart_form").submit();
+            });
+
+
+            let formData = $(this).serialize();
+            $.ajax({
+                method: 'POST',
+                url: '{{ route('add-to-cart') }}',
+                data: formData,
+                beforeSend: function() {
+                    $('.v_submit_button').attr('disabled', true);
+                    $('.v_submit_button').html(
+                        '<span class="spinner-border spinner-border-sm text-light" role="status" aria-hidden="true"></span> Loading...'
+                    )
+                },
+                success: function(response) {
+                    updateSidebarCart();
+                    toastr.success(response.message);
+                },
+                error: function(xhr, status, error) {
+                    let errorMessage = xhr.responseJSON.message;
+                    toastr.error(errorMessage);
+                },
+                complete: function() {
+                    $('.v_submit_button').html('Add to Cart');
+                    $('.v_submit_button').attr('disabled', false);
+                }
+            })
+
+        });
     </script>
 
     <!--=============================
-                             Wedding-cake-deposit PAGE END
-                        ==============================-->
+                                                             Wedding-cake-deposit PAGE END
+                                                        ==============================-->
 @endsection
