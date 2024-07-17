@@ -35,7 +35,7 @@ class ProductVariantController extends Controller
     {
         $request->validate([
             'product' => ['integer', 'required'],
-            'name' => ['required', 'max:200'],
+            'name' => ['required', 'max:500'],
             'attribute_type' => 'required|string',
             'status' => ['required'],
             'isrequired' => ['required'],
@@ -56,7 +56,6 @@ class ProductVariantController extends Controller
         toastr('Created Successfully!', 'success', 'success');
 
         return redirect()->route('admin.products-variant.index', ['product' => $request->product]);
-
     }
 
     /**
@@ -82,7 +81,7 @@ class ProductVariantController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'name' => ['required', 'max:200'],
+            'name' => ['required', 'max:500'],
             'status' => ['required'],
             'attribute_type' => 'required|string',
 
@@ -118,7 +117,6 @@ class ProductVariantController extends Controller
         $varinat->delete();
 
         return response(['status' => 'success', 'message' => 'Deleted Successfully!']);
-
     }
 
     public function changeStatus(Request $request)
