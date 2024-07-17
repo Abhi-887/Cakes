@@ -230,6 +230,7 @@
 
                                                     @case('area')
                                                         <div class="mt-2 fp__contact_form_input form-group">
+                                                            <span><i class="fa-solid fa-paragraph" aria-hidden="true"></i></span>
                                                             <textarea name="variants_items[]" class="form-control" rows="3" placeholder="Enter {{ $variant->name }}"
                                                                 {{ $variant->isrequired ? 'required' : '' }}></textarea>
                                                             <span class="error-message" style="color:red; display:none;">Please
