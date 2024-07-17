@@ -118,7 +118,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-duration="1s">
-                    <div class="fp__menu_details_text px-0 px-lg-5 ms-0 ms-lg-5 ms-xxl-0">
+                    <div class="fp__menu_details_text pe-0 pe-lg-5 ms-0 ms-lg-5 ms-xxl-0">
                         <h2>{!! $product->name !!}</h2>
                         @if ($product->reviews_avg_rating)
                             <p class="rating">
@@ -228,6 +228,11 @@
                                                             an option.</span>
                                                     @break
 
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
                                                     @case('area')
                                                         <div class="mt-2 fp__contact_form_input form-group">
                                                             <span><i class="fa-solid fa-paragraph" aria-hidden="true"></i></span>
@@ -275,6 +280,10 @@
                                                         </div>
                                                     @break
 
+<<<<<<< Updated upstream
+=======
+>>>>>>> e2f81f509f7c794932f05ce14028d624fbd46fb9
+>>>>>>> Stashed changes
                                                     @default
                                                         <div class="mt-2 fp__contact_form_input form-group">
                                                             <span><i class="far fa-keyboard" aria-hidden="true"></i></span>
@@ -285,7 +294,14 @@
                                                                 fill this field.</span>
                                                         </div>
                                                 @endswitch
+<<<<<<< Updated upstream
 
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> e2f81f509f7c794932f05ce14028d624fbd46fb9
+>>>>>>> Stashed changes
                                             </div>
                                         </div>
                                     @endforeach
