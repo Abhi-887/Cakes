@@ -19,11 +19,7 @@ $totalPrice += $cartProductVariant['item_price'];
         <a class="title" href="{{ route('product.show', $cartProduct->options->product_info['slug']) }}">{!!
             $cartProduct->name !!}</a>
         <p class="size">Qty: {{ $cartProduct->qty }}</p>
-        <pre>
-    <?php
-       print_r($cartProduct);
-    ?>
-</pre>
+
 
 
         {{-- @if (!empty($cartProduct->options->product_size))
