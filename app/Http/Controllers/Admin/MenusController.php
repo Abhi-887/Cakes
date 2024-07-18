@@ -48,7 +48,7 @@ class MenusController extends Controller
         $menus = new Menus();
         $menus->name = $request->name;
         $menus->link = $request->link;
-        $menus->parentmenu = $request->parentmenu;
+        $menus->parentmenus = $request->parentmenus;
         $menus->status = $request->status;
         $menus->save();
 
@@ -76,7 +76,7 @@ class MenusController extends Controller
 
         $menus->name = $request->name;
         $menus->link = $request->link;
-        $menus->parentmenu = $request->parentmenu;
+        $menus->parentmenus = $request->parentmenus;
         $menus->status = $request->status;
         $menus->save();
 
