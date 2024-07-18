@@ -75,8 +75,8 @@
 </style>
 <!--============================= BREADCRUMB START ==============================-->
 <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
-    <div class="fp__breadcrumb_overlay py-5">
-        <div class="container py-md-5 py-2">
+    <div class="py-5 fp__breadcrumb_overlay">
+        <div class="container py-2 py-md-5">
             <div class="fp__breadcrumb_text">
                 <h1>{!! $product->name !!}</h1>
                 <ul>
@@ -462,7 +462,7 @@
                 <h2>Related Item</h2>
                 <div class="row related_product_slider">
                     @foreach ($relatedProducts as $relatedProduct)
-                    <div class="col-lg-4 wow fadeInUp" data-wow-duration="1s">
+                    <div class="col-4 wow fadeInUp" data-wow-duration="1s">
                         <div class="fp__menu_item">
                             <div class="fp__menu_item_img">
                                 <img src="{{ asset($relatedProduct->thumb_image) }}" alt="{{ $relatedProduct->name }}"
