@@ -86,7 +86,7 @@ class MenusDataTable extends DataTable
 
             Column::make('id'),
             Column::make('name'),
-            Column::make('parentmenus'),
+            Column::make('parent'),
             Column::make('link'),
             Column::make('status'),
             Column::computed('action')
