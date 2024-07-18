@@ -56,6 +56,7 @@ use App\Http\Controllers\Admin\WhyChooseUsController;
 use App\Http\Controllers\Admin\AttributeController;
 use App\Http\Controllers\Admin\CakesstandController;
 use App\Http\Controllers\Admin\CustomerfeedbackController;
+use App\Http\Controllers\Admin\MenusController;
 use App\Http\Controllers\Admin\ProductVariantController;
 use App\Http\Controllers\Admin\ProductVariantItemController;
 use App\Models\AppDownloadSection;
