@@ -63,7 +63,7 @@ class MenusDataTable extends DataTable
     public function html(): HtmlBuilder
     {
         return $this->builder()
-            ->setTableId('menus-table')
+            ->setTableId('menuses-table')
             ->columns($this->getColumns())
             ->minifiedAjax()
             //->dom('Bfrtip')
