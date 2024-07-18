@@ -34,7 +34,7 @@ class MenusController extends Controller
     public function create(): View
     {
         $categories = Menus::all();
-        return view('admin.menus.create', compact('menus'));
+        return view('admin.menus.create');
     }
 
     /**
