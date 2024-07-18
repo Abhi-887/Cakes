@@ -31,11 +31,12 @@ class MenusController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(): View
+    public function create()
     {
-        $categories = Menus::all();
-        return view('admin.menus.create');
+        $menus = Menus::all(); // Fetch all menus
+        return view('admin.menus.create', compact('menus'));
     }
+
 
     /**
      * Store a newly created resource in storage.

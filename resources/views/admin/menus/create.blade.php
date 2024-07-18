@@ -26,11 +26,15 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="parent">Parent</label>
-                        <select name="parentmenus" class="form-control" id="parent">
+                        <label for="parentmenus">Parent Menu</label>
+                        <select name="parentmenus" class="form-control" id="parentmenus">
                             <option value="" selected>Select Parent Menu</option>
+                            @foreach ($menus as $menu)
+                                <option value="{{ $menu->id }}">{{ $menu->name }}</option>
+                            @endforeach
                         </select>
                     </div>
+
 
                     <div class="form-group">
                         <label>Status</label>
