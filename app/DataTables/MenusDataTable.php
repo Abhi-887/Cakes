@@ -37,7 +37,7 @@ class MenusDataTable extends DataTable
             })
 
             ->addColumn('parentmenus', function ($query) {
-                return $query->parentmenus ? $query->parentmenus->name : 'No Parent';
+                return $query->parentmenus ? $query->parentmenus->int : 'No Parent';
             })
 
             ->addColumn('status', function ($query) {
