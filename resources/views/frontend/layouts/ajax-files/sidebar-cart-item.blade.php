@@ -21,7 +21,7 @@ $totalPrice += $cartProductVariant['item_price'];
         <p class="size">Qty: {{ $cartProduct->qty }}</p>
         <pre>
     <?php
-       $print_r($cartProduct);
+       print_r($cartProduct);
     ?>
 </pre>
 
