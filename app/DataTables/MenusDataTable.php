@@ -20,10 +20,6 @@ class MenusDataTable extends DataTable
      *
      * @param QueryBuilder $query Results from query() method.<i class="fa-solid fa-link"></i>
 
-     $attribute.
-
-
-     $attributedit.
      */
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {

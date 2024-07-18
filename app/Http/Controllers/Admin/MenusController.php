@@ -33,7 +33,8 @@ class MenusController extends Controller
      */
     public function create(): View
     {
-        return view('admin.menus.create');
+        $categories = Menus::all();
+        return view('admin.menus.create', compact('menus'));
     }
 
     /**
@@ -46,7 +47,7 @@ class MenusController extends Controller
         $menus = new Menus();
         $menus->name = $request->name;
         $menus->link = $request->link;
-        $product->parentmenu = $request->parentmenu;
+        $menus->parentmenu = $request->parentmenu;
         $menus->status = $request->status;
         $menus->save();
 
@@ -62,7 +63,7 @@ class MenusController extends Controller
     public function edit(string $id): View
     {
         $menus = Menus::findOrFail($id);
-        return view('admin.menus.edit');
+        return view('admin.menus.edit', compact('menus'));
     }
 
     /**
@@ -74,9 +75,9 @@ class MenusController extends Controller
 
         $menus->name = $request->name;
         $menus->link = $request->link;
-        $product->parentmenu = $request->parentmenu;
+        $menus->parentmenu = $request->parentmenu;
         $menus->status = $request->status;
-        $product->save();
+        $menus->save();
 
         toastr()->success('Update Successfully');
 
