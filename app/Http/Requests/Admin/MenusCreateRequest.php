@@ -15,7 +15,7 @@ class MenusCreateRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
-            'link' => 'required|url|max:255',
+            'link' => 'required|string|max:255',
             'parentmenu' => 'nullable|exists:menus,id', // Example of existing menu validation
             'status' => 'required|boolean',
         ];
