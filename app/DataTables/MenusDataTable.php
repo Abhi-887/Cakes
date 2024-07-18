@@ -36,10 +36,6 @@ class MenusDataTable extends DataTable
                 return currencyPosition($query->link);
             })
 
-            ->addColumn('parentmenus', function ($query) {
-                return $query->parentmenus ? $query->parentmenus->int : 'No Parent';
-            })
-
             ->addColumn('status', function ($query) {
                 if ($query->status === 1) {
                     return '<span class="badge badge-primary">Active</span>';
