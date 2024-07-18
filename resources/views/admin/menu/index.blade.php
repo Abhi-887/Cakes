@@ -10,7 +10,7 @@
             <div class="card-header">
                 <h4>All Menus</h4>
                 <div class="card-header-action">
-                    <a href="{{ route('admin.category.create') }}" class="btn btn-primary">
+                    <a href="{{ route('admin.menus.create') }}" class="btn btn-primary">
                         Create new
                     </a>
                 </div>
