@@ -188,6 +188,7 @@
     }
 
     */
+
     /*
      @foreach ($sliders as $key => $slider)
         .background{{ $key + 1 }} {
