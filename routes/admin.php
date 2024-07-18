@@ -101,6 +101,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::resource('product', ProductController::class);
     Route::resource('products', ProductController::class);
 
+    /** Menus Routes */
+    Route::resource('menus', MenusController::class);
 
 
     Route::resource('products-image-gallery', ProductImageGalleryController::class);
@@ -337,9 +339,4 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     /** Clear Database Routes */
     Route::get('/clear-database', [ClearDatabaseController::class, 'index'])->name('clear-database.index');
     Route::post('/clear-database', [ClearDatabaseController::class, 'clearDB'])->name('clear-database.destroy');
-
-
-
-
-
 });
