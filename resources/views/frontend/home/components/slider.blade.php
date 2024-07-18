@@ -187,7 +187,9 @@
     @endforeach
     }
 
-    */ @foreach ($sliders as $key => $slider)
+    */
+    /*
+     @foreach ($sliders as $key => $slider)
         .background{{ $key + 1 }} {
             background-image: url("{{ asset($slider->background_image) }}");
             background-color: rgba(0, 0, 0, 0);
@@ -198,6 +200,7 @@
             height: 645px !important;
         }
     @endforeach
+    */
 
     .slider-img {
         position: relative;
