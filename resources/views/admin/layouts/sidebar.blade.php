@@ -185,6 +185,10 @@
             </ul>
         </li>
 
+        <li class="{{ setSidebarActive(['admin.menus.index']) }}"><a class="nav-link"
+                href="{{ route('admin.menus.index') }}"><i class="fas fa-list-alt"></i>
+                <span>Menus</span></a></li>
+
         <li
             class="dropdown {{ setSidebarActive(['admin.category.*', 'admin.product.*', 'admin.product-reviews.index']) }}">
             <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i
@@ -203,10 +207,6 @@
             </ul>
         </li>
 
-        <li class="{{ setSidebarActive(['admin.menus.index']) }}"><a class="nav-link"
-                href="{{ route('admin.menus.index') }}"><i class="fas fa-list-alt"></i>
-                <span>Menu Builder</span></a></li>
-
         <li
             class="dropdown {{ setSidebarActive(['admin.coupon.*', 'admin.delivery-area.*', 'admin.payment-setting.index']) }}">
             <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-store"></i>
@@ -223,8 +223,7 @@
             </ul>
         </li>
 
-        <li
-            class="dropdown {{ setSidebarActive(['admin.reservation-time.*', 'admin.reservation.index']) }}">
+        <li class="dropdown {{ setSidebarActive(['admin.reservation-time.*', 'admin.reservation.index']) }}">
             <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-chair"></i>
                 <span>Manage Reservations </span></a>
             <ul class="dropdown-menu">
