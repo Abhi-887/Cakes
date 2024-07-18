@@ -10,6 +10,6 @@ class Menus extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name', 'link', 'parentmenu', 'status'
+        'name', 'link', 'parentmenus', 'status'
     ];
 }

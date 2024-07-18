@@ -3,7 +3,6 @@
 namespace App\DataTables;
 
 use App\Models\Menus;
-use App\Models\Attribute;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Html\Builder as HtmlBuilder;

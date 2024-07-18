@@ -27,8 +27,8 @@
 
                     <div class="form-group">
                         <label for="parent">Parent</label>
-                        <select name="parent" class="form-control" id="parent">
-                            <option value="" selected>Select Parent Category</option>
+                        <select name="parentmenus" class="form-control" id="parent">
+                            <option value="" selected>Select Parent Menu</option>
                         </select>
                     </div>
 
