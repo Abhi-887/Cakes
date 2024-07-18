@@ -159,7 +159,9 @@
             </a>
         </li>
 
-
+        <li class="{{ setSidebarActive(['admin.menus.index']) }}"><a class="nav-link"
+                href="{{ route('admin.menus.index') }}"><i class="fas fa-list-alt"></i>
+                <span>Menus</span></a></li>
 
         <li
             class="dropdown {{ setSidebarActive([
@@ -184,10 +186,6 @@
                         href="{{ route('admin.declined-orders') }}">Decliend Orders</a></li>
             </ul>
         </li>
-
-        <li class="{{ setSidebarActive(['admin.menus.index']) }}"><a class="nav-link"
-                href="{{ route('admin.menus.index') }}"><i class="fas fa-list-alt"></i>
-                <span>Menus</span></a></li>
 
         <li
             class="dropdown {{ setSidebarActive(['admin.category.*', 'admin.product.*', 'admin.product-reviews.index']) }}">
