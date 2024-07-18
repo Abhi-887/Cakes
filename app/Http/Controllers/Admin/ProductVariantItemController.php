@@ -31,7 +31,7 @@ class ProductVariantItemController extends Controller
         $request->validate([
             'variant_id' => ['integer', 'required'],
             'name' => ['required', 'max:500'],
-            'price' => ['integer', 'required'],
+            'price' => ['required'],
             'is_default' => ['required'],
             'status' => ['required']
         ]);
@@ -62,7 +62,7 @@ class ProductVariantItemController extends Controller
     {
         $request->validate([
             'name' => ['required', 'max:500'],
-            'price' => ['integer', 'required'],
+            'price' => ['required'],
             'is_default' => ['required'],
             'status' => ['required']
         ]);

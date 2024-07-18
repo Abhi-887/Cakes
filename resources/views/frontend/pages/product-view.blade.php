@@ -276,10 +276,8 @@
                                                     @break
 
                                                     @case('time')
-                                                        <span><i class="far fa-solid fa-clock" aria-hidden="true"></i></span>
-
-
                                                         <div class="mt-2 fp__contact_form_input form-group">
+                                                            <span><i class="far fa-solid fa-clock" aria-hidden="true"></i></span>
                                                             <input type="time" name="variants_items[]" class="form-control"
                                                                 {{ $variant->isrequired ? 'required' : '' }}>
                                                             <span class="error-message text-danger" style="display:none;">Please
