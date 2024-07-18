@@ -25,7 +25,7 @@ class MenusDataTable extends DataTable
         return (new EloquentDataTable($query))
             ->addColumn('action', function ($query) {
                 $edit = "<a href='" . route('admin.menus.edit', $query->id) . "' class='btn btn-primary'><i class='fas fa-edit'></i></a>";
-                $delete = "<a href='" . route('admin.menus.destroy', $query->id) . "' class='btn btn-danger delete-item ml-2'><i class='fas fa-trash'></i></a>";
+                $delete = "<a href='" . route('admin.menus.destroy', $query->id) . "' class='ml-2 btn btn-danger delete-item'><i class='fas fa-trash'></i></a>";
 
                 return $edit . $delete;
             })
@@ -63,7 +63,7 @@ class MenusDataTable extends DataTable
     public function html(): HtmlBuilder
     {
         return $this->builder()
-            ->setTableId('menuses-table')
+            ->setTableId('menuses')
             ->columns($this->getColumns())
             ->minifiedAjax()
             //->dom('Bfrtip')
