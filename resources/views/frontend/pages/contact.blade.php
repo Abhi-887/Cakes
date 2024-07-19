@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay py-5">
             <div class="container py-md-5 py-2">
@@ -18,13 +18,13 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        BREADCRUMB END
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            BREADCRUMB END
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
 
 
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        CONTACT PAGE START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            CONTACT PAGE START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
 
 
     <style>
@@ -70,7 +70,6 @@
     </style>
 
     <div class="container py-5">
-        <h1 class="fw-bold">Address Line 1</h1>
         <h4 class="fw-bold color-light-gray">3D Cakes Edinburgh</h4>
 
         <div class="row mt-5">
@@ -158,7 +157,6 @@
     </div>
 
     <div class="container py-5">
-        <h1 class="fw-bold">Address Line 2</h1>
         <h4 class="fw-bold color-light-gray">3D Cakes Milngavie</h4>
 
         <div class="row mt-5">
