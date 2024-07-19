@@ -57,18 +57,25 @@ class CartController extends Controller
                 ];
             }
 
-            foreach ($variantItems as $variantId => $itemIds) {
-                foreach ((array) $itemIds as $itemId) {
-                    $variantItem = $product->variants->flatMap->productVariantItems->where('id', $itemId)->first();
-                    if ($variantItem) {
-                        $options['product_variants'][] = [
-                            'variant_id' => $variantItem->productVariant->id,
-                            'variant_name' => $variantItem->productVariant->name,
-                            'item_id' => $variantItem->id,
-                            'item_name' => $variantItem->name,
-                            'item_price' => $variantItem->price
-                        ];
-                    }
+            foreach ($variantItems as $variantId => $itemValue) {
+                $variantItem = $product->variants->flatMap->productVariantItems->where('id', $itemValue)->first();
+                if ($variantItem) {
+                    $options['product_variants'][] = [
+                        'variant_id' => $variantItem->productVariant->id,
+                        'variant_name' => $variantItem->productVariant->name,
+                        'item_id' => $variantItem->id,
+                        'item_name' => $variantItem->name,
+                        'item_price' => $variantItem->price
+                    ];
+                } else {
+                    // For non-variant fields like text, date, etc.
+                    $options['product_variants'][] = [
+                        'variant_id' => $variantId,
+                        'variant_name' => 'Custom Input',
+                        'item_id' => null,
+                        'item_name' => $itemValue,
+                        'item_price' => null
+                    ];
                 }
             }
 
@@ -87,6 +94,7 @@ class CartController extends Controller
             return response(['status' => 'error', 'message' => 'Something went wrong!'], 500);
         }
     }
+
 
     public function getCartProduct()
     {

@@ -236,24 +236,26 @@
                                         @case('field')
                                         <div class="mt-2 fp__contact_form_input form-group">
                                             <span><i class="far fa-solid fa-keyboard" aria-hidden="true"></i></span>
-                                            <input type="text" name="variants_items[]" class="form-control"
-                                                placeholder="Enter {{ $variant->name }}" {{ $variant->isrequired ?
-                                            'required' : '' }}>
-                                            <span class="error-message text-danger" style="display:none;">Please
-                                                fill this field.</span>
+                                            <input type="text" name="variants_items[{{ $variant->id }}]"
+                                                class="form-control" placeholder="Enter {{ $variant->name }}" {{
+                                                $variant->isrequired ? 'required' : '' }}>
+                                            <span class="error-message text-danger" style="display:none;">Please fill
+                                                this field.</span>
                                         </div>
                                         @break
+
 
                                         @case('area')
                                         <div class="mt-2 fp__contact_form_input form-group">
                                             <span><i class="far fa-solid fa-paragraph" aria-hidden="true"></i></span>
-                                            <textarea name="variants_items[]" class="form-control" rows="3"
-                                                placeholder="Enter {{ $variant->name }}" {{
+                                            <textarea name="variants_items[{{ $variant->id }}]" class="form-control"
+                                                rows="3" placeholder="Enter {{ $variant->name }}" {{
                                                 $variant->isrequired ? 'required' : '' }}></textarea>
-                                            <span class="error-message text-danger" style="display:none;">Please
-                                                fill this field.</span>
+                                            <span class="error-message text-danger" style="display:none;">Please fill
+                                                this field.</span>
                                         </div>
                                         @break
+
 
                                         @case('date')
                                         <div class="mt-2 fp__contact_form_input form-group">
