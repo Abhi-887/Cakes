@@ -3820,11 +3820,9 @@ footer .wrapper a:hover {
 .fp__cart_list table tbody tr td a,
 .fp__cart_list table tbody tr td p,
 .fp__cart_list table tbody tr td span {
-    font-family: "Roboto", sans-serif;
-    color: var(--paraColor);
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     text-align: left;
-    font-size: 14px;
+    /* font-size: 14px; */
 }
 
 .fp__cart_list table tbody tr td a {
