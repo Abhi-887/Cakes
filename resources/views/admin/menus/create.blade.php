@@ -30,7 +30,7 @@
                         <select name="parentmenus" class="form-control" id="parentmenus">
                             <option value="" selected>Select Parent Menu</option>
                             @foreach ($menus as $menu)
-                                <option value="{{ $menu->name }}">{{ $menu->name }}</option>
+                                <option value="{{ $menu->id }}">{{ $menu->name }}</option>
                             @endforeach
                         </select>
                     </div>
