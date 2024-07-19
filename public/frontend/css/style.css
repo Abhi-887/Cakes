@@ -4084,7 +4084,7 @@ CHECKOUT PAGE START
 
 .fp__address_modal .modal-header {
     border: none;
-    background: #f6eee7fa;
+    background: #e0f1f9;
 }
 
 .fp__address_modal .modal-title {
@@ -4969,7 +4969,7 @@ CHECKOUT PAGE START
 
 .fp_dashboard_new_address,
 .fp_dashboard_edit_address {
-    background: #faf6f3fa;
+    background: #e0f1f9;
     border-radius: 5px;
     padding: 30px;
     display: none;
