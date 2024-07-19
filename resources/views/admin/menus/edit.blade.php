@@ -28,9 +28,9 @@
                     <div class="form-group">
                         <label for="parentmenus">Parent Menu</label>
                         <select name="parentmenus" class="form-control" id="parentmenus">
-                            <option value="" selected>Select Parent Menu</option>
+                            <option value="" >Select Parent Menu</option>
                             @foreach ($menus as $menu)
-                                <option value="{{ $menu->id }}" @if ($menu->id == $menus->parentmenus) selected @endif>
+                                <option value="{{ $menu->id }}" @if ($menu->id == $menu->parentmenus) selected @endif>
                                     {{ $menu->name }}</option>
                             @endforeach
                         </select>
