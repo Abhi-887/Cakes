@@ -3953,8 +3953,8 @@ footer .wrapper a:hover {
     padding: 8px 20px;
     text-align: center;
     border-radius: 30px;
-    background: var(--colorPrimary);
-    color: var(--colorWhite);
+    background: #8eacbf;
+    color: white;
     font-size: 14px;
     font-weight: 600;
     position: absolute;
@@ -3965,10 +3965,15 @@ footer .wrapper a:hover {
     -moz-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     -o-transform: translateY(-50%);
+    transition: all linear 0.6s;
+    -webkit-transition: all linear 0.6s;
+    -moz-transition: all linear 0.6s;
+    -ms-transition: all linear 0.6s;
+    -o-transition: all linear 0.6s;
 }
 
 .fp__cart_list_footer_button button:hover {
-    background: var(--colorBlack);
+    background: #4b637f;
 }
 
 .fp__cart_list_footer_button .common_btn i {
@@ -4110,7 +4115,7 @@ CHECKOUT PAGE START
     padding: 20px;
     border-radius: 5px;
     margin-bottom: 20px;
-    background: #faf6f3;
+    background: #e0f1f9;
     position: relative;
 }
 
