@@ -29,7 +29,7 @@ class MenusDataTable extends DataTable
 
                 return $edit . $delete;
             })
-            ->addColumn('parentmenu', function($query){
+            ->addColumn('parentmenus', function($query){
                 return $query->name ? $query->name : 'No Parent';
             })
             ->addColumn('name', function ($query) {
