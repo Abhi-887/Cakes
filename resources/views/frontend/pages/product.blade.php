@@ -40,7 +40,7 @@
                 </a>
             </div>
             <div class="col-md-4 my-3">
-                <a href="product/wedding-cake-deposit">
+                <a href="/product/wedding-cake-deposit">
                     <div class="position-relative">
                         <img class="rounded-3" src="{{ asset('uploads/secure-wedding-date.jpg') }}" alt="">
                         <h4
