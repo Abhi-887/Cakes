@@ -176,8 +176,8 @@
                                                 <option value="{{ $variantItem->id }}"
                                                     data-price="{{ $variantItem->price }}">
                                                     {{ $variantItem->name }}
-                                                    @if($variantItem->price != 0)(${{
-                                                    $variantItem->price }})@endif
+                                                    @if($variantItem->price != 0)({{
+                                                    currencyPosition($variantItem->price) }})@endif
                                                 </option>
                                                 @endif
                                                 @endforeach
@@ -186,6 +186,7 @@
                                                 select an option.</span>
                                         </div>
                                         @break
+
 
 
                                         @case('radio')
