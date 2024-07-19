@@ -5003,7 +5003,7 @@ CHECKOUT PAGE START
     background: var(--colorWhite);
     border: 1px solid #ddd;
     padding: 10px 30px 10px 40px;
-    border-radius: 5px;
+    border-radius: 14px;
 }
 
 .fp_dashboard_new_address .form-check label,
