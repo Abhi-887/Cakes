@@ -71,7 +71,7 @@ class CartController extends Controller
                     // For non-variant fields like text, date, etc.
                     $options['product_variants'][] = [
                         'variant_id' => $variantId,
-                        'variant_name' => 'Custom Input',
+                        'variant_name' => $variantItem->productVariant->name,
                         'item_id' => null,
                         'item_name' => $itemValue,
                         'item_price' => null
