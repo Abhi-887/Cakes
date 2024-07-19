@@ -43,27 +43,16 @@ class MenusController extends Controller
      */
     public function store(MenusCreateRequest $request): RedirectResponse
     {
-        $menu = new Menus();
-        $menu->name = $request->name;
-        $menu->link = $request->link;
+        /** Handle image file */
 
-        // Look up the parent menu by name
-        if ($request->parentmenus) {
-            $parentMenu = Menus::where('name', $request->parentmenus)->first();
-            if ($parentMenu) {
-                $menu->parentmenus = $parentMenu->id;
-            } else {
-                // Handle case where the parent menu name does not exist
-                return redirect()->back()->withErrors(['parentmenus' => 'Invalid parent menu selected'])->withInput();
-            }
-        } else {
-            $menu->parentmenus = null;
-        }
+        $menus = new Menus();
+        $menus->name = $request->name;
+        $menus->link = $request->link;
+        $menus->parentmenus = $request->parentmenus;
+        $menus->status = $request->status;
+        $menus->save();
 
-        $menu->status = $request->status;
-        $menu->save();
-
-        toastr()->success('Menu created successfully.');
+        toastr()->success('Create Successfully');
 
         return to_route('admin.menus.index');
     }
