@@ -175,7 +175,8 @@
                                                 @if ($variantItem->status != 0)
                                                 <option value="{{ $variantItem->id }}"
                                                     data-price="{{ $variantItem->price }}">
-                                                    {{ $variantItem->name }} (${{ $variantItem->price }})
+                                                    {{ $variantItem->name }} @if($variantItem->price != 0)(${{
+                                                    $variantItem->price }})@endif
                                                 </option>
                                                 @endif
                                                 @endforeach
@@ -184,6 +185,7 @@
                                                 select an option.</span>
                                         </div>
                                         @break
+
 
                                         @case('radio')
                                         @foreach ($variant->productVariantItems as $variantItem)
