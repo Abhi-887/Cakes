@@ -21,6 +21,13 @@
                         </div>
                         <hr>
                         <div class="row">
+
+                            @php
+                            echo"
+                            <pre>";
+                                    print_r($order);
+                                    echo"<pre>";
+                            @endphp
                             <div class="col-md-6">
                                 <address>
                                     <strong>Deliver To:</strong><br>
@@ -104,7 +111,7 @@
 
                                 $productTotal = ($untiPrice + $sizePrice + $optionPrice) * $qty;
                                 @endphp --}}
-                                <tr>
+                                {{-- <tr>
                                     <td>{{ ++$loop->index }}</td>
                                     <td>{{ $orderItem->product_name }}</td>
                                     <td>
@@ -121,7 +128,7 @@
                                     <td class="text-center">{{ currencyPosition($orderItem->unit_price) }}</td>
                                     <td class="text-center">{{ $orderItem->qty }}</td>
                                     <td class="text-right">{{ currencyPosition($productTotal) }}</td>
-                                </tr>
+                                </tr> --}}
                                 @endforeach
 
                             </table>
