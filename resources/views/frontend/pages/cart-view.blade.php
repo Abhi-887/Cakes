@@ -73,20 +73,18 @@
                                         <small>
                                             @foreach ($product->options->product_options as $option)
                                             <p class="fw-normal">
-                                                {{ $option['name'] }}
-                                                @if ($option['price'] > 0)
-                                                ({{ currencyPosition($option['price']) }})
-                                                @endif
+                                                {{ $option['name'] }} ({{ currencyPosition($option['price']) }})
                                             </p>
                                             @endforeach
                                             @foreach ($product->options->product_variants as $variant)
+                                            @if ($variant['item_price'] > 0)
+                                            <!-- Only display if price > 0 -->
                                             <p class="fw-normal">
                                                 {{ $variant['variant_name'] }}:
                                                 {{ $variant['item_name'] }}
-                                                @if ($variant['item_price'] > 0)
                                                 ({{ currencyPosition($variant['item_price']) }})
-                                                @endif
                                             </p>
+                                            @endif
                                             @endforeach
                                         </small>
                                     </td>
@@ -177,7 +175,6 @@
         </div>
     </div>
 </section>
-
 
 <!--============================
                                                                             CART VIEW END
