@@ -175,7 +175,8 @@
                                                 @if ($variantItem->status != 0)
                                                 <option value="{{ $variantItem->id }}"
                                                     data-price="{{ $variantItem->price }}">
-                                                    {{ $variantItem->name }} @if($variantItem->price != 0)(${{
+                                                    {{ $variantItem->name }}
+                                                    @if($variantItem->price != 0)(${{
                                                     $variantItem->price }})@endif
                                                 </option>
                                                 @endif
@@ -197,7 +198,7 @@
                                                 id="variantItem_{{ $variantItem->id }}"
                                                 required="{{ $variant->isrequired ? 'true' : 'false' }}">
                                             <label for="variantItem_{{ $variantItem->id }}">{{ $variantItem->name }}
-                                                (${{ $variantItem->price }})
+                                                @if($variantItem->price != 0)(${{ $variantItem->price }})@endif
                                             </label>
                                         </div>
                                         @endif
@@ -216,7 +217,7 @@
                                                 id="variantItem_{{ $variantItem->id }}"
                                                 required="{{ $variant->isrequired ? 'true' : 'false' }}">
                                             <label for="variantItem_{{ $variantItem->id }}">{{ $variantItem->name }}
-                                                (${{ $variantItem->price }})
+                                                @if($variantItem->price != 0)(${{ $variantItem->price }})@endif
                                             </label>
                                         </div>
                                         @endif
@@ -225,16 +226,8 @@
                                             an option.</span>
                                         @break
 
-                                        @case('area')
-                                        <div class="mt-2 fp__contact_form_input form-group">
-                                            <span><i class="far fa-solid fa-paragraph" aria-hidden="true"></i></span>
-                                            <textarea name="variants_items[]" class="form-control" rows="3"
-                                                placeholder="Enter {{ $variant->name }}" {{
-                                                $variant->isrequired ? 'required' : '' }}></textarea>
-                                            <span class="error-message text-danger" style="display:none;">Please
-                                                fill this field.</span>
-                                        </div>
-                                        @break
+
+
 
                                         @case('field')
                                         <div class="mt-2 fp__contact_form_input form-group">
@@ -242,6 +235,17 @@
                                             <input type="text" name="variants_items[]" class="form-control"
                                                 placeholder="Enter {{ $variant->name }}" {{ $variant->isrequired ?
                                             'required' : '' }}>
+                                            <span class="error-message text-danger" style="display:none;">Please
+                                                fill this field.</span>
+                                        </div>
+                                        @break
+
+                                        @case('area')
+                                        <div class="mt-2 fp__contact_form_input form-group">
+                                            <span><i class="far fa-solid fa-paragraph" aria-hidden="true"></i></span>
+                                            <textarea name="variants_items[]" class="form-control" rows="3"
+                                                placeholder="Enter {{ $variant->name }}" {{
+                                                $variant->isrequired ? 'required' : '' }}></textarea>
                                             <span class="error-message text-danger" style="display:none;">Please
                                                 fill this field.</span>
                                         </div>
