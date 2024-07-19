@@ -136,7 +136,7 @@
                 <div class="fp__cart_list_footer_button">
                     <h6>Total Cart</h6>
                     <p>Subtotal: <span id="subtotal">{{ currencyPosition(cartTotal()) }}</span></p>
-                    <p>Delivery: <span>$00.00</span></p>
+                    <p>Delivery: <span>{{ currencyPosition(0.00) }}</span></p>
                     <p>Discount: <span id="discount">
                             @if (isset(session()->get('coupon')['discount']))
                             {{ config('settings.site_currency_icon') }} {{ session()->get('coupon')['discount'] }}
