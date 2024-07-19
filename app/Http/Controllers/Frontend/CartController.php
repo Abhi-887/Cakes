@@ -57,16 +57,27 @@ class CartController extends Controller
                 ];
             }
 
-            foreach ($variantItems as $variantId => $itemIds) {
-                foreach ((array) $itemIds as $itemId) {
-                    $variantItem = $product->variants->flatMap->productVariantItems->where('id', $itemId)->first();
-                    if ($variantItem) {
+            foreach ($variantItems as $variantId => $itemValue) {
+                // Check if the item is a variant item
+                $variantItem = $product->variants->flatMap->productVariantItems->where('id', $itemValue)->first();
+                if ($variantItem) {
+                    $options['product_variants'][] = [
+                        'variant_id' => $variantItem->productVariant->id,
+                        'variant_name' => $variantItem->productVariant->name,
+                        'item_id' => $variantItem->id,
+                        'item_name' => $variantItem->name,
+                        'item_price' => $variantItem->price
+                    ];
+                } else {
+                    // For custom fields, use the variant name and value
+                    $variant = $product->variants->where('id', $variantId)->first();
+                    if ($variant) {
                         $options['product_variants'][] = [
-                            'variant_id' => $variantItem->productVariant->id,
-                            'variant_name' => $variantItem->productVariant->name,
-                            'item_id' => $variantItem->id,
-                            'item_name' => $variantItem->name,
-                            'item_price' => $variantItem->price
+                            'variant_id' => $variantId,
+                            'variant_name' => $variant->name,
+                            'item_id' => null,
+                            'item_name' => $itemValue,
+                            'item_price' => null
                         ];
                     }
                 }
@@ -87,6 +98,8 @@ class CartController extends Controller
             return response(['status' => 'error', 'message' => 'Something went wrong!'], 500);
         }
     }
+
+
 
     public function getCartProduct()
     {
