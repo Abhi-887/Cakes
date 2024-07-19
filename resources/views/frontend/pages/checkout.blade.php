@@ -15,6 +15,14 @@
         </div>
     </section>
 
+
+    <style>
+        .fp__check_form .nice-select .list {
+            height: 315px !important;
+            overflow-y: scroll;
+        }
+    </style>
+
     <section class="fp__cart_view mt_125 xs_mt_95 mb_100 xs_mb_70">
         <div class="container">
             <div class="row">
