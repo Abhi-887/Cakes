@@ -117,8 +117,8 @@
                                         <div class="fp__checkout_single_address">
                                             <div class="form-check">
                                                 <input class="form-check-input v_address" value="{{ $address->id }}"
-                                                    type="radio" name="flexRadioDefault" id="home">
-                                                <label class="form-check-label" for="home">
+                                                    type="radio" name="flexRadioDefault" id="{{ $address->id }}">
+                                                <label class="form-check-label" for="{{ $address->id }}">
                                                     @if ($address->type === 'home')
                                                         <span class="icon"><i class="fas fa-home"></i> home</span>
                                                     @else
