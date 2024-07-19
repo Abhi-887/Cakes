@@ -3795,7 +3795,7 @@ footer .wrapper a:hover {
 
 .fp__cart_list table tr th,
 .fp__cart_list table tr td {
-    background: #e4f0f5;
+    background: #efefef;
     border: none;
     color: var(--colorBlack);
     text-align: center;
