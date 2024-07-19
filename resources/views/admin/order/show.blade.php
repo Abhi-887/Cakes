@@ -24,7 +24,8 @@
                             <div class="col-md-6">
                                 <address>
                                     <strong>Deliver To:</strong><br>
-                                    <strong>Name:</strong> {!! @$order->userAddress->first_name !!} {!! @$order->userAddress->last_name !!}
+                                    <strong>Name:</strong> {!! @$order->userAddress->first_name !!} {!!
+                                    @$order->userAddress->last_name !!}
                                     <br>
                                     <strong>Phone:</strong> {!! @$order->userAddress->phone !!}
                                     <br>
@@ -48,26 +49,26 @@
                                     <strong>Payment Method:</strong><br>
                                     {{ $order->payment_method }}<br>
                                     <strong>Payment Status: </strong>
-                                        @if(strtoupper($order->payment_status) == 'COMPLETED')
-                                            <span class="badge badge-success">COMPLETED</span>
-                                        @elseif(strtoupper($order->payment_status) == 'PENDING')
-                                            <span class="badge badge-warning">PENDING</span>
-                                        @else
-                                            <span class="badge badge-danger">{{ $order->payment_status }}</span>
-                                        @endif
+                                    @if(strtoupper($order->payment_status) == 'COMPLETED')
+                                    <span class="badge badge-success">COMPLETED</span>
+                                    @elseif(strtoupper($order->payment_status) == 'PENDING')
+                                    <span class="badge badge-warning">PENDING</span>
+                                    @else
+                                    <span class="badge badge-danger">{{ $order->payment_status }}</span>
+                                    @endif
                                 </address>
                             </div>
                             <div class="col-md-6 text-md-right">
                                 <address>
                                     <strong>Order Status:</strong><br>
                                     @if($order->order_status === 'delivered')
-                                        <span class="badge badge-success">Delivered</span>';
+                                    <span class="badge badge-success">Delivered</span>';
                                     @elseif($order->order_status === 'declined')
-                                        <span class="badge badge-danger">Declined</span>';
+                                    <span class="badge badge-danger">Declined</span>';
                                     @else
-                                        <span class="badge badge-warning">{{ $order->order_status }}</span>
+                                    <span class="badge badge-warning">{{ $order->order_status }}</span>
                                     @endif
-                                        <br><br>
+                                    <br><br>
                                 </address>
                             </div>
                         </div>
@@ -89,20 +90,20 @@
                                     <th class="text-right">Totals</th>
                                 </tr>
                                 @foreach ($order->orderItems as $orderItem)
-                                @php
-                                    $size = json_decode($orderItem->product_size);
-                                    $options = json_decode($orderItem->product_option);
+                                {{-- @php
+                                $size = json_decode($orderItem->product_size);
+                                $options = json_decode($orderItem->product_option);
 
-                                    $qty = $orderItem->qty;
-                                    $untiPrice = $orderItem->unit_price;
-                                    $sizePrice = $size->price;
-                                    $optionPrice = 0;
-                                    foreach ($options as $optionItem) {
-                                        $optionPrice += $optionItem->price;
-                                    }
+                                $qty = $orderItem->qty;
+                                $untiPrice = $orderItem->unit_price;
+                                $sizePrice = $size->price;
+                                $optionPrice = 0;
+                                foreach ($options as $optionItem) {
+                                $optionPrice += $optionItem->price;
+                                }
 
-                                    $productTotal = ($untiPrice + $sizePrice + $optionPrice) * $qty;
-                                @endphp
+                                $productTotal = ($untiPrice + $sizePrice + $optionPrice) * $qty;
+                                @endphp --}}
                                 <tr>
                                     <td>{{ ++$loop->index }}</td>
                                     <td>{{ $orderItem->product_name }}</td>
@@ -134,8 +135,10 @@
                                         <div class="form-group">
                                             <label for="">Payment Status</label>
                                             <select class="form-control" name="payment_status" id="">
-                                                <option @selected($order->payment_status === 'pending') value="pending">Pending</option>
-                                                <option @selected($order->payment_status === 'completed') value="completed">Completed</option>
+                                                <option @selected($order->payment_status === 'pending')
+                                                    value="pending">Pending</option>
+                                                <option @selected($order->payment_status === 'completed')
+                                                    value="completed">Completed</option>
                                             </select>
 
                                         </div>
@@ -143,10 +146,14 @@
                                         <div class="form-group">
                                             <label for="">Order Status</label>
                                             <select class="form-control" name="order_status" id="">
-                                                <option @selected($order->order_status === 'pending') value="pending">Pending</option>
-                                                <option @selected($order->order_status === 'in_process') value="in_process">In Process</option>
-                                                <option @selected($order->order_status === 'delivered') value="delivered">Delivered</option>
-                                                <option @selected($order->order_status === 'declined') value="declined">Declined</option>
+                                                <option @selected($order->order_status === 'pending')
+                                                    value="pending">Pending</option>
+                                                <option @selected($order->order_status === 'in_process')
+                                                    value="in_process">In Process</option>
+                                                <option @selected($order->order_status === 'delivered')
+                                                    value="delivered">Delivered</option>
+                                                <option @selected($order->order_status === 'declined')
+                                                    value="declined">Declined</option>
 
                                             </select>
                                         </div>
@@ -161,7 +168,8 @@
                                 </div>
                                 <div class="invoice-detail-item">
                                     <div class="invoice-detail-name">Shipping</div>
-                                    <div class="invoice-detail-value">{{ currencyPosition($order->delivery_charge) }}</div>
+                                    <div class="invoice-detail-value">{{ currencyPosition($order->delivery_charge) }}
+                                    </div>
                                 </div>
                                 <div class="invoice-detail-item">
                                     <div class="invoice-detail-name">Discount</div>
@@ -170,7 +178,8 @@
                                 <hr class="mt-2 mb-2">
                                 <div class="invoice-detail-item">
                                     <div class="invoice-detail-name">Total</div>
-                                    <div class="invoice-detail-value invoice-detail-value-lg">{{ currencyPosition($order->grand_total) }}</div>
+                                    <div class="invoice-detail-value invoice-detail-value-lg">{{
+                                        currencyPosition($order->grand_total) }}</div>
                                 </div>
                             </div>
                         </div>
