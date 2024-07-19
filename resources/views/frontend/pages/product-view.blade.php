@@ -176,8 +176,8 @@
                                                 <option value="{{ $variantItem->id }}"
                                                     data-price="{{ $variantItem->price }}">
                                                     {{ $variantItem->name }}
-                                                    @if($variantItem->price != 0)(${{
-                                                    $variantItem->price }})@endif
+                                                    @if($variantItem->price != 0)({{
+                                                    currencyPosition($variantItem->price) }})@endif
                                                 </option>
                                                 @endif
                                                 @endforeach
@@ -186,6 +186,7 @@
                                                 select an option.</span>
                                         </div>
                                         @break
+
 
 
                                         @case('radio')
@@ -198,14 +199,16 @@
                                                 id="variantItem_{{ $variantItem->id }}"
                                                 required="{{ $variant->isrequired ? 'true' : 'false' }}">
                                             <label for="variantItem_{{ $variantItem->id }}">{{ $variantItem->name }}
-                                                @if($variantItem->price != 0)(${{ $variantItem->price }})@endif
+                                                @if($variantItem->price != 0)({{ currencyPosition($variantItem->price)
+                                                }})@endif
                                             </label>
                                         </div>
                                         @endif
                                         @endforeach
-                                        <span class="error-message text-danger" style="display:none;">Please select
-                                            an option.</span>
+                                        <span class="error-message text-danger" style="display:none;">Please select an
+                                            option.</span>
                                         @break
+
 
                                         @case('checkbox')
                                         @foreach ($variant->productVariantItems as $variantItem)
@@ -217,13 +220,14 @@
                                                 id="variantItem_{{ $variantItem->id }}"
                                                 required="{{ $variant->isrequired ? 'true' : 'false' }}">
                                             <label for="variantItem_{{ $variantItem->id }}">{{ $variantItem->name }}
-                                                @if($variantItem->price != 0)(${{ $variantItem->price }})@endif
+                                                @if($variantItem->price != 0)({{ currencyPosition($variantItem->price)
+                                                }})@endif
                                             </label>
                                         </div>
                                         @endif
                                         @endforeach
-                                        <span class="error-message text-danger" style="display:none;">Please select
-                                            an option.</span>
+                                        <span class="error-message text-danger" style="display:none;">Please select an
+                                            option.</span>
                                         @break
 
 
