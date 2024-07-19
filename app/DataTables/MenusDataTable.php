@@ -30,10 +30,10 @@ class MenusDataTable extends DataTable
                 return $edit . $delete;
             })
             ->addColumn('name', function ($query) {
-                return currencyPosition($query->name);
+                return ($query->name);
             })
             ->addColumn('link', function ($query) {
-                return currencyPosition($query->link);
+                return ($query->link);
             })
 
             ->addColumn('status', function ($query) {
