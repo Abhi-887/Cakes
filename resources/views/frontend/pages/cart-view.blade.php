@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                    BREADCRUMB START
-                                ==============================-->
+                                        BREADCRUMB START
+                                    ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay py-5">
             <div class="container py-md-5 py-2">
@@ -18,12 +18,12 @@
         </div>
     </section>
     <!--=============================
-                                    BREADCRUMB END
-                                ==============================-->
+                                        BREADCRUMB END
+                                    ==============================-->
 
     <!--============================
-                                    CART VIEW START
-                                ==============================-->
+                                        CART VIEW START
+                                    ==============================-->
     <section class="fp__cart_view mt_125 xs_mt_95 mb_100 xs_mb_70">
         <div class="container">
             <div class="row">
@@ -65,14 +65,17 @@
                                                         ? '(' . currencyPosition(@$product->options->product_size['price']) . ')'
                                                         : '' }}
                                                 </span>
-                                                @foreach ($product->options->product_options as $option)
-                                                    <p>{{ $option['name'] }} ({{ currencyPosition($option['price']) }})</p>
-                                                @endforeach
-                                                @foreach ($product->options->product_variants as $variant)
-                                                    <p>{{ $variant['variant_name'] }}: {{ $variant['item_name'] }}
-                                                        ({{ currencyPosition($variant['item_price']) }})
-                                                    </p>
-                                                @endforeach
+                                                <small>
+                                                    @foreach ($product->options->product_options as $option)
+                                                        <p>{{ $option['name'] }} ({{ currencyPosition($option['price']) }})
+                                                        </p>
+                                                    @endforeach
+                                                    @foreach ($product->options->product_variants as $variant)
+                                                        <p>{{ $variant['variant_name'] }}: {{ $variant['item_name'] }}
+                                                            ({{ currencyPosition($variant['item_price']) }})
+                                                        </p>
+                                                    @endforeach
+                                                </small>
                                             </td>
 
                                             <td class="fp__pro_status">
@@ -159,8 +162,8 @@
         </div>
     </section>
     <!--============================
-                                    CART VIEW END
-                                ==============================-->
+                                        CART VIEW END
+                                    ==============================-->
 @endsection
 
 @push('scripts')
