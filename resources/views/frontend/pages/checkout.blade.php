@@ -34,7 +34,7 @@
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                     aria-label="Close"></button>
                                             </div>
-                                            <div class="modal-body">
+                                            <div class="modal-body p-2">
                                                 <div class="fp_dashboard_new_address d-block">
                                                     <form action="{{ route('address.store') }}" method="POST">
                                                         @csrf
@@ -76,7 +76,7 @@
                                                             </div>
                                                             <div class="col-md-12 col-lg-12 col-xl-12">
                                                                 <div class="fp__check_single_form">
-                                                                    <textarea cols="3" rows="4" placeholder="Address" name="address"></textarea>
+                                                                    <textarea cols="3" rows="4" placeholder="Address" name="address" style="border-radius: 14px !important"></textarea>
                                                                 </div>
                                                             </div>
                                                             <div class="col-12">
