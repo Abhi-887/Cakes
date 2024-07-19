@@ -1,6 +1,6 @@
 <section class="sticky-top">
     @php
-        $MainMenu = Menu::getByName('main_menu');
+    $MainMenu = Menu::getByName('main_menu');
     @endphp
 
     <nav class="navbar bg-light">
@@ -12,24 +12,24 @@
             </div>
             <ul class="d-none d-xxl-flex">
                 {{-- Main Menu Items --}} @if ($MainMenu)
-                    @foreach ($MainMenu as $menu)
-                        <li class="nav-item mx-2">
-                            <a class="nav-link fw-semibold mx-2" href="{{ $menu['link'] }}">{{ $menu['label'] }}
-                                @if ($menu['child'])
-                                    <i class="far fa-angle-down"></i>
-                                @endif
-                            </a>
-                            @if ($menu['child'])
-                                <ul class="droap_menu position-absolute bg-light">
-                                    @foreach ($menu['child'] as $item)
-                                        <li class="border-bottom pb-2 m-2">
-                                            <a class="fw-semibold" href="{{ $item['link'] }}">{{ $item['label'] }}</a>
-                                        </li>
-                                    @endforeach
-                                </ul>
-                            @endif
+                @foreach ($MainMenu as $menu)
+                <li class="nav-item mx-2">
+                    <a class="nav-link fw-semibold mx-2" href="{{ $menu['link'] }}">{{ $menu['label'] }}
+                        @if ($menu['child'])
+                        <i class="far fa-angle-down"></i>
+                        @endif
+                    </a>
+                    @if ($menu['child'])
+                    <ul class="droap_menu position-absolute bg-light">
+                        @foreach ($menu['child'] as $item)
+                        <li class="border-bottom pb-2 m-2">
+                            <a class="fw-semibold" href="{{ $item['link'] }}">{{ $item['label'] }}</a>
                         </li>
-                    @endforeach
+                        @endforeach
+                    </ul>
+                    @endif
+                </li>
+                @endforeach
                 @endif
             </ul>
             <ul class="ms-auto d-flex menu_icon d-xxl-none d-block">
@@ -57,15 +57,18 @@
                     <a class="cart_icon me-4 position-relative fw-semibold fs-5"><i
                             class="fas fa-shopping-basket transition"></i>
                         <span
-                            class="cart_count bg-gray position-absolute text-light fw-semibold text-center bottom-50 end-25 rounded-circle">{{ count(Cart::content()) }}</span></a>
+                            class="cart_count bg-gray position-absolute text-light fw-semibold text-center bottom-50 end-25 rounded-circle">{{
+                            count(Cart::content()) }}</span></a>
                 </li>
-                @php @$unseenMessages = \App\Models\Chat::where(['sender_id' => 1, 'receiver_id' => auth()->user()->id, 'seen' => 0])->count(); @endphp
+                @php @$unseenMessages = \App\Models\Chat::where(['sender_id' => 1, 'receiver_id' => auth()->user()->id,
+                'seen' => 0])->count(); @endphp
                 {{-- <li>
                     <a class="message_icon me-4 position-relative fw-semibold fs-5 transitions"
                         href="{{ route('dashboard') }}">
                         <i class="fas fa-comment-alt-dots"></i>
                         <span
-                            class="sunseen-message-count bg-gray position-absolute text-light fw-semibold text-center bottom-50 end-25 ms-1 rounded-circle">{{ $unseenMessages > 0 ? 1 : 0 }}</span>
+                            class="sunseen-message-count bg-gray position-absolute text-light fw-semibold text-center bottom-50 end-25 ms-1 rounded-circle">{{
+                            $unseenMessages > 0 ? 1 : 0 }}</span>
                     </a>
                 </li> --}}
                 <li>
@@ -89,30 +92,28 @@
                 <div class="offcanvas-body">
                     <ul class="mt-3">
                         @if ($MainMenu)
-                            @foreach ($MainMenu as $index => $menu)
-                                <li class="nav-item my-3">
-                                    <div class="d-flex ms-2 lh-lg">
-                                        <a class="nav-link fw-semibold"
-                                            href="{{ $menu['link'] }}">{{ $menu['label'] }}
-                                        </a>
-                                        @if ($menu['child'])
-                                            <span class="mobile-dropdown-menu ms-2" data-index="{{ $index }}">
-                                                <i class="far fa-angle-down color-light-gray"></i></span>
-                                        @endif
-                                    </div>
-                                    @if ($menu['child'])
-                                        <ul class="drop-dropdown mt-2" id="dropdown-{{ $index }}"
-                                            style="display: none;">
-                                            @foreach ($menu['child'] as $item)
-                                                <li>
-                                                    <a class="dropdown-item fw-semibold p-2"
-                                                        href="{{ $item['link'] }}">{{ $item['label'] }}</a>
-                                                </li>
-                                            @endforeach
-                                        </ul>
-                                    @endif
+                        @foreach ($MainMenu as $index => $menu)
+                        <li class="nav-item my-3">
+                            <div class="d-flex ms-2 lh-lg">
+                                <a class="nav-link fw-semibold" href="{{ $menu['link'] }}">{{ $menu['label'] }}
+                                </a>
+                                @if ($menu['child'])
+                                <span class="mobile-dropdown-menu ms-2" data-index="{{ $index }}">
+                                    <i class="far fa-angle-down color-light-gray"></i></span>
+                                @endif
+                            </div>
+                            @if ($menu['child'])
+                            <ul class="drop-dropdown mt-2" id="dropdown-{{ $index }}" style="display: none;">
+                                @foreach ($menu['child'] as $item)
+                                <li>
+                                    <a class="dropdown-item fw-semibold p-2" href="{{ $item['link'] }}">{{
+                                        $item['label'] }}</a>
                                 </li>
-                            @endforeach
+                                @endforeach
+                            </ul>
+                            @endif
+                        </li>
+                        @endforeach
                         @endif
                     </ul>
                 </div>
@@ -143,15 +144,18 @@
                     <a class="cart_icon me-4 position-relative fw-semibold fs-5 transitions"><i
                             class="fas fa-shopping-basket"></i>
                         <span
-                            class="cart_count bg-gray position-absolute text-light fw-semibold text-center bottom-50 end-25 rounded-circle">{{ count(Cart::content()) }}</span></a>
+                            class="cart_count bg-gray position-absolute text-light fw-semibold text-center bottom-50 end-25 rounded-circle">{{
+                            count(Cart::content()) }}</span></a>
                 </li>
-                @php @$unseenMessages = \App\Models\Chat::where(['sender_id' => 1, 'receiver_id' => auth()->user()->id, 'seen' => 0])->count(); @endphp
+                @php @$unseenMessages = \App\Models\Chat::where(['sender_id' => 1, 'receiver_id' => auth()->user()->id,
+                'seen' => 0])->count(); @endphp
                 {{-- <li>
                     <a class="message_icon mx-3 position-relative fw-semibold fs-5 transitions"
                         href="{{ route('dashboard') }}">
                         <i class="fas fa-comment-alt-dots"></i>
                         <span
-                            class="sunseen-message-count bg-gray position-absolute text-light fw-semibold text-center bottom-50 end-25 ms-1 rounded-circle">{{ $unseenMessages > 0 ? 1 : 0 }}</span>
+                            class="sunseen-message-count bg-gray position-absolute text-light fw-semibold text-center bottom-50 end-25 ms-1 rounded-circle">{{
+                            $unseenMessages > 0 ? 1 : 0 }}</span>
                     </a>
                 </li> --}}
 
@@ -161,13 +165,8 @@
 
                 {{--
                 <li>
-                    <a
-                    class="common_btn d-inline ms-3 position-relative fw-semibold transitions"
-                    href="#"
-                    data-bs-toggle="modal"
-                    data-bs-target="#staticBackdrop"
-                    >reservation</a
-                    >
+                    <a class="common_btn d-inline ms-3 position-relative fw-semibold transitions" href="#"
+                        data-bs-toggle="modal" data-bs-target="#staticBackdrop">reservation</a>
                 </li>
                 --}}
             </ul>
@@ -183,48 +182,51 @@
         </div>
         <ul class="cart_contents">
             @foreach (Cart::content() as $cartProduct)
-                @php
-                    $totalPrice = $cartProduct->price; // Base product price
+            @php
+            $totalPrice = $cartProduct->price; // Base product price
 
-                    // Add the prices of the variants to the total price
-                    foreach ($cartProduct->options->product_variants as $cartProductVariant) {
-                        $totalPrice += $cartProductVariant['item_price'];
-                    }
-                @endphp
-                <li class="d-flex flex-wrap justify-content-between position-relative border p-2 rounded-3">
-                    <div class="menu_cart_img rounded-circle">
-                        <img src="{{ asset($cartProduct->options->product_info['image']) }}" alt="menu"
-                            class="img-fluid w-100">
-                    </div>
-                    <div class="menu_cart_text w-75">
-                        <a class="title transitions overflow-hidden fw-semibold fs-5"
-                            href="{{ route('product.show', $cartProduct->options->product_info['slug']) }}">{!! $cartProduct->name !!}</a>
-                        <p class="size">Qty: {{ $cartProduct->qty }}</p>
+            // Add the prices of the variants to the total price
+            foreach ($cartProduct->options->product_variants as $cartProductVariant) {
+            $totalPrice += $cartProductVariant['item_price'];
+            }
+            @endphp
+            <li class="d-flex flex-wrap justify-content-between position-relative border p-2 rounded-3">
+                <div class="menu_cart_img rounded-circle">
+                    <img src="{{ asset($cartProduct->options->product_info['image']) }}" alt="menu"
+                        class="img-fluid w-100">
+                </div>
+                <div class="menu_cart_text w-75">
+                    <a class="title transitions overflow-hidden fw-semibold fs-5"
+                        href="{{ route('product.show', $cartProduct->options->product_info['slug']) }}">{!!
+                        $cartProduct->name !!}</a>
+                    <p class="size">Qty: {{ $cartProduct->qty }}</p>
 
-                        @foreach ($cartProduct->options->product_size as $size)
-                            <p class="size">{{ $size['name'] }}
-                                {{ $size['price'] ? '(' . currencyPosition($size['price']) . ')' : '' }}</p>
-                        @endforeach
+                    @foreach ($cartProduct->options->product_size as $size)
+                    <p class="size">{{ $size['name'] }}
+                        {{ $size['price'] ? '(' . currencyPosition($size['price']) . ')' : '' }}</p>
+                    @endforeach
 
-                        @foreach ($cartProduct->options->product_options as $cartProductOption)
-                            <span class="extra d-block position-relative">{{ $cartProductOption['name'] }}
-                                ({{ currencyPosition($cartProductOption['price']) }})
-                            </span>
-                        @endforeach
+                    @foreach ($cartProduct->options->product_options as $cartProductOption)
+                    <span class="extra d-block position-relative">{{ $cartProductOption['name'] }}
+                        ({{ currencyPosition($cartProductOption['price']) }})
+                    </span>
+                    @endforeach
 
-                        @foreach ($cartProduct->options->product_variants as $cartProductVariant)
-                            <p class="variant">
-                                {{ $cartProductVariant['variant_name'] }}: {{ $cartProductVariant['item_name'] }}
-                                ({{ currencyPosition($cartProductVariant['item_price']) }})
-                            </p>
-                        @endforeach
+                    @foreach ($cartProduct->options->product_variants as $cartProductVariant)
+                    <p class="variant">
+                        {{ $cartProductVariant['variant_name'] }}: {{ $cartProductVariant['item_name'] }}
+                        @if ($cartProductVariant['item_price'] > 0)
+                        ({{ currencyPosition($cartProductVariant['item_price']) }})
+                        @endif
+                    </p>
+                    @endforeach
 
-                        <p class="price fw-semibold mt-2">{{ currencyPosition($totalPrice) }}</p>
-                    </div>
-                    <span class="del_icon position-absolute top-50 text-center rounded-circle"
-                        onclick="removeProductFromSidebar('{{ $cartProduct->rowId }}')"><i
-                            class="fal fa-times"></i></span>
-                </li>
+
+                    <p class="price fw-semibold mt-2">{{ currencyPosition($totalPrice) }}</p>
+                </div>
+                <span class="del_icon position-absolute top-50 text-center rounded-circle"
+                    onclick="removeProductFromSidebar('{{ $cartProduct->rowId }}')"><i class="fal fa-times"></i></span>
+            </li>
             @endforeach
 
 
@@ -237,7 +239,7 @@
 </div>
 
 @php
-    $reservationTimes = \App\Models\ReservationTime::where('status', 1)->get();
+$reservationTimes = \App\Models\ReservationTime::where('status', 1)->get();
 @endphp
 {{-- <div class="fp__reservation">
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
@@ -258,8 +260,8 @@
                         <select class="reservation_input nice-select" name="time">
                             <option value="">select time</option>
                             @foreach ($reservationTimes as $time)
-                                <option value="{{ $time->start_time }}-{{ $time->end_time }}">
-                                    {{ $time->start_time }} to {{ $time->end_time }}</option>
+                            <option value="{{ $time->start_time }}-{{ $time->end_time }}">
+                                {{ $time->start_time }} to {{ $time->end_time }}</option>
                             @endforeach
                         </select>
                         <input class="reservation_input" type="text" placeholder="Persons" name="persons">
@@ -272,8 +274,8 @@
 </div> --}}
 
 @push('scripts')
-    <script>
-        $(document).ready(function() {
+<script>
+    $(document).ready(function() {
             $('.fp__reservation_form').on('submit', function(e) {
                 e.preventDefault();
                 let formData = $(this).serialize();
@@ -311,5 +313,5 @@
                 $("#dropdown-" + index).slideToggle("slow");
             });
         });
-    </script>
+</script>
 @endpush
