@@ -64,7 +64,8 @@ class MenusController extends Controller
     public function edit(string $id): View
     {
         $menus = Menus::findOrFail($id);
-        return view('admin.menus.edit', compact('menus'));
+        $allmenu = Menus::all();
+        return view('admin.menus.edit', compact('menus','allmenu'));
     }
 
     /**
