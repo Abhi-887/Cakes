@@ -1,4 +1,3 @@
-
 @php
     $selectedOption = null;
 @endphp
@@ -11,6 +10,8 @@
                 <div class="carousel-item{{ $key === 0 ? ' active' : '' }} background{{ $key + 1 }}">
                     <div class="container width_Global">
                         <img src="{{ asset($slider->image) }}" class="d-block img-fluid front_image" alt="">
+                        <h2>{{ $slider->title }}</h2>
+                        <a class="mt-4" href="{{ $slider->button_link }}">{{ $slider->button_link }}</a>
                     </div>
                 </div>
             @endif
@@ -56,9 +57,7 @@
     @endforeach
     }
 
-    */
-
-     @foreach ($sliders as $key => $slider)
+    */ @foreach ($sliders as $key => $slider)
         .background{{ $key + 1 }} {
             background-image: url("{{ asset($slider->background_image) }}");
             background-color: rgba(0, 0, 0, 0);
