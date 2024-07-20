@@ -196,7 +196,7 @@
                                             @foreach ($product->options->product_variants as $variant)
                                             <p class="fw-normal">
                                                 {{ $variant['variant_name'] }}:
-                                                {{ $variant['item_name'] }}
+                                                {{-- {{ $variant['item_name'] }} --}}
                                                 @if ($variant['item_price'] > 0)
                                                 ({{ currencyPosition($variant['item_price']) }})
                                                 @endif
