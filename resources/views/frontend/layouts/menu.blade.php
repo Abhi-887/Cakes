@@ -214,8 +214,10 @@
 
                     @foreach ($cartProduct->options->product_variants as $cartProductVariant)
                     @php
-                    $variantName = htmlspecialchars($cartProductVariant['variant_name'] ?? '');
-                    $itemName = htmlspecialchars($cartProductVariant['item_name'] ?? '');
+                    $variantName = is_array($cartProductVariant['variant_name'] ?? '') ? '' :
+                    htmlspecialchars($cartProductVariant['variant_name']);
+                    $itemName = is_array($cartProductVariant['item_name'] ?? '') ? '' :
+                    htmlspecialchars($cartProductVariant['item_name']);
                     $itemPrice = $cartProductVariant['item_price'] ?? 0;
                     @endphp
                     <p class="variant">
@@ -236,6 +238,7 @@
             </li>
             @endforeach
         </ul>
+
 
         <p class="my-3 subtotal d-flex justify-content-between align-items-center fw-bold text-dark">SUB TOTAL <span
                 class="cart_subtotal fw-bold">{{ currencyPosition(cartTotal()) }}</span></p>
