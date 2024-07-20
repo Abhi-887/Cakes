@@ -1,192 +1,193 @@
 @extends('frontend.layouts.master')
 
 @section('content')
-<!--=============================
-                                                                            BREADCRUMB START
-                                                                        ==============================-->
-<section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
-    <div class="fp__breadcrumb_overlay py-5">
-        <div class="container py-md-5 py-2">
-            <div class="fp__breadcrumb_text">
-                <h1>cart view</h1>
-                <ul>
-                    <li><a href="index.html">home</a></li>
-                    <li><a href="#">cart view</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-<!--=============================
-                                                                            BREADCRUMB END
-                                                                        ==============================-->
-
-<!--============================
-                                                                            CART VIEW START
-                                                                        ==============================-->
-<section class="fp__cart_view mt_125 xs_mt_95 mb_100 xs_mb_70">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 wow fadeInUp" data-wow-duration="1s">
-                <div class="fp__cart_list">
-                    <div class="table-responsive">
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <th class="fp__pro_img">Image</th>
-                                    <th class="fp__pro_name">Details</th>
-                                    <th class="fp__pro_status">Price</th>
-                                    <th class="fp__pro_select">Quantity</th>
-                                    <th class="fp__pro_tk">Total</th>
-                                    <th class="fp__pro_icon">
-                                        <a class="clear_all" href="{{ route('cart.destroy') }}">Clear All</a>
-                                    </th>
-                                </tr>
-
-                                @foreach (Cart::content() as $product)
-                                @php
-                                $productTotal = $product->price; // Base product price
-
-                                foreach ($product->options->product_variants as $variant) {
-                                if ($variant['item_price'] > 0) {
-                                $productTotal += $variant['item_price'];
-                                }
-                                }
-                                @endphp
-                                <tr>
-                                    <td class="fp__pro_img">
-                                        <img src="{{ $product->options->product_info['image'] }}" alt="product"
-                                            class="img-fluid w-100 h-auto">
-                                    </td>
-
-                                    <td class="fp__pro_name">
-                                        <a class="fw-bold"
-                                            href="{{ route('product.show', $product->options->product_info['slug']) }}">
-                                            {{ $product->name }}
-                                        </a>
-                                        <span>
-                                            {{ @$product->options->product_size['name'] }}
-                                            {{ @$product->options->product_size['price']
-                                            ? '(' . currencyPosition(@$product->options->product_size['price']) . ')'
-                                            : '' }}
-                                        </span>
-                                        <small>
-                                            @foreach ($product->options->product_options as $option)
-                                            <p class="fw-normal">
-                                                {{ $option['name'] }}
-                                                @if ($option['price'] > 0)
-                                                ({{ currencyPosition($option['price']) }})
-                                                @endif
-                                            </p>
-                                            @endforeach
-                                            @foreach ($product->options->product_variants as $variant)
-                                            <p class="fw-normal">
-                                                {{ $variant['variant_name'] }}:
-                                                {{ $variant['item_name'] }}
-                                                @if ($variant['item_price'] > 0)
-                                                ({{ currencyPosition($variant['item_price']) }})
-                                                @endif
-                                            </p>
-                                            @endforeach
-                                        </small>
-                                    </td>
-
-                                    <td class="fp__pro_status">
-                                        <h6>{{ currencyPosition($productTotal) }}</h6>
-                                    </td>
-
-                                    <td class="fp__pro_select">
-                                        <div class="quentity_btn">
-                                            <button class="btn btn-danger decrement"><i
-                                                    class="fal fa-minus"></i></button>
-                                            <input type="text" class="quantity" data-id="{{ $product->rowId }}"
-                                                placeholder="1" value="{{ $product->qty }}" readonly>
-                                            <button class="btn btn-success increment"><i
-                                                    class="fal fa-plus"></i></button>
-                                        </div>
-                                    </td>
-
-                                    <td class="fp__pro_tk">
-                                        <h6 class="product_cart_total">{{ currencyPosition($productTotal *
-                                            $product->qty) }}</h6>
-                                    </td>
-
-                                    <td class="fp__pro_icon">
-                                        <a href="#" class="remove_cart_product" data-id="{{ $product->rowId }}"><i
-                                                class="far fa-times"></i></a>
-                                    </td>
-                                </tr>
-                                @endforeach
-
-                                @if (Cart::content()->count() === 0)
-                                <tr>
-                                    <td colspan="6" class="text-center fp__pro_name"
-                                        style="width: 100%;display: inline;">
-                                        Cart is empty!
-                                    </td>
-                                </tr>
-                                @endif
-                            </tbody>
-                        </table>
-                    </div>
+    <!--=============================
+                                                                                BREADCRUMB START
+                                                                            ==============================-->
+    <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
+        <div class="fp__breadcrumb_overlay py-5">
+            <div class="container py-md-5 py-2">
+                <div class="fp__breadcrumb_text">
+                    <h1>cart view</h1>
+                    <ul>
+                        <li><a href="index.html">home</a></li>
+                        <li><a href="#">cart view</a></li>
+                    </ul>
                 </div>
             </div>
+        </div>
+    </section>
+    <!--=============================
+                                                                                BREADCRUMB END
+                                                                            ==============================-->
 
-            <div class="col-lg-4 wow fadeInUp" data-wow-duration="1s">
-                <div class="fp__cart_list_footer_button">
-                    <h6>Total Cart</h6>
-                    <p>Subtotal: <span id="subtotal">{{ currencyPosition(cartTotal()) }}</span></p>
-                    <p>Delivery: <span>{{ currencyPosition(0.00) }}</span></p>
-                    <p>Discount: <span id="discount">
-                            @if (isset(session()->get('coupon')['discount']))
-                            {{ config('settings.site_currency_icon') }} {{ session()->get('coupon')['discount'] }}
-                            @else
-                            {{ config('settings.site_currency_icon') }}0
-                            @endif
-                        </span></p>
-                    <p class="total"><span>Total:</span> <span id="final_total">
-                            @if (isset(session()->get('coupon')['discount']))
-                            {{ config('settings.site_currency_icon') }} {{ cartTotal() -
-                            session()->get('coupon')['discount'] }}
-                            @else
-                            {{ config('settings.site_currency_icon') }} {{ cartTotal() }}
-                            @endif
-                        </span></p>
-                    <form id="coupon_form">
-                        <input type="text" id="coupon_code" name="code" placeholder="Coupon Code">
-                        <button type="submit">Apply</button>
-                    </form>
+    <!--============================
+                                                                                CART VIEW START
+                                                                            ==============================-->
+    <section class="fp__cart_view mt_125 xs_mt_95 mb_100 xs_mb_70">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 wow fadeInUp" data-wow-duration="1s">
+                    <div class="fp__cart_list">
+                        <div class="table-responsive">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th class="fp__pro_img">Image</th>
+                                        <th class="fp__pro_name">Details</th>
+                                        <th class="fp__pro_status">Price</th>
+                                        <th class="fp__pro_select">Quantity</th>
+                                        <th class="fp__pro_tk">Total</th>
+                                        <th class="fp__pro_icon">
+                                            <a class="clear_all" href="{{ route('cart.destroy') }}">Clear All</a>
+                                        </th>
+                                    </tr>
 
-                    <div class="coupon_card">
-                        @if (session()->has('coupon'))
-                        <div class="mt-2 card">
-                            <div class="m-3">
-                                <span><b class="v_coupon_code">Applied Coupon: {{ session()->get('coupon')['code']
-                                        }}</b></span>
-                                <span>
-                                    <button id="destroy_coupon"><i class="far fa-times"></i></button>
-                                </span>
-                            </div>
+                                    @foreach (Cart::content() as $product)
+                                        @php
+                                            $productTotal = $product->price; // Base product price
+
+                                            foreach ($product->options->product_variants as $variant) {
+                                                if ($variant['item_price'] > 0) {
+                                                    $productTotal += $variant['item_price'];
+                                                }
+                                            }
+                                        @endphp
+                                        <tr>
+                                            <td class="fp__pro_img">
+                                                <img src="{{ $product->options->product_info['image'] }}" alt="product"
+                                                    class="img-fluid w-100 h-auto">
+                                            </td>
+
+                                            <td class="fp__pro_name">
+                                                <a class="fw-bold"
+                                                    href="{{ route('product.show', $product->options->product_info['slug']) }}">
+                                                    {{ $product->name }}
+                                                </a>
+                                                <span>
+                                                    {{ @$product->options->product_size['name'] }}
+                                                    {{ @$product->options->product_size['price']
+                                                        ? '(' . currencyPosition(@$product->options->product_size['price']) . ')'
+                                                        : '' }}
+                                                </span>
+                                                <small>
+                                                    @foreach ($product->options->product_options as $option)
+                                                        <p class="fw-normal">
+                                                            {{ $option['name'] }}
+                                                            @if ($option['price'] > 0)
+                                                                ({{ currencyPosition($option['price']) }})
+                                                            @endif
+                                                        </p>
+                                                    @endforeach
+                                                    @foreach ($product->options->product_variants as $variant)
+                                                        <p class="fw-normal">
+                                                            {{ $variant['variant_name'] }}:
+                                                            {{ $variant['item_name'] }}
+                                                            @if ($variant['item_price'] > 0)
+                                                                ({{ currencyPosition($variant['item_price']) }})
+                                                            @endif
+                                                        </p>
+                                                    @endforeach
+                                                </small>
+                                            </td>
+
+                                            <td class="fp__pro_status">
+                                                <h6>{{ currencyPosition($productTotal) }}</h6>
+                                            </td>
+
+                                            <td class="fp__pro_select">
+                                                <div class="quentity_btn">
+                                                    <button class="btn btn-danger decrement"><i
+                                                            class="fal fa-minus"></i></button>
+                                                    <input type="text" class="quantity" data-id="{{ $product->rowId }}"
+                                                        placeholder="1" value="{{ $product->qty }}" readonly>
+                                                    <button class="btn btn-success increment"><i
+                                                            class="fal fa-plus"></i></button>
+                                                </div>
+                                            </td>
+
+                                            <td class="fp__pro_tk">
+                                                <h6 class="product_cart_total">
+                                                    {{ currencyPosition($productTotal * $product->qty) }}
+                                                </h6>
+                                            </td>
+
+                                            <td class="fp__pro_icon">
+                                                <a href="#" class="remove_cart_product"
+                                                    data-id="{{ $product->rowId }}"><i class="far fa-times"></i></a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+
+                                    @if (Cart::content()->count() === 0)
+                                        <tr>
+                                            <td colspan="6" class="text-center fp__pro_name"
+                                                style="width: 100%;display: inline;">
+                                                Cart is empty!
+                                            </td>
+                                        </tr>
+                                    @endif
+                                </tbody>
+                            </table>
                         </div>
-                        @endif
                     </div>
+                </div>
 
-                    <a class="common_btn" href="{{ route('checkout.index') }}">Checkout</a>
+                <div class="col-lg-4 wow fadeInUp" data-wow-duration="1s">
+                    <div class="fp__cart_list_footer_button">
+                        <h6>Total Cart</h6>
+                        <p>Subtotal: <span id="subtotal">{{ currencyPosition(cartTotal()) }}</span></p>
+                        <p>Delivery: <span>{{ currencyPosition(0.0) }}</span></p>
+                        <p>Discount: <span id="discount">
+                                @if (isset(session()->get('coupon')['discount']))
+                                    {{ config('settings.site_currency_icon') }} {{ session()->get('coupon')['discount'] }}
+                                @else
+                                    {{ config('settings.site_currency_icon') }}0
+                                @endif
+                            </span></p>
+                        <p class="total"><span>Total:</span> <span id="final_total">
+                                @if (isset(session()->get('coupon')['discount']))
+                                    {{ config('settings.site_currency_icon') }}
+                                    {{ cartTotal() - session()->get('coupon')['discount'] }}
+                                @else
+                                    {{ config('settings.site_currency_icon') }} {{ cartTotal() }}
+                                @endif
+                            </span></p>
+                        <form id="coupon_form">
+                            <input type="text" id="coupon_code" name="code" placeholder="Coupon Code">
+                            <button type="submit">Apply</button>
+                        </form>
+
+                        <div class="coupon_card">
+                            @if (session()->has('coupon'))
+                                <div class="mt-2 card">
+                                    <div class="m-3">
+                                        <span><b class="v_coupon_code">Applied Coupon:
+                                                {{ session()->get('coupon')['code'] }}</b></span>
+                                        <span>
+                                            <button id="destroy_coupon"><i class="far fa-times"></i></button>
+                                        </span>
+                                    </div>
+                                </div>
+                            @endif
+                        </div>
+
+                        <a class="common_btn" href="{{ route('checkout.index') }}">Checkout</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
-<!--============================
-                                                                            CART VIEW END
-                                                                        ==============================-->
+    <!--============================
+                                                                                CART VIEW END
+                                                                            ==============================-->
 @endsection
 
 @push('scripts')
-<script>
-    $(document).ready(function() {
+    <script>
+        $(document).ready(function() {
             var cartTotal = parseInt("{{ cartTotal() }}");
 
             $('.increment').on('click', function() {
@@ -388,5 +389,5 @@
                 });
             }
         });
-</script>
+    </script>
 @endpush
