@@ -1165,6 +1165,10 @@ button {
     box-shadow: var(--boxShadow);
 }
 
+.fp__menu_item:hover .fp__menu_item_text .title {
+    color: white !important;
+  }
+
 /* .fp__menu_item .fp__menu_item_img {
     height: 240px;
     position: relative;
