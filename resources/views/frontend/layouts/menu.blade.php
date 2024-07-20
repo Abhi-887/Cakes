@@ -192,11 +192,12 @@
 
             @endphp
 
+            {{--
             <pre>
                 @php
                     print_r($cartProduct);
                 @endphp
-            </pre>
+            </pre> --}}
 
             <li class="flex-wrap p-2 border d-flex justify-content-between position-relative rounded-3">
                 <div class="menu_cart_img rounded-circle">
@@ -205,13 +206,14 @@
                 </div>
                 <div class="menu_cart_text w-75">
                     <a class="overflow-hidden title transitions fw-semibold fs-5"
-                        href="{{ route('product.show', $cartProduct->options->product_info['slug']) }}">{!!
-                        $cartProduct->name !!}</a>
+                        href="{{ route('product.show', $cartProduct->options->product_info['slug']) }}">
+                        {!! $cartProduct->name !!}
+                    </a>
                     <p class="size">Qty: {{ $cartProduct->qty }}</p>
 
                     @foreach ($cartProduct->options->product_size as $size)
-                    <p class="size">{{ $size['name'] }}
-                        {{ $size['price'] ? '(' . currencyPosition($size['price']) . ')' : '' }}</p>
+                    <p class="size">{{ $size['name'] }} {{ $size['price'] ? '(' . currencyPosition($size['price']) . ')'
+                        : '' }}</p>
                     @endforeach
 
                     @foreach ($cartProduct->options->product_options as $cartProductOption)
@@ -220,28 +222,28 @@
                     </span>
                     @endforeach
 
-                    {{-- @foreach ($cartProduct->options->product_variants as $cartProductVariant)
+                    @foreach ($cartProduct->options->product_variants as $cartProductVariant)
                     @php
                     $variantName = htmlspecialchars($cartProductVariant['variant_name'] ?? '');
                     $itemName = htmlspecialchars($cartProductVariant['item_name'] ?? '');
                     $itemPrice = $cartProductVariant['item_price'] ?? 0;
                     @endphp
                     <p class="variant">
-                        {{ $variantName }}: {{ $itemName }}
+                        {{ $variantName }}:
+                        @if($itemName)
+                        {{ $itemName }}
+                        @endif
                         @if ($itemPrice > 0)
                         ({{ currencyPosition($itemPrice) }})
                         @endif
                     </p>
-                    @endforeach --}}
-
-
+                    @endforeach
 
                     <p class="mt-2 price fw-semibold">{{ currencyPosition($totalPrice) }}</p>
                 </div>
                 <span class="text-center del_icon position-absolute top-50 rounded-circle"
                     onclick="removeProductFromSidebar('{{ $cartProduct->rowId }}')"><i class="fal fa-times"></i></span>
             </li>
-            @endforeach
 
 
         </ul>
