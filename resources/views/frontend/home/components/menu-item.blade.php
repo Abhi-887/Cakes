@@ -64,7 +64,7 @@
 
         .slick-next.slick-arrow {
             top: 100%;
-            right: 40%;
+            right: 40% !important;
         }
 
         .popularfood .slick-prev::before {
