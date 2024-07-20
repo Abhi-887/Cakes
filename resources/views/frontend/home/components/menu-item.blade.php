@@ -60,11 +60,13 @@
         .slick-prev.slick-arrow {
             top: 100%;
             left: 40%;
+            margin-top: 1.5rem !important;
         }
 
         .slick-next.slick-arrow {
             top: 100%;
             right: 40% !important;
+            margin-top: 1.5rem !important;
         }
 
         .popularfood .slick-prev::before {
