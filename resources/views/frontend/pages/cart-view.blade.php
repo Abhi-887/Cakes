@@ -17,14 +17,13 @@
         </div>
     </div>
 </section>
-
 <!--=============================
-                                                                                BREADCRUMB END
-                                                                            ==============================-->
+                                                                            BREADCRUMB END
+                                                                        ==============================-->
 
 <!--============================
-                                                                                CART VIEW START
-                                                                            ==============================-->
+                                                                            CART VIEW START
+                                                                        ==============================-->
 <section class="fp__cart_view mt_125 xs_mt_95 mb_100 xs_mb_70">
     <div class="container">
         <div class="row">
@@ -83,7 +82,7 @@
                                             @foreach ($product->options->product_variants as $variant)
                                             <p class="fw-normal">
                                                 {{ $variant['variant_name'] }}:
-                                                {{-- {{ $variant['item_name'] }} --}}
+                                                {{ $variant['item_name'] }}
                                                 @if ($variant['item_price'] > 0)
                                                 ({{ currencyPosition($variant['item_price']) }})
                                                 @endif
@@ -137,7 +136,7 @@
                 <div class="fp__cart_list_footer_button">
                     <h6>Total Cart</h6>
                     <p>Subtotal: <span id="subtotal">{{ currencyPosition(cartTotal()) }}</span></p>
-                    <p>Delivery: <span>$00.00</span></p>
+                    <p>Delivery: <span>{{ currencyPosition(0.00) }}</span></p>
                     <p>Discount: <span id="discount">
                             @if (isset(session()->get('coupon')['discount']))
                             {{ config('settings.site_currency_icon') }} {{ session()->get('coupon')['discount'] }}
@@ -178,9 +177,14 @@
         </div>
     </div>
 </section>
-@endsection
-@push('scripts')
 
+
+<!--============================
+                                                                            CART VIEW END
+                                                                        ==============================-->
+@endsection
+
+@push('scripts')
 <script>
     $(document).ready(function() {
             var cartTotal = parseInt("{{ cartTotal() }}");
