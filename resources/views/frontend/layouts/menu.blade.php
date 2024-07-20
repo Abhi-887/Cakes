@@ -213,13 +213,19 @@
                     @endforeach
 
                     @foreach ($cartProduct->options->product_variants as $cartProductVariant)
+                    @php
+                    $variantName = htmlspecialchars($cartProductVariant['variant_name'] ?? '');
+                    $itemName = htmlspecialchars($cartProductVariant['item_name'] ?? '');
+                    $itemPrice = $cartProductVariant['item_price'] ?? 0;
+                    @endphp
                     <p class="variant">
-                        {{ $cartProductVariant['variant_name'] }}: {{ $cartProductVariant['item_name'] }}
-                        @if ($cartProductVariant['item_price'] > 0)
-                        ({{ currencyPosition($cartProductVariant['item_price']) }})
+                        {{ $variantName }}: {{ $itemName }}
+                        @if ($itemPrice > 0)
+                        ({{ currencyPosition($itemPrice) }})
                         @endif
                     </p>
                     @endforeach
+
 
 
                     <p class="price fw-semibold mt-2">{{ currencyPosition($totalPrice) }}</p>
