@@ -67,11 +67,14 @@
                     </a>
                 </li>
                 @php
+                $unseenMessages = 0;
+                if (auth()->check()) {
                 $unseenMessages = \App\Models\Chat::where([
                 'sender_id' => 1,
                 'receiver_id' => auth()->user()->id,
                 'seen' => 0
                 ])->count();
+                }
                 @endphp
                 {{--
                 <li>
@@ -168,11 +171,14 @@
                     </a>
                 </li>
                 @php
+                $unseenMessages = 0;
+                if (auth()->check()) {
                 $unseenMessages = \App\Models\Chat::where([
                 'sender_id' => 1,
                 'receiver_id' => auth()->user()->id,
                 'seen' => 0
                 ])->count();
+                }
                 @endphp
                 {{--
                 <li>
@@ -202,11 +208,13 @@
     </nav>
 </section>
 
-<div class="top-0 fp__menu_cart_area position-fixed end-0 transitions vh-100 vw-100">
-    <div class="top-0 p-4 fp__menu_cart_boody position-absolute end-0 bg-light transitions">
-        <div class="mb-3 fp__menu_cart_header position-relative">
-            <h5 class="fw-bold">Total Item (<span class="cart_count">{{ count(Cart::content()) }}</span>)</h5>
-            <span class="text-center close_cart position-absolute transitions"><i class="fal fa-times"></i></span>
+<div class="top-0 p-2 cart__sidebar position-fixed h-100 end-0 bg-light z_index">
+    <div class="menu_cart_header">
+        <div class="p-2 cart_sidebar_heading d-flex align-items-center justify-content-between">
+            <h3 class="mb-0 fs-4">Cart</h3>
+            <span class="d-flex align-items-center justify-content-center cart_sidebar_close">
+                <i class="fas fa-times"></i>
+            </span>
         </div>
         <ul class="cart_contents">
             @foreach (Cart::content() as $cartProduct)
@@ -260,7 +268,7 @@
                 </div>
                 <span class="text-center del_icon position-absolute top-50 rounded-circle"
                     onclick="removeProductFromSidebar('{{ $cartProduct->rowId }}')">
-                    <i class="fal fa-times"></i>
+                    <i class="fas fa-times"></i>
                 </span>
             </li>
             @endforeach
