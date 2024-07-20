@@ -189,7 +189,15 @@
             foreach ($cartProduct->options->product_variants as $cartProductVariant) {
             $totalPrice += $cartProductVariant['item_price'];
             }
+
             @endphp
+
+            <pre>
+                @php
+                    print_r($cartProduct);
+                @endphp
+            </pre>
+
             <li class="flex-wrap p-2 border d-flex justify-content-between position-relative rounded-3">
                 <div class="menu_cart_img rounded-circle">
                     <img src="{{ asset($cartProduct->options->product_info['image']) }}" alt="menu"
@@ -212,10 +220,10 @@
                     </span>
                     @endforeach
 
-                    @foreach ($cartProduct->options->product_variants as $cartProductVariant)
+                    {{-- @foreach ($cartProduct->options->product_variants as $cartProductVariant)
                     @php
                     $variantName = htmlspecialchars($cartProductVariant['variant_name'] ?? '');
-                    // $itemName = htmlspecialchars($cartProductVariant['item_name'] ?? '');
+                    $itemName = htmlspecialchars($cartProductVariant['item_name'] ?? '');
                     $itemPrice = $cartProductVariant['item_price'] ?? 0;
                     @endphp
                     <p class="variant">
@@ -224,7 +232,7 @@
                         ({{ currencyPosition($itemPrice) }})
                         @endif
                     </p>
-                    @endforeach
+                    @endforeach --}}
 
 
 
