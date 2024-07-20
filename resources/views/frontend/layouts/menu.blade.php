@@ -212,21 +212,22 @@
                     </span>
                     @endforeach
 
-                    {{-- @foreach ($cartProduct->options->product_variants as $cartProductVariant)
+                    @foreach ($cartProduct->options->product_variants as $cartProductVariant)
                     @php
                     $variantName = htmlspecialchars($cartProductVariant['variant_name'] ?? '');
                     $itemName = htmlspecialchars($cartProductVariant['item_name'] ?? '');
                     $itemPrice = $cartProductVariant['item_price'] ?? 0;
                     @endphp
                     <p class="variant">
-                        {{ $variantName }}: {{ $itemName }}
+                        {{ $variantName }}
+                        @if ($itemName)
+                        : {{ $itemName }}
+                        @endif
                         @if ($itemPrice > 0)
                         ({{ currencyPosition($itemPrice) }})
                         @endif
                     </p>
-                    @endforeach --}}
-
-
+                    @endforeach
 
                     <p class="mt-2 price fw-semibold">{{ currencyPosition($totalPrice) }}</p>
                 </div>
@@ -234,9 +235,8 @@
                     onclick="removeProductFromSidebar('{{ $cartProduct->rowId }}')"><i class="fal fa-times"></i></span>
             </li>
             @endforeach
-
-
         </ul>
+
         <p class="my-3 subtotal d-flex justify-content-between align-items-center fw-bold text-dark">SUB TOTAL <span
                 class="cart_subtotal fw-bold">{{ currencyPosition(cartTotal()) }}</span></p>
         <a class="cart_view" href="{{ route('cart.index') }}">View Cart</a>
