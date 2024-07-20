@@ -118,7 +118,7 @@
                 </div>
             </div>
             <div class="col-lg-6 wow fadeInUp" data-wow-duration="1s">
-                <div class="fp__menu_details_text px-0 px-lg-5 ms-0 ms-lg-5 ms-xxl-0">
+                <div class="px-0 fp__menu_details_text px-lg-5 ms-0 ms-lg-5 ms-xxl-0">
                     <h2>{!! $product->name !!}</h2>
                     @if ($product->reviews_avg_rating)
                     <p class="rating">
@@ -245,6 +245,7 @@
                                         @break
 
 
+
                                         @case('area')
                                         <div class="mt-2 fp__contact_form_input form-group">
                                             <span><i class="far fa-solid fa-paragraph" aria-hidden="true"></i></span>
@@ -259,16 +260,11 @@
 
                                         @case('date')
                                         <div class="mt-2 fp__contact_form_input form-group">
-
-
-                                            <span>
-
-                                                <i class="far fa-regular fa-calendar" aria-hidden="true"></i>
-                                            </span>
-                                            <input type="date" name="variants_items[]" class="form-control" {{
-                                                $variant->isrequired ? 'required' : '' }}>
-                                            <span class="error-message text-danger" style="display:none;">Please
-                                                select a date.</span>
+                                            <span><i class="far fa-regular fa-calendar" aria-hidden="true"></i></span>
+                                            <input type="date" name="variants_items[{{ $variant->id }}]"
+                                                class="form-control" {{ $variant->isrequired ? 'required' : '' }}>
+                                            <span class="error-message text-danger" style="display:none;">Please select
+                                                a date.</span>
                                         </div>
                                         @break
 
@@ -276,22 +272,24 @@
                                         <div class="mt-2 fp__contact_form_input form-group">
                                             <span><i class="far fa-regular fa-calendar-days"
                                                     aria-hidden="true"></i></span>
-                                            <input type="datetime-local" name="variants_items[]" class="form-control" {{
-                                                $variant->isrequired ? 'required' : '' }}>
-                                            <span class="error-message text-danger" style="display:none;">Please
-                                                select a date and time.</span>
+                                            <input type="datetime-local" name="variants_items[{{ $variant->id }}]"
+                                                class="form-control" {{ $variant->isrequired ? 'required' : '' }}>
+                                            <span class="error-message text-danger" style="display:none;">Please select
+                                                a date and time.</span>
                                         </div>
                                         @break
+
 
                                         @case('time')
                                         <div class="mt-2 fp__contact_form_input form-group">
                                             <span><i class="far fa-solid fa-clock" aria-hidden="true"></i></span>
-                                            <input type="time" name="variants_items[]" class="form-control" {{
-                                                $variant->isrequired ? 'required' : '' }}>
-                                            <span class="error-message text-danger" style="display:none;">Please
-                                                select a time.</span>
+                                            <input type="time" name="variants_items[{{ $variant->id }}]"
+                                                class="form-control" {{ $variant->isrequired ? 'required' : '' }}>
+                                            <span class="error-message text-danger" style="display:none;">Please select
+                                                a time.</span>
                                         </div>
                                         @break
+
 
                                         @default
                                         <div class="mt-2 fp__contact_form_input form-group">
