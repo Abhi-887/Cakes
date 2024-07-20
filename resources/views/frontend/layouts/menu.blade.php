@@ -212,7 +212,7 @@
                     </span>
                     @endforeach
 
-                    @foreach ($cartProduct->options->product_variants as $cartProductVariant)
+                    {{-- @foreach ($cartProduct->options->product_variants as $cartProductVariant)
                     @php
                     $variantName = htmlspecialchars($cartProductVariant['variant_name'] ?? '');
                     $itemName = htmlspecialchars($cartProductVariant['item_name'] ?? '');
@@ -224,7 +224,7 @@
                         ({{ currencyPosition($itemPrice) }})
                         @endif
                     </p>
-                    @endforeach
+                    @endforeach --}}
 
 
 
