@@ -178,8 +178,9 @@
         </div>
     </div>
 </section>
-
+@endsection
 @push('scripts')
+
 <script>
     $(document).ready(function() {
             var cartTotal = parseInt("{{ cartTotal() }}");
