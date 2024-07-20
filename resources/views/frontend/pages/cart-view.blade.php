@@ -17,120 +17,7 @@
         </div>
     </div>
 </section>
-<!--=============================
-                                                                            BREADCRUMB END
-                                                                        ==============================-->
 
-<!--============================
-                                                                            CART VIEW START
-                                                                        ==============================-->
-<section class="fp__cart_view mt_125 xs_mt_95 mb_100 xs_mb_70">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 wow fadeInUp" data-wow-duration="1s">
-                <div class="fp__cart_list">
-                    <div class="table-responsive">
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <th class="fp__pro_img">Image</th>
-                                    <th class="fp__pro_name">Details</th>
-                                    <th class="fp__pro_status">Price</th>
-                                    <th class="fp__pro_select">Quantity</th>
-                                    <th class="fp__pro_tk">Total</th>
-                                    <th class="fp__pro_icon">
-                                        <a class="clear_all" href="{{ route('cart.destroy') }}">Clear All</a>
-                                    </th>
-                                </tr>
-
-                                @foreach (Cart::content() as $product)
-                                @php
-                                $productTotal = $product->price; // Base product price
-
-                                foreach ($product->options->product_variants as $variant) {
-                                if ($variant['item_price'] > 0) {
-                                $productTotal += $variant['item_price'];
-                                }
-                                }
-                                @endphp
-                                <tr>
-                                    <td class="fp__pro_img">
-                                        <img src="{{ $product->options->product_info['image'] }}" alt="product"
-                                            class="h-auto img-fluid w-100">
-                                    </td>
-
-                                    <td class="fp__pro_name">
-                                        <a class="fw-bold"
-                                            href="{{ route('product.show', $product->options->product_info['slug']) }}">
-                                            {{ $product->name }}
-                                        </a>
-                                        <span>
-                                            {{ @$product->options->product_size['name'] }}
-                                            {{ @$product->options->product_size['price']
-                                            ? '(' . currencyPosition(@$product->options->product_size['price']) . ')'
-                                            : '' }}
-                                        </span>
-                                        <small>
-                                            @foreach ($product->options->product_options as $option)
-                                            <p class="fw-normal">
-                                                {{ $option['name'] }} ({{ currencyPosition($option['price']) }})
-                                            </p>
-                                            @endforeach
-                                            @foreach ($product->options->product_variants as $variant)
-                                            @if ($variant['item_price'] > 0)
-                                            <!-- Only display if price > 0 -->
-                                            <p class="fw-normal">
-                                                {{ $variant['variant_name'] }}:
-                                                {{-- {{ $variant['item_name'] }} --}}
-                                                ({{ currencyPosition($variant['item_price']) }})
-                                            </p>
-                                            @endif
-                                            @endforeach
-                                        </small>
-                                    </td>
-
-                                    <td class="fp__pro_status">
-                                        <h6>{{ currencyPosition($productTotal) }}</h6>
-                                    </td>
-
-                                    <td class="fp__pro_select">
-                                        <div class="quentity_btn">
-                                            <button class="btn btn-danger decrement"><i
-                                                    class="fal fa-minus"></i></button>
-                                            <input type="text" class="quantity" data-id="{{ $product->rowId }}"
-                                                placeholder="1" value="{{ $product->qty }}" readonly>
-                                            <button class="btn btn-success increment"><i
-                                                    class="fal fa-plus"></i></button>
-                                        </div>
-                                    </td>
-
-                                    <td class="fp__pro_tk">
-                                        <h6 class="product_cart_total">{{ currencyPosition($productTotal *
-                                            $product->qty) }}</h6>
-                                    </td>
-
-                                    <td class="fp__pro_icon">
-                                        <a href="#" class="remove_cart_product" data-id="{{ $product->rowId }}"><i
-                                                class="far fa-times"></i></a>
-                                    </td>
-                                </tr>
-                                @endforeach
-
-                                @if (Cart::content()->count() === 0)
-                                <tr>
-                                    <td colspan="6" class="text-center fp__pro_name"
-                                        style="width: 100%;display: inline;">
-                                        Cart is empty!
-                                    </td>
-                                </tr>
-                                @endif
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-</section>
 <!--=============================
                                                                                 BREADCRUMB END
                                                                             ==============================-->
@@ -292,19 +179,9 @@
     </div>
 </section>
 
-
-<<<<<<< HEAD <!--============================CART VIEW END==============================-->
-    =======
-
-    <!--============================
-                                                                                CART VIEW END
-                                                                            ==============================-->
-    >>>>>>> parent of 3698f84d (Revert "Update cart-view.blade.php")
-    @endsection
-
-    @push('scripts')
-    <script>
-        $(document).ready(function() {
+@push('scripts')
+<script>
+    $(document).ready(function() {
             var cartTotal = parseInt("{{ cartTotal() }}");
 
             $('.increment').on('click', function() {
@@ -506,5 +383,5 @@
                 });
             }
         });
-    </script>
-    @endpush
+</script>
+@endpush
