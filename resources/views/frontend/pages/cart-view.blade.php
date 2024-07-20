@@ -81,7 +81,7 @@
                                             <!-- Only display if price > 0 -->
                                             <p class="fw-normal">
                                                 {{ $variant['variant_name'] }}:
-                                                {{ $variant['item_name'] }}
+                                                {{-- {{ $variant['item_name'] }} --}}
                                                 ({{ currencyPosition($variant['item_price']) }})
                                             </p>
                                             @endif
