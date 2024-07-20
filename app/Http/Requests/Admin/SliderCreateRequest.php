@@ -25,9 +25,9 @@ class SliderCreateRequest extends FormRequest
             'category_id' => ['required'],
             'image' => ['required', 'image', 'max:3000'],
             'offer' => ['nullable', 'string', 'max:50'],
-            'title' => ['max:255'],
-            'sub_title' => ['max:255'],
-            'short_description' => ['max:255'],
+            'title' => ['required', 'max:255'],
+            'sub_title' => ['required', 'max:255'],
+            'short_description' => ['required', 'max:255'],
             'button_link' => ['nullable', 'max:255'],
             'show_at_home' => ['numeric', 'min:0', 'max:5'],
             'status' => ['boolean']

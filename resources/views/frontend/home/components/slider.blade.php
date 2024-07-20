@@ -9,9 +9,11 @@
             @if ($slider->show_at_home == $selectedOption || $selectedOption === null || $selectedOption === '')
                 <div class="carousel-item{{ $key === 0 ? ' active' : '' }} background{{ $key + 1 }}">
                     <div class="container width_Global">
-                        <img src="{{ asset($slider->image) }}" class="d-block img-fluid front_image" alt="">
-                        <h2>{{ $slider->title }}</h2>
-                        <a class="mt-4" href="{{ $slider->button_link }}">{{ $slider->button_link }}</a>
+                        <div class="row h-100 align-items-center">
+                            <img src="{{ asset($slider->image) }}" class="d-block img-fluid front_image" alt="">
+                            <h2>{{ $slider->title }}</h2>
+                            <a class="mt-4" href="{{ $slider->button_link }}">{{ $slider->button_link }}</a>
+                        </div>
                     </div>
                 </div>
             @endif
