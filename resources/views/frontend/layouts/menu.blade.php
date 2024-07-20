@@ -11,10 +11,12 @@
                 </a>
             </div>
             <ul class="d-none d-xxl-flex">
-                {{-- Main Menu Items --}} @if ($MainMenu)
+                {{-- Main Menu Items --}}
+                @if ($MainMenu)
                 @foreach ($MainMenu as $menu)
                 <li class="mx-2 nav-item">
-                    <a class="mx-2 nav-link fw-semibold" href="{{ $menu['link'] }}">{{ $menu['label'] }}
+                    <a class="mx-2 nav-link fw-semibold" href="{{ $menu['link'] }}">
+                        {{ $menu['label'] }}
                         @if ($menu['child'])
                         <i class="far fa-angle-down"></i>
                         @endif
@@ -34,15 +36,17 @@
             </ul>
             <ul class="ms-auto d-flex menu_icon d-xxl-none d-block">
                 <li>
-                    <a href="#" class="menu_search me-3 me-sm-4 position-relative fw-semibold fs-5 transitions"><i
-                            class="transition far fa-search"></i></a>
+                    <a href="#" class="menu_search me-3 me-sm-4 position-relative fw-semibold fs-5 transitions">
+                        <i class="transition far fa-search"></i>
+                    </a>
                     <div
                         class="top-0 fp__search_form position-fixed w-100 end-0 justify-content-center align-items-center transitions vh-100">
                         <form class="top-50 start-50 position-absolute" action="{{ route('product.index') }}"
                             method="GET">
                             <span
-                                class="mb-5 text-center close_search position-absolute rounded-circle fs-3 bottom-100 end-0 transitions"><i
-                                    class="far fa-times"></i></span>
+                                class="mb-5 text-center close_search position-absolute rounded-circle fs-3 bottom-100 end-0 transitions">
+                                <i class="far fa-times"></i>
+                            </span>
                             <input class="border border-0 searchinput w-100 rounded-5" type="text"
                                 placeholder="Search . . ." name="search" />
                             <button
@@ -54,25 +58,37 @@
                     </div>
                 </li>
                 <li>
-                    <a class="cart_icon me-4 position-relative fw-semibold fs-5"><i
-                            class="transition fas fa-shopping-basket"></i>
+                    <a class="cart_icon me-4 position-relative fw-semibold fs-5">
+                        <i class="transition fas fa-shopping-basket"></i>
                         <span
-                            class="text-center cart_count bg-gray position-absolute text-light fw-semibold bottom-50 end-25 rounded-circle">{{
-                            count(Cart::content()) }}</span></a>
+                            class="text-center cart_count bg-gray position-absolute text-light fw-semibold bottom-50 end-25 rounded-circle">
+                            {{ count(Cart::content()) }}
+                        </span>
+                    </a>
                 </li>
-                @php @$unseenMessages = \App\Models\Chat::where(['sender_id' => 1, 'receiver_id' => auth()->user()->id,
-                'seen' => 0])->count(); @endphp
-                {{-- <li>
+                @php
+                $unseenMessages = \App\Models\Chat::where([
+                'sender_id' => 1,
+                'receiver_id' => auth()->user()->id,
+                'seen' => 0
+                ])->count();
+                @endphp
+                {{--
+                <li>
                     <a class="message_icon me-4 position-relative fw-semibold fs-5 transitions"
                         href="{{ route('dashboard') }}">
                         <i class="fas fa-comment-alt-dots"></i>
                         <span
-                            class="text-center sunseen-message-count bg-gray position-absolute text-light fw-semibold bottom-50 end-25 ms-1 rounded-circle">{{
-                            $unseenMessages > 0 ? 1 : 0 }}</span>
+                            class="text-center sunseen-message-count bg-gray position-absolute text-light fw-semibold bottom-50 end-25 ms-1 rounded-circle">
+                            {{ $unseenMessages > 0 ? 1 : 0 }}
+                        </span>
                     </a>
-                </li> --}}
+                </li>
+                --}}
                 <li>
-                    <a class="fs-5 me-3 me-sm-4" href="{{ route('login') }}"><i class="transition fas fa-user"></i></a>
+                    <a class="fs-5 me-3 me-sm-4" href="{{ route('login') }}">
+                        <i class="transition fas fa-user"></i>
+                    </a>
                 </li>
             </ul>
             <a class="d-xxl-none d-block" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
@@ -95,11 +111,11 @@
                         @foreach ($MainMenu as $index => $menu)
                         <li class="my-3 nav-item">
                             <div class="d-flex ms-2 lh-lg">
-                                <a class="nav-link fw-semibold" href="{{ $menu['link'] }}">{{ $menu['label'] }}
-                                </a>
+                                <a class="nav-link fw-semibold" href="{{ $menu['link'] }}">{{ $menu['label'] }}</a>
                                 @if ($menu['child'])
                                 <span class="mobile-dropdown-menu ms-2" data-index="{{ $index }}">
-                                    <i class="far fa-angle-down color-light-gray"></i></span>
+                                    <i class="far fa-angle-down color-light-gray"></i>
+                                </span>
                                 @endif
                             </div>
                             @if ($menu['child'])
@@ -121,15 +137,17 @@
 
             <ul class="flex-wrap menu_icon d-none d-xxl-flex align-items-center">
                 <li>
-                    <a href="#" class="menu_search me-4 position-relative fw-semibold fs-5 transitions"><i
-                            class="far fa-search"></i></a>
+                    <a href="#" class="menu_search me-4 position-relative fw-semibold fs-5 transitions">
+                        <i class="far fa-search"></i>
+                    </a>
                     <div
                         class="top-0 fp__search_form position-fixed w-100 end-0 justify-content-center align-items-center transitions vh-100">
                         <form class="top-50 start-50 position-absolute" action="{{ route('product.index') }}"
                             method="GET">
                             <span
-                                class="mb-5 text-center close_search position-absolute rounded-circle fs-3 bottom-100 end-0 transitions"><i
-                                    class="far fa-times"></i></span>
+                                class="mb-5 text-center close_search position-absolute rounded-circle fs-3 bottom-100 end-0 transitions">
+                                <i class="far fa-times"></i>
+                            </span>
                             <input class="border border-0 searchinput w-100 rounded-5" type="text"
                                 placeholder="Search . . ." name="search" />
                             <button
@@ -141,28 +159,38 @@
                     </div>
                 </li>
                 <li>
-                    <a class="cart_icon me-4 position-relative fw-semibold fs-5 transitions"><i
-                            class="fas fa-shopping-basket"></i>
+                    <a class="cart_icon me-4 position-relative fw-semibold fs-5 transitions">
+                        <i class="fas fa-shopping-basket"></i>
                         <span
-                            class="text-center cart_count bg-gray position-absolute text-light fw-semibold bottom-50 end-25 rounded-circle">{{
-                            count(Cart::content()) }}</span></a>
+                            class="text-center cart_count bg-gray position-absolute text-light fw-semibold bottom-50 end-25 rounded-circle">
+                            {{ count(Cart::content()) }}
+                        </span>
+                    </a>
                 </li>
-                @php @$unseenMessages = \App\Models\Chat::where(['sender_id' => 1, 'receiver_id' => auth()->user()->id,
-                'seen' => 0])->count(); @endphp
-                {{-- <li>
+                @php
+                $unseenMessages = \App\Models\Chat::where([
+                'sender_id' => 1,
+                'receiver_id' => auth()->user()->id,
+                'seen' => 0
+                ])->count();
+                @endphp
+                {{--
+                <li>
                     <a class="mx-3 message_icon position-relative fw-semibold fs-5 transitions"
                         href="{{ route('dashboard') }}">
                         <i class="fas fa-comment-alt-dots"></i>
                         <span
-                            class="text-center sunseen-message-count bg-gray position-absolute text-light fw-semibold bottom-50 end-25 ms-1 rounded-circle">{{
-                            $unseenMessages > 0 ? 1 : 0 }}</span>
+                            class="text-center sunseen-message-count bg-gray position-absolute text-light fw-semibold bottom-50 end-25 ms-1 rounded-circle">
+                            {{ $unseenMessages > 0 ? 1 : 0 }}
+                        </span>
                     </a>
-                </li> --}}
-
-                <li>
-                    <a class="ms-3 fs-5" href="{{ route('login') }}"><i class="fas fa-user"></i></a>
                 </li>
-
+                --}}
+                <li>
+                    <a class="ms-3 fs-5" href="{{ route('login') }}">
+                        <i class="fas fa-user"></i>
+                    </a>
+                </li>
                 {{--
                 <li>
                     <a class="common_btn d-inline ms-3 position-relative fw-semibold transitions" href="#"
@@ -184,21 +212,11 @@
             @foreach (Cart::content() as $cartProduct)
             @php
             $totalPrice = $cartProduct->price; // Base product price
-
             // Add the prices of the variants to the total price
             foreach ($cartProduct->options->product_variants as $cartProductVariant) {
             $totalPrice += $cartProductVariant['item_price'];
             }
-
             @endphp
-
-            {{--
-            <pre>
-                @php
-                    print_r($cartProduct);
-                @endphp
-            </pre> --}}
-
             <li class="flex-wrap p-2 border d-flex justify-content-between position-relative rounded-3">
                 <div class="menu_cart_img rounded-circle">
                     <img src="{{ asset($cartProduct->options->product_info['image']) }}" alt="menu"
@@ -217,9 +235,8 @@
                     @endforeach
 
                     @foreach ($cartProduct->options->product_options as $cartProductOption)
-                    <span class="extra d-block position-relative">{{ $cartProductOption['name'] }}
-                        ({{ currencyPosition($cartProductOption['price']) }})
-                    </span>
+                    <span class="extra d-block position-relative">{{ $cartProductOption['name'] }} ({{
+                        currencyPosition($cartProductOption['price']) }})</span>
                     @endforeach
 
                     @foreach ($cartProduct->options->product_variants as $cartProductVariant)
@@ -230,7 +247,7 @@
                     @endphp
                     <p class="variant">
                         {{ $variantName }}:
-                        @if($itemName)
+                        @if ($itemName)
                         {{ $itemName }}
                         @endif
                         @if ($itemPrice > 0)
@@ -242,92 +259,56 @@
                     <p class="mt-2 price fw-semibold">{{ currencyPosition($totalPrice) }}</p>
                 </div>
                 <span class="text-center del_icon position-absolute top-50 rounded-circle"
-                    onclick="removeProductFromSidebar('{{ $cartProduct->rowId }}')"><i class="fal fa-times"></i></span>
+                    onclick="removeProductFromSidebar('{{ $cartProduct->rowId }}')">
+                    <i class="fal fa-times"></i>
+                </span>
             </li>
-
-
+            @endforeach
         </ul>
-        <p class="my-3 subtotal d-flex justify-content-between align-items-center fw-bold text-dark">SUB TOTAL <span
-                class="cart_subtotal fw-bold">{{ currencyPosition(cartTotal()) }}</span></p>
+
+        <p class="my-3 subtotal d-flex justify-content-between align-items-center fw-bold text-dark">
+            SUB TOTAL <span class="cart_subtotal fw-bold">{{ currencyPosition(cartTotal()) }}</span>
+        </p>
         <a class="cart_view" href="{{ route('cart.index') }}">View Cart</a>
         {{-- <a class="checkout" href="check_out.html">checkout</a> --}}
+
+        @push('scripts')
+        <script>
+            $(document).ready(function() {
+                    $('.fp__reservation_form').on('submit', function(e) {
+                        e.preventDefault();
+                        let formData = $(this).serialize();
+                        $.ajax({
+                            method: 'POST',
+                            url: '{{ route('reservation.store') }}',
+                            data: formData,
+                            beforeSend: function() {
+                                $('.btn_submit').html(`<span class="spinner-border text-light"> <span>`);
+                            },
+                            success: function(response) {
+                                toastr.success(response.message);
+                                $('.fp__reservation_form').trigger("reset");
+                                $('#staticBackdrop').modal('hide');
+                            },
+                            error: function(xhr, status, error) {
+                                let errors = xhr.responseJSON.errors;
+                                $.each(errors, function(index, value) {
+                                    toastr.error(value);
+                                    $('.btn_submit').html(`Book Table`);
+                                });
+                            },
+                            complete: function() {
+                                $('.btn_submit').html(`Book Table`);
+                            }
+                        });
+                    });
+
+                    $(".mobile-dropdown-menu").click(function() {
+                        var index = $(this).data("index");
+                        $("#dropdown-" + index).slideToggle("slow");
+                    });
+                });
+        </script>
+        @endpush
     </div>
 </div>
-
-@php
-$reservationTimes = \App\Models\ReservationTime::where('status', 1)->get();
-@endphp
-{{-- <div class="fp__reservation">
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="border border-0 modal-content rounded-2">
-                <div class="border border-0 modal-header">
-                    <h1 class="text-center modal-title w-100 fw-bold fs-5" id="staticBackdropLabel">Book a Table
-                    </h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form class="fp__reservation_form" action="{{ route('reservation.store') }}" method="POST">
-                        @csrf
-                        <input class="reservation_input" type="text" placeholder="Name" name="name">
-                        <input class="reservation_input" type="text" placeholder="Phone" name="phone">
-                        <input class="reservation_input" type="date" name="date">
-                        <select class="reservation_input nice-select" name="time">
-                            <option value="">select time</option>
-                            @foreach ($reservationTimes as $time)
-                            <option value="{{ $time->start_time }}-{{ $time->end_time }}">
-                                {{ $time->start_time }} to {{ $time->end_time }}</option>
-                            @endforeach
-                        </select>
-                        <input class="reservation_input" type="text" placeholder="Persons" name="persons">
-                        <button type="submit" class="btn_submit">book table</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> --}}
-
-@push('scripts')
-<script>
-    $(document).ready(function() {
-            $('.fp__reservation_form').on('submit', function(e) {
-                e.preventDefault();
-                let formData = $(this).serialize();
-                $.ajax({
-                    method: 'POST',
-                    url: '{{ route('reservation.store') }}',
-                    data: formData,
-                    beforeSend: function() {
-                        $('.btn_submit').html(
-                            `<span class="spinner-border text-light"> <span>`);
-                    },
-                    success: function(response) {
-                        toastr.success(response.message);
-                        $('.fp__reservation_form').trigger("reset");
-                        $('#staticBackdrop').modal('hide');
-
-                    },
-                    error: function(xhr, status, error) {
-                        let errors = xhr.responseJSON.errors;
-                        $.each(errors, function(index, value) {
-                            toastr.error(value);
-                            $('.btn_submit').html(`Book Table`);
-                        })
-                    },
-                    complete: function() {
-                        $('.btn_submit').html(`Book Table`);
-                    }
-                })
-            })
-        })
-
-        $(document).ready(function() {
-            $(".mobile-dropdown-menu").click(function() {
-                var index = $(this).data("index");
-                $("#dropdown-" + index).slideToggle("slow");
-            });
-        });
-</script>
-@endpush
