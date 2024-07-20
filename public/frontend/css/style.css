@@ -1165,6 +1165,26 @@ button {
     box-shadow: var(--boxShadow);
 }
 
+.fp__menu_item:hover .fp__menu_item_text ul li a i {
+    color: #788a9f !important;
+  }
+
+.fp__menu_item:hover .fp__menu_item_text ul li a {
+    background: #fff !important;
+  }
+
+  .fp__menu_item:hover .category {
+    top: 71% !important;
+  }
+
+  .fp__menu_item:hover .fp__menu_item_text .price {
+    top: -15px !important;
+  }
+
+.fp__menu_item:hover .fp__menu_item_text .title {
+    color: white !important;
+  }
+
 /* .fp__menu_item .fp__menu_item_img {
     height: 240px;
     position: relative;
@@ -1249,7 +1269,8 @@ button {
     /* position: absolute;
     background: var(--colorWhite);
     padding: 8px 15px; */
-    box-shadow: var(--boxShadow);
+    background: white !important;
+    box-shadow: var(--boxShadow) !;
     /* border-radius: 30px; */
 }
 
@@ -3679,6 +3700,9 @@ footer .wrapper a:hover {
     margin: 75px 12px 5px 12px;
 }
 
+.fp__menu_item:hover .fp__menu_item_text {
+    background: #788a9f;
+  }
 /*============================
     MENU DETAILS END
 ============================*/
