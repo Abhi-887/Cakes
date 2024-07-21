@@ -101,8 +101,8 @@
     <div class="row wow fadeInUp" data-wow-duration="1s">
         <div class="col-md-8 col-lg-7 col-xl-6 m-auto text-center">
             <div class="fp__section_heading">
-                <h4>Food Menu</h4>
-                <h2>Our Popular Delicious Cakes</h2>
+                <h4>3D Cakes</h4>
+                <h2>Our Popular 3dCakes Range</h2>
                 <p>Objectively pontificate quality models before intuitive information. Dramatically
                     recaptiualize multifunctional materials.</p>
             </div>
