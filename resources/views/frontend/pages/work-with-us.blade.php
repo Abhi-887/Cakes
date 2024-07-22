@@ -143,9 +143,10 @@
                 <input type="file" class="form-control-file" id="cv" name="cv"
                     accept=".pdf, .bmp, .jpeg, .png" required>
             </div>
+            <div class="form-group mt-3">
                             <!-- Hidden reCAPTCHA token input -->
                             <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
-
+                        </div>
             <div class=" mt-4 text-center"><button type="submit" class="common_btn v_submit_button">Submit
                     Application</button></div>
         </form>
