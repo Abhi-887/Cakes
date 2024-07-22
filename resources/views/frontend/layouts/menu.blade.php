@@ -212,15 +212,15 @@
                     </span>
                     @endforeach
 
-                    @foreach ($cartProduct->options->product_variants as $cartProductVariant)
+                    {{-- @foreach ($cartProduct->options->product_variants as $cartProductVariant)
                     @php
                     $variantName = is_array($cartProductVariant['variant_name'] ?? '') ? '' :
                     htmlspecialchars($cartProductVariant['variant_name']);
                     $itemName = is_array($cartProductVariant['item_name'] ?? '') ? '' :
                     htmlspecialchars($cartProductVariant['item_name']);
                     $itemPrice = $cartProductVariant['item_price'] ?? 0;
-                    @endphp
-                    <p class="variant">
+                    @endphp --}}
+                    {{-- <p class="variant">
                         {{ $variantName }}
                         @if ($itemName)
                         : {{ $itemName }}
@@ -229,7 +229,7 @@
                         ({{ currencyPosition($itemPrice) }})
                         @endif
                     </p>
-                    @endforeach
+                    @endforeach --}}
 
                     <p class="mt-2 price fw-semibold">{{ currencyPosition($totalPrice) }}</p>
                 </div>
@@ -250,37 +250,7 @@
 @php
 $reservationTimes = \App\Models\ReservationTime::where('status', 1)->get();
 @endphp
-{{-- <div class="fp__reservation">
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="border border-0 modal-content rounded-2">
-                <div class="border border-0 modal-header">
-                    <h1 class="text-center modal-title w-100 fw-bold fs-5" id="staticBackdropLabel">Book a Table
-                    </h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form class="fp__reservation_form" action="{{ route('reservation.store') }}" method="POST">
-                        @csrf
-                        <input class="reservation_input" type="text" placeholder="Name" name="name">
-                        <input class="reservation_input" type="text" placeholder="Phone" name="phone">
-                        <input class="reservation_input" type="date" name="date">
-                        <select class="reservation_input nice-select" name="time">
-                            <option value="">select time</option>
-                            @foreach ($reservationTimes as $time)
-                            <option value="{{ $time->start_time }}-{{ $time->end_time }}">
-                                {{ $time->start_time }} to {{ $time->end_time }}</option>
-                            @endforeach
-                        </select>
-                        <input class="reservation_input" type="text" placeholder="Persons" name="persons">
-                        <button type="submit" class="btn_submit">book table</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> --}}
+
 
 @push('scripts')
 <script>
