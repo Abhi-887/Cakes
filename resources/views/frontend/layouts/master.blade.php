@@ -29,6 +29,9 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/custom.css') }}">
     <link rel="icon" href="{{ asset('uploads/favicon.png') }}" type="image/x-icon">
 
+        <script src="https://www.google.com/recaptcha/enterprise.js?render=6LfFixUqAAAAACmWba-9CvlGo4ieeAU2wHhtI-eI"></script>
+        <!-- Your code -->
+
     {{-- <style>
         :root {
             --colorPrimary: {
