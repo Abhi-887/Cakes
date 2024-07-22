@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                                                BREADCRUMB START
-                                                                            ==============================-->
+                                                                                    BREADCRUMB START
+                                                                                ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="py-5 fp__breadcrumb_overlay">
             <div class="container py-2 py-md-5">
@@ -18,12 +18,12 @@
         </div>
     </section>
     <!--=============================
-                                                                                BREADCRUMB END
-                                                                            ==============================-->
+                                                                                    BREADCRUMB END
+                                                                                ==============================-->
 
     <!--============================
-                                                                                CART VIEW START
-                                                                            ==============================-->
+                                                                                    CART VIEW START
+                                                                                ==============================-->
     <section class="fp__cart_view mt_125 xs_mt_95 mb_100 xs_mb_70">
         <div class="container">
             <div class="row">
@@ -121,7 +121,7 @@
                                             </td>
 
                                             <td class="fp__pro_icon">
-                                                <a href="#" class="remove_cart_product"
+                                                <a href="#" class="remove_cart_product fs-4"
                                                     data-id="{{ $product->rowId }}"><i class="far fa-times"></i></a>
                                             </td>
                                         </tr>
@@ -189,8 +189,8 @@
 
 
     <!--============================
-                                                                                CART VIEW END
-                                                                            ==============================-->
+                                                                                    CART VIEW END
+                                                                                ==============================-->
 @endsection
 
 @push('scripts')
