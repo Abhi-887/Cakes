@@ -1,3 +1,7 @@
+@php
+    use Illuminate\Support\Str;
+@endphp
+
 @extends('frontend.layouts.master')
 
 @section('content')
@@ -504,7 +508,7 @@
                                                 @endif
                                             </p>
                                             <a class="my-3 title"
-                                                href="{{ route('product.show', $relatedProduct->slug) }}">{!! $relatedProduct->name !!}</a>
+                                                href="{{ route('product.show', $relatedProduct->slug) }}">{{ Str::limit($relatedProduct->name, 10, '...') }}</a>
                                             <p
                                                 class="top-0 px-3 py-1 text-center price fw-semibold position-absolute rounded-pill color-light-gray">
                                                 @if ($relatedProduct->offer_price > 0)
