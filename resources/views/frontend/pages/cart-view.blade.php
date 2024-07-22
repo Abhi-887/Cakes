@@ -1,6 +1,10 @@
 @extends('frontend.layouts.master')
 
 @section('content')
+
+@php
+dd($product);
+@endphp
 <!--=============================
                                                                             BREADCRUMB START
                                                                         ==============================-->
