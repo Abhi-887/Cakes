@@ -219,6 +219,40 @@
     <!--main/custom js-->
     <script src="{{ asset('frontend/js/main.js') }}"></script>
 
+
+    <script>
+        grecaptcha.ready(function() {
+            grecaptcha.execute('{{ env('RECAPTCHA_SITE_KEY') }}', {action: 'submit'}).then(function(token) {
+                document.getElementById('g-recaptcha-response').value = token;
+            });
+        });
+
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+    const quoteForm = document.getElementById('quote-form');
+
+    quoteForm.addEventListener('submit', function(event) {
+        // Validate the form
+        if (!validateForm()) {
+            event.preventDefault(); // Prevent form submission
+        }
+    });
+
+    function validateForm() {
+        // Check if reCAPTCHA is filled
+        if (grecaptcha.getResponse() === "") {
+            alert("Please fill out the reCAPTCHA.");
+            return false;
+        }
+
+        // Add more validation checks if necessary
+        // For example, check if other fields are filled out correctly
+
+        return true;
+    }
+});
+    </script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <!-- show dynamic validation message-->
     <script>
         toastr.options.progressBar = true;
