@@ -41,7 +41,7 @@ $totalPrice += $cartProductVariant['item_price'] ?? 0;
         @endforeach
         --}}
 
-        @foreach ($cartProduct->options->product_variants as $cartProductVariant)
+        {{-- @foreach ($cartProduct->options->product_variants as $cartProductVariant)
         @php
         $variantName = htmlspecialchars($cartProductVariant['variant_name'] ?? '');
         $itemName = htmlspecialchars($cartProductVariant['item_name'] ?? '');
@@ -54,7 +54,7 @@ $totalPrice += $cartProductVariant['item_price'] ?? 0;
             @endif
             ({{ currencyPosition($itemPrice) }})
         </p>
-        @endforeach
+        @endforeach --}}
 
         <p class="price">{{ currencyPosition($totalPrice) }}</p>
     </div>
