@@ -2,9 +2,7 @@
 
 @section('content')
 
-@php
-dd($product);
-@endphp
+
 <!--=============================
                                                                             BREADCRUMB START
                                                                         ==============================-->
@@ -49,6 +47,7 @@ dd($product);
 
                                 @foreach (Cart::content() as $product)
                                 @php
+                                dd($product);
                                 $productTotal = $product->price; // Base product price
 
                                 foreach ($product->options->product_variants as $variant) {
