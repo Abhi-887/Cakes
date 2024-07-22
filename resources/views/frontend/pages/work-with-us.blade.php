@@ -146,7 +146,7 @@
 
 
             <!-- Google reCAPTCHA widget -->
-            <div class=" form-group">
+            <div class=" form-group mt-3">
                 <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
             </div>
 
