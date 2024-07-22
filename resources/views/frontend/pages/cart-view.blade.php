@@ -30,8 +30,8 @@
                 <div class="col-lg-8 wow fadeInUp" data-wow-duration="1s">
                     <div class="fp__cart_list">
                         <div class="table-responsive">
-                            <table class="table table-striped table-bordered">
-                                <thead class="thead-dark">
+                            <table>
+                                <tbody>
                                     <tr>
                                         <th class="fp__pro_img">Image</th>
                                         <th class="fp__pro_name">Details</th>
@@ -39,12 +39,10 @@
                                         <th class="fp__pro_select">Quantity</th>
                                         <th class="fp__pro_tk">Total</th>
                                         <th class="fp__pro_icon">
-                                            <a class="clear_all btn btn-danger btn-sm"
-                                                href="{{ route('cart.destroy') }}">Clear All</a>
+                                            <a class="clear_all" href="{{ route('cart.destroy') }}">Clear All</a>
                                         </th>
                                     </tr>
-                                </thead>
-                                <tbody>
+
                                     @foreach (Cart::content() as $product)
                                         @php
                                             $productTotal = $product->price; // Base product price
@@ -62,17 +60,19 @@
                                             </td>
 
                                             <td class="fp__pro_name">
-                                                <a class="fw-bold text-dark"
+                                                <a class="fw-bold"
                                                     href="{{ route('product.show', $product->options->product_info['slug']) }}">
                                                     {{ $product->name }}
                                                 </a>
                                                 <span>
                                                     {{ isset($product->options->product_size['name']) ? $product->options->product_size['name'] : '' }}
-                                                    {{ isset($product->options->product_size['price']) && $product->options->product_size['price'] ? '(' . currencyPosition($product->options->product_size['price']) . ')' : '' }}
+                                                    {{ isset($product->options->product_size['price']) && $product->options->product_size['price']
+                                                        ? '(' . currencyPosition($product->options->product_size['price']) . ')'
+                                                        : '' }}
                                                 </span>
                                                 <small>
                                                     @foreach ($product->options->product_options as $option)
-                                                        <p class="fw-normal mb-0">
+                                                        <p class="fw-normal">
                                                             {{ $option['name'] }}
                                                             @if (isset($option['price']) && $option['price'] > 0)
                                                                 ({{ currencyPosition($option['price']) }})
@@ -88,8 +88,9 @@
                                                                 ? ''
                                                                 : htmlspecialchars($variant['item_name']);
                                                         @endphp
-                                                        <p class="fw-normal mb-0">
-                                                            {{ $variantName }}: {{ $itemName }}
+                                                        <p class="fw-normal">
+                                                            {{ $variantName }}:
+                                                            {{ $itemName }}
                                                             @if (isset($variant['item_price']) && $variant['item_price'] > 0)
                                                                 ({{ currencyPosition($variant['item_price']) }})
                                                             @endif
@@ -103,28 +104,24 @@
                                             </td>
 
                                             <td class="fp__pro_select">
-                                                <div class="input-group">
-                                                    <div class="input-group-prepend">
-                                                        <button class="btn btn-danger decrement"><i
-                                                                class="fal fa-minus"></i></button>
-                                                    </div>
-                                                    <input type="text" class="form-control text-center quantity"
-                                                        data-id="{{ $product->rowId }}" placeholder="1"
-                                                        value="{{ $product->qty }}" readonly>
-                                                    <div class="input-group-append">
-                                                        <button class="btn btn-success increment"><i
-                                                                class="fal fa-plus"></i></button>
-                                                    </div>
+                                                <div class="quentity_btn">
+                                                    <button class="btn btn-danger decrement"><i
+                                                            class="fal fa-minus"></i></button>
+                                                    <input type="text" class="quantity" data-id="{{ $product->rowId }}"
+                                                        placeholder="1" value="{{ $product->qty }}" readonly>
+                                                    <button class="btn btn-success increment"><i
+                                                            class="fal fa-plus"></i></button>
                                                 </div>
                                             </td>
 
                                             <td class="fp__pro_tk">
                                                 <h6 class="product_cart_total">
-                                                    {{ currencyPosition($productTotal * $product->qty) }}</h6>
+                                                    {{ currencyPosition($productTotal * $product->qty) }}
+                                                </h6>
                                             </td>
 
                                             <td class="fp__pro_icon">
-                                                <a href="#" class="remove_cart_product text-danger"
+                                                <a href="#" class="remove_cart_product"
                                                     data-id="{{ $product->rowId }}"><i class="far fa-times"></i></a>
                                             </td>
                                         </tr>
@@ -132,14 +129,14 @@
 
                                     @if (Cart::content()->count() === 0)
                                         <tr>
-                                            <td colspan="6" class="text-center fp__pro_name">
+                                            <td colspan="6" class="text-center fp__pro_name"
+                                                style="width: 100%;display: inline;">
                                                 Cart is empty!
                                             </td>
                                         </tr>
                                     @endif
                                 </tbody>
                             </table>
-
                         </div>
                     </div>
                 </div>
