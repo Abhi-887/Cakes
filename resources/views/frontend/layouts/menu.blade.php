@@ -201,7 +201,7 @@
                         $cartProduct->name !!}</a>
                     <p class="size">Qty: {{ $cartProduct->qty }}</p>
 
-                    @foreach ($cartProduct->options->product_size as $size)
+                    {{-- @foreach ($cartProduct->options->product_size as $size)
                     <p class="size">{{ $size['name'] }}
                         {{ $size['price'] ? '(' . currencyPosition($size['price']) . ')' : '' }}</p>
                     @endforeach
@@ -210,7 +210,7 @@
                     <span class="extra d-block position-relative">{{ $cartProductOption['name'] }}
                         ({{ currencyPosition($cartProductOption['price']) }})
                     </span>
-                    @endforeach
+                    @endforeach --}}
 
                     {{-- @foreach ($cartProduct->options->product_variants as $cartProductVariant)
                     @php
