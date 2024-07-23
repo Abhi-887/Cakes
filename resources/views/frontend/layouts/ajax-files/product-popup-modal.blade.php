@@ -181,7 +181,10 @@
             @if ($product->quantity === 0)
             <li><a class="common_btn bg-danger" href="javascript:;">Stock Out</a></li>
             @else
-            <li><a class="common_btn v_submit_button" href="#">Add To Cart</a></li>
+            <li><button type="submit" class="common_btn modal_cart_button">add to cart</button></li>
+            <li><button type="submit" class="common_btn v_submit_button">Add To Cart</button></li>
+
+
             @endif
             <li><a class="wishlist" href="#"><i class="far fa-heart"></i></a></li>
         </ul>
@@ -190,8 +193,8 @@
 
 <script>
     $(document).ready(function() {
-        // Event handler for variant options change
-        $('.v_product_option').on('change', function() {
+        // Handle change events for variant options
+        $('select[name="variants_items[]"], input[name^="variants_items"]').on('change', function() {
             updateTotalPrice();
         });
 
@@ -219,39 +222,44 @@
         // Function to update the total price based on selected options
         function updateTotalPrice() {
             let basePrice = parseFloat($('input[name="base_price"]').val());
+            let selectedSizePrice = 0;
             let selectedOptionsPrice = 0;
             let quantity = parseFloat($('#v_quantity').val());
 
-            // Calculate selected options price
-            $('.v_product_option:checked, .v_product_option option:selected').each(function() {
-                if ($(this).data("price")) {
-                    selectedOptionsPrice += parseFloat($(this).data("price"));
-                }
+            // Calculate the selected size price
+            let selectedSize = $('input[name="product_size"]:checked');
+            if (selectedSize.length > 0) {
+                selectedSizePrice = parseFloat(selectedSize.data("price"));
+            }
+
+            // Calculate selected options price for dropdowns, radios, and checkboxes
+            $('select[name="variants_items[]"] option:selected, input[name^="variants_items"]:checked').each(function() {
+                selectedOptionsPrice += parseFloat($(this).data("price"));
             });
 
             // Calculate the total price
-            let totalPrice = (basePrice + selectedOptionsPrice) * quantity;
-            $('#v_total_price').text("{{ config('settings.site_currency_icon') }}" + totalPrice);
-            $('#v_hidden_total_price').val(totalPrice); // Update hidden total price field
+            let totalPrice = (basePrice + selectedSizePrice + selectedOptionsPrice) * quantity;
+            $('#v_total_price').text("{{ config('settings.site_currency_icon') }}" + totalPrice.toFixed(2));
+            $('#v_hidden_total_price').val(totalPrice.toFixed(2));
         }
 
         // Add to cart function
-        $("#modal_add_to_cart_form").on('submit', function(e) {
+        $("#v_add_to_cart_form").on('submit', function(e) {
             e.preventDefault();
 
-            // Validation for required variant options
+            // Validation
             let isValid = true;
-            $('.v_product_option[required]').each(function() {
-                if ($(this).is(':invalid') || !$(this).val()) {
-                    isValid = false;
+            $('select[name="variants_items[]"], input[name^="variants_items"]').each(function() {
+                if ($(this).prop('required') && !$(this).val()) {
                     $(this).closest('.form-group').find('.error-message').show();
+                    isValid = false;
                 } else {
                     $(this).closest('.form-group').find('.error-message').hide();
                 }
             });
 
             if (!isValid) {
-                toastr.error('Please fill all required fields');
+                toastr.error('Please fill in all required fields.');
                 return;
             }
 
@@ -275,7 +283,7 @@
                     toastr.error(errorMessage);
                 },
                 complete: function() {
-                    $('.v_submit_button').html('Add to Cart');
+                    $('.v_submit_button').html('Add To Cart');
                     $('.v_submit_button').attr('disabled', false);
                 }
             });
