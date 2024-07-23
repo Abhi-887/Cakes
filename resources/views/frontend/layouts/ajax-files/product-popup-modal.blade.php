@@ -192,58 +192,55 @@
 </form>
 <script>
     $(document).ready(function() {
-        $('input[name="product_size"]').on('change', function() {
-            updateTotalPrice();
-        });
-
-        $('input[name="product_option[]"]').on('change', function() {
-            updateTotalPrice();
-        });
-
         // Event handlers for increment and decrement buttons
         $('.increment').on('click', function(e) {
-            e.preventDefault()
-
+            e.preventDefault();
             let quantity = $('#quantity');
             let currentQuantity = parseFloat(quantity.val());
             quantity.val(currentQuantity + 1);
-            updateTotalPrice()
-        })
+            updateTotalPrice();
+        });
 
         $('.decrement').on('click', function(e) {
-            e.preventDefault()
-
+            e.preventDefault();
             let quantity = $('#quantity');
             let currentQuantity = parseFloat(quantity.val());
             if (currentQuantity > 1) {
                 quantity.val(currentQuantity - 1);
-                updateTotalPrice()
+                updateTotalPrice();
             }
-        })
+        });
 
-        // Function to update the total price base on seelected options
+        // Function to update the total price based on selected options
         function updateTotalPrice() {
             let basePrice = parseFloat($('input[name="base_price"]').val());
-            let selectedSizePrice = 0;
             let selectedOptionsPrice = 0;
             let quantity = parseFloat($('#quantity').val());
 
-            // Calculate the selected size price
+            // Calculate the selected size price if any
             let selectedSize = $('input[name="product_size"]:checked');
-            if (selectedSize.length > 0) {
-                selectedSizePrice = parseFloat(selectedSize.data("price"));
-            }
+            let selectedSizePrice = selectedSize.length > 0 ? parseFloat(selectedSize.data("price")) : 0;
 
             // Calculate selected options price
             let selectedOptions = $('input[name="product_option[]"]:checked');
             $(selectedOptions).each(function() {
                 selectedOptionsPrice += parseFloat($(this).data("price"));
-            })
+            });
+
+            // For checkboxes, ensure only one option is selected
+            $('input[name^="variants_items"]').each(function() {
+                if ($(this).is(':checkbox')) {
+                    let checkedCheckboxes = $('input[name="' + $(this).attr('name') + '"]:checked');
+                    if (checkedCheckboxes.length > 1) {
+                        toastr.error('Only one checkbox option can be selected.');
+                        return;
+                    }
+                }
+            });
 
             // Calculate the total price
             let totalPrice = (basePrice + selectedSizePrice + selectedOptionsPrice) * quantity;
-            $('#total_price').text("{{ config('settings.site_currency_icon') }}" + totalPrice);
-
+            $('#total_price').text("{{ config('settings.site_currency_icon') }}" + totalPrice.toFixed(2));
         }
 
         // Add to cart function
@@ -252,12 +249,10 @@
 
             // Validation
             let selectedSize = $("input[name='product_size']");
-            if (selectedSize.length > 0) {
-                if ($("input[name='product_size']:checked").val() === undefined) {
-                    toastr.error('Please select a size');
-                    console.error('Please select a size');
-                    return;
-                }
+            if (selectedSize.length > 0 && $("input[name='product_size']:checked").val() === undefined) {
+                toastr.error('Please select a size');
+                console.error('Please select a size');
+                return;
             }
 
             let formData = $(this).serialize();
@@ -267,9 +262,7 @@
                 data: formData,
                 beforeSend: function() {
                     $('.modal_cart_button').attr('disabled', true);
-                    $('.modal_cart_button').html(
-                        '<span class="spinner-border spinner-border-sm text-light" role="status" aria-hidden="true"></span> Loading...'
-                    )
+                    $('.modal_cart_button').html('<span class="spinner-border spinner-border-sm text-light" role="status" aria-hidden="true"></span> Loading...');
                 },
                 success: function(response) {
                     updateSidebarCart();
@@ -283,106 +276,10 @@
                     $('.modal_cart_button').html('Add to Cart');
                     $('.modal_cart_button').attr('disabled', false);
                 }
-            })
-        })
-    })
-</script>
-{{-- <script>
-    $(document).ready(function() {
-        // Handle change events for variant options
-        $('select[name="variants_items[]"], input[name^="variants_items"]').on('change', function() {
-            updateTotalPrice();
-        });
-
-        // Event handlers for increment and decrement buttons
-        $('.v_increment').on('click', function(e) {
-            e.preventDefault();
-
-            let quantity = $('#v_quantity');
-            let currentQuantity = parseFloat(quantity.val());
-            quantity.val(currentQuantity + 1);
-            updateTotalPrice();
-        });
-
-        $('.v_decrement').on('click', function(e) {
-            e.preventDefault();
-
-            let quantity = $('#v_quantity');
-            let currentQuantity = parseFloat(quantity.val());
-            if (currentQuantity > 1) {
-                quantity.val(currentQuantity - 1);
-                updateTotalPrice();
-            }
-        });
-
-        // Function to update the total price based on selected options
-        function updateTotalPrice() {
-            let basePrice = parseFloat($('input[name="base_price"]').val());
-            let selectedSizePrice = 0;
-            let selectedOptionsPrice = 0;
-            let quantity = parseFloat($('#v_quantity').val());
-
-            // Calculate the selected size price
-            let selectedSize = $('input[name="product_size"]:checked');
-            if (selectedSize.length > 0) {
-                selectedSizePrice = parseFloat(selectedSize.data("price"));
-            }
-
-            // Calculate selected options price for dropdowns, radios, and checkboxes
-            $('select[name="variants_items[]"] option:selected, input[name^="variants_items"]:checked').each(function() {
-                selectedOptionsPrice += parseFloat($(this).data("price"));
-            });
-
-            // Calculate the total price
-            let totalPrice = (basePrice + selectedSizePrice + selectedOptionsPrice) * quantity;
-            $('#v_total_price').text("{{ config('settings.site_currency_icon') }}" + totalPrice.toFixed(2));
-            $('#v_hidden_total_price').val(totalPrice.toFixed(2));
-        }
-
-        // Add to cart function
-        $("#v_add_to_cart_form").on('submit', function(e) {
-            e.preventDefault();
-
-            // Validation
-            let isValid = true;
-            $('select[name="variants_items[]"], input[name^="variants_items"]').each(function() {
-                if ($(this).prop('required') && !$(this).val()) {
-                    $(this).closest('.form-group').find('.error-message').show();
-                    isValid = false;
-                } else {
-                    $(this).closest('.form-group').find('.error-message').hide();
-                }
-            });
-
-            if (!isValid) {
-                toastr.error('Please fill in all required fields.');
-                return;
-            }
-
-            let formData = $(this).serialize();
-            $.ajax({
-                method: 'POST',
-                url: '{{ route('add-to-cart') }}',
-                data: formData,
-                beforeSend: function() {
-                    $('.v_submit_button').attr('disabled', true);
-                    $('.v_submit_button').html(
-                        '<span class="spinner-border spinner-border-sm text-light" role="status" aria-hidden="true"></span> Loading...'
-                    );
-                },
-                success: function(response) {
-                    updateSidebarCart();
-                    toastr.success(response.message);
-                },
-                error: function(xhr, status, error) {
-                    let errorMessage = xhr.responseJSON.message;
-                    toastr.error(errorMessage);
-                },
-                complete: function() {
-                    $('.v_submit_button').html('Add To Cart');
-                    $('.v_submit_button').attr('disabled', false);
-                }
             });
         });
+
+        // Initial total price update
+        updateTotalPrice();
     });
-</script> --}}
+</script>
