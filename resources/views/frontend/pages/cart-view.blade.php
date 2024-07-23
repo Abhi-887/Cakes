@@ -48,10 +48,10 @@
                                 @foreach (Cart::content() as $product)
 
                                 <pre>
-                                    @php
-                                        print_r($product);
-                                    @endphp
-                                </pre>
+    @php
+        print_r($product);
+    @endphp
+</pre>
 
                                 @php
                                 $productTotal = $product->price; // Base product price
@@ -59,7 +59,7 @@
                                 foreach ($product->options->product_variants as $variant) {
                                 $variantName = is_array($variant['variant_name']) ? '' :
                                 htmlspecialchars($variant['variant_name']);
-                                $itemName = is_array($variant['item_name']) ? '' :
+                                $itemName = is_array($variant['item_name']) ? implode(', ', $variant['item_name']) :
                                 htmlspecialchars($variant['item_name']);
                                 $itemPrice = $variant['item_price'] ?? 0;
 
@@ -100,8 +100,8 @@
                                             @php
                                             $variantName = is_array($variant['variant_name']) ? '' :
                                             htmlspecialchars($variant['variant_name']);
-                                            $itemName = is_array($variant['item_name']) ? '' :
-                                            htmlspecialchars($variant['item_name']);
+                                            $itemName = is_array($variant['item_name']) ? implode(', ',
+                                            $variant['item_name']) : htmlspecialchars($variant['item_name']);
                                             $itemPrice = $variant['item_price'] ?? 0;
                                             @endphp
                                             @if (!empty($itemName))
@@ -143,6 +143,7 @@
                                     </td>
                                 </tr>
                                 @endforeach
+
 
 
                                 @if (Cart::content()->count() === 0)
