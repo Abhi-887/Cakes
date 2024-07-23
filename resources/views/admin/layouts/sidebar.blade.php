@@ -127,23 +127,26 @@
 
 
 
-        <li class="{{ setSidebarActive(['admin.daily-offer.*']) }}">
-            <a class="nav-link" href="{{ route('admin.daily-offer.index') }}"><i class="far fa-clock"></i>
-                <span>Daily Offer</span>
+        <li class="{{ setSidebarActive(['admin.testimonial.*']) }}">
+            <a class="nav-link" href="{{ route('admin.testimonial.index') }}"><i class="far fa-regular fa-message"></i>
+                <span>Testimonial</span>
             </a>
         </li>
+
+
+
         <li class="{{ setSidebarActive(['admin.consultation.*']) }}">
             <a class="nav-link" href="{{ route('admin.consultation.index') }}"><i
                     class="fa-solid fa-business-time"></i></i>
                 <span>Consultation Time</span>
             </a>
         </li>
-        <li class="{{ setSidebarActive(['admin.Weddingcakesdeposit.index']) }}">
+        {{-- <li class="{{ setSidebarActive(['admin.Weddingcakesdeposit.index']) }}">
             <a class="nav-link" href="{{ route('admin.Weddingcakesdeposit.index') }}"><i
                     class="fa-solid fa-bookmark"></i></i>
                 <span>Wedding Booking Schedule </span>
             </a>
-        </li>
+        </li> --}}
         <li class="{{ setSidebarActive(['admin.work-with-us.index']) }}">
             <a class="nav-link" href="{{ route('admin.work-with-us.index') }}"><i
                     class="fa-solid fa-house-laptop"></i></i>
@@ -157,9 +160,7 @@
             </a>
         </li>
 
-        <li class="{{ setSidebarActive(['admin.menus.index']) }}"><a class="nav-link"
-                href="{{ route('admin.menus.index') }}"><i class="fas fa-list-alt"></i>
-                <span>Menus</span></a></li>
+
 
         <li class="dropdown {{ setSidebarActive([
                 'admin.orders.index',
@@ -217,7 +218,7 @@
             </ul>
         </li>
 
-        <li class="dropdown {{ setSidebarActive(['admin.reservation-time.*', 'admin.reservation.index']) }}">
+        {{-- <li class="dropdown {{ setSidebarActive(['admin.reservation-time.*', 'admin.reservation.index']) }}">
             <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-chair"></i>
                 <span>Manage Reservations </span></a>
             <ul class="dropdown-menu">
@@ -226,7 +227,7 @@
                 <li class="{{ setSidebarActive(['admin.reservation.index']) }}"><a class="nav-link"
                         href="{{ route('admin.reservation.index') }}">Reservation</a></li>
             </ul>
-        </li>
+        </li> --}}
 
         @if (auth()->user()->id === 1)
         <li class="{{ setSidebarActive(['admin.chat.index']) }}"><a class="nav-link"
@@ -259,26 +260,7 @@
                 'admin.counter.index',
                 'admin.aboutus.index',
             ]) }}">
-            <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-stream"></i>
-                <span>Sections </span></a>
-            <ul class="dropdown-menu">
-                {{-- <li class="{{ setSidebarActive(['admin.why-choose-us.*']) }}"><a class="nav-link"
-                        href="{{ route('admin.why-choose-us.index') }}">Why choose us</a></li>
-                <li class="{{ setSidebarActive(['admin.banner-slider.*']) }}"><a class="nav-link"
-                        href="{{ route('admin.banner-slider.index') }}">Banner Slider</a></li>
-                <li class="{{ setSidebarActive(['admin.chefs.*']) }}"><a class="nav-link"
-                        href="{{ route('admin.chefs.index') }}">Chefs</a></li>
-                <li class="{{ setSidebarActive(['admin.app-download.index']) }}"><a class="nav-link"
-                        href="{{ route('admin.app-download.index') }}">App Download Section</a>
-                </li> --}}
-                <li class="{{ setSidebarActive(['admin.testimonial.*']) }}"><a class="nav-link"
-                        href="{{ route('admin.testimonial.index') }}">Testimonial</a></li>
-                {{-- <li class="{{ setSidebarActive(['admin.counter.index']) }}"><a class="nav-link"
-                        href="{{ route('admin.counter.index') }}">Counter</a></li>
-                <li class="{{ setSidebarActive(['admin.aboutus.index']) }}"><a class="nav-link"
-                        href="{{ route('admin.aboutus.index') }}">About Us</a></li> --}}
 
-            </ul>
         </li>
 
         <li class="dropdown {{ setSidebarActive([
@@ -368,8 +350,8 @@
                 href="{{ route('admin.setting.index') }}"><i class="fas fa-cogs"></i>
                 <span>Settings</span></a></li>
 
-        <li class="{{ setSidebarActive(['admin.clear-database.index*']) }}"><a class="nav-link"
+        {{-- <li class="{{ setSidebarActive(['admin.clear-database.index*']) }}"><a class="nav-link"
                 href="{{ route('admin.clear-database.index') }}"><i class="fas fa-exclamation-triangle"></i>
-                <span>Clear Database</span></a></li>
+                <span>Clear Database</span></a></li> --}}
     </aside>
 </div>
