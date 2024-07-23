@@ -539,118 +539,136 @@ use Illuminate\Support\Str;
 @push('scripts')
 <script>
     $(document).ready(function() {
-        // Initial setup
-        $('.v_product_size').prop('checked', false);
-        $('.v_product_option').prop('checked', false);
-        $('#v_quantity').val(1);
+            // Initial setup
+            $('.v_product_size').prop('checked', false);
+            $('.v_product_option').prop('checked', false);
+            $('#v_quantity').val(1);
 
-        // Function to update the total price based on selected options
-        function v_updateTotalPrice() {
-            let basePrice = parseFloat(
-                '{{ $product->offer_price > 0 ? $product->offer_price : $product->price }}');
-            let selectedAttributesPrice = 0;
-            let quantity = parseFloat($('#v_quantity').val());
+            // Function to update the total price based on selected options
+            function v_updateTotalPrice() {
+                let basePrice = parseFloat(
+                    '{{ $product->offer_price > 0 ? $product->offer_price : $product->price }}');
+                let selectedAttributesPrice = 0;
+                let quantity = parseFloat($('#v_quantity').val());
 
-            // Calculate selected attributes price
-            $('select[name="variants_items[]"], input[name="variants_items[]"]:checked, input[name^="variants_items["]:checked')
-                .each(function() {
-                    let price = 0;
-                    if ($(this).is('select')) {
-                        price = parseFloat($(this).find('option:selected').data('price')) || 0;
-                    } else if ($(this).is(':checkbox') || $(this).is(':radio')) {
-                        price = parseFloat($(this).data('price')) || 0;
-                    }
-                    selectedAttributesPrice += price;
+                // Calculate selected attributes price
+                $('select[name="variants_items[]"], input[name="variants_items[]"]:checked, input[name^="variants_items["]:checked')
+                    .each(function() {
+                        let price = 0;
+                        if ($(this).is('select')) {
+                            price = parseFloat($(this).find('option:selected').data('price')) || 0;
+                        } else if ($(this).is(':checkbox') || $(this).is(':radio')) {
+                            price = parseFloat($(this).data('price')) || 0;
+                        }
+                        selectedAttributesPrice += price;
+                    });
+
+                // Calculate the total price
+                let totalPrice = (basePrice + selectedAttributesPrice) * quantity;
+                $('#v_total_price').text("{{ config('settings.site_currency_icon') }}" + totalPrice.toFixed(2));
+                $('#v_hidden_total_price').val(totalPrice.toFixed(2)); // Update hidden input with total price
+            }
+
+            // Event handlers for increment and decrement buttons
+            $('.v_increment').on('click', function(e) {
+                e.preventDefault();
+                let quantity = $('#v_quantity');
+                let currentQuantity = parseFloat(quantity.val());
+                quantity.val(currentQuantity + 1);
+                v_updateTotalPrice();
+            });
+
+            $('.v_decrement').on('click', function(e) {
+                e.preventDefault();
+                let quantity = $('#v_quantity');
+                let currentQuantity = parseFloat(quantity.val());
+                if (currentQuantity > 1) {
+                    quantity.val(currentQuantity - 1);
+                    v_updateTotalPrice();
+                }
+            });
+
+            // Event handlers for attribute changes
+            $('select[name="variants_items[]"], input[name="variants_items[]"], input[name^="variants_items["]').on(
+                'change',
+                function() {
+                    v_updateTotalPrice();
                 });
 
-            // Calculate the total price
-            let totalPrice = (basePrice + selectedAttributesPrice) * quantity;
-            $('#v_total_price').text("{{ config('settings.site_currency_icon') }}" + totalPrice.toFixed(2));
-            $('#v_hidden_total_price').val(totalPrice.toFixed(2)); // Update hidden input with total price
-        }
+            $('.v_submit_button').on('click', function(e) {
+                e.preventDefault();
+                $("#v_add_to_cart_form").submit();
+            });
 
-        // Event handlers for increment and decrement buttons
-        $('.v_increment').on('click', function(e) {
-            e.preventDefault();
-            let quantity = $('#v_quantity');
-            let currentQuantity = parseFloat(quantity.val());
-            quantity.val(currentQuantity + 1);
+            // Add to cart function
+            $("#v_add_to_cart_form").on('submit', function(e) {
+                e.preventDefault();
+
+                // Validation
+                let selectedSize = $(".v_product_size");
+                if (selectedSize.length > 0) {
+                    if ($(".v_product_size:checked").val() === undefined) {
+                        toastr.error('Please select a size');
+                        console.error('Please select a size');
+                        return;
+                    }
+                }
+
+                let formData = $(this).serialize();
+                $.ajax({
+                    method: 'POST',
+                    url: '{{ route('add-to-cart') }}',
+                    data: formData,
+                    beforeSend: function() {
+                        $('.v_submit_button').attr('disabled', true);
+                        $('.v_submit_button').html(
+                            '<span class="spinner-border spinner-border-sm text-light" role="status" aria-hidden="true"></span> Loading...'
+                        );
+                    },
+                    success: function(response) {
+                        updateSidebarCart();
+                        toastr.success(response.message);
+                    },
+                    error: function(xhr, status, error) {
+                        let errorMessage = xhr.responseJSON.message;
+                        toastr.error(errorMessage);
+                    },
+                    complete: function() {
+                        $('.v_submit_button').html('Add to Cart');
+                        $('.v_submit_button').attr('disabled', false);
+                    }
+                });
+            });
+
+            // Initial price calculation
             v_updateTotalPrice();
         });
+</script>
 
-        $('.v_decrement').on('click', function(e) {
-            e.preventDefault();
-            let quantity = $('#v_quantity');
-            let currentQuantity = parseFloat(quantity.val());
-            if (currentQuantity > 1) {
-                quantity.val(currentQuantity - 1);
-                v_updateTotalPrice();
-            }
-        });
-
-        // Event handlers for attribute changes
-        $('select[name="variants_items[]"], input[name="variants_items[]"], input[name^="variants_items["]').on(
-            'change',
-            function() {
-                v_updateTotalPrice();
-            });
-
-        $('.v_submit_button').on('click', function(e) {
-            e.preventDefault();
-            $("#v_add_to_cart_form").submit();
-        });
-
-        // Add to cart function with validation
-        $("#v_add_to_cart_form").on('submit', function(e) {
-            e.preventDefault();
-
-            // Validation
+<script>
+    document.getElementById('v_add_to_cart_form').addEventListener('submit', function(event) {
             let valid = true;
 
-            // Check all required select, radio, and checkbox inputs
-            $('select[required], input[required]').each(function() {
-                if ($(this).is(':invalid') || $(this).val() === '' || ($(this).is(':checkbox') && !$(this).is(':checked'))) {
-                    valid = false;
-                    $(this).closest('.form-group').addClass('has-error');
-                    $(this).closest('.form-group')[0].scrollIntoView({ behavior: 'smooth' });
-                } else {
-                    $(this).closest('.form-group').removeClass('has-error');
+            // Check all required select and radio inputs
+            document.querySelectorAll('.v_product_option').forEach(function(input) {
+                if (input.closest('.form-group').querySelector('[required]')) {
+                    if (input.value === '') {
+                        valid = false;
+                        input.closest('.form-group').classList.add('has-error');
+                        input.closest('.form-group').scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    } else {
+                        input.closest('.form-group').classList.remove('has-error');
+                    }
                 }
             });
 
+            // Prevent form submission if validation fails
             if (!valid) {
+                event.preventDefault();
                 alert('Please fill out all required fields.');
-                return;
             }
-
-            let formData = $(this).serialize();
-            $.ajax({
-                method: 'POST',
-                url: '{{ route('add-to-cart') }}',
-                data: formData,
-                beforeSend: function() {
-                    $('.v_submit_button').attr('disabled', true);
-                    $('.v_submit_button').html(
-                        '<span class="spinner-border spinner-border-sm text-light" role="status" aria-hidden="true"></span> Loading...'
-                    );
-                },
-                success: function(response) {
-                    updateSidebarCart();
-                    toastr.success(response.message);
-                },
-                error: function(xhr, status, error) {
-                    let errorMessage = xhr.responseJSON.message;
-                    toastr.error(errorMessage);
-                },
-                complete: function() {
-                    $('.v_submit_button').html('Add to Cart');
-                    $('.v_submit_button').attr('disabled', false);
-                }
-            });
         });
-
-        // Initial price calculation
-        v_updateTotalPrice();
-    });
 </script>
 @endpush
