@@ -51,29 +51,24 @@
                                     @php
                                         print_r($product);
                                     @endphp
-                                    </pre>
+                                </pre>
+
                                 @php
                                 $productTotal = $product->price; // Base product price
 
-                                @foreach ($product->options->product_variants as $variant)
-                                @php
+                                foreach ($product->options->product_variants as $variant) {
                                 $variantName = is_array($variant['variant_name']) ? '' :
                                 htmlspecialchars($variant['variant_name']);
                                 $itemName = is_array($variant['item_name']) ? '' :
                                 htmlspecialchars($variant['item_name']);
                                 $itemPrice = $variant['item_price'] ?? 0;
-                                @endphp
-                                @if (!empty($itemName))
-                                <p class="fw-normal">
-                                    {{ $variantName }}: {{ $itemName }}
-                                    @if ($itemPrice > 0)
-                                    ({{ currencyPosition($itemPrice) }})
-                                    @endif
-                                </p>
-                                @endif
-                                @endforeach
 
+                                if (!empty($itemName)) {
+                                $productTotal += $itemPrice;
+                                }
+                                }
                                 @endphp
+
                                 <tr>
                                     <td class="fp__pro_img">
                                         <img src="{{ $product->options->product_info['image'] }}" alt="product"
@@ -86,12 +81,10 @@
                                             {{ $product->name }}
                                         </a>
                                         <span>
-                                            {{ isset($product->options->product_size['name']) ?
-                                            $product->options->product_size['name'] : '' }}
-                                            {{ isset($product->options->product_size['price']) &&
-                                            $product->options->product_size['price']
-                                            ? '(' . currencyPosition($product->options->product_size['price']) . ')'
-                                            : '' }}
+                                            {{ $product->options->product_size['name'] ?? '' }}
+                                            @if (!empty($product->options->product_size['price']))
+                                            ({{ currencyPosition($product->options->product_size['price']) }})
+                                            @endif
                                         </span>
                                         <small>
                                             @foreach ($product->options->product_options as $option)
@@ -102,22 +95,23 @@
                                                 @endif
                                             </p>
                                             @endforeach
+
                                             @foreach ($product->options->product_variants as $variant)
                                             @php
-                                            $variantName = is_array($variant['variant_name'])
-                                            ? ''
-                                            : htmlspecialchars($variant['variant_name']);
-                                            $itemName = is_array($variant['item_name'])
-                                            ? ''
-                                            : htmlspecialchars($variant['item_name']);
+                                            $variantName = is_array($variant['variant_name']) ? '' :
+                                            htmlspecialchars($variant['variant_name']);
+                                            $itemName = is_array($variant['item_name']) ? '' :
+                                            htmlspecialchars($variant['item_name']);
+                                            $itemPrice = $variant['item_price'] ?? 0;
                                             @endphp
+                                            @if (!empty($itemName))
                                             <p class="fw-normal">
-                                                {{ $variantName }}:
-                                                {{ $itemName }}
-                                                @if (isset($variant['item_price']) && $variant['item_price'] > 0)
-                                                ({{ currencyPosition($variant['item_price']) }})
+                                                {{ $variantName }}: {{ $itemName }}
+                                                @if ($itemPrice > 0)
+                                                ({{ currencyPosition($itemPrice) }})
                                                 @endif
                                             </p>
+                                            @endif
                                             @endforeach
                                         </small>
                                     </td>
@@ -149,6 +143,7 @@
                                     </td>
                                 </tr>
                                 @endforeach
+
 
                                 @if (Cart::content()->count() === 0)
                                 <tr>
