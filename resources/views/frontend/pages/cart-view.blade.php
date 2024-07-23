@@ -55,11 +55,24 @@
                                 @php
                                 $productTotal = $product->price; // Base product price
 
-                                foreach ($product->options->product_variants as $variant) {
-                                if ($variant['item_price'] > 0) {
-                                $productTotal += $variant['item_price'];
-                                }
-                                }
+                                @foreach ($product->options->product_variants as $variant)
+                                @php
+                                $variantName = is_array($variant['variant_name']) ? '' :
+                                htmlspecialchars($variant['variant_name']);
+                                $itemName = is_array($variant['item_name']) ? '' :
+                                htmlspecialchars($variant['item_name']);
+                                $itemPrice = $variant['item_price'] ?? 0;
+                                @endphp
+                                @if (!empty($itemName))
+                                <p class="fw-normal">
+                                    {{ $variantName }}: {{ $itemName }}
+                                    @if ($itemPrice > 0)
+                                    ({{ currencyPosition($itemPrice) }})
+                                    @endif
+                                </p>
+                                @endif
+                                @endforeach
+
                                 @endphp
                                 <tr>
                                     <td class="fp__pro_img">
