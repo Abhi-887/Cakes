@@ -82,7 +82,8 @@
                                         </a>
                                         <span>
                                             {{ $product->options->product_size['name'] ?? '' }}
-                                            @if (!empty($product->options->product_size['price']))
+                                            @if (isset($product->options->product_size['price']) &&
+                                            $product->options->product_size['price'] != 0)
                                             ({{ currencyPosition($product->options->product_size['price']) }})
                                             @endif
                                         </span>
@@ -90,7 +91,7 @@
                                             @foreach ($product->options->product_options as $option)
                                             <p class="fw-normal">
                                                 {{ $option['name'] }}
-                                                @if (isset($option['price']) && $option['price'] > 0)
+                                                @if (isset($option['price']) && $option['price'] != 0)
                                                 ({{ currencyPosition($option['price']) }})
                                                 @endif
                                             </p>
@@ -107,7 +108,7 @@
                                             @if (!empty($itemName))
                                             <p class="fw-normal">
                                                 {{ $variantName }}: {{ $itemName }}
-                                                @if ($itemPrice > 0)
+                                                @if ($itemPrice != 0)
                                                 ({{ currencyPosition($itemPrice) }})
                                                 @endif
                                             </p>
@@ -142,6 +143,7 @@
                                                 class="far fa-times"></i></a>
                                     </td>
                                 </tr>
+
                                 @endforeach
 
 
