@@ -25,11 +25,7 @@
                                                                                                     CART VIEW START
                                                                                                 ==============================-->
 
-<pre>
-                    @php
-                        print_r($product);
-                    @endphp
-                    </pre>
+
 <section class="fp__cart_view mt_125 xs_mt_95 mb_100 xs_mb_70">
     <div class="container">
         <div class="row">
@@ -50,6 +46,12 @@
                                 </tr>
 
                                 @foreach (Cart::content() as $product)
+
+                                <pre>
+                                    @php
+                                        print_r($product);
+                                    @endphp
+                                    </pre>
                                 @php
                                 $productTotal = $product->price; // Base product price
 
