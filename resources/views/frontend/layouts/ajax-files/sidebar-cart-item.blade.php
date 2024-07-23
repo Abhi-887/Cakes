@@ -23,23 +23,21 @@ $totalPrice += $cartProductVariant['item_price'] ?? 0;
         </a>
         <p class="size">Qty: {{ $cartProduct->qty }}</p>
 
-        {{-- Uncomment and use if needed
-        @if (!empty($cartProduct->options->product_size))
+        {{-- Uncomment and use if needed --}}
+        {{-- @if (!empty($cartProduct->options->product_size))
         <p class="size">
             {{ htmlspecialchars($cartProduct->options->product_size['name']) }}
             {{ $cartProduct->options->product_size['price'] ? '(' .
             currencyPosition($cartProduct->options->product_size['price']) . ')' : '' }}
         </p>
-        @endif
-        --}}
+        @endif --}}
 
-        {{-- Uncomment and use if needed
-        @foreach ($cartProduct->options->product_options as $cartProductOption)
+        {{-- Uncomment and use if needed --}}
+        {{-- @foreach ($cartProduct->options->product_options as $cartProductOption)
         <span class="extra">
             {{ htmlspecialchars($cartProductOption['name']) }} ({{ currencyPosition($cartProductOption['price']) }})
         </span>
-        @endforeach
-        --}}
+        @endforeach --}}
 
         {{-- @foreach ($cartProduct->options->product_variants as $cartProductVariant)
         @php
@@ -58,7 +56,8 @@ $totalPrice += $cartProductVariant['item_price'] ?? 0;
 
         <p class="price">{{ currencyPosition($totalPrice) }}</p>
     </div>
-    <span class="del_icon" onclick="removeProductFromSidebar('{{ $cartProduct->rowId }}')"><i
-            class="fal fa-times"></i></span>
+    <span class="del_icon" onclick="removeProductFromSidebar('{{ $cartProduct->rowId }}')">
+        <i class="fal fa-times"></i>
+    </span>
 </li>
 @endforeach
