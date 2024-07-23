@@ -71,7 +71,7 @@ class FooterGridThreeController extends Controller
     {
         $request->validate([
             'name' => ['required', 'max:200'],
-            'url' => ['required', 'url'],
+            'url' => ['required'],
             'status' => ['required']
         ]);
 
@@ -112,17 +112,17 @@ class FooterGridThreeController extends Controller
 
     public function changeTitle(Request $request)
     {
-       $request->validate([
-        'title' => ['required', 'max:200']
-       ]);
+        $request->validate([
+            'title' => ['required', 'max:200']
+        ]);
 
-       FooterTitle::updateOrCreate(
-        ['id' => 1],
-        ['footer_grid_three_title' => $request->title]
-       );
+        FooterTitle::updateOrCreate(
+            ['id' => 1],
+            ['footer_grid_three_title' => $request->title]
+        );
 
-       toastr('Updated Successfully', 'success', 'success');
+        toastr('Updated Successfully', 'success', 'success');
 
-       return redirect()->back();
+        return redirect()->back();
     }
 }
