@@ -145,10 +145,7 @@
             </div>
 
 
-            <!-- Google reCAPTCHA widget -->
-            <div class=" form-group mt-3">
-                <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
-            </div>
+
 
             <div class=" mt-4 text-center"><button type="submit" class="common_btn v_submit_button">Submit
                     Application</button></div>
