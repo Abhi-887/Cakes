@@ -1,65 +1,70 @@
 @extends('admin.layouts.master')
 
 @section('content')
-      <!-- Main Content -->
-        <section class="section">
-          <div class="section-header">
-            <h1>Footer</h1>
-          </div>
+<!-- Main Content -->
+<section class="section">
+    <div class="section-header">
+        <h1>Footer</h1>
+    </div>
 
-          <div class="section-body">
+    <div class="section-body">
 
-            <div class="row">
-              <div class="col-12">
+        <div class="row">
+            <div class="col-12">
                 <div class="card">
-                  <div class="card-header">
-                    <h4>Footer Info Two</h4>
+                    <div class="card-header">
+                        <h4>Footer Info Two</h4>
 
-                  </div>
-                  <div class="card-body">
-                    <form action="{{route('admin.footer-info-two.update', 1)}}" method="POST" enctype="multipart/form-data">
-                        @csrf
-                        @method('PUT')
+                    </div>
+                    <div class="card-body">
+                        <form action="{{route('admin.footer-info-two.update', 1)}}" method="POST"
+                            enctype="multipart/form-data">
+                            @csrf
+                            @method('PUT')
 
-                        <div class="row">
-							<div class="col-md-6">
-									<div class="form-group">
-										<label>Footer Info Title</label>
-										<input type="text" class="form-control" name="name" value="{{@$footerInfo->name}}">
-									</div>
-							</div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Footer Info Title</label>
+                                        <input type="text" class="form-control" name="name"
+                                            value="{{@$footerInfo->name}}">
+                                    </div>
+                                </div>
 
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>phone</label>
-                                    <input type="text" class="form-control" name="phone" value="{{@$footerInfo->phone}}">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>phone</label>
+                                        <input type="text" class="form-control" name="phone"
+                                            value="{{@$footerInfo->phone}}">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>email</label>
+                                        <input type="text" class="form-control" name="email"
+                                            value="{{@$footerInfo->email}}">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>email</label>
-                                    <input type="text" class="form-control" name="email" value="{{@$footerInfo->email}}">
-                                </div>
+
+
+                            <div class="form-group">
+                                <label>address</label>
+
+                                <textarea name="address"
+                                    class="form-control summernote">{{@$footerInfo->address }}</textarea>
                             </div>
-                        </div>
 
 
-                        <div class="form-group">
-                            <label>address</label>
-
-                            <textarea name="address"   class="form-control summernote">{{@$footerInfo-> }}</textarea>
-                        </div>
-
-
-                        <button type="submmit" class="btn btn-primary">Update</button>
-                    </form>
-                  </div>
+                            <button type="submmit" class="btn btn-primary">Update</button>
+                        </form>
+                    </div>
 
                 </div>
-              </div>
             </div>
+        </div>
 
-          </div>
-        </section>
+    </div>
+</section>
 
 @endsection

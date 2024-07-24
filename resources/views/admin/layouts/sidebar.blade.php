@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg main-navbar">
-    <form class="form-inline mr-auto">
-        <ul class="navbar-nav mr-3">
+    <form class="mr-auto form-inline">
+        <ul class="mr-3 navbar-nav">
             <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
             <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i
                         class="fas fa-search"></i></a></li>
@@ -9,15 +9,15 @@
     </form>
     <ul class="navbar-nav navbar-right">
         @php
-            $notifications = \App\Models\OrderPlacedNotification::where('seen', 0)->latest()->take(10)->get();
-            $unseenMessages = \App\Models\Chat::where(['receiver_id' => auth()->user()->id, 'seen' => 0])->count();
+        $notifications = \App\Models\OrderPlacedNotification::where('seen', 0)->latest()->take(10)->get();
+        $unseenMessages = \App\Models\Chat::where(['receiver_id' => auth()->user()->id, 'seen' => 0])->count();
         @endphp
         @if (auth()->user()->id === 1)
-            <li class="dropdown dropdown-list-toggle">
-                <a href="{{ route('admin.chat.index') }}" data-toggle="dropdown"
-                    class="nav-link nav-link-lg message-envelope {{ $unseenMessages > 0 ? 'beep' : '' }}"><i
-                        class="far fa-envelope"></i></a>
-            </li>
+        <li class="dropdown dropdown-list-toggle">
+            <a href="{{ route('admin.chat.index') }}" data-toggle="dropdown"
+                class="nav-link nav-link-lg message-envelope {{ $unseenMessages > 0 ? 'beep' : '' }}"><i
+                    class="far fa-envelope"></i></a>
+        </li>
         @endif
 
         <li class="dropdown dropdown-list-toggle"><a href="#" data-toggle="dropdown"
@@ -31,20 +31,20 @@
                 </div>
                 <div class="dropdown-list-content dropdown-list-icons rt_notification">
                     @foreach ($notifications as $notification)
-                        <a href="{{ route('admin.orders.show', $notification->order_id) }}" class="dropdown-item">
-                            <div class="dropdown-item-icon bg-info text-white">
-                                <i class="fas fa-bell"></i>
+                    <a href="{{ route('admin.orders.show', $notification->order_id) }}" class="dropdown-item">
+                        <div class="text-white dropdown-item-icon bg-info">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <div class="dropdown-item-desc">
+                            {{ $notification->message }}
+                            <div class="time">{{ date('h:i A | d-F-Y', strtotime($notification->created_at)) }}
                             </div>
-                            <div class="dropdown-item-desc">
-                                {{ $notification->message }}
-                                <div class="time">{{ date('h:i A | d-F-Y', strtotime($notification->created_at)) }}
-                                </div>
-                            </div>
-                        </a>
+                        </div>
+                    </a>
                     @endforeach
 
                 </div>
-                <div class="dropdown-footer text-center">
+                <div class="text-center dropdown-footer">
                     <a href="{{ route('admin.orders.index') }}">View All <i class="fas fa-chevron-right"></i></a>
                 </div>
             </div>
@@ -52,7 +52,7 @@
 
         <li class="dropdown"><a href="#" data-toggle="dropdown"
                 class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                <img alt="image" src="{{ asset(auth()->user()->avatar) }}" class="rounded-circle mr-1">
+                <img alt="image" src="{{ asset(auth()->user()->avatar) }}" class="mr-1 rounded-circle">
                 <div class="d-sm-none d-lg-inline-block">Hi, {{ auth()->user()->name }}</div>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
@@ -67,10 +67,8 @@
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
 
-                    <a href="#"
-                        onclick="event.preventDefault();
-                    this.closest('form').submit();"
-                        class="dropdown-item has-icon text-danger">
+                    <a href="#" onclick="event.preventDefault();
+                    this.closest('form').submit();" class="dropdown-item has-icon text-danger">
                         <i class="fas fa-sign-out-alt"></i> Logout
                     </a>
                 </form>
@@ -129,23 +127,26 @@
 
 
 
-        <li class="{{ setSidebarActive(['admin.daily-offer.*']) }}">
-            <a class="nav-link" href="{{ route('admin.daily-offer.index') }}"><i class="far fa-clock"></i>
-                <span>Daily Offer</span>
+        <li class="{{ setSidebarActive(['admin.testimonial.*']) }}">
+            <a class="nav-link" href="{{ route('admin.testimonial.index') }}"><i class="far fa-regular fa-message"></i>
+                <span>Testimonial</span>
             </a>
         </li>
+
+
+
         <li class="{{ setSidebarActive(['admin.consultation.*']) }}">
             <a class="nav-link" href="{{ route('admin.consultation.index') }}"><i
                     class="fa-solid fa-business-time"></i></i>
                 <span>Consultation Time</span>
             </a>
         </li>
-        <li class="{{ setSidebarActive(['admin.Weddingcakesdeposit.index']) }}">
+        {{-- <li class="{{ setSidebarActive(['admin.Weddingcakesdeposit.index']) }}">
             <a class="nav-link" href="{{ route('admin.Weddingcakesdeposit.index') }}"><i
                     class="fa-solid fa-bookmark"></i></i>
                 <span>Wedding Booking Schedule </span>
             </a>
-        </li>
+        </li> --}}
         <li class="{{ setSidebarActive(['admin.work-with-us.index']) }}">
             <a class="nav-link" href="{{ route('admin.work-with-us.index') }}"><i
                     class="fa-solid fa-house-laptop"></i></i>
@@ -159,12 +160,9 @@
             </a>
         </li>
 
-        <li class="{{ setSidebarActive(['admin.menus.index']) }}"><a class="nav-link"
-                href="{{ route('admin.menus.index') }}"><i class="fas fa-list-alt"></i>
-                <span>Menus</span></a></li>
 
-        <li
-            class="dropdown {{ setSidebarActive([
+
+        <li class="dropdown {{ setSidebarActive([
                 'admin.orders.index',
                 'admin.pending-orders',
                 'admin.inprocess-orders',
@@ -189,8 +187,7 @@
 
         <li
             class="dropdown {{ setSidebarActive(['admin.category.*', 'admin.product.*', 'admin.product-reviews.index']) }}">
-            <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i
-                    class="fas fa-shopping-cart"></i>
+            <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-shopping-cart"></i>
                 <span>Manage Products </span></a>
             <ul class="dropdown-menu">
                 <li class="{{ setSidebarActive(['admin.category.*']) }}"><a class="nav-link"
@@ -221,7 +218,7 @@
             </ul>
         </li>
 
-        <li class="dropdown {{ setSidebarActive(['admin.reservation-time.*', 'admin.reservation.index']) }}">
+        {{-- <li class="dropdown {{ setSidebarActive(['admin.reservation-time.*', 'admin.reservation.index']) }}">
             <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-chair"></i>
                 <span>Manage Reservations </span></a>
             <ul class="dropdown-menu">
@@ -230,12 +227,12 @@
                 <li class="{{ setSidebarActive(['admin.reservation.index']) }}"><a class="nav-link"
                         href="{{ route('admin.reservation.index') }}">Reservation</a></li>
             </ul>
-        </li>
+        </li> --}}
 
         @if (auth()->user()->id === 1)
-            <li class="{{ setSidebarActive(['admin.chat.index']) }}"><a class="nav-link"
-                    href="{{ route('admin.chat.index') }}"><i class="fas fa-comment-dots"></i>
-                    <span>Messages</span></a></li>
+        <li class="{{ setSidebarActive(['admin.chat.index']) }}"><a class="nav-link"
+                href="{{ route('admin.chat.index') }}"><i class="fas fa-comment-dots"></i>
+                <span>Messages</span></a></li>
         @endif
 
         <li
@@ -254,8 +251,7 @@
         </li>
 
 
-        <li
-            class="dropdown {{ setSidebarActive([
+        <li class="dropdown {{ setSidebarActive([
                 'admin.why-choose-us.*',
                 'admin.banner-slider.*',
                 'admin.chefs.*',
@@ -264,30 +260,10 @@
                 'admin.counter.index',
                 'admin.aboutus.index',
             ]) }}">
-            <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-stream"></i>
-                <span>Sections </span></a>
-            <ul class="dropdown-menu">
-                <li class="{{ setSidebarActive(['admin.why-choose-us.*']) }}"><a class="nav-link"
-                        href="{{ route('admin.why-choose-us.index') }}">Why choose us</a></li>
-                <li class="{{ setSidebarActive(['admin.banner-slider.*']) }}"><a class="nav-link"
-                        href="{{ route('admin.banner-slider.index') }}">Banner Slider</a></li>
-                <li class="{{ setSidebarActive(['admin.chefs.*']) }}"><a class="nav-link"
-                        href="{{ route('admin.chefs.index') }}">Chefs</a></li>
-                <li class="{{ setSidebarActive(['admin.app-download.index']) }}"><a class="nav-link"
-                        href="{{ route('admin.app-download.index') }}">App Download Section</a>
-                </li>
-                <li class="{{ setSidebarActive(['admin.testimonial.*']) }}"><a class="nav-link"
-                        href="{{ route('admin.testimonial.index') }}">Testimonial</a></li>
-                <li class="{{ setSidebarActive(['admin.counter.index']) }}"><a class="nav-link"
-                        href="{{ route('admin.counter.index') }}">Counter</a></li>
-                <li class="{{ setSidebarActive(['admin.aboutus.index']) }}"><a class="nav-link"
-                        href="{{ route('admin.aboutus.index') }}">About Us</a></li>
 
-            </ul>
         </li>
 
-        <li
-            class="dropdown {{ setSidebarActive([
+        <li class="dropdown {{ setSidebarActive([
                 'admin.custom-page-builder.*',
                 'admin.about.index',
                 'admin.trams-and-conditions.index',
@@ -317,8 +293,7 @@
             </ul>
         </li>
 
-        <li
-            class="dropdown {{ setSidebarActive([
+        <li class="dropdown {{ setSidebarActive([
                 'admin.footer-info.index',
                 'admin.footer-info-two.index',
                 'admin.footer-socials.*',
@@ -375,8 +350,8 @@
                 href="{{ route('admin.setting.index') }}"><i class="fas fa-cogs"></i>
                 <span>Settings</span></a></li>
 
-        <li class="{{ setSidebarActive(['admin.clear-database.index*']) }}"><a class="nav-link"
+        {{-- <li class="{{ setSidebarActive(['admin.clear-database.index*']) }}"><a class="nav-link"
                 href="{{ route('admin.clear-database.index') }}"><i class="fas fa-exclamation-triangle"></i>
-                <span>Clear Database</span></a></li>
+                <span>Clear Database</span></a></li> --}}
     </aside>
 </div>
