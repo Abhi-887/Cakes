@@ -95,6 +95,10 @@
         padding: 10px 14px;
         font-size: 16px;
     }
+
+    .fp__menu_item:hover .categorys {
+        top: 59% !important;
+    }
 </style>
 
 <div class="container pt-5">
@@ -133,7 +137,7 @@
                                 <img src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}"
                                     class="img-fluid w-100">
                             </div>
-                            <a class="category bg-light px-2 py-1 fw-semibold"
+                            <a class="category categorys bg-light px-2 py-1 fw-semibold"
                                 href="{{ route('category.show', ['slug' => $product->category->slug]) }}">{{ @$product->category->name }}</a>
                             <div class="fp__menu_item_text">
                                 @if ($product->reviews_avg_rating)
