@@ -97,7 +97,7 @@
     }
 
     .fp__menu_item:hover .categorys {
-        top: 59% !important;
+        top: 69% !important;
     }
 </style>
 
