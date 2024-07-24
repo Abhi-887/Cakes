@@ -135,13 +135,13 @@
             <div class="form-group mt-3">
                 <label for="portfolio" class="mb-2">Examples of Your Work</label>
                 <input type="file" class="form-control-file" id="portfolio" name="portfolio"
-                    accept=".pdf, .bmp, .jpeg, .png">
+                    accept=".pdf">
             </div>
 
             <div class="form-group mt-3">
                 <label for="cv" class="mb-2">Please attach your CV *</label>
                 <input type="file" class="form-control-file" id="cv" name="cv"
-                    accept=".pdf, .bmp, .jpeg, .png" required>
+                    accept=".pdf" required>
             </div>
 
 
