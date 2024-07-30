@@ -1206,7 +1206,7 @@ button {
 }
 
 .fp__menu_item .fp__menu_item_text {
-    border-radius: 10px;
+    border-radius: 0 0 10px 10px;
     background: var(--colorWhite);
     padding: 30px;
     text-align: center;
