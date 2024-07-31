@@ -3,8 +3,9 @@
 namespace App\Traits;
 
 use Illuminate\Http\Request;
-use File;
+use Illuminate\Support\Facades\File;
 use Intervention\Image\ImageManager;
+use Exception;
 
 trait FileUploadTrait
 {
@@ -16,12 +17,13 @@ trait FileUploadTrait
      * @param string|null $oldPath
      * @param string $path
      * @return string|null
+     * @throws Exception
      */
     public function uploadImage(Request $request, string $inputName, string $oldPath = null, string $path = "/uploads"): ?string
     {
-        if ($request->hasFile($inputName)) {
-            // Create an instance of ImageManager
-            $manager = new ImageManager();
+        if ($request->hasFile($inputName) && $request->file($inputName)->isValid()) {
+            // Create an instance of ImageManager with default configuration
+            $manager = new ImageManager(['driver' => 'gd']);
 
             // Get the uploaded image
             $image = $request->file($inputName);
@@ -36,7 +38,9 @@ trait FileUploadTrait
             // Create the directory if it doesn't exist
             $directoryPath = public_path($path);
             if (!File::exists($directoryPath)) {
-                File::makeDirectory($directoryPath, 0755, true);
+                if (!File::makeDirectory($directoryPath, 0755, true)) {
+                    throw new Exception("Failed to create directory: " . $directoryPath);
+                }
             }
 
             // Save the resized image
@@ -58,12 +62,15 @@ trait FileUploadTrait
      *
      * @param string $path
      * @return void
+     * @throws Exception
      */
     public function removeImage(string $path): void
     {
         $fullPath = public_path($path);
         if (File::exists($fullPath)) {
-            File::delete($fullPath);
+            if (!File::delete($fullPath)) {
+                throw new Exception("Failed to delete file: " . $fullPath);
+            }
         }
     }
 }
