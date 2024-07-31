@@ -26,7 +26,9 @@ use App\Http\Controllers\CaptchaController;
 use App\Http\Controllers\Frontend\CustomerfeedbackController;
 
 Route::get('/admin/subcategories/{categoryId}', [ProductController::class, 'getSubcategories'])->name('admin.subcategories');
-
+Route::get('/uploads/{path}', function ($path) {
+    return response()->file(public_path('uploads/' . $path));
+})->where('path', '.*')->middleware('resize.image');
 /*
 |--------------------------------------------------------------------------
 | Web Routes
