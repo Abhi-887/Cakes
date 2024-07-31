@@ -3,50 +3,32 @@
 namespace App\Traits;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
+use File;
 use Intervention\Image\ImageManager;
-use Exception;
+use Intervention\Image\Drivers\Gd\Driver;
 
 trait FileUploadTrait
 {
-    /**
-     * Upload and resize an image
-     *
-     * @param Request $request
-     * @param string $inputName
-     * @param string|null $oldPath
-     * @param string $path
-     * @return string|null
-     * @throws Exception
-     */
-    public function uploadImage(Request $request, string $inputName, string $oldPath = null, string $path = "/uploads"): ?string
+    function uploadImage(Request $request, $inputName, $oldPath = NULL, $path = "/uploads")
     {
-        if ($request->hasFile($inputName) && $request->file($inputName)->isValid()) {
-            // Create an instance of ImageManager with default configuration
-            $manager = new ImageManager(['driver' => 'gd']);
-
-            // Get the uploaded image
-            $image = $request->file($inputName);
-            $ext = $image->getClientOriginalExtension();
+        if ($request->hasFile($inputName)) {
+            $imageFile = $request->file($inputName);
+            $ext = $imageFile->getClientOriginalExtension();
             $imageName = 'media_' . uniqid() . '.' . $ext;
 
-            // Resize the image to 300px width while maintaining aspect ratio
-            $resizedImage = $manager->make($image)->resize(300, null, function ($constraint) {
-                $constraint->aspectRatio();
-            });
+            // Create image manager with GD driver
+            $manager = new ImageManager(new Driver());
 
-            // Create the directory if it doesn't exist
-            $directoryPath = public_path($path);
-            if (!File::exists($directoryPath)) {
-                if (!File::makeDirectory($directoryPath, 0755, true)) {
-                    throw new Exception("Failed to create directory: " . $directoryPath);
-                }
-            }
+            // Read image from uploaded file
+            $image = $manager->read($imageFile->getPathname());
 
-            // Save the resized image
-            $resizedImage->save($directoryPath . '/' . $imageName);
+            // Resize image proportionally to 800px width
+            $image->scale(width: 800);
 
-            // Delete previous file if it exists
+            // Save modified image to public path
+            $image->save(public_path($path . '/' . $imageName));
+
+            // Delete previous file if exists
             if ($oldPath && File::exists(public_path($oldPath))) {
                 File::delete(public_path($oldPath));
             }
@@ -54,23 +36,16 @@ trait FileUploadTrait
             return $path . '/' . $imageName;
         }
 
-        return null;
+        return NULL;
     }
 
     /**
-     * Remove a file
-     *
-     * @param string $path
-     * @return void
-     * @throws Exception
+     * Remove file
      */
-    public function removeImage(string $path): void
+    function removeImage(string $path): void
     {
-        $fullPath = public_path($path);
-        if (File::exists($fullPath)) {
-            if (!File::delete($fullPath)) {
-                throw new Exception("Failed to delete file: " . $fullPath);
-            }
+        if (File::exists(public_path($path))) {
+            File::delete(public_path($path));
         }
     }
 }
