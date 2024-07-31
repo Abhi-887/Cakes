@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use Intervention\Image\ImageManager;
 use Illuminate\Support\Facades\File;
 use Symfony\Component\HttpFoundation\StreamedResponse;
-use Intervention\Image\Drivers\Gd\Driver;
 
 class ResizeImageMiddleware
 {
@@ -36,7 +35,10 @@ class ResizeImageMiddleware
             $image = $this->imageManager->make($imagePath);
 
             // Resize image
-            $image->scale(['width' => $width]);
+            $image->resize($width, null, function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            });
 
             // Stream the response
             return new StreamedResponse(function () use ($image) {
