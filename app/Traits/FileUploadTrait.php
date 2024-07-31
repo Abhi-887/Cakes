@@ -17,7 +17,7 @@ trait FileUploadTrait
             $imageName = 'media_' . uniqid() . '.' . $ext;
 
             // Create image manager with GD driver
-            $manager = new ImageManager(new Driver());
+            $manager = new ImageManager(array('driver' => 'gd'));
 
             // Read image from uploaded file
             $image = $manager->make($imageFile->getPathname());
