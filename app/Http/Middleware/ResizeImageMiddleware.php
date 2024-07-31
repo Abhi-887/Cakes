@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Intervention\Image\ImageManager;
 use Illuminate\Support\Facades\File;
 use Symfony\Component\HttpFoundation\StreamedResponse;
+use Illuminate\Support\Facades\Log;
 use Intervention\Image\Drivers\Gd\Driver as GdDriver;
 
 class ResizeImageMiddleware
@@ -28,29 +29,41 @@ class ResizeImageMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
+        Log::info('Request path: ' . $request->path());
+
         $response = $next($request);
 
         // Check if the requested file is an image and exists
         if ($this->isImageRequest($request) && File::exists(public_path($request->path()))) {
+            Log::info('Image request detected and file exists: ' . $request->path());
+
             $imagePath = public_path($request->path());
-            $image = $this->imageManager->make($imagePath);
 
-            // Resize image
-            $image->resize(300, null, function ($constraint) {
-                $constraint->aspectRatio();
-                $constraint->upsize();
-            });
+            try {
+                $image = $this->imageManager->make($imagePath);
 
-            // Compress the image (quality 75 out of 100)
-            $image->encode('jpg', 75);
+                // Resize image
+                $image->resize(300, null, function ($constraint) {
+                    $constraint->aspectRatio();
+                    $constraint->upsize();
+                });
 
-            // Save the compressed image
-            $image->save($imagePath);
+                // Compress the image (quality 75 out of 100)
+                $image->encode('jpg', 75);
 
-            // Stream the response
-            return new StreamedResponse(function () use ($image) {
-                echo $image->encode();
-            }, 200, ['Content-Type' => $image->mime()]);
+                // Save the compressed image
+                $image->save($imagePath);
+
+                Log::info('Image resized and saved: ' . $imagePath);
+
+                // Stream the response
+                return new StreamedResponse(function () use ($image) {
+                    echo $image->encode();
+                }, 200, ['Content-Type' => $image->mime()]);
+            } catch (\Exception $e) {
+                Log::error('Error processing image: ' . $e->getMessage());
+                return response()->file($imagePath);
+            }
         }
 
         return $response;
