@@ -15,7 +15,7 @@ class ResizeImageMiddleware
 
     public function __construct()
     {
-        // Create image manager instance directly with 'gd' driver
+        // Create image manager instance with 'gd' driver
         $this->imageManager = new ImageManager(new GdDriver());
     }
 
@@ -40,6 +40,12 @@ class ResizeImageMiddleware
                 $constraint->aspectRatio();
                 $constraint->upsize();
             });
+
+            // Compress the image (quality 75 out of 100)
+            $image->encode('jpg', 75);
+
+            // Save the compressed image
+            $image->save($imagePath);
 
             // Stream the response
             return new StreamedResponse(function () use ($image) {
