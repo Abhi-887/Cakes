@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Intervention\Image\ImageManager;
 use Illuminate\Support\Facades\File;
 use Symfony\Component\HttpFoundation\StreamedResponse;
+use Intervention\Image\Drivers\Gd\Driver;
 
 class ResizeImageMiddleware
 {
@@ -14,7 +15,7 @@ class ResizeImageMiddleware
 
     public function __construct()
     {
-        // Create image manager instance
+        // Create image manager instance with 'gd' driver as a string
         $this->imageManager = new ImageManager(['driver' => 'gd']);
     }
 
@@ -35,7 +36,7 @@ class ResizeImageMiddleware
             $image = $this->imageManager->make($imagePath);
 
             // Resize image
-            $image->scale(width: $width);
+            $image->scale(['width' => $width]);
 
             // Stream the response
             return new StreamedResponse(function () use ($image) {
