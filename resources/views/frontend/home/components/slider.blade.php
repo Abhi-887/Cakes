@@ -11,7 +11,7 @@
                     <div class="container width_Global">
                         <div class="row h-100 align-items-center">
                             <img src="{{ asset($slider->image) }}" class="d-block img-fluid front_image" alt="">
-                            {{-- <h2>{{ $slider->title }}</h2> --}}
+                            <h2>{{ $slider->title }}</h2>
                             {{-- <a class="mt-4" href="{{ $slider->button_link }}">{{ $slider->button_link }}</a> --}}
                         </div>
                     </div>

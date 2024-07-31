@@ -4,7 +4,7 @@ namespace App\Traits;
 
 use Illuminate\Http\Request;
 use File;
-use Intervention\Image\Facades\Image;
+use Intervention\Image\ImageManager;
 
 trait FileUploadTrait
 {
@@ -17,26 +17,30 @@ trait FileUploadTrait
      * @param string $path
      * @return string|null
      */
-    function uploadImage(Request $request, string $inputName, string $oldPath = null, string $path = "/uploads"): ?string
+    public function uploadImage(Request $request, string $inputName, string $oldPath = null, string $path = "/uploads"): ?string
     {
         if ($request->hasFile($inputName)) {
+            // Create an instance of ImageManager
+            $manager = new ImageManager();
 
+            // Get the uploaded image
             $image = $request->file($inputName);
             $ext = $image->getClientOriginalExtension();
             $imageName = 'media_' . uniqid() . '.' . $ext;
 
-            // Resize the image to 300x300
-            $resizedImage = Image::make($image)->resize(300, 300, function ($constraint) {
+            // Resize the image to 300px width while maintaining aspect ratio
+            $resizedImage = $manager->make($image)->resize(300, null, function ($constraint) {
                 $constraint->aspectRatio();
             });
 
             // Create the directory if it doesn't exist
-            if (!File::exists(public_path($path))) {
-                File::makeDirectory(public_path($path), 0755, true);
+            $directoryPath = public_path($path);
+            if (!File::exists($directoryPath)) {
+                File::makeDirectory($directoryPath, 0755, true);
             }
 
             // Save the resized image
-            $resizedImage->save(public_path($path . '/' . $imageName));
+            $resizedImage->save($directoryPath . '/' . $imageName);
 
             // Delete previous file if it exists
             if ($oldPath && File::exists(public_path($oldPath))) {
@@ -55,10 +59,11 @@ trait FileUploadTrait
      * @param string $path
      * @return void
      */
-    function removeImage(string $path): void
+    public function removeImage(string $path): void
     {
-        if (File::exists(public_path($path))) {
-            File::delete(public_path($path));
+        $fullPath = public_path($path);
+        if (File::exists($fullPath)) {
+            File::delete($fullPath);
         }
     }
 }
