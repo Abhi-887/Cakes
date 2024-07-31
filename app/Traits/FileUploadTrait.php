@@ -20,10 +20,10 @@ trait FileUploadTrait
             $manager = new ImageManager(array('driver' => 'gd'));
 
             // Read image from uploaded file
-            $image = $manager->make($imageFile->getPathname());
+            $image = $manager->read($imageFile->getPathname());
 
-            // Compress image
-            $image->encode($ext, 75); // 75 is the quality percentage
+            // Resize image proportionally to 800px width
+            $image->scale(width: 300);
 
             // Save modified image to public path
             $image->save(public_path($path . '/' . $imageName));
