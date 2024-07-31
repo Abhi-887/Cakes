@@ -161,9 +161,9 @@
                                     @endif
                                 </p>
                                 <ul class="d-flex flex-wrap justify-content-center">
-                                    <li><a class="background-light-gray" href="javascript:;"
+                                    {{-- <li><a class="background-light-gray" href="javascript:;"
                                             onclick="loadProductModal('{{ $product->id }}')"><i
-                                                class="fas fa-shopping-basket"></i></a></li>
+                                                class="fas fa-shopping-basket"></i></a></li> --}}
                                     <li onclick="addToWishlist('{{ $product->id }}')"><a class="background-light-gray"
                                             href="javascript:;"><i class="fal fa-heart"></i></a></li>
                                     <li><a class="background-light-gray"
