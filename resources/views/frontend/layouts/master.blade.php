@@ -29,8 +29,9 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/custom.css') }}">
     <link rel="icon" href="{{ asset('uploads/favicon.png') }}" type="image/x-icon">
 
-        <script src="https://www.google.com/recaptcha/enterprise.js?render=6LfFixUqAAAAACmWba-9CvlGo4ieeAU2wHhtI-eI"></script>
-        <!-- Your code -->
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LfFixUqAAAAACmWba-9CvlGo4ieeAU2wHhtI-eI">
+    </script>
+    <!-- Your code -->
 
     {{-- <style>
         :root {
@@ -98,10 +99,10 @@
             <div class="py-2 row align-items-center">
                 <div class="m-0 col-md-7">
                     <div class="row">
-                        <div class="col-md-auto col-6">
+                        <div class="col-md-auto col-12">
                             <h6><b>Edinburgh:</b> 0131 337 9990 </h6>
                         </div>
-                        <div class="col-md-auto col-6 text-end">
+                        <div class="col-md-auto col-6 text-start">
                             <h6 class="text-end text-md-start"><b>Glasgow:</b> 0141 378 0027</h6>
                         </div>
                     </div>
@@ -255,7 +256,7 @@
     }
 });
     </script>
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <!-- show dynamic validation message-->
     <script>
         toastr.options.progressBar = true;
