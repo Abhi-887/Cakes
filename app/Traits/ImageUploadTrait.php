@@ -23,7 +23,7 @@ trait ImageUploadTrait
             $image = $manager->read($imageFile->getPathname());
 
             // Resize image proportionally to 300px width
-            $image->scale(width: 300);
+            $image->scale(width: 800);
 
             // Save modified image to public path
             $image->save(public_path($path . '/' . $imageName));
