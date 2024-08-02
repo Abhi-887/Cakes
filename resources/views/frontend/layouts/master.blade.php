@@ -29,8 +29,7 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/custom.css') }}">
     <link rel="icon" href="{{ asset('uploads/favicon.png') }}" type="image/x-icon">
 
-    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LfFixUqAAAAACmWba-9CvlGo4ieeAU2wHhtI-eI">
-    </script>
+    <script src="https://www.google.com/recaptcha/enterprise.js?render=6LfFixUqAAAAACmWba-9CvlGo4ieeAU2wHhtI-eI"></script>
     <!-- Your code -->
 
     {{-- <style>
@@ -99,10 +98,10 @@
             <div class="py-2 row align-items-center">
                 <div class="m-0 col-md-7">
                     <div class="row">
-                        <div class="col-md-auto col-12">
+                        <div class="text-center col-md-auto col-12">
                             <h6><b>Edinburgh:</b> 0131 337 9990 </h6>
                         </div>
-                        <div class="col-md-auto col-12 text-start">
+                        <div class="text-center col-md-auto col-12 text-start">
                             <h6 class="text-start text-sm-end text-md-start"><b>Glasgow:</b> 0141 378 0027</h6>
                         </div>
                     </div>
@@ -226,35 +225,37 @@
 
     <script>
         grecaptcha.ready(function() {
-            grecaptcha.execute('{{ env('RECAPTCHA_SITE_KEY') }}', {action: 'submit'}).then(function(token) {
+            grecaptcha.execute('{{ env('RECAPTCHA_SITE_KEY') }}', {
+                action: 'submit'
+            }).then(function(token) {
                 document.getElementById('g-recaptcha-response').value = token;
             });
         });
 
 
         document.addEventListener('DOMContentLoaded', (event) => {
-    const quoteForm = document.getElementById('quote-form');
+            const quoteForm = document.getElementById('quote-form');
 
-    quoteForm.addEventListener('submit', function(event) {
-        // Validate the form
-        if (!validateForm()) {
-            event.preventDefault(); // Prevent form submission
-        }
-    });
+            quoteForm.addEventListener('submit', function(event) {
+                // Validate the form
+                if (!validateForm()) {
+                    event.preventDefault(); // Prevent form submission
+                }
+            });
 
-    function validateForm() {
-        // Check if reCAPTCHA is filled
-        if (grecaptcha.getResponse() === "") {
-            alert("Please fill out the reCAPTCHA.");
-            return false;
-        }
+            function validateForm() {
+                // Check if reCAPTCHA is filled
+                if (grecaptcha.getResponse() === "") {
+                    alert("Please fill out the reCAPTCHA.");
+                    return false;
+                }
 
-        // Add more validation checks if necessary
-        // For example, check if other fields are filled out correctly
+                // Add more validation checks if necessary
+                // For example, check if other fields are filled out correctly
 
-        return true;
-    }
-});
+                return true;
+            }
+        });
     </script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <!-- show dynamic validation message-->
