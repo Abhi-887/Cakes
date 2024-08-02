@@ -13,13 +13,48 @@
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>{{ config('settings.seo_title') }}</title>
     <link rel="icon" type="image/png" href="{{ asset(config('settings.favicon')) }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/spacing.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/slick.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/nice-select.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/venobox.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/animate.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/jquery.exzoom.css') }}">
 
-    <!-- Load CSS from CDN where possible -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/toastr.min.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/custom.css') }}">
+    <link rel="icon" href="{{ asset('uploads/favicon.png') }}" type="image/x-icon">
 
     <script src="https://www.google.com/recaptcha/enterprise.js?render=6LfFixUqAAAAACmWba-9CvlGo4ieeAU2wHhtI-eI"></script>
+    <!-- Your code -->
+
+    {{-- <style>
+        :root {
+            --colorPrimary: {
+                    {
+                    config('settings.site_color')
+                }
+            }
+
+            ;
+        }
+
+        .main_logo3dcake {
+            width: 34% !important;
+        }
+
+        .header-top {
+            background: #8badbd70;
+        }
+
+        .wrapper {
+            max-width: 1500px;
+        }
+    </style> --}}
 
     <script>
         var pusherKey = "{{ config('settings.pusher_key') }}";
@@ -28,6 +63,7 @@
     </script>
 
     @vite(['resources/js/app.js', 'resources/js/frontend.js'])
+    <!-- <link rel="stylesheet" href="css/rtl.css"> -->
 </head>
 
 <body>
@@ -36,7 +72,6 @@
             <span class="loader"></span>
         </div>
     </div>
-
     <!--=============================
         Cart Popup Modal Start
     ==============================-->
@@ -44,7 +79,9 @@
         <div class="modal fade" id="cartModal" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
-                    <div class="modal-body load_product_modal_body"></div>
+                    <div class="modal-body load_product_modal_body">
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -71,8 +108,8 @@
                 </div>
                 <div class="col-md-5">
                     <ul class="m-0 text-uppercase d-none d-md-flex d-lg-flex justify-content-end">
-                        <li class="pe-3"><a class="text-decoration-none black text-dark" href="/login">My Account</a>
-                        </li>
+                        <li class="pe-3"><a class="text-decoration-none black text-dark" href="/login">My
+                                Account</a></li>
                         <li class="pe-3"><a class="text-decoration-none black text-dark" href="/">My
                                 Wishlist</a></li>
                         <li class=""><a class="text-decoration-none black text-dark" href="/admin/dashboard">Log
@@ -80,12 +117,45 @@
                     </ul>
                 </div>
             </div>
+            {{-- <div class="px-5 mt-5 row d-md-none d-lg-none">
+                <div class="p-0 col-6 text-end">
+                    <div class="dropdown">
+                        <button class="bg-black btn btn-secondary rounded-0 dropdown-toggle w-100 menu-btn"
+                            type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img class="menu-icon" src="image/menu(1).png" alt="">
+                        </button>
+                        <ul class="p-0 dropdown-menu slider w-75">
+                            <li><a class="dropdown-item" href="#">MY ACCOUNT</a></li>
+                            <li><a class="dropdown-item" href="#">MY WISHLIST</a></li>
+                            <li><a class="dropdown-item" href="#">LOG IN</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <p>hello</p>
+
+                <div class="p-0 col-6">
+                    <div class="dropdown">
+                        <button class="bg-black btn btn-secondary rounded-0 dropdown-toggle w-100" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="false"><img class="p-1 menu-icon1 "
+                                src="image/cart.png" alt=""></button>
+
+                        <ul class="p-0 dropdown-menu">
+                            <li class="px-3 py-1"><a class="p-0 dropdown-item" href="#">You have no
+                                    items in your</a>
+                            </li>
+                            <li class="px-3 py-1"><a class="p-0 dropdown-item" href="#">shopping
+                                    cart.</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div> --}}
         </section>
     </div>
 
     <!--=============================
         TOPBAR END
     ==============================-->
+
 
     <!--=============================
         MENU START
@@ -95,7 +165,9 @@
         MENU END
     ==============================-->
 
+
     @yield('content')
+
 
     <!--=============================
         FOOTER START
@@ -104,6 +176,7 @@
     <!--=============================
         FOOTER END
     ==============================-->
+
 
     <!--=============================
         SCROLL BUTTON START
@@ -115,12 +188,40 @@
         SCROLL BUTTON END
     ==============================-->
 
+
     <!--jquery library js-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{{ asset('frontend/js/jquery-3.6.0.min.js') }}"></script>
     <!--bootstrap js-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
-    <!-- main/custom js -->
-    <script src="{{ mix('js/main.js') }}"></script>
+    <script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}"></script>
+    <!--font-awesome js-->
+    <script src="{{ asset('frontend/js/Font-Awesome.js') }}"></script>
+    <!-- slick slider -->
+    <script src="{{ asset('frontend/js/slick.min.js') }}"></script>
+    <!-- isotop js -->
+    <script src="{{ asset('frontend/js/isotope.pkgd.min.js') }}"></script>
+    <!-- simplyCountdownjs -->
+    <script src="{{ asset('frontend/js/simplyCountdown.js') }}"></script>
+    <!-- counter up js -->
+    <script src="{{ asset('frontend/js/jquery.waypoints.min.js') }}"></script>
+    <script src="{{ asset('frontend/js/jquery.countup.min.js') }}"></script>
+    <!-- nice select js -->
+    <script src="{{ asset('frontend/js/jquery.nice-select.min.js') }}"></script>
+    <!-- venobox js -->
+    <script src="{{ asset('frontend/js/venobox.min.js') }}"></script>
+    <!-- sticky sidebar js -->
+    <script src="{{ asset('frontend/js/sticky_sidebar.js') }}"></script>
+    <!-- wow js -->
+    <script src="{{ asset('frontend/js/wow.min.js') }}"></script>
+    <!-- ex zoom js -->
+    <script src="{{ asset('frontend/js/jquery.exzoom.js') }}"></script>
+
+    <script src="{{ asset('frontend/js/toastr.min.js') }}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!--main/custom js-->
+    <script src="{{ asset('frontend/js/main.js') }}"></script>
+
 
     <script>
         grecaptcha.ready(function() {
@@ -131,25 +232,33 @@
             });
         });
 
+
         document.addEventListener('DOMContentLoaded', (event) => {
             const quoteForm = document.getElementById('quote-form');
 
             quoteForm.addEventListener('submit', function(event) {
+                // Validate the form
                 if (!validateForm()) {
-                    event.preventDefault();
+                    event.preventDefault(); // Prevent form submission
                 }
             });
 
             function validateForm() {
+                // Check if reCAPTCHA is filled
                 if (grecaptcha.getResponse() === "") {
                     alert("Please fill out the reCAPTCHA.");
                     return false;
                 }
+
+                // Add more validation checks if necessary
+                // For example, check if other fields are filled out correctly
+
                 return true;
             }
         });
     </script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- show dynamic validation message-->
     <script>
         toastr.options.progressBar = true;
 
@@ -159,6 +268,7 @@
             @endforeach
         @endif
 
+        // Set csrf at ajax header
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
