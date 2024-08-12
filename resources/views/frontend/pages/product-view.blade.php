@@ -123,7 +123,7 @@
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-lg-5 wow fadeInUp" data-wow-duration="1s">
-                    {{-- <div class="hidden exzoom" id="exzoom">
+                    <div class="hidden exzoom" id="exzoom">
                         <div class="exzoom_img_box fp__menu_details_images">
                             <ul class="exzoom_img_ul">
                                 <li><img class="zoom img-fluid" src="{{ asset($product->thumb_image) }}" alt="product">
@@ -143,53 +143,13 @@
                             <a href="javascript:void(0);" class="exzoom_next_btn"> <i class="far fa-chevron-right"></i>
                             </a>
                         </p>
-                    </div> --}}
-
-                    <div class="zoom-left">
-                        <img style="border:1px solid #e8e8e6;" id="zoom_03" src="{{ asset($product->thumb_image) }}"
-                            data-zoom-image="{{ asset($product->thumb_image) }}" width="411" />
-
-                        <div class="clearfix"></div>
-
-                        <a id="prev"> Previous </a>
-                        <a id="next"> Next </a>
-
-                        <div class="clearfix"></div>
-
-                        <div id="gallery_01" style="width="500px; float:left;">
-                            <a href="#" class="elevatezoom-gallery active"
-                                data-image="{{ asset($product->thumb_image) }}"
-                                data-zoom-image="{{ asset($product->thumb_image) }}">
-                                <img src="{{ asset($product->thumb_image) }}" width="100" />
-                            </a>
-
-                            @foreach ($product->productImages as $image)
-                                <a href="#" class="elevatezoom-gallery" data-image="{{ asset($image->image) }}"
-                                    data-zoom-image="{{ asset($image->image) }}">
-                                    <img src="{{ asset($image->image) }}" width="100" />
-                                </a>
-                            @endforeach
-                        </div>
                     </div>
-                    {{--
-                    <div class="col-lg-5 wow fadeInUp" data-wow-duration="1s">
-                        <div class="product-gallery">
-                            <div class="zoom-container">
-                                <img id="zoomImage" src="{{ asset($product->thumb_image) }}"
-                                    data-zoom-image="{{ asset($product->thumb_image) }}" alt="product">
-                            </div>
-                            <div class="thumbnail-gallery">
-                                <img src="{{ asset($product->thumb_image) }}" alt="product thumbnail"
-                                    data-image="{{ asset($product->thumb_image) }}"
-                                    data-zoom-image="{{ asset($product->thumb_image) }}">
-                                @foreach ($product->productImages as $image)
-                                    <img src="{{ asset($image->image) }}" alt="product thumbnail"
-                                        data-image="{{ asset($image->image) }}"
-                                        data-zoom-image="{{ asset($image->image) }}">
-                                @endforeach
-                            </div>
-                        </div>
-                    </div> --}}
+
+
+                    
+
+                    
+                
 
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-duration="1s">
@@ -614,6 +574,9 @@
 @push('scripts')
     <script src="https://www.elevateweb.co.uk/wp-content/themes/radial/jquery.elevatezoom.min.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+   
        <script>
        
         $(document).ready(function() {
