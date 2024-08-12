@@ -613,7 +613,9 @@
 
 @push('scripts')
     <script src="https://www.elevateweb.co.uk/wp-content/themes/radial/jquery.elevatezoom.min.js"></script>
-    <script>
+
+       <script>
+       
         $(document).ready(function() {
             // Initialize ElevateZoom on the main image
             $("#zoom_03").elevateZoom({
