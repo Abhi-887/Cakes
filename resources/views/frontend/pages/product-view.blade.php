@@ -119,7 +119,7 @@
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-lg-5 wow fadeInUp" data-wow-duration="1s">
-                    <div class="hidden exzoom" id="exzoom">
+                    {{-- <div class="hidden exzoom" id="exzoom">
                         <div class="exzoom_img_box fp__menu_details_images">
                             <ul class="exzoom_img_ul">
                                 <li><img class="zoom img-fluid" src="{{ asset($product->thumb_image) }}" alt="product">
@@ -139,7 +139,7 @@
                             <a href="javascript:void(0);" class="exzoom_next_btn"> <i class="far fa-chevron-right"></i>
                             </a>
                         </p>
-                    </div>
+                    </div> --}}
                     <div class="col-lg-5 wow fadeInUp" data-wow-duration="1s">
                         <div class="product-gallery">
                             <div class="zoom-container">
@@ -283,8 +283,7 @@
 
                                                     @case('field')
                                                         <div class="mt-2 fp__contact_form_input form-group">
-                                                            <span><i class="far fa-solid fa-keyboard"
-                                                                    aria-hidden="true"></i></span>
+                                                            <span><i class="far fa-solid fa-keyboard" aria-hidden="true"></i></span>
                                                             <input type="text" name="variants_items[{{ $variant->id }}]"
                                                                 class="form-control" placeholder="Enter {{ $variant->name }}"
                                                                 {{ $variant->isrequired ? 'required' : '' }}>
