@@ -39,6 +39,11 @@ h6 {
     color: var(--colorBlack);
 }
 
+
+.custom-container {
+    max-width: 1200px;
+  }
+
 body {
     overflow-x: hidden;
     scroll-behavior: smooth;
