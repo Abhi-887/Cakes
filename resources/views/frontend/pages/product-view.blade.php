@@ -81,20 +81,24 @@
             z-index: 1;
         }
 
-        .zoom-container {
-            position: relative;
+        /* Set a border on the images to prevent shifting */
+        #gallery_01 img {
+            border: 2px solid white;
         }
 
-        .thumbnail-gallery {
-            display: flex;
-            margin-top: 10px;
+        /* Change the border color for the active image */
+        .active img {
+            border: 2px solid #333 !important;
         }
 
-        .thumbnail-gallery img {
-            cursor: pointer;
-            margin-right: 5px;
-            width: 60px;
-            /* Adjust size as needed */
+        .clearfix {
+            display: block;
+            width: 100%;
+            float: left;
+        }
+
+        .zoom-left {
+            max-width: 412px;
         }
     </style>
     <!--============================= BREADCRUMB START ==============================-->
@@ -140,6 +144,34 @@
                             </a>
                         </p>
                     </div> --}}
+
+                    <div class="zoom-left">
+                        <img style="border:1px solid #e8e8e6;" id="zoom_03" src="{{ asset($product->thumb_image) }}"
+                            data-zoom-image="{{ asset($product->thumb_image) }}" width="411" />
+
+                        <div class="clearfix"></div>
+
+                        <a id="prev"> Previous </a>
+                        <a id="next"> Next </a>
+
+                        <div class="clearfix"></div>
+
+                        <div id="gallery_01" style="width="500px; float:left;">
+                            <a href="#" class="elevatezoom-gallery active"
+                                data-image="{{ asset($product->thumb_image) }}"
+                                data-zoom-image="{{ asset($product->thumb_image) }}">
+                                <img src="{{ asset($product->thumb_image) }}" width="100" />
+                            </a>
+
+                            @foreach ($product->productImages as $image)
+                                <a href="#" class="elevatezoom-gallery" data-image="{{ asset($image->image) }}"
+                                    data-zoom-image="{{ asset($image->image) }}">
+                                    <img src="{{ asset($image->image) }}" width="100" />
+                                </a>
+                            @endforeach
+                        </div>
+                    </div>
+                    {{--
                     <div class="col-lg-5 wow fadeInUp" data-wow-duration="1s">
                         <div class="product-gallery">
                             <div class="zoom-container">
@@ -157,7 +189,7 @@
                                 @endforeach
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-duration="1s">
@@ -283,7 +315,8 @@
 
                                                     @case('field')
                                                         <div class="mt-2 fp__contact_form_input form-group">
-                                                            <span><i class="far fa-solid fa-keyboard" aria-hidden="true"></i></span>
+                                                            <span><i class="far fa-solid fa-keyboard"
+                                                                    aria-hidden="true"></i></span>
                                                             <input type="text" name="variants_items[{{ $variant->id }}]"
                                                                 class="form-control" placeholder="Enter {{ $variant->name }}"
                                                                 {{ $variant->isrequired ? 'required' : '' }}>
@@ -579,27 +612,28 @@
 @endsection
 
 @push('scripts')
-    <script src="https://cdn.jsdelivr.net/npm/jquery.elevatezoom@3.0.8/jquery.elevateZoom.min.js"></script>
+    <script src="https://www.elevateweb.co.uk/wp-content/themes/radial/jquery.elevatezoom.min.js"></script>
     <script>
         $(document).ready(function() {
             // Initialize ElevateZoom on the main image
-            $('#zoomImage').elevateZoom({
-                zoomType: "lens",
-                lensShape: "round",
-                lensSize: 200,
-                borderSize: 2
+            $("#zoom_03").elevateZoom({
+                gallery: 'gallery_01',
+                cursor: 'pointer',
+                easing: true,
+                galleryActiveClass: 'active',
+                imageCrossfade: true,
+                loadingIcon: 'https://www.elevateweb.co.uk/spinner.gif'
             });
 
-            // Change the main image when a thumbnail is clicked
-            $('.thumbnail-gallery img').on('click', function() {
-                var newSrc = $(this).data('image');
-                var newZoomSrc = $(this).data('zoom-image');
-                $('#zoomImage').attr('src', newSrc);
-                $('#zoomImage').data('zoom-image', newZoomSrc);
-                $('#zoomImage').elevateZoom('refresh');
+            // Bind the click event for Fancybox
+            $("#zoom_03").bind("click", function(e) {
+                var ez = $('#zoom_03').data('elevateZoom');
+                $.fancybox(ez.getGalleryList());
+                return false;
             });
         });
     </script>
+
     <script>
         $(document).ready(function() {
             // Initial setup
