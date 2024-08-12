@@ -10,14 +10,14 @@
 @endsection
 
 @section('content')
-    <pre>
+    {{-- <pre>
 @php
     print_r($blog);
 @endphp
-</pre>
+</pre> --}}
     <!--=============================
-                                                        BREADCRUMB START
-                                                    ==============================-->
+                                                                            BREADCRUMB START
+                                                                        ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay py-5">
             <div class="container py-md-5 py-2">
@@ -32,13 +32,13 @@
         </div>
     </section>
     <!--=============================
-                                                        BREADCRUMB END
-                                                    ==============================-->
+                                                                            BREADCRUMB END
+                                                                        ==============================-->
 
 
     <!--=========================
-                                                        BLOG DETAILS START
-                                                    ==========================-->
+                                                                            BLOG DETAILS START
+                                                                        ==========================-->
     <section class="fp__blog_details mt_120 xs_mt_90 mb_100 xs_mb_70">
         <div class="container">
             <div class="row">
@@ -50,7 +50,7 @@
                         <div class="fp__blog_details_text wow fadeInUp" data-wow-duration="1s">
                             <ul class="details_bloger d-flex flex-wrap">
                                 <li><i class="far fa-user"></i> By {{ $blog->user->name }}</li>
-                                <li><i class="far fa-comment-alt-lines"></i> {{ $blog->comments_count }} Comments</li>
+                                <li><i class="far fa-comment-alt-lines"></i> {{ count($comments) }} Comments</li>
                                 <li><i class="far fa-calendar-alt"></i> {{ date('d m Y', strtotime($blog->created_at)) }}
                                 </li>
                             </ul>
@@ -191,6 +191,6 @@
         </div>
     </section>
     <!--=========================
-                                                        BLOG DETAILS END
-                                                    ==========================-->
+                                                                            BLOG DETAILS END
+                                                                        ==========================-->
 @endsection
