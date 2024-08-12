@@ -80,6 +80,22 @@
             top: 100px;
             z-index: 1;
         }
+
+        .zoom-container {
+            position: relative;
+        }
+
+        .thumbnail-gallery {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        .thumbnail-gallery img {
+            cursor: pointer;
+            margin-right: 5px;
+            width: 60px;
+            /* Adjust size as needed */
+        }
     </style>
     <!--============================= BREADCRUMB START ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
@@ -124,21 +140,26 @@
                             </a>
                         </p>
                     </div>
-                </div>
+                    <div class="col-lg-5 wow fadeInUp" data-wow-duration="1s">
+                        <div class="product-gallery">
+                            <div class="zoom-container">
+                                <img id="zoomImage" src="{{ asset($product->thumb_image) }}"
+                                    data-zoom-image="{{ asset($product->thumb_image) }}" alt="product">
+                            </div>
+                            <div class="thumbnail-gallery">
+                                <img src="{{ asset($product->thumb_image) }}" alt="product thumbnail"
+                                    data-image="{{ asset($product->thumb_image) }}"
+                                    data-zoom-image="{{ asset($product->thumb_image) }}">
+                                @foreach ($product->productImages as $image)
+                                    <img src="{{ asset($image->image) }}" alt="product thumbnail"
+                                        data-image="{{ asset($image->image) }}"
+                                        data-zoom-image="{{ asset($image->image) }}">
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="MagicZoomPlus" id="productZoom" data-options="zoomMode: off; expand: fullScreen;">
-                    <img src="{{ asset($product->thumb_image) }}" data-image="{{ asset($product->thumb_image) }}"
-                        alt="product">
                 </div>
-                <div class="MagicScroll" data-options="height:100;">
-                    @foreach ($product->productImages as $image)
-                        <a data-zoom-id="productZoom" href="{{ asset($image->image) }}"
-                            data-image="{{ asset($image->image) }}" data-zoom-image="{{ asset($image->image) }}">
-                            <img src="{{ asset($image->image) }}" alt="product thumbnail">
-                        </a>
-                    @endforeach
-                </div>
-
                 <div class="col-lg-6 wow fadeInUp" data-wow-duration="1s">
                     <div class="px-0 fp__menu_details_text px-lg-5 ms-0 ms-lg-5 ms-xxl-0">
                         <h2>{!! $product->name !!}</h2>
@@ -559,6 +580,27 @@
 @endsection
 
 @push('scripts')
+    <script src="https://cdn.jsdelivr.net/npm/jquery.elevatezoom@3.0.8/jquery.elevateZoom.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Initialize ElevateZoom on the main image
+            $('#zoomImage').elevateZoom({
+                zoomType: "lens",
+                lensShape: "round",
+                lensSize: 200,
+                borderSize: 2
+            });
+
+            // Change the main image when a thumbnail is clicked
+            $('.thumbnail-gallery img').on('click', function() {
+                var newSrc = $(this).data('image');
+                var newZoomSrc = $(this).data('zoom-image');
+                $('#zoomImage').attr('src', newSrc);
+                $('#zoomImage').data('zoom-image', newZoomSrc);
+                $('#zoomImage').elevateZoom('refresh');
+            });
+        });
+    </script>
     <script>
         $(document).ready(function() {
             // Initial setup
