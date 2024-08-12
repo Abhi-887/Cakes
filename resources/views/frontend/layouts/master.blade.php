@@ -28,6 +28,8 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/responsive.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/custom.css') }}">
     <link rel="icon" href="{{ asset('uploads/favicon.png') }}" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/magiczoomplus/magiczoomplus.css" rel="stylesheet" type="text/css">
+
 
 
     <!-- Your code -->
@@ -218,6 +220,7 @@
     <script src="{{ asset('frontend/js/toastr.min.js') }}"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/magiczoomplus/magiczoomplus.js" type="text/javascript"></script>
 
     <!--main/custom js-->
     <script src="{{ asset('frontend/js/main.js') }}"></script>
