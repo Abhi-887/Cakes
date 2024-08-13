@@ -76,28 +76,37 @@ function loadProductModal(productId){
 }
 
 /** Loard product modal**/
-function addToWishlist(productId){
+function addToWishlist(productId) {
     $.ajax({
         method: 'GET',
         url: '{{ route("wishlist.store", ":productId") }}'.replace(':productId', productId),
         beforeSend: function(){
-            showLoader()
+            showLoader();
         },
         success: function(response){
             toastr.success(response.message);
         },
         error: function(xhr, status, error){
-            let errors = xhr.responseJSON.errors;
-            $.each(errors, function(index, value) {
-                toastr.error(value);
-            })
-            hideLoader()
+            if (xhr.status === 401) { // Unauthorized
+                toastr.error(xhr.responseJSON.message);
+                setTimeout(function() {
+                    window.location.href = xhr.responseJSON.redirect;
+                }, 2000); // Redirect after 2 seconds
+            } else if (xhr.responseJSON && xhr.responseJSON.errors) {
+                let errors = xhr.responseJSON.errors;
+                $.each(errors, function(index, value) {
+                    toastr.error(value);
+                });
+            } else {
+                toastr.error('An error occurred. Please try again.');
+            }
         },
         complete: function(){
-            hideLoader()
+            hideLoader();
         }
-    })
+    });
 }
+
 
 /** Update sidebar cart**/
 
