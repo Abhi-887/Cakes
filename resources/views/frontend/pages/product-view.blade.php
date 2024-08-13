@@ -339,7 +339,7 @@ use Illuminate\Support\Str;
                             @endif
                             {{-- <li><a class="wishlist" href="#"><i class="far fa-heart"></i></a></li> --}}
                             <li onclick="addToWishlist('{{ $product->id }}')"><a
-                                class="background-light-gray" href="javascript:;"><i
+                                class="wishlist" href="javascript:;"><i
                                     class="far fa-heart"></i></a></li>
                         </ul>
 
