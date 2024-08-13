@@ -87,6 +87,12 @@ function addToWishlist(productId) {
             toastr.success(response.message);
         },
         error: function(xhr, status, error){
+            console.log("AJAX Error Details:");
+            console.log("Status Code:", xhr.status);
+            console.log("Status Text:", status);
+            console.log("Error Thrown:", error);
+            console.log("Response Text:", xhr.responseText);
+
             if (xhr.status === 401) { // Unauthorized
                 toastr.error(xhr.responseJSON.message);
                 setTimeout(function() {
@@ -106,6 +112,7 @@ function addToWishlist(productId) {
         }
     });
 }
+
 
 
 /** Update sidebar cart**/
