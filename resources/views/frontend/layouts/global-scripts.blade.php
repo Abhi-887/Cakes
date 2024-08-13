@@ -76,44 +76,28 @@ function loadProductModal(productId){
 }
 
 /** Loard product modal**/
-function addToWishlist(productId) {
+function addToWishlist(productId){
     $.ajax({
         method: 'GET',
         url: '{{ route("wishlist.store", ":productId") }}'.replace(':productId', productId),
         beforeSend: function(){
-            showLoader();
+            showLoader()
         },
         success: function(response){
             toastr.success(response.message);
         },
         error: function(xhr, status, error){
-            console.log("AJAX Error Details:");
-            console.log("Status Code:", xhr.status);
-            console.log("Status Text:", status);
-            console.log("Error Thrown:", error);
-            console.log("Response Text:", xhr.responseText);
-
-            if (xhr.status === 401) { // Unauthorized
-                toastr.error(xhr.responseJSON.message);
-                setTimeout(function() {
-                    window.location.href = xhr.responseJSON.redirect;
-                }, 2000); // Redirect after 2 seconds
-            } else if (xhr.responseJSON && xhr.responseJSON.errors) {
-                let errors = xhr.responseJSON.errors;
-                $.each(errors, function(index, value) {
-                    toastr.error(value);
-                });
-            } else {
-                toastr.error('An error occurred. Please try again.');
-            }
+            let errors = xhr.responseJSON.errors;
+            $.each(errors, function(index, value) {
+                toastr.error(value);
+            })
+            hideLoader()
         },
         complete: function(){
-            hideLoader();
+            hideLoader()
         }
-    });
+    })
 }
-
-
 
 /** Update sidebar cart**/
 
