@@ -338,7 +338,7 @@ use Illuminate\Support\Str;
                             <li><a class="common_btn v_submit_button" href="#">Add To Cart</a></li>
                             @endif
                             {{-- <li><a class="wishlist" href="#"><i class="far fa-heart"></i></a></li> --}}
-                            <li onclick="addToWishlist('{{ $relatedProduct->id }}')"><a
+                            <li onclick="addToWishlist('{{ $product->id }}')"><a
                                 class="background-light-gray" href="javascript:;"><i
                                     class="far fa-heart"></i></a></li>
                         </ul>
