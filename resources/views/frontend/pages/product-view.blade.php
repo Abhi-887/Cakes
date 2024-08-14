@@ -80,7 +80,48 @@ use Illuminate\Support\Str;
         top: 100px;
         z-index: 1;
     }
+
+    /* // test */
+    .image-container {
+        padding: 5px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .thumbnail-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .thumb {
+        margin-bottom: 5px;
+        width: 80px;
+        height: 50px;
+    }
+
+    .thumb:hover {
+        -moz-box-shadow: 0 0 5px orange;
+        -webkit-box-shadow: 0 0 5px orange;
+        box-shadow: 0 0 5px orange;
+    }
+
+    .preview {
+        display: none;
+        margin-left: 15px;
+        width: 640px;
+        height: 400px;
+        border: 3px solid orange;
+    }
+
+    .cursor-overlay {
+        display: none;
+        background-color: rgba(0, 150, 50, 0.5);
+        position: fixed;
+        pointer-events: none;
+    }
 </style>
+
+
 <!--============================= BREADCRUMB START ==============================-->
 <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
     <div class="py-5 fp__breadcrumb_overlay">
@@ -114,7 +155,23 @@ use Illuminate\Support\Str;
                             </li>
                             @endforeach
 
+
+
                         </ul>
+
+                    </div>
+
+                    <div class="image-container">
+                        <div class="thumbnail-container">
+                            <img class="thumb" alt="thumbnail" src="https://i.imgur.com/sbrYaxH.jpg">
+                            @foreach ($product->productImages as $image)
+                            <li><img class="thumb img-fluid" src="{{ asset($image->image) }}" alt="product">
+                            </li>
+                            @endforeach
+                        </div>
+
+                        <div class="cursor-overlay"></div>
+                        <div class="preview"></div>
                     </div>
                     <div class="exzoom_nav"></div>
                     <p class="exzoom_btn">
@@ -338,9 +395,8 @@ use Illuminate\Support\Str;
                             <li><a class="common_btn v_submit_button" href="#">Add To Cart</a></li>
                             @endif
                             {{-- <li><a class="wishlist" href="#"><i class="far fa-heart"></i></a></li> --}}
-                            <li onclick="addToWishlist('{{ $product->id }}')"><a
-                                class="wishlist" href="javascript:;"><i
-                                    class="far fa-heart"></i></a></li>
+                            <li onclick="addToWishlist('{{ $product->id }}')"><a class="wishlist" href="javascript:;"><i
+                                        class="far fa-heart"></i></a></li>
                         </ul>
 
                     </form>
@@ -673,5 +729,77 @@ use Illuminate\Support\Str;
                 alert('Please fill out all required fields.');
             }
         });
+</script>
+<script>
+    const ZOOM_LEVEL = 2;
+
+$(document).ready(function() {
+  $(".thumb").mouseenter(enter);
+  $(".thumb").mouseleave(leave);
+  $('.thumb').mousemove(zoom);
+});
+
+function zoom(event) {
+  const p = calculateZoomOverlay({x: event.pageX, y: event.pageY}, $(event.target));
+  moveCursorOverlay(p.left, p.top);
+  movePreviewBackground(p.offsetX, p.offsetY);
+}
+
+function calculateZoomOverlay(mouse, thumb) {
+  let t = thumb.position();
+  t.width = thumb.width();
+  t.height = thumb.height();
+
+  let z = {}; // Zoom overlay
+  z.width = t.width / ZOOM_LEVEL;
+  z.height = t.height / ZOOM_LEVEL;
+  z.top = mouse.y - z.height / 2;
+  z.left = mouse.x - z.width / 2;
+
+  // Bounce off boundary
+  if (z.top < t.top) z.top = t.top;
+  if (z.left < t.left) z.left = t.left;
+  if (z.top + z.height > t.top + t.height) z.top = t.top + t.height - z.height;
+  if (z.left + z.width > t.left + t.width) z.left = t.left + t.width - z.width;
+
+  z.offsetX = (z.left - t.left) / z.width * 100;
+  z.offsetY = (z.top - t.top) / z.height * 100;
+
+  return z;
+}
+
+function moveCursorOverlay(left, top) {
+   $('.cursor-overlay').css({
+    top: top,
+    left: left
+  });
+}
+
+function movePreviewBackground(offsetX, offsetY) {
+  $('.preview').css({
+    'background-position': offsetX + '% ' + offsetY + '%'
+  });
+}
+
+function enter() {
+  // Setup preview image
+  const imageUrl = $(this).attr('src');
+  const backgroundWidth = $('.preview').width() * ZOOM_LEVEL;
+  $('.preview').css({
+    'background-image': `url(${imageUrl})`,
+    'background-size': `${backgroundWidth} auto`
+  });
+  $('.preview').show();
+
+  $('.cursor-overlay').width($(this).width() / ZOOM_LEVEL);
+  $('.cursor-overlay').height($(this).height() / ZOOM_LEVEL);
+  $('.cursor-overlay').show();
+}
+
+function leave() {
+  $('.preview').hide();
+  $('.cursor-overlay').hide();
+}
+
 </script>
 @endpush
