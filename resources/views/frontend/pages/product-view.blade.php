@@ -161,26 +161,29 @@ use Illuminate\Support\Str;
 
                     </div>
 
-                    <div class="image-container">
-                        <div class="thumbnail-container">
-                            <img class="thumb" alt="thumbnail" src="https://i.imgur.com/sbrYaxH.jpg">
-                            @foreach ($product->productImages as $image)
-                            <li><img class="thumb img-fluid" src="{{ asset($image->image) }}" alt="product">
-                            </li>
-                            @endforeach
-                        </div>
 
-                        <div class="cursor-overlay"></div>
-                        <div class="preview"></div>
-                    </div>
-                    <div class="exzoom_nav"></div>
-                    <p class="exzoom_btn">
-                        <a href="javascript:void(0);" class="exzoom_prev_btn"> <i class="far fa-chevron-left"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="exzoom_next_btn"> <i class="far fa-chevron-right"></i>
-                        </a>
-                    </p>
+
+                    <div class="cursor-overlay"></div>
+                    <div class="preview"></div>
                 </div>
+                <div class="exzoom_nav"></div>
+                <p class="exzoom_btn">
+                    <a href="javascript:void(0);" class="exzoom_prev_btn"> <i class="far fa-chevron-left"></i>
+                    </a>
+                    <a href="javascript:void(0);" class="exzoom_next_btn"> <i class="far fa-chevron-right"></i>
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="image-container">
+            <div class="thumbnail-container">
+
+                <img class="thumb" alt="thumbnail" src="https://i.imgur.com/sbrYaxH.jpg">
+                <img class="thumb" alt="thumbnail" src="{{asset($product->thumb_image)}}">
+                @foreach ($product->productImages as $image)
+                <li><img class="thumb img-fluid" src="{{ asset($image->image) }}" alt="product">
+                </li>
+                @endforeach
             </div>
             <div class="col-lg-6 wow fadeInUp" data-wow-duration="1s">
                 <div class="px-0 fp__menu_details_text px-lg-5 ms-0 ms-lg-5 ms-xxl-0">
