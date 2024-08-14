@@ -136,10 +136,10 @@ button {
     COMMON CSS START
 ============================*/
 .common_btn {
-    background: #4b637f;
+    background: #1f4469;
     text-transform: capitalize !important;
     color: var(--colorWhite) !important;
-    padding: 10px 25px !important;
+    padding: 12px 45px !important;
     border-radius: 30px;
     font-size: 15px !important;
     font-weight: 600 !important;
@@ -152,7 +152,7 @@ button {
 }
 
 .common_btn:hover {
-    background: #788a9f;
+    background: #f55;
 }
 
 .fp__section_heading h4 {
