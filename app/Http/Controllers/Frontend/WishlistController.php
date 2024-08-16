@@ -13,15 +13,18 @@ class WishlistController extends Controller
 {
     function store(string $productId): Response
     {
+        // Check if the user is authenticated first
+        if (!Auth::check()) {
+            throw ValidationException::withMessages(['Please login to add products to your wishlist']);
+        }
 
+        // Check if the product is already in the user's wishlist
         $productAlreadyExist = Wishlist::where(['user_id' => auth()->user()->id, 'product_id' => $productId])->exists();
         if ($productAlreadyExist) {
-            throw ValidationException::withMessages(['Product is already add to wishlist ']);
-        }
-        if (!Auth::check()) {
-            throw ValidationException::withMessages(['Please login for add product in wishlist']);
+            throw ValidationException::withMessages(['Product is already added to the wishlist']);
         }
 
+        // Add the product to the wishlist
         $wishlist = new Wishlist();
         $wishlist->user_id = auth()->user()->id;
         $wishlist->product_id = $productId;
