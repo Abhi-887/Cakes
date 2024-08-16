@@ -483,7 +483,7 @@ use Illuminate\Support\Str;
                 <h2>Related Item</h2>
                 <div class="row related_product_slider">
                     @foreach ($relatedProducts as $relatedProduct)
-                    <div class="col-4 wow fadeInUp" data-wow-duration="1s">
+                    <div class="col-md-4 col-sm-6 col-12 wow fadeInUp" data-wow-duration="1s">
                         <div class="fp__menu_item">
                             <div class="fp__menu_item_img">
                                 <img src="{{ asset($relatedProduct->thumb_image) }}" alt="{{ $relatedProduct->name }}"
@@ -498,13 +498,13 @@ use Illuminate\Support\Str;
                                     @for ($i = 1; $i <= $relatedProduct->reviews_avg_rating; $i++)
                                         <i class="fas fa-star"></i>
                                         @endfor
-
                                         <span>({{ $relatedProduct->reviews_count }})</span>
                                 </p>
                                 @endif
                                 </p>
-                                <a class="my-3 title" href="{{ route('product.show', $relatedProduct->slug) }}">{{
-                                    Str::limit($relatedProduct->name, 14, '...') }}</a>
+                                <a class="my-3 title" href="{{ route('product.show', $relatedProduct->slug) }}">
+                                    {{ Str::limit($relatedProduct->name, 14, '...') }}
+                                </a>
                                 <p
                                     class="top-0 px-3 py-1 text-center price fw-semibold position-absolute rounded-pill color-light-gray">
                                     @if ($relatedProduct->offer_price > 0)
@@ -521,7 +521,6 @@ use Illuminate\Support\Str;
                                     <li onclick="addToWishlist('{{ $relatedProduct->id }}')"><a
                                             class="background-light-gray" href="javascript:;"><i
                                                 class="fal fa-heart"></i></a></li>
-
                                     <li><a class="background-light-gray"
                                             href="{{ route('product.show', $relatedProduct->slug) }}"><i
                                                 class="far fa-eye"></i></a></li>
@@ -534,6 +533,7 @@ use Illuminate\Support\Str;
             </div>
             @endif
         </div>
+
     </div>
 </section>
 @endsection
