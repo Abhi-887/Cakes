@@ -10,6 +10,33 @@ $footerGridFourLinks = \App\Models\FooterGridFour::where('status', 1)->get();
 
 <footer>
     <div class="px-2">
+        <div class="mx-auto footer-sub wrapper w-100">
+            <div class="">
+
+                    <div class="text-center">
+                        <h2 class="text-black">Subscribe FREE to 3D Cakes Special Offers</h2>
+                        <p class="mt-3 footer-color">Receive discount codes, view our latest designs and find out about special offers</p>
+                    </div>
+
+
+                  <form class="mt-4 subscribe_form position-relative row justify-content-center">
+                     @csrf
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 ps-xl-5">
+                            <input class="form-control" type="text" name="email" placeholder="Email Address">
+                        </div>
+                        <div class="mt-3 text-center col-md-2 text-md-start mt-md-0">
+                            <button type="submit"
+                                class="px-5 text-white border border-0 subscribe_btn background-dark-gray btn btn-dark subscribe">
+                                Subscribe
+                            </button>
+                        </div>
+                     </div>
+                  </form>
+
+            </div>
+        </div>
+
         <div class="mx-auto footer-menu wrapper w-100">
             <div class="pt-5 pb-0 pb-lg-5 row">
                 <div class="col-lg-3 col-md-12 footer-info">
@@ -62,37 +89,11 @@ $footerGridFourLinks = \App\Models\FooterGridFour::where('status', 1)->get();
 
 
 
-        <div class="mx-auto footer-sub wrapper w-100">
-            <div class="">
-                <div class="py-4 border-top border-bottom"> <!-- Added border-top and border-bottom classes -->
-                    <div class="text-center">
-                        <h2 class="text-black">Subscribe FREE to 3D Cakes Special Offers</h2>
-                        <p class="mt-3 footer-color">Receive discount codes, view our latest designs and find out about special offers</p>
-                    </div>
-
-
-                  <form class="mt-4 subscribe_form position-relative row justify-content-center">
-                     @csrf
-                    <div class="row justify-content-center">
-                        <div class="col-md-4 ps-xl-5">
-                            <input class="form-control" type="text" name="email" placeholder="Email Address">
-                        </div>
-                        <div class="mt-3 text-center col-md-2 text-md-start mt-md-0">
-                            <button type="submit"
-                                class="px-5 text-white border border-0 subscribe_btn background-dark-gray btn btn-dark subscribe">
-                                Subscribe
-                            </button>
-                        </div>
-                     </div>
-                  </form>
-             </div>
-            </div>
-        </div>
 
 
 
         <div class="mx-auto footer-tile wrapper w-100">
-            <div class="py-4 row d-flex justify-content-center align-items-center ">
+            <div class="py-4 border-top row d-flex justify-content-center align-items-center ">
                 <div class="col-auto col-sm-7">
                     <span class="color-dark-gray fw-semibold">© 3D Cakes. All Rights Reserved.</span>
                 </div>
@@ -127,6 +128,14 @@ $footerGridFourLinks = \App\Models\FooterGridFour::where('status', 1)->get();
 
     .subscribe:hover {
         background: #8daabc !important;
+    }
+
+    .footer-tile {
+        background: #253547 !important;
+    }
+
+    .footer-menu{
+        background:#4b637f !important;
     }
 </style>
 
