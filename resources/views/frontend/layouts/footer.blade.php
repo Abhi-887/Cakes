@@ -11,7 +11,7 @@ $footerGridFourLinks = \App\Models\FooterGridFour::where('status', 1)->get();
 <footer>
     <div class="px-2">
         <div class="mx-auto footer-sub wrapper w-100">
-            <div class="">
+
 
                     <div class="text-center">
                         <h2 class="text-black">Subscribe FREE to 3D Cakes Special Offers</h2>
@@ -34,13 +34,13 @@ $footerGridFourLinks = \App\Models\FooterGridFour::where('status', 1)->get();
                      </div>
                   </form>
 
-            </div>
+
         </div>
 
         <div class="mx-auto footer-menu wrapper w-100">
             <div class="pt-5 pb-0 pb-lg-5 row">
                 <div class="col-lg-3 col-md-12 footer-info">
-                    <h5 class="mt-2 mb-1 text-black mb-xl-3 fw-normal mt-xl-0">{{ @$footerInfo->name }}</h5>
+                    <h5 class="mt-2 mb-1 text-white mb-xl-3 fw-normal mt-xl-0">{{ @$footerInfo->name }}</h5>
                     <div class="">{!! @$footerInfo->address !!}</div>
                     <div><strong class="me-2">Email:</strong><span class="text-muted">{{ @$footerInfo->email }}</span>
                     </div>
@@ -49,14 +49,14 @@ $footerGridFourLinks = \App\Models\FooterGridFour::where('status', 1)->get();
                 </div>
 
                 <div class="col-lg-3 col-md-12 footer-info">
-                    <h5 class="mt-2 mb-1 text-black mb-xl-3 fw-normal mt-xl-0">{{ @$footerInfoTwo->name }}</h5>
+                    <h5 class="mt-2 mb-1 text-white mb-xl-3 fw-normal mt-xl-0">{{ @$footerInfoTwo->name }}</h5>
                     <div class="">{!! @$footerInfoTwo->address !!}</div>
                     <div><strong class="me-2">Email:</strong>{{ @$footerInfoTwo->email }}</div>
                     <div><strong class="me-2">Phone:</strong>{{ @$footerInfoTwo->phone }}</div>
                 </div>
 
                 <div class="col-lg-2 col-md-12 lh-lg footer-hover">
-                    <h5 class="mt-2 mb-1 text-black mb-xl-3 fw-normal mt-xl-0">
+                    <h5 class="mt-2 mb-1 text-white mb-xl-3 fw-normal mt-xl-0">
                         {{ @$footerTitle->footer_grid_two_title }}</h5>
                     <div class="">
                         @foreach ($footerGridTwoLinks as $link)
@@ -66,7 +66,7 @@ $footerGridFourLinks = \App\Models\FooterGridFour::where('status', 1)->get();
                 </div>
 
                 <div class="col-lg-2 col-md-12 lh-lg footer-hover">
-                    <h5 class="mt-3 mb-0 text-black mb-xl-3 fw-normal mt-xl-0">
+                    <h5 class="mt-3 mb-0 text-white mb-xl-3 fw-normal mt-xl-0">
                         {{ @$footerTitle->footer_grid_three_title }}</h5>
                     <div class="">
                         @foreach ($footerGridThreeLinks as $link)
@@ -76,7 +76,7 @@ $footerGridFourLinks = \App\Models\FooterGridFour::where('status', 1)->get();
                 </div>
 
                 <div class="col-lg-2 col-md-12 lh-lg footer-hover">
-                    <h5 class="mt-3 mb-0 text-black mb-xl-3 fw-normal mt-xl-0">
+                    <h5 class="mt-3 mb-0 text-white mb-xl-3 fw-normal mt-xl-0">
                         {{ @$footerTitle->footer_grid_four_title }}</h5>
                     <div class="">
                         @foreach ($footerGridFourLinks as $link)
