@@ -41,12 +41,6 @@
         display: none !important;
     }
 
-    /* .popularfood .slick-next::before,
-    .popularfood .slick-prev::before {
-        color: #4b637f !important;
-        font-size: 35px !important;
-    } */
-
     .popularfood .slick-next {
         right: -20px !important;
     }
@@ -96,17 +90,96 @@
         font-size: 16px;
     }
 
-    .fp__menu_item:hover .categorys {
-        top: 69% !important;
+    .fp__menu_item {
+        border-radius: 15px;
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        position: relative;
+    }
+
+    .fp__menu_item_img img {
+        border-radius: 15px 15px 0 0;
+        height: 250px;
+        object-fit: cover;
+    }
+
+    .fp__menu_item_text {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .fp__menu_item_text .title {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: #333;
+        display: block;
+    }
+
+    .fp__menu_item_text .price {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .fp__menu_item_text .price del {
+        color: #999;
+        margin-right: 10px;
+    }
+
+    .category {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        padding: 5px 10px;
+        font-size: 12px;
+        background-color: #f8f9fa;
+        color: #333;
+        border-radius: 15px;
+        text-transform: uppercase;
+    }
+
+    .actions {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 20px;
+        border-top: 1px solid #f0f0f0;
+        background-color: #f8f9fa;
+    }
+
+    .actions a {
+        font-size: 18px;
+        color: #333;
+        text-decoration: none;
+    }
+
+    .actions a:hover {
+        color: #000;
+    }
+
+    .add-to-cart {
+        background-color: #007bff;
+        color: white;
+        padding: 8px 20px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+
+    .add-to-cart:hover {
+        background-color: #0056b3;
+        color: white;
     }
 </style>
 
 <div class="container pt-5">
     <div class="row wow fadeInUp" data-wow-duration="1s">
-        <div class="col-md-8 col-lg-7 col-xl-6 m-auto text-center">
+        <div class="m-auto text-center col-md-8 col-lg-7 col-xl-6">
             <div class="fp__section_heading">
                 <h4>3D Cakes</h4>
-                <h2>Our Popular 3dCakes Range</h2>
+                <h2>Our Popular 3D Cakes Range</h2>
                 <p>Objectively pontificate quality models before intuitive information. Dramatically
                     recaptiualize multifunctional materials.</p>
             </div>
@@ -114,7 +187,7 @@
     </div>
 
     <div class="testimonial-slider popularfood">
-        <div class="row mt-5">
+        <div class="mt-5 row">
             @foreach ($categories as $category)
                 @php
                     $products = \App\Models\Product::where([
@@ -132,44 +205,32 @@
 
                 @foreach ($products as $product)
                     <div class="col-md-4 {{ $category->slug }}">
-                        <div class="fp__menu_item m-3">
+                        <div class="m-3 fp__menu_item">
                             <div class="fp__menu_item_img">
                                 <img src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}"
                                     class="img-fluid w-100">
                             </div>
-                            <a class="category categorys bg-light px-2 py-1 fw-semibold"
+                            <a class="px-2 py-1 category categorys fw-semibold"
                                 href="{{ route('category.show', ['slug' => $product->category->slug]) }}">{{ @$product->category->name }}</a>
                             <div class="fp__menu_item_text">
-                                @if ($product->reviews_avg_rating)
-                                    <p class="rating">
-                                        @for ($i = 1; $i <= $product->reviews_avg_rating; $i++)
-                                            <i class="fas fa-star"></i>
-                                        @endfor
-
-                                        <span>{{ $product->reviews_count }}</span>
-                                    </p>
-                                @endif
-                                <a class="title my-3"
+                                <a class="my-3 title"
                                     href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
-                                <p
-                                    class="price fw-semibold text-center position-absolute py-1 px-3 rounded-pill color-light-gray top-0">
+                                <p class="price">
                                     @if ($product->offer_price > 0)
-                                        {{ currencyPosition($product->offer_price) }}
                                         <del>{{ currencyPosition($product->price) }}</del>
+                                        {{ currencyPosition($product->offer_price) }}
                                     @else
                                         {{ currencyPosition($product->price) }}
                                     @endif
                                 </p>
-                                <ul class="d-flex flex-wrap justify-content-center">
-                                    {{-- <li><a class="background-light-gray" href="javascript:;"
-                                            onclick="loadProductModal('{{ $product->id }}')"><i
-                                                class="fas fa-shopping-basket"></i></a></li> --}}
-                                    <li onclick="addToWishlist('{{ $product->id }}')"><a class="background-light-gray"
-                                            href="javascript:;"><i class="fal fa-heart"></i></a></li>
-                                    <li><a class="background-light-gray"
-                                            href="{{ route('product.show', $product->slug) }}"><i
-                                                class="far fa-eye"></i></a></li>
-                                </ul>
+                                <div class="actions">
+                                    <a href="{{ route('product.show', $product->slug) }}"><i
+                                            class="far fa-eye"></i></a>
+                                    <a class="add-to-cart" href="javascript:;"
+                                        onclick="addToCart('{{ $product->id }}')">Add to cart</a>
+                                    <a href="javascript:;" onclick="addToWishlist('{{ $product->id }}')"><i
+                                            class="fal fa-heart"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -209,95 +270,3 @@
         });
     });
 </script>
-
-
-
-{{-- <section class="fp__menu mt_95 xs_mt_65">
-    <div class="container">
-        <div class="row wow fadeInUp" data-wow-duration="1s">
-            <div class="col-md-8 col-lg-7 col-xl-6 m-auto text-center">
-                <div class="fp__section_heading mb_45">
-                    <h4>food Menu</h4>
-                    <h2>Our Popular Delicious Foods</h2>
-                    <span>
-                        <img src="images/heading_shapes.png" alt="shapes" class="img-fluid w-100">
-                    </span>
-                    <p>Objectively pontificate quality models before intuitive information. Dramatically
-                        recaptiualize multifunctional materials.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="row wow fadeInUp" data-wow-duration="1s">
-            <div class="col-12">
-                <div class="menu_filter d-flex flex-wrap justify-content-center">
-                    @foreach ($categories as $category)
-                        <button class="{{ $loop->index === 0 ? 'active button-click' : '' }}"
-                            data-filter=".{{ $category->slug }}">{{ $category->name }}</button>
-                    @endforeach
-
-                </div>
-            </div>
-        </div>
-
-        <div class="row grid">
-            @foreach ($categories as $category)
-                @php
-                    $products = \App\Models\Product::where([
-                        'show_at_home' => 1,
-                        'status' => 1,
-                        'category_id' => $category->id,
-                    ])
-                        ->orderBy('id', 'DESC')
-                        ->take(8)
-                        ->withAvg('reviews', 'rating')
-                        ->withCount('reviews')
-                        ->get();
-
-                @endphp
-
-                @foreach ($products as $product)
-                    <div class="col-xl-3 col-sm-6 col-lg-4 {{ $category->slug }}">
-                        <div class="fp__menu_item">
-                            <div class="fp__menu_item_img">
-                                <img src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}"
-                                    class="img-fluid w-100">
-                                <a class="category" href="#">{{ @$product->category->name }}</a>
-                            </div>
-                            <div class="fp__menu_item_text">
-                                @if ($product->reviews_avg_rating)
-                                    <p class="rating">
-                                        @for ($i = 1; $i <= $product->reviews_avg_rating; $i++)
-                                            <i class="fas fa-star"></i>
-                                        @endfor
-
-                                        <span>{{ $product->reviews_count }}</span>
-                                    </p>
-                                @endif
-                                <a class="title"
-                                    href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
-                                <h5 class="price">
-                                    @if ($product->offer_price > 0)
-                                        {{ currencyPosition($product->offer_price) }}
-                                        <del>{{ currencyPosition($product->price) }}</del>
-                                    @else
-                                        {{ currencyPosition($product->price) }}
-                                    @endif
-                                </h5>
-                                <ul class="d-flex flex-wrap justify-content-center">
-                                    <li><a href="javascript:;" onclick="loadProductModal('{{ $product->id }}')"><i
-                                                class="fas fa-shopping-basket"></i></a></li>
-                                    <li onclick="addToWishlist('{{ $product->id }}')"><a href="javascript:;"><i
-                                                class="fal fa-heart"></i></a></li>
-                                    <li><a href="{{ route('product.show', $product->slug) }}"><i
-                                                class="far fa-eye"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            @endforeach
-
-        </div>
-    </div>
-</section> --}}
