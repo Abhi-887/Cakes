@@ -60,7 +60,7 @@ $footerGridFourLinks = \App\Models\FooterGridFour::where('status', 1)->get();
                         {{ @$footerTitle->footer_grid_two_title }}</h5>
                     <div class="text-white">
                         @foreach ($footerGridTwoLinks as $link)
-                        <a class="text-decoration-none black-colour" href="{{ $link->url }}">{{ $link->name }}</a><br>
+                        <a class="text-decoration-none white-colour" href="{{ $link->url }}">{{ $link->name }}</a><br>
                         @endforeach
                     </div>
                 </div>
@@ -70,7 +70,7 @@ $footerGridFourLinks = \App\Models\FooterGridFour::where('status', 1)->get();
                         {{ @$footerTitle->footer_grid_three_title }}</h5>
                     <div class="text-white">
                         @foreach ($footerGridThreeLinks as $link)
-                        <a class="text-decoration-none black-colour" href="{{ $link->url }}">{{ $link->name }}</a><br>
+                        <a class="text-decoration-none white-colour" href="{{ $link->url }}">{{ $link->name }}</a><br>
                         @endforeach
                     </div>
                 </div>
@@ -80,7 +80,7 @@ $footerGridFourLinks = \App\Models\FooterGridFour::where('status', 1)->get();
                         {{ @$footerTitle->footer_grid_four_title }}</h5>
                     <div class="text-white">
                         @foreach ($footerGridFourLinks as $link)
-                        <a class="text-decoration-none black-colour" href="{{ $link->url }}">{{ $link->name }}</a><br>
+                        <a class="text-decoration-none white-colour" href="{{ $link->url }}">{{ $link->name }}</a><br>
                         @endforeach
                     </div>
                 </div>
@@ -106,15 +106,13 @@ $footerGridFourLinks = \App\Models\FooterGridFour::where('status', 1)->get();
                 </div>
             </div>
         </div>
-        {{-- <div class="pb-3 text-center">
-            <img class="mt-3 mb-1 w-25" src="{{ asset('uploads/payment-icons.png') }}" alt="">
-        </div> --}}
+
     </div>
 </footer>
 
 <style>
     .social-links a {
-        color: #4b637f !important;
+        color: #ffffff !important;
     }
 
     footer {
