@@ -65,7 +65,7 @@ $footerGridFourLinks = \App\Models\FooterGridFour::where('status', 1)->get();
         <div class="mx-auto footer-sub wrapper w-100">
             <div class="">
                 <div class="py-4 border-top border-bottom"> <!-- Added border-top and border-bottom classes -->
-                    <div>
+                    <div class="text-center">
                         <h2 class="text-black">Subscribe FREE to 3D Cakes Special Offers</h2>
                         <p class="mt-3 footer-color">Receive discount codes, view our latest designs and find out about special offers</p>
                     </div>
