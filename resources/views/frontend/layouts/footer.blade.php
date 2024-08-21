@@ -69,10 +69,10 @@ $footerGridFourLinks = \App\Models\FooterGridFour::where('status', 1)->get();
                         <h2 class="text-black">Subscribe FREE to 3D Cakes Special Offers</h2>
                         <p class="mt-3 footer-color">Receive discount codes, view our latest designs and find out about special offers</p>
                     </div>
-                </div>
 
-                <form class="mt-4 subscribe_form position-relative row justify-content-center">
-                    @csrf
+
+                  <form class="mt-4 subscribe_form position-relative row justify-content-center">
+                     @csrf
                     <div class="row justify-content-center">
                         <div class="col-md-4 ps-xl-5">
                             <input class="form-control" type="text" name="email" placeholder="Email Address">
@@ -83,13 +83,14 @@ $footerGridFourLinks = \App\Models\FooterGridFour::where('status', 1)->get();
                                 Subscribe
                             </button>
                         </div>
-                    </div>
-                </form>
+                     </div>
+                  </form>
+             </div>
             </div>
         </div>
 
 
-        {{-- <hr class="mt-5 mb-0"> --}}
+
         <div class="mx-auto footer-tile wrapper w-100">
             <div class="py-4 row d-flex justify-content-center align-items-center ">
                 <div class="col-auto col-sm-7">
