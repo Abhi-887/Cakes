@@ -1,13 +1,18 @@
 <section>
-    <div id="parallax" class="parallax-item py-5 w-100 bg-cover">
+    <div id="parallax" class="py-5 bg-cover parallax-item w-100">
         <div class="container">
             <div class="text-center">
                 <h1 class="fw-bold text-light display-5">{{ $aboutus->title }}<span
                         class="cakecolor fw-semibold display-6 ms-3">3D Cakes</span></h1>
-                <div class="about-description mt-3">{!! $aboutus->description !!}</div>
+
+                <div class="mt-3 row about-description">
+                    <div class="col-1"></div>
+                    <div class="col-lg-10">
+                        {!! $aboutus->description !!}</div>
+                    <div class="col-1"></div>
+                </div>
             </div>
         </div>
-    </div>
 </section>
 
 
@@ -21,7 +26,9 @@
     }
 
     .parallax-item {
-        background: url({{ asset('uploads/nav-bg.jpg') }});
+        background: url({{ asset('uploads/nav-bg.jpg')
+    }
+    });
     }
 
     .about-description p {
