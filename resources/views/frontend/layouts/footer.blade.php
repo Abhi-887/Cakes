@@ -61,29 +61,34 @@ $footerGridFourLinks = \App\Models\FooterGridFour::where('status', 1)->get();
         </div>
 
 
-        <hr class="pb-4">
-        <div class="mx-auto footer-sub wrapper w-100">
-            <div class="text-center">
-                <div>
-                    <h2 class="text-black">Subscribe FREE to 3D Cakes Special Offers</h2>
-                    <p class="mt-3 footer-color">Receive discount codes, view our latest designs and find out about
-                        special offers</p>
-                </div>
-            </div>
 
-            <form class="subscribe_form position-relative row justify-content-center">
-                @csrf
-                <div class="row justify-content-center">
-                    <div class="col-md-4 ps-xl-5">
-                        <input class="form-control" type="text" name="email" placeholder="Email Address">
+        <div class="mx-auto footer-sub wrapper w-100">
+
+            <div>
+                <div class="text-center">
+
+                    <div>
+                        <h2 class="text-black">Subscribe FREE to 3D Cakes Special Offers</h2>
+                        <p class="mt-3 footer-color">Receive discount codes, view our latest designs and find out about
+                            special offers</p>
                     </div>
-                    <div class="mt-3 text-center col-md-2 text-md-start mt-md-0">
-                        <button type="submit"
-                            class="px-5 text-white border border-0 subscribe_btn background-dark-gray btn btn-dark subscribe">Subscribe
-                        </button>
-                    </div>
+
                 </div>
-            </form>
+
+                <form class="subscribe_form position-relative row justify-content-center">
+                    @csrf
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 ps-xl-5">
+                            <input class="form-control" type="text" name="email" placeholder="Email Address">
+                        </div>
+                        <div class="mt-3 text-center col-md-2 text-md-start mt-md-0">
+                            <button type="submit"
+                                class="px-5 text-white border border-0 subscribe_btn background-dark-gray btn btn-dark subscribe">Subscribe
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
 
         <hr class="mt-5 mb-0">
