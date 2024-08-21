@@ -63,19 +63,15 @@ $footerGridFourLinks = \App\Models\FooterGridFour::where('status', 1)->get();
 
 
         <div class="mx-auto footer-sub wrapper w-100">
-
-            <div>
-                <div class="text-center">
-
+            <div class="">
+                <div class="py-4 border-top border-bottom"> <!-- Added border-top and border-bottom classes -->
                     <div>
                         <h2 class="text-black">Subscribe FREE to 3D Cakes Special Offers</h2>
-                        <p class="mt-3 footer-color">Receive discount codes, view our latest designs and find out about
-                            special offers</p>
+                        <p class="mt-3 footer-color">Receive discount codes, view our latest designs and find out about special offers</p>
                     </div>
-
                 </div>
 
-                <form class="subscribe_form position-relative row justify-content-center">
+                <form class="mt-4 subscribe_form position-relative row justify-content-center">
                     @csrf
                     <div class="row justify-content-center">
                         <div class="col-md-4 ps-xl-5">
@@ -83,7 +79,8 @@ $footerGridFourLinks = \App\Models\FooterGridFour::where('status', 1)->get();
                         </div>
                         <div class="mt-3 text-center col-md-2 text-md-start mt-md-0">
                             <button type="submit"
-                                class="px-5 text-white border border-0 subscribe_btn background-dark-gray btn btn-dark subscribe">Subscribe
+                                class="px-5 text-white border border-0 subscribe_btn background-dark-gray btn btn-dark subscribe">
+                                Subscribe
                             </button>
                         </div>
                     </div>
@@ -91,7 +88,8 @@ $footerGridFourLinks = \App\Models\FooterGridFour::where('status', 1)->get();
             </div>
         </div>
 
-        <hr class="mt-5 mb-0">
+
+        {{-- <hr class="mt-5 mb-0"> --}}
         <div class="mx-auto footer-tile wrapper w-100">
             <div class="py-4 row d-flex justify-content-center align-items-center ">
                 <div class="col-auto col-sm-7">
