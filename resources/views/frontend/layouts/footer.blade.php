@@ -1,16 +1,16 @@
 @php
-    $footerInfo = \App\Models\FooterInfo::first();
-    $footerInfoTwo = \App\Models\FooterInfoTwo::first();
-    $footerSocials = \App\Models\FooterSocial::where('status', 1)->get();
-    $footerGridTwoLinks = \App\Models\FooterGridTwo::where('status', 1)->get();
-    $footerTitle = \App\Models\FooterTitle::first();
-    $footerGridThreeLinks = \App\Models\FooterGridThree::where('status', 1)->get();
-    $footerGridFourLinks = \App\Models\FooterGridFour::where('status', 1)->get();
+$footerInfo = \App\Models\FooterInfo::first();
+$footerInfoTwo = \App\Models\FooterInfoTwo::first();
+$footerSocials = \App\Models\FooterSocial::where('status', 1)->get();
+$footerGridTwoLinks = \App\Models\FooterGridTwo::where('status', 1)->get();
+$footerTitle = \App\Models\FooterTitle::first();
+$footerGridThreeLinks = \App\Models\FooterGridThree::where('status', 1)->get();
+$footerGridFourLinks = \App\Models\FooterGridFour::where('status', 1)->get();
 @endphp
 
 <footer>
-    <div class="px-2 mx-auto wrapper w-100">
-        <div class="">
+    <div class="px-2">
+        <div class="mx-auto footer-menu wrapper w-100">
             <div class="pt-5 pb-0 pb-lg-5 row">
                 <div class="col-lg-3 col-md-12 footer-info">
                     <h5 class="mt-2 mb-1 text-black mb-xl-3 fw-normal mt-xl-0">{{ @$footerInfo->name }}</h5>
@@ -33,8 +33,7 @@
                         {{ @$footerTitle->footer_grid_two_title }}</h5>
                     <div class="">
                         @foreach ($footerGridTwoLinks as $link)
-                            <a class="text-decoration-none black-colour"
-                                href="{{ $link->url }}">{{ $link->name }}</a><br>
+                        <a class="text-decoration-none black-colour" href="{{ $link->url }}">{{ $link->name }}</a><br>
                         @endforeach
                     </div>
                 </div>
@@ -44,8 +43,7 @@
                         {{ @$footerTitle->footer_grid_three_title }}</h5>
                     <div class="">
                         @foreach ($footerGridThreeLinks as $link)
-                            <a class="text-decoration-none black-colour"
-                                href="{{ $link->url }}">{{ $link->name }}</a><br>
+                        <a class="text-decoration-none black-colour" href="{{ $link->url }}">{{ $link->name }}</a><br>
                         @endforeach
                     </div>
                 </div>
@@ -55,15 +53,16 @@
                         {{ @$footerTitle->footer_grid_four_title }}</h5>
                     <div class="">
                         @foreach ($footerGridFourLinks as $link)
-                            <a class="text-decoration-none black-colour"
-                                href="{{ $link->url }}">{{ $link->name }}</a><br>
+                        <a class="text-decoration-none black-colour" href="{{ $link->url }}">{{ $link->name }}</a><br>
                         @endforeach
                     </div>
                 </div>
             </div>
         </div>
+
+
         <hr class="pb-4">
-        <div class="container">
+        <div class="mx-auto footer-sub wrapper w-100">
             <div class="text-center">
                 <div>
                     <h2 class="text-black">Subscribe FREE to 3D Cakes Special Offers</h2>
@@ -78,7 +77,7 @@
                     <div class="col-md-4 ps-xl-5">
                         <input class="form-control" type="text" name="email" placeholder="Email Address">
                     </div>
-                    <div class="col-md-2 text-center text-md-start mt-3 mt-md-0">
+                    <div class="mt-3 text-center col-md-2 text-md-start mt-md-0">
                         <button type="submit"
                             class="px-5 text-white border border-0 subscribe_btn background-dark-gray btn btn-dark subscribe">Subscribe
                         </button>
@@ -86,16 +85,19 @@
                 </div>
             </form>
         </div>
+
         <hr class="mt-5 mb-0">
-        <div class="row d-flex justify-content-center align-items-center py-4">
-            <div class="col-sm-7 col-auto">
-                <span class="color-dark-gray fw-semibold">© 3D Cakes. All Rights Reserved.</span>
-            </div>
-            <div class="col-sm-5 col-auto text-end">
-                <div class="social-links">
-                    @foreach ($footerSocials as $link)
+        <div class="mx-auto footer-tile wrapper w-100">
+            <div class="py-4 row d-flex justify-content-center align-items-center ">
+                <div class="col-auto col-sm-7">
+                    <span class="color-dark-gray fw-semibold">© 3D Cakes. All Rights Reserved.</span>
+                </div>
+                <div class="col-auto col-sm-5 text-end">
+                    <div class="social-links">
+                        @foreach ($footerSocials as $link)
                         <a href="{{ $link->url }}" class="{{ $link->icon }} fs-3 ms-2"></a>
-                    @endforeach
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>
@@ -125,8 +127,8 @@
 </style>
 
 @push('scripts')
-    <script>
-        $(document).ready(function() {
+<script>
+    $(document).ready(function() {
             $('.subscribe_form').on('submit', function(e) {
                 e.preventDefault();
                 let formData = $(this).serialize();
@@ -157,5 +159,5 @@
                 })
             })
         })
-    </script>
+</script>
 @endpush
