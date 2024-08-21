@@ -37,14 +37,14 @@ $footerGridFourLinks = \App\Models\FooterGridFour::where('status', 1)->get();
 
         </div>
 
-        <div class="mx-auto footer-menu wrapper w-100">
+        <div class="mx-auto text-white footer-menu wrapper w-100">
             <div class="pt-5 pb-0 pb-lg-5 row">
                 <div class="col-lg-3 col-md-12 footer-info">
                     <h5 class="mt-2 mb-1 text-white mb-xl-3 fw-normal mt-xl-0">{{ @$footerInfo->name }}</h5>
                     <div class="">{!! @$footerInfo->address !!}</div>
-                    <div><strong class="me-2">Email:</strong><span class="text-muted">{{ @$footerInfo->email }}</span>
+                    <div><strong class="me-2">Email:</strong><span class="text-white ">{{ @$footerInfo->email }}</span>
                     </div>
-                    <div><strong class="me-2">Phone:</strong><span class="text-muted">{{ @$footerInfo->phone }}</span>
+                    <div><strong class="me-2">Phone:</strong><span class="text-white">{{ @$footerInfo->phone }}</span>
                     </div>
                 </div>
 
@@ -58,7 +58,7 @@ $footerGridFourLinks = \App\Models\FooterGridFour::where('status', 1)->get();
                 <div class="col-lg-2 col-md-12 lh-lg footer-hover">
                     <h5 class="mt-2 mb-1 text-white mb-xl-3 fw-normal mt-xl-0">
                         {{ @$footerTitle->footer_grid_two_title }}</h5>
-                    <div class="">
+                    <div class="text-white">
                         @foreach ($footerGridTwoLinks as $link)
                         <a class="text-decoration-none black-colour" href="{{ $link->url }}">{{ $link->name }}</a><br>
                         @endforeach
@@ -68,7 +68,7 @@ $footerGridFourLinks = \App\Models\FooterGridFour::where('status', 1)->get();
                 <div class="col-lg-2 col-md-12 lh-lg footer-hover">
                     <h5 class="mt-3 mb-0 text-white mb-xl-3 fw-normal mt-xl-0">
                         {{ @$footerTitle->footer_grid_three_title }}</h5>
-                    <div class="">
+                    <div class="text-white">
                         @foreach ($footerGridThreeLinks as $link)
                         <a class="text-decoration-none black-colour" href="{{ $link->url }}">{{ $link->name }}</a><br>
                         @endforeach
@@ -78,7 +78,7 @@ $footerGridFourLinks = \App\Models\FooterGridFour::where('status', 1)->get();
                 <div class="col-lg-2 col-md-12 lh-lg footer-hover">
                     <h5 class="mt-3 mb-0 text-white mb-xl-3 fw-normal mt-xl-0">
                         {{ @$footerTitle->footer_grid_four_title }}</h5>
-                    <div class="">
+                    <div class="text-white">
                         @foreach ($footerGridFourLinks as $link)
                         <a class="text-decoration-none black-colour" href="{{ $link->url }}">{{ $link->name }}</a><br>
                         @endforeach
@@ -92,12 +92,12 @@ $footerGridFourLinks = \App\Models\FooterGridFour::where('status', 1)->get();
 
 
 
-        <div class="mx-auto footer-tile wrapper w-100">
+        <div class="mx-auto text-white footer-tile wrapper w-100">
             <div class="py-4 border-top row d-flex justify-content-center align-items-center ">
                 <div class="col-auto col-sm-7">
-                    <span class="color-dark-gray fw-semibold">© 3D Cakes. All Rights Reserved.</span>
+                    <span class="color-white fw-semibold">© 3D Cakes. All Rights Reserved.</span>
                 </div>
-                <div class="col-auto col-sm-5 text-end">
+                <div class="col-auto text-white col-sm-5 text-end">
                     <div class="social-links">
                         @foreach ($footerSocials as $link)
                         <a href="{{ $link->url }}" class="{{ $link->icon }} fs-3 ms-2"></a>
