@@ -21,10 +21,11 @@
     }
 
     .parallax-item {
-        background: url({{ asset('uploads/nav-bg.jpg')
+        background: url({{ asset('uploads/center_homebg.webp')
     }
     });
     }
+
 
     .about-description p {
         color: white !important;
