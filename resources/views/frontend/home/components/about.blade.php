@@ -1,10 +1,15 @@
 <section>
     <div id="parallax" class="py-5 bg-cover parallax-item w-100">
         <div class="container">
-            <div class="text-center">
-                <h1 class="fw-bold text-light display-5">{{ $aboutus->title }}<span
-                        class="cakecolor fw-semibold display-6 ms-3">3D Cakes</span></h1>
-                <div class="mt-3 about-description">{!! $aboutus->description !!}</div>
+            <div class="row justify-content-center">
+                <div class="text-center col-lg-10">
+                    <h1 class="fw-bold text-light display-5">{{ $aboutus->title }}
+                        <span class="cakecolor fw-semibold display-6 ms-3">3D Cakes</span>
+                    </h1>
+                    <div class="mt-3 about-description">
+                        {!! $aboutus->description !!}
+                    </div>
+                </div>
             </div>
         </div>
     </div>
