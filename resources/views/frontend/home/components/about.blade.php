@@ -1,9 +1,10 @@
 <section>
     <div id="parallax" class="py-5 bg-cover parallax-item w-100">
-        <div class="container row">
-            <div class="col-1"></div>
-            <div class="col-lg-10">
-                <div class="text-center">
+        <div class="row">
+
+            <div class="text-center">
+                <div class="col-1"></div>
+                <div class="col-lg-10">
                     <h1 class="fw-bold text-light display-5">{{ $aboutus->title }}
                         <span class="cakecolor fw-semibold display-6 ms-3">3D Cakes</span>
                     </h1>
@@ -12,9 +13,9 @@
 
                         {!! $aboutus->description !!}</div>
                 </div>
-
+                <div class="col-1"></div>
             </div>
-            <div class="col-1"></div>
+
 
         </div>
 </section>
