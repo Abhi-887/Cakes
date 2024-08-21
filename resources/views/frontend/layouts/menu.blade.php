@@ -54,7 +54,7 @@
                     </div>
                 </li>
                 <li>
-                    <a class="cart_icon me-4 position-relative fw-semibold fs-5"><i
+                    <a class="cart_icon me-4 position-relative fw-semibold fs-5" href="/cart"><i
                             class="transition fas fa-shopping-basket"></i>
                         <span
                             class="text-center cart_count bg-gray position-absolute text-light fw-semibold bottom-50 end-25 rounded-circle">{{
