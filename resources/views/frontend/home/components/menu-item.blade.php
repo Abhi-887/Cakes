@@ -189,7 +189,7 @@
                 @endphp
 
                 @foreach ($products as $product)
-                    <div class="col-md-4 {{ $category->slug }}">
+                    <div class="col-md-4 wow fadeInUp {{ $category->slug }}">
                         <div class="position-relative m-3 fp__menu_item rounded-5">
                             <div class="fp__menu_item_img">
                                 <img src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}"
