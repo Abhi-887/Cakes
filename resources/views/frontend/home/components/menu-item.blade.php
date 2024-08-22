@@ -129,7 +129,7 @@
 
     .category {
         position: absolute;
-        top: 66%;
+        top: 68%;
         left: 16px;
         padding: 5px 10px;
         font-size: 12px;
@@ -147,22 +147,6 @@
 
     .actions a:hover {
         color: #000;
-    }
-
-    .add-to-cart {
-        background-color: #007bff;
-        color: white;
-        padding: 8px 20px;
-        border-radius: 20px;
-        font-size: 14px;
-        font-weight: 600;
-        text-transform: uppercase;
-        text-decoration: none;
-    }
-
-    .add-to-cart:hover {
-        background-color: #0056b3;
-        color: white;
     }
 
     .eye {
@@ -216,7 +200,7 @@
                                 <img src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}"
                                     class="img-fluid w-100">
                             </div>
-                            <a class="px-2 py-1 category categorys fw-semibold"
+                            <a class="px-3 py-2 category categorys fw-semibold"
                                 href="{{ route('category.show', ['slug' => $product->category->slug]) }}">{{ @$product->category->name }}</a>
                             <div class="fp__menu_item_text">
                                 <a class="my-3 title"
@@ -233,7 +217,7 @@
                                     <a class="eye position-absolute rounded-circle"
                                         href="{{ route('product.show', $product->slug) }}"><i
                                             class="far fa-eye  text-white"></i></a>
-                                    <a class="add-to-cart" href="javascript:;"
+                                    <a class="add-to-cart rounded-pill background-dark-gray" href="javascript:;"
                                         onclick="addToCart('{{ $product->id }}')">Add to cart</a>
                                     <a class="heart position-absolute rounded-circle" href="javascript:;"
                                         onclick="addToWishlist('{{ $product->id }}')"><i
