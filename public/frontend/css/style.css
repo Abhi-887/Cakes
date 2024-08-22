@@ -1204,12 +1204,14 @@ button {
     color: #788a9f !important;
     font-family: var(--headingFont);
     position: absolute;
+    top: 70% !important;
     left: 10px;
     z-index: 1;
     /* background: var(--colorWhite); */
     /* padding: 3px 15px; */
     box-shadow: var(--boxShadow);
     border-radius: 30px;
+    border: 1px solid #788a9f !important;
 }
 
 .fp__menu_item .fp__menu_item_text {
@@ -5889,7 +5891,7 @@ CHECKOUT PAGE START
     color: var(--colorPrimary);
     font-family: var(--cursiveFont);
     position: absolute;
-    /* top: 5px; */
+    top: 5px;
     left: 5px;
     background: var(--colorWhite);
     padding: 3px 15px;

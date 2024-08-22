@@ -31,19 +31,6 @@
         .fp__menu_item_text {
             border-top: 1px solid #788a9f !important;
         }
-
-        .category {
-            position: absolute;
-            top: 68%;
-            left: 16px;
-            padding: 5px 10px;
-            font-size: 12px;
-            background-color: #f8f9fa;
-            color: #333;
-            border-radius: 15px;
-            text-transform: uppercase;
-            border: 1px solid #788a9f !important;
-        }
     </style>
 
     <section class="fp__search_menu py-5">
