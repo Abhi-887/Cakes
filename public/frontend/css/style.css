@@ -1185,9 +1185,9 @@ button {
     top: 71% !important;
 } */
 
-.fp__menu_item:hover .fp__menu_item_text .price {
+/* .fp__menu_item:hover .fp__menu_item_text .price {
     top: -15px !important;
-}
+} */
 
 /* .fp__menu_item:hover .fp__menu_item_text .title {
     color: white !important;
@@ -1204,13 +1204,14 @@ button {
     color: #788a9f !important;
     font-family: var(--headingFont);
     position: absolute;
-    /* top: 59% !important; */
+    top: 70% !important;
     left: 10px;
     z-index: 1;
     /* background: var(--colorWhite); */
     /* padding: 3px 15px; */
     box-shadow: var(--boxShadow);
     border-radius: 30px;
+    border: 1px solid #788a9f !important;
 }
 
 .fp__menu_item .fp__menu_item_text {

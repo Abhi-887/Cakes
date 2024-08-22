@@ -27,6 +27,10 @@
             background-color: #788a9f !important;
             padding: 10px 15px !important;
         }
+
+        .fp__menu_item_text {
+            border-top: 1px solid #788a9f !important;
+        }
     </style>
 
     <section class="fp__search_menu py-5">
@@ -147,7 +151,7 @@
                                     href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
 
                                 <div class="actions mt-3 d-flex justify-content-between">
-                                    <p class="price fw-semibold position-absolute py-1 px-3 rounded-pill color-light-gray">
+                                    <p class="price color-light-gray">
                                         @if ($product->offer_price > 0)
                                             {{ currencyPosition($product->offer_price) }}
                                             <del>{{ currencyPosition($product->price) }}</del>
