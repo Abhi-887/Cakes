@@ -173,8 +173,8 @@
             <div class="fp__section_heading">
                 <h4>3D Cakes</h4>
                 <h2>Our Popular 3D Cakes Range</h2>
-                <p>Objectively pontificate quality models before intuitive information. Dramatically recaptiualize
-                    multifunctional materials.</p>
+                <p>Objectively pontificate quality models before intuitive information. Dramatically
+                    recaptiualize multifunctional materials.</p>
             </div>
         </div>
     </div>
@@ -193,21 +193,22 @@
                         ->withAvg('reviews', 'rating')
                         ->withCount('reviews')
                         ->get();
+
                 @endphp
 
                 @foreach ($products as $product)
                     <div class="col-md-4 wow fadeInUp {{ $category->slug }}">
-                        <div class="position-relative m-3 fp__menu_item rounded-5 d-flex flex-column">
+                        <div class="position-relative m-3 fp__menu_item rounded-5">
                             <div class="fp__menu_item_img">
                                 <img src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}"
                                     class="img-fluid w-100">
                             </div>
                             <a class="px-3 py-2 category categorys fw-semibold"
                                 href="{{ route('category.show', ['slug' => $product->category->slug]) }}">{{ @$product->category->name }}</a>
-                            <div class="fp__menu_item_text d-flex flex-column flex-grow-1">
+                            <div class="fp__menu_item_text">
                                 <a class="my-4 title"
                                     href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
-                                <div class="actions mt-auto d-flex justify-content-between align-items-center">
+                                <div class="actions mt-3 d-flex justify-content-between">
                                     <p class="price color-light-gray m-0">
                                         @if ($product->offer_price > 0)
                                             <del>{{ currencyPosition($product->price) }}</del>
@@ -216,6 +217,9 @@
                                             {{ currencyPosition($product->price) }}
                                         @endif
                                     </p>
+                                    {{-- <a class="eye position-absolute rounded-circle"
+                                        href="{{ route('product.show', $product->slug) }}"><i
+                                            class="far fa-eye  text-white"></i></a> --}}
                                     <a class="add-to-cart rounded-pill px-3 py-2 background-light-gray text-white"
                                         href="javascript:;" onclick="addToCart('{{ $product->id }}')">Add to cart</a>
                                     <a class="heart position-absolute rounded-circle" href="javascript:;"
@@ -230,7 +234,6 @@
         </div>
     </div>
 </div>
-
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
