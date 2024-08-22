@@ -177,14 +177,14 @@
         top: 0;
         right: 20%;
         background-color: #4b637f !important;
-        padding: 10px 15px;
+        padding: 10px 15px !important;
     }
 
     .heart {
         top: 0;
         right: 5%;
         background-color: #4b637f !important;
-        padding: 10px 15px;
+        padding: 10px 15px !important;
     }
 </style>
 
@@ -238,12 +238,12 @@
                                     @endif
                                 </p>
                                 <div class="actions">
-                                    <a class="eye position-absolute rounded-circle px-3 py-2"
+                                    <a class="eye position-absolute rounded-circle"
                                         href="{{ route('product.show', $product->slug) }}"><i
                                             class="far fa-eye  text-white"></i></a>
                                     <a class="add-to-cart" href="javascript:;"
                                         onclick="addToCart('{{ $product->id }}')">Add to cart</a>
-                                    <a class="heart position-absolute rounded-circle px-3 py-2" href="javascript:;"
+                                    <a class="heart position-absolute rounded-circle" href="javascript:;"
                                         onclick="addToWishlist('{{ $product->id }}')"><i
                                             class="fal fa-heart text-white"></i></a>
                                 </div>

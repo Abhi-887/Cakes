@@ -1181,9 +1181,9 @@ button {
     background: #fff !important;
 }
 
-.fp__menu_item:hover .category {
+/* .fp__menu_item:hover .category {
     top: 71% !important;
-}
+} */
 
 .fp__menu_item:hover .fp__menu_item_text .price {
     top: -15px !important;
