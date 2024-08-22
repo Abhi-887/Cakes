@@ -236,12 +236,12 @@
                                     @endif
                                 </p>
                                 <div class="actions">
-                                    <a class="eye position-absolute rounded-circle px-2 py-2"
+                                    <a class="eye position-absolute rounded-circle px-3 py-2"
                                         href="{{ route('product.show', $product->slug) }}"><i
-                                            class="far fa-eye position-absolute"></i></a>
+                                            class="far fa-eye"></i></a>
                                     <a class="add-to-cart" href="javascript:;"
                                         onclick="addToCart('{{ $product->id }}')">Add to cart</a>
-                                    <a class="heart position-absolute rounded-circle px-2 py-2" href="javascript:;"
+                                    <a class="heart position-absolute rounded-circle px-3 py-2" href="javascript:;"
                                         onclick="addToWishlist('{{ $product->id }}')"><i class="fal fa-heart"></i></a>
                                 </div>
                             </div>
