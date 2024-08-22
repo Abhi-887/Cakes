@@ -27,6 +27,10 @@
             background-color: #788a9f !important;
             padding: 10px 15px !important;
         }
+
+        .fp__menu_item_text {
+            border-top: 1px solid #788a9f !important;
+        }
     </style>
 
     <section class="fp__search_menu py-5">

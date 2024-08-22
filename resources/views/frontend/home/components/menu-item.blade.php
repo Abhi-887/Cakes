@@ -132,7 +132,7 @@
         color: #333;
         border-radius: 15px;
         text-transform: uppercase;
-        border: 1px solid;
+        border: 1px solid #788a9f !important;
     }
 
     .actions a {
@@ -157,6 +157,10 @@
         right: 5%;
         background-color: #788a9f !important;
         padding: 10px 15px !important;
+    }
+
+    .fp__menu_item_text {
+        border-top: 1px solid #788a9f !important;
     }
 </style>
 
@@ -198,7 +202,7 @@
                             </div>
                             <a class="px-3 py-2 category categorys fw-semibold"
                                 href="{{ route('category.show', ['slug' => $product->category->slug]) }}">{{ @$product->category->name }}</a>
-                            <div class="fp__menu_item_text border-top">
+                            <div class="fp__menu_item_text">
                                 <a class="my-3 title"
                                     href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
                                 <div class="actions mt-3 d-flex justify-content-between">
