@@ -174,14 +174,14 @@
     }
 
     .eye {
-        top: 0;
+        top: 2%;
         right: 20%;
         background-color: #4b637f !important;
         padding: 10px 15px !important;
     }
 
     .heart {
-        top: 0;
+        top: 2%;
         right: 5%;
         background-color: #4b637f !important;
         padding: 10px 15px !important;
@@ -229,15 +229,15 @@
                             <div class="fp__menu_item_text">
                                 <a class="my-3 title"
                                     href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
-                                <p class="price">
-                                    @if ($product->offer_price > 0)
-                                        <del>{{ currencyPosition($product->price) }}</del>
-                                        {{ currencyPosition($product->offer_price) }}
-                                    @else
-                                        {{ currencyPosition($product->price) }}
-                                    @endif
-                                </p>
                                 <div class="actions">
+                                    <p class="price">
+                                        @if ($product->offer_price > 0)
+                                            <del>{{ currencyPosition($product->price) }}</del>
+                                            {{ currencyPosition($product->offer_price) }}
+                                        @else
+                                            {{ currencyPosition($product->price) }}
+                                        @endif
+                                    </p>
                                     <a class="eye position-absolute rounded-circle"
                                         href="{{ route('product.show', $product->slug) }}"><i
                                             class="far fa-eye  text-white"></i></a>
