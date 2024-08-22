@@ -1177,9 +1177,9 @@ button {
     color: #788a9f !important;
 }
 
-.fp__menu_item:hover .fp__menu_item_text ul li a {
+/* .fp__menu_item:hover .fp__menu_item_text ul li a {
     background: #fff !important;
-}
+} */
 
 /* .fp__menu_item:hover .category {
     top: 71% !important;
