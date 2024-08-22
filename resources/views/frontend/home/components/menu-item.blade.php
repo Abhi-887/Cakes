@@ -217,7 +217,7 @@
                                     <a class="eye position-absolute rounded-circle"
                                         href="{{ route('product.show', $product->slug) }}"><i
                                             class="far fa-eye  text-white"></i></a>
-                                    <a class="add-to-cart rounded-pill px-3 py-2 background-dark-gray"
+                                    <a class="add-to-cart rounded-pill px-3 py-2 background-dark-gray text-white"
                                         href="javascript:;" onclick="addToCart('{{ $product->id }}')">Add to cart</a>
                                     <a class="heart position-absolute rounded-circle" href="javascript:;"
                                         onclick="addToWishlist('{{ $product->id }}')"><i
