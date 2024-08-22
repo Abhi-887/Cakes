@@ -140,42 +140,41 @@
                                         src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}"
                                         class="img-fluid w-100"></a>
                             </div>
+
                             <div class="fp__menu_item_text">
                                 <a class="category bg-light px-2 py-1 fw-semibold"
                                     href="#">{{ $product->subCategory->name ?? '' }}</a>
-                                <div class="fp__menu_item_text">
-                                    @if ($product->reviews_avg_rating)
-                                        <p class="rating">
-                                            @for ($i = 1; $i <= $product->reviews_avg_rating; $i++)
-                                                <i class="fas fa-star"></i>
-                                            @endfor
-                                            <span>{{ $product->reviews_count }}</span>
-                                        </p>
-                                    @endif
-                                    <a class="title my-0"
-                                        href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
+                                @if ($product->reviews_avg_rating)
+                                    <p class="rating">
+                                        @for ($i = 1; $i <= $product->reviews_avg_rating; $i++)
+                                            <i class="fas fa-star"></i>
+                                        @endfor
+                                        <span>{{ $product->reviews_count }}</span>
+                                    </p>
+                                @endif
+                                <a class="title my-0"
+                                    href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
 
-                                    <div class="actions mt-3 d-flex justify-content-between">
-                                        <p class="price color-light-gray m-0">
-                                            @if ($product->offer_price > 0)
-                                                {{ currencyPosition($product->offer_price) }}
-                                                <del>{{ currencyPosition($product->price) }}</del>
-                                            @else
-                                                {{ currencyPosition($product->price) }}
-                                            @endif
-                                        </p>
-                                        <a class="add-to-cart rounded-pill px-3 py-2 background-light-gray text-white"
-                                            href="javascript:;" onclick="loadProductModal('{{ $product->id }}')">Add to
-                                            cart</a>
+                                <div class="actions mt-3 d-flex justify-content-between">
+                                    <p class="price color-light-gray m-0">
+                                        @if ($product->offer_price > 0)
+                                            {{ currencyPosition($product->offer_price) }}
+                                            <del>{{ currencyPosition($product->price) }}</del>
+                                        @else
+                                            {{ currencyPosition($product->price) }}
+                                        @endif
+                                    </p>
+                                    <a class="add-to-cart rounded-pill px-3 py-2 background-light-gray text-white"
+                                        href="javascript:;" onclick="loadProductModal('{{ $product->id }}')">Add to
+                                        cart</a>
 
-                                        <a class="heart position-absolute rounded-circle background-light-gray"
-                                            onclick="addToWishlist('{{ $product->id }}')" href="javascript:;"><i
-                                                class="fal fa-heart text-white"></i></a>
+                                    <a class="heart position-absolute rounded-circle background-light-gray"
+                                        onclick="addToWishlist('{{ $product->id }}')" href="javascript:;"><i
+                                            class="fal fa-heart text-white"></i></a>
 
-                                        {{-- <a class="background-light-gray"
+                                    {{-- <a class="background-light-gray"
                                             href="{{ route('product.show', $product->slug) }}"><i
                                                 class="far fa-eye"></i></a> --}}
-                                    </div>
                                 </div>
                             </div>
                         </div>
