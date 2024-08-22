@@ -9,7 +9,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row row-flex">
                 @foreach ($latestBlogs as $blog)
                     <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-duration="1s">
                         <div class="fp__single_blog">
