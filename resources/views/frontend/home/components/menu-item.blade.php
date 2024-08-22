@@ -203,9 +203,10 @@
                                 <img src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}"
                                     class="img-fluid w-100">
                             </div>
-                            <a class="px-3 py-2 category categorys fw-semibold"
-                                href="{{ route('category.show', ['slug' => $product->category->slug]) }}">{{ @$product->category->name }}</a>
+
                             <div class="fp__menu_item_text">
+                                <a class="px-3 py-2 category categorys fw-semibold"
+                                    href="{{ route('category.show', ['slug' => $product->category->slug]) }}">{{ @$product->category->name }}</a>
                                 <a class="my-0 title"
                                     href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
                                 <div class="actions mt-3 d-flex justify-content-between align-items-center">
