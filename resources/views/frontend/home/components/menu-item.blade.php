@@ -197,15 +197,15 @@
                 @endphp
 
                 @foreach ($products as $product)
-                    <div class="col-md-4 wow fadeInUp {{ $category->slug }}">
-                        <div class="position-relative m-3 fp__menu_item rounded-5">
+                    <div class="col-md-4 mb-4">
+                        <div class="d-flex flex-column h-100 position-relative m-3 fp__menu_item rounded-5">
                             <div class="fp__menu_item_img">
                                 <img src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}"
                                     class="img-fluid w-100">
                             </div>
                             <a class="px-3 py-2 category categorys fw-semibold"
                                 href="{{ route('category.show', ['slug' => $product->category->slug]) }}">{{ @$product->category->name }}</a>
-                            <div class="fp__menu_item_text">
+                            <div class="fp__menu_item_text mt-auto">
                                 <a class="my-4 title"
                                     href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
                                 <div class="actions mt-3 d-flex justify-content-between">
@@ -217,9 +217,6 @@
                                             {{ currencyPosition($product->price) }}
                                         @endif
                                     </p>
-                                    {{-- <a class="eye position-absolute rounded-circle"
-                                        href="{{ route('product.show', $product->slug) }}"><i
-                                            class="far fa-eye  text-white"></i></a> --}}
                                     <a class="add-to-cart rounded-pill px-3 py-2 background-light-gray text-white"
                                         href="javascript:;" onclick="addToCart('{{ $product->id }}')">Add to cart</a>
                                     <a class="heart position-absolute rounded-circle" href="javascript:;"
