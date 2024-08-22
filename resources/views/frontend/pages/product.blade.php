@@ -141,7 +141,7 @@
                                         class="img-fluid w-100"></a>
                             </div>
 
-                            <div class="fp__menu_item_text">
+                            <div class="fp__menu_item_text position-relative">
                                 <a class="category bg-light px-2 py-1 fw-semibold"
                                     href="#">{{ $product->subCategory->name ?? '' }}</a>
                                 @if ($product->reviews_avg_rating)

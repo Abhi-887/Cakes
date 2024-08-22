@@ -204,7 +204,7 @@
                                     class="img-fluid w-100">
                             </div>
 
-                            <div class="fp__menu_item_text">
+                            <div class="fp__menu_item_text position-relative">
                                 <a class="px-3 py-2 category categorys fw-semibold"
                                     href="{{ route('category.show', ['slug' => $product->category->slug]) }}">{{ @$product->category->name }}</a>
                                 <a class="my-0 title"
