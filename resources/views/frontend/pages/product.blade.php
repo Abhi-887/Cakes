@@ -147,8 +147,7 @@
                                     href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
 
                                 <div class="actions mt-3 d-flex justify-content-between">
-                                    <p
-                                        class="price fw-semibold text-center position-absolute py-1 px-3 rounded-pill color-light-gray top-0">
+                                    <p class="price fw-semibold position-absolute py-1 px-3 rounded-pill color-light-gray">
                                         @if ($product->offer_price > 0)
                                             {{ currencyPosition($product->offer_price) }}
                                             <del>{{ currencyPosition($product->price) }}</del>
@@ -162,7 +161,7 @@
 
                                     <a class="heart position-absolute rounded-circle background-light-gray"
                                         onclick="addToWishlist('{{ $product->id }}')" href="javascript:;"><i
-                                            class="fal fa-heart"></i></a>
+                                            class="fal fa-heart text-white"></i></a>
 
                                     {{-- <a class="background-light-gray"
                                             href="{{ route('product.show', $product->slug) }}"><i
