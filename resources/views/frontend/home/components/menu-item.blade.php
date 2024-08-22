@@ -209,17 +209,8 @@
 
                                 <a class="px-3 py-2 category categorys fw-semibold"
                                     href="{{ route('category.show', ['slug' => $product->category->slug]) }}">{{ @$product->category->name }}</a>
-                                <a class="my-0 title card-title"
+                                <a class="mb-5 title card-title"
                                     href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
-
-                                <p class="price color-light-gray m-0">
-                                    @if ($product->offer_price > 0)
-                                        <del>{{ currencyPosition($product->price) }}</del>
-                                        {{ currencyPosition($product->offer_price) }}
-                                    @else
-                                        {{ currencyPosition($product->price) }}
-                                    @endif
-                                </p>
                                 <a class="add-to-cart rounded-pill px-3 py-2 background-light-gray text-white mt-auto align-self-start"
                                     href="javascript:;" onclick="addToCart('{{ $product->id }}')">Add to cart</a>
                             </div>
