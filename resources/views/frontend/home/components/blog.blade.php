@@ -9,7 +9,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row row-flex">
+            <div class="row">
                 @foreach ($latestBlogs as $blog)
                     <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-duration="1s">
                         <div class="fp__single_blog">
@@ -17,7 +17,7 @@
                                 <img src="{{ asset($blog->image) }}" alt="{{ $blog->title }}" class="img-fluid w-100">
                             </a>
                             <div class="fp__single_blog_text">
-                                <a class="blogcategory category"
+                                <a class="blogcategory category bg-light"
                                     href="{{ route('blogs', ['category' => $blog->category->slug]) }}">
                                     {{ $blog->category->name }}
                                 </a>
