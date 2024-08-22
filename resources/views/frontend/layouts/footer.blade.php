@@ -95,7 +95,7 @@ $footerGridFourLinks = \App\Models\FooterGridFour::where('status', 1)->get();
         <div class="text-white footer-tile">
             <div class="py-4 mx-auto wrapper w-100 row d-flex justify-content-center align-items-center">
                 <div class="col-auto col-sm-7">
-                    <span class="color-white fw-semibold">© 3D Cakes. All Rights Reserved.</span>
+                    <span class="color-white ">© 3D Cakes. All Rights Reserved.</span>
                 </div>
                 <div class="col-auto text-white col-sm-5 text-end">
                     <div class="social-links">
