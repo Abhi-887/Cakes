@@ -17,7 +17,8 @@
                                 <img src="{{ asset($blog->image) }}" alt="{{ $blog->title }}" class="img-fluid w-100">
                             </a>
                             <div class="fp__single_blog_text">
-                                <a class="category" href="{{ route('blogs', ['category' => $blog->category->slug]) }}">
+                                <a class="blogcategory category"
+                                    href="{{ route('blogs', ['category' => $blog->category->slug]) }}">
                                     {{ $blog->category->name }}
                                 </a>
                                 <ul class="flex-wrap d-flex mt_15">
@@ -52,5 +53,9 @@
         -moz-transition: all linear 0.6s;
         -ms-transition: all linear 0.6s;
         -o-transition: all linear 0.6s;
+    }
+
+    .blogcategory {
+        top: -6% !important;
     }
 </style>
