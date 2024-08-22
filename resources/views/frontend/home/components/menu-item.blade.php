@@ -95,7 +95,7 @@
         background-color: #fff;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         overflow: hidden;
-        position: relative;
+        /* position: relative; */
     }
 
     .fp__menu_item_img img {
