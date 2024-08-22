@@ -205,7 +205,7 @@
                             <div class="fp__menu_item_text">
                                 <a class="my-3 title"
                                     href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
-                                <div class="actions d-flex justify-content-between">
+                                <div class="actions mt-3 d-flex justify-content-between">
                                     <p class="price">
                                         @if ($product->offer_price > 0)
                                             <del>{{ currencyPosition($product->price) }}</del>
@@ -217,8 +217,8 @@
                                     <a class="eye position-absolute rounded-circle"
                                         href="{{ route('product.show', $product->slug) }}"><i
                                             class="far fa-eye  text-white"></i></a>
-                                    <a class="add-to-cart rounded-pill background-dark-gray" href="javascript:;"
-                                        onclick="addToCart('{{ $product->id }}')">Add to cart</a>
+                                    <a class="add-to-cart rounded-pill px-3 py-2 background-dark-gray"
+                                        href="javascript:;" onclick="addToCart('{{ $product->id }}')">Add to cart</a>
                                     <a class="heart position-absolute rounded-circle" href="javascript:;"
                                         onclick="addToWishlist('{{ $product->id }}')"><i
                                             class="fal fa-heart text-white"></i></a>
