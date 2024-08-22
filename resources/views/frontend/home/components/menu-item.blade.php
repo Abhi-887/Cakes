@@ -95,7 +95,7 @@
         background-color: #fff;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         overflow: hidden;
-        position: relative;
+        /* position: relative; */
     }
 
     .fp__menu_item_img img {
@@ -129,8 +129,8 @@
 
     .category {
         position: absolute;
-        top: 15px;
-        left: 15px;
+        top: 62%;
+        left: 16px;
         padding: 5px 10px;
         font-size: 12px;
         background-color: #f8f9fa;
@@ -172,6 +172,11 @@
         background-color: #0056b3;
         color: white;
     }
+
+    .eye {
+        top: 0;
+        right: 10px;
+    }
 </style>
 
 <div class="container pt-5">
@@ -205,7 +210,7 @@
 
                 @foreach ($products as $product)
                     <div class="col-md-4 {{ $category->slug }}">
-                        <div class="m-3 fp__menu_item">
+                        <div class="position-relative m-3 fp__menu_item">
                             <div class="fp__menu_item_img">
                                 <img src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}"
                                     class="img-fluid w-100">
@@ -224,8 +229,9 @@
                                     @endif
                                 </p>
                                 <div class="actions">
-                                    <a href="{{ route('product.show', $product->slug) }}"><i
-                                            class="far fa-eye"></i></a>
+                                    <a class="eye position-absolute"
+                                        href="{{ route('product.show', $product->slug) }}"><i
+                                            class="far fa-eye position-absolute"></i></a>
                                     <a class="add-to-cart" href="javascript:;"
                                         onclick="addToCart('{{ $product->id }}')">Add to cart</a>
                                     <a href="javascript:;" onclick="addToWishlist('{{ $product->id }}')"><i
