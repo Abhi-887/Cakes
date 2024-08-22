@@ -172,6 +172,11 @@
         background-color: #0056b3;
         color: white;
     }
+
+    .fa-eye {
+        top: 0;
+        right: 10px;
+    }
 </style>
 
 <div class="container pt-5">
@@ -205,7 +210,7 @@
 
                 @foreach ($products as $product)
                     <div class="col-md-4 {{ $category->slug }}">
-                        <div class="m-3 fp__menu_item">
+                        <div class="position-relative m-3 fp__menu_item">
                             <div class="fp__menu_item_img">
                                 <img src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}"
                                     class="img-fluid w-100">
@@ -225,7 +230,7 @@
                                 </p>
                                 <div class="actions">
                                     <a href="{{ route('product.show', $product->slug) }}"><i
-                                            class="far fa-eye"></i></a>
+                                            class="far fa-eye position-absolute"></i></a>
                                     <a class="add-to-cart" href="javascript:;"
                                         onclick="addToCart('{{ $product->id }}')">Add to cart</a>
                                     <a href="javascript:;" onclick="addToWishlist('{{ $product->id }}')"><i
