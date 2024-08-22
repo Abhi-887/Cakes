@@ -129,8 +129,8 @@
 
     .category {
         position: absolute;
-        top: 15px;
-        left: 15px;
+        top: 62%;
+        left: 16px;
         padding: 5px 10px;
         font-size: 12px;
         background-color: #f8f9fa;
