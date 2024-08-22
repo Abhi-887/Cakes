@@ -124,7 +124,7 @@
 
     .category {
         position: absolute;
-        top: 68% !important;
+        top: -11% !important;
         left: 16px;
         padding: 5px 10px;
         font-size: 12px;
@@ -227,9 +227,6 @@
                                             class="far fa-eye  text-white"></i></a> --}}
                                     <a class="add-to-cart rounded-pill px-3 py-2 background-light-gray text-white"
                                         href="javascript:;" onclick="addToCart('{{ $product->id }}')">Add to cart</a>
-                                    <a class="heart position-absolute rounded-circle" href="javascript:;"
-                                        onclick="addToWishlist('{{ $product->id }}')"><i
-                                            class="fal fa-heart text-white"></i></a>
                                 </div>
                             </div>
                         </div>
