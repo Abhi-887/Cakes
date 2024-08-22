@@ -201,7 +201,7 @@
                                 <a class="my-3 title"
                                     href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
                                 <div class="actions mt-3 d-flex justify-content-between">
-                                    <p class="price">
+                                    <p class="price color-light-gray">
                                         @if ($product->offer_price > 0)
                                             <del>{{ currencyPosition($product->price) }}</del>
                                             {{ currencyPosition($product->offer_price) }}
