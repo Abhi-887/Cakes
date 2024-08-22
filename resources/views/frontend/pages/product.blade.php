@@ -156,8 +156,9 @@
                                             {{ currencyPosition($product->price) }}
                                         @endif
                                     </p>
-                                    {{-- <li><a href="javascript:;" onclick="loadProductModal('{{ $product->id }}')"><i
-                                        class="fas fa-shopping-basket"></i></a></li> --}}
+                                    <a class="rounded-pill px-3 py-2 background-light-gray" href="javascript:;"
+                                        onclick="loadProductModal('{{ $product->id }}')"><i
+                                            class="fas fa-shopping-basket text-white"></i></a>
 
                                     <a class="heart position-absolute rounded-circle background-light-gray"
                                         onclick="addToWishlist('{{ $product->id }}')" href="javascript:;"><i
