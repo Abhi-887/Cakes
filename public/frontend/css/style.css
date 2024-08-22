@@ -1204,7 +1204,7 @@ button {
     color: #788a9f !important;
     font-family: var(--headingFont);
     position: absolute;
-    top: 69%;
+    top: 70%;
     left: 10px;
     z-index: 1;
     /* background: var(--colorWhite); */
@@ -1217,7 +1217,7 @@ button {
 .fp__menu_item .fp__menu_item_text {
     border-radius: 0 0 10px 10px;
     background: var(--colorWhite);
-    padding: 30px 12px;
+    padding: 25px 20px 40px 20px;
     /* text-align: center; */
     /* position: relative; */
     transition: all linear 0.3s;
