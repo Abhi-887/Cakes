@@ -25,18 +25,18 @@ class FooterInfoTwoController extends Controller
     {
         $request->validate([
             'name' => ['max:100'],
-			'phone' => ['max:100'],
+            'phone' => ['max:100'],
             'email' => ['max:100'],
-            'address' => ['max:3000'],
+            'address' => ['max:300'],
             'copyright' => ['max:200']
         ]);
 
-        $footerInfo = FooterInfoTwo::find($id);
+
 
         FooterInfoTwo::updateOrCreate(
             ['id' => $id],
             [
-			    'name' => $request->name,
+                'name' => $request->name,
                 'phone' => $request->phone,
                 'email' => $request->email,
                 'address' => $request->address,
@@ -46,7 +46,7 @@ class FooterInfoTwoController extends Controller
 
         Cache::forget('footer_info');
 
-        toastr('Updated successfully!', 'success', 'success');
+        toastr('Updated successfully 2nd footer info !', 'success', 'success');
 
         return redirect()->back();
     }
