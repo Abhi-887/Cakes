@@ -28,6 +28,10 @@
             padding: 10px 15px !important;
         }
 
+        .add-to-cart {
+            font-size: 18px;
+        }
+
         .fp__menu_item_text {
             border-top: 1px solid #788a9f !important;
         }
@@ -151,7 +155,7 @@
                                     href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
 
                                 <div class="actions mt-3 d-flex justify-content-between">
-                                    <p class="price color-light-gray fs-4 m-0">
+                                    <p class="price color-light-gray m-0">
                                         @if ($product->offer_price > 0)
                                             {{ currencyPosition($product->offer_price) }}
                                             <del>{{ currencyPosition($product->price) }}</del>
@@ -159,8 +163,9 @@
                                             {{ currencyPosition($product->price) }}
                                         @endif
                                     </p>
-                                    <a class="rounded-pill px-3 py-2 background-light-gray text-white" href="javascript:;"
-                                        onclick="loadProductModal('{{ $product->id }}')">Add to cart</a>
+                                    <a class="add-to-cart rounded-pill px-3 py-2 background-light-gray text-white"
+                                        href="javascript:;" onclick="loadProductModal('{{ $product->id }}')">Add to
+                                        cart</a>
 
                                     <a class="heart position-absolute rounded-circle background-light-gray"
                                         onclick="addToWishlist('{{ $product->id }}')" href="javascript:;"><i

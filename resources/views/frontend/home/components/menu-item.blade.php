@@ -151,6 +151,9 @@
         background-color: #788a9f !important;
         padding: 10px 15px !important;
     } */
+    .add-to-cart {
+        font-size: 18px;
+    }
 
     .heart {
         top: 2%;
@@ -206,7 +209,7 @@
                                 <a class="my-4 title"
                                     href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
                                 <div class="actions mt-3 d-flex justify-content-between">
-                                    <p class="price color-light-gray fs-4 m-0">
+                                    <p class="price color-light-gray m-0">
                                         @if ($product->offer_price > 0)
                                             <del>{{ currencyPosition($product->price) }}</del>
                                             {{ currencyPosition($product->offer_price) }}
