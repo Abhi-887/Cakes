@@ -104,11 +104,6 @@
         object-fit: cover;
     }
 
-    .fp__menu_item_text {
-        padding: 20px;
-        text-align: center;
-    }
-
     .fp__menu_item_text .title {
         font-size: 18px;
         font-weight: 600;
