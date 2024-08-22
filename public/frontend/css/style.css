@@ -5889,7 +5889,7 @@ CHECKOUT PAGE START
     color: var(--colorPrimary);
     font-family: var(--cursiveFont);
     position: absolute;
-    top: 5px;
+    /* top: 5px; */
     left: 5px;
     background: var(--colorWhite);
     padding: 3px 15px;
