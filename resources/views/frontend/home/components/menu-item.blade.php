@@ -197,8 +197,8 @@
                 @endphp
 
                 @foreach ($products as $product)
-                    <div class="col-md-4 mb-4">
-                        <div class="d-flex flex-column h-100 position-relative m-3 fp__menu_item rounded-5">
+                    <div class="col-md-4 d-flex">
+                        <div class="d-flex flex-column h-100 position-relative m-3 fp__menu_item rounded-5 w-100">
                             <div class="fp__menu_item_img">
                                 <img src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}"
                                     class="img-fluid w-100">
