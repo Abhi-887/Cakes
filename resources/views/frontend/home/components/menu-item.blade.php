@@ -175,7 +175,14 @@
 
     .eye {
         top: 0;
-        right: 10px;
+        right: 20%;
+        background-color: #4b637f !important;
+    }
+
+    .heart {
+        top: 0;
+        right: 5%;
+        background-color: #4b637f !important;
     }
 </style>
 
@@ -229,13 +236,13 @@
                                     @endif
                                 </p>
                                 <div class="actions">
-                                    <a class="eye position-absolute"
+                                    <a class="eye position-absolute rounded-circle px-2 py-2"
                                         href="{{ route('product.show', $product->slug) }}"><i
                                             class="far fa-eye position-absolute"></i></a>
                                     <a class="add-to-cart" href="javascript:;"
                                         onclick="addToCart('{{ $product->id }}')">Add to cart</a>
-                                    <a href="javascript:;" onclick="addToWishlist('{{ $product->id }}')"><i
-                                            class="fal fa-heart"></i></a>
+                                    <a class="heart position-absolute rounded-circle px-2 py-2" href="javascript:;"
+                                        onclick="addToWishlist('{{ $product->id }}')"><i class="fal fa-heart"></i></a>
                                 </div>
                             </div>
                         </div>
