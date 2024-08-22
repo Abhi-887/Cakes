@@ -9,8 +9,8 @@ $footerGridFourLinks = \App\Models\FooterGridFour::where('status', 1)->get();
 @endphp
 
 <footer>
-    <div class="px-2">
-        <div class="mx-auto footer-sub wrapper w-100">
+    <div class="">
+        <div class="py-5 mx-auto footer-sub wrapper w-100">
 
 
                     <div class="text-center">
