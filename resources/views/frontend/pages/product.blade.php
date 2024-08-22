@@ -20,6 +20,13 @@
             -webkit-appearance: button;
             -moz-appearance: button;
         }
+
+        .heart {
+            top: 2%;
+            right: 5%;
+            background-color: #788a9f !important;
+            padding: 10px 15px !important;
+        }
     </style>
 
     <section class="fp__search_menu py-5">
@@ -138,29 +145,28 @@
                                 @endif
                                 <a class="title my-3"
                                     href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
-                                <p
-                                    class="price fw-semibold text-center position-absolute py-1 px-3 rounded-pill color-light-gray top-0">
-                                    @if ($product->offer_price > 0)
-                                        {{ currencyPosition($product->offer_price) }}
-                                        <del>{{ currencyPosition($product->price) }}</del>
-                                    @else
-                                        {{ currencyPosition($product->price) }}
-                                    @endif
-                                </p>
-                                <ul class="flex-wrap d-flex justify-content-center">
+
+                                <div class="actions mt-3 d-flex justify-content-between">
+                                    <p
+                                        class="price fw-semibold text-center position-absolute py-1 px-3 rounded-pill color-light-gray top-0">
+                                        @if ($product->offer_price > 0)
+                                            {{ currencyPosition($product->offer_price) }}
+                                            <del>{{ currencyPosition($product->price) }}</del>
+                                        @else
+                                            {{ currencyPosition($product->price) }}
+                                        @endif
+                                    </p>
                                     {{-- <li><a href="javascript:;" onclick="loadProductModal('{{ $product->id }}')"><i
                                         class="fas fa-shopping-basket"></i></a></li> --}}
 
-                                    <li onclick="addToWishlist('{{ $product->id }}')"><a class="background-light-gray"
-                                            href="javascript:;"><i class="fal fa-heart"></i></a></li>
+                                    <a class="heart position-absolute rounded-circle background-light-gray"
+                                        onclick="addToWishlist('{{ $product->id }}')" href="javascript:;"><i
+                                            class="fal fa-heart"></i></a>
 
-
-                                    <li><a class="background-light-gray"
+                                    {{-- <a class="background-light-gray"
                                             href="{{ route('product.show', $product->slug) }}"><i
-                                                class="far fa-eye"></i></a></li>
-
-                                    </li>
-                                </ul>
+                                                class="far fa-eye"></i></a> --}}
+                                </div>
                             </div>
                         </div>
                     </div>
