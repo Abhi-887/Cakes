@@ -229,7 +229,7 @@
                                     @endif
                                 </p>
                                 <div class="actions">
-                                    <a class="eye position-absolute"
+                                    <a class="eye position-absolute rounded-circle background-dark-gray"
                                         href="{{ route('product.show', $product->slug) }}"><i
                                             class="far fa-eye position-absolute"></i></a>
                                     <a class="add-to-cart" href="javascript:;"
