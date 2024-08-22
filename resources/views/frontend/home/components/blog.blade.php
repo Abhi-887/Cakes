@@ -32,7 +32,7 @@
                                     href="{{ route('blogs.details', $blog->slug) }}">{{ $blog->title }}</a>
                                 <p class="fw-semibold text-muted mt-3">{!! truncate($blog->description, 100) !!}</p>
                                 <a href="{{ route('blogs.details', $blog->slug) }}"
-                                    class="blog-btn rounded-3 mt-2 background-dark-gray py-2 px-3 text-light">
+                                    class="blog-btn fw-semibold rounded-3 mt-2 color-dark-gray py-2 px-3">
                                     Read More <i class="fas fa-arrow-right ms-1"></i>
                                 </a>
                             </div>
@@ -46,14 +46,14 @@
 
 
 <style>
-    .blog-btn:hover {
+    /* .blog-btn:hover {
         background: #788a9f !important;
         transition: all linear 0.6s;
         -webkit-transition: all linear 0.6s;
         -moz-transition: all linear 0.6s;
         -ms-transition: all linear 0.6s;
         -o-transition: all linear 0.6s;
-    }
+    } */
 
     .blogcategory {
         top: -6% !important;
