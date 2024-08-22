@@ -1185,9 +1185,9 @@ button {
     top: 71% !important;
 } */
 
-.fp__menu_item:hover .fp__menu_item_text .price {
+/* .fp__menu_item:hover .fp__menu_item_text .price {
     top: -15px !important;
-}
+} */
 
 /* .fp__menu_item:hover .fp__menu_item_text .title {
     color: white !important;
