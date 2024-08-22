@@ -17,10 +17,11 @@
                                 <img src="{{ asset($blog->image) }}" alt="{{ $blog->title }}" class="img-fluid w-100">
                             </a>
                             <div class="fp__single_blog_text">
-                                <a class="category" href="{{ route('blogs', ['category' => $blog->category->slug]) }}">
+                                <a class="blogcategory category bg-light"
+                                    href="{{ route('blogs', ['category' => $blog->category->slug]) }}">
                                     {{ $blog->category->name }}
                                 </a>
-                                <ul class="flex-wrap d-flex mt_15">
+                                <ul class="flex-wrap d-flex mt-2">
                                     <li><i class="fas fa-user"></i>{{ $blog->user->name }}</li>
                                     <li><i
                                             class="fas fa-calendar-alt"></i>{{ date('d M Y', strtotime($blog->created_at)) }}
@@ -31,7 +32,7 @@
                                     href="{{ route('blogs.details', $blog->slug) }}">{{ $blog->title }}</a>
                                 <p class="fw-semibold text-muted mt-3">{!! truncate($blog->description, 100) !!}</p>
                                 <a href="{{ route('blogs.details', $blog->slug) }}"
-                                    class="blog-btn rounded-3 mt-2 background-dark-gray py-2 px-3 text-light">
+                                    class="blog-btn fw-semibold rounded-3 color-dark-gray py-2 px-3">
                                     Read More <i class="fas fa-arrow-right ms-1"></i>
                                 </a>
                             </div>
@@ -45,12 +46,18 @@
 
 
 <style>
-    .blog-btn:hover {
+    /* .blog-btn:hover {
         background: #788a9f !important;
         transition: all linear 0.6s;
         -webkit-transition: all linear 0.6s;
         -moz-transition: all linear 0.6s;
         -ms-transition: all linear 0.6s;
         -o-transition: all linear 0.6s;
+    } */
+
+    .blogcategory {
+        top: -6% !important;
+        color: #788a9f !important;
+        border: 1px solid #788a9f !important;
     }
 </style>

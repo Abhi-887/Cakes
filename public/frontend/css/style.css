@@ -1204,7 +1204,7 @@ button {
     color: #788a9f !important;
     font-family: var(--headingFont);
     position: absolute;
-    top: 70% !important;
+    top: 70%;
     left: 10px;
     z-index: 1;
     /* background: var(--colorWhite); */
@@ -1217,7 +1217,7 @@ button {
 .fp__menu_item .fp__menu_item_text {
     border-radius: 0 0 10px 10px;
     background: var(--colorWhite);
-    padding: 30px;
+    padding: 25px 17px 40px 17px;
     /* text-align: center; */
     /* position: relative; */
     transition: all linear 0.3s;
@@ -1253,7 +1253,7 @@ button {
 .fp__menu_item .fp__menu_item_text .title {
     text-transform: capitalize;
     color: var(--colorBlack);
-    font-size: 24px;
+    font-size: 28px;
     font-family: var(--headingFont);
     font-weight: 600;
     margin: 10px 0px 12px 0px;
@@ -1267,8 +1267,8 @@ button {
 }
 
 .fp__menu_item .fp__menu_item_text .price {
-    /* font-size: 16px;
-    font-weight: 600;
+    font-size: 20px;
+    /* font-weight: 600;
     text-align: center; */
     /* top: -15px; */
     right: 10px;

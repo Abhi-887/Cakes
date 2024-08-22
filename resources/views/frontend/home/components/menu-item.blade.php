@@ -124,7 +124,7 @@
 
     .category {
         position: absolute;
-        top: 68%;
+        top: 68% !important;
         left: 16px;
         padding: 5px 10px;
         font-size: 12px;
@@ -151,6 +151,9 @@
         background-color: #788a9f !important;
         padding: 10px 15px !important;
     } */
+    .add-to-cart {
+        font-size: 18px;
+    }
 
     .heart {
         top: 2%;
@@ -203,10 +206,10 @@
                             <a class="px-3 py-2 category categorys fw-semibold"
                                 href="{{ route('category.show', ['slug' => $product->category->slug]) }}">{{ @$product->category->name }}</a>
                             <div class="fp__menu_item_text">
-                                <a class="my-3 title"
+                                <a class="my-0 title"
                                     href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
-                                <div class="actions mt-3 d-flex justify-content-between">
-                                    <p class="price color-light-gray">
+                                <div class="actions mt-3 d-flex justify-content-between align-items-center">
+                                    <p class="price color-light-gray m-0">
                                         @if ($product->offer_price > 0)
                                             <del>{{ currencyPosition($product->price) }}</del>
                                             {{ currencyPosition($product->offer_price) }}
