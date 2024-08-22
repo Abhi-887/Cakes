@@ -160,8 +160,7 @@
                                         @endif
                                     </p>
                                     <a class="rounded-pill px-3 py-2 background-light-gray" href="javascript:;"
-                                        onclick="loadProductModal('{{ $product->id }}')"><i
-                                            class="fas fa-shopping-basket text-white"></i></a>
+                                        onclick="loadProductModal('{{ $product->id }}')">Add to cart</a>
 
                                     <a class="heart position-absolute rounded-circle background-light-gray"
                                         onclick="addToWishlist('{{ $product->id }}')" href="javascript:;"><i
