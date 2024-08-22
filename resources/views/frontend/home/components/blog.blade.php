@@ -21,7 +21,7 @@
                                     href="{{ route('blogs', ['category' => $blog->category->slug]) }}">
                                     {{ $blog->category->name }}
                                 </a>
-                                <ul class="flex-wrap d-flex mt_15">
+                                <ul class="flex-wrap d-flex mt-2">
                                     <li><i class="fas fa-user"></i>{{ $blog->user->name }}</li>
                                     <li><i
                                             class="fas fa-calendar-alt"></i>{{ date('d M Y', strtotime($blog->created_at)) }}
@@ -32,7 +32,7 @@
                                     href="{{ route('blogs.details', $blog->slug) }}">{{ $blog->title }}</a>
                                 <p class="fw-semibold text-muted mt-3">{!! truncate($blog->description, 100) !!}</p>
                                 <a href="{{ route('blogs.details', $blog->slug) }}"
-                                    class="blog-btn fw-semibold rounded-3 mt-2 color-dark-gray py-2 px-3">
+                                    class="blog-btn fw-semibold rounded-3 color-dark-gray py-2 px-3">
                                     Read More <i class="fas fa-arrow-right ms-1"></i>
                                 </a>
                             </div>

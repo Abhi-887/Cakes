@@ -206,9 +206,9 @@
                             <a class="px-3 py-2 category categorys fw-semibold"
                                 href="{{ route('category.show', ['slug' => $product->category->slug]) }}">{{ @$product->category->name }}</a>
                             <div class="fp__menu_item_text">
-                                <a class="my-4 title"
+                                <a class="my-0 title"
                                     href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
-                                <div class="actions mt-3 d-flex justify-content-between">
+                                <div class="actions mt-3 d-flex justify-content-between align-items-center">
                                     <p class="price color-light-gray m-0">
                                         @if ($product->offer_price > 0)
                                             <del>{{ currencyPosition($product->price) }}</del>
