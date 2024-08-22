@@ -197,18 +197,18 @@
                 @endphp
 
                 @foreach ($products as $product)
-                    <div class="col-md-4 d-flex align-items-stretch {{ $category->slug }}">
-                        <div class="position-relative m-3 fp__menu_item rounded-5">
+                    <div class="col-md-4 mb-3 d-flex align-items-stretch {{ $category->slug }}">
+                        <div class="card position-relative m-3 fp__menu_item rounded-5">
                             <div class="fp__menu_item_img">
                                 <img src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}"
                                     class="img-fluid w-100">
                             </div>
                             <a class="px-3 py-2 category categorys fw-semibold"
                                 href="{{ route('category.show', ['slug' => $product->category->slug]) }}">{{ @$product->category->name }}</a>
-                            <div class="fp__menu_item_text d-flex flex-column">
-                                <a class="my-4 title"
+                            <div class="card-body d-flex flex-column fp__menu_item_text">
+                                <a class="mt-auto align-self-start my-4 title"
                                     href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
-                                <div class="actions d-flex justify-content-between mt-auto align-self-start">
+                                <div class="mt-auto align-self-start actions mt-3 d-flex justify-content-between">
                                     <p class="price color-light-gray m-0">
                                         @if ($product->offer_price > 0)
                                             <del>{{ currencyPosition($product->price) }}</del>
