@@ -176,11 +176,13 @@
     .eye {
         top: 0;
         right: 20%;
+        background-color: #4b637f !important;
     }
 
     .heart {
         top: 0;
         right: 5%;
+        background-color: #4b637f !important;
     }
 </style>
 
@@ -234,7 +236,7 @@
                                     @endif
                                 </p>
                                 <div class="actions">
-                                    <a class="eye position-absolute rounded-circle background-dark-gray px-2 py-2"
+                                    <a class="eye position-absolute rounded-circle px-2 py-2"
                                         href="{{ route('product.show', $product->slug) }}"><i
                                             class="far fa-eye position-absolute"></i></a>
                                     <a class="add-to-cart" href="javascript:;"
