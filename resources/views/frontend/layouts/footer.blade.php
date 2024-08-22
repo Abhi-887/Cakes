@@ -9,7 +9,7 @@ $footerGridFourLinks = \App\Models\FooterGridFour::where('status', 1)->get();
 @endphp
 
 <footer>
-    <div class="">
+    <div class="border-top">
         <div class="py-5 mx-auto footer-sub wrapper w-100">
 
 
@@ -42,17 +42,17 @@ $footerGridFourLinks = \App\Models\FooterGridFour::where('status', 1)->get();
                 <div class="col-lg-3 col-md-12 footer-info">
                     <h5 class="mt-2 mb-1 text-white mb-xl-3 fw-normal mt-xl-0">{{ @$footerInfo->name }}</h5>
                     <div class="">{!! @$footerInfo->address !!}</div>
-                    <div><strong class=" fal fa-solid fa-envelope"> : </strong><span class="text-white ">{{ @$footerInfo->email }}</span>
+                    <div><strong class=" far fa-solid fa-envelope"> : </strong><span class="text-white ">{{ @$footerInfo->email }}</span>
                     </div>
-                    <div><strong class="fal fa-solid fa-phone"> : </strong><span class="text-white">{{ @$footerInfo->phone }}</span>
+                    <div><strong class="far fa-solid fa-phone"> : </strong><span class="text-white">{{ @$footerInfo->phone }}</span>
                     </div>
                 </div>
 
                 <div class="col-lg-3 col-md-12 footer-info">
                     <h5 class="mt-2 mb-1 text-white mb-xl-3 fw-normal mt-xl-0">{{ @$footerInfoTwo->name }}</h5>
                     <div class="">{!! @$footerInfoTwo->address !!}</div>
-                    <div><strong class=" fal fa-solid fa-envelope"></strong>{{ @$footerInfoTwo->email }}</div>
-                    <div><strong class="fal fa-solid fa-phone"></strong>{{ @$footerInfoTwo->phone }}</div>
+                    <div><strong class=" far fa-solid fa-envelope"> : </strong>{{ @$footerInfoTwo->email }}</div>
+                    <div><strong class="far fa-solid fa-phone"> : </strong>{{ @$footerInfoTwo->phone }}</div>
                 </div>
 
                 <div class="col-lg-2 col-md-12 lh-lg footer-hover">
