@@ -139,14 +139,6 @@
         text-transform: uppercase;
     }
 
-    .actions {
-        display: flex;
-        justify-content: space-between;
-        padding: 10px 20px;
-        border-top: 1px solid #f0f0f0;
-        background-color: #f8f9fa;
-    }
-
     .actions a {
         font-size: 18px;
         color: #333;
@@ -229,7 +221,7 @@
                             <div class="fp__menu_item_text">
                                 <a class="my-3 title"
                                     href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
-                                <div class="actions">
+                                <div class="actions d-flex justify-content-between">
                                     <p class="price">
                                         @if ($product->offer_price > 0)
                                             <del>{{ currencyPosition($product->price) }}</del>
