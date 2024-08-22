@@ -180,7 +180,7 @@
     </div>
 
     <div class="testimonial-slider popularfood">
-        <div class="mt-5 row row-flex">
+        <div class="mt-5 row flex-wrap">
             @foreach ($categories as $category)
                 @php
                     $products = \App\Models\Product::where([
