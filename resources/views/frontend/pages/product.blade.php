@@ -133,7 +133,7 @@
 
             <div class="row">
                 @foreach ($products as $product)
-                    <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-duration="1s">
+                    <div class="col-sm-6 col-lg-4 my-2 wow fadeInUp" data-wow-duration="1s">
                         <div class="fp__menu_item h-100 d-flex flex-column">
                             <div class="fp__menu_item_img">
                                 <a href="{{ route('product.show', $product->slug) }}" class="title my-3"><img

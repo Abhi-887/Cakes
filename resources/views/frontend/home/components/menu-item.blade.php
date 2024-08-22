@@ -198,7 +198,7 @@
 
                 @foreach ($products as $product)
                     <div class="col-md-4 my-3 wow fadeInUp {{ $category->slug }}">
-                        <div class="position-relative m-3 fp__menu_item rounded-5">
+                        <div class="position-relative m-3 fp__menu_item rounded-5 h-100 d-flex flex-column">
                             <div class="fp__menu_item_img">
                                 <img src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}"
                                     class="img-fluid w-100">
@@ -208,7 +208,7 @@
                                 onclick="addToWishlist('{{ $product->id }}')"><i
                                     class="fal fa-heart text-white"></i></a>
 
-                            <div class="fp__menu_item_text position-relative">
+                            <div class="fp__menu_item_text position-relative mt-auto">
                                 <a class="px-3 py-2 category categorys fw-semibold"
                                     href="{{ route('category.show', ['slug' => $product->category->slug]) }}">{{ @$product->category->name }}</a>
                                 <a class="my-0 title"
