@@ -173,7 +173,7 @@
         color: white;
     }
 
-    .fa-eye {
+    .eye {
         top: 0;
         right: 10px;
     }
@@ -229,7 +229,8 @@
                                     @endif
                                 </p>
                                 <div class="actions">
-                                    <a href="{{ route('product.show', $product->slug) }}"><i
+                                    <a class="eye position-absolute"
+                                        href="{{ route('product.show', $product->slug) }}"><i
                                             class="far fa-eye position-absolute"></i></a>
                                     <a class="add-to-cart" href="javascript:;"
                                         onclick="addToCart('{{ $product->id }}')">Add to cart</a>
