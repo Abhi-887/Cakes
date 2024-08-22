@@ -1204,7 +1204,6 @@ button {
     color: #788a9f !important;
     font-family: var(--headingFont);
     position: absolute;
-    /* top: 59% !important; */
     left: 10px;
     z-index: 1;
     /* background: var(--colorWhite); */
