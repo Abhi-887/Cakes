@@ -151,7 +151,7 @@
                                         <span>{{ $product->reviews_count }}</span>
                                     </p>
                                 @endif
-                                <a class="title my-3"
+                                <a class="title"
                                     href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
 
                                 <div class="actions mt-3 d-flex justify-content-between">
