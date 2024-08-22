@@ -175,7 +175,7 @@
 
     .eye {
         top: 0;
-        right: 10px;
+        right: 20%;
     }
 </style>
 
