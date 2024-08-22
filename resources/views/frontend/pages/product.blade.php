@@ -159,7 +159,7 @@
                                             {{ currencyPosition($product->price) }}
                                         @endif
                                     </p>
-                                    <a class="rounded-pill px-3 py-2 background-light-gray" href="javascript:;"
+                                    <a class="rounded-pill px-3 py-2 background-light-gray text-white" href="javascript:;"
                                         onclick="loadProductModal('{{ $product->id }}')">Add to cart</a>
 
                                     <a class="heart position-absolute rounded-circle background-light-gray"
