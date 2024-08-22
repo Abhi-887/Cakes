@@ -212,21 +212,16 @@
                                 <a class="my-0 title card-title"
                                     href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
 
-                                <div class="actions mt-3 d-flex justify-content-between mt-auto align-self-start">
-                                    <p class="price color-light-gray m-0">
-                                        @if ($product->offer_price > 0)
-                                            <del>{{ currencyPosition($product->price) }}</del>
-                                            {{ currencyPosition($product->offer_price) }}
-                                        @else
-                                            {{ currencyPosition($product->price) }}
-                                        @endif
-                                    </p>
-                                    {{-- <a class="eye position-absolute rounded-circle"
-                                  href="{{ route('product.show', $product->slug) }}"><i
-                                      class="far fa-eye  text-white"></i></a> --}}
-                                    <a class="add-to-cart rounded-pill px-3 py-2 background-light-gray text-white"
-                                        href="javascript:;" onclick="addToCart('{{ $product->id }}')">Add to cart</a>
-                                </div>
+                                <p class="price color-light-gray m-0">
+                                    @if ($product->offer_price > 0)
+                                        <del>{{ currencyPosition($product->price) }}</del>
+                                        {{ currencyPosition($product->offer_price) }}
+                                    @else
+                                        {{ currencyPosition($product->price) }}
+                                    @endif
+                                </p>
+                                <a class="add-to-cart rounded-pill px-3 py-2 background-light-gray text-white mt-auto align-self-start"
+                                    href="javascript:;" onclick="addToCart('{{ $product->id }}')">Add to cart</a>
                             </div>
                         </div>
                     </div>
