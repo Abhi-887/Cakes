@@ -197,8 +197,8 @@
                 @endphp
 
                 @foreach ($products as $product)
-                    <div class="col-md-4 my-3 wow fadeInUp {{ $category->slug }}">
-                        <div class="position-relative m-3 fp__menu_item rounded-5 h-100 d-flex flex-column">
+                    <div class="col-md-4 my-3 wow fadeInUp position-relative {{ $category->slug }}">
+                        <div class="m-3 fp__menu_item rounded-5 h-100 d-flex flex-column">
                             <div class="fp__menu_item_img">
                                 <img src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}"
                                     class="img-fluid w-100">
