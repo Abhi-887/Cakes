@@ -4,9 +4,8 @@
     margin: 0;
     padding: 0;
 }
-.fp__navbar
-{
-  z-index: 1;
+.fp__navbar {
+    z-index: 1;
 }
 
 ul,
@@ -39,10 +38,9 @@ h6 {
     color: var(--colorBlack);
 }
 
-
 .custom-container {
     max-width: 1200px !important;
-  }
+}
 
 body {
     overflow-x: hidden;
@@ -51,29 +49,29 @@ body {
     font-family: var(--paraFont);
 }
 
-.background-light-gray{
+.background-light-gray {
     background: #788a9f !important;
 }
-.searchformbackground-light-gray{
+.searchformbackground-light-gray {
     background: #faf6f3fa;
 }
-.color-dark-gray{
+.color-dark-gray {
     color: #4b637f !important;
 }
 
-.background-dark-gray{
+.background-dark-gray {
     background-color: #4b637f !important;
 }
 
-.color-light-gray{
+.color-light-gray {
     color: #788a9f !important;
 }
 
-.social-links a:hover{
+.social-links a:hover {
     color: #8caabf !important;
 }
 
-.fp__search_form button:hover{
+.fp__search_form button:hover {
     background-color: #788a9f !important;
     transition: all linear 0.3s;
     -webkit-transition: all linear 0.3s;
@@ -82,7 +80,11 @@ body {
     -o-transition: all linear 0.3s;
 }
 
-.fas, .far, .fa, .fab, .wedding-cake-button {
+.fas,
+.far,
+.fa,
+.fab,
+.wedding-cake-button {
     transition: all linear 0.6s;
     -webkit-transition: all linear 0.6s;
     -moz-transition: all linear 0.6s;
@@ -288,22 +290,22 @@ button {
     color: #4b637f !important;
 }
 
-.bg-gray{
+.bg-gray {
     background: #4b637f !important;
 }
-.sticky-top{
+.sticky-top {
     z-index: 2 !important;
 }
 
-#sticky_sidebar{
+#sticky_sidebar {
     z-index: 0 !important;
 }
 
-.slick-list{
+.slick-list {
     margin-left: 0px !important;
 }
 
-.droap_menu{
+.droap_menu {
     box-shadow: var(--boxShadow);
     width: 250px;
     top: 56px !important;
@@ -323,8 +325,9 @@ button {
     -o-transition:  ease 0.3s;
 } */
 
-.droap_menu a:hover, .menu_icon li a i:hover{
-    color: #8BADBD !important;
+.droap_menu a:hover,
+.menu_icon li a i:hover {
+    color: #8badbd !important;
 }
 
 .main_menu .menu_icon li a {
@@ -332,7 +335,8 @@ button {
     cursor: pointer;
 }
 
-.cart_count, .sunseen-message-count {
+.cart_count,
+.sunseen-message-count {
     width: 20px !important;
     height: 20px !important;
     font-size: 12px !important;
@@ -363,7 +367,7 @@ button {
     line-height: 50px;
 }
 
-.searchinput{
+.searchinput {
     padding: 16px 20px !important;
 }
 
@@ -382,13 +386,12 @@ button {
 }
 /* New Navbar Custom End */
 
-
 /* New Carousel Custom Start */
-.carousel-control-next, .carousel-control-prev{
+.carousel-control-next,
+.carousel-control-prev {
     z-index: 0 !important;
 }
 /* New Carousel Custom End */
-
 
 /* New Cart Custom Start */
 .fp__menu_cart_area {
@@ -417,13 +420,13 @@ button {
     cursor: pointer;
 }
 
- .nav-item {
+.nav-item {
     position: relative;
 }
 
 .nav-item:hover .nav-link,
 .nav-item .nav-link.active {
-    color: #8BADBD !important;
+    color: #8badbd !important;
 }
 
 .droap_menu::-webkit-scrollbar {
@@ -478,7 +481,7 @@ button {
     background: var(--colorPrimary);
 }
 
- .fp__menu_cart_area ul li {
+.fp__menu_cart_area ul li {
     background: #f7f5f5;
 }
 
@@ -1172,23 +1175,23 @@ button {
 
 .fp__menu_item:hover .fp__menu_item_text ul li a i {
     color: #788a9f !important;
-  }
+}
 
 .fp__menu_item:hover .fp__menu_item_text ul li a {
     background: #fff !important;
-  }
+}
 
-  .fp__menu_item:hover .category {
+.fp__menu_item:hover .category {
     top: 71% !important;
-  }
+}
 
-  .fp__menu_item:hover .fp__menu_item_text .price {
+.fp__menu_item:hover .fp__menu_item_text .price {
     top: -15px !important;
-  }
+}
 
 .fp__menu_item:hover .fp__menu_item_text .title {
     color: white !important;
-  }
+}
 
 /* .fp__menu_item .fp__menu_item_img {
     height: 240px;
@@ -1215,7 +1218,7 @@ button {
     background: var(--colorWhite);
     padding: 30px;
     text-align: center;
-    position: relative;
+    /* position: relative; */
     transition: all linear 0.3s;
     -webkit-transition: all linear 0.3s;
     -moz-transition: all linear 0.3s;
@@ -1962,14 +1965,13 @@ button {
     FOOTER START
 ============================*/
 
-
 .fp__footer_content .footer_logo {
     width: 150px;
 }
 
 footer .wrapper a:hover {
     color: #8ba7bc !important;
-  }
+}
 
 .fp__footer_content span {
     display: block;
@@ -2226,10 +2228,10 @@ footer .wrapper a:hover {
     background-size: cover !important;
 }
 
-.fp__breadcrumb_overlay{
-	/* padding: 120px 0px !important; */
-	background-color: #86a4ba !important;
-	border-color: #86a4ba !important;
+.fp__breadcrumb_overlay {
+    /* padding: 120px 0px !important; */
+    background-color: #86a4ba !important;
+    border-color: #86a4ba !important;
 }
 
 .fp__breadcrumb_text h1 {
@@ -3488,8 +3490,8 @@ footer .wrapper a:hover {
     height: 35px;
     font-size: 15px;
     color: #fff;
-	background-color: #4b637f  !important;
-	border-color: #4b637f  !important;
+    background-color: #4b637f !important;
+    border-color: #4b637f !important;
     padding: 0;
     border-radius: 3px;
     -webkit-border-radius: 3px;
@@ -3707,7 +3709,7 @@ footer .wrapper a:hover {
 
 .fp__menu_item:hover .fp__menu_item_text {
     background: #788a9f;
-  }
+}
 /*============================
     MENU DETAILS END
 ============================*/
@@ -3825,7 +3827,7 @@ footer .wrapper a:hover {
 th {
     background: #86a4ba !important;
     color: white !important;
-  }
+}
 
 .fp__cart_list table tr th,
 .fp__cart_list table tr td {
@@ -6264,8 +6266,6 @@ CHECKOUT PAGE START
     width: 100%;
 }
 
-
-
 /* .subscribe_form button {
     position: absolute;
     top: 50%;
@@ -6619,24 +6619,24 @@ CHECKOUT PAGE START
     }
 }
 
-@media (max-width:576px) {
+@media (max-width: 576px) {
     .fp__pagination ul li span {
         width: 30px !important;
         height: 30px !important;
         line-height: 30px !important;
     }
 }
-.active > .page-link, .page-link.active {
+.active > .page-link,
+.page-link.active {
     z-index: -1;
     color: var(--colorWhite);
     background-color: var(--colorPrimary);
     border-color: var(--colorPrimary);
     color: white !important;
     font-weight: bold;
-  }
+}
 
-
-  #rating_input {
+#rating_input {
     width: 100%;
     padding: 12px 20px;
     outline: none;
@@ -6645,11 +6645,11 @@ CHECKOUT PAGE START
     border-radius: 30px;
     font-size: 16px;
     font-weight: 300;
-  }
-  .wedding-cake-button {
+}
+.wedding-cake-button {
     background: #86a4ba !important;
-  }
+}
 
-  .offcanvas {
+.offcanvas {
     width: 450px !important;
-  }
+}
