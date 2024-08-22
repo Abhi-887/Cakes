@@ -141,6 +141,10 @@
                                         class="img-fluid w-100"></a>
                             </div>
 
+                            <a class="heart position-absolute rounded-circle background-light-gray"
+                                onclick="addToWishlist('{{ $product->id }}')" href="javascript:;"><i
+                                    class="fal fa-heart text-white"></i></a>
+
                             <div class="fp__menu_item_text position-relative mt-auto">
                                 <a class="category bg-light px-2 py-1 fw-semibold"
                                     href="#">{{ $product->subCategory->name ?? '' }}</a>
@@ -167,10 +171,6 @@
                                     <a class="add-to-cart rounded-pill px-3 py-2 background-light-gray text-white"
                                         href="javascript:;" onclick="loadProductModal('{{ $product->id }}')">Add to
                                         cart</a>
-
-                                    <a class="heart position-absolute rounded-circle background-light-gray"
-                                        onclick="addToWishlist('{{ $product->id }}')" href="javascript:;"><i
-                                            class="fal fa-heart text-white"></i></a>
 
                                     {{-- <a class="background-light-gray"
                                             href="{{ route('product.show', $product->slug) }}"><i

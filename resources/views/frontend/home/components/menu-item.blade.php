@@ -204,6 +204,10 @@
                                     class="img-fluid w-100">
                             </div>
 
+                            <a class="heart position-absolute rounded-circle" href="javascript:;"
+                                onclick="addToWishlist('{{ $product->id }}')"><i
+                                    class="fal fa-heart text-white"></i></a>
+
                             <div class="fp__menu_item_text position-relative">
                                 <a class="px-3 py-2 category categorys fw-semibold"
                                     href="{{ route('category.show', ['slug' => $product->category->slug]) }}">{{ @$product->category->name }}</a>
