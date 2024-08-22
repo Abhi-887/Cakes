@@ -134,14 +134,14 @@
             <div class="row">
                 @foreach ($products as $product)
                     <div class="col-sm-6 col-lg-4 wow fadeInUp" data-wow-duration="1s">
-                        <div class="fp__menu_item">
+                        <div class="fp__menu_item h-100 d-flex flex-column">
                             <div class="fp__menu_item_img">
                                 <a href="{{ route('product.show', $product->slug) }}" class="title my-3"><img
                                         src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}"
                                         class="img-fluid w-100"></a>
                             </div>
 
-                            <div class="fp__menu_item_text position-relative">
+                            <div class="fp__menu_item_text position-relative mt-auto">
                                 <a class="category bg-light px-2 py-1 fw-semibold"
                                     href="#">{{ $product->subCategory->name ?? '' }}</a>
                                 @if ($product->reviews_avg_rating)
