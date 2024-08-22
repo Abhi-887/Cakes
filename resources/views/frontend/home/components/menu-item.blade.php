@@ -197,8 +197,8 @@
                 @endphp
 
                 @foreach ($products as $product)
-                    <div class="col-md-4 my-3 wow fadeInUp {{ $category->slug }} d-flex align-items-stretch">
-                        <div class="position-relative m-3 fp__menu_item rounded-5 d-flex flex-column h-100">
+                    <div class="col-md-4 my-3 wow fadeInUp {{ $category->slug }} d-flex">
+                        <div class="fp__menu_item rounded-5 d-flex flex-column justify-content-between w-100">
                             <div class="fp__menu_item_img">
                                 <img src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}"
                                     class="img-fluid w-100">
@@ -209,7 +209,7 @@
                                 <i class="fal fa-heart text-white"></i>
                             </a>
 
-                            <div class="fp__menu_item_text position-relative d-flex flex-column flex-grow-1">
+                            <div class="fp__menu_item_text flex-grow-1 d-flex flex-column">
                                 <a class="px-3 py-2 category categorys fw-semibold"
                                     href="{{ route('category.show', ['slug' => $product->category->slug]) }}">
                                     {{ @$product->category->name }}
@@ -217,7 +217,7 @@
                                 <a class="my-0 title"
                                     href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
 
-                                <!-- Ensures this div sticks to the bottom -->
+                                <!-- Actions div remains at the bottom -->
                                 <div class="actions mt-auto d-flex justify-content-between align-items-center">
                                     <p class="price color-light-gray m-0">
                                         @if ($product->offer_price > 0)
