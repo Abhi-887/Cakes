@@ -177,6 +177,11 @@
         top: 0;
         right: 20%;
     }
+
+    .heart {
+        top: 0;
+        right: 0;
+    }
 </style>
 
 <div class="container pt-5">
@@ -234,8 +239,8 @@
                                             class="far fa-eye position-absolute"></i></a>
                                     <a class="add-to-cart" href="javascript:;"
                                         onclick="addToCart('{{ $product->id }}')">Add to cart</a>
-                                    <a href="javascript:;" onclick="addToWishlist('{{ $product->id }}')"><i
-                                            class="fal fa-heart"></i></a>
+                                    <a class="heart position-absolute" href="javascript:;"
+                                        onclick="addToWishlist('{{ $product->id }}')"><i class="fal fa-heart"></i></a>
                                 </div>
                             </div>
                         </div>
