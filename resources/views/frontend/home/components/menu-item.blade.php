@@ -144,12 +144,12 @@
         color: #000;
     }
 
-    .eye {
+    /* .eye {
         top: 2%;
         right: 20%;
         background-color: #788a9f !important;
         padding: 10px 15px !important;
-    }
+    } */
 
     .heart {
         top: 2%;
@@ -197,7 +197,7 @@
                             </div>
                             <a class="px-3 py-2 category categorys fw-semibold"
                                 href="{{ route('category.show', ['slug' => $product->category->slug]) }}">{{ @$product->category->name }}</a>
-                            <div class="fp__menu_item_text">
+                            <div class="fp__menu_item_text border-top">
                                 <a class="my-3 title"
                                     href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
                                 <div class="actions mt-3 d-flex justify-content-between">
@@ -209,9 +209,9 @@
                                             {{ currencyPosition($product->price) }}
                                         @endif
                                     </p>
-                                    <a class="eye position-absolute rounded-circle"
+                                    {{-- <a class="eye position-absolute rounded-circle"
                                         href="{{ route('product.show', $product->slug) }}"><i
-                                            class="far fa-eye  text-white"></i></a>
+                                            class="far fa-eye  text-white"></i></a> --}}
                                     <a class="add-to-cart rounded-pill px-3 py-2 background-light-gray text-white"
                                         href="javascript:;" onclick="addToCart('{{ $product->id }}')">Add to cart</a>
                                     <a class="heart position-absolute rounded-circle" href="javascript:;"
