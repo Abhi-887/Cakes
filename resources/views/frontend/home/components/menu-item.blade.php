@@ -132,6 +132,7 @@
         color: #333;
         border-radius: 15px;
         text-transform: uppercase;
+        border: 1px solid;
     }
 
     .actions a {
