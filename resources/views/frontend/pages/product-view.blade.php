@@ -80,6 +80,32 @@
             top: 100px;
             z-index: 1;
         }
+
+
+
+        .slick-prev,
+        .slick-next {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .custom-arrow-left,
+        .custom-arrow-right {
+            font-size: 24px;
+            color: #333;
+            /* Change to the desired color */
+        }
+
+        .slick-prev {
+            left: -40px;
+            /* Adjust position as needed */
+        }
+
+        .slick-next {
+            right: -40px;
+            /* Adjust position as needed */
+        }
     </style>
     <!--============================= BREADCRUMB START ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
