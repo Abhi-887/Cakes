@@ -508,6 +508,16 @@
                                                 {{ Str::limit($relatedProduct->name, 300, '...') }}
                                             </a>
                                             <div class="actions mt-auto d-flex justify-content-between align-items-center">
+                                                <p
+                                                    class="top-0 px-3 py-1 text-center price fw-semibold rounded-pill color-light-gray">
+                                                    @if ($relatedProduct->offer_price > 0)
+                                                        {{ currencyPosition($relatedProduct->offer_price) }}
+                                                        <del>{{ currencyPosition($relatedProduct->price) }}</del>
+                                                    @else
+                                                        {{ currencyPosition($relatedProduct->price) }}
+                                                    @endif
+                                                </p>
+
                                                 <p class="rating">
                                                     @if ($relatedProduct->reviews_avg_rating)
                                                         <p class="rating">
@@ -519,15 +529,6 @@
                                                     @endif
                                                 </p>
 
-                                                <p
-                                                    class="top-0 px-3 py-1 text-center price fw-semibold position-absolute rounded-pill color-light-gray">
-                                                    @if ($relatedProduct->offer_price > 0)
-                                                        {{ currencyPosition($relatedProduct->offer_price) }}
-                                                        <del>{{ currencyPosition($relatedProduct->price) }}</del>
-                                                    @else
-                                                        {{ currencyPosition($relatedProduct->price) }}
-                                                    @endif
-                                                </p>
                                                 <a class="add-to-cart rounded-pill px-3 py-2 background-light-gray text-white"
                                                     href="javascript:;"
                                                     onclick="loadProductModal('{{ $relatedProduct->id }}')">Add to
