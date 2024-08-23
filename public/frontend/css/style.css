@@ -1217,7 +1217,9 @@ button {
 .add-to-cart {
     font-size: 18px;
 }
-
+.add-to-cart:hover {
+    background: #4b637f !important;
+}
 .heart {
     top: 2%;
     right: 5%;
