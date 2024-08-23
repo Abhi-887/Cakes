@@ -520,7 +520,7 @@
                         <h2>Related Item</h2>
                         <div class="row related_product_slider">
                             @foreach ($relatedProducts as $relatedProduct)
-                                <div class="my-3 d-flex align-items-stretch wow fadeInUp" data-wow-duration="1s">
+                                <div class="my-3 wow fadeInUp" data-wow-duration="1s">
                                     <div class="card fp__menu_item rounded-5">
                                         <div class="fp__menu_item_img">
                                             <img src="{{ asset($relatedProduct->thumb_image) }}"
