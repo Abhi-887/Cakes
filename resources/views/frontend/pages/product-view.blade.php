@@ -598,7 +598,7 @@
             prevArrow: '<button type="button" class="slick-prev slick-arrow"></button>',
             nextArrow: '<button type="button" class="slick-next slick-arrow"></button>',
             responsive: [{
-                    breakpoint: 1400,
+                    breakpoint: 1470,
                     settings: {
                         slidesToShow: 3,
                         slidesToScroll: 1
