@@ -154,7 +154,7 @@ button {
 }
 
 .common_btn:hover {
-    background: #f55;
+    background: #788a9f !important;
 }
 
 .fp__section_heading h4 {
@@ -2218,7 +2218,12 @@ footer .wrapper a:hover {
 }
 
 .fp__scroll_btn:hover {
-    background: var(--colorBlack);
+    background: #4b637f !important;
+    transition: all linear 0.5s;
+    -webkit-transition: all linear 0.5s;
+    -moz-transition: all linear 0.5s;
+    -ms-transition: all linear 0.5s;
+    -o-transition: all linear 0.5s;
 }
 
 @keyframes scroll_amini {
