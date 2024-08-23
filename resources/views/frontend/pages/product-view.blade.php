@@ -583,8 +583,7 @@
             autoplaySpeed: 2000,
             slidesToShow: 3,
             slidesToScroll: 1,
-            prevArrow: '<button type="button" class="slick-prev slick-arrow"><i class="custom-arrow-left"></i></button>',
-            nextArrow: '<button type="button" class="slick-next slick-arrow"><i class="custom-arrow-right"></i></button>',
+
             responsive: [{
                     breakpoint: 1400,
                     settings: {
