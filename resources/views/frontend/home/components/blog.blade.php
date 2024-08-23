@@ -32,7 +32,7 @@
                                     href="{{ route('blogs.details', $blog->slug) }}">{{ $blog->title }}</a>
                                 <p class="fw-semibold text-muted mt-3">{!! truncate($blog->description, 100) !!}</p>
                                 <a href="{{ route('blogs.details', $blog->slug) }}"
-                                    class="blog-btn fw-semibold rounded-3 color-dark-gray py-2 px-3">
+                                    class="blog-btn fw-semibold rounded-3 color-dark-gray">
                                     Read More <i class="fas fa-arrow-right ms-1"></i>
                                 </a>
                             </div>
