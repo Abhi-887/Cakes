@@ -151,20 +151,6 @@
         background-color: #788a9f !important;
         padding: 10px 15px !important;
     } */
-    .add-to-cart {
-        font-size: 18px;
-    }
-
-    .heart {
-        top: 2%;
-        right: 5%;
-        background-color: #788a9f !important;
-        padding: 10px 15px !important;
-    }
-
-    .fp__menu_item_text {
-        border-top: 1px solid #788a9f !important;
-    }
 </style>
 
 <div class="container pt-5">
