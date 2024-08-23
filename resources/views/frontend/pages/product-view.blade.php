@@ -11,10 +11,6 @@
             width: auto !important;
         }
 
-        .fp__menu_item:hover .category {
-            top: 63% !important;
-        }
-
         .productviewinput input:checked {
             background-color: #788a9f !important;
             border-color: #788a9f !important;
@@ -93,7 +89,7 @@
             font-size: 16px;
             top: 50%;
             position: absolute;
-            left: -5%;
+            left: -4%;
         }
 
         .slick-next::before {
@@ -107,7 +103,7 @@
             font-size: 16px;
             top: 50%;
             position: absolute;
-            right: -5%;
+            right: -4%;
         }
 
         .slick-next.slick-arrow,
