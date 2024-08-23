@@ -5,7 +5,9 @@
 @extends('frontend.layouts.master')
 
 @section('content')
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.slick/1.4.1/slick.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.slick/1.4.1/slick.min.js"></script>
     <style>
         .w-0 {
             width: auto !important;
