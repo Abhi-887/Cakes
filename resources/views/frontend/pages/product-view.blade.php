@@ -589,21 +589,21 @@
             infinite: true,
             autoplay: true,
             autoplaySpeed: 2000,
-            slidesToShow: 4,
+            slidesToShow: 3,
             slidesToScroll: 1,
             prevArrow: '<button type="button" class="slick-prev slick-arrow"></button>',
             nextArrow: '<button type="button" class="slick-next slick-arrow"></button>',
             responsive: [{
-                    breakpoint: 1400,
+                    breakpoint: 991,
                     settings: {
-                        slidesToShow: 3,
+                        slidesToShow: 2,
                         slidesToScroll: 1
                     }
                 },
                 {
-                    breakpoint: 991,
+                    breakpoint: 767,
                     settings: {
-                        slidesToShow: 2,
+                        slidesToShow: 1,
                         slidesToScroll: 1
                     }
                 }
