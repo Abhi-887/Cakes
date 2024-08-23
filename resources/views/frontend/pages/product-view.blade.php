@@ -80,32 +80,6 @@
             top: 100px;
             z-index: 1;
         }
-
-
-
-        .slick-prev,
-        .slick-next {
-            background: transparent;
-            border: none;
-            cursor: pointer;
-        }
-
-        .custom-arrow-left,
-        .custom-arrow-right {
-            font-size: 24px;
-            color: #333;
-            /* Change to the desired color */
-        }
-
-        .slick-prev {
-            left: -40px;
-            /* Adjust position as needed */
-        }
-
-        .slick-next {
-            right: -40px;
-            /* Adjust position as needed */
-        }
     </style>
     <!--============================= BREADCRUMB START ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
@@ -586,8 +560,8 @@
             autoplaySpeed: 2000,
             slidesToShow: 3,
             slidesToScroll: 1,
-            prevArrow: '<button type="button" class="slick-prev"><i class="custom-arrow-left"></i></button>',
-            nextArrow: '<button type="button" class="slick-next"><i class="custom-arrow-right"></i></button>',
+            prevArrow: '<button type="button" class="slick-prev slick-arrow"><i class="custom-arrow-left"></i></button>',
+            nextArrow: '<button type="button" class="slick-next slick-arrow"><i class="custom-arrow-right"></i></button>',
             responsive: [{
                     breakpoint: 1400,
                     settings: {
