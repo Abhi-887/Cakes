@@ -157,7 +157,7 @@
                                 @endif
                                 <a class="title my-0"
                                     href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
-                                <div class="actions d-flex justify-content-between mt-auto">
+                                <div class="actions d-flex justify-content-between mt-auto align-items-center">
                                     <p class="price color-light-gray m-0">
                                         @if ($product->offer_price > 0)
                                             {{ currencyPosition($product->offer_price) }}
