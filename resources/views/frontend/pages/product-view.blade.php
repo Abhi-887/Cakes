@@ -510,7 +510,6 @@
                                             </p>
                                             <a class="my-3 title"
                                                 href="{{ route('product.show', $relatedProduct->slug) }}">
-                                                {{ Str::limit($relatedProduct->name, 14, '...') }}
                                             </a>
                                             <p
                                                 class="top-0 px-3 py-1 text-center price fw-semibold position-absolute rounded-pill color-light-gray">
