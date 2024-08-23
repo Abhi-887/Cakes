@@ -553,7 +553,7 @@
 @push('scripts')
     <script>
         $('.related_product_slider').slick({
-            dots: true,
+            dots: false,
             arrows: true,
             infinite: true,
             autoplay: true,
