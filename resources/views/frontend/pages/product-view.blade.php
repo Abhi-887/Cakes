@@ -89,8 +89,11 @@
             background: #4b637f !important;
             color: white !important;
             border-radius: 50%;
-            padding: 10px 14px;
+            padding: 10px 17px;
             font-size: 16px;
+            top: 50%;
+            position: absolute;
+            left: -5%;
         }
 
         .slick-next::before {
@@ -100,8 +103,11 @@
             background: #4b637f !important;
             color: white !important;
             border-radius: 50%;
-            padding: 10px 14px;
+            padding: 10px 17px;
             font-size: 16px;
+            top: 50%;
+            position: absolute;
+            right: -5%;
         }
 
         .slick-next.slick-arrow,
@@ -518,7 +524,7 @@
                         <h2>Related Item</h2>
                         <div class="row related_product_slider">
                             @foreach ($relatedProducts as $relatedProduct)
-                                <div class="col-md-4 my-3 d-flex align-items-stretch wow fadeInUp" data-wow-duration="1s">
+                                <div class="my-3 d-flex align-items-stretch wow fadeInUp" data-wow-duration="1s">
                                     <div class="card fp__menu_item rounded-5">
                                         <div class="fp__menu_item_img">
                                             <img src="{{ asset($relatedProduct->thumb_image) }}"
