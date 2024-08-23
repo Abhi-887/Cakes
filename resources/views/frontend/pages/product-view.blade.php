@@ -16,60 +16,60 @@
             border-color: #788a9f !important;
         }
 
-        .fa-long-arrow-right::before {
-            content: "\f054" !important;
-            font-weight: bolder !important;
-        }
+        /* .fa-long-arrow-right::before {
+                content: "\f054" !important;
+                font-weight: bolder !important;
+            }
 
-        .fa-long-arrow-left::before {
-            content: "\f053" !important;
-            font-weight: bolder !important;
-        }
-
-        .fp__related_menu .prevArrow {
-            left: -45px !important;
-        }
-
-        .nextArrow.slick-arrow {
-            right: -45px !important;
-        }
-
-        @media (max-width: 640px) {
-            .nextArrow.slick-arrow {
-                right: 40% !important;
-                top: 103% !important;
+            .fa-long-arrow-left::before {
+                content: "\f053" !important;
+                font-weight: bolder !important;
             }
 
             .fp__related_menu .prevArrow {
-                left: 40% !important;
-                top: 103% !important;
+                left: -45px !important;
             }
-        }
 
-        @media (max-width: 460px) {
             .nextArrow.slick-arrow {
-                right: 38% !important;
+                right: -45px !important;
             }
 
-            .fp__related_menu .prevArrow {
-                left: 38% !important;
-            }
-        }
+            @media (max-width: 640px) {
+                .nextArrow.slick-arrow {
+                    right: 40% !important;
+                    top: 103% !important;
+                }
 
-        @media (max-width: 380px) {
-            .nextArrow.slick-arrow {
-                right: 35% !important;
+                .fp__related_menu .prevArrow {
+                    left: 40% !important;
+                    top: 103% !important;
+                }
             }
 
-            .fp__related_menu .prevArrow {
-                left: 35% !important;
-            }
-        }
+            @media (max-width: 460px) {
+                .nextArrow.slick-arrow {
+                    right: 38% !important;
+                }
 
-        .prevArrow.slick-arrow {
-            font-size: 22px !important;
-            font-weight: 600;
-        }
+                .fp__related_menu .prevArrow {
+                    left: 38% !important;
+                }
+            }
+
+            @media (max-width: 380px) {
+                .nextArrow.slick-arrow {
+                    right: 35% !important;
+                }
+
+                .fp__related_menu .prevArrow {
+                    left: 35% !important;
+                }
+            }
+
+            .prevArrow.slick-arrow {
+                font-size: 22px !important;
+                font-weight: 600;
+            } */
 
         #exzoom {
             position: sticky;
@@ -110,6 +110,18 @@
         .slick-prev.slick-arrow {
             width: 20px;
             background: none;
+        }
+
+        @media (max-width: 991px) {
+            .slick-next::before {
+                top: 97%;
+                right: 30%;
+            }
+
+            .slick-prev::before {
+                top: 97%;
+                left: 30%;
+            }
         }
     </style>
     <!--============================= BREADCRUMB START ==============================-->
