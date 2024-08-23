@@ -17,59 +17,59 @@
         }
 
         /* .fa-long-arrow-right::before {
-                content: "\f054" !important;
-                font-weight: bolder !important;
-            }
+                        content: "\f054" !important;
+                        font-weight: bolder !important;
+                    }
 
-            .fa-long-arrow-left::before {
-                content: "\f053" !important;
-                font-weight: bolder !important;
-            }
+                    .fa-long-arrow-left::before {
+                        content: "\f053" !important;
+                        font-weight: bolder !important;
+                    }
 
-            .fp__related_menu .prevArrow {
-                left: -45px !important;
-            }
+                    .fp__related_menu .prevArrow {
+                        left: -45px !important;
+                    }
 
-            .nextArrow.slick-arrow {
-                right: -45px !important;
-            }
+                    .nextArrow.slick-arrow {
+                        right: -45px !important;
+                    }
 
-            @media (max-width: 640px) {
-                .nextArrow.slick-arrow {
-                    right: 40% !important;
-                    top: 103% !important;
-                }
+                    @media (max-width: 640px) {
+                        .nextArrow.slick-arrow {
+                            right: 40% !important;
+                            top: 103% !important;
+                        }
 
-                .fp__related_menu .prevArrow {
-                    left: 40% !important;
-                    top: 103% !important;
-                }
-            }
+                        .fp__related_menu .prevArrow {
+                            left: 40% !important;
+                            top: 103% !important;
+                        }
+                    }
 
-            @media (max-width: 460px) {
-                .nextArrow.slick-arrow {
-                    right: 38% !important;
-                }
+                    @media (max-width: 460px) {
+                        .nextArrow.slick-arrow {
+                            right: 38% !important;
+                        }
 
-                .fp__related_menu .prevArrow {
-                    left: 38% !important;
-                }
-            }
+                        .fp__related_menu .prevArrow {
+                            left: 38% !important;
+                        }
+                    }
 
-            @media (max-width: 380px) {
-                .nextArrow.slick-arrow {
-                    right: 35% !important;
-                }
+                    @media (max-width: 380px) {
+                        .nextArrow.slick-arrow {
+                            right: 35% !important;
+                        }
 
-                .fp__related_menu .prevArrow {
-                    left: 35% !important;
-                }
-            }
+                        .fp__related_menu .prevArrow {
+                            left: 35% !important;
+                        }
+                    }
 
-            .prevArrow.slick-arrow {
-                font-size: 22px !important;
-                font-weight: 600;
-            } */
+                    .prevArrow.slick-arrow {
+                        font-size: 22px !important;
+                        font-weight: 600;
+                    } */
 
         #exzoom {
             position: sticky;
@@ -539,8 +539,8 @@
                                                 alt="{{ $relatedProduct->name }}" class="img-fluid w-100">
                                         </div>
                                         <a onclick="addToWishlist('{{ $relatedProduct->id }}')"
-                                            class="heart position-absolute rounded-circle" href="javascript:;"><i
-                                                class="fal fa-heart"></i></a>
+                                            class="heart position-absolute rounded-circle text-white"
+                                            href="javascript:;"><i class="fal fa-heart"></i></a>
 
                                         <div class="card-body fp__menu_item_text position-relative d-flex flex-column">
                                             <a class="px-2 py-1 category bg-light fw-semibold"
@@ -552,7 +552,7 @@
                                             </a>
                                             <div class="actions mt-auto d-flex justify-content-between align-items-center">
                                                 <p
-                                                    class="top-0 px-3 py-1 text-center price fw-semibold rounded-pill color-light-gray">
+                                                    class="m-0  text-center price fw-semibold rounded-pill color-light-gray">
                                                     @if ($relatedProduct->offer_price > 0)
                                                         {{ currencyPosition($relatedProduct->offer_price) }}
                                                         <del>{{ currencyPosition($relatedProduct->price) }}</del>
