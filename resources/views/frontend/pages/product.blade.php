@@ -134,7 +134,7 @@
             <div class="row">
                 @foreach ($products as $product)
                     <div class="col-sm-6 col-lg-4 my-2 d-flex align-items-stretch">
-                        <div class="card fp__menu_item">
+                        <div class="card fp__menu_item rounded-5">
                             <div class="fp__menu_item_img">
                                 <a href="{{ route('product.show', $product->slug) }}" class="title my-3"><img
                                         src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}"
