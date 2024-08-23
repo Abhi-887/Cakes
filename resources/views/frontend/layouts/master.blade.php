@@ -119,38 +119,7 @@
                     </ul>
                 </div>
             </div>
-            {{-- <div class="px-5 mt-5 row d-md-none d-lg-none">
-                <div class="p-0 col-6 text-end">
-                    <div class="dropdown">
-                        <button class="bg-black btn btn-secondary rounded-0 dropdown-toggle w-100 menu-btn"
-                            type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img class="menu-icon" src="image/menu(1).png" alt="">
-                        </button>
-                        <ul class="p-0 dropdown-menu slider w-75">
-                            <li><a class="dropdown-item" href="#">MY ACCOUNT</a></li>
-                            <li><a class="dropdown-item" href="#">MY WISHLIST</a></li>
-                            <li><a class="dropdown-item" href="#">LOG IN</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <p>hello</p>
 
-                <div class="p-0 col-6">
-                    <div class="dropdown">
-                        <button class="bg-black btn btn-secondary rounded-0 dropdown-toggle w-100" type="button"
-                            data-bs-toggle="dropdown" aria-expanded="false"><img class="p-1 menu-icon1 "
-                                src="image/cart.png" alt=""></button>
-
-                        <ul class="p-0 dropdown-menu">
-                            <li class="px-3 py-1"><a class="p-0 dropdown-item" href="#">You have no
-                                    items in your</a>
-                            </li>
-                            <li class="px-3 py-1"><a class="p-0 dropdown-item" href="#">shopping
-                                    cart.</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div> --}}
         </section>
     </div>
 
