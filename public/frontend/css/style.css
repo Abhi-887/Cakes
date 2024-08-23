@@ -1268,7 +1268,7 @@ button {
 .fp__menu_item .fp__menu_item_text .title {
     text-transform: capitalize;
     color: var(--colorBlack);
-    font-size: 28px;
+    font-size: 28px !important;
     font-family: var(--headingFont);
     font-weight: 600;
     margin: 10px 0px 12px 0px;
