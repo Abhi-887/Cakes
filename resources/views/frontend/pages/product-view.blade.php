@@ -80,6 +80,18 @@
             top: 100px;
             z-index: 1;
         }
+
+
+        .slick-prev::before {
+            content: '\f053' !important;
+            font-family: 'Font Awesome 5 Free' !important;
+            font-weight: 600;
+            background: #4b637f !important;
+            color: white !important;
+            border-radius: 50%;
+            padding: 10px 14px;
+            font-size: 16px;
+        }
     </style>
     <!--============================= BREADCRUMB START ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
