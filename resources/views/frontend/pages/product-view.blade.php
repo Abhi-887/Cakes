@@ -103,6 +103,12 @@
             padding: 10px 14px;
             font-size: 16px;
         }
+
+        .slick-next.slick-arrow,
+        .slick-prev.slick-arrow {
+            width: 20px;
+            background: none;
+        }
     </style>
     <!--============================= BREADCRUMB START ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
