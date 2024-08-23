@@ -133,8 +133,8 @@
 
             <div class="row">
                 @foreach ($products as $product)
-                    <div class="col-sm-6 col-lg-4 my-2 wow fadeInUp" data-wow-duration="1s">
-                        <div class="fp__menu_item h-100 d-flex flex-column">
+                    <div class="col-sm-6 col-lg-4 my-2 d-flex align-items-stretch">
+                        <div class="card fp__menu_item">
                             <div class="fp__menu_item_img">
                                 <a href="{{ route('product.show', $product->slug) }}" class="title my-3"><img
                                         src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}"
@@ -144,8 +144,7 @@
                             <a class="heart position-absolute rounded-circle background-light-gray"
                                 onclick="addToWishlist('{{ $product->id }}')" href="javascript:;"><i
                                     class="fal fa-heart text-white"></i></a>
-
-                            <div class="fp__menu_item_text position-relative mt-auto">
+                            <div class="card-body fp__menu_item_text position-relative d-flex flex-column">
                                 <a class="category bg-light px-2 py-1 fw-semibold"
                                     href="#">{{ $product->subCategory->name ?? '' }}</a>
                                 @if ($product->reviews_avg_rating)
@@ -158,8 +157,7 @@
                                 @endif
                                 <a class="title my-0"
                                     href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
-
-                                <div class="actions mt-3 d-flex justify-content-between">
+                                <div class="actions d-flex justify-content-between mt-auto align-self-start">
                                     <p class="price color-light-gray m-0">
                                         @if ($product->offer_price > 0)
                                             {{ currencyPosition($product->offer_price) }}
