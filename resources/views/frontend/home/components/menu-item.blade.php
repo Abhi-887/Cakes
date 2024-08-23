@@ -241,6 +241,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
 <script>
     $(document).ready(function() {
+        // Initialize Slick slider
         $('.testimonial-slider .row').slick({
             dots: true,
             arrows: true,
@@ -264,19 +265,31 @@
                     }
                 }
             ]
-        }).on("setPosition", function() {
-            resizeSlider();
-        });
-        $(window).on("resize", function(e) {
-            resizeSlider();
         });
 
-        function resizeSlider() {
-            var slickTrackHeight = $(".slick-track").outerHeight();
-            $(".slick-track").find(".slick-slide .slide-wrap").css("height", slickTrackHeight + "px");
+        // Equal height adjustment
+        function equalHeight() {
+            var maxHeight = 0;
+            // Find the tallest slide
+            $('.testimonial-slider .fp__menu_item').each(function() {
+                var slideHeight = $(this).outerHeight();
+                if (slideHeight > maxHeight) {
+                    maxHeight = slideHeight;
+                }
+            });
+
+            // Apply the tallest height to all slides
+            $('.testimonial-slider .fp__menu_item').css('height', maxHeight + 'px');
         }
 
-        // Initial resize call
-        resizeSlider();
+        // Initial call to equalHeight
+        equalHeight();
+
+        // Recalculate height on window resize
+        $(window).on("resize", function() {
+            // Reset height before recalculating
+            $('.testimonial-slider .fp__menu_item').css('height', 'auto');
+            equalHeight();
+        });
     });
 </script>
