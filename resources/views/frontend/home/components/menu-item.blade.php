@@ -152,12 +152,20 @@
         padding: 10px 15px !important;
     } */
     .fp__menu_hover:hover {
-        margin-top: 20px !important;
-        transition: all linear 0.3s;
-        -webkit-transition: all linear 0.3s;
-        -moz-transition: all linear 0.3s;
-        -ms-transition: all linear 0.3s;
-        -o-transition: all linear 0.3s;
+        margin-top: 10px !important;
+        transition: all linear 0.5s;
+        -webkit-transition: all linear 0.5s;
+        -moz-transition: all linear 0.5s;
+        -ms-transition: all linear 0.5s;
+        -o-transition: all linear 0.5s;
+    }
+
+    .fp__menu_hover {
+        transition: all linear 0.5s;
+        -webkit-transition: all linear 0.5s;
+        -moz-transition: all linear 0.5s;
+        -ms-transition: all linear 0.5s;
+        -o-transition: all linear 0.5s;
     }
 </style>
 
