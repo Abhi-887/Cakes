@@ -199,7 +199,7 @@
                                     href="{{ route('category.show', ['slug' => $product->category->slug]) }}">
                                     {{ @$product->category->name }}
                                 </a>
-                                <a class="my-0 title"
+                                <a class="my-3 title"
                                     href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
                                 <div class="actions mt-auto d-flex justify-content-between align-items-center">
                                     <p class="price color-light-gray m-0">
