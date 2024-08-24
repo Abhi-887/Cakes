@@ -153,19 +153,19 @@
     } */
     .fp__menu_hover:hover {
         margin-top: 10px !important;
-        transition: all linear 0.5s;
+        /* transition: all linear 0.5s;
         -webkit-transition: all linear 0.5s;
         -moz-transition: all linear 0.5s;
         -ms-transition: all linear 0.5s;
-        -o-transition: all linear 0.5s;
+        -o-transition: all linear 0.5s; */
     }
 
     .fp__menu_hover {
-        transition: all linear 0.5s;
-        -webkit-transition: all linear 0.5s;
-        -moz-transition: all linear 0.5s;
-        -ms-transition: all linear 0.5s;
-        -o-transition: all linear 0.5s;
+        transition: all linear 0.4s;
+        -webkit-transition: all linear 0.4s;
+        -moz-transition: all linear 0.4s;
+        -ms-transition: all linear 0.4s;
+        -o-transition: all linear 0.4s;
     }
 </style>
 
