@@ -35,6 +35,15 @@
         .fp__menu_item_text {
             border-top: 1px solid #788a9f !important;
         }
+
+        .fp__menu_hover:hover {
+            margin-top: 20px !important;
+            transition: all linear 0.3s;
+            -webkit-transition: all linear 0.3s;
+            -moz-transition: all linear 0.3s;
+            -ms-transition: all linear 0.3s;
+            -o-transition: all linear 0.3s;
+        }
     </style>
 
     <section class="fp__search_menu py-5">
@@ -134,7 +143,7 @@
             <div class="row">
                 @foreach ($products as $product)
                     <div class="col-sm-6 col-lg-4 my-2 d-flex align-items-stretch">
-                        <div class="card fp__menu_item rounded-5">
+                        <div class="card fp__menu_hover rounded-5">
                             <div class="fp__menu_item_img">
                                 <a href="{{ route('product.show', $product->slug) }}" class="title my-3"><img
                                         src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}"

@@ -1200,7 +1200,7 @@ button {
 
 .fp__menu_item .fp__menu_item_text .category {
     /* text-transform: capitalize; */
-    /* font-size: 16px; */
+    font-size: 12px !important;
     color: #788a9f !important;
     font-family: var(--headingFont);
     position: absolute;
@@ -5915,7 +5915,7 @@ CHECKOUT PAGE START
 
 .fp__menu2 .fp__menu_item .fp__menu_item_text .category {
     text-transform: capitalize;
-    font-size: 12px !important;
+    font-size: 16px;
     color: var(--colorPrimary);
     font-family: var(--cursiveFont);
     position: absolute;
