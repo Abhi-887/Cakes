@@ -1197,6 +1197,17 @@ button {
     height: 240px;
     position: relative;
 } */
+.fp__menu_hover:hover {
+    margin-top: 10px !important;
+}
+
+.fp__menu_hover {
+    transition: all linear 0.4s;
+    -webkit-transition: all linear 0.4s;
+    -moz-transition: all linear 0.4s;
+    -ms-transition: all linear 0.4s;
+    -o-transition: all linear 0.4s;
+}
 
 .fp__menu_item .fp__menu_item_text .category {
     /* text-transform: capitalize; */

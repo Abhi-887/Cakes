@@ -151,22 +151,6 @@
         background-color: #788a9f !important;
         padding: 10px 15px !important;
     } */
-    .fp__menu_hover:hover {
-        margin-top: 10px !important;
-        /* transition: all linear 0.5s;
-        -webkit-transition: all linear 0.5s;
-        -moz-transition: all linear 0.5s;
-        -ms-transition: all linear 0.5s;
-        -o-transition: all linear 0.5s; */
-    }
-
-    .fp__menu_hover {
-        transition: all linear 0.4s;
-        -webkit-transition: all linear 0.4s;
-        -moz-transition: all linear 0.4s;
-        -ms-transition: all linear 0.4s;
-        -o-transition: all linear 0.4s;
-    }
 </style>
 
 <div class="container pt-5">
