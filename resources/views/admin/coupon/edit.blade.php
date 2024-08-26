@@ -74,13 +74,7 @@
                     <label>Sub Category</label>
                     <select name="sub_category_id" class="form-control" id="subcategoryDropdown">
                         <option value="">Select Subcategory</option>
-                        @foreach ($categories as $category)
-                            @if ($category->parent == old('category_id', $coupon->category_id))
-                                <option value="{{ $category->id }}" {{ old('sub_category_id', $coupon->sub_category_id) == $category->id ? 'selected' : '' }}>
-                                    {{ $category->name }}
-                                </option>
-                            @endif
-                        @endforeach
+                        <!-- Options will be populated via JavaScript -->
                     </select>
                 </div>
 
@@ -102,8 +96,7 @@
 @push('scripts')
 <script type="text/javascript">
     $(document).ready(function(){
-        $('#categoryDropdown').on('change', function(){
-            var categoryId = $(this).val();
+        function loadSubcategories(categoryId) {
             var $subcategoryDropdown = $('#subcategoryDropdown');
             $subcategoryDropdown.empty().append('<option value="">Select Subcategory</option>');
 
@@ -115,13 +108,25 @@
                         $.each(response, function(index, subcategory){
                             $subcategoryDropdown.append('<option value="'+subcategory.id+'">'+subcategory.name+'</option>');
                         });
+
+                        // Set the selected subcategory if it exists
+                        $subcategoryDropdown.val('{{ old('sub_category_id', $coupon->sub_category_id) }}');
                     }
                 });
             }
+        }
+
+        // Load subcategories based on the selected category
+        $('#categoryDropdown').on('change', function(){
+            var categoryId = $(this).val();
+            loadSubcategories(categoryId);
         });
 
-        // Trigger the change event to populate subcategories on page load if category is already selected
-        $('#categoryDropdown').trigger('change');
+        // Load subcategories for the initially selected category
+        var initialCategoryId = $('#categoryDropdown').val();
+        if (initialCategoryId) {
+            loadSubcategories(initialCategoryId);
+        }
     });
 </script>
 @endpush
