@@ -179,7 +179,7 @@
 
         <ul class="flex-wrap details_button_area d-flex">
             @if ($product->quantity === 0)
-            <li><a class="common_btn bg-danger" href="javascript:;">Stock Out</a></li>
+            <li><a class="common_btn bg-danger" href="javascript:;">Out of stock </a></li>
             @else
             <li><button type="submit" class="common_btn modal_cart_button">add to cart</button></li>
 
