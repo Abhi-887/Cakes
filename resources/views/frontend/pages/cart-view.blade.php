@@ -162,19 +162,28 @@
                     </div>
                 </div>
             </div>
+            @php
 
+            @endphp
             <div class="col-lg-4 wow fadeInUp" data-wow-duration="1s">
+
                 <div class="fp__cart_list_footer_button">
                     <h6>Total Cart</h6>
                     <p>Subtotal: <span id="subtotal">{{ currencyPosition(cartTotal()) }}</span></p>
                     <p>Delivery: <span>{{ currencyPosition(0.0) }}</span></p>
                     <p>Discount: <span id="discount">
-                            @if (isset(session()->get('coupon')['discount']))
+                        @php
+                            // For debugging purposes
+                            print_r(session()->get('coupon'));
+                        @endphp
+
+                        @if (isset(session()->get('coupon')['discount']))
                             {{ config('settings.site_currency_icon') }} {{ session()->get('coupon')['discount'] }}
-                            @else
+                        @else
                             {{ config('settings.site_currency_icon') }}0
-                            @endif
-                        </span></p>
+                        @endif
+                    </span></p>
+
                     <p class="total"><span>Total:</span> <span id="final_total">
                             @if (isset(session()->get('coupon')['discount']))
                             {{ config('settings.site_currency_icon') }}
