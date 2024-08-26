@@ -3,7 +3,8 @@
     $MainMenu = Menu::getByName('main_menu');
     @endphp
 
-    <nav class="navbar bg-light">
+<nav class="shadow-sm navbar bg-light sticky-top">
+
         <div class="p-3 mx-auto wrapper d-flex justify-content-between align-items-center w-100">
             <div class="header-logo me-3">
                 <a class="" href="{{ url('/') }}">
