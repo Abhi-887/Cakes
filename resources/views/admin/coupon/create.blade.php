@@ -34,6 +34,13 @@
                     <input type="text" name="min_purchase_amount" class="form-control" value="{{ old('min_purchase_amount') }}">
                 </div>
 
+                   <!-- Start Date Field -->
+                   <div class="form-group">
+                    <label>Start Date</label>
+                    <input type="date" name="start_date" class="form-control" value="{{ old('start_date') }}">
+                </div>
+
+
                 <div class="form-group">
                     <label>Expire Date</label>
                     <input type="date" name="expire_date" class="form-control" value="{{ old('date') }}">

@@ -45,13 +45,16 @@ class CouponController extends Controller
         $coupon->code = $request->code;
         $coupon->quantity = $request->quantity;
         $coupon->min_purchase_amount = $request->min_purchase_amount;
+        $coupon->start_date = $request->start_date;
         $coupon->expire_date = $request->expire_date;
+        $coupon->category_id = $request->category_id; // Save selected category
+        $coupon->sub_category_id = $request->sub_category_id; // Save selected subcategory
         $coupon->discount_type = $request->discount_type;
         $coupon->discount = $request->discount;
         $coupon->status = $request->status;
         $coupon->save();
 
-        toastr()->success('Created Successfully');
+        toastr()->success('Coupon created successfully.');
 
         return to_route('admin.coupon.index');
     }
@@ -75,13 +78,16 @@ class CouponController extends Controller
         $coupon->code = $request->code;
         $coupon->quantity = $request->quantity;
         $coupon->min_purchase_amount = $request->min_purchase_amount;
+        $coupon->start_date = $request->start_date;
         $coupon->expire_date = $request->expire_date;
+        $coupon->category_id = $request->category_id; // Update selected category
+        $coupon->sub_category_id = $request->sub_category_id; // Update selected subcategory
         $coupon->discount_type = $request->discount_type;
         $coupon->discount = $request->discount;
         $coupon->status = $request->status;
         $coupon->save();
 
-        toastr()->success('Created Successfully');
+        toastr()->success('Coupon updated successfully.');
 
         return to_route('admin.coupon.index');
     }
