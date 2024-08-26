@@ -1212,7 +1212,7 @@ button {
 .fp__menu_item .fp__menu_item_text .category {
     /* text-transform: capitalize; */
     font-size: 12px !important;
-    color: #dce4ee  !important;
+    color: #94a0ae   !important;
     font-family: var(--headingFont);
     position: absolute;
     top: -10%;
