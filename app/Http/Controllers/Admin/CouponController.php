@@ -65,7 +65,8 @@ class CouponController extends Controller
     public function edit(string $id): View
     {
         $coupon = Coupon::findOrFail($id);
-        return view('admin.coupon.edit', compact('coupon'));
+        $categories = Category::where('parent', 0)->get(); // Fetching parent categories
+        return view('admin.coupon.edit', compact('coupon', 'categories'));
     }
 
     /**
