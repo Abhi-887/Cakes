@@ -382,7 +382,7 @@
 
                             <ul class="flex-wrap details_button_area d-flex">
                                 @if ($product->quantity === 0)
-                                    <li><a class="common_btn bg-danger" href="javascript:;">Stock Out</a></li>
+                                    <li><a class="common_btn bg-danger" href="javascript:;">Out of Stock</a></li>
                                 @else
                                     <li><a class="common_btn v_submit_button" href="#">Add To Cart</a></li>
                                 @endif
@@ -532,14 +532,14 @@
                         <h2>Related Item</h2>
                         <div class="row related_product_slider">
                             @foreach ($relatedProducts as $relatedProduct)
-                                <div class="fp__menu_hover my-3 wow fadeInUp" data-wow-duration="1s">
+                                <div class="my-3 fp__menu_hover wow fadeInUp" data-wow-duration="1s">
                                     <div class="card fp__menu_item rounded-5">
                                         <div class="fp__menu_item_img">
                                             <img src="{{ asset($relatedProduct->thumb_image) }}"
                                                 alt="{{ $relatedProduct->name }}" class="img-fluid w-100">
                                         </div>
                                         <a onclick="addToWishlist('{{ $relatedProduct->id }}')"
-                                            class="heart position-absolute rounded-circle text-white"
+                                            class="text-white heart position-absolute rounded-circle"
                                             href="javascript:;"><i class="fal fa-heart"></i></a>
 
                                         <div class="card-body fp__menu_item_text position-relative d-flex flex-column">
@@ -550,9 +550,9 @@
                                                 href="{{ route('product.show', $relatedProduct->slug) }}">
                                                 {{ Str::limit($relatedProduct->name, 300, '...') }}
                                             </a>
-                                            <div class="actions mt-auto d-flex justify-content-between align-items-center">
+                                            <div class="mt-auto actions d-flex justify-content-between align-items-center">
                                                 <p
-                                                    class="m-0  text-center price fw-semibold rounded-pill color-light-gray">
+                                                    class="m-0 text-center price fw-semibold rounded-pill color-light-gray">
                                                     @if ($relatedProduct->offer_price > 0)
                                                         {{ currencyPosition($relatedProduct->offer_price) }}
                                                         <del>{{ currencyPosition($relatedProduct->price) }}</del>
@@ -572,7 +572,7 @@
                                                     @endif
                                                 </p>
 
-                                                <a class="add-to-cart rounded-pill px-3 py-2 background-light-gray text-white"
+                                                <a class="px-3 py-2 text-white add-to-cart rounded-pill background-light-gray"
                                                     href="javascript:;"
                                                     onclick="loadProductModal('{{ $relatedProduct->id }}')">Add to
                                                     cart</a>
