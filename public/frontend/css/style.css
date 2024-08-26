@@ -1311,7 +1311,7 @@ button {
     /* position: absolute;
     background: var(--colorWhite);
     padding: 8px 15px; */
-    background: white !important;
+
     box-shadow: var(--boxShadow) !;
     /* border-radius: 30px; */
 }
