@@ -3,113 +3,92 @@
 @section('content')
 <section class="section">
     <div class="section-header">
-        <h1>Product</h1>
+        <h1>Coupon</h1>
     </div>
 
     <div class="card card-primary">
         <div class="card-header">
-            <h4>Update Product</h4>
-
+            <h4>Update Coupon</h4>
         </div>
         <div class="card-body">
-            <form action="{{ route('admin.product.update', $product->id) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('admin.coupon.update', $coupon->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
-                <div class="form-group">
-                    <label>Image</label>
-                    <div id="image-preview" class="image-preview">
-                        <label for="image-upload" id="image-label">Choose File</label>
-                        <input type="file" name="image" id="image-upload" />
-                      </div>
-                </div>
 
                 <div class="form-group">
                     <label>Name</label>
-                    <input type="text" name="name" class="form-control" value="{{ $product->name }}">
+                    <input type="text" name="name" class="form-control" value="{{ old('name', $coupon->name) }}">
                 </div>
 
                 <div class="form-group">
-					<label>Category</label>
-					<select name="category" class="form-control" id="categoryDropdown">
-						<option value="">Select</option>
-						@foreach ($categories as $category)
-							@if ($category->parent === 0)
-								<option value="{{ $category->id }}" data-parent="{{ $category->parent }}"
-									{{ $product->category_id == $category->id ? 'selected' : '' }}>
-									{{ $category->name }}
-								</option>
-							@endif
-						@endforeach
-					</select>
-				</div>
+                    <label>Coupon Code</label>
+                    <input type="text" name="code" class="form-control" value="{{ old('code', $coupon->code) }}">
+                </div>
+
+                <div class="form-group">
+                    <label>Coupon Quantity</label>
+                    <input type="text" name="quantity" class="form-control" value="{{ old('quantity', $coupon->quantity) }}">
+                </div>
+
+                <div class="form-group">
+                    <label>Minimum Purchase Price</label>
+                    <input type="text" name="min_purchase_amount" class="form-control" value="{{ old('min_purchase_amount', $coupon->min_purchase_amount) }}">
+                </div>
+
+                <div class="form-group">
+                    <label>Start Date</label>
+                    <input type="date" name="start_date" class="form-control" value="{{ old('start_date', $coupon->start_date) }}">
+                </div>
+
+                <div class="form-group">
+                    <label>Expire Date</label>
+                    <input type="date" name="expire_date" class="form-control" value="{{ old('expire_date', $coupon->expire_date) }}">
+                </div>
+
+                <div class="form-group">
+                    <label>Discount Type</label>
+                    <select name="discount_type" class="form-control">
+                        <option value="percent" @selected(old('discount_type', $coupon->discount_type) === 'percent')>Percent</option>
+                        <option value="amount" @selected(old('discount_type', $coupon->discount_type) === 'amount')>Amount ({{ config('settings.site_currency_icon') }})</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Discount Amount</label>
+                    <input type="text" name="discount" class="form-control" value="{{ old('discount', $coupon->discount) }}">
+                </div>
+
+                <div class="form-group">
+                    <label>Category</label>
+                    <select name="category_id" class="form-control" id="categoryDropdown">
+                        <option value="">Select Category</option>
+                        @foreach ($categories as $category)
+                            <option value="{{ $category->id }}" {{ old('category_id', $coupon->category_id) == $category->id ? 'selected' : '' }}>
+                                {{ $category->name }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
 
                 <div class="form-group">
                     <label>Sub Category</label>
-                    <select name="sub" class="form-control" id="subcategoryDropdown">
-						@foreach ($categories as $category)
-							@if ($category->parent == $product->category_id)
-								<option value="{{ $category->id }}"
-									{{ $product->sub_category == $category->id ? 'selected' : '' }}>
-									{{ $category->name }}
-								</option>
-							@endif
-						@endforeach
-                    </select>
-                </div>
-				
-                <div class="form-group">
-                    <label>Price</label>
-                    <input type="text" name="price" class="form-control" value="{{ $product->price }}">
-                </div>
-
-                <div class="form-group">
-                    <label>Offer Price</label>
-                    <input type="text" name="offer_price" class="form-control" value="{{ $product->offer_price }}">
-                </div>
-
-                <div class="form-group">
-                    <label>Quantity</label>
-                    <input type="text" name="quantity" class="form-control" value="{{ $product->quantity }}">
-                </div>
-
-                <div class="form-group">
-                    <label>Short Description</label>
-                    <textarea name="short_description" class="form-control" id="">{!! $product->short_description !!}</textarea>
-                </div>
-
-                <div class="form-group">
-                    <label>Long Description</label>
-                    <textarea name="long_description" class="form-control summernote" id="">{!! $product->long_description !!}</textarea>
-                </div>
-
-                <div class="form-group">
-                    <label>Sku</label>
-                    <input type="text" name="sku" class="form-control" value="{{ $product->sku }}">
-                </div>
-
-                <div class="form-group">
-                    <label>Seo Title</label>
-                    <input type="text" name="seo_title" class="form-control" value="{{ $product->seo_title }}">
-                </div>
-
-                <div class="form-group">
-                    <label>Seo Description</label>
-                    <textarea name="seo_description" class="form-control" id="">{!! $product->seo_description !!}</textarea>
-                </div>
-
-                <div class="form-group">
-                    <label>Show at Home</label>
-                    <select name="show_at_home" class="form-control" id="">
-                        <option @selected($product->show_at_home === 1) value="1">Yes</option>
-                        <option @selected($product->show_at_home === 0) value="0">No</option>
+                    <select name="sub_category_id" class="form-control" id="subcategoryDropdown">
+                        <option value="">Select Subcategory</option>
+                        @foreach ($categories as $category)
+                            @if ($category->parent == old('category_id', $coupon->category_id))
+                                <option value="{{ $category->id }}" {{ old('sub_category_id', $coupon->sub_category_id) == $category->id ? 'selected' : '' }}>
+                                    {{ $category->name }}
+                                </option>
+                            @endif
+                        @endforeach
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label>Status</label>
-                    <select name="status" class="form-control" id="">
-                        <option @selected($product->status === 1) value="1">Active</option>
-                        <option @selected($product->status === 0) value="0">Inactive</option>
+                    <select name="status" class="form-control">
+                        <option value="1" @selected(old('status', $coupon->status) == 1)>Active</option>
+                        <option value="0" @selected(old('status', $coupon->status) == 0)>Inactive</option>
                     </select>
                 </div>
 
@@ -119,38 +98,30 @@
     </div>
 </section>
 @endsection
-	
+
 @push('scripts')
 <script type="text/javascript">
-	$(document).ready(function(){
-		$('.image-preview').css({
-			'background-image': 'url({{ asset($product->thumb_image) }})',
-			'background-size': 'cover',
-			'background-position': 'center center'
-		})
-		
-	$(document).ready(function(){
+    $(document).ready(function(){
         $('#categoryDropdown').on('change', function(){
             var categoryId = $(this).val();
-            $('#subcategoryDropdown').empty().append('<option value="">Select Sub Category</option>');
-            if (categoryId !== '') {
+            var $subcategoryDropdown = $('#subcategoryDropdown');
+            $subcategoryDropdown.empty().append('<option value="">Select Subcategory</option>');
+
+            if (categoryId) {
                 $.ajax({
                     url: "{{ route('admin.subcategories', ':categoryId') }}".replace(':categoryId', categoryId),
                     type: 'GET',
                     success: function(response){
                         $.each(response, function(index, subcategory){
-                            $('#subcategoryDropdown').append('<option value="'+subcategory.id+'">'+subcategory.name+'</option>');
+                            $subcategoryDropdown.append('<option value="'+subcategory.id+'">'+subcategory.name+'</option>');
                         });
-                        $('.form-group.d-none').removeClass('d-none');
                     }
                 });
             }
-            else {
-                $('.form-group.d-none').addClass('d-none');
-            }
         });
-    });
-});
-</script>
 
+        // Trigger the change event to populate subcategories on page load if category is already selected
+        $('#categoryDropdown').trigger('change');
+    });
+</script>
 @endpush

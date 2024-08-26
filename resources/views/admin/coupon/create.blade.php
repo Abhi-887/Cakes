@@ -64,7 +64,7 @@
                 <!-- Category Selection -->
                 <div class="form-group">
                     <label>Category</label>
-                    <select name="category" class="form-control" id="categoryDropdown">
+                    <select name="category_id" class="form-control" id="categoryDropdown">
                         <option value="">Select</option>
                         @foreach ($categories as $category)
                             <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -75,7 +75,7 @@
                 <!-- Subcategory Selection -->
                 <div class="form-group d-none">
                     <label>Sub Category</label>
-                    <select name="subcategory" class="form-control" id="subcategoryDropdown">
+                    <select name="sub_category_id" class="form-control" id="subcategoryDropdown">
                         <option value="">Select Subcategory</option>
                     </select>
                 </div>
