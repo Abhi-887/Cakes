@@ -324,20 +324,56 @@ class FrontendController extends Controller
         // Retrieve the category by slug and fail if not found
         $category = Category::where('slug', $slug)->firstOrFail();
 
+        // Retrieve all categories and subcategories for the current main category
+        $categories = Category::all();
+        $subcategories = Category::where('parent', $category->id)->get();
+
+        // Retrieve products associated with the category
+        $products = Product::where('category_id', $category->id)
+            ->where('status', 1)
+            ->orderBy('id', 'DESC');
+
+        // Apply search filter if provided
+        if ($request->filled('search')) {
+            $products->where(function ($query) use ($request) {
+                $query->where('name', 'like', '%' . $request->search . '%')
+                    ->orWhere('long_description', 'like', '%' . $request->search . '%');
+            });
+        }
+
+        // Apply subcategory filter if provided
+        if ($request->filled('sub_category')) {
+            $products->where('sub_category', $request->sub_category);
+        }
+
+        // Paginate the results
+        $products = $products->paginate(12);
+
+        // Return the view with category, products, categories, and subcategories
+        return view('frontend.pages.product', compact('category', 'products', 'categories', 'subcategories'));
+    }
+    public function showCategoryProducts(Request $request, $slug)
+    {
+        $category = Category::where('slug', $slug)->firstOrFail();
+
         // Retrieve all categories
         $categories = Category::all();
+        $product = Product::where('status', 1)->orderBy('id', 'DESC');
+        $products = Product::where('category_id', $category->id);
+        // Retrieve the category by slug and fail if not found
+
 
         // Retrieve subcategories for the current main category
         $subcategories = Category::where('parent', $category->id)->get();
 
         // Retrieve products associated with the category
-        $products = Product::where('category_id', $category->id);
+
 
         // Apply search filter if provided
         if ($request->has('search') && $request->filled('search')) {
             $products->where(function ($query) use ($request) {
                 $query->where('name', 'like', '%' . $request->search . '%')
-                      ->orWhere('long_description', 'like', '%' . $request->search . '%');
+                    ->orWhere('long_description', 'like', '%' . $request->search . '%');
             });
         }
 
