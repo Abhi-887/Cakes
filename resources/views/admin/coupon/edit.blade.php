@@ -9,60 +9,119 @@
     <div class="card card-primary">
         <div class="card-header">
             <h4>Update Coupon</h4>
-
         </div>
         <div class="card-body">
             <form action="{{ route('admin.coupon.update', $coupon->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
+
                 <div class="form-group">
                     <label>Name</label>
-                    <input type="text" name="name" class="form-control" value="{{ $coupon->name }}">
+                    <input type="text" name="name" class="form-control" value="{{ old('name', $coupon->name) }}">
                 </div>
 
                 <div class="form-group">
                     <label>Coupon Code</label>
-                    <input type="text" name="code" class="form-control" value="{{ $coupon->code }}">
+                    <input type="text" name="code" class="form-control" value="{{ old('code', $coupon->code) }}">
                 </div>
 
                 <div class="form-group">
                     <label>Coupon Quantity</label>
-                    <input type="text" name="quantity" class="form-control" value="{{ $coupon->quantity }}">
+                    <input type="text" name="quantity" class="form-control" value="{{ old('quantity', $coupon->quantity) }}">
                 </div>
 
                 <div class="form-group">
-                    <label>Minumum Purchase Price</label>
-                    <input type="text" name="min_purchase_amount" class="form-control" value="{{ $coupon->min_purchase_amount }}">
+                    <label>Minimum Purchase Price</label>
+                    <input type="text" name="min_purchase_amount" class="form-control" value="{{ old('min_purchase_amount', $coupon->min_purchase_amount) }}">
+                </div>
+
+                <div class="form-group">
+                    <label>Start Date</label>
+                    <input type="date" name="start_date" class="form-control" value="{{ old('start_date', $coupon->start_date) }}">
                 </div>
 
                 <div class="form-group">
                     <label>Expire Date</label>
-                    <input type="date" name="expire_date" class="form-control" value="{{ $coupon->expire_date }}">
+                    <input type="date" name="expire_date" class="form-control" value="{{ old('expire_date', $coupon->expire_date) }}">
                 </div>
 
                 <div class="form-group">
                     <label>Discount Type</label>
-                    <select name="discount_type" class="form-control" id="">
-                        <option @selected($coupon->discount_type === 'percent') value="percent">Percent</option>
-                        <option @selected($coupon->discount_type === 'amount') value="amount">Amount ({{ config('settings.site_currency_icon') }})</option>
+                    <select name="discount_type" class="form-control">
+                        <option value="percent" @selected(old('discount_type', $coupon->discount_type) === 'percent')>Percent</option>
+                        <option value="amount" @selected(old('discount_type', $coupon->discount_type) === 'amount')>Amount ({{ config('settings.site_currency_icon') }})</option>
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label>Discount Amount</label>
-                    <input type="text" name="discount" class="form-control" value="{{ $coupon->discount }}">
+                    <input type="text" name="discount" class="form-control" value="{{ old('discount', $coupon->discount) }}">
+                </div>
+
+                <div class="form-group">
+                    <label>Category</label>
+                    <select name="category_id" class="form-control" id="categoryDropdown">
+                        <option value="">Select Category</option>
+                        @foreach ($categories as $category)
+                            <option value="{{ $category->id }}" {{ old('category_id', $coupon->category_id) == $category->id ? 'selected' : '' }}>
+                                {{ $category->name }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Sub Category</label>
+                    <select name="sub_category_id" class="form-control" id="subcategoryDropdown">
+                        <option value="">Select Subcategory</option>
+                        @foreach ($categories as $category)
+                            @if ($category->parent == old('category_id', $coupon->category_id))
+                                <option value="{{ $category->id }}" {{ old('sub_category_id', $coupon->sub_category_id) == $category->id ? 'selected' : '' }}>
+                                    {{ $category->name }}
+                                </option>
+                            @endif
+                        @endforeach
+                    </select>
                 </div>
 
                 <div class="form-group">
                     <label>Status</label>
-                    <select name="status" class="form-control" id="">
-                        <option @selected($coupon->status === 1) value="1">Active</option>
-                        <option @selected($coupon->status === 0) value="0">Inactive</option>
+                    <select name="status" class="form-control">
+                        <option value="1" @selected(old('status', $coupon->status) == 1)>Active</option>
+                        <option value="0" @selected(old('status', $coupon->status) == 0)>Inactive</option>
                     </select>
                 </div>
+
                 <button type="submit" class="btn btn-primary">Update</button>
             </form>
         </div>
     </div>
 </section>
 @endsection
+
+@push('scripts')
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#categoryDropdown').on('change', function(){
+            var categoryId = $(this).val();
+            var $subcategoryDropdown = $('#subcategoryDropdown');
+            $subcategoryDropdown.empty().append('<option value="">Select Subcategory</option>');
+
+            if (categoryId) {
+                $.ajax({
+                    url: "{{ route('admin.subcategories', ':categoryId') }}".replace(':categoryId', categoryId),
+                    type: 'GET',
+                    success: function(response){
+                        $.each(response, function(index, subcategory){
+                            $subcategoryDropdown.append('<option value="'+subcategory.id+'">'+subcategory.name+'</option>');
+                        });
+                    }
+                });
+            }
+        });
+
+        // Trigger the change event to populate subcategories on page load if category is already selected
+        $('#categoryDropdown').trigger('change');
+    });
+</script>
+@endpush
