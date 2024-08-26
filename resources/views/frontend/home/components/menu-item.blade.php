@@ -183,7 +183,7 @@
 
                 @foreach ($products as $product)
                     <div class="fp__menu_hover my-3 {{ $category->slug }}">
-                        <div class="card position-relative m-3 fp__menu_item rounded-5 slide-wrap">
+                        <div class="m-3 card position-relative fp__menu_item rounded-5 slide-wrap">
                             <div class="fp__menu_item_img">
                                 <img src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}"
                                     class="img-fluid w-100">
@@ -191,7 +191,7 @@
 
                             <a class="heart position-absolute rounded-circle" href="javascript:;"
                                 onclick="addToWishlist('{{ $product->id }}')">
-                                <i class="fal fa-heart text-white"></i>
+                                <i class="text-white fal fa-heart"></i>
                             </a>
 
                             <div class="card-body fp__menu_item_text position-relative d-flex flex-column">
@@ -201,8 +201,8 @@
                                 </a>
                                 <a class="my-3 title"
                                     href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
-                                <div class="actions mt-auto d-flex justify-content-between align-items-center">
-                                    <p class="price color-light-gray m-0">
+                                <div class="mt-auto actions d-flex justify-content-between align-items-center">
+                                    <p class="m-0 price color-light-gray">
                                         @if ($product->offer_price > 0)
                                             <del>{{ currencyPosition($product->price) }}</del>
                                             {{ currencyPosition($product->offer_price) }}
@@ -210,8 +210,16 @@
                                             {{ currencyPosition($product->price) }}
                                         @endif
                                     </p>
-                                    <a class="add-to-cart rounded-pill px-3 py-2 background-light-gray text-white"
-                                        href="javascript:;" onclick="addToCart('{{ $product->id }}')">Add to cart</a>
+                                    @if($product->quantity === 0)
+                                    <a class="px-3 py-2 text-white rounded-pill bg-danger" href="javascript:;">
+                                        Out of Stock
+                                    </a>
+                                @else
+                                <a class="px-3 py-2 text-white add-to-cart rounded-pill background-light-gray"
+                                href="javascript:;" onclick="loadProductModal('{{ $product->id }}')">
+                                Add to Cart
+                            </a>
+                                @endif
                                 </div>
                             </div>
                         </div>
