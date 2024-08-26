@@ -3,13 +3,12 @@
 @section('content')
 <section class="section">
     <div class="section-header">
-        <h1>Coupon</h1>
+        <h1>Create Coupon</h1>
     </div>
 
     <div class="card card-primary">
         <div class="card-header">
             <h4>Create Coupon</h4>
-
         </div>
         <div class="card-body">
             <form action="{{ route('admin.coupon.store') }}" method="POST" enctype="multipart/form-data">
@@ -53,6 +52,27 @@
                     <input type="text" name="discount" class="form-control" value="{{ old('discount') }}">
                 </div>
 
+
+
+                <!-- Category Selection -->
+                <div class="form-group">
+                    <label>Category</label>
+                    <select name="category" class="form-control" id="categoryDropdown">
+                        <option value="">Select</option>
+                        @foreach ($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+                <!-- Subcategory Selection -->
+                <div class="form-group d-none">
+                    <label>Sub Category</label>
+                    <select name="subcategory" class="form-control" id="subcategoryDropdown">
+                        <option value="">Select Subcategory</option>
+                    </select>
+                </div>
+
                 <div class="form-group">
                     <label>Status</label>
                     <select name="status" class="form-control" id="">
@@ -60,9 +80,37 @@
                         <option value="0">Inactive</option>
                     </select>
                 </div>
+
+
                 <button type="submit" class="btn btn-primary">Create</button>
             </form>
         </div>
     </div>
 </section>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#categoryDropdown').on('change', function(){
+            var categoryId = $(this).val();
+            $('#subcategoryDropdown').empty().append('<option value="">Select Sub Category</option>');
+            if (categoryId !== '') {
+                $.ajax({
+                    url: "{{ route('admin.subcategories', ':categoryId') }}".replace(':categoryId', categoryId),
+                    type: 'GET',
+                    success: function(response){
+                        $.each(response, function(index, subcategory){
+                            $('#subcategoryDropdown').append('<option value="'+subcategory.id+'">'+subcategory.name+'</option>');
+                        });
+                        $('.form-group.d-none').removeClass('d-none');
+                    }
+                });
+            }
+            else {
+                $('.form-group.d-none').addClass('d-none');
+            }
+        });
+    });
+</script>
+
 @endsection
