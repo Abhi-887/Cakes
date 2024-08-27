@@ -1248,8 +1248,8 @@ button {
 }
 
 .fp__menu_item .fp__menu_item_text {
-    border-radius: 0 0 10px 10px;
-    background: #d5e0ec;
+    border-radius: 0 0 06px 06px;
+    background: #f0f0f04d;
     padding: 30px 25px;
     /* text-align: center; */
     /* position: relative; */
