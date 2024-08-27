@@ -192,10 +192,13 @@
                             {{ config('settings.site_currency_icon') }} {{ cartTotal() }}
                             @endif
                         </span></p>
-                    <form id="coupon_form">
-                        <input type="text" id="coupon_code" name="code" placeholder="Coupon Code">
-                        <button type="submit">Apply</button>
-                    </form>
+                        <form id="coupon_form">
+                            <input type="text" id="coupon_code" name="code" placeholder="Coupon Code">
+                            <input type="hidden" id="category_id" name="category_id" value="{{ $categoryId }}"> <!-- Set category_id -->
+                            <input type="hidden" id="sub_category_id" name="sub_category_id" value="{{ $subCategoryId }}"> <!-- Set sub_category_id -->
+                            <button type="submit">Apply</button>
+                        </form>
+
 
                     <div class="coupon_card">
                         @if (session()->has('coupon'))
