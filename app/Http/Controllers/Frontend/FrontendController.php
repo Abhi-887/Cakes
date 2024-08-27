@@ -425,6 +425,8 @@ class FrontendController extends Controller
 
     function applyCoupon(Request $request)
 {
+
+    dd($request->all());
     $subtotal = $request->subtotal;
     $code = $request->code;
     $categoryId = $request->category_id; // Passed from request
