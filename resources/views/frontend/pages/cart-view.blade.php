@@ -194,8 +194,9 @@
                         </span></p>
                         <form id="coupon_form">
                             <input type="text" id="coupon_code" name="code" placeholder="Coupon Code">
-                            <input type="hidden" id="category_id" name="category_id" value="{{ $categoryId }}"> <!-- Set category_id -->
-                            <input type="hidden" id="sub_category_id" name="sub_category_id" value="{{ $subCategoryId }}"> <!-- Set sub_category_id -->
+                            <input type="hidden" id="category_id" name="category_id" value="{{ $product->category->id ?? '' }}">
+                            <input type="hidden" id="sub_category_id" name="sub_category_id" value="{{ $product->subcategory->id ?? '' }}">
+
                             <button type="submit">Apply</button>
                         </form>
 
