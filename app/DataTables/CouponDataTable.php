@@ -8,8 +8,6 @@ use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Html\Builder as HtmlBuilder;
 use Yajra\DataTables\Html\Button;
 use Yajra\DataTables\Html\Column;
-use Yajra\DataTables\Html\Editor\Editor;
-use Yajra\DataTables\Html\Editor\Fields;
 use Yajra\DataTables\Services\DataTable;
 
 class CouponDataTable extends DataTable
@@ -22,18 +20,22 @@ class CouponDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
-            ->addColumn('action', function($query){
-                $edit = "<a href='".route('admin.coupon.edit', $query->id)."' class='btn btn-primary'><i class='fas fa-edit'></i></a>";
-                $delete = "<a href='".route('admin.coupon.destroy', $query->id)."' class='btn btn-danger delete-item ml-2'><i class='fas fa-trash'></i></a>";
+            ->addColumn('action', function ($query) {
+                $edit = "<a href='" . route('admin.coupon.edit', $query->id) . "' class='btn btn-primary'><i class='fas fa-edit'></i></a>";
+                $delete = "<a href='" . route('admin.coupon.destroy', $query->id) . "' class='btn btn-danger delete-item ml-2'><i class='fas fa-trash'></i></a>";
 
-                return $edit.$delete;
+                return $edit . $delete;
             })
             ->addColumn('status', function ($query) {
-                if ($query->status === 1) {
-                    return '<span class="badge badge-primary">Active</span>';
-                } else {
-                    return '<span class="badge badge-danger">Inactive</span>';
-                }
+                return $query->status === 1
+                    ? '<span class="badge badge-primary">Active</span>'
+                    : '<span class="badge badge-danger">Inactive</span>';
+            })
+            ->addColumn('category_name', function ($query) {
+                return $query->category ? $query->category->name : 'N/A'; // Get the main category name
+            })
+            ->addColumn('sub_category_name', function ($query) {
+                return $query->subCategory ? $query->subCategory->name : 'N/A'; // Get the subcategory name
             })
             ->rawColumns(['action', 'status'])
             ->setRowId('id');
@@ -44,7 +46,7 @@ class CouponDataTable extends DataTable
      */
     public function query(Coupon $model): QueryBuilder
     {
-        return $model->newQuery();
+        return $model->newQuery()->with(['category', 'subCategory']); // Eager load both category and subCategory relationships
     }
 
     /**
@@ -81,13 +83,13 @@ class CouponDataTable extends DataTable
             Column::make('quantity'),
             Column::make('discount_type'),
             Column::make('discount'),
-            Column::make('category_id'),
-            Column::make('sub_category_id'),
+            Column::make('category_name') // Main category name
+                ->title('Category'),
+            Column::make('sub_category_name') // Subcategory name
+                ->title('Subcategory'),
             Column::make('start_date'),
             Column::make('expire_date'),
             Column::make('status'),
-
-
             Column::computed('action')
                 ->exportable(false)
                 ->printable(false)
