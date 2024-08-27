@@ -424,62 +424,84 @@ class FrontendController extends Controller
         return redirect()->back();
     }
 
-    function applyCoupon(Request $request)
-{
-    Log::info('Apply Coupon Request Data:', $request->all());
+    public function applyCoupon(Request $request)
+    {
+        Log::info('Apply Coupon Request Data:', $request->all());
 
-    $subtotal = $request->subtotal;
-    $code = $request->code;
-    $categoryId = $request->category_id; // Passed from request
-    $subCategoryId = $request->sub_category_id; // Passed from request
+        // Validate request data
+        $request->validate([
+            'subtotal' => 'required|numeric|min:0',
+            'code' => 'required|string',
+            'product_id' => 'required|integer'
+        ]);
 
-    // Fetch the coupon by code
-    $coupon = Coupon::where('code', $code)->first();
+        $subtotal = $request->input('subtotal');
+        $code = $request->input('code');
+        $productId = $request->input('product_id'); // Product ID is needed to get its category
 
-    // Check if the coupon exists
-    if (!$coupon) {
-        return response(['message' => 'Invalid Coupon Code.'], 422);
+        // Fetch the coupon by code
+        $coupon = Coupon::where('code', $code)->first();
+
+        // Check if the coupon exists
+        if (!$coupon) {
+            return response(['message' => 'Invalid Coupon Code.'], 422);
+        }
+
+        // Check if the coupon has been fully redeemed
+        if ($coupon->quantity <= 0) {
+            return response(['message' => 'Coupon has been fully redeemed.'], 422);
+        }
+
+        // Check if the coupon has expired
+        if ($coupon->expire_date < now()) {
+            return response(['message' => 'Coupon has expired.'], 422);
+        }
+
+        // Check if the coupon is applicable based on the start date
+        if ($coupon->start_date > now()) {
+            return response(['message' => 'Coupon is not yet valid.'], 422);
+        }
+
+        // Fetch the product to get its category ID
+        $product = Product::findOrFail($productId);
+        $productCategoryId = $product->category->id ?? null;
+
+        // Check if the coupon applies to the correct category
+        if ($coupon->category_id && $coupon->category_id != $productCategoryId) {
+            return response(['message' => 'Coupon is not valid for this category.'], 422);
+        }
+
+        // Check if the coupon applies to the correct subcategory
+        $productSubCategoryId = $product->subcategory->id ?? null;
+        if ($coupon->sub_category_id && $coupon->sub_category_id != $productSubCategoryId) {
+            return response(['message' => 'Coupon is not valid for this subcategory.'], 422);
+        }
+
+        // Calculate the discount
+        $discount = 0;
+        if ($coupon->discount_type === 'percent') {
+            $discount = number_format($subtotal * ($coupon->discount / 100), 2);
+        } elseif ($coupon->discount_type === 'amount') {
+            $discount = number_format($coupon->discount, 2);
+        }
+
+        // Ensure discount does not exceed subtotal
+        $discount = min($discount, $subtotal);
+
+        // Calculate the final total after applying the discount
+        $finalTotal = number_format($subtotal - $discount, 2);
+
+        // Store the coupon details in session
+        session()->put('coupon', ['code' => $code, 'discount' => $discount]);
+
+        return response([
+            'message' => 'Coupon Applied Successfully.',
+            'discount' => $discount,
+            'finalTotal' => $finalTotal,
+            'coupon_code' => $code
+        ]);
     }
 
-    // Check if the coupon has been fully redeemed
-    if ($coupon->quantity <= 0) {
-        return response(['message' => 'Coupon has been fully redeemed.'], 422);
-    }
-
-    // Check if the coupon has expired
-    if ($coupon->expire_date < now()) {
-        return response(['message' => 'Coupon has expired.'], 422);
-    }
-
-    // Check if the coupon is applicable based on the start date
-    if ($coupon->start_date > now()) {
-        return response(['message' => 'Coupon is not yet valid.'], 422);
-    }
-
-    // Check if the coupon applies to the correct category or subcategory
-    if ($coupon->category_id && $coupon->category_id != $categoryId) {
-        return response(['message' => 'Coupon is not valid for this category.'], 422);
-    }
-
-    if ($coupon->sub_category_id && $coupon->sub_category_id != $subCategoryId) {
-        return response(['message' => 'Coupon is not valid for this subcategory.'], 422);
-    }
-
-    // Apply the discount based on the discount type
-    if ($coupon->discount_type === 'percent') {
-        $discount = number_format($subtotal * ($coupon->discount / 100), 2);
-    } elseif ($coupon->discount_type === 'amount') {
-        $discount = number_format($coupon->discount, 2);
-    }
-
-    // Calculate the final total after applying the discount
-    $finalTotal = $subtotal - $discount;
-
-    // Store the coupon details in session
-    session()->put('coupon', ['code' => $code, 'discount' => $discount]);
-
-    return response(['message' => 'Coupon Applied Successfully.', 'discount' => $discount, 'finalTotal' => $finalTotal, 'coupon_code' => $code]);
-}
 
 
     function destroyCoupon()
