@@ -81,6 +81,9 @@ class CouponDataTable extends DataTable
             Column::make('quantity'),
             Column::make('discount_type'),
             Column::make('discount'),
+            Column::make('category_id'),
+            Column::make('sub_category_id'),
+            Column::make('start_date'),
             Column::make('expire_date'),
             Column::make('status'),
 
