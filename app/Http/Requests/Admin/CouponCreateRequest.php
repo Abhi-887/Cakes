@@ -26,10 +26,22 @@ class CouponCreateRequest extends FormRequest
             'code' => ['required', 'max:50'],
             'quantity' => ['required', 'integer'],
             'min_purchase_amount' => ['required', 'integer'],
-            'expire_date' => ['required', 'date'],
+            'start_date' => ['required', 'date', 'before_or_equal:expire_date'], // Start date validation
+            'expire_date' => ['required', 'date', 'after:start_date'], // Expiry date validation
             'discount_type' => ['required'],
             'discount' => ['required'],
-            'status' => ['required', 'boolean']
+            'status' => ['required', 'boolean'],
+        ];
+    }
+
+    /**
+     * Custom messages for validation errors.
+     */
+    public function messages(): array
+    {
+        return [
+            'start_date.before_or_equal' => 'The start date must be before or equal to the expiry date.',
+            'expire_date.after' => 'The expiry date must be after the start date.',
         ];
     }
 }

@@ -59,6 +59,17 @@ class CouponController extends Controller
         return to_route('admin.coupon.index');
     }
 
+//     public function store(CouponCreateRequest $request)
+// {
+//     $validatedData = $request->validated();
+
+//     // Store the coupon data
+//     Coupon::create($validatedData);
+
+//     return redirect()->route('coupons.index')->with('success', 'Coupon created successfully!');
+// }
+
+
     /**
      * Show the form for editing the specified resource.
      */
