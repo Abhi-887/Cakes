@@ -38,6 +38,7 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
+use Log;
 use Mail;
 
 use function Ramsey\Uuid\v1;
@@ -425,8 +426,8 @@ class FrontendController extends Controller
 
     function applyCoupon(Request $request)
 {
+    Log::info('Apply Coupon Request Data:', $request->all());
 
-    dd($request->all());
     $subtotal = $request->subtotal;
     $code = $request->code;
     $categoryId = $request->category_id; // Passed from request
