@@ -52,9 +52,9 @@ class ProductDataTable extends DataTable
             })
             ->addColumn('status', function ($query) {
                 if ($query->status === 1) {
-                    return '<span class="badge badge-primary">Active</span>';
+                    return '<span class="badge badge-primary">Yes</span>';
                 } else {
-                    return '<span class="badge badge-danger">InActive</span>';
+                    return '<span class="badge badge-danger">No</span>';
                 }
             })
             ->addColumn('show_at_home', function ($query) {
