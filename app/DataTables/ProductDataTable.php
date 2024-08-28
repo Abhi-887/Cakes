@@ -108,25 +108,36 @@ class ProductDataTable extends DataTable
      * Get the dataTable columns definition.
      */
     public function getColumns(): array
-    {
-        return [
+{
+    return [
 
-            Column::make('id'),
-            Column::make('image'),
-            Column::make('name'),
-            Column::make('category'),
-            Column::make('price'),
-            Column::make('offer_price'),
-            Column::make('quantity'),
-            Column::make('show_at_home'),
-            Column::make('status'),
-            Column::computed('action')
-                ->exportable(false)
-                ->printable(false)
-                ->width(220)
-                ->addClass('text-center'),
-        ];
-    }
+        Column::make('id')
+            ->title('ID'),
+        Column::make('image')
+            ->title('Image'),
+        Column::make('name')
+            ->title('Product Name'),
+        Column::make('category')
+            ->title('Category'),
+        Column::make('price')
+            ->title('Price'),
+        Column::make('offer_price')
+            ->title('Offer Price'),
+        Column::make('quantity')
+            ->title('Available Qty'),
+        Column::make('show_at_home')
+            ->title('Show at Home'),
+        Column::make('status')
+            ->title('List Product'),
+        Column::computed('action')
+            ->title('Actions')
+            ->exportable(false)
+            ->printable(false)
+            ->width(220)
+            ->addClass('text-center'),
+    ];
+}
+
 
     /**
      * Get the filename for export.
