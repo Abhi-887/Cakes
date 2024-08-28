@@ -68,7 +68,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Quantity</label>
+                    <label>Available Qty</label>
                     <input type="text" name="quantity" class="form-control" value="{{ $product->quantity }}">
                 </div>
 
@@ -106,10 +106,10 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Status</label>
+                    <label>Show at listing</label>
                     <select name="status" class="form-control" id="">
-                        <option @selected($product->status === 1) value="1">Active</option>
-                        <option @selected($product->status === 0) value="0">Inactive</option>
+                        <option @selected($product->status === 1) value="1">YES</option>
+                        <option @selected($product->status === 0) value="0">NO</option>
                     </select>
                 </div>
 

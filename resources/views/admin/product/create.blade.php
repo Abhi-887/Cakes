@@ -56,7 +56,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Quantity</label>
+                    <label>Available Qty</label>
                     <input type="text" name="quantity" class="form-control" value="{{ old('quantity') }}">
                 </div>
 
@@ -94,10 +94,10 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Status</label>
+                    <label>Show at listing  </label>
                     <select name="status" class="form-control" id="">
-                        <option value="1">Active</option>
-                        <option value="0">Inactive</option>
+                        <option value="1">YES</option>
+                        <option value="0">NO</option>
                     </select>
                 </div>
 
