@@ -73,6 +73,13 @@
                 </div>
 
                 <div class="form-group">
+                    <label>Out of Stock</label><br>
+                    <input type="checkbox" name="out_of_stock" id="out_of_stock" value="1" {{ $product->out_of_stock ? 'checked' : '' }}>
+                    <label for="out_of_stock">Mark as Out of Stock</label>
+                </div>
+
+
+                <div class="form-group">
                     <label>Short Description</label>
                     <textarea name="short_description" class="form-control" id="">{!! $product->short_description !!}</textarea>
                 </div>
@@ -106,12 +113,11 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Show at listing</label>
-                    <select name="status" class="form-control" id="">
-                        <option @selected($product->status === 1) value="1">YES</option>
-                        <option @selected($product->status === 0) value="0">NO</option>
-                    </select>
+                    <label for="status">Show at listing</label><br>
+                    <input type="checkbox" name="status" id="status" value="1" {{ $product->status ? 'checked' : '' }}>
+                    <label for="status">YES</label>
                 </div>
+
 
                 <button type="submit" class="btn btn-primary">Update</button>
             </form>
