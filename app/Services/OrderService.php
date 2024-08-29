@@ -3,12 +3,14 @@ namespace App\Services;
 
 use App\Models\Order;
 use App\Models\OrderItem;
+use App\Models\Product; // Add this import
 
 class OrderService {
 
     /** Store Order in Database  */
     function createOrder() {
         try {
+            // Create a new order
             $order = new Order();
             $order->invoice_id = generateInvoiceId();
             $order->user_id = auth()->user()->id;
@@ -28,7 +30,8 @@ class OrderService {
             $order->address_id = session()->get('address_id');
             $order->save();
 
-            foreach(\Cart::content() as $product) {
+            // Loop through the cart items and create order items
+            foreach (\Cart::content() as $product) {
                 $orderItem = new OrderItem();
                 $orderItem->order_id = $order->id;
                 $orderItem->product_name = $product->name;
@@ -38,17 +41,25 @@ class OrderService {
                 $orderItem->product_size = json_encode($product->options->product_size);
                 $orderItem->product_option = json_encode($product->options->product_options);
                 $orderItem->save();
+
+                // Decrease the product quantity
+                $productModel = Product::find($product->id);
+                if ($productModel) {
+                    $productModel->decrement('quantity', $product->qty);
+
+                    // If the product quantity is now 0 or less, mark it as out of stock
+                    if ($productModel->quantity <= 0) {
+                        $productModel->update(['out_of_stock' => 1]);
+                    }
+                }
             }
 
-            /** Putting the Order id in session */
+            // Putting the Order id and grand total amount in session
             session()->put('order_id', $order->id);
-
-            /** Putting the grand total amount in session */
             session()->put('grand_total', $order->grand_total);
 
-
             return true;
-        }catch(\Exception $e){
+        } catch (\Exception $e) {
             logger($e);
 
             return false;
