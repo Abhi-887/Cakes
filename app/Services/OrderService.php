@@ -42,16 +42,16 @@ class OrderService {
                 $orderItem->product_option = json_encode($product->options->product_options);
                 $orderItem->save();
 
-                // Decrease the product quantity
-                $productModel = Product::find($product->id);
-                if ($productModel) {
-                    $productModel->decrement('quantity', $product->qty);
+                // // Decrease the product quantity
+                // $productModel = Product::find($product->id);
+                // if ($productModel) {
+                //     $productModel->decrement('quantity', $product->qty);
 
-                    // If the product quantity is now 0 or less, mark it as out of stock
-                    if ($productModel->quantity <= 0) {
-                        $productModel->update(['out_of_stock' => 1]);
-                    }
-                }
+                //     // If the product quantity is now 0 or less, mark it as out of stock
+                //     if ($productModel->quantity <= 0) {
+                //         $productModel->update(['out_of_stock' => 1]);
+                //     }
+                // }
             }
 
             // Putting the Order id and grand total amount in session
