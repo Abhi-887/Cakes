@@ -533,7 +533,7 @@
                         <div class="row related_product_slider">
                             @foreach ($relatedProducts as $relatedProduct)
                                 <div class="my-3 fp__menu_hover wow fadeInUp" data-wow-duration="1s">
-                                    <div class="card fp__menu_item rounded-5">
+                                    <div class="card fp__menu_item rounded-3">
                                         <div class="fp__menu_item_img">
                                             <img src="{{ asset($relatedProduct->thumb_image) }}"
                                                 alt="{{ $relatedProduct->name }}" class="img-fluid w-100">
