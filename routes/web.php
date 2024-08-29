@@ -142,8 +142,6 @@ Route::post('/contact', [FrontendController::class, 'sendContactMessage'])->name
 /** Reservation Routes */
 Route::post('/reservation', [FrontendController::class, 'reservation'])->name('reservation.store');
 
-Route::post('/submit-quote', [CaptchaController::class, 'store'])->name('quote.store');
-
 /** Newsletter Routes */
 Route::post('/subscribe-newsletter', [FrontendController::class, 'subscribeNewsletter'])->name('subscribe-newsletter');
 
