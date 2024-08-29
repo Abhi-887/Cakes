@@ -185,8 +185,10 @@
                     <div class="fp__menu_hover my-3 {{ $category->slug }}">
                         <div class="m-3 card position-relative fp__menu_item rounded-3 slide-wrap">
                             <div class="fp__menu_item_img">
-                                <img src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}"
-                                    class="img-fluid w-100">
+                                <a href="{{ route('product.show', $product->slug) }}" class="title">
+                                    <img src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}"
+                                        class="img-fluid w-100">
+                                </a>
                             </div>
 
                             <a class="heart position-absolute rounded-circle" href="javascript:;"
@@ -210,16 +212,16 @@
                                             {{ currencyPosition($product->price) }}
                                         @endif
                                     </p>
-                                    @if($product->quantity === 0)
-                                    <a class="px-3 py-2 text-white rounded-pill bg-danger" href="javascript:;">
-                                        Out of Stock
-                                    </a>
-                                @else
-                                <a class="px-3 py-2 text-white add-to-cart rounded-pill background-light-gray"
-                                href="javascript:;" onclick="loadProductModal('{{ $product->id }}')">
-                                Add to Cart
-                            </a>
-                                @endif
+                                    @if ($product->quantity === 0)
+                                        <a class="px-3 py-2 text-white rounded-pill bg-danger" href="javascript:;">
+                                            Out of Stock
+                                        </a>
+                                    @else
+                                        <a class="px-3 py-2 text-white add-to-cart rounded-pill background-light-gray"
+                                            href="javascript:;" onclick="loadProductModal('{{ $product->id }}')">
+                                            Add to Cart
+                                        </a>
+                                    @endif
                                 </div>
                             </div>
                         </div>
