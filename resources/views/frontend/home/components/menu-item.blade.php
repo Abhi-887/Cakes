@@ -212,16 +212,17 @@
                                             {{ currencyPosition($product->price) }}
                                         @endif
                                     </p>
-                                    @if ($product->quantity === 0)
-                                        <a class="px-3 py-2 text-white rounded-pill bg-danger" href="javascript:;">
-                                            Out of Stock
-                                        </a>
-                                    @else
-                                        <a class="px-3 py-2 text-white add-to-cart rounded-pill background-light-gray"
-                                            href="javascript:;" onclick="loadProductModal('{{ $product->id }}')">
-                                            Add to Cart
-                                        </a>
-                                    @endif
+                                    @if($product->quantity === 0 || $product->out_of_stock)
+                                    <a class="px-3 py-2 text-white rounded-pill bg-danger" href="javascript:;">
+                                        Out of Stock
+                                    </a>
+                                @else
+                                    <a class="px-3 py-2 text-white add-to-cart rounded-pill background-light-gray"
+                                       href="javascript:;" onclick="loadProductModal('{{ $product->id }}')">
+                                        Add to Cart
+                                    </a>
+                                @endif
+
                                 </div>
                             </div>
                         </div>
