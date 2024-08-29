@@ -381,11 +381,14 @@
                             </div>
 
                             <ul class="flex-wrap details_button_area d-flex">
-                                @if ($product->quantity === 0)
+                                @if ($product->quantity === 0 || $product->out_of_stock)
                                     <li><a class="common_btn bg-danger" href="javascript:;">Out of Stock</a></li>
                                 @else
                                     <li><a class="common_btn v_submit_button" href="#">Add To Cart</a></li>
                                 @endif
+
+
+
                                 {{-- <li><a class="wishlist" href="#"><i class="far fa-heart"></i></a></li> --}}
                                 <li onclick="addToWishlist('{{ $product->id }}')"><a class="wishlist"
                                         href="javascript:;"><i class="far fa-heart"></i></a></li>
