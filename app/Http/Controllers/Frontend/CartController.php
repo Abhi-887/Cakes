@@ -112,8 +112,7 @@ class CartController extends Controller
                 'options' => $options
             ]);
 
-            // Decrease product quantity after adding to cart
-            $product->decrement('quantity', $request->quantity);
+
 
             // Check if the product is now out of stock
             if ($product->quantity <= 0) {
