@@ -166,16 +166,17 @@
                                             {{ currencyPosition($product->price) }}
                                         @endif
                                     </p>
-                                    @if($product->quantity === 0)
+                                    @if($product->quantity === 0 || $product->out_of_stock == 1)
                                     <a class="px-3 py-2 text-white rounded-pill bg-danger" href="javascript:;">
                                         Out of Stock
                                     </a>
                                 @else
-                                <a class="px-3 py-2 text-white add-to-cart rounded-pill background-light-gray"
-                                href="javascript:;" onclick="loadProductModal('{{ $product->id }}')">
-                                Add to Cart
-                            </a>
+                                    <a class="px-3 py-2 text-white add-to-cart rounded-pill background-light-gray"
+                                       href="javascript:;" onclick="loadProductModal('{{ $product->id }}')">
+                                        Add to Cart
+                                    </a>
                                 @endif
+
 
                                     {{-- <a class="background-light-gray"
                                             href="{{ route('product.show', $product->slug) }}"><i
