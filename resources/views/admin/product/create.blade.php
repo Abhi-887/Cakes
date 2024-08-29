@@ -61,6 +61,13 @@
                 </div>
 
                 <div class="form-group">
+                    <label>Out of Stock</label><br>
+                    <input type="checkbox" name="out_of_stock" id="out_of_stock" value="1">
+                    <label for="out_of_stock">Mark as Out of Stock</label>
+                </div>
+
+
+                <div class="form-group">
                     <label>Short Description</label>
                     <textarea name="short_description" class="form-control" id="">{{ old('short_description') }}</textarea>
                 </div>
@@ -93,13 +100,18 @@
                     </select>
                 </div>
 
+
+
                 <div class="form-group">
-                    <label>Show at listing  </label>
-                    <select name="status" class="form-control" id="">
-                        <option value="1">YES</option>
-                        <option value="0">NO</option>
-                    </select>
+                    <label>Show at listing</label><br>
+                    <input type="radio" name="status" id="status_yes" value="1" checked>
+                    <label for="status_yes">YES</label>
+                    <input type="radio" name="status" id="status_no" value="0">
+                    <label for="status_no">NO</label>
                 </div>
+
+
+
 
                 <button type="submit" class="btn btn-primary">Create</button>
             </form>
