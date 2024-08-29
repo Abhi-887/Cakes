@@ -183,7 +183,7 @@
 
                 @foreach ($products as $product)
                     <div class="fp__menu_hover my-3 {{ $category->slug }}">
-                        <div class="m-3 card position-relative fp__menu_item rounded-5 slide-wrap">
+                        <div class="m-3 card position-relative fp__menu_item rounded-3 slide-wrap">
                             <div class="fp__menu_item_img">
                                 <img src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}"
                                     class="img-fluid w-100">
