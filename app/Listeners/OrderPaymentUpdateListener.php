@@ -36,7 +36,7 @@ class OrderPaymentUpdateListener
         $order->save();
 
         // Check if the payment status is successful
-        if ($event->paymentInfo['status'] === 'success') {
+        if ($event->paymentInfo['status'] === 'completed') {
             // Loop through the order items and decrease the product quantity
             $orderItems = OrderItem::where('order_id', $order->id)->get();
 
