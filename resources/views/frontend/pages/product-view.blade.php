@@ -546,7 +546,7 @@
                                             <a class="px-2 py-1 category bg-light fw-semibold"
                                                 href="#">{{ @$relatedProduct->category->name }}</a>
 
-                                            <a class="my-3 title"
+                                            <a class="title"
                                                 href="{{ route('product.show', $relatedProduct->slug) }}">
                                                 {{ Str::limit($relatedProduct->name, 300, '...') }}
                                             </a>
