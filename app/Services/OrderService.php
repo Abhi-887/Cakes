@@ -25,6 +25,13 @@ class OrderService {
             $order->payment_approve_date = NULL;
             $order->transaction_id = NULL;
             $order->coupon_info = json_encode(session()->get('coupon'));
+            $couponCode = session()->get('coupon')['code'] ?? null;
+            if ($couponCode) {
+                $coupon = Coupon::where('code', $couponCode)->first();
+                if ($coupon) {
+                    $order->coupon_id = $coupon->id;
+                }
+            }
             $order->currency_name = NULL;
             $order->order_status = 'pending';
             $order->address_id = session()->get('address_id');

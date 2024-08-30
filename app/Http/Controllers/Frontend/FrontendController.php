@@ -502,8 +502,13 @@ class FrontendController extends Controller
         // Calculate the final total after applying the discount
         $finalTotal = number_format($subtotal - $discount, 2);
 
-        // Store the coupon details in session
-        session()->put('coupon', ['code' => $code, 'discount' => $discount]);
+        // Store the coupon details in session with additional information
+        session()->put('coupon', [
+            'id' => $coupon->id, // Store the coupon ID for later use
+            'code' => $code,
+            'discount' => $discount,
+            'max_uses_per_user' => $coupon->max_uses_per_user, // Store max uses per user in session for validation during order creation
+        ]);
 
         // Reduce the coupon quantity by 1
         $coupon->decrement('quantity');
@@ -515,6 +520,7 @@ class FrontendController extends Controller
             'coupon_code' => $code
         ]);
     }
+
 
 
 
