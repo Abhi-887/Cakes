@@ -30,20 +30,19 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Minumum Purchase Price</label>
+                    <label>Minimum Purchase Price</label>
                     <input type="text" name="min_purchase_amount" class="form-control" value="{{ old('min_purchase_amount') }}">
                 </div>
 
-                   <!-- Start Date Field -->
-                   <div class="form-group">
+                <!-- Start Date Field -->
+                <div class="form-group">
                     <label>Start Date</label>
                     <input type="date" name="start_date" class="form-control" value="{{ old('start_date') }}">
                 </div>
 
-
                 <div class="form-group">
                     <label>Expire Date</label>
-                    <input type="date" name="expire_date" class="form-control" value="{{ old('date') }}">
+                    <input type="date" name="expire_date" class="form-control" value="{{ old('expire_date') }}">
                 </div>
 
                 <div class="form-group">
@@ -59,7 +58,16 @@
                     <input type="text" name="discount" class="form-control" value="{{ old('discount') }}">
                 </div>
 
+                <!-- Per Coupon Limits -->
+                <div class="form-group">
+                    <label>Max Uses Per User</label>
+                    <input type="number" name="max_uses_per_user" class="form-control" value="{{ old('max_uses_per_user') }}">
+                </div>
 
+                <div class="form-group">
+                    <label>Max Uses of Coupon</label>
+                    <input type="number" name="max_uses" class="form-control" value="{{ old('max_uses') }}">
+                </div>
 
                 <!-- Category Selection -->
                 <div class="form-group">
@@ -87,7 +95,6 @@
                         <option value="0">Inactive</option>
                     </select>
                 </div>
-
 
                 <button type="submit" class="btn btn-primary">Create</button>
             </form>
