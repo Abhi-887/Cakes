@@ -56,14 +56,30 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Available Qty</label>
-                    <input type="text" name="quantity" class="form-control" value="{{ old('quantity') }}">
-                </div>
+                    <label for="stock_settings">Stock Settings</label>
+                    <div id="stock_settings" class="p-3 border rounded">
+                        <!-- Available Quantity Field -->
+                        <div class="form-group">
+                            <label>Available Qty</label>
+                            <input type="text" name="quantity" class="form-control" value="{{ old('quantity') }}">
+                        </div>
 
-                <div class="form-group">
-                    <label>Out of Stock</label><br>
-                    <input type="checkbox" name="out_of_stock" id="out_of_stock" value="1">
-                    <label for="out_of_stock">Mark as Out of Stock</label>
+                        <!-- Track Stock Field -->
+                        <div class="form-group">
+                            <label>Track Stock</label><br>
+                            <input type="radio" name="track_stock" id="track_stock_yes" value="1">
+                            <label for="track_stock_yes">Yes</label>
+                            <input type="radio" name="track_stock" id="track_stock_no" value="0" checked>
+                            <label for="track_stock_no">No</label>
+                        </div>
+
+                        <!-- Out of Stock Field -->
+                        <div class="form-group">
+                            <label>Keep product in list view even after out of stock</label><br>
+                            <input type="checkbox" name="out_of_stock" id="out_of_stock" value="1">
+                            <label for="out_of_stock">Show as out of stock</label>
+                        </div>
+                    </div>
                 </div>
 
 
