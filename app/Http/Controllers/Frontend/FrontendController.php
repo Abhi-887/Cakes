@@ -438,6 +438,7 @@ class FrontendController extends Controller
         $subtotal = $request->input('subtotal');
         $code = $request->input('code');
         $productId = $request->input('product_id'); // Product ID is needed to get its category
+        $userId = auth()->id(); // Assuming the user is authenticated
 
         // Fetch the coupon by code
         $coupon = Coupon::where('code', $code)->first();
@@ -460,6 +461,14 @@ class FrontendController extends Controller
         // Check if the coupon is applicable based on the start date
         if ($coupon->start_date > now()) {
             return response(['message' => 'Coupon is not yet valid.'], 422);
+        }
+
+        // Check if the user has exceeded the max uses per user
+        $userCouponUses = Order::where('user_id', $userId)
+                                ->where('coupon_id', $coupon->id)
+                                ->count();
+        if ($coupon->max_uses_per_user && $userCouponUses >= $coupon->max_uses_per_user) {
+            return response(['message' => 'You have already used this coupon the maximum allowed number of times.'], 422);
         }
 
         // Fetch the product to get its category ID
@@ -494,6 +503,9 @@ class FrontendController extends Controller
         // Store the coupon details in session
         session()->put('coupon', ['code' => $code, 'discount' => $discount]);
 
+        // Reduce the coupon quantity by 1
+        $coupon->decrement('quantity');
+
         return response([
             'message' => 'Coupon Applied Successfully.',
             'discount' => $discount,
@@ -501,6 +513,7 @@ class FrontendController extends Controller
             'coupon_code' => $code
         ]);
     }
+
 
 
 
