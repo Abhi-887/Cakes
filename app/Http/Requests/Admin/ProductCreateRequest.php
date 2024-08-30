@@ -28,6 +28,7 @@ class ProductCreateRequest extends FormRequest
             'price' => [ 'nullable','numeric'],
             'offer_price' => ['nullable', 'numeric'],
             'quantity' => [ 'nullable','numeric'],
+            'track_stock'=>['boolean'],
             'short_description' => [ 'nullable','max:500'],
             'long_description' => ['nullable'],
             'sku' => ['nullable', 'max:255'],

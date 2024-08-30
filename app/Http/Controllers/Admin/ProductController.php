@@ -54,6 +54,7 @@ class ProductController extends Controller
         $product->offer_price = $request->offer_price ?? 0;
         $product->quantity = $request->quantity;
         $product-> out_of_stock = $request-> out_of_stock;
+        $product-> track_stock = $request-> track_stock;
         $product->short_description = $request->short_description;
         $product->long_description = $request->long_description;
 
@@ -107,6 +108,7 @@ class ProductController extends Controller
     $product->long_description = $request->long_description;
     $product->sku = $request->sku;
     $product-> out_of_stock = $request-> out_of_stock;
+    $product-> track_stock = $request-> track_stock;
     $product->seo_title = $request->seo_title;
     $product->seo_description = $request->seo_description;
     $product->show_at_home = $request->show_at_home;

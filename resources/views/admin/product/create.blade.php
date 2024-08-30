@@ -118,14 +118,16 @@
 
 
 
-                <div class="form-group">
-                    <label>Show at listing</label><br>
-                    <input type="radio" name="status" id="status_yes" value="1" checked>
-                    <label for="status_yes">YES</label>
-                    <input type="radio" name="status" id="status_no" value="0">
-                    <label for="status_no">NO</label>
-                </div>
 
+
+
+                <div class="form-group">
+                    <label for="inputState">Status</label>
+                    <select id="inputState" class="form-control" name="status">
+                      <option value="1">Active</option>
+                      <option value="0">Inactive</option>
+                    </select>
+                </div>
 
 
 

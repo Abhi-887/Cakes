@@ -112,10 +112,13 @@
                     </select>
                 </div>
 
+
                 <div class="form-group">
-                    <label for="status">Show at listing</label><br>
-                    <input type="checkbox" name="status" id="status" value="1" {{ $product->status ? 'checked' : '' }}>
-                    <label for="status">YES</label>
+                    <label for="inputState">Status</label>
+                    <select id="inputState" class="form-control" name="status">
+                      <option {{$product->status == 1 ? 'selected' : ''}} value="1">Active</option>
+                      <option {{$product->status == 0 ? 'selected' : ''}} value="0">Inactive</option>
+                    </select>
                 </div>
 
 
