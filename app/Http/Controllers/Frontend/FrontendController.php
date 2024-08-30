@@ -434,12 +434,12 @@ class FrontendController extends Controller
         $request->validate([
             'subtotal' => 'required|numeric|min:0',
             'code' => 'required|string',
-            // 'product_id' => 'required|integer'
+            'product_id' => 'required|integer'
         ]);
 
         $subtotal = $request->input('subtotal');
         $code = $request->input('code');
-        // $productId = $request->input('product_id'); // Product ID is needed to get its category
+        $productId = $request->input('product_id'); // Product ID is needed to get its category
         $userId = auth()->id(); // Assuming the user is authenticated
 
         // Fetch the coupon by code
