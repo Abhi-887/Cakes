@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
@@ -19,14 +18,13 @@ class CartController extends Controller
         return view('frontend.pages.cart-view');
     }
 
-
     public function addToCart(Request $request)
     {
         $product = Product::with(['productSizes', 'productOptions', 'variants.productVariantItems', 'category', 'subcategory'])
             ->findOrFail($request->product_id);
 
-        // Check if the product is out of stock or if the requested quantity is more than available
-        if ($product->quantity < $request->quantity || $product->out_of_stock == 1) {
+        // Check if the product is trackable and if it's out of stock or the requested quantity is more than available
+        if ($product->track_stock == 1 && ($product->quantity < $request->quantity || $product->out_of_stock == 1)) {
             throw ValidationException::withMessages(['Quantity is not available or product is out of stock!']);
         }
 
@@ -112,10 +110,8 @@ class CartController extends Controller
                 'options' => $options
             ]);
 
-
-
-            // Check if the product is now out of stock
-            if ($product->quantity <= 0) {
+            // Check if the product is trackable and now out of stock
+            if ($product->track_stock == 1 && $product->quantity <= 0) {
                 $product->update(['out_of_stock' => 1]);
             }
 
@@ -125,9 +121,6 @@ class CartController extends Controller
             return response(['status' => 'error', 'message' => 'Something went wrong!'], 500);
         }
     }
-
-
-
 
     public function getCartProduct()
     {
@@ -154,7 +147,8 @@ class CartController extends Controller
         $cartItem = Cart::get($request->rowId);
         $product = Product::findOrFail($cartItem->id);
 
-        if ($product->quantity < $request->qty) {
+        // Check if the product is trackable and if the quantity is available
+        if ($product->track_stock == 1 && $product->quantity < $request->qty) {
             return response(['status' => 'error', 'message' => 'Quantity is not available!', 'qty' => $cartItem->qty]);
         }
 

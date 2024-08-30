@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Listeners;
 
 use App\Events\OrderPaymentUpdateEvent;
@@ -37,12 +36,12 @@ class OrderPaymentUpdateListener
 
         // Check if the payment status is successful
         if ($event->paymentInfo['status'] === 'completed') {
-            // Loop through the order items and decrease the product quantity
+            // Loop through the order items and decrease the product quantity if trackable
             $orderItems = OrderItem::where('order_id', $order->id)->get();
 
             foreach ($orderItems as $orderItem) {
                 $productModel = Product::find($orderItem->product_id);
-                if ($productModel) {
+                if ($productModel && $productModel->track_stock == 1) {  // Check if track_stock is 1
                     $productModel->decrement('quantity', $orderItem->qty);
 
                     // If the product quantity is now 0 or less, mark it as out of stock
