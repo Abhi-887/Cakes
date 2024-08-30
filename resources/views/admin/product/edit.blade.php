@@ -68,15 +68,35 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Available Qty</label>
-                    <input type="text" name="quantity" class="form-control" value="{{ $product->quantity }}">
+                    <label for="stock_settings">Stock Settings</label>
+                    <div id="stock_settings" class="p-3 border rounded">
+                        <!-- Available Quantity Field -->
+                        <div class="form-group">
+                            <label>Available Qty</label>
+                            <input type="text" name="quantity" class="form-control" value="{{ $product->quantity }}">
+                        </div>
+
+                        <!-- Track Stock Field -->
+                        <div class="form-group">
+                            <label>Track Stock</label><br>
+                            <input type="radio" name="track_stock" id="track_stock_yes" value="1" {{ $product->track_stock == 1 ? 'checked' : '' }}>
+                            <label for="track_stock_yes">Yes</label>
+
+                            <input type="radio" name="track_stock" id="track_stock_no" value="0" {{ $product->track_stock == 0 ? 'checked' : '' }}>
+                            <label for="track_stock_no">No</label>
+                        </div>
+
+
+                        <!-- Out of Stock Field -->
+                        <div class="form-group">
+                            <label>Keep product in list view even after out of stock</label><br>
+                            <input type="checkbox" name="out_of_stock" id="out_of_stock" value="1" {{ $product->out_of_stock ? 'checked' : '' }}>
+                            <label for="out_of_stock">Show as out of stock</label>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label>Out of Stock</label><br>
-                    <input type="checkbox" name="out_of_stock" id="out_of_stock" value="1" {{ $product->out_of_stock ? 'checked' : '' }}>
-                    <label for="out_of_stock">Mark as Out of Stock</label>
-                </div>
+
 
 
                 <div class="form-group">
