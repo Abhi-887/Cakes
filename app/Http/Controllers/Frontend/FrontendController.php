@@ -434,12 +434,10 @@ class FrontendController extends Controller
         $request->validate([
             'subtotal' => 'required|numeric|min:0',
             'code' => 'required|string',
-            'product_id' => 'required|integer'
         ]);
 
         $subtotal = $request->input('subtotal');
         $code = $request->input('code');
-        $productId = $request->input('product_id'); // Product ID is needed to get its category
         $userId = auth()->id(); // Assuming the user is authenticated
 
         // Fetch the coupon by code
@@ -473,19 +471,24 @@ class FrontendController extends Controller
             return response(['message' => 'You have already used this coupon the maximum allowed number of times.'], 422);
         }
 
-        // Fetch the product to get its category ID
-        $product = Product::findOrFail($productId);
-        $productCategoryId = $product->category->id ?? null;
+        // Validate coupon against cart items
+        $cartItems = \Cart::content();
+        $isCouponApplicable = false;
 
-        // Check if the coupon applies to the correct category
-        if ($coupon->category_id && $coupon->category_id != $productCategoryId) {
-            return response(['message' => 'Coupon is not valid for this category.'], 422);
+        foreach ($cartItems as $item) {
+            $productCategoryId = $item->options->product_info['category_id'] ?? null;
+            $productSubCategoryId = $item->options->product_info['sub_category_id'] ?? null;
+
+            if (($coupon->category_id && $coupon->category_id == $productCategoryId) ||
+                ($coupon->sub_category_id && $coupon->sub_category_id == $productSubCategoryId) ||
+                (!$coupon->category_id && !$coupon->sub_category_id)) {
+                $isCouponApplicable = true;
+                break;
+            }
         }
 
-        // Check if the coupon applies to the correct subcategory
-        $productSubCategoryId = $product->subcategory->id ?? null;
-        if ($coupon->sub_category_id && $coupon->sub_category_id != $productSubCategoryId) {
-            return response(['message' => 'Coupon is not valid for this subcategory.'], 422);
+        if (!$isCouponApplicable) {
+            return response(['message' => 'Coupon is not valid for any items in the cart.'], 422);
         }
 
         // Calculate the discount
@@ -502,13 +505,8 @@ class FrontendController extends Controller
         // Calculate the final total after applying the discount
         $finalTotal = number_format($subtotal - $discount, 2);
 
-        // Store the coupon details in session with additional information
-        session()->put('coupon', [
-            'id' => $coupon->id, // Store the coupon ID for later use
-            'code' => $code,
-            'discount' => $discount,
-            'max_uses_per_user' => $coupon->max_uses_per_user, // Store max uses per user in session for validation during order creation
-        ]);
+        // Store the coupon details in session
+        session()->put('coupon', ['code' => $code, 'discount' => $discount]);
 
         // Reduce the coupon quantity by 1
         $coupon->decrement('quantity');
@@ -520,6 +518,7 @@ class FrontendController extends Controller
             'coupon_code' => $code
         ]);
     }
+
 
 
 
