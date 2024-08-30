@@ -26,6 +26,7 @@ class CouponCreateRequest extends FormRequest
             'code' => ['required', 'max:50'],
             'quantity' => ['required', 'integer'],
             'min_purchase_amount' => ['required', 'integer'],
+            'max_uses_per_user' => ['required', 'integer'],
             'start_date' => ['required', 'date', 'before_or_equal:expire_date'], // Start date validation
             'expire_date' => ['required', 'date', 'after:start_date'], // Expiry date validation
             'discount_type' => ['required'],

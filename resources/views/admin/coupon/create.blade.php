@@ -25,7 +25,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Coupon Quantity</label>
+                    <label>Max Uses of Coupon</label>
                     <input type="text" name="quantity" class="form-control" value="{{ old('quantity') }}">
                 </div>
 
@@ -64,10 +64,7 @@
                     <input type="number" name="max_uses_per_user" class="form-control" value="{{ old('max_uses_per_user') }}">
                 </div>
 
-                <div class="form-group">
-                    <label>Max Uses of Coupon</label>
-                    <input type="number" name="max_uses" class="form-control" value="{{ old('max_uses') }}">
-                </div>
+
 
                 <!-- Category Selection -->
                 <div class="form-group">

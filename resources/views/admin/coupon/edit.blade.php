@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Coupon Quantity</label>
+                    <label>Max Uses of Coupon</label>
                     <input type="text" name="quantity" class="form-control" value="{{ old('quantity', $coupon->quantity) }}">
                 </div>
 
@@ -76,6 +76,12 @@
                         <option value="">Select Subcategory</option>
                         <!-- Options will be populated via JavaScript -->
                     </select>
+                </div>
+
+                 <!-- Per Coupon Limits -->
+                 <div class="form-group">
+                    <label>Max Uses Per User</label>
+                    <input type="number" name="max_uses_per_user" class="form-control" value="{{ $coupon->max_uses_per_user }}">
                 </div>
 
                 <div class="form-group">
