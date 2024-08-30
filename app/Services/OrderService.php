@@ -3,7 +3,8 @@ namespace App\Services;
 
 use App\Models\Order;
 use App\Models\OrderItem;
-use App\Models\Product; // Add this import
+use App\Models\Product;
+use App\Models\Coupon;// Add this import
 
 class OrderService {
 
