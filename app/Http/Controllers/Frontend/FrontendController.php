@@ -19,6 +19,8 @@ use App\Models\Contact2;
 use App\Models\Counter;
 use App\Models\Slider2;
 use App\Models\Coupon;
+use App\Models\Order;
+
 use App\Models\DailyOffer;
 use App\Models\Consultation;
 use App\Models\PrivacyPolicy;
