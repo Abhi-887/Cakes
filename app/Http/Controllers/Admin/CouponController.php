@@ -49,12 +49,24 @@ class CouponController extends Controller
         $coupon->min_purchase_amount = $request->min_purchase_amount;
         $coupon->start_date = $request->start_date;
         $coupon->expire_date = $request->expire_date;
-        $coupon->category_id = $request->category_id; // Save selected category
-        $coupon->sub_category_id = $request->sub_category_id; // Save selected subcategory
         $coupon->discount_type = $request->discount_type;
         $coupon->discount = $request->discount;
         $coupon->status = $request->status;
+
+        // Save selected category or subcategory if provided
+        if ($request->filled('category_id')) {
+            $coupon->category_id = $request->category_id;
+        }
+        if ($request->filled('sub_category_id')) {
+            $coupon->sub_category_id = $request->sub_category_id;
+        }
+
         $coupon->save();
+
+        // Save selected products if provided
+        if ($request->filled('products')) {
+            $coupon->products()->attach($request->products);
+        }
 
         toastr()->success('Coupon created successfully.');
 
