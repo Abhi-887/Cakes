@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\CouponCreateRequest;
 use App\Models\Category;
 use App\Models\Coupon;
+use App\Models\Product;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -31,7 +32,8 @@ class CouponController extends Controller
     public function create(): View
     {
         $categories = Category::where('parent', 0)->get(); // Fetching parent categories
-        return view('admin.coupon.create', compact('categories'));
+        $products = Product::all();
+        return view('admin.coupon.create', compact('categories' , 'products'));
     }
 
 
@@ -47,8 +49,6 @@ class CouponController extends Controller
         $coupon->min_purchase_amount = $request->min_purchase_amount;
         $coupon->start_date = $request->start_date;
         $coupon->expire_date = $request->expire_date;
-
-        $coupon->max_uses_per_user = $request->max_uses_per_user;
         $coupon->category_id = $request->category_id; // Save selected category
         $coupon->sub_category_id = $request->sub_category_id; // Save selected subcategory
         $coupon->discount_type = $request->discount_type;
@@ -60,16 +60,6 @@ class CouponController extends Controller
 
         return to_route('admin.coupon.index');
     }
-
-//     public function store(CouponCreateRequest $request)
-// {
-//     $validatedData = $request->validated();
-
-//     // Store the coupon data
-//     Coupon::create($validatedData);
-
-//     return redirect()->route('coupons.index')->with('success', 'Coupon created successfully!');
-// }
 
 
     /**
@@ -96,8 +86,7 @@ class CouponController extends Controller
         $coupon->expire_date = $request->expire_date;
         $coupon->category_id = $request->category_id; // Save selected category
         $coupon->sub_category_id = $request->sub_category_id; // Save selected subcategory
-        $coupon->max_uses_per_user = $request->max_uses_per_user;
-        $coupon->discount_type = $request->discount_type;
+         $coupon->discount_type = $request->discount_type;
         $coupon->discount = $request->discount;
         $coupon->status = $request->status;
         $coupon->save();
