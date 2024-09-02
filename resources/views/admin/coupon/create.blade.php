@@ -11,7 +11,7 @@
             <h4>Create Coupon</h4>
         </div>
         <div class="card-body">
-            <form action="{{ route('admin.coupon.store') }}" method="POST" enctype="multipart/form-data">
+            <form id="couponForm" action="{{ route('admin.coupon.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <!-- Basic Coupon Details -->
@@ -52,7 +52,7 @@
 
                 <div class="form-group">
                     <label>Discount Type</label>
-                    <select name="discount_type" class="form-control" id="">
+                    <select name="discount_type" class="form-control">
                         <option value="percent">Percent</option>
                         <option value="amount">Amount ({{ config('settings.site_currency_icon') }})</option>
                     </select>
@@ -70,20 +70,19 @@
                     <input type="number" name="max_uses_per_user" class="form-control" value="{{ old('max_uses_per_user') }}">
                 </div>
 
-                <!-- Wrapper for Coupon Application Options -->
+                <!-- Apply Coupon By Dropdown -->
 
                 <div class="form-group">
                     <label>Apply Coupon By</label>
-                    <div>
-                        <input type="radio" name="apply_by" value="category" id="applyByCategory" checked>
-                        <label for="applyByCategory">Category</label>
-                        <input type="radio" name="apply_by" value="product" id="applyByProduct">
-                        <label for="applyByProduct">Product</label>
-                    </div>
+                    <select name="apply_by" class="form-control" id="applyByDropdown">
+                        <option value="">Select Option</option>
+                        <option value="category">Category</option>
+                        <option value="product">Product</option>
+                    </select>
                 </div>
 
                 <!-- Category Selection -->
-                <div id="categorySelection">
+                <div id="categorySelection" class="d-none">
                     <div class="form-group">
                         <label>Category</label>
                         <select name="category_id" class="form-control" id="categoryDropdown">
@@ -118,7 +117,7 @@
                 <!-- Status -->
                 <div class="form-group">
                     <label>Status</label>
-                    <select name="status" class="form-control" id="">
+                    <select name="status" class="form-control">
                         <option value="1">Active</option>
                         <option value="0">Inactive</option>
                     </select>
@@ -134,13 +133,17 @@
 <script type="text/javascript">
     $(document).ready(function() {
         // Toggle visibility of category and product selections
-        $('input[name="apply_by"]').on('change', function() {
-            if ($(this).val() === 'category') {
+        $('#applyByDropdown').on('change', function() {
+            var selectedValue = $(this).val();
+            if (selectedValue === 'category') {
                 $('#categorySelection').removeClass('d-none');
                 $('#productSelection').addClass('d-none');
-            } else {
+            } else if (selectedValue === 'product') {
                 $('#categorySelection').addClass('d-none');
                 $('#productSelection').removeClass('d-none');
+            } else {
+                $('#categorySelection').addClass('d-none');
+                $('#productSelection').addClass('d-none');
             }
         });
 
