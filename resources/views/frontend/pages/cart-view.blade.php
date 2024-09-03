@@ -47,12 +47,12 @@
 
                                 @foreach (Cart::content() as $product)
 
-
+{{--
                                 <pre>
     @php
         print_r($product);
     @endphp
-</pre>
+</pre> --}}
 
                                 @php
                                 $productTotal = $product->price; // Base product price
