@@ -29,7 +29,7 @@ class CouponCreateRequest extends FormRequest
             'max_uses_per_user' => ['nullable', 'integer', 'min:1'],
             'start_date' => ['required', 'date', 'before_or_equal:expire_date'],
             'expire_date' => ['required', 'date', 'after_or_equal:start_date'],
-            'discount_type' => ['required', 'in:percent,fixed'],
+            'discount_type' => ['required', 'in:percent,amount'],
             'discount' => ['required', 'numeric', 'min:0'],
             'status' => ['required', 'boolean'],
             'category_id' => ['nullable', 'exists:categories,id'],
