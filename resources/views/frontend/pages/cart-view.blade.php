@@ -52,6 +52,7 @@
     @php
         print_r($product);
     @endphp
+
 </pre> --}}
 
                                 @php

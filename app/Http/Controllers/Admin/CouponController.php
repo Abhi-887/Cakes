@@ -60,7 +60,7 @@ class CouponController extends Controller
         if ($request->filled('sub_category_id')) {
             $coupon->sub_category_id = $request->sub_category_id;
         }
-
+        $coupon->save();
 
 
         // Save selected products if provided
@@ -68,7 +68,7 @@ class CouponController extends Controller
             $coupon->products()->attach($request->products);
         }
 
-        $coupon->save();
+
 
         toastr()->success('Coupon created successfully.');
 
