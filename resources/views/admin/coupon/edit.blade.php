@@ -58,30 +58,54 @@
                     <input type="text" name="discount" class="form-control" value="{{ old('discount', $coupon->discount) }}">
                 </div>
 
+                <!-- Max Uses Per User -->
                 <div class="form-group">
-                    <label>Category</label>
-                    <select name="category_id" class="form-control" id="categoryDropdown">
-                        <option value="">Select Category</option>
-                        @foreach ($categories as $category)
-                            <option value="{{ $category->id }}" {{ old('category_id', $coupon->category_id) == $category->id ? 'selected' : '' }}>
-                                {{ $category->name }}
-                            </option>
-                        @endforeach
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>Sub Category</label>
-                    <select name="sub_category_id" class="form-control" id="subcategoryDropdown">
-                        <option value="">Select Subcategory</option>
-                        <!-- Options will be populated via JavaScript -->
-                    </select>
-                </div>
-
-                 <!-- Per Coupon Limits -->
-                 <div class="form-group">
                     <label>Max Uses Per User</label>
                     <input type="number" name="max_uses_per_user" class="form-control" value="{{ $coupon->max_uses_per_user }}">
+                </div>
+
+                <!-- Apply Coupon By Dropdown -->
+                <div class="form-group">
+                    <label>Apply Coupon By</label>
+                    <select name="apply_by" class="form-control" id="applyByDropdown">
+                        <option value="">Select Option</option>
+                        <option value="category" @selected(old('apply_by', $coupon->apply_by) === 'category')>Category</option>
+                        <option value="product" @selected(old('apply_by', $coupon->apply_by) === 'product')>Product</option>
+                    </select>
+                </div>
+
+                <!-- Category Selection -->
+                <div id="categorySelection" class="{{ old('apply_by', $coupon->apply_by) === 'category' ? '' : 'd-none' }}">
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select name="category_id" class="form-control" id="categoryDropdown">
+                            <option value="">Select</option>
+                            @foreach ($categories as $category)
+                                <option value="{{ $category->id }}" {{ old('category_id', $coupon->category_id) == $category->id ? 'selected' : '' }}>
+                                    {{ $category->name }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
+
+                    <div class="form-group d-none">
+                        <label>Sub Category</label>
+                        <select name="sub_category_id" class="form-control" id="subcategoryDropdown">
+                            <option value="">Select Subcategory</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Product Selection -->
+                <div id="productSelection" class="{{ old('apply_by', $coupon->apply_by) === 'product' ? '' : 'd-none' }}">
+                    <div class="form-group">
+                        <label>Products</label>
+                        <select name="product_ids[]" class="form-control select2" multiple="multiple">
+                            @foreach ($products as $product)
+                                <option value="{{ $product->id }}" @if(in_array($product->id, old('product_ids', $coupon->product_ids))) selected @endif>{{ $product->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
                 </div>
 
                 <div class="form-group">
@@ -122,7 +146,22 @@
             }
         }
 
-        // Load subcategories based on the selected category
+        // Toggle visibility of category and product selections
+        $('#applyByDropdown').on('change', function() {
+            var selectedValue = $(this).val();
+            if (selectedValue === 'category') {
+                $('#categorySelection').removeClass('d-none');
+                $('#productSelection').addClass('d-none');
+            } else if (selectedValue === 'product') {
+                $('#categorySelection').addClass('d-none');
+                $('#productSelection').removeClass('d-none');
+            } else {
+                $('#categorySelection').addClass('d-none');
+                $('#productSelection').addClass('d-none');
+            }
+        });
+
+        // Handle category and subcategory dropdowns
         $('#categoryDropdown').on('change', function(){
             var categoryId = $(this).val();
             loadSubcategories(categoryId);
@@ -133,6 +172,9 @@
         if (initialCategoryId) {
             loadSubcategories(initialCategoryId);
         }
+
+        // Initialize Select2 for product selection
+        $('.select2').select2();
     });
 </script>
 @endpush

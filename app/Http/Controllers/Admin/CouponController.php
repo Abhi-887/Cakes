@@ -25,22 +25,17 @@ class CouponController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    // public function create() : View
-    // {
-    //     return view('admin.coupon.create');
-    // }
     public function create(): View
     {
         $categories = Category::where('parent', 0)->get(); // Fetching parent categories
         $products = Product::all();
-        return view('admin.coupon.create', compact('categories' , 'products'));
+        return view('admin.coupon.create', compact('categories', 'products'));
     }
-
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(CouponCreateRequest  $request): RedirectResponse
+    public function store(CouponCreateRequest $request): RedirectResponse
     {
         $coupon = new Coupon();
 
@@ -59,10 +54,10 @@ class CouponController extends Controller
         $coupon->sub_category_id = $request->sub_category_id;
         $coupon->status = $request->status;
 
-        // Save the coupon first
+        // Save the coupon
         $coupon->save();
 
-        // Attach related products
+        // Attach related products if provided
         if ($request->has('product_ids')) {
             $coupon->products()->attach($request->product_ids);
         }
@@ -72,9 +67,6 @@ class CouponController extends Controller
         return redirect()->route('admin.coupon.index');
     }
 
-
-
-
     /**
      * Show the form for editing the specified resource.
      */
@@ -82,31 +74,48 @@ class CouponController extends Controller
     {
         $coupon = Coupon::findOrFail($id);
         $categories = Category::where('parent', 0)->get(); // Fetching parent categories
-        return view('admin.coupon.edit', compact('coupon', 'categories'));
+        $products = Product::all(); // Fetching all products
+        $selectedProducts = $coupon->products->pluck('id')->toArray(); // Get selected products for the coupon
+
+        return view('admin.coupon.edit', compact('coupon', 'categories', 'products', 'selectedProducts'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(CouponCreateRequest $request, string $id)
+    public function update(CouponCreateRequest $request, string $id): RedirectResponse
     {
         $coupon = Coupon::findOrFail($id);
+
+        // Update coupon attributes
         $coupon->name = $request->name;
         $coupon->code = $request->code;
         $coupon->quantity = $request->quantity;
         $coupon->min_purchase_amount = $request->min_purchase_amount;
         $coupon->start_date = $request->start_date;
         $coupon->expire_date = $request->expire_date;
-        $coupon->category_id = $request->category_id; // Save selected category
-        $coupon->sub_category_id = $request->sub_category_id; // Save selected subcategory
-         $coupon->discount_type = $request->discount_type;
+        $coupon->discount_type = $request->discount_type;
         $coupon->discount = $request->discount;
+        $coupon->max_uses_per_user = $request->max_uses_per_user;
+        $coupon->apply_by = $request->apply_by;
+        $coupon->category_id = $request->category_id;
+        $coupon->sub_category_id = $request->sub_category_id;
         $coupon->status = $request->status;
+
+        // Save the coupon
         $coupon->save();
 
-        toastr()->success('Coupon updated successfully.');
+        // Sync related products if provided
+        if ($request->has('product_ids')) {
+            $coupon->products()->sync($request->product_ids);
+        } else {
+            // Detach products if no products are provided
+            $coupon->products()->detach();
+        }
 
-        return to_route('admin.coupon.index');
+        // Redirect after successful update
+        toastr()->success('Coupon updated successfully.');
+        return redirect()->route('admin.coupon.index');
     }
 
     /**
@@ -119,7 +128,7 @@ class CouponController extends Controller
 
             return response(['status' => 'success', 'message' => 'Deleted Successfully!']);
         } catch (\Exception $e) {
-            return response(['status' => 'error', 'message' => 'something went wrong!']);
+            return response(['status' => 'error', 'message' => 'Something went wrong!']);
         }
     }
 }
