@@ -40,9 +40,11 @@ class CouponController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(CouponCreateRequest $request): RedirectResponse
+    public function store(Request $request): RedirectResponse
     {
         $coupon = new Coupon();
+
+        // Set coupon attributes
         $coupon->name = $request->name;
         $coupon->code = $request->code;
         $coupon->quantity = $request->quantity;
@@ -51,29 +53,26 @@ class CouponController extends Controller
         $coupon->expire_date = $request->expire_date;
         $coupon->discount_type = $request->discount_type;
         $coupon->discount = $request->discount;
+        $coupon->max_uses_per_user = $request->max_uses_per_user;
+        $coupon->apply_by = $request->apply_by;
+        $coupon->category_id = $request->category_id;
+        $coupon->sub_category_id = $request->sub_category_id;
         $coupon->status = $request->status;
 
-        // Save selected category or subcategory if provided
-        if ($request->filled('category_id')) {
-            $coupon->category_id = $request->category_id;
-        }
-        if ($request->filled('sub_category_id')) {
-            $coupon->sub_category_id = $request->sub_category_id;
-        }
+        // Save the coupon first
         $coupon->save();
 
-
-        // Save selected products if provided
-        if ($request->filled('products')) {
-            $coupon->products()->attach($request->products);
+        // Attach related products
+        if ($request->has('product_ids')) {
+            $coupon->products()->attach($request->product_ids);
         }
 
-
-
+        // Redirect after successful creation
         toastr()->success('Coupon created successfully.');
-
-        return to_route('admin.coupon.index');
+        return redirect()->route('admin.coupon.index');
     }
+
+
 
 
     /**
