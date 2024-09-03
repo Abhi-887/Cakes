@@ -138,8 +138,11 @@
 
                         // Set the selected subcategory if it exists
                         $subcategoryDropdown.val('{{ old('sub_category_id', $coupon->sub_category_id) }}');
+                        $subcategoryDropdown.closest('.form-group').removeClass('d-none');
                     }
                 });
+            } else {
+                $subcategoryDropdown.closest('.form-group').addClass('d-none');
             }
         }
 
