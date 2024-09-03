@@ -58,12 +58,6 @@
                     <input type="text" name="discount" class="form-control" value="{{ old('discount', $coupon->discount) }}">
                 </div>
 
-                <!-- Max Uses Per User -->
-                <div class="form-group">
-                    <label>Max Uses Per User</label>
-                    <input type="number" name="max_uses_per_user" class="form-control" value="{{ $coupon->max_uses_per_user }}">
-                </div>
-
                 <!-- Apply Coupon By Dropdown -->
                 <div class="form-group">
                     <label>Apply Coupon By</label>
@@ -79,11 +73,9 @@
                     <div class="form-group">
                         <label>Category</label>
                         <select name="category_id" class="form-control" id="categoryDropdown">
-                            <option value="">Select</option>
+                            <option value="">Select Category</option>
                             @foreach ($categories as $category)
-                                <option value="{{ $category->id }}" {{ old('category_id', $coupon->category_id) == $category->id ? 'selected' : '' }}>
-                                    {{ $category->name }}
-                                </option>
+                                <option value="{{ $category->id }}" @selected(old('category_id', $coupon->category_id) == $category->id)>{{ $category->name }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -102,11 +94,16 @@
                         <label>Products</label>
                         <select name="product_ids[]" class="form-control select2" multiple="multiple">
                             @foreach ($products as $product)
-                            <option value="{{ $product->id }}" @if(in_array($product->id, (array) old('product_ids', $coupon->product_ids))) selected @endif>{{ $product->name }}</option>
-
+                                <option value="{{ $product->id }}" @if(in_array($product->id, (array) old('product_ids', $coupon->product_ids))) selected @endif>{{ $product->name }}</option>
                             @endforeach
                         </select>
                     </div>
+                </div>
+
+                <!-- Per Coupon Limits -->
+                <div class="form-group">
+                    <label>Max Uses Per User</label>
+                    <input type="number" name="max_uses_per_user" class="form-control" value="{{ old('max_uses_per_user', $coupon->max_uses_per_user) }}">
                 </div>
 
                 <div class="form-group">
@@ -122,7 +119,6 @@
         </div>
     </div>
 </section>
-@endsection
 
 @push('scripts')
 <script type="text/javascript">
@@ -147,6 +143,18 @@
             }
         }
 
+        // Load subcategories based on the selected category
+        $('#categoryDropdown').on('change', function(){
+            var categoryId = $(this).val();
+            loadSubcategories(categoryId);
+        });
+
+        // Load subcategories for the initially selected category
+        var initialCategoryId = $('#categoryDropdown').val();
+        if (initialCategoryId) {
+            loadSubcategories(initialCategoryId);
+        }
+
         // Toggle visibility of category and product selections
         $('#applyByDropdown').on('change', function() {
             var selectedValue = $(this).val();
@@ -162,20 +170,9 @@
             }
         });
 
-        // Handle category and subcategory dropdowns
-        $('#categoryDropdown').on('change', function(){
-            var categoryId = $(this).val();
-            loadSubcategories(categoryId);
-        });
-
-        // Load subcategories for the initially selected category
-        var initialCategoryId = $('#categoryDropdown').val();
-        if (initialCategoryId) {
-            loadSubcategories(initialCategoryId);
-        }
-
         // Initialize Select2 for product selection
         $('.select2').select2();
     });
 </script>
 @endpush
+@endsection
