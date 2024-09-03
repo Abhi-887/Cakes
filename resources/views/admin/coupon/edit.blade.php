@@ -102,7 +102,8 @@
                         <label>Products</label>
                         <select name="product_ids[]" class="form-control select2" multiple="multiple">
                             @foreach ($products as $product)
-                                <option value="{{ $product->id }}" @if(in_array($product->id, old('product_ids', $coupon->product_ids))) selected @endif>{{ $product->name }}</option>
+                            <option value="{{ $product->id }}" @if(in_array($product->id, (array) old('product_ids', $coupon->product_ids))) selected @endif>{{ $product->name }}</option>
+
                             @endforeach
                         </select>
                     </div>
