@@ -427,67 +427,76 @@ class FrontendController extends Controller
     }
 
     public function applyCoupon(Request $request)
-    {
-        Log::info('Apply Coupon Request Data:', $request->all());
+{
+    Log::info('Apply Coupon Request Data:', $request->all());
 
-        // Validate request data
-        $request->validate([
-            'subtotal' => 'required|numeric|min:0',
-            'code' => 'required|string',
-        ]);
+    // Validate request data
+    $request->validate([
+        'subtotal' => 'required|numeric|min:0',
+        'code' => 'required|string',
+    ]);
 
-        $subtotal = $request->input('subtotal');
-        $code = $request->input('code');
-        $userId = auth()->id(); // Assuming the user is authenticated
+    $subtotal = $request->input('subtotal');
+    $code = $request->input('code');
+    $userId = auth()->id(); // Assuming the user is authenticated
 
-        // Fetch the coupon by code
-        $coupon = Coupon::where('code', $code)->first();
+    // Fetch the coupon by code
+    $coupon = Coupon::where('code', $code)->first();
 
-        // Check if the coupon exists
-        if (!$coupon) {
-            return response(['message' => 'Invalid Coupon Code.'], 422);
-        }
+    // Check if the coupon exists
+    if (!$coupon) {
+        return response(['message' => 'Invalid Coupon Code.'], 422);
+    }
 
-        // Check if the coupon has been fully redeemed
-        if ($coupon->quantity <= 0) {
-            return response(['message' => 'Coupon has been fully redeemed.'], 422);
-        }
+    // Check if the coupon has been fully redeemed
+    if ($coupon->quantity <= 0) {
+        return response(['message' => 'Coupon has been fully redeemed.'], 422);
+    }
 
-        // Check if the coupon has expired
-        if ($coupon->expire_date < now()) {
-            return response(['message' => 'Coupon has expired.'], 422);
-        }
+    // Check if the coupon has expired
+    if ($coupon->expire_date < now()) {
+        return response(['message' => 'Coupon has expired.'], 422);
+    }
 
-        // Check if the coupon is applicable based on the start date
-        if ($coupon->start_date > now()) {
-            return response(['message' => 'Coupon is not yet valid.'], 422);
-        }
+    // Check if the coupon is applicable based on the start date
+    if ($coupon->start_date > now()) {
+        return response(['message' => 'Coupon is not yet valid.'], 422);
+    }
 
-        // Check if the coupon is applicable based on the minimum purchase amount
-        if ($coupon->min_purchase_amount && $subtotal < $coupon->min_purchase_amount) {
-            return response(['message' => 'Coupon requires a minimum purchase amount of ' . currencyPosition($coupon->min_purchase_amount) . '.'], 422);
-        }
+    // Check if the coupon is applicable based on the minimum purchase amount
+    if ($coupon->min_purchase_amount && $subtotal < $coupon->min_purchase_amount) {
+        return response(['message' => 'Coupon requires a minimum purchase amount of ' . currencyPosition($coupon->min_purchase_amount) . '.'], 422);
+    }
 
-        // Check if the user has exceeded the max uses per user
-        $userCouponUses = Order::where('user_id', $userId)
-                                ->where('coupon_id', $coupon->id)
-                                ->count();
-        if ($coupon->max_uses_per_user && $userCouponUses >= $coupon->max_uses_per_user) {
-            return response(['message' => 'You have already used this coupon the maximum allowed number of times.'], 422);
-        }
+    // Check if the user has exceeded the max uses per user
+    $userCouponUses = Order::where('user_id', $userId)
+                            ->where('coupon_id', $coupon->id)
+                            ->count();
+    if ($coupon->max_uses_per_user && $userCouponUses >= $coupon->max_uses_per_user) {
+        return response(['message' => 'You have already used this coupon the maximum allowed number of times.'], 422);
+    }
 
-        // Validate coupon against cart items
-        $cartItems = \Cart::content();
-        $isCouponApplicable = false;
-        $applicableCategories = [];
-        $applicableSubCategories = [];
-        $categoryMatch = false;
-        $subCategoryMatch = false;
+    // Validate coupon against cart items
+    $cartItems = \Cart::content();
+    $isCouponApplicable = false;
+    $applicableCategories = [];
+    $applicableSubCategories = [];
+    $productMatch = false;
+    $categoryMatch = false;
+    $subCategoryMatch = false;
 
-        foreach ($cartItems as $item) {
-            $productCategoryId = $item->options->product_info['category_id'] ?? null;
-            $productSubCategoryId = $item->options->product_info['sub_category_id'] ?? null;
+    foreach ($cartItems as $item) {
+        $productId = $item->id;
+        $productCategoryId = $item->options->product_info['category_id'] ?? null;
+        $productSubCategoryId = $item->options->product_info['sub_category_id'] ?? null;
 
+        // Check for product-specific coupon application
+        if ($coupon->apply_by === 'product') {
+            if (in_array($productId, $coupon->product_ids)) {
+                $productMatch = true;
+                break;
+            }
+        } elseif ($coupon->apply_by === 'category') {
             if ($coupon->category_id) {
                 if ($coupon->category_id == $productCategoryId) {
                     $categoryMatch = true;
@@ -511,45 +520,50 @@ class FrontendController extends Controller
                 break;
             }
         }
-
-        if (!$isCouponApplicable) {
-            $message = 'Coupon is not valid for any items in the cart.';
-            if ($coupon->category_id) {
-                $message .= ' It is valid for category: ' . implode(', ', $applicableCategories) . '.';
-            }
-            if ($coupon->sub_category_id) {
-                $message .= ' It is valid for subcategory: ' . implode(', ', $applicableSubCategories) . '.';
-            }
-            return response(['message' => $message], 422);
-        }
-
-        // Calculate the discount
-        $discount = 0;
-        if ($coupon->discount_type === 'percent') {
-            $discount = number_format($subtotal * ($coupon->discount / 100), 2);
-        } elseif ($coupon->discount_type === 'amount') {
-            $discount = number_format($coupon->discount, 2);
-        }
-
-        // Ensure discount does not exceed subtotal
-        $discount = min($discount, $subtotal);
-
-        // Calculate the final total after applying the discount
-        $finalTotal = number_format($subtotal - $discount, 2);
-
-        // Store the coupon details in session
-        session()->put('coupon', ['code' => $code, 'discount' => $discount]);
-
-        // Reduce the coupon quantity by 1
-        $coupon->decrement('quantity');
-
-        return response([
-            'message' => 'Coupon Applied Successfully.',
-            'discount' => $discount,
-            'finalTotal' => $finalTotal,
-            'coupon_code' => $code
-        ]);
     }
+
+    if ($coupon->apply_by === 'product' && !$productMatch) {
+        return response(['message' => 'Coupon is not valid for any items in the cart.'], 422);
+    }
+
+    if ($coupon->apply_by === 'category' && !$isCouponApplicable) {
+        $message = 'Coupon is not valid for any items in the cart.';
+        if ($coupon->category_id) {
+            $message .= ' It is valid for category: ' . implode(', ', $applicableCategories) . '.';
+        }
+        if ($coupon->sub_category_id) {
+            $message .= ' It is valid for subcategory: ' . implode(', ', $applicableSubCategories) . '.';
+        }
+        return response(['message' => $message], 422);
+    }
+
+    // Calculate the discount
+    $discount = 0;
+    if ($coupon->discount_type === 'percent') {
+        $discount = number_format($subtotal * ($coupon->discount / 100), 2);
+    } elseif ($coupon->discount_type === 'amount') {
+        $discount = number_format($coupon->discount, 2);
+    }
+
+    // Ensure discount does not exceed subtotal
+    $discount = min($discount, $subtotal);
+
+    // Calculate the final total after applying the discount
+    $finalTotal = number_format($subtotal - $discount, 2);
+
+    // Store the coupon details in session
+    session()->put('coupon', ['code' => $code, 'discount' => $discount]);
+
+    // Reduce the coupon quantity by 1
+    $coupon->decrement('quantity');
+
+    return response([
+        'message' => 'Coupon Applied Successfully.',
+        'discount' => $discount,
+        'finalTotal' => $finalTotal,
+        'coupon_code' => $code
+    ]);
+}
 
 
 
