@@ -481,41 +481,31 @@ class FrontendController extends Controller
         $isCouponApplicable = false;
         $applicableCategories = [];
         $applicableSubCategories = [];
-        $categoryMatch = false;
-        $subCategoryMatch = false;
+        $applicableProductIds = $coupon->products->pluck('id')->toArray(); // Get product IDs from coupon
 
         foreach ($cartItems as $item) {
             $productCategoryId = $item->options->product_info['category_id'] ?? null;
             $productSubCategoryId = $item->options->product_info['sub_category_id'] ?? null;
-            $productId = $item->id;
+            $productId = $item->id; // Assuming product ID is available in the cart item
 
-            // Ensure that productCategoryId and productSubCategoryId are arrays
-            $productCategoryId = (array) $productCategoryId;
-            $productSubCategoryId = (array) $productSubCategoryId;
-
+            // Check if coupon applies by product
             if ($coupon->apply_by === 'product') {
-                if (in_array($productId, (array)$coupon->product_ids)) {
+                if (in_array($productId, $applicableProductIds)) {
                     $isCouponApplicable = true;
                     break;
                 }
-            } elseif ($coupon->apply_by === 'category') {
-                if ($coupon->category_id && in_array($coupon->category_id, $productCategoryId)) {
-                    $categoryMatch = true;
+            }
+
+            // Check if coupon applies by category
+            if ($coupon->apply_by === 'category') {
+                if ($coupon->category_id && $coupon->category_id == $productCategoryId) {
                     $applicableCategories[] = Category::find($coupon->category_id)->name;
-                } else {
-                    $categoryMatch = true; // No category restriction
-                }
-
-                if ($coupon->sub_category_id && in_array($coupon->sub_category_id, $productSubCategoryId)) {
-                    $subCategoryMatch = true;
-                    $applicableSubCategories[] = Category::find($coupon->sub_category_id)->name;
-                } else {
-                    $subCategoryMatch = true; // No sub-category restriction
-                }
-
-                if ($categoryMatch && $subCategoryMatch) {
                     $isCouponApplicable = true;
-                    break;
+                }
+
+                if ($coupon->sub_category_id && $coupon->sub_category_id == $productSubCategoryId) {
+                    $applicableSubCategories[] = Category::find($coupon->sub_category_id)->name;
+                    $isCouponApplicable = true;
                 }
             }
         }
@@ -523,22 +513,22 @@ class FrontendController extends Controller
         if (!$isCouponApplicable) {
             $message = 'Coupon is not valid for any items in the cart.';
 
-            if ($coupon->apply_by === 'product' && is_array($coupon->product_ids)) {
-                $message .= ' It is only valid for the following product IDs: ' . implode(', ', $coupon->product_ids) . '.';
+            if ($coupon->apply_by === 'product') {
+                $message .= ' It is only valid for the following product IDs: ' . implode(', ', $applicableProductIds) . '.';
             }
 
-            if ($coupon->apply_by === 'category' && is_array($applicableCategories) && $coupon->category_id) {
-                $message .= ' It is valid for category: ' . implode(', ', $applicableCategories) . '.';
-            }
+            if ($coupon->apply_by === 'category') {
+                if (is_array($applicableCategories) && $coupon->category_id) {
+                    $message .= ' It is valid for category: ' . implode(', ', $applicableCategories) . '.';
+                }
 
-            if ($coupon->apply_by === 'category' && is_array($applicableSubCategories) && $coupon->sub_category_id) {
-                $message .= ' It is valid for subcategory: ' . implode(', ', $applicableSubCategories) . '.';
+                if (is_array($applicableSubCategories) && $coupon->sub_category_id) {
+                    $message .= ' It is valid for subcategory: ' . implode(', ', $applicableSubCategories) . '.';
+                }
             }
 
             return response(['message' => $message], 422);
         }
-
-
 
         // Calculate the discount
         $discount = 0;
