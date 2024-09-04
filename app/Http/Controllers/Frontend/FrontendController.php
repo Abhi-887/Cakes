@@ -523,20 +523,21 @@ class FrontendController extends Controller
         if (!$isCouponApplicable) {
             $message = 'Coupon is not valid for any items in the cart.';
 
-            if ($coupon->apply_by === 'product') {
+            if ($coupon->apply_by === 'product' && is_array($coupon->product_ids)) {
                 $message .= ' It is only valid for the following product IDs: ' . implode(', ', $coupon->product_ids) . '.';
             }
 
-            if ($coupon->apply_by === 'category' && $coupon->category_id) {
+            if ($coupon->apply_by === 'category' && is_array($applicableCategories) && $coupon->category_id) {
                 $message .= ' It is valid for category: ' . implode(', ', $applicableCategories) . '.';
             }
 
-            if ($coupon->apply_by === 'category' && $coupon->sub_category_id) {
+            if ($coupon->apply_by === 'category' && is_array($applicableSubCategories) && $coupon->sub_category_id) {
                 $message .= ' It is valid for subcategory: ' . implode(', ', $applicableSubCategories) . '.';
             }
 
             return response(['message' => $message], 422);
         }
+
 
 
         // Calculate the discount
