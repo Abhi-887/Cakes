@@ -426,137 +426,324 @@ class FrontendController extends Controller
         return redirect()->back();
     }
 
+    // public function applyCoupon(Request $request)
+    // {
+    //     Log::info('Apply Coupon Request Data:', $request->all());
+
+    //     // Validate request data
+    //     $request->validate([
+    //         'subtotal' => 'required|numeric|min:0',
+    //         'code' => 'required|string',
+    //     ]);
+
+    //     $subtotal = $request->input('subtotal');
+    //     $code = $request->input('code');
+    //     $userId = auth()->id(); // Assuming the user is authenticated
+
+    //     // Fetch the coupon by code
+    //     $coupon = Coupon::where('code', $code)->first();
+
+    //     // Check if the coupon exists
+    //     if (!$coupon) {
+    //         return response(['message' => 'Invalid Coupon Code.'], 422);
+    //     }
+
+    //     // Check if the coupon has been fully redeemed
+    //     if ($coupon->quantity <= 0) {
+    //         return response(['message' => 'Coupon has been fully redeemed.'], 422);
+    //     }
+
+    //     // Check if the coupon has expired
+    //     if ($coupon->expire_date < now()) {
+    //         return response(['message' => 'Coupon has expired.'], 422);
+    //     }
+
+    //     // Check if the coupon is applicable based on the start date
+    //     if ($coupon->start_date > now()) {
+    //         return response(['message' => 'Coupon is not yet valid.'], 422);
+    //     }
+
+    //     // Check if the coupon is applicable based on the minimum purchase amount
+    //     if ($coupon->min_purchase_amount && $subtotal < $coupon->min_purchase_amount) {
+    //         return response(['message' => 'Coupon requires a minimum purchase amount of ' . currencyPosition($coupon->min_purchase_amount) . '.'], 422);
+    //     }
+
+    //     // Check if the user has exceeded the max uses per user
+    //     $userCouponUses = Order::where('user_id', $userId)
+    //         ->where('coupon_id', $coupon->id)
+    //         ->count();
+    //     if ($coupon->max_uses_per_user && $userCouponUses >= $coupon->max_uses_per_user) {
+    //         return response(['message' => 'You have already used this coupon the maximum allowed number of times.'], 422);
+    //     }
+
+    //     // Validate coupon against cart items
+    //     $cartItems = \Cart::content();
+    //     $isCouponApplicable = false;
+    //     $applicableCategories = [];
+    //     $applicableSubCategories = [];
+    //     $applicableProductNames = $coupon->products->pluck('name')->toArray(); // Get product names from coupon
+
+    //     foreach ($cartItems as $item) {
+    //         $productCategoryId = $item->options->product_info['category_id'] ?? null;
+    //         $productSubCategoryId = $item->options->product_info['sub_category_id'] ?? null;
+    //         $productId = $item->id; // Assuming product ID is available in the cart item
+
+    //         // Ensure that productCategoryId and productSubCategoryId are arrays
+    //         $productCategoryId = (array) $productCategoryId;
+    //         $productSubCategoryId = (array) $productSubCategoryId;
+
+    //         // Check if coupon applies by product
+    //         if ($coupon->apply_by === 'product') {
+    //             if (in_array($productId, $coupon->products->pluck('id')->toArray())) {
+    //                 $isCouponApplicable = true;
+    //                 break;
+    //             }
+    //         }
+
+    //         //     // Check if coupon applies by category
+    //         //     if ($coupon->apply_by === 'category') {
+    //         //         if ($coupon->category_id && $coupon->category_id == $productCategoryId) {
+    //         //             $applicableCategories[] = Category::find($coupon->category_id)->name;
+    //         //             $isCouponApplicable = true;
+    //         //         }
+
+    //         //         if ($coupon->sub_category_id && $coupon->sub_category_id == $productSubCategoryId) {
+    //         //             $applicableSubCategories[] = Category::find($coupon->sub_category_id)->name;
+    //         //             $isCouponApplicable = true;
+    //         //         }
+    //         //     }
+    //         // }
+    //         if ($coupon->apply_by === 'category') {
+    //             if ($coupon->category_id && in_array($coupon->category_id, $productCategoryId)) {
+    //                 $categoryMatch = true;
+    //                 $applicableCategories[] = Category::find($coupon->category_id)->name;
+    //             } else {
+    //                 $categoryMatch = true; // No category restriction
+    //             }
+
+    //             if ($coupon->sub_category_id && in_array($coupon->sub_category_id, $productSubCategoryId)) {
+    //                 $subCategoryMatch = true;
+    //                 $applicableSubCategories[] = Category::find($coupon->sub_category_id)->name;
+    //             } else {
+    //                 $subCategoryMatch = true; // No sub-category restriction
+    //             }
+
+    //             if ($categoryMatch && $subCategoryMatch) {
+    //                 $isCouponApplicable = true;
+    //                 break;
+    //             }
+    //         }
+    //     }
+
+    //     // if ($coupon->apply_by === 'category') {
+    //     //     if ($coupon->category_id && in_array($coupon->category_id, $productCategoryId)) {
+    //     //         $categoryMatch = true;
+    //     //         $applicableCategories[] = Category::find($coupon->category_id)->name;
+    //     //     } else {
+    //     //         $categoryMatch = true; // No category restriction
+    //     //     }
+
+    //     //     if ($coupon->sub_category_id && in_array($coupon->sub_category_id, $productSubCategoryId)) {
+    //     //         $subCategoryMatch = true;
+    //     //         $applicableSubCategories[] = Category::find($coupon->sub_category_id)->name;
+    //     //     } else {
+    //     //         $subCategoryMatch = true; // No sub-category restriction
+    //     //     }
+
+    //     //     if ($categoryMatch && $subCategoryMatch) {
+    //     //         $isCouponApplicable = true;
+    //     //         break;
+    //     //     }
+    //     // }
+
+
+    //     if (!$isCouponApplicable) {
+    //         $message = 'Coupon is not valid for any items in the cart.';
+
+    //         if ($coupon->apply_by === 'product') {
+    //             $message .= ' It is only valid for the following products: ' . implode(', ', $applicableProductNames) . '.';
+    //         }
+
+    //         if ($coupon->apply_by === 'category') {
+    //             if (!empty($applicableCategories) && $coupon->category_id) {
+    //                 $message .= ' It is valid for category: ' . implode(', ', $applicableCategories) . '.';
+    //             }
+
+    //             if (!empty($applicableSubCategories) && $coupon->sub_category_id) {
+    //                 $message .= ' It is valid for subcategory: ' . implode(', ', $applicableSubCategories) . '.';
+    //             }
+    //         }
+
+    //         return response(['message' => $message], 422);
+    //     }
+
+    //     // Calculate the discount
+    //     $discount = 0;
+    //     if ($coupon->discount_type === 'percent') {
+    //         $discount = number_format($subtotal * ($coupon->discount / 100), 2);
+    //     } elseif ($coupon->discount_type === 'amount') {
+    //         $discount = number_format($coupon->discount, 2);
+    //     }
+
+    //     // Ensure discount does not exceed subtotal
+    //     $discount = min($discount, $subtotal);
+
+    //     // Calculate the final total after applying the discount
+    //     $finalTotal = number_format($subtotal - $discount, 2);
+
+    //     // Store the coupon details in session
+    //     session()->put('coupon', ['code' => $code, 'discount' => $discount]);
+
+    //     // Reduce the coupon quantity by 1
+    //     $coupon->decrement('quantity');
+
+    //     return response([
+    //         'message' => 'Coupon Applied Successfully.',
+    //         'discount' => $discount,
+    //         'finalTotal' => $finalTotal,
+    //         'coupon_code' => $code
+    //     ]);
+    // }
+
     public function applyCoupon(Request $request)
-{
-    Log::info('Apply Coupon Request Data:', $request->all());
+    {
+        Log::info('Apply Coupon Request Data:', $request->all());
 
-    // Validate request data
-    $request->validate([
-        'subtotal' => 'required|numeric|min:0',
-        'code' => 'required|string',
-    ]);
+        // Validate request data
+        $request->validate([
+            'subtotal' => 'required|numeric|min:0',
+            'code' => 'required|string',
+        ]);
 
-    $subtotal = $request->input('subtotal');
-    $code = $request->input('code');
-    $userId = auth()->id(); // Assuming the user is authenticated
+        $subtotal = $request->input('subtotal');
+        $code = $request->input('code');
+        $userId = auth()->id(); // Assuming the user is authenticated
 
-    // Fetch the coupon by code
-    $coupon = Coupon::where('code', $code)->first();
+        // Fetch the coupon by code
+        $coupon = Coupon::where('code', $code)->first();
 
-    // Check if the coupon exists
-    if (!$coupon) {
-        return response(['message' => 'Invalid Coupon Code.'], 422);
-    }
+        // Check if the coupon exists
+        if (!$coupon) {
+            return response(['message' => 'Invalid Coupon Code.'], 422);
+        }
 
-    // Check if the coupon has been fully redeemed
-    if ($coupon->quantity <= 0) {
-        return response(['message' => 'Coupon has been fully redeemed.'], 422);
-    }
+        // Check if the coupon has been fully redeemed
+        if ($coupon->quantity <= 0) {
+            return response(['message' => 'Coupon has been fully redeemed.'], 422);
+        }
 
-    // Check if the coupon has expired
-    if ($coupon->expire_date < now()) {
-        return response(['message' => 'Coupon has expired.'], 422);
-    }
+        // Check if the coupon has expired
+        if ($coupon->expire_date < now()) {
+            return response(['message' => 'Coupon has expired.'], 422);
+        }
 
-    // Check if the coupon is applicable based on the start date
-    if ($coupon->start_date > now()) {
-        return response(['message' => 'Coupon is not yet valid.'], 422);
-    }
+        // Check if the coupon is applicable based on the start date
+        if ($coupon->start_date > now()) {
+            return response(['message' => 'Coupon is not yet valid.'], 422);
+        }
 
-    // Check if the coupon is applicable based on the minimum purchase amount
-    if ($coupon->min_purchase_amount && $subtotal < $coupon->min_purchase_amount) {
-        return response(['message' => 'Coupon requires a minimum purchase amount of ' . currencyPosition($coupon->min_purchase_amount) . '.'], 422);
-    }
+        // Check if the coupon is applicable based on the minimum purchase amount
+        if ($coupon->min_purchase_amount && $subtotal < $coupon->min_purchase_amount) {
+            return response(['message' => 'Coupon requires a minimum purchase amount of ' . currencyPosition($coupon->min_purchase_amount) . '.'], 422);
+        }
 
-    // Check if the user has exceeded the max uses per user
-    $userCouponUses = Order::where('user_id', $userId)
-                            ->where('coupon_id', $coupon->id)
-                            ->count();
-    if ($coupon->max_uses_per_user && $userCouponUses >= $coupon->max_uses_per_user) {
-        return response(['message' => 'You have already used this coupon the maximum allowed number of times.'], 422);
-    }
+        // Check if the user has exceeded the max uses per user
+        $userCouponUses = Order::where('user_id', $userId)
+            ->where('coupon_id', $coupon->id)
+            ->count();
+        if ($coupon->max_uses_per_user && $userCouponUses >= $coupon->max_uses_per_user) {
+            return response(['message' => 'You have already used this coupon the maximum allowed number of times.'], 422);
+        }
 
-    // Validate coupon against cart items
-    $cartItems = \Cart::content();
-    $isCouponApplicable = false;
-    $applicableCategories = [];
-    $applicableSubCategories = [];
-    $applicableProductNames = $coupon->products->pluck('name')->toArray(); // Get product names from coupon
+        // Validate coupon against cart items
+        $cartItems = \Cart::content();
+        $isCouponApplicable = false;
+        $applicableCategories = [];
+        $applicableSubCategories = [];
+        $applicableProductNames = $coupon->products->pluck('name')->toArray(); // Get product names from coupon
 
-    foreach ($cartItems as $item) {
-        $productCategoryId = $item->options->product_info['category_id'] ?? null;
-        $productSubCategoryId = $item->options->product_info['sub_category_id'] ?? null;
-        $productId = $item->id; // Assuming product ID is available in the cart item
+        foreach ($cartItems as $item) {
+            $productCategoryId = $item->options->product_info['category_id'] ?? null;
+            $productSubCategoryId = $item->options->product_info['sub_category_id'] ?? null;
+            $productId = $item->id; // Assuming product ID is available in the cart item
 
-        // Check if coupon applies by product
-        if ($coupon->apply_by === 'product') {
-            if (in_array($productId, $coupon->products->pluck('id')->toArray())) {
-                $isCouponApplicable = true;
-                break;
+            // Check if coupon applies by product
+            if ($coupon->apply_by === 'product') {
+                if (in_array($productId, $coupon->products->pluck('id')->toArray())) {
+                    $isCouponApplicable = true;
+                    break;
+                }
+            }
+
+            // Check if coupon applies by category
+            if ($coupon->apply_by === 'category') {
+                $categoryMatch = $coupon->category_id ? in_array($coupon->category_id, (array) $productCategoryId) : true;
+                $subCategoryMatch = $coupon->sub_category_id ? in_array($coupon->sub_category_id, (array) $productSubCategoryId) : true;
+
+                if ($categoryMatch) {
+                    $applicableCategories[] = Category::find($coupon->category_id)->name;
+                }
+
+                if ($subCategoryMatch) {
+                    $applicableSubCategories[] = Category::find($coupon->sub_category_id)->name;
+                }
+
+                if ($categoryMatch && $subCategoryMatch) {
+                    $isCouponApplicable = true;
+                    break;
+                }
             }
         }
 
-        // Check if coupon applies by category
-        if ($coupon->apply_by === 'category') {
-            if ($coupon->category_id && $coupon->category_id == $productCategoryId) {
-                $applicableCategories[] = Category::find($coupon->category_id)->name;
-                $isCouponApplicable = true;
+        // If the coupon is not applicable, return an error message
+        if (!$isCouponApplicable) {
+            $message = 'Coupon is not valid for any items in the cart.';
+
+            if ($coupon->apply_by === 'product') {
+                $message .= ' It is only valid for the following products: ' . implode(', ', $applicableProductNames) . '.';
             }
 
-            if ($coupon->sub_category_id && $coupon->sub_category_id == $productSubCategoryId) {
-                $applicableSubCategories[] = Category::find($coupon->sub_category_id)->name;
-                $isCouponApplicable = true;
-            }
-        }
-    }
+            if ($coupon->apply_by === 'category') {
+                if (!empty($applicableCategories) && $coupon->category_id) {
+                    $message .= ' It is valid for category: ' . implode(', ', $applicableCategories) . '.';
+                }
 
-    if (!$isCouponApplicable) {
-        $message = 'Coupon is not valid for any items in the cart.';
-
-        if ($coupon->apply_by === 'product') {
-            $message .= ' It is only valid for the following products: ' . implode(', ', $applicableProductNames) . '.';
-        }
-
-        if ($coupon->apply_by === 'category') {
-            if (!empty($applicableCategories) && $coupon->category_id) {
-                $message .= ' It is valid for category: ' . implode(', ', $applicableCategories) . '.';
+                if (!empty($applicableSubCategories) && $coupon->sub_category_id) {
+                    $message .= ' It is valid for subcategory: ' . implode(', ', $applicableSubCategories) . '.';
+                }
             }
 
-            if (!empty($applicableSubCategories) && $coupon->sub_category_id) {
-                $message .= ' It is valid for subcategory: ' . implode(', ', $applicableSubCategories) . '.';
-            }
+            return response(['message' => $message], 422);
         }
 
-        return response(['message' => $message], 422);
+        // Calculate the discount
+        $discount = 0;
+        if ($coupon->discount_type === 'percent') {
+            $discount = number_format($subtotal * ($coupon->discount / 100), 2);
+        } elseif ($coupon->discount_type === 'amount') {
+            $discount = number_format($coupon->discount, 2);
+        }
+
+        // Ensure discount does not exceed subtotal
+        $discount = min($discount, $subtotal);
+
+        // Calculate the final total after applying the discount
+        $finalTotal = number_format($subtotal - $discount, 2);
+
+        // Store the coupon details in session
+        session()->put('coupon', ['code' => $code, 'discount' => $discount]);
+
+        // Reduce the coupon quantity by 1
+        $coupon->decrement('quantity');
+
+        return response([
+            'message' => 'Coupon Applied Successfully.',
+            'discount' => $discount,
+            'finalTotal' => $finalTotal,
+            'coupon_code' => $code
+        ]);
     }
 
-    // Calculate the discount
-    $discount = 0;
-    if ($coupon->discount_type === 'percent') {
-        $discount = number_format($subtotal * ($coupon->discount / 100), 2);
-    } elseif ($coupon->discount_type === 'amount') {
-        $discount = number_format($coupon->discount, 2);
-    }
-
-    // Ensure discount does not exceed subtotal
-    $discount = min($discount, $subtotal);
-
-    // Calculate the final total after applying the discount
-    $finalTotal = number_format($subtotal - $discount, 2);
-
-    // Store the coupon details in session
-    session()->put('coupon', ['code' => $code, 'discount' => $discount]);
-
-    // Reduce the coupon quantity by 1
-    $coupon->decrement('quantity');
-
-    return response([
-        'message' => 'Coupon Applied Successfully.',
-        'discount' => $discount,
-        'finalTotal' => $finalTotal,
-        'coupon_code' => $code
-    ]);
-}
 
 
 
