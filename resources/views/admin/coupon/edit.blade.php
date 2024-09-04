@@ -10,7 +10,7 @@
         <div class="card-header">
             <h4>Update Coupon</h4>
         </div>
-
+{{--
         @php
         dd($coupon);
         @endphp
@@ -19,7 +19,7 @@
         @php
            print_r($coupon);
         @endphp
-        </pre>
+        </pre> --}}
 
         <div class="card-body">
             <form action="{{ route('admin.coupon.update', $coupon->id) }}" method="POST" enctype="multipart/form-data">
@@ -100,12 +100,28 @@
                 </div>
 
                 <!-- Product Selection -->
-                <div id="productSelection" class="{{ old('apply_by', $coupon->apply_by) === 'product' ? '' : 'd-none' }}">
+                {{-- <div id="productSelection" class="{{ old('apply_by', $coupon->apply_by) === 'product' ? '' : 'd-none' }}">
                     <div class="form-group">
                         <label>Products</label>
                         <select name="product_ids[]" class="form-control select2" multiple="multiple">
                             @foreach ($products as $product)
                                 <option value="{{ $product->id }}" @if(in_array($product->id, (array) old('product_ids', $coupon->product_ids))) selected @endif>{{ $product->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div> --}}
+
+                <div id="productSelection" class="{{ old('apply_by', $coupon->apply_by) === 'product' ? '' : 'd-none' }}">
+                    <div class="form-group">
+                        <label>Products</label>
+                        <select name="product_ids[]" class="form-control select2" multiple="multiple">
+                            @foreach ($products as $product)
+                                <option value="{{ $product->id }}"
+                                    @if(in_array($product->id, old('product_ids', $coupon->products->pluck('id')->toArray())))
+                                        selected
+                                    @endif>
+                                    {{ $product->name }}
+                                </option>
                             @endforeach
                         </select>
                     </div>
