@@ -23,6 +23,7 @@ use App\Models\Order;
 
 use App\Models\DailyOffer;
 use App\Models\Consultation;
+use App\Models\CouponUsageLog;
 use App\Models\PrivacyPolicy;
 use App\Models\Product;
 use App\Models\ProductRating;
@@ -732,6 +733,14 @@ class FrontendController extends Controller
 
         // Store the coupon details in session
         session()->put('coupon', ['code' => $code, 'discount' => $discount]);
+
+        // Log coupon usage
+        CouponUsageLog::create([
+            'user_id' => auth()->id(),
+            'coupon_id' => $coupon->id,
+            'used_at' => now(),
+            'order_id' => $order->id // Attach order ID after creating an order
+        ]);
 
         // Reduce the coupon quantity by 1
         $coupon->decrement('quantity');

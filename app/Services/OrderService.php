@@ -4,12 +4,15 @@ namespace App\Services;
 use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\Product;
-use App\Models\Coupon;// Add this import
+use App\Models\Coupon;
+use App\Models\CouponUsageLog; // Add this import
 
-class OrderService {
+class OrderService
+{
 
     /** Store Order in Database  */
-    function createOrder() {
+    function createOrder()
+    {
         try {
             // Create a new order
             $order = new Order();
@@ -26,6 +29,8 @@ class OrderService {
             $order->payment_approve_date = NULL;
             $order->transaction_id = NULL;
             $order->coupon_info = json_encode(session()->get('coupon'));
+
+            // Get coupon code from session and store coupon ID if it exists
             $couponCode = session()->get('coupon')['code'] ?? null;
             if ($couponCode) {
                 $coupon = Coupon::where('code', $couponCode)->first();
@@ -33,6 +38,7 @@ class OrderService {
                     $order->coupon_id = $coupon->id;
                 }
             }
+
             $order->currency_name = NULL;
             $order->order_status = 'pending';
             $order->address_id = session()->get('address_id');
@@ -62,6 +68,16 @@ class OrderService {
                 // }
             }
 
+            // Log coupon usage if a coupon was applied
+            if ($couponCode && isset($coupon)) {
+                CouponUsageLog::create([
+                    'user_id' => auth()->user()->id,
+                    'coupon_id' => $coupon->id,
+                    'used_at' => now(),
+                    'order_id' => $order->id
+                ]);
+            }
+
             // Putting the Order id and grand total amount in session
             session()->put('order_id', $order->id);
             session()->put('grand_total', $order->grand_total);
@@ -75,7 +91,8 @@ class OrderService {
     }
 
     /** Clear Session Items  */
-    function clearSession() {
+    function clearSession()
+    {
         \Cart::destroy();
         session()->forget('coupon');
         session()->forget('address');
