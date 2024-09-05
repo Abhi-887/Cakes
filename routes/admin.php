@@ -61,6 +61,7 @@ use App\Http\Controllers\Admin\ProductVariantController;
 use App\Http\Controllers\Admin\ProductVariantItemController;
 use App\Models\AppDownloadSection;
 use App\Models\BannerSlider;
+use App\Models\Coupon;
 use App\Models\PrivacyPolicy;
 use App\Models\ReservationTime;
 use App\Models\TramsAndCondtion;
@@ -89,6 +90,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
     /** Slider Category2 */
     Route::resource('slider-category2', Slidercategory2Controller::class);
+
+    Route::get('coupon/report', [CouponController::class, 'redemptionReport'])->name('admin.report');
 
 
     /** Why choose us Routes */
