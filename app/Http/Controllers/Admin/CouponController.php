@@ -7,7 +7,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\CouponCreateRequest;
 use App\Models\Category;
 use App\Models\Coupon;
-use App\Models\CouponUsageLog;
 use App\Models\Product;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -94,27 +93,6 @@ class CouponController extends Controller
         toastr()->success('Coupon updated successfully.');
         return redirect()->route('admin.coupon.index');
     }
-
-    public function redemptionReport(Request $request)
-    {
-        // Fetch coupon usage logs, including the user and coupon relationships
-        $usageLogs = CouponUsageLog::with('user', 'coupon')
-            ->when($request->coupon_code, function ($query) use ($request) {
-                $query->whereHas('coupon', function ($query) use ($request) {
-                    $query->where('code', $request->coupon_code);
-                });
-            })
-            ->when($request->date_from, function ($query) use ($request) {
-                $query->where('used_at', '>=', $request->date_from);
-            })
-            ->when($request->date_to, function ($query) use ($request) {
-                $query->where('used_at', '<=', $request->date_to);
-            })
-            ->get();
-
-        return view('admin.coupon.reports', compact('usageLogs'));
-    }
-
 
     /**
      * Remove the specified resource from storage.
