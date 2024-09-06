@@ -16,7 +16,9 @@
 
             </div>
             <div class="card-body">
-                {!! $dataTable->table(['class' => 'table table-bordered table-striped'], true) !!}
+
+
+                {{ $dataTable->table() }}
             </div>
         </div>
     </section>
@@ -24,5 +26,5 @@
 @endsection
 
 @push('scripts')
-    {!! $dataTable->scripts() !!}
+    {{ $dataTable->scripts(attributes: ['type' => 'module']) }}
 @endpush
