@@ -159,7 +159,6 @@
         })
 
     </script>
-
     @stack('scripts')
 </body>
 
