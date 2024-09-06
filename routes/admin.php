@@ -183,6 +183,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
     /** Coupon Routes */
     Route::resource('coupon', CouponController::class);
+    Route::get('coupon-usage-logs', [CouponController::class, 'log'])->name('coupon_usage_logs.index');
+
 
     /** Delivery Area Routes */
     Route::resource('delivery-area', DeliveryAreaController::class);

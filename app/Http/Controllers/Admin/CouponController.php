@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\DataTables\CouponDataTable;
+use App\DataTables\CouponUsageLogDataTable;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\CouponCreateRequest;
 use App\Models\Category;
@@ -94,6 +95,12 @@ class CouponController extends Controller
         toastr()->success('Coupon updated successfully.');
         return redirect()->route('admin.coupon.index');
     }
+    public function log(CouponUsageLogDataTable $dataTable)
+    {
+        return $dataTable->render('admin.coupon.log');
+    }
+
+    // Route::get('coupon-usage-logs', [CouponUsageLogController::class, 'index'])->name('coupon_usage_logs.index');
 
     public function redemptionReport(Request $request)
     {
