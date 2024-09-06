@@ -10,16 +10,7 @@
         <div class="card-header">
             <h4>Update Coupon</h4>
         </div>
-{{--
-        @php
-        dd($coupon);
-        @endphp
 
-        <pre>
-        @php
-           print_r($coupon);
-        @endphp
-        </pre> --}}
 
         <div class="card-body">
             <form action="{{ route('admin.coupon.update', $coupon->id) }}" method="POST" enctype="multipart/form-data">
