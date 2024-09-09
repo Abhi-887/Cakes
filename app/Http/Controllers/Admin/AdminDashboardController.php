@@ -37,6 +37,15 @@ class AdminDashboardController extends Controller
 
         $totalSales = Order::where('payment_status', 'completed')->sum('grand_total');
 
+         // Fetch total revenue
+    $totalRevenue = Order::where('payment_status', 'completed')->sum('grand_total');
+
+    // Fetch percentage increase or other metrics
+    $previousRevenue = Order::where('payment_status', 'completed')
+                             ->whereDate('created_at', '<', now()->subMonth())
+                             ->sum('grand_total');
+        $percentageChange = $previousRevenue ? (($totalRevenue - $previousRevenue) / $previousRevenue) * 100 : 0;
+
         // Calculate the number of completed orders
         $totalOrders = Order::where('payment_status', 'completed')->count();
 
@@ -70,7 +79,9 @@ class AdminDashboardController extends Controller
             'totalBlogs',
             'totalSales',
             'totalOrders',
-            'salesGrowth'
+            'salesGrowth',
+            'totalRevenue',
+             'percentageChange'
 
         ));
     }
