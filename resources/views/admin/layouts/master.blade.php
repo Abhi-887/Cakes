@@ -32,14 +32,14 @@
 
 
       <!-- Font -->
-      <link rel="stylesheet" href="font/fonts.css">
+    <link rel="stylesheet" href="{{ asset('admin2/assets/font/fonts.css')}}">
 
       <!-- Icon -->
-      <link rel="stylesheet" href="icon/style.css">
+      <link rel="stylesheet" href="{{ asset('admin2/assets/icon/style.css')}}">
 
       <!-- Favicon and Touch Icons  -->
-      <link rel="shortcut icon" href="images/favicon.png">
-      <link rel="apple-touch-icon-precomposed" href="images/favicon.png">
+      <link rel="shortcut icon" href="{{ asset('admin2/assets/images/favicon.png')}}">
+      <link rel="apple-touch-icon-precomposed" href="{{ asset('admin2/assets/images/favicon.png')}}">
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('admin/assets/css/style.css') }}">
