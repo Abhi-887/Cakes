@@ -218,7 +218,7 @@
         <div class="section-content-right">
 
             <!-- main-content -->
-            <div class="main-content">
+
                 <!-- main-content-wrap -->
                 <div class="main-content-inner">
                     <!-- main-content-wrap -->
@@ -1228,7 +1228,7 @@
                 </div>
                 <!-- /main-content-wrap -->
 
-            </div>
+
             <!-- /main-content -->
         </div>
     </section>
