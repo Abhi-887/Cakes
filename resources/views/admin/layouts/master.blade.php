@@ -19,7 +19,27 @@
     <link rel="stylesheet" href="{{ asset('admin/assets/modules/bootstrap-timepicker/css/bootstrap-timepicker.min.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/assets/modules/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/assets/modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css') }}">
+
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+      <!-- Theme Style -->
+      <link rel="stylesheet" type="text/css" href="{{ asset('admin2/assets/css/animate.min.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{ asset('admin2/assets/css/animation.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{ asset('admin2/assets/css/bootstrap.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{ asset('admin2/assets/css/bootstrap-select.min.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{ asset('admin2/assets/css/style.css')}}">
+
+
+
+      <!-- Font -->
+      <link rel="stylesheet" href="font/fonts.css">
+
+      <!-- Icon -->
+      <link rel="stylesheet" href="icon/style.css">
+
+      <!-- Favicon and Touch Icons  -->
+      <link rel="shortcut icon" href="images/favicon.png">
+      <link rel="apple-touch-icon-precomposed" href="images/favicon.png">
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('admin/assets/css/style.css') }}">
