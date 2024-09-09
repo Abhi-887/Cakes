@@ -236,18 +236,19 @@
                                         </div>
                                         <div>
                                             <div class="body-text mb-2">Total Sales</div>
-                                            <h4>34,945</h4>
+                                            <h4>{{ number_format($totalSales, 2) }}</h4>
                                         </div>
                                     </div>
-                                    <div class="box-icon-trending up">
-                                        <i class="icon-trending-up"></i>
-                                        <div class="body-title number">1.56%</div>
+                                    <div class="box-icon-trending {{ $salesGrowth >= 0 ? 'up' : 'down' }}">
+                                        <i class="icon-trending-{{ $salesGrowth >= 0 ? 'up' : 'down' }}"></i>
+                                        <div class="body-title number">{{ number_format($salesGrowth, 2) }}%</div>
                                     </div>
                                 </div>
                                 <div class="wrap-chart">
                                     <div id="line-chart-1"></div>
                                 </div>
                             </div>
+
                             <!-- /chart-default -->
                             <!-- chart-default -->
                             <div class="wg-chart-default">

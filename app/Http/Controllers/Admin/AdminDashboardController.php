@@ -26,7 +26,7 @@ class AdminDashboardController extends Controller
         $thisYearOrders = Order::whereYear('created_at', now()->year)->count();
         $thisYearEarnings = Order::whereYear('created_at', now()->year)->where('order_status', 'delivered')->sum('grand_total');
 
-        $totalOrders = Order::count();
+        // $totalOrders = Order::count();
         $totalEarnings = Order::where('order_status', 'delivered')->sum('grand_total');
 
         $totalUsers = User::where('role', 'user')->count();
@@ -34,7 +34,27 @@ class AdminDashboardController extends Controller
 
         $totalProducts = Product::count();
         $totalBlogs = Blog::count();
-        
+
+        $totalSales = Order::where('payment_status', 'completed')->sum('grand_total');
+
+        // Calculate the number of completed orders
+        $totalOrders = Order::where('payment_status', 'completed')->count();
+
+        // Calculate the percentage increase/decrease in sales (e.g., compared to last month)
+        $previousMonthSales = Order::where('payment_status', 'completed')
+                                   ->whereMonth('created_at', now()->subMonth()->month)
+                                   ->sum('grand_total');
+
+        $currentMonthSales = Order::where('payment_status', 'completed')
+                                  ->whereMonth('created_at', now()->month)
+                                  ->sum('grand_total');
+
+        $salesGrowth = 0;
+        if ($previousMonthSales > 0) {
+            $salesGrowth = (($currentMonthSales - $previousMonthSales) / $previousMonthSales) * 100;
+        }
+
+
         return $dataTable->render('admin.dashboard.index', compact(
             'todaysOrders',
             'todaysEarnings',
@@ -47,7 +67,11 @@ class AdminDashboardController extends Controller
             'totalUsers',
             'totalAdmins',
             'totalProducts',
-            'totalBlogs'
+            'totalBlogs',
+            'totalSales',
+            'totalOrders',
+            'salesGrowth'
+
         ));
     }
 
