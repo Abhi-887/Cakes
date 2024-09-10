@@ -73,6 +73,7 @@ Route::get('subcategories/{categoryId}', [ProductController::class, 'getSubcateg
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
     Route::get('dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
+    Route::get('/recent-orders', [AdminDashboardController::class, 'recentOrders'])->name('admin.recentOrders');
 
     /** Profile Routes */
     Route::get('profile', [ProfileController::class, 'index'])->name('profile');
