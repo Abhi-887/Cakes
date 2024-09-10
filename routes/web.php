@@ -29,7 +29,7 @@ Route::get('/admin/subcategories/{categoryId}', [ProductController::class, 'getS
 Route::get('/uploads/{path}', function ($path) {
     return response()->file(public_path('uploads/' . $path));
 })->where('path', '.*')->middleware('resize.image');
-
+Route::get('/recent-orders', [AdminDashboardController::class, 'recentOrders'])->name('admin.recentOrders');
 /*
 |--------------------------------------------------------------------------
 | Web Routes
