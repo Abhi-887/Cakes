@@ -578,10 +578,10 @@ h6, .h6 {
   text-rendering: optimizeLegibility;
 }
 
-h1, .h1 {
+/* h1, .h1 {
   font-size: 100px;
   line-height: 132px;
-}
+} */
 
 h2, .h2 {
   font-size: 60px;
