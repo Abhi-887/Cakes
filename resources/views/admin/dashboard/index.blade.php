@@ -134,10 +134,11 @@
                                         <h4>{{ number_format($totalVisitors) }}</h4>
                                     </div>
                                 </div>
-                                <div class="box-icon-trending up">
-                                    <i class="icon-trending-up"></i>
-                                    <div class="body-title number">1.56%</div>
+                                <div class="box-icon-trending {{ $percentageChange2 >= 0 ? 'up' : 'down' }}">
+                                    <i class="icon-trending-{{ $percentageChange2 >= 0 ? 'up' : 'down' }}"></i>
+                                    <div class="body-title number">{{ number_format(abs($percentageChange2), 2) }}%</div>
                                 </div>
+
                             </div>
                             <div class="wrap-chart">
                                 <div id="line-chart-4"></div>

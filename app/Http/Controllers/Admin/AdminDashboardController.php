@@ -10,6 +10,7 @@ use App\Models\OrderPlacedNotification;
 use App\Models\Product;
 use App\Models\User;
 use App\Models\Visitor;
+use Carbon\Carbon;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -37,6 +38,19 @@ class AdminDashboardController extends Controller
         $totalBlogs = Blog::count();
 
         $totalSales = Order::where('payment_status', 'completed')->sum('grand_total');
+
+        $today = Carbon::today();
+    $yesterday = Carbon::yesterday();
+
+    $todayVisitors = Visitor::whereDate('created_at', $today)->count();
+    $yesterdayVisitors = Visitor::whereDate('created_at', $yesterday)->count();
+
+    // Calculate the percentage change
+    if ($yesterdayVisitors > 0) {
+        $percentageChange2 = (($todayVisitors - $yesterdayVisitors) / $yesterdayVisitors) * 100;
+    } else {
+        $percentageChange2 = $todayVisitors > 0 ? 100 : 0; // Handle division by zero
+    }
 
          // Fetch total revenue
     $totalRevenue = Order::where('payment_status', 'completed')->sum('grand_total');
@@ -85,7 +99,7 @@ class AdminDashboardController extends Controller
             'salesGrowth',
             'totalRevenue',
              'percentageChange',
-
+            'percentageChange2',
              'totalVisitors',
 
         ));
