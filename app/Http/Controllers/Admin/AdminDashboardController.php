@@ -105,6 +105,27 @@ class AdminDashboardController extends Controller
         ));
     }
 
+    public function recentOrders(Request $request)
+{
+    $period = $request->input('period', 'this_week'); // Default to this week
+    $query = Order::query();
+
+    if ($period === 'last_week') {
+        $startDate = now()->subWeek()->startOfWeek();
+        $endDate = now()->subWeek()->endOfWeek();
+    } else {
+        $startDate = now()->startOfWeek();
+        $endDate = now()->endOfWeek();
+    }
+
+    $recentOrders = $query->whereBetween('created_at', [$startDate, $endDate])
+                          ->orderBy('created_at', 'desc')
+                          ->get();
+
+    return response()->json($recentOrders);
+}
+
+
     function clearNotification() {
         $notification = OrderPlacedNotification::query()->update(['seen' => 1]);
 

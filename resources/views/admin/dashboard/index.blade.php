@@ -149,7 +149,7 @@
                     </div>
                     <div class="tf-section-5 mb-30">
                         <!-- chart -->
-                        <div class="wg-box">
+                        {{-- <div class="wg-box">
                             <div class="flex items-center justify-between">
                                 <h5>Recent Order</h5>
                                 <div class="dropdown default">
@@ -168,7 +168,56 @@
                                 </div>
                             </div>
                             <div id="line-chart-5"></div>
+                        </div> --}}
+                        <div class="wg-box">
+                            <div class="flex items-center justify-between">
+                                <h5>Recent Orders</h5>
+                                <div class="dropdown default">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button"
+                                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span class="icon-more"><i class="icon-more-horizontal"></i></span>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-end">
+                                        <li>
+                                            <a href="javascript:void(0);" class="order-filter" data-period="this_week">This Week</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" class="order-filter" data-period="last_week">Last Week</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div id="recent-orders-container">
+                                <!-- Recent orders will be loaded here -->
+                            </div>
                         </div>
+
+                        <script>
+                            $(document).ready(function() {
+                                function loadRecentOrders(period) {
+                                    $.ajax({
+                                        url: "{{ route('admin.recentOrders') }}",
+                                        method: 'GET',
+                                        data: { period: period },
+                                        success: function(response) {
+                                            $('#recent-orders-container').html('');
+                                            $.each(response, function(index, order) {
+                                                $('#recent-orders-container').append('<div>' + order.id + ' - ' + order.created_at + '</div>');
+                                            });
+                                        }
+                                    });
+                                }
+
+                                // Load this week's orders by default
+                                loadRecentOrders('this_week');
+
+                                $('.order-filter').click(function() {
+                                    var period = $(this).data('period');
+                                    loadRecentOrders(period);
+                                });
+                            });
+                        </script>
+
                         <!-- /chart -->
                         <!-- top-product -->
                         <div class="wg-box">
