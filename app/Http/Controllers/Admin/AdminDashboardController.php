@@ -9,6 +9,7 @@ use App\Models\Order;
 use App\Models\OrderPlacedNotification;
 use App\Models\Product;
 use App\Models\User;
+use App\Models\Visitor;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -63,6 +64,8 @@ class AdminDashboardController extends Controller
             $salesGrowth = (($currentMonthSales - $previousMonthSales) / $previousMonthSales) * 100;
         }
 
+        $totalVisitors = Visitor::count();
+
 
         return $dataTable->render('admin.dashboard.index', compact(
             'todaysOrders',
@@ -81,7 +84,9 @@ class AdminDashboardController extends Controller
             'totalOrders',
             'salesGrowth',
             'totalRevenue',
-             'percentageChange'
+             'percentageChange',
+
+             'totalVisitors',
 
         ));
     }
