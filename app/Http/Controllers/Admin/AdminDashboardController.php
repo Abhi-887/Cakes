@@ -10,6 +10,7 @@ use App\Models\OrderPlacedNotification;
 use App\Models\Product;
 use App\Models\User;
 use App\Models\Visitor;
+use App\Services\SystemStatusService;
 use Carbon\Carbon;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\JsonResponse;
@@ -105,6 +106,9 @@ class AdminDashboardController extends Controller
         });
         $averageSessionDuration = $sessions->count() > 0 ? $totalSessionDuration / $sessions->count() : 0;
 
+          // Check server status
+          $serverStatus = SystemStatusService::checkServerStatus();
+
 
 
         return $dataTable->render('admin.dashboard.index', compact(
@@ -131,6 +135,7 @@ class AdminDashboardController extends Controller
             'conversionRate',
             'bounceRate',
             'averageSessionDuration',
+            'serverStatus',
 
         ));
     }

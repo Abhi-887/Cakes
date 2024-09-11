@@ -1321,6 +1321,18 @@
         </div>
     </div>
 
+    <h3>System Notifications</h3>
+
+    <!-- Server Status -->
+    <div>
+        <h4>Server Status</h4>
+        @if($serverStatus)
+            <span style="color: green;">Server is running smoothly</span>
+        @else
+            <span style="color: red;">Server is down!</span>
+        @endif
+    </div>
+
     <div>
         <h3>Site Traffic</h3>
         <canvas id="trafficChart"></canvas>
