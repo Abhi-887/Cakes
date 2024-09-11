@@ -1,22 +1,27 @@
 <?php
-namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+    namespace App\Models;
 
-class Visitor extends Model
-{
-    use HasFactory;
+    use Illuminate\Database\Eloquent\Factories\HasFactory;
+    use Illuminate\Database\Eloquent\Model;
+    use Carbon\Carbon;
 
-    // The table associated with the model (if you follow Laravel's naming convention, this isn't necessary)
-    protected $table = 'visitors';
+    class Visitor extends Model
+    {
+        use HasFactory;
 
-    // The attributes that are mass assignable
-    protected $fillable = [
-        'ip_address',
-        'visitor_id',
-        'session_start',
-        'session_end',
-        'page_views',
-    ];
-}
+        protected $fillable = [
+            'ip_address',
+            'visitor_id',
+            'session_start',
+            'session_end',
+            'page_views',
+        ];
+
+        protected $dates = [
+            'session_start',
+            'session_end',
+        ];
+    }
+
+

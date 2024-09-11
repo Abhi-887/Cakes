@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Session;
 
 class AdminDashboardController extends Controller
 {
-    function index(TodaysOrderDataTable $dataTable) : View|JsonResponse
+    function index(TodaysOrderDataTable $dataTable): View|JsonResponse
     {
         $todaysOrders = Order::whereDate('created_at', now()->format('Y-m-d'))->count();
         $todaysEarnings = Order::whereDate('created_at', now()->format('Y-m-d'))->where('order_status', 'delivered')->sum('grand_total');
@@ -42,25 +42,25 @@ class AdminDashboardController extends Controller
         $totalSales = Order::where('payment_status', 'completed')->sum('grand_total');
 
         $today = Carbon::today();
-    $yesterday = Carbon::yesterday();
+        $yesterday = Carbon::yesterday();
 
-    $todayVisitors = Visitor::whereDate('created_at', $today)->count();
-    $yesterdayVisitors = Visitor::whereDate('created_at', $yesterday)->count();
+        $todayVisitors = Visitor::whereDate('created_at', $today)->count();
+        $yesterdayVisitors = Visitor::whereDate('created_at', $yesterday)->count();
 
-    // Calculate the percentage change
-    if ($yesterdayVisitors > 0) {
-        $percentageChange2 = (($todayVisitors - $yesterdayVisitors) / $yesterdayVisitors) * 100;
-    } else {
-        $percentageChange2 = $todayVisitors > 0 ? 100 : 0; // Handle division by zero
-    }
+        // Calculate the percentage change
+        if ($yesterdayVisitors > 0) {
+            $percentageChange2 = (($todayVisitors - $yesterdayVisitors) / $yesterdayVisitors) * 100;
+        } else {
+            $percentageChange2 = $todayVisitors > 0 ? 100 : 0; // Handle division by zero
+        }
 
-         // Fetch total revenue
-    $totalRevenue = Order::where('payment_status', 'completed')->sum('grand_total');
+        // Fetch total revenue
+        $totalRevenue = Order::where('payment_status', 'completed')->sum('grand_total');
 
-    // Fetch percentage increase or other metrics
-    $previousRevenue = Order::where('payment_status', 'completed')
-                             ->whereDate('created_at', '<', now()->subMonth())
-                             ->sum('grand_total');
+        // Fetch percentage increase or other metrics
+        $previousRevenue = Order::where('payment_status', 'completed')
+            ->whereDate('created_at', '<', now()->subMonth())
+            ->sum('grand_total');
         $percentageChange = $previousRevenue ? (($totalRevenue - $previousRevenue) / $previousRevenue) * 100 : 0;
 
         // Calculate the number of completed orders
@@ -68,12 +68,12 @@ class AdminDashboardController extends Controller
 
         // Calculate the percentage increase/decrease in sales (e.g., compared to last month)
         $previousMonthSales = Order::where('payment_status', 'completed')
-                                   ->whereMonth('created_at', now()->subMonth()->month)
-                                   ->sum('grand_total');
+            ->whereMonth('created_at', now()->subMonth()->month)
+            ->sum('grand_total');
 
         $currentMonthSales = Order::where('payment_status', 'completed')
-                                  ->whereMonth('created_at', now()->month)
-                                  ->sum('grand_total');
+            ->whereMonth('created_at', now()->month)
+            ->sum('grand_total');
 
         $salesGrowth = 0;
         if ($previousMonthSales > 0) {
@@ -97,9 +97,10 @@ class AdminDashboardController extends Controller
         $singlePageVisits = Visitor::where('page_views', 1)->count();
         $bounceRate = $totalVisitors > 0 ? ($singlePageVisits / $totalVisitors) * 100 : 0;
 
+
         // Calculate Average Session Duration
         $sessions = Visitor::whereNotNull('session_end')->get();
-        $totalSessionDuration = $sessions->sum(function($session) {
+        $totalSessionDuration = $sessions->sum(function ($session) {
             return $session->session_end->diffInMinutes($session->session_start);
         });
         $averageSessionDuration = $sessions->count() > 0 ? $totalSessionDuration / $sessions->count() : 0;
@@ -123,10 +124,10 @@ class AdminDashboardController extends Controller
             'totalOrders',
             'salesGrowth',
             'totalRevenue',
-             'percentageChange',
+            'percentageChange',
             'percentageChange2',
-             'totalVisitors',
-             'trafficData',
+            'totalVisitors',
+            'trafficData',
             'conversionRate',
             'bounceRate',
             'averageSessionDuration',
@@ -135,29 +136,30 @@ class AdminDashboardController extends Controller
     }
 
     public function recentOrders(Request $request)
-{
-    $period = $request->input('period', 'this_week'); // Default to this week
-    $query = Order::query();
+    {
+        $period = $request->input('period', 'this_week'); // Default to this week
+        $query = Order::query();
 
-    if ($period === 'last_week') {
-        $startDate = now()->subWeek()->startOfWeek();
-        $endDate = now()->subWeek()->endOfWeek();
-    } else {
-        $startDate = now()->startOfWeek();
-        $endDate = now()->endOfWeek();
+        if ($period === 'last_week') {
+            $startDate = now()->subWeek()->startOfWeek();
+            $endDate = now()->subWeek()->endOfWeek();
+        } else {
+            $startDate = now()->startOfWeek();
+            $endDate = now()->endOfWeek();
+        }
+
+        $recentOrders = $query->whereBetween('created_at', [$startDate, $endDate])
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        return response()->json($recentOrders);
     }
 
-    $recentOrders = $query->whereBetween('created_at', [$startDate, $endDate])
-                          ->orderBy('created_at', 'desc')
-                          ->get();
-
-    return response()->json($recentOrders);
-}
 
 
 
-
-    function clearNotification() {
+    function clearNotification()
+    {
         $notification = OrderPlacedNotification::query()->update(['seen' => 1]);
 
         toastr()->success('Notification Cleared Successfully!');
