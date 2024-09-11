@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\DataTables\TodaysOrderDataTable;
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
+use App\Models\Category;
 use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\OrderPlacedNotification;
@@ -143,6 +144,21 @@ class AdminDashboardController extends Controller
                      ->whereDate('created_at', '>=', now()->subWeek())
                      ->count();
 
+                     $productCategories = Product::select('category_id', DB::raw('COUNT(id) as total_products'))
+                             ->groupBy('category_id')
+                             ->get();
+
+$categories = Category::whereIn('id', $productCategories->pluck('category_id'))->get()->keyBy('id');
+
+$categoryLabels = $productCategories->map(function($item) use ($categories) {
+    return $categories[$item->category_id]->name;
+});
+
+$categoryData = $productCategories->pluck('total_products');
+
+
+
+
 
 
 
@@ -176,7 +192,10 @@ class AdminDashboardController extends Controller
             'lowStockAlerts',
             'topCustomers',
             'totalCustomers',
-            'newCustomers'
+            'newCustomers',
+            "categoryLabels",
+            "categoryData",
+
 
 
         ));
