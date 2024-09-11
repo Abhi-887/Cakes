@@ -15,6 +15,8 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Session;
+
 class AdminDashboardController extends Controller
 {
     function index(TodaysOrderDataTable $dataTable) : View|JsonResponse
@@ -124,6 +126,44 @@ class AdminDashboardController extends Controller
 
     return response()->json($recentOrders);
 }
+
+// function startSession()
+// {
+//     $visitor = Visitor::create([
+//         'session_start' => now(),
+//         'page_views' => 1,  // Start with the first page view
+//     ]);
+
+//     // Store the visitor ID in the session
+//     Session::put('visitor_id', $visitor->id);
+// }
+
+// function incrementPageView()
+// {
+//     $visitorId = Session::get('visitor_id');
+//     if ($visitorId) {
+//         $visitor = Visitor::find($visitorId);
+//         if ($visitor) {
+//             $visitor->increment('page_views');
+//         }
+//     }
+// }
+
+// function endSession()
+// {
+//     $visitorId = Session::get('visitor_id');
+//     if ($visitorId) {
+//         $visitor = Visitor::find($visitorId);
+//         if ($visitor) {
+//             $visitor->update([
+//                 'session_end' => now(),
+//             ]);
+//         }
+//     }
+
+//     // Clear the session data
+//     Session::forget('visitor_id');
+// }
 
 
     function clearNotification() {
