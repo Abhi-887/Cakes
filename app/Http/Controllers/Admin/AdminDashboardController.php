@@ -122,6 +122,13 @@ class AdminDashboardController extends Controller
           ->limit(10)
           ->get();
 
+          $lowStockAlerts = Product::select('name', 'quantity')
+          ->where(function ($query) {
+              $query->where('quantity', '<=', 5)
+                    ->orWhere('quantity', '=', 0);
+          })
+          ->get();
+
 
         return $dataTable->render('admin.dashboard.index', compact(
             'todaysOrders',
@@ -150,6 +157,7 @@ class AdminDashboardController extends Controller
             'serverStatus',
             'ordersByStatus',
             "topSellingProducts",
+            'lowStockAlerts',
 
         ));
     }

@@ -1401,6 +1401,40 @@
         </div>
     </div>
 
+    <div class="col-md-12 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Low Stock Alerts</h5>
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Available Quantity</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($lowStockAlerts as $product)
+                            <tr>
+                                <td>{{ $product->name }}</td>
+                                <td>{{ $product->quantity }}</td>
+                                <td>
+                                    @if ($product->quantity == 0)
+                                        <span class="text-danger">Out of Stock</span>
+                                    @else
+                                        <span class="text-warning">Low Stock</span>
+                                    @endif
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
