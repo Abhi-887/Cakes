@@ -1,27 +1,26 @@
 <?php
 
-    namespace App\Models;
+namespace App\Models;
 
-    use Illuminate\Database\Eloquent\Factories\HasFactory;
-    use Illuminate\Database\Eloquent\Model;
-    use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
-    class Visitor extends Model
-    {
-        use HasFactory;
+class Visitor extends Model
+{
+    use HasFactory;
 
-        protected $fillable = [
-            'ip_address',
-            'visitor_id',
-            'session_start',
-            'session_end',
-            'page_views',
-        ];
+    protected $fillable = [
+        'ip_address',
+        'visitor_id',
+        'session_start',
+        'session_end',
+        'page_views',
+    ];
 
-        protected $dates = [
-            'session_start',
-            'session_end',
-        ];
-    }
-
-
+    // Automatically cast these fields to Carbon instances
+    protected $casts = [
+        'session_start' => 'datetime',
+        'session_end' => 'datetime',
+    ];
+}
