@@ -155,7 +155,12 @@ $categoryLabels = $productCategories->map(function($item) use ($categories) {
 });
 
 $categoryData = $productCategories->pluck('total_products');
-
+// Products out of stock or with low stock
+$outOfStockProducts = Product::where('quantity', 0)->get();
+$lowStockThreshold = 5; // Define your low stock threshold
+$lowStockProducts = Product::where('quantity', '<', $lowStockThreshold)
+    ->where('quantity', '>', 0)
+    ->get();
 
 
 
@@ -195,6 +200,8 @@ $categoryData = $productCategories->pluck('total_products');
             'newCustomers',
             "categoryLabels",
             "categoryData",
+            'lowStockProducts',
+            'outOfStockProducts',
 
 
 
