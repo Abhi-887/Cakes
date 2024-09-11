@@ -1371,6 +1371,58 @@
                 </div>
             </div>
         </div>
+
+        <div class="row">
+            <!-- Product Categories -->
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Product Categories</h5>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="categoriesChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Out of Stock Products -->
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Out of Stock Products</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            @foreach($outOfStockProducts as $product)
+                                <li class="list-group-item">
+                                    {{ $product->name }}
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Low Stock Products -->
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Low Stock Products</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            @foreach($lowStockProducts as $product)
+                                <li class="list-group-item">
+                                    {{ $product->name }} - {{ $product->quantity }} in stock
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="col-md-6 mb-4">
@@ -1465,10 +1517,7 @@
         <p>{{ $totalCustomers }}</p>
     </div>
 
-    <div>
-        <h3>Product Categories</h3>
-        <canvas id="categoriesChart"></canvas>
-    </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
