@@ -15,5 +15,8 @@ class Visitor extends Model
     protected $fillable = [
         'ip_address',
         'visitor_id',
+        'session_start',
+        'session_end',
+        'page_views',
     ];
 }
