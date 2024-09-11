@@ -1333,9 +1333,32 @@
         @endif
     </div>
 
-    <div>
-        <h3>Orders by Status</h3>
-        <canvas id="ordersByStatusChart"></canvas>
+    <div class="container mt-4">
+        <div class="row">
+            <!-- Orders by Status -->
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Orders by Status</h5>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="ordersByStatusChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Site Traffic -->
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Site Traffic</h5>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="trafficChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -1375,10 +1398,7 @@
 
 
 
-    <div>
-        <h3>Site Traffic</h3>
-        <canvas id="trafficChart"></canvas>
-    </div>
+
 
     <!-- Conversion Rate -->
     <div>
