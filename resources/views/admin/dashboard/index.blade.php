@@ -1361,6 +1361,37 @@
         </div>
     </div>
 
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Top-Selling Products</h5>
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Quantity Sold</th>
+                            <th>Revenue Generated</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($topSellingProducts as $product)
+                            <tr>
+                                <td>{{ $product->product_name }}</td>
+                                <td>{{ $product->total_qty }}</td>
+                                <td>${{ number_format($product->total_revenue, 2) }}</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         var ctx = document.getElementById('ordersByStatusChart').getContext('2d');

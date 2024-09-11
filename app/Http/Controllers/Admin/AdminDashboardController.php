@@ -6,6 +6,7 @@ use App\DataTables\TodaysOrderDataTable;
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use App\Models\Order;
+use App\Models\OrderItem;
 use App\Models\OrderPlacedNotification;
 use App\Models\Product;
 use App\Models\User;
@@ -115,6 +116,11 @@ class AdminDashboardController extends Controller
           ->groupBy('order_status')
           ->pluck('total', 'order_status');
 
+          $topSellingProducts = OrderItem::select('product_name', DB::raw('SUM(qty) as total_qty'), DB::raw('SUM(unit_price * qty) as total_revenue'))
+          ->groupBy('product_name')
+          ->orderBy('total_qty', 'desc')
+          ->limit(10)
+          ->get();
 
 
         return $dataTable->render('admin.dashboard.index', compact(
@@ -143,6 +149,7 @@ class AdminDashboardController extends Controller
             'averageSessionDuration',
             'serverStatus',
             'ordersByStatus',
+            "topSellingProducts",
 
         ));
     }
