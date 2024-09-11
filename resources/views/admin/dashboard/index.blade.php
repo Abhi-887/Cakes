@@ -1435,6 +1435,29 @@
         </div>
     </div>
 
+    <div>
+        <h3>Top Customers</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Customer Name</th>
+                    <th>Total Purchases</th>
+                    <th>Total Spent</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($topCustomers as $customer)
+                    <tr>
+                        <td>{{ $customer->name }}</td>
+                        <td>{{ $customer->total_purchases }}</td>
+                        <td>${{ number_format($customer->total_spent, 2) }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

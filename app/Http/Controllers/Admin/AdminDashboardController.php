@@ -129,6 +129,15 @@ class AdminDashboardController extends Controller
           })
           ->get();
 
+          $topCustomers = User::join('orders', 'users.id', '=', 'orders.user_id')
+                     ->select('users.name', DB::raw('COUNT(orders.id) as total_purchases'), DB::raw('SUM(orders.grand_total) as total_spent'))
+                     ->where('users.role', 'user')
+                     ->groupBy('users.id', 'users.name')
+                     ->orderBy('total_spent', 'desc')
+                     ->take(10) // Limit to top 10 customers
+                     ->get();
+
+
 
         return $dataTable->render('admin.dashboard.index', compact(
             'todaysOrders',
@@ -158,6 +167,7 @@ class AdminDashboardController extends Controller
             'ordersByStatus',
             "topSellingProducts",
             'lowStockAlerts',
+            'topCustomers'
 
         ));
     }
