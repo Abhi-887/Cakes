@@ -137,6 +137,13 @@ class AdminDashboardController extends Controller
                      ->take(10) // Limit to top 10 customers
                      ->get();
 
+            $totalCustomers = User::where('role', 'user')->count();
+
+            $newCustomers = User::where('role', 'user')
+                     ->whereDate('created_at', '>=', now()->subWeek())
+                     ->count();
+
+
 
 
         return $dataTable->render('admin.dashboard.index', compact(
@@ -167,7 +174,10 @@ class AdminDashboardController extends Controller
             'ordersByStatus',
             "topSellingProducts",
             'lowStockAlerts',
-            'topCustomers'
+            'topCustomers',
+            'totalCustomers',
+            'newCustomers'
+
 
         ));
     }

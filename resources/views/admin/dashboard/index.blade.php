@@ -1456,6 +1456,14 @@
             </tbody>
         </table>
     </div>
+    <div>
+        <h3>New Customers (Last Week)</h3>
+        <p>{{ $newCustomers }}</p>
+    </div>
+    <div>
+        <h3>Total Customers</h3>
+        <p>{{ $totalCustomers }}</p>
+    </div>
 
 
 
