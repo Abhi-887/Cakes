@@ -14,13 +14,13 @@ class LogVisitor
         // Get the visitor cookie or generate a new one
         $visitorCookie = $request->cookie('visitor_id') ?? (string) Str::uuid();
 
-        // Check if the visitor has been logged today
+        // Check if there is an existing visitor record for today
         $visitor = Visitor::where('visitor_id', $visitorCookie)
             ->whereDate('created_at', today())
             ->first();
 
-        if (!$visitor) {
-            // If the visitor record doesn't exist, create a new one with session start time
+        // If no visitor record exists, or if the session has ended, create a new session
+        if (!$visitor || $visitor->session_end) {
             $visitor = Visitor::create([
                 'ip_address' => $request->ip(),
                 'visitor_id' => $visitorCookie,
@@ -28,7 +28,7 @@ class LogVisitor
                 'page_views' => 1, // Start with the first page view
             ]);
         } else {
-            // If the visitor record exists, update the page views and session end time
+            // If the session is still ongoing, increment the page views and update the session end time
             $visitor->increment('page_views');
             $visitor->update(['session_end' => Carbon::now()]);
         }

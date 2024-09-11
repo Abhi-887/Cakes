@@ -1320,6 +1320,59 @@
             </div>
         </div>
     </div>
+
+    <div>
+        <h3>Site Traffic</h3>
+        <canvas id="trafficChart"></canvas>
+    </div>
+
+    <!-- Conversion Rate -->
+    <div>
+        <h3>Conversion Rate</h3>
+        <p>{{ number_format($conversionRate, 2) }}%</p>
+    </div>
+
+    <!-- Bounce Rate -->
+    <div>
+        <h3>Bounce Rate</h3>
+        <p>{{ number_format($bounceRate, 2) }}%</p>
+    </div>
+
+    <!-- Average Session Duration -->
+    <div>
+        <h3>Average Session Duration</h3>
+        <p>{{ number_format($averageSessionDuration, 2) }} minutes</p>
+    </div>
+
+    <!-- JavaScript for Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var ctx = document.getElementById('trafficChart').getContext('2d');
+        var trafficChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: @json($trafficData->pluck('date')),
+                datasets: [{
+                    label: 'Number of Visitors',
+                    data: @json($trafficData->pluck('count')),
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        beginAtZero: true
+                    },
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</div>
 @endsection
 
 @push('scripts')

@@ -82,6 +82,29 @@ class AdminDashboardController extends Controller
 
         $totalVisitors = Visitor::count();
 
+        // Calculate Site Traffic
+        $trafficData = Visitor::selectRaw('DATE(created_at) as date, COUNT(*) as count')
+            ->groupBy('date')
+            ->orderBy('date')
+            ->get();
+
+        // Calculate Conversion Rate
+        $totalVisitors = Visitor::count();
+        $totalPurchases = Order::where('order_status', 'completed')->count();
+        $conversionRate = $totalVisitors > 0 ? ($totalPurchases / $totalVisitors) * 100 : 0;
+
+        // Calculate Bounce Rate
+        $singlePageVisits = Visitor::where('page_views', 1)->count();
+        $bounceRate = $totalVisitors > 0 ? ($singlePageVisits / $totalVisitors) * 100 : 0;
+
+        // Calculate Average Session Duration
+        $sessions = Visitor::whereNotNull('session_end')->get();
+        $totalSessionDuration = $sessions->sum(function($session) {
+            return $session->session_end->diffInMinutes($session->session_start);
+        });
+        $averageSessionDuration = $sessions->count() > 0 ? $totalSessionDuration / $sessions->count() : 0;
+
+
 
         return $dataTable->render('admin.dashboard.index', compact(
             'todaysOrders',
@@ -103,6 +126,10 @@ class AdminDashboardController extends Controller
              'percentageChange',
             'percentageChange2',
              'totalVisitors',
+             'trafficData',
+            'conversionRate',
+            'bounceRate',
+            'averageSessionDuration',
 
         ));
     }
@@ -127,43 +154,7 @@ class AdminDashboardController extends Controller
     return response()->json($recentOrders);
 }
 
-// function startSession()
-// {
-//     $visitor = Visitor::create([
-//         'session_start' => now(),
-//         'page_views' => 1,  // Start with the first page view
-//     ]);
 
-//     // Store the visitor ID in the session
-//     Session::put('visitor_id', $visitor->id);
-// }
-
-// function incrementPageView()
-// {
-//     $visitorId = Session::get('visitor_id');
-//     if ($visitorId) {
-//         $visitor = Visitor::find($visitorId);
-//         if ($visitor) {
-//             $visitor->increment('page_views');
-//         }
-//     }
-// }
-
-// function endSession()
-// {
-//     $visitorId = Session::get('visitor_id');
-//     if ($visitorId) {
-//         $visitor = Visitor::find($visitorId);
-//         if ($visitor) {
-//             $visitor->update([
-//                 'session_end' => now(),
-//             ]);
-//         }
-//     }
-
-//     // Clear the session data
-//     Session::forget('visitor_id');
-// }
 
 
     function clearNotification() {
