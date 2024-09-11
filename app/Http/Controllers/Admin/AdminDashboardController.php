@@ -15,7 +15,7 @@ use Carbon\Carbon;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 class AdminDashboardController extends Controller
@@ -110,6 +110,12 @@ class AdminDashboardController extends Controller
           $serverStatus = SystemStatusService::checkServerStatus();
 
 
+          $ordersByStatus = DB::table('orders')
+          ->select('order_status', DB::raw('count(*) as total'))
+          ->groupBy('order_status')
+          ->pluck('total', 'order_status');
+
+
 
         return $dataTable->render('admin.dashboard.index', compact(
             'todaysOrders',
@@ -136,6 +142,7 @@ class AdminDashboardController extends Controller
             'bounceRate',
             'averageSessionDuration',
             'serverStatus',
+            'ordersByStatus',
 
         ));
     }
