@@ -45,8 +45,9 @@
                                     </div>
                                     <div>
                                         <div class="body-text mb-2">Total Sales</div>
-                                        <h4>{{  currencyPosition($totalSales, 2) }}</h4>
+                                        <h4>{{ currencyPosition(number_format($totalSales, 2)) }}</h4>
                                     </div>
+
                                 </div>
                                 <div class="box-icon-trending {{ $salesGrowth >= 0 ? 'up' : 'down' }}">
                                     <i class="icon-trending-{{ $salesGrowth >= 0 ? 'up' : 'down' }}"></i>
