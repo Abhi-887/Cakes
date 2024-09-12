@@ -159,15 +159,14 @@
                 </li> --}}
 
                 <li>
-                    <a class="ms-3 fs-5" href="{{ route('login') }}"><i class="fas fa-user"></i></a>
+                    <a class="border ms-3 fs-5" href="{{ route('login') }}"><i class="fas fa-user"></i>Account</a>
                 </li>
 
-                {{--
                 <li>
-                    <a class="common_btn d-inline ms-3 position-relative fw-semibold transitions" href="#"
-                        data-bs-toggle="modal" data-bs-target="#staticBackdrop">reservation</a>
+                    <a class="border common_btn d-inline ms-3 position-relative fw-semibold transitions" href="#"
+                        data-bs-toggle="modal" data-bs-target="#staticBackdrop">Wishlist<i
+                            class="fa-regular fa-heart"></i></a>
                 </li>
-                --}}
             </ul>
         </div>
     </nav>
