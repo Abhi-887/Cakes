@@ -70,8 +70,15 @@
                             $unseenMessages > 0 ? 1 : 0 }}</span>
                     </a>
                 </li> --}}
-                <li>
-                    <a class="fs-5 me-3 me-sm-4" href="{{ route('login') }}"><i class="transition fas fa-user"></i></a>
+                <li class="nav-item">
+                    <a class="nav-link border px-3 py-2 ms-3 rounded-1" href="{{ route('login') }}"><i
+                            class="far fa-user me-3"></i>Account</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link border d-inline px-3 py-2 ms-3 rounded-1 position-relative transitions"
+                        href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i
+                            class="far fa-heart me-3"></i>Wishlist</a>
                 </li>
             </ul>
             <a class="d-xxl-none d-block" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
