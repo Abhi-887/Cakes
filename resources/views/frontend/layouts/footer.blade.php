@@ -149,8 +149,7 @@
     }
 
     .footer-tile {
-        /* background: #253547 !important; */
-        background: #008B8B !important;
+        background: #253547 !important;
     }
 
     .footer-menu {
