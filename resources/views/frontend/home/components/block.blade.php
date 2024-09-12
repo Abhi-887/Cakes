@@ -32,17 +32,6 @@
         position: relative;
     }
 
-    .image-block:hover .gradient-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
-        transition: 0.3s ease;
-    }
-
     .gradient-overlay {
         position: absolute;
         top: 0;
@@ -53,6 +42,11 @@
         transition: 0.3s ease;
         z-index: 1;
     }
+
+    .image-block:hover .gradient-overlay {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)) !important;
+    }
+
 
     .overlay-text {
         color: #ffffffd1 !important;
