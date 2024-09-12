@@ -43,7 +43,7 @@
     }
 
     .overlay-text {
-        color: #bcb3b3 !important;
+        color: #ffffffd1 !important;
     }
 
     .image-block:hover .overlay-text {
