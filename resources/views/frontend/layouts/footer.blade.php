@@ -41,46 +41,55 @@
 
         <div class="text-white footer-menu">
             <div class="pt-5 pb-0 mx-auto pb-lg-5 wrapper w-100 row">
-                <div class="col-lg-3 col-md-12 footer-info">
-                    <h5 class="mt-2 mb-1 text-white mb-xl-3 fw-normal mt-xl-0">{{ @$footerInfo->name }}</h5>
-                    <div class="">{!! @$footerInfo->address !!}</div>
-                    <div><strong class=" fas fa-solid fa-envelope">&nbsp; &nbsp; </strong><span
-                            class="text-white ">{{ @$footerInfo->email }}</span>
-                    </div>
-                    <div><strong class="rotate-90 fas fa-solid fa-phone">&nbsp; &nbsp; </strong><span
-                            class="text-white">{{ @$footerInfo->phone }}</span>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-12 footer-info">
-                    <h5 class="mt-2 mb-1 text-white mb-xl-3 fw-normal mt-xl-0">{{ @$footerInfoTwo->name }}</h5>
-                    <div class="">{!! @$footerInfoTwo->address !!}</div>
-                    <div><strong class=" fas fa-solid fa-envelope">&nbsp; &nbsp;</strong>{{ @$footerInfoTwo->email }}
-                    </div>
-                    <div><strong class="rotate-90 fas fa-solid fa-phone">&nbsp;
-                            &nbsp;</strong>{{ @$footerInfoTwo->phone }}
+                <div class="col-lg-3 col-md-12 footer-info d-flex">
+                    <div class="">
+                        <h5 class="mt-2 mb-1 text-white mb-xl-3 fw-normal mt-xl-0">{{ @$footerInfo->name }}</h5>
+                        <div class="">{!! @$footerInfo->address !!}</div>
+                        <div><strong class=" fas fa-solid fa-envelope">&nbsp; &nbsp; </strong><span
+                                class="text-white ">{{ @$footerInfo->email }}</span>
+                        </div>
+                        <div><strong class="rotate-90 fas fa-solid fa-phone">&nbsp; &nbsp; </strong><span
+                                class="text-white">{{ @$footerInfo->phone }}</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-12 lh-lg footer-hover">
-                    <h5 class="mt-2 mb-1 text-white mb-xl-3 fw-normal mt-xl-0">
-                        {{ @$footerTitle->footer_grid_two_title }}</h5>
-                    <div class="text-white">
-                        @foreach ($footerGridTwoLinks as $link)
-                            <a class="text-white text-decoration-none"
-                                href="{{ $link->url }}">{{ $link->name }}</a><br>
-                        @endforeach
+                <div class="col-lg-3 col-md-12 footer-info d-flex">
+                    <div class="">
+                        <h5 class="mt-2 mb-1 text-white mb-xl-3 fw-normal mt-xl-0">{{ @$footerInfoTwo->name }}</h5>
+                        <div class="">{!! @$footerInfoTwo->address !!}</div>
+                        <div><strong class=" fas fa-solid fa-envelope">&nbsp;
+                                &nbsp;</strong>{{ @$footerInfoTwo->email }}
+                        </div>
+                        <div><strong class="rotate-90 fas fa-solid fa-phone">&nbsp;
+                                &nbsp;</strong>{{ @$footerInfoTwo->phone }}
+                        </div>
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-12 lh-lg footer-hover">
-                    <h5 class="mt-3 mb-0 text-white mb-xl-3 fw-normal mt-xl-0">
-                        {{ @$footerTitle->footer_grid_three_title }}</h5>
-                    <div class="text-white">
-                        @foreach ($footerGridThreeLinks as $link)
-                            <a class="text-white text-decoration-none"
-                                href="{{ $link->url }}">{{ $link->name }}</a><br>
-                        @endforeach
+                <div class="col-lg-3 col-md-12 lh-lg footer-hover d-flex">
+                    <div class="">
+                        <h5 class="mt-2 mb-1 text-white mb-xl-3 fw-normal mt-xl-0">
+                            {{ @$footerTitle->footer_grid_two_title }}</h5>
+                        <div class="text-white">
+                            @foreach ($footerGridTwoLinks as $link)
+                                <a class="text-white text-decoration-none"
+                                    href="{{ $link->url }}">{{ $link->name }}</a><br>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-12 lh-lg footer-hover d-flex">
+                    <div class="">
+                        <h5 class="mt-3 mb-0 text-white mb-xl-3 fw-normal mt-xl-0">
+                            {{ @$footerTitle->footer_grid_three_title }}</h5>
+                        <div class="text-white">
+                            @foreach ($footerGridThreeLinks as $link)
+                                <a class="text-white text-decoration-none"
+                                    href="{{ $link->url }}">{{ $link->name }}</a><br>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
 
