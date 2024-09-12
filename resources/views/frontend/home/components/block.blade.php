@@ -32,15 +32,8 @@
         position: relative;
     }
 
-    .image-block:hover .gradient-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
+    .image-block:hover {
         background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
-        transition: 0.7s ease;
     }
 
     .gradient-overlay {
