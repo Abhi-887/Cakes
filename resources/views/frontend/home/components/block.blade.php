@@ -32,6 +32,16 @@
         position: relative;
     }
 
+    .image-block:hover .gradient-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+    }
+
     .gradient-overlay {
         position: absolute;
         top: 0;
@@ -49,7 +59,7 @@
 
     .image-block:hover .overlay-text {
         color: #fff !important;
-        transition: 0.6s ease-in-out;
+        transition: 0.4s ease-in-out;
     }
 
     /* .image-block {
