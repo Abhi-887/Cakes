@@ -80,7 +80,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-12 lh-lg footer-hover d-flex">
+                <div class="col-lg-3 col-md-12 lh-lg footer-hover d-flex justify-content-center">
                     <div class="">
                         <h5 class="mt-3 mb-0 text-white mb-xl-3 fw-normal mt-xl-0">
                             {{ @$footerTitle->footer_grid_three_title }}</h5>
