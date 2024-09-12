@@ -15,7 +15,7 @@
 
             <div class="text-center">
                 {{-- <h2 class="text-black">Subscribe FREE to 3D Cakes Special Offers</h2> --}}
-                <h2 class="text-black">Join our mailing list</h2>
+                <h2 class="text-white fw-bold">Join our mailing list</h2>
                 <p class="mt-3 footer-color text-white">Receive discount codes, view our latest designs and find out
                     about special
                     offers</p>
