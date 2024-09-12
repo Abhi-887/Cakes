@@ -159,13 +159,13 @@
                 </li> --}}
 
                 <li class="nav-item">
-                    <a class="nav-link border px-3 py-2 ms-3" href="{{ route('login') }}"><i
+                    <a class="nav-link border px-3 py-2 ms-3 rounded-1" href="{{ route('login') }}"><i
                             class="far fa-user me-3"></i>Account</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link border d-inline px-3 py-2 ms-3 position-relative transitions" href="#"
-                        data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i
+                    <a class="nav-link border d-inline px-3 py-2 ms-3 rounded-1 position-relative transitions"
+                        href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i
                             class="far fa-heart me-3"></i>Wishlist</a>
                 </li>
             </ul>
