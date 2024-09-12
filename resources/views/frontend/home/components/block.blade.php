@@ -40,7 +40,7 @@
         height: 100%;
         z-index: 1;
         background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
-        transition: 0.7s ease-in-out;
+        transition: 0.7s ease;
     }
 
     .gradient-overlay {
