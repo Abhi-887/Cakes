@@ -27,6 +27,26 @@
 
 
 <style>
+    .image-block {
+        position: relative;
+    }
+
+    .gradient-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+        z-index: 1;
+        /* Make sure gradient overlay is above the image but below the text */
+    }
+
+    .overlay-text {
+        z-index: 2;
+        /* Make sure text is above the gradient overlay */
+    }
+
     /* .image-block {
         height: 300px;
     }
