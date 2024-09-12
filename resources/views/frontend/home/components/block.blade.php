@@ -13,6 +13,7 @@
                                 class="image-block position-relative overflow-hidden rounded-3 d-flex justify-content-center align-items-center">
                                 <img src="{{ asset($slider->image) }}" class="img-fluid w-100 h-100"
                                     alt="{{ $slider->title }}">
+                                <div class="gradient-overlay position-absolute w-100 h-100"></div>
                                 <h3 class="overlay-text text-white text-center position-absolute">
                                     {{ $slider->title }}
                                 </h3>
