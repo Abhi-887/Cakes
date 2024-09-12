@@ -138,11 +138,13 @@
     }
 
     .footer-tile {
-        background: #253547 !important;
+        /* background: #253547 !important; */
+        background: #008B8B !important;
     }
 
     .footer-menu {
-        background: #4b637f !important;
+        /* background: #4b637f !important; */
+        background: #008B8B !important;
     }
 </style>
 
