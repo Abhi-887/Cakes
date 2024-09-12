@@ -44,11 +44,11 @@
 
     .overlay-text {
         z-index: 2;
-        color: #b19f9f !important;
+        color: #bcb3b3 !important;
     }
 
     .image-block:hover .overlay-text {
-        color: #fffdfd !important;
+        color: #fff !important;
         transition: 0.6s ease-in-out;
     }
 
