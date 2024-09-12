@@ -126,7 +126,8 @@
     }
 
     footer {
-        background-color: #f9f9f9 !important;
+        /* background-color: #f9f9f9 !important; */
+        background: #008B8B !important;
     }
 
     .form-control:focus {
@@ -144,8 +145,7 @@
     }
 
     .footer-menu {
-        /* background: #4b637f !important; */
-        background: #008B8B !important;
+        background: #4b637f !important;
     }
 </style>
 
