@@ -157,8 +157,8 @@
     <div class="row wow fadeInUp" data-wow-duration="1s">
         <div class="m-auto text-center col-md-8 col-lg-7 col-xl-6">
             <div class="fp__section_heading">
-                <h4>3D Cakes</h4>
-                <h2>Our Popular 3D Cakes Range</h2>
+                {{-- <h4>3D Cakes</h4> --}}
+                <h2>Trending Now: Discover and Shop Our Most Popular Designs!</h2>
                 <p>Objectively pontificate quality models before intuitive information. Dramatically
                     recaptiualize multifunctional materials.</p>
             </div>
@@ -212,16 +212,16 @@
                                             {{ currencyPosition($product->price) }}
                                         @endif
                                     </p>
-                                    @if($product->quantity === 0 || $product->out_of_stock)
-                                    <a class="px-3 py-2 text-white rounded-pill bg-danger" href="javascript:;">
-                                        Out of Stock
-                                    </a>
-                                @else
-                                    <a class="px-3 py-2 text-white add-to-cart rounded-pill background-light-gray"
-                                       href="javascript:;" onclick="loadProductModal('{{ $product->id }}')">
-                                        Add to Cart
-                                    </a>
-                                @endif
+                                    @if ($product->quantity === 0 || $product->out_of_stock)
+                                        <a class="px-3 py-2 text-white rounded-pill bg-danger" href="javascript:;">
+                                            Out of Stock
+                                        </a>
+                                    @else
+                                        <a class="px-3 py-2 text-white add-to-cart rounded-pill background-light-gray"
+                                            href="javascript:;" onclick="loadProductModal('{{ $product->id }}')">
+                                            Add to Cart
+                                        </a>
+                                    @endif
 
                                 </div>
                             </div>
