@@ -294,7 +294,7 @@ button {
     background: #4b637f !important;
 }
 .sticky-top {
-    z-index: 2 !important;
+    z-index: 3 !important;
 }
 
 #sticky_sidebar {
