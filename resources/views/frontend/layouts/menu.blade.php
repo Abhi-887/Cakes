@@ -4,7 +4,8 @@
     @endphp
 
     <nav class="shadow-sm navbar bg-light sticky-top">
-        <div class="container-fluid p-3 mx-auto d-flex align-items-center w-100">
+
+        <div class="p-3 mx-auto wrapper d-flex align-items-center w-100">
             <div class="header-logo me-5">
                 <a class="" href="{{ url('/') }}">
                     <img src="{{ asset('uploads/web-logo1.png') }}" alt="3D-Cakes Logo" class="img-fluid" />
