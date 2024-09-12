@@ -164,7 +164,7 @@
                 </li>
 
                 <li>
-                    <a class="border d-inline px-3 py-2 ms-3 position-relative fw-semibold transitions" href="#"
+                    <a class="border d-inline px-3 py-2 ms-3 position-relative transitions" href="#"
                         data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i
                             class="far fa-heart me-3"></i>Wishlist</a>
                 </li>
