@@ -96,7 +96,7 @@
         TOPBAR START
     ==============================-->
     <div class="header-top">
-        <section class="container-fluid px-3 mx-auto w-100">
+        <section class="container-fluid px-3 px-lg-5 mx-auto w-100">
             <div class="py-2 row align-items-center">
                 <div class="m-0 col-md-7">
                     <div class="row">

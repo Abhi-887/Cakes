@@ -4,13 +4,13 @@
     @endphp
 
     <nav class="shadow-sm navbar bg-light sticky-top">
-        <div class="container-fluid p-3 mx-auto d-flex align-items-center w-100">
-            <div class="header-logo me-5">
+        <div class="container-fluid py-3 px-3 px-lg-5 mx-auto d-flex align-items-center w-100">
+            <div class="header-logo me-4">
                 <a class="" href="{{ url('/') }}">
                     <img src="{{ asset('uploads/web-logo1.png') }}" alt="3D-Cakes Logo" class="img-fluid" />
                 </a>
             </div>
-            <ul class="d-none d-xxl-flex">
+            <ul class="d-none d-xl-flex">
                 {{-- Main Menu Items --}} @if ($MainMenu)
                     @foreach ($MainMenu as $menu)
                         <li class="mx-2 nav-item">
@@ -32,7 +32,7 @@
                     @endforeach
                 @endif
             </ul>
-            <ul class="ms-auto d-flex menu_icon d-xxl-none d-block">
+            <ul class="ms-auto d-flex menu_icon d-xl-none d-block">
                 <li>
                     <a href="#" class="menu_search me-3 me-sm-4 position-relative fw-semibold fs-5 transitions"><i
                             class="transition far fa-search"></i></a>
@@ -79,7 +79,7 @@
                         data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="far fa-heart me-3"></i></a>
                 </li>
             </ul>
-            <a class="d-xxl-none d-block" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+            <a class="d-xl-none d-block" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
                 aria-controls="offcanvasExample">
                 <i class="fas fa-bars fs-2 color-light-gray"></i>
             </a>
@@ -125,7 +125,7 @@
                 </div>
             </div>
 
-            <ul class="flex-wrap menu_icon d-none d-xxl-flex align-items-center ms-auto">
+            <ul class="flex-wrap menu_icon d-none d-xl-flex align-items-center ms-auto">
                 <li>
                     <a href="#" class="menu_search me-4 position-relative fw-semibold fs-5 transitions"><i
                             class="far fa-search"></i></a>
