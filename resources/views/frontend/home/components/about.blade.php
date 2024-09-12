@@ -26,11 +26,9 @@
     }
 
     .parallax-item {
-        background: url({{ asset('uploads/center_homebg.webp') }});
+        /* background: url({{ asset('uploads/center_homebg.webp') }}); */
+        background: #008B8B;
     }
-
-
-
 
     .about-description p {
         color: white !important;
