@@ -84,7 +84,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-2 col-md-12 lh-lg footer-hover">
+                {{-- <div class="col-lg-2 col-md-12 lh-lg footer-hover">
                     <h5 class="mt-3 mb-0 text-white mb-xl-3 fw-normal mt-xl-0">
                         {{ @$footerTitle->footer_grid_four_title }}</h5>
                     <div class="text-white">
@@ -93,7 +93,7 @@
                                 href="{{ $link->url }}">{{ $link->name }}</a><br>
                         @endforeach
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
 
