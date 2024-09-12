@@ -4,8 +4,7 @@
     @endphp
 
     <nav class="shadow-sm navbar bg-light sticky-top">
-
-        <div class="p-3 mx-auto wrapper d-flex align-items-center w-100">
+        <div class="container-fluid p-3 mx-auto d-flex align-items-center w-100">
             <div class="header-logo me-5">
                 <a class="" href="{{ url('/') }}">
                     <img src="{{ asset('uploads/web-logo1.png') }}" alt="3D-Cakes Logo" class="img-fluid" />
@@ -71,11 +70,12 @@
                     </a>
                 </li> --}}
                 <li class="nav-item">
-                    <a class="nav-link ms-3 rounded-1" href="{{ route('login') }}"><i class="far fa-user me-3"></i></a>
+                    <a class="nav-link ms-3 rounded-1 fs-5" href="{{ route('login') }}"><i
+                            class="far fa-user me-3"></i></a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link d-inline ms-3 rounded-1 position-relative transitions" href="#"
+                    <a class="nav-link d-inline ms-3 rounded-1 position-relative transitions fs-5" href="#"
                         data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="far fa-heart me-3"></i></a>
                 </li>
             </ul>

@@ -96,7 +96,7 @@
         TOPBAR START
     ==============================-->
     <div class="header-top">
-        <section class="px-3 mx-auto wrapper w-100">
+        <section class="container-fluid px-3 mx-auto w-100">
             <div class="py-2 row align-items-center">
                 <div class="m-0 col-md-7">
                     <div class="row">
@@ -109,7 +109,7 @@
                     </div>
                 </div>
                 <div class="col-md-5">
-                    <ul class="m-0 text-uppercase d-none d-md-flex d-lg-flex justify-content-end">
+                    <ul class="m-0 d-none d-md-flex d-lg-flex justify-content-end">
                         <li class="pe-3"><a class="text-decoration-none black text-dark" href="/login">My
                                 Account</a></li>
                         <li class="pe-3"><a class="text-decoration-none black text-dark" href="/">My
