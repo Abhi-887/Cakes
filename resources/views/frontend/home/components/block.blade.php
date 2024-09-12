@@ -9,12 +9,13 @@
                 @if ($slider->show_at_home == $selectedOption || is_null($selectedOption) || $selectedOption === '')
                     <div class="col-12 col-md-6 col-lg-4 my-3">
                         <a class="w-100" href="{{ $slider->button_link }}">
-                            <div class="image-block position-relative overflow-hidden rounded-3">
+                            <div
+                                class="image-block position-relative overflow-hidden rounded-3 d-flex justify-content-center align-items-center">
                                 <img src="{{ asset($slider->image) }}" class="img-fluid w-100 h-100"
                                     alt="{{ $slider->title }}">
-                                <div class="">
-                                    <h3 class="overlay-text text-white text-center">{{ $slider->title }}</h3>
-                                </div>
+                                <h3 class="overlay-text text-white text-center position-absolute">
+                                    {{ $slider->title }}
+                                </h3>
                             </div>
                         </a>
                     </div>
@@ -23,6 +24,7 @@
         </div>
     </div>
 </section>
+
 
 <style>
     /* .image-block {
