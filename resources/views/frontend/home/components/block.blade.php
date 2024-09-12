@@ -12,8 +12,7 @@
                             <div class="image-block position-relative overflow-hidden rounded-3">
                                 <img src="{{ asset($slider->image) }}" class="img-fluid w-100 h-100"
                                     alt="{{ $slider->title }}">
-                                <div
-                                    class="overlay image-textblock position-absolute w-100 h-100 d-flex top-0 start-0 justify-content-center align-items-center">
+                                <div class="">
                                     <h3 class="overlay-text text-white text-center">{{ $slider->title }}</h3>
                                 </div>
                             </div>
@@ -26,7 +25,7 @@
 </section>
 
 <style>
-    .image-block {
+    /* .image-block {
         height: 300px;
     }
 
@@ -49,5 +48,5 @@
     .image-block:hover .overlay-text {
         transform: translateY(0);
         opacity: 1;
-    }
+    } */
 </style>
