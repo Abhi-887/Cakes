@@ -14,11 +14,11 @@
 
 
             <div class="text-center">
-                <h2 class="text-black">Subscribe FREE to 3D Cakes Special Offers</h2>
+                {{-- <h2 class="text-black">Subscribe FREE to 3D Cakes Special Offers</h2> --}}
+                <h2 class="text-black">Join our mailing list</h2>
                 <p class="mt-3 footer-color">Receive discount codes, view our latest designs and find out about special
                     offers</p>
             </div>
-
 
             <form class="mt-4 subscribe_form position-relative row justify-content-center">
                 @csrf
