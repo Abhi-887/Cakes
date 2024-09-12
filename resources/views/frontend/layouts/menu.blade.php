@@ -159,12 +159,13 @@
                 </li> --}}
 
                 <li>
-                    <a class="border ms-3 fs-5" href="{{ route('login') }}"><i class="fas fa-user"></i>Account</a>
+                    <a class="border px-3 py-2 ms-3 fs-5" href="{{ route('login') }}"><i
+                            class="fas fa-user"></i>Account</a>
                 </li>
 
                 <li>
-                    <a class="border common_btn d-inline ms-3 position-relative fw-semibold transitions" href="#"
-                        data-bs-toggle="modal" data-bs-target="#staticBackdrop">Wishlist<i
+                    <a class="border common_btn d-inline px-3 py-2 ms-3 position-relative fw-semibold transitions"
+                        href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Wishlist<i
                             class="fa-regular fa-heart"></i></a>
                 </li>
             </ul>
