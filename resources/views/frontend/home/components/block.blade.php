@@ -32,6 +32,11 @@
         position: relative;
     }
 
+    .image-block:hover .gradient-overlay {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+        transition: 0.7s ease;
+    }
+
     .gradient-overlay {
         position: absolute;
         top: 0;
@@ -39,15 +44,9 @@
         width: 100%;
         height: 100%;
         background: linear-gradient(to bottom, rgba(0, 0, 0, 0.19), rgba(0, 0, 0, 0.19));
-        transition: 0.8s ease;
+        transition: 0.7s ease;
         z-index: 1;
     }
-
-    .image-block:hover .gradient-overlay {
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)) !important;
-        transition: 0.8s ease;
-    }
-
 
     .overlay-text {
         color: #ffffffd1 !important;
