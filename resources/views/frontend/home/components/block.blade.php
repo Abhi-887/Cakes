@@ -14,7 +14,7 @@
                                 <img src="{{ asset($slider->image) }}" class="img-fluid w-100 h-100"
                                     alt="{{ $slider->title }}">
                                 <div class="gradient-overlay position-absolute w-100 h-100"></div>
-                                <h3 class="overlay-text text-center position-absolute transition">
+                                <h3 class="overlay-text text-center position-absolute">
                                     {{ $slider->title }}
                                 </h3>
                             </div>
@@ -38,7 +38,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.19), rgba(0, 0, 0, 0.19));
         z-index: 1;
     }
 
@@ -47,8 +47,9 @@
         color: #b19f9f !important;
     }
 
-    .overlay-text:hover {
+    .image-block:hover .overlay-text {
         color: #fffdfd !important;
+        transition: 0.6s ease-in-out;
     }
 
     /* .image-block {
