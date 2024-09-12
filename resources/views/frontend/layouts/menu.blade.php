@@ -5,8 +5,8 @@
 
     <nav class="shadow-sm navbar bg-light sticky-top">
 
-        <div class="p-3 mx-auto wrapper d-flex justify-content-between align-items-center w-100">
-            <div class="header-logo me-3">
+        <div class="p-3 mx-auto wrapper d-flex align-items-center w-100">
+            <div class="header-logo me-5">
                 <a class="" href="{{ url('/') }}">
                     <img src="{{ asset('uploads/web-logo1.png') }}" alt="3D-Cakes Logo" class="img-fluid" />
                 </a>
@@ -120,7 +120,7 @@
                 </div>
             </div>
 
-            <ul class="flex-wrap menu_icon d-none d-xxl-flex align-items-center">
+            <ul class="flex-wrap menu_icon d-none d-xxl-flex align-items-center ms-auto">
                 <li>
                     <a href="#" class="menu_search me-4 position-relative fw-semibold fs-5 transitions"><i
                             class="far fa-search"></i></a>
