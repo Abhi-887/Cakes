@@ -44,6 +44,7 @@
 
     .overlay-text {
         color: #ffffffd1 !important;
+        z-index: 2;
     }
 
     .image-block:hover .overlay-text {
