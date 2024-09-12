@@ -4,8 +4,9 @@
             <div class="row wow fadeInUp" data-wow-duration="1s">
                 <div class="m-auto text-center col-md-8 col-lg-7 col-xl-6">
                     <div class="fp__section_heading mb_25">
-                        <h4>Our Blogs</h4>
-                        <h2>Our Latest 3D Cakes Blogs</h2>
+                        {{-- <h4>Our Blogs</h4> --}}
+                        {{-- <h2>Our Latest 3D Cakes Blogs</h2> --}}
+                        <h2>Latest News</h2>
                     </div>
                 </div>
             </div>

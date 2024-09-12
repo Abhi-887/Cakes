@@ -47,9 +47,9 @@
     <div class="row wow fadeInUp" data-wow-duration="1s">
         <div class="col-md-8 col-lg-7 col-xl-6 m-auto text-center">
             <div class="fp__section_heading">
-                @if (!empty($sectionTitles['testimonial_top_title']))
+                {{-- @if (!empty($sectionTitles['testimonial_top_title']))
                     <h4>{{ $sectionTitles['testimonial_top_title'] }}</h4>
-                @endif
+                @endif --}}
                 @if (!empty($sectionTitles['testimonial_main_title']))
                     <h2>{{ $sectionTitles['testimonial_main_title'] }}</h2>
                 @endif
