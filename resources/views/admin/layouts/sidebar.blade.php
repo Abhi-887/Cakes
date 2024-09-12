@@ -133,7 +133,11 @@
             </a>
         </li>
 
-
+		<li class="{{ setSidebarActive(['admin.aboutus.*']) }}">
+            <a class="nav-link" href="{{ route('admin.aboutus.index') }}"><i class="far fa-regular fa-message"></i>
+                <span>About Section</span>
+            </a>
+        </li>
 
         <li class="{{ setSidebarActive(['admin.consultation.*']) }}">
             <a class="nav-link" href="{{ route('admin.consultation.index') }}"><i
