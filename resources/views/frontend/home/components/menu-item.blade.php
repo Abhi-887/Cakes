@@ -158,7 +158,7 @@
         <div class="m-auto text-center col-md-8 col-lg-7 col-xl-6">
             <div class="fp__section_heading">
                 {{-- <h4>3D Cakes</h4> --}}
-                <h2>Trending Now: Discover and Shop Our Most Popular Designs!</h2>
+                <h2>Trending Now: Shop Our Most Popular Trending Designs!</h2>
                 <p>Objectively pontificate quality models before intuitive information. Dramatically
                     recaptiualize multifunctional materials.</p>
             </div>
