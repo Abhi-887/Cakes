@@ -43,7 +43,6 @@
     }
 
     .overlay-text {
-        z-index: 2;
         color: #bcb3b3 !important;
     }
 
