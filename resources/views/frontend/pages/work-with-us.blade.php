@@ -8,8 +8,8 @@
         }
     </style>
     <!--=============================
-                                                                                                                BREADCRUMB START
-                                                                                                            ==============================-->
+                                                                                                                            BREADCRUMB START
+                                                                                                                        ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay py-5">
             <div class="container py-md-5 py-2">
@@ -24,11 +24,11 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                BREADCRUMB END
-                                                                                                            ==============================-->
+                                                                                                                            BREADCRUMB END
+                                                                                                                        ==============================-->
     <!--=============================
-                                                                                                               WE'RE HIRING! PAGE START
-                                                                                                            ==============================-->
+                                                                                                                           WE'RE HIRING! PAGE START
+                                                                                                                        ==============================-->
 
     {{-- <div class="container my-5">
         <div class="">
@@ -199,8 +199,8 @@
         </div>
 
         <div class="hiring mb-5 p-5">
-            <div class="row">
-                <div class="col-6 my-3">
+            <div class="row align-items-center">
+                <div class="col-md-6 my-3 my-md-0">
                     <div class="">
                         <div class="mb-3">
                             <h4>Part Time Front-of-House Assistant (Edinburgh) Wednesday - Friday</h4>
@@ -221,7 +221,7 @@
                     </div>
                 </div>
 
-                <div class="col-6 mb-3">
+                <div class="col-6 mb-3 my-md-0">
                     <div class="service-img">
                         <img class="image-fluid" src="{{ asset('uploads/customer-service.jpeg') }}" alt="">
                     </div>
@@ -230,14 +230,14 @@
         </div>
 
         <div class="hiring p-5">
-            <div class="row">
-                <div class="col-6 mb-3">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-3 my-md-0">
                     <div class="service-img">
                         <img class="image-fluid" src="{{ asset('uploads/delivery-partner.jpeg') }}" alt="">
                     </div>
                 </div>
 
-                <div class="col-6 my-3">
+                <div class="col-md-6 my-3 my-md-0">
                     <div class="">
                         <div class="mb-3">
                             <h4>Full Time Delivery Driver</h4>
@@ -374,6 +374,6 @@
         </form>
     </div>
     <!--=============================
-                                                                                                                 Application PAGE END
-                                                                                                            ==============================-->
+                                                                                                                             Application PAGE END
+                                                                                                                        ==============================-->
 @endsection
