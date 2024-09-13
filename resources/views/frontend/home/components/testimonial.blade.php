@@ -43,7 +43,7 @@
     }
 </style>
 
-<div class="container py-5">
+<div class="container pt-4 pb-5">
     <div class="row wow fadeInUp" data-wow-duration="1s">
         <div class="col-md-8 col-lg-7 col-xl-6 m-auto text-center">
             <div class="fp__section_heading">
@@ -64,7 +64,7 @@
     </div>
 
     <div class="testimonial-slider testimonialslickslider">
-        <div class="row my-5">
+        <div class="row my-2">
             @foreach ($testimonials as $testimonial)
                 <div class="col-md-4 mb-4">
                     <div class="testimonial rounded-3 m-3 p-5">
@@ -81,7 +81,7 @@
                                 {{-- <img class="rounded-circle me-3" src="{{ asset($testimonial->image) }}"
                                     alt="Profile Picture"> --}}
                                 <h4 class="text-light fw-semibold my-3 fs-4">{{ $testimonial->name }}</h4>
-                                <p class="text-light fs-6">{{ $testimonial->title }}</p>
+                                <p class="text-light fs-6 m-0">{{ $testimonial->title }}</p>
                             </div>
                         </div>
                     </div>
