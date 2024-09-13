@@ -43,27 +43,14 @@
     }
 
     .testimonial-content {
-        min-height: 150px;
+        min-height: 120px;
+        max-height: 120px;
         overflow-y: auto;
+        scrollbar-color: #ff9800;
     }
 
-    /* Customize scrollbar */
     .testimonial-content::-webkit-scrollbar {
-        width: 8px;
-    }
-
-    .testimonial-content::-webkit-scrollbar-track {
-        background: #f1f1f1;
-        /* Track background */
-    }
-
-    .testimonial-content::-webkit-scrollbar-thumb {
-        background-color: gold;
-        /* Scrollbar color */
-        border-radius: 10px;
-        /* Round scrollbar */
-        border: 3px solid transparent;
-        /* Space between scrollbar and track */
+        width: 3px;
     }
 </style>
 
