@@ -1,4 +1,4 @@
-<section class="pt-4 pb-md-5 fp__blog fp__blog2">
+<section class="py-5 fp__blog fp__blog2">
     <div class="">
         <div class="container">
             <div class="row wow fadeInUp" data-wow-duration="1s">
