@@ -8,8 +8,8 @@
         }
     </style>
     <!--=============================
-                        BREADCRUMB START
-                    ==============================-->
+                                                    BREADCRUMB START
+                                                ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay py-5">
             <div class="container py-md-5 py-2">
@@ -24,11 +24,11 @@
         </div>
     </section>
     <!--=============================
-                        BREADCRUMB END
-                    ==============================-->
+                                                    BREADCRUMB END
+                                                ==============================-->
     <!--=============================
-                       WE'RE HIRING! PAGE START
-                    ==============================-->
+                                                   WE'RE HIRING! PAGE START
+                                                ==============================-->
 
     {{-- <div class="container my-5">
         <div class="">
@@ -180,38 +180,56 @@
         </form>
     </div> --}}
 
+    <style>
+        .hiring {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
+        }
+    </style>
 
 
     <div class="container my-5">
-        <div class="mb-4">
-            <h5 class="text-center">To apply to join the team at 3D Cakes Edinburgh or 3D Cakes Milngavie, please complete
-                the application form below and hit the 'Submit Application' button. Please ensure that you select the job
-                reference(s) for all positions for which you wish to be considered (you may apply for more than one role).
-            </h5>
+        <div class="">
+            <h5>To apply to join the team at 3D Cakes Edinburgh or 3D Cakes Milngavie, please complete the application form
+                below and hit the 'Submit Application' button. Please ensure that you select the job reference(s) for all
+                positions for which you wish to be considered (you may apply for more than one role).</h5>
         </div>
 
         <div class="my-4">
-            <h3 class="text-center">Current Vacancies</h3>
+            <h3>Current vacancies are displayed below:</h3>
         </div>
 
-        <div class="card mb-4 shadow-sm">
-            <div class="card-body">
-                <h4 class="mb-3">Part Time Front-of-House Assistant (Edinburgh) Wednesday - Friday</h4>
+        <div class="row"></div>
+        <div class="col-6 my-3">
+            <div class="hiring">
+                <div class=" mb-3">
+                    <h4>Part Time Front-of-House Assistant (Edinburgh) Wednesday - Friday</h4>
+                </div>
                 <p><strong>Main Duties:</strong> Front-of-house customer service for coffees & cake slices, baking and cake
                     decorating (ideal candidate will have an enjoyment for baking and cake decorating). Have barista
                     training skills. Have knowledge of Food Handling and Food Hygiene requirements. Be able to maintain a
-                    calm demeanor in busy periods, and provide a consistently high standard of customer service.</p>
+                    calm demeanour in busy periods, and provide a consistently high standard of customer service.</p>
                 <p><strong>Working Hours & Wage:</strong> Wednesday - Friday 8.30am - 5pm, Job Type: Part-Time, £10.50 per
                     hour | Job Reference: EDIN10</p>
             </div>
         </div>
 
-        <div class="card mb-4 shadow-sm">
+        <div class="col-6 mb-3">
+            <div class="service-img">
+                <img class="img-fluid"
+                    src="https://img.freepik.com/free-photo/smiling-african-american-barista-uniform-giving-cup-coffee-his-client-trendy-coffee-shop_613910-21068.jpg?t=st=1726218281~exp=1726221881~hmac=fbb4c34c55c3e3e86e43a16c9a238e028cdbcf898ea4b3eff9c4a423daaba61a&w=1380"
+                    alt="">
+            </div>
+        </div>
+
+
+        <div class="card mb-3">
             <div class="card-body">
-                <h4 class="mb-3">Full Time Delivery Driver</h4>
+                <div class=" mb-3">
+                    <h4>Full Time Delivery Driver</h4>
+                </div>
                 <p><strong>Main Duties:</strong> Main duties will include delivery of cakes to customers in various
                     locations throughout Scotland. Van provided during working hours and business is covered for company
-                    van. Previous experience in a delivery driver role. Decant and stack reliable (for gas/trolley and
+                    van. Previous experience in a delivery driver role. Decant and stack reliable (for gas/trolly and
                     methodical). Be flexible as working days will vary per week depending on delivery requirements each
                     week.</p>
                 <p><strong>Other Information:</strong> Suitable candidates will have held a flat, clean UK driving license
@@ -221,55 +239,57 @@
             </div>
         </div>
 
-        <form action="{{ route('work-with-us.store') }}" method="POST" enctype="multipart/form-data"
-            class="bg-light p-4 rounded shadow-sm">
+        <form class="" action="{{ route('work-with-us.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
-            <div class="form-group mb-3">
-                <label for="jobReferences" class="form-label">Please select the Job Reference(s) for which you would like to
-                    apply:</label>
+            <div class="form-group mt-3">
+                <label class="mt-2">Please select the Job Reference(s) for which you would like to apply:</label>
                 @foreach ($errors->get('job_reference') as $message)
                     <div class="text-danger">{{ $message }}</div>
                 @endforeach
-                <div class="form-check">
+                <div class="form-check d-flex align-items-center">
                     <input class="form-check-input" type="checkbox" id="jobReference1" name="job_reference[]"
                         value="EDIN10">
-                    <label class="form-check-label" for="jobReference1">EDIN10: Part Time Front-of-House Assistant (Wed -
-                        Fri)</label>
+                    <label class="form-check-label ms-2" for="jobReference1">
+                        EDIN10: Part Time Front-of-House Assistant (Wed - Fri)
+                    </label>
                 </div>
-                <div class="form-check">
+                <div class="form-check d-flex align-items-center">
                     <input class="form-check-input" type="checkbox" id="jobReference2" name="job_reference[]"
                         value="DRIV4">
-                    <label class="form-check-label" for="jobReference2">DRIV4: Full Time Delivery Driver</label>
+                    <label class="form-check-label ms-2" for="jobReference2">
+                        DRIV4: Full Time Delivery Driver
+                    </label>
                 </div>
             </div>
 
-            <div class="form-group mb-3">
-                <label for="name" class="form-label">Name *</label>
+
+            <div class="form-group mt-3">
+                <label for="name" class="mb-2">Name *</label>
                 <input type="text" class="form-control" id="name" name="name">
                 @foreach ($errors->get('name') as $message)
                     <div class="text-danger">{{ $message }}</div>
                 @endforeach
             </div>
 
-            <div class="form-group mb-3">
-                <label for="email" class="form-label">Email Address *</label>
+            <div class="form-group mt-3">
+                <label for="email" class="mb-2">Email Address *</label>
                 <input type="email" class="form-control" id="email" name="email">
                 @foreach ($errors->get('email') as $message)
                     <div class="text-danger">{{ $message }}</div>
                 @endforeach
             </div>
 
-            <div class="form-group mb-3">
-                <label for="telephone" class="form-label">Telephone Number *</label>
+            <div class="form-group mt-3">
+                <label for="telephone" class="mb-2">Telephone Number *</label>
                 <input type="tel" class="form-control" id="telephone" name="telephone">
                 @foreach ($errors->get('telephone') as $message)
                     <div class="text-danger">{{ $message }}</div>
                 @endforeach
             </div>
 
-            <div class="form-group mb-3">
-                <label for="drivingLicense" class="form-label">Do you hold a valid UK driving license? *</label>
-                <select class="form-select" id="drivingLicense" name="driving_license">
+            <div class="form-group mt-3">
+                <label for="drivingLicense" class="mb-2">Do you hold a valid UK driving license? *</label>
+                <select class="form-control" id="drivingLicense" name="driving_license">
                     <option value="yes">Yes</option>
                     <option value="no">No</option>
                 </select>
@@ -278,8 +298,8 @@
                 @endforeach
             </div>
 
-            <div class="form-group mb-3">
-                <label for="whyIdeal" class="form-label">Please detail why you think you would be ideal for the role(s):
+            <div class="form-group mt-3">
+                <label for="whyIdeal" class="mb-2">Please detail why you think you would be ideal for the role(s):
                     *</label>
                 <textarea class="form-control" id="whyIdeal" name="why_ideal" rows="3"></textarea>
                 @foreach ($errors->get('why_ideal') as $message)
@@ -287,46 +307,45 @@
                 @endforeach
             </div>
 
-            <div class="form-group mb-3">
-                <label for="relevantExperience" class="form-label">Please detail any relevant experience that you feel would
-                    be beneficial for the role(s): *</label>
+            <div class="form-group mt-3">
+                <label for="relevantExperience" class="mb-2">Please detail any relevant experience that you feel would be
+                    beneficial for the role(s): *</label>
                 <textarea class="form-control" id="relevantExperience" name="relevant_experience" rows="3"></textarea>
                 @foreach ($errors->get('relevant_experience') as $message)
                     <div class="text-danger">{{ $message }}</div>
                 @endforeach
             </div>
 
-            <div class="form-group mb-3">
-                <label for="currentPosition" class="form-label">Length of time in current position *</label>
+            <div class="form-group mt-3">
+                <label for="currentPosition" class="mb-2">Length of time in current position *</label>
                 <input type="text" class="form-control" id="currentPosition" name="current_position_duration">
                 @foreach ($errors->get('current_position_duration') as $message)
                     <div class="text-danger">{{ $message }}</div>
                 @endforeach
             </div>
 
-            <div class="form-group mb-3">
-                <label for="portfolio" class="form-label">Examples of Your Work</label>
-                <input type="file" class="form-control" id="portfolio" name="portfolio" accept=".pdf">
+            <div class="form-group mt-3">
+                <label for="portfolio" class="mb-2">Examples of Your Work</label>
+                <input type="file" class="form-control-file" id="portfolio" name="portfolio" accept=".pdf">
                 @foreach ($errors->get('portfolio') as $message)
                     <div class="text-danger">{{ $message }}</div>
                 @endforeach
             </div>
 
-            <div class="form-group mb-3">
-                <label for="cv" class="form-label">Please attach your CV *</label>
-                <input type="file" class="form-control" id="cv" name="cv" accept=".pdf">
+            <div class="form-group mt-3">
+                <label for="cv" class="mb-2">Please attach your CV *</label>
+                <input type="file" class="form-control-file" id="cv" name="cv" accept=".pdf">
                 @foreach ($errors->get('cv') as $message)
                     <div class="text-danger">{{ $message }}</div>
                 @endforeach
             </div>
 
-            <div class="text-center">
-                <button type="submit" class="btn btn-primary">Submit Application</button>
+            <div class=" mt-4 text-center">
+                <button type="submit" class="common_btn v_submit_button">Submit Application</button>
             </div>
         </form>
     </div>
-
     <!--=============================
-                         Application PAGE END
-                    ==============================-->
+                                                     Application PAGE END
+                                                ==============================-->
 @endsection
