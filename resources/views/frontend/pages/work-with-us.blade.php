@@ -8,8 +8,8 @@
         }
     </style>
     <!--=============================
-                                                                                                                            BREADCRUMB START
-                                                                                                                        ==============================-->
+                                                                                                                                BREADCRUMB START
+                                                                                                                            ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay py-5">
             <div class="container py-md-5 py-2">
@@ -24,11 +24,11 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                            BREADCRUMB END
-                                                                                                                        ==============================-->
+                                                                                                                                BREADCRUMB END
+                                                                                                                            ==============================-->
     <!--=============================
-                                                                                                                           WE'RE HIRING! PAGE START
-                                                                                                                        ==============================-->
+                                                                                                                               WE'RE HIRING! PAGE START
+                                                                                                                            ==============================-->
 
     {{-- <div class="container my-5">
         <div class="">
@@ -292,6 +292,7 @@
 
             <div class="form-group mt-3">
                 <label for="name" class="mb-2">Name *</label>
+                <span><i class="far fa-caret-square-down" aria-hidden="true"></i></span>
                 <input type="text" class="form-control" id="name" name="name">
                 @foreach ($errors->get('name') as $message)
                     <div class="text-danger">{{ $message }}</div>
@@ -300,6 +301,7 @@
 
             <div class="form-group mt-3">
                 <label for="email" class="mb-2">Email Address *</label>
+                <span><i class="far fa-caret-square-down" aria-hidden="true"></i></span>
                 <input type="email" class="form-control" id="email" name="email">
                 @foreach ($errors->get('email') as $message)
                     <div class="text-danger">{{ $message }}</div>
@@ -308,6 +310,7 @@
 
             <div class="form-group mt-3">
                 <label for="telephone" class="mb-2">Telephone Number *</label>
+                <span><i class="far fa-caret-square-down" aria-hidden="true"></i></span>
                 <input type="tel" class="form-control" id="telephone" name="telephone">
                 @foreach ($errors->get('telephone') as $message)
                     <div class="text-danger">{{ $message }}</div>
@@ -316,6 +319,7 @@
 
             <div class="form-group mt-3">
                 <label for="drivingLicense" class="mb-2">Do you hold a valid UK driving license? *</label>
+                <span><i class="far fa-caret-square-down" aria-hidden="true"></i></span>
                 <select class="form-control" id="drivingLicense" name="driving_license">
                     <option value="yes">Yes</option>
                     <option value="no">No</option>
@@ -328,6 +332,7 @@
             <div class="form-group mt-3">
                 <label for="whyIdeal" class="mb-2">Please detail why you think you would be ideal for the role(s):
                     *</label>
+                <span><i class="far fa-caret-square-down" aria-hidden="true"></i></span>
                 <textarea class="form-control" id="whyIdeal" name="why_ideal" rows="3"></textarea>
                 @foreach ($errors->get('why_ideal') as $message)
                     <div class="text-danger">{{ $message }}</div>
@@ -338,6 +343,7 @@
                 <label for="relevantExperience" class="mb-2">Please detail any relevant experience that you feel would
                     be
                     beneficial for the role(s): *</label>
+                <span><i class="far fa-caret-square-down" aria-hidden="true"></i></span>
                 <textarea class="form-control" id="relevantExperience" name="relevant_experience" rows="3"></textarea>
                 @foreach ($errors->get('relevant_experience') as $message)
                     <div class="text-danger">{{ $message }}</div>
@@ -346,6 +352,7 @@
 
             <div class="form-group mt-3">
                 <label for="currentPosition" class="mb-2">Length of time in current position *</label>
+                <span><i class="far fa-caret-square-down" aria-hidden="true"></i></span>
                 <input type="text" class="form-control" id="currentPosition" name="current_position_duration">
                 @foreach ($errors->get('current_position_duration') as $message)
                     <div class="text-danger">{{ $message }}</div>
@@ -354,6 +361,7 @@
 
             <div class="form-group mt-3">
                 <label for="portfolio" class="mb-2">Examples of Your Work</label>
+                <span><i class="far fa-caret-square-down" aria-hidden="true"></i></span>
                 <input type="file" class="form-control-file" id="portfolio" name="portfolio" accept=".pdf">
                 @foreach ($errors->get('portfolio') as $message)
                     <div class="text-danger">{{ $message }}</div>
@@ -362,6 +370,7 @@
 
             <div class="form-group mt-3">
                 <label for="cv" class="mb-2">Please attach your CV *</label>
+                <span><i class="far fa-caret-square-down" aria-hidden="true"></i></span>
                 <input type="file" class="form-control-file" id="cv" name="cv" accept=".pdf">
                 @foreach ($errors->get('cv') as $message)
                     <div class="text-danger">{{ $message }}</div>
@@ -374,6 +383,6 @@
         </form>
     </div>
     <!--=============================
-                                                                                                                             Application PAGE END
-                                                                                                                        ==============================-->
+                                                                                                                                 Application PAGE END
+                                                                                                                            ==============================-->
 @endsection
