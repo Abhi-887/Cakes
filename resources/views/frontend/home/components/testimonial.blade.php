@@ -44,6 +44,7 @@
 
     .testimonial-content {
         min-height: 150px;
+        max-height: 150px;
         overflow-y: auto;
     }
 
