@@ -8,8 +8,8 @@
         }
     </style>
     <!--=============================
-                                                                                                                                                                                        BREADCRUMB START
-                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                            BREADCRUMB START
+                                                                                                                                                                                        ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay py-5">
             <div class="container py-md-5 py-2">
@@ -24,11 +24,11 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                        BREADCRUMB END
-                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                            BREADCRUMB END
+                                                                                                                                                                                        ==============================-->
     <!--=============================
-                                                                                                                                                                                       WE'RE HIRING! PAGE START
-                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                           WE'RE HIRING! PAGE START
+                                                                                                                                                                                        ==============================-->
 
     {{-- <div class="container my-5">
         <div class="">
@@ -271,10 +271,10 @@
                     enctype="multipart/form-data">
                     @csrf
                     <div class="form-group mt-3">
+                        <label class="mt-2">Please select the Job Reference(s) for which you would like to
+                            apply:</label>
                         <div class="row">
-                            <div class="col-md-6">
-                                <label class="mt-2">Please select the Job Reference(s) for which you would like to
-                                    apply:</label>
+                            <div class="col-md-6 my-2">
                                 @foreach ($errors->get('job_reference') as $message)
                                     <div class="text-danger">{{ $message }}</div>
                                 @endforeach
@@ -286,7 +286,7 @@
                                     </label>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6 my-2">
                                 <div class="form-check d-flex align-items-center">
                                     <input class="form-check-input" type="checkbox" id="jobReference2"
                                         name="job_reference[]" value="DRIV4">
@@ -298,7 +298,7 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-6 my-2">
                                 <label for="name">Name *</label>
                                 <div class="fp__contact_form_input form-group mt-3">
                                     <span><i class="far fa-caret-square-down" aria-hidden="true"></i></span>
@@ -309,7 +309,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 my-2">
                                 <label for="email">Email Address *</label>
                                 <div class="fp__contact_form_input form-group mt-3">
                                     <span><i class="far fa-caret-square-down" aria-hidden="true"></i></span>
@@ -320,7 +320,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 my-2">
                                 <label for="telephone">Telephone Number *</label>
                                 <div class="fp__contact_form_input form-group mt-3">
                                     <span><i class="far fa-caret-square-down" aria-hidden="true"></i></span>
@@ -331,7 +331,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 my-2">
                                 <label for="drivingLicense">Do you hold a valid UK driving license? *</label>
                                 <div class="fp__contact_form_input form-group mt-3">
                                     <span><i class="far fa-caret-square-down" aria-hidden="true"></i></span>
@@ -345,7 +345,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 my-2">
                                 <label for="whyIdeal">Please detail why you think you would be ideal for the role(s):
                                     *</label>
                                 <div class="fp__contact_form_input form-group mt-3">
@@ -357,7 +357,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 my-2">
                                 <label for="relevantExperience">Please detail any relevant experience that you feel would
                                     be
                                     beneficial
@@ -372,7 +372,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 my-2">
                                 <label for="currentPosition">Length of time in current position *</label>
                                 <div class="fp__contact_form_input form-group mt-3">
                                     <span><i class="far fa-caret-square-down" aria-hidden="true"></i></span>
@@ -384,7 +384,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 my-2">
                                 <label for="portfolio">Examples of Your Work</label>
                                 <div class="fp__contact_form_input form-group mt-3">
                                     <span><i class="far fa-caret-square-down" aria-hidden="true"></i></span>
@@ -396,7 +396,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-6 my-2">
                                 <label for="cv">Please attach your CV *</label>
                                 <div class="fp__contact_form_input form-group mt-3">
                                     <span><i class="far fa-caret-square-down" aria-hidden="true"></i></span>
@@ -409,7 +409,7 @@
                             </div>
                         </div>
 
-                        <div class=" mt-4 text-center">
+                        <div class="mt-4 text-center">
                             <button type="submit" class="rounded-1 px-3 py-2 v_submit_button">Submit Application</button>
                         </div>
                 </form>
@@ -417,6 +417,6 @@
         </div>
     </div>
     <!--=============================
-                                                                                                                                                                                         Application PAGE END
-                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                             Application PAGE END
+                                                                                                                                                                                        ==============================-->
 @endsection
