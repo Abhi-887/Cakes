@@ -64,7 +64,7 @@
     </div>
 
     <div class="testimonial-slider testimonialslickslider">
-        <div class="row my-5">
+        <div class="row my-3">
             @foreach ($testimonials as $testimonial)
                 <div class="col-md-4 mb-4">
                     <div class="testimonial rounded-3 m-3 p-5">
