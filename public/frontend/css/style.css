@@ -257,7 +257,8 @@ button {
 ============================*/
 
 .header-top {
-    background: #8badbd70;
+    /* background: #8badbd70; */
+    background: #008b8b;
 }
 
 .main_menu .menu_icon li a:hover {
