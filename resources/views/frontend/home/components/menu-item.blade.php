@@ -154,7 +154,7 @@
 </style>
 
 <div class="container pt-5">
-    <div class="row wow fadeInUp" data-wow-duration="1s">
+    <div class="row wow fadeInUp mt-md-5" data-wow-duration="1s">
         <div class="m-auto text-center col-md-8 col-lg-7 col-xl-6">
             <div class="fp__section_heading">
                 {{-- <h4>3D Cakes</h4> --}}
@@ -167,7 +167,7 @@
     </div>
 
     <div class="testimonial-slider popularfood slider">
-        <div class="mt-5 row">
+        <div class="row mt-3">
             @foreach ($categories as $category)
                 @php
                     $products = \App\Models\Product::where([
@@ -183,7 +183,7 @@
                 @endphp
 
                 @foreach ($products as $product)
-                    <div class="fp__menu_hover my-3 {{ $category->slug }}">
+                    <div class="fp__menu_hover {{ $category->slug }}">
                         <div class="m-3 card position-relative fp__menu_item rounded-3 slide-wrap">
                             <div class="fp__menu_item_img">
                                 <a href="{{ route('product.show', $product->slug) }}" class="title">

@@ -3,7 +3,7 @@
 @endphp
 
 <section class="py-5">
-    <div class="container">
+    <div class="container mt-md-5">
         <div class="row wow fadeInUp" data-wow-duration="1s">
             <div class="m-auto text-center col-md-8 col-lg-7 col-xl-6">
                 <div class="fp__section_heading">
