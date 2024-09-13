@@ -7,7 +7,7 @@
         <div class="row wow fadeInUp" data-wow-duration="1s">
             <div class="m-auto text-center col-md-8 col-lg-7 col-xl-6">
                 <div class="fp__section_heading">
-                    <h2>All Categories</h2>
+                    <h2>Explore Our Delicious Creations and Services</h2>
                 </div>
             </div>
         </div>

@@ -22,7 +22,7 @@
     }
 
     .cakecolor {
-        color: #90afc4 !important;
+        color: #ffffff !important;
     }
 
     .parallax-item {
