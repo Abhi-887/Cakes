@@ -41,6 +41,30 @@
     .testimonialslickslider .slick-prev {
         display: none !important;
     }
+
+    .testimonial-content {
+        min-height: 150px;
+        overflow-y: auto;
+    }
+
+    /* Customize scrollbar */
+    .testimonial-content::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .testimonial-content::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        /* Track background */
+    }
+
+    .testimonial-content::-webkit-scrollbar-thumb {
+        background-color: gold;
+        /* Scrollbar color */
+        border-radius: 10px;
+        /* Round scrollbar */
+        border: 3px solid transparent;
+        /* Space between scrollbar and track */
+    }
 </style>
 
 <div class="container pt-4 pb-5">
@@ -81,7 +105,7 @@
                                 {{-- <img class="rounded-circle me-3" src="{{ asset($testimonial->image) }}"
                                     alt="Profile Picture"> --}}
                                 <h4 class="text-light fw-semibold my-3 fs-4">{{ $testimonial->name }}</h4>
-                                <p class="text-light fs-6 m-0">{{ $testimonial->title }}</p>
+                                <p class="testimonial-content text-light fs-6 m-0">{{ $testimonial->title }}</p>
                             </div>
                         </div>
                     </div>
