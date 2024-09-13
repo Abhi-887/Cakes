@@ -46,26 +46,20 @@
         min-height: 120px;
         max-height: 120px;
         overflow-y: auto;
+        scrollbar-color: white gold;
     }
 
-    /* Customize scrollbar */
     .testimonial-content::-webkit-scrollbar {
         width: 6px;
-        background-color: gold !important;
     }
 
     .testimonial-content::-webkit-scrollbar-track {
         background: #f1f1f1;
-        /* Track background */
     }
 
     .testimonial-content::-webkit-scrollbar-thumb {
-        background-color: gold !important;
-        /* Scrollbar color */
         border-radius: 10px;
-        /* Round scrollbar */
         border: 3px solid transparent;
-        /* Space between scrollbar and track */
     }
 </style>
 
