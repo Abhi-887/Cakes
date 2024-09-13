@@ -7,7 +7,8 @@
             -moz-appearance: button;
         }
 
-        #jobReference1 {
+        #jobReference1,
+        #jobReference2 {
             padding: 0px !important;
             width: 40px !important;
             height: 40px !important;
@@ -17,14 +18,15 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
         }
 
-        #jobReference1:checked {
+        #jobReference1:checked,
+        #jobReference2:checked {
             background-color: #788a9f !important;
             border-color: #788a9f !important;
         }
     </style>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                    BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                                            BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                        ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay py-5">
             <div class="container py-md-5 py-2">
@@ -39,11 +41,11 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                    BREADCRUMB END
-                                                                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                                            BREADCRUMB END
+                                                                                                                                                                                                                                                                                                                        ==============================-->
     <!--=============================
-                                                                                                                                                                                                                                                                                                                   WE'RE HIRING! PAGE START
-                                                                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                                           WE'RE HIRING! PAGE START
+                                                                                                                                                                                                                                                                                                                        ==============================-->
 
     {{-- <div class="container my-5">
         <div class="">
@@ -196,7 +198,7 @@
     </div> --}}
 
     <section>
-        <div class="container my-5">
+        <div class="container my-5 pt-5">
             <h5>To apply to join the team at 3D Cakes Edinburgh or 3D Cakes Milngavie, please complete the
                 application
                 form
@@ -431,6 +433,6 @@
         </div>
     </section>
     <!--=============================
-                                                                         Application PAGE END
-                                                                        ==============================-->
+                                                                                 Application PAGE END
+                                                                                ==============================-->
 @endsection
