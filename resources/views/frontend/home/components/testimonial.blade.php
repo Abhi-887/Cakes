@@ -81,7 +81,7 @@
                                 {{-- <img class="rounded-circle me-3" src="{{ asset($testimonial->image) }}"
                                     alt="Profile Picture"> --}}
                                 <h4 class="text-light fw-semibold my-3 fs-4">{{ $testimonial->name }}</h4>
-                                <p class="text-light fs-6">{{ $testimonial->title }}</p>
+                                <p class="text-light fs-6 m-0">{{ $testimonial->title }}</p>
                             </div>
                         </div>
                     </div>
