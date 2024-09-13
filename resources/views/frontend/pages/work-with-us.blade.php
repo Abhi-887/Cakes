@@ -34,8 +34,8 @@
         }
     </style>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                            BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                            ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay py-5">
             <div class="container py-md-5 py-2">
@@ -50,11 +50,11 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                            BREADCRUMB END
-                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                BREADCRUMB END
+                                                                                                                                                                                                                                                                                                                                            ==============================-->
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                           WE'RE HIRING! PAGE START
-                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                               WE'RE HIRING! PAGE START
+                                                                                                                                                                                                                                                                                                                                            ==============================-->
 
     {{-- <div class="container my-5">
         <div class="">
@@ -338,7 +338,7 @@
                         <div class="col-md-6 my-3">
                             <label for="email">Email Address *</label>
                             <div class="fp__contact_form_input form-group mt-3">
-                                <span><i class="far fa-caret-square-down" aria-hidden="true"></i></span>
+                                <span><i class="fa-regular fa-envelope"></i></span>
                                 <input type="email" class="form-control" id="email" name="email">
                                 @foreach ($errors->get('email') as $message)
                                     <div class="text-danger">{{ $message }}</div>
@@ -349,7 +349,7 @@
                         <div class="col-md-6 my-3">
                             <label for="telephone">Telephone Number *</label>
                             <div class="fp__contact_form_input form-group mt-3">
-                                <span><i class="far fa-caret-square-down" aria-hidden="true"></i></span>
+                                <span><i class="fa-solid fa-phone"></i></span>
                                 <input type="tel" class="form-control" id="telephone" name="telephone">
                                 @foreach ($errors->get('telephone') as $message)
                                     <div class="text-danger">{{ $message }}</div>
@@ -360,7 +360,7 @@
                         <div class="col-md-6 my-3">
                             <label for="drivingLicense">Do you hold a valid UK driving license? *</label>
                             <div class="fp__contact_form_input form-group mt-3">
-                                <span><i class="far fa-caret-square-down" aria-hidden="true"></i></span>
+                                <span><i class="fa-regular fa-id-card"></i></span>
                                 <select class="form-control" id="drivingLicense" name="driving_license">
                                     <option value="yes">Yes</option>
                                     <option value="no">No</option>
@@ -375,7 +375,7 @@
                             <label for="whyIdeal">Please detail why you think you would be ideal for the role(s):
                                 *</label>
                             <div class="fp__contact_form_input form-group mt-3">
-                                <span><i class="far fa-caret-square-down" aria-hidden="true"></i></span>
+                                <span><i class="fa-solid fa-user-tie"></i></span>
                                 <textarea class="form-control" id="whyIdeal" name="why_ideal" rows="3"></textarea>
                                 @foreach ($errors->get('why_ideal') as $message)
                                     <div class="text-danger">{{ $message }}</div>
@@ -413,7 +413,7 @@
                         <div class="col-md-6 my-3">
                             <label for="portfolio">Examples of Your Work</label>
                             <div class="fp__contact_form_input form-group mt-3">
-                                <span><i class="far fa-caret-square-down" aria-hidden="true"></i></span>
+                                <span><i class="fa-regular fa-file"></i></span>
                                 <input type="file" class="form-control-file" id="portfolio" name="portfolio"
                                     accept=".pdf">
                                 @foreach ($errors->get('portfolio') as $message)
@@ -425,7 +425,7 @@
                         <div class="col-md-6 my-3">
                             <label for="cv">Please attach your CV *</label>
                             <div class="fp__contact_form_input form-group mt-3">
-                                <span><i class="far fa-caret-square-down" aria-hidden="true"></i></span>
+                                <span><i class="fa-regular fa-file"></i></span>
                                 <input type="file" class="form-control-file" id="cv" name="cv"
                                     accept=".pdf">
                                 @foreach ($errors->get('cv') as $message)
@@ -443,6 +443,6 @@
         </div>
     </section>
     <!--=============================
-                                                                                                 Application PAGE END
-                                                                                                ==============================-->
+                                                                                                     Application PAGE END
+                                                                                                    ==============================-->
 @endsection
