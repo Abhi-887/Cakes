@@ -14,6 +14,11 @@
             height: 40px !important;
         }
 
+        #jobReference1:focus,
+        #jobReference2:focus {
+            border-color: none !important;
+        }
+
         .hiring {
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
         }
@@ -29,8 +34,8 @@
         }
     </style>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                                                                                                                                        BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                    ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay py-5">
             <div class="container py-md-5 py-2">
@@ -45,11 +50,11 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                BREADCRUMB END
-                                                                                                                                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                                                                                                                                        BREADCRUMB END
+                                                                                                                                                                                                                                                                                                                                    ==============================-->
     <!--=============================
-                                                                                                                                                                                                                                                                                                                               WE'RE HIRING! PAGE START
-                                                                                                                                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                                                                                                                                       WE'RE HIRING! PAGE START
+                                                                                                                                                                                                                                                                                                                                    ==============================-->
 
     {{-- <div class="container my-5">
         <div class="">
@@ -202,7 +207,7 @@
     </div> --}}
 
     <section>
-        <div class="container my-5 pt-5">
+        <div class="container my-5">
             <h5>To apply to join the team at 3D Cakes Edinburgh or 3D Cakes Milngavie, please complete the
                 application
                 form
@@ -438,6 +443,6 @@
         </div>
     </section>
     <!--=============================
-                                                                                     Application PAGE END
-                                                                                    ==============================-->
+                                                                                             Application PAGE END
+                                                                                            ==============================-->
 @endsection
