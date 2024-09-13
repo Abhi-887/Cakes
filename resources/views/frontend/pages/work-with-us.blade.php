@@ -8,8 +8,8 @@
         }
     </style>
     <!--=============================
-                                                                                                                                                                                                                                                            BREADCRUMB START
-                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                    BREADCRUMB START
+                                                                                                                                                                                                                                                                ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay py-5">
             <div class="container py-md-5 py-2">
@@ -24,11 +24,11 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                            BREADCRUMB END
-                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                    BREADCRUMB END
+                                                                                                                                                                                                                                                                ==============================-->
     <!--=============================
-                                                                                                                                                                                                                                                           WE'RE HIRING! PAGE START
-                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                   WE'RE HIRING! PAGE START
+                                                                                                                                                                                                                                                                ==============================-->
 
     {{-- <div class="container my-5">
         <div class="">
@@ -424,6 +424,6 @@
         </div>
     </div>
     <!--=============================
-                 Application PAGE END
-                ==============================-->
+                         Application PAGE END
+                        ==============================-->
 @endsection
