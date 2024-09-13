@@ -8,8 +8,8 @@
         }
     </style>
     <!--=============================
-                                    BREADCRUMB START
-                                ==============================-->
+                    BREADCRUMB START
+                ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay py-5">
             <div class="container py-md-5 py-2">
@@ -24,11 +24,11 @@
         </div>
     </section>
     <!--=============================
-                                    BREADCRUMB END
-                                ==============================-->
+                    BREADCRUMB END
+                ==============================-->
     <!--=============================
-                                   WE'RE HIRING! PAGE START
-                                ==============================-->
+                   WE'RE HIRING! PAGE START
+                ==============================-->
 
     {{-- <div class="container my-5">
         <div class="">
@@ -265,28 +265,15 @@
 
             <div class="form-group mt-3">
                 <label for="telephone" class="mb-2">Telephone Number *</label>
-                <span><i class="far fa-caret-square-down" aria-hidden="true"></i></span>
                 <input type="tel" class="form-control" id="telephone" name="telephone">
                 @foreach ($errors->get('telephone') as $message)
                     <div class="text-danger">{{ $message }}</div>
                 @endforeach
             </div>
-            <i class="fa-solid fa-phone"></i>
-            {{-- <div class="form-group mt-3">
+
+            <div class="form-group mt-3">
                 <label for="drivingLicense" class="mb-2">Do you hold a valid UK driving license? *</label>
                 <select class="form-control" id="drivingLicense" name="driving_license">
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                </select>
-                @foreach ($errors->get('driving_license') as $message)
-                    <div class="text-danger">{{ $message }}</div>
-                @endforeach
-            </div> --}}
-            <div class="mt-2 fp__contact_form_input form-group">
-                <label for="drivingLicense" class="mb-2">Do you hold a valid UK driving license? *</label>
-                <span><i class="far fa-caret-square-down" aria-hidden="true"></i></span>
-                <select class="form-control" id="drivingLicense" name="driving_license">
-                    <option value="" selected="">-- Please Select --</option>
                     <option value="yes">Yes</option>
                     <option value="no">No</option>
                 </select>
@@ -343,6 +330,6 @@
         </form>
     </div>
     <!--=============================
-                                     Application PAGE END
-                                ==============================-->
+                     Application PAGE END
+                ==============================-->
 @endsection
