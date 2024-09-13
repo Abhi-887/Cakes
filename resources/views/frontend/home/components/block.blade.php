@@ -12,7 +12,7 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row mt-4">
             @foreach ($sliders2 as $slider)
                 @if ($slider->show_at_home == $selectedOption || is_null($selectedOption) || $selectedOption === '')
                     <div class="col-12 col-md-6 col-lg-4 my-2">
