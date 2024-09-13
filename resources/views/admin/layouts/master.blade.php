@@ -59,11 +59,21 @@
 </head>
 
 <body>
-    <div id="app">
-        <div class="main-wrapper main-wrapper-1">
-            <div class="navbar-bg"></div>
 
+    <div id="wrapper">
+        <!-- #page -->
+        <div id="page" class="">
+            <!-- layout-wrap -->
+           <div class="layout-wrap">
+                <!-- preload -->
+                <div id="preload" class="preload-container">
+                    <div class="preloading">
+                        <span></span>
+                    </div>
+                </div>
             @include('admin.layouts.sidebar')
+        </div>
+        <!-- /section-content-right -->
 
             <!-- Main Content -->
             <div class="main-content">
@@ -79,6 +89,9 @@
             </footer>
         </div>
     </div>
+
+
+
 
 
     <!-- General JS Scripts -->
