@@ -40,7 +40,7 @@
         </div>
 
         <div class="text-white footer-menu">
-            <div class="py-5 mx-auto wrapper w-100 row">
+            <div class="p-5 mx-auto wrapper w-100 row">
                 <div class="col-lg-3 col-md-12 footer-info d-flex justify-content-lg-center my-3 my-lg-0">
                     <div class="">
                         <h5 class="mt-2 mb-1 text-white mb-xl-3 fw-normal mt-xl-0">{{ @$footerInfo->name }}</h5>
@@ -112,7 +112,7 @@
 
 
         <div class="text-white footer-tile">
-            <div class="py-4 mx-auto wrapper w-100 row d-flex justify-content-center align-items-center">
+            <div class="py-4 px-5 mx-auto wrapper w-100 row d-flex justify-content-center align-items-center">
                 <div class="col-auto col-sm-7">
                     <span class="color-white ">© 3D Cakes. All Rights Reserved.</span>
                 </div>
