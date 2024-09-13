@@ -8,25 +8,9 @@
 
     </section>
 
-    {{-- <section class="section">
 
-        <div class="card card-primary">
-            <div class="card-header">
-                <h4>Todays Orders</h4>
-            </div>
-            <div class="card-body">
-                {{ $dataTable->table() }}
-            </div>
-        </div>
-    </section> --}}
 
-    <section>
-        <div class="section-content-right">
 
-            <!-- main-content -->
-
-            <!-- main-content-wrap -->
-            <div class="main-content-inner">
                 <!-- main-content-wrap -->
                 <div class="main-content-wrap">
                     <div class="tf-section-4 mb-30">
@@ -1083,660 +1067,656 @@
                         </div>
                         <!-- /new-comment -->
                     </div>
-                </div>
-                <!-- /main-content-wrap -->
-            </div>
-            <!-- /main-content-wrap -->
-
-
-            <!-- /main-content -->
-        </div>
-    </section>
-
-    <div class="row">
-        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-            <div class="card card-statistic-1">
-                <div class="card-icon bg-primary">
-                    <i class="fas fa-cart-plus"></i>
-                </div>
-                <div class="card-wrap">
-                    <div class="card-header">
-                        <h4>Todays Orders</h4>
-                    </div>
-                    <div class="card-body">
-                        {{ $todaysOrders }}
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-            <div class="card card-statistic-1">
-                <div class="card-icon bg-danger">
-                    <i class="fas fa-dollar-sign"></i>
-                </div>
-                <div class="card-wrap">
-                    <div class="card-header">
-                        <h4>Todays Earnings</h4>
-                    </div>
-                    <div class="card-body">
-                        {{ currencyPosition($todaysEarnings) }}
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-            <div class="card card-statistic-1">
-                <div class="card-icon bg-primary">
-                    <i class="fas fa-cart-plus"></i>
-                </div>
-                <div class="card-wrap">
-                    <div class="card-header">
-                        <h4>This Month Orders</h4>
-                    </div>
-                    <div class="card-body">
-                        {{ $thisMonthsOrders }}
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-            <div class="card card-statistic-1">
-                <div class="card-icon bg-danger">
-                    <i class="fas fa-dollar-sign"></i>
-                </div>
-                <div class="card-wrap">
-                    <div class="card-header">
-                        <h4>This Months Earnings</h4>
-                    </div>
-                    <div class="card-body">
-                        {{ currencyPosition($thisMonthsEarnings) }}
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-            <div class="card card-statistic-1">
-                <div class="card-icon bg-primary">
-                    <i class="fas fa-cart-plus"></i>
-                </div>
-                <div class="card-wrap">
-                    <div class="card-header">
-                        <h4>This Year Orders</h4>
-                    </div>
-                    <div class="card-body">
-                        {{ $thisYearOrders }}
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-            <div class="card card-statistic-1">
-                <div class="card-icon bg-danger">
-                    <i class="fas fa-dollar-sign"></i>
-                </div>
-                <div class="card-wrap">
-                    <div class="card-header">
-                        <h4>This Year Earnings</h4>
-                    </div>
-                    <div class="card-body">
-                        {{ currencyPosition($thisYearEarnings) }}
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-            <div class="card card-statistic-1">
-                <div class="card-icon bg-primary">
-                    <i class="fas fa-cart-plus"></i>
-                </div>
-                <div class="card-wrap">
-                    <div class="card-header">
-                        <h4>Total Orders</h4>
-                    </div>
-                    <div class="card-body">
-                        {{ $totalOrders }}
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-            <div class="card card-statistic-1">
-                <div class="card-icon bg-danger">
-                    <i class="fas fa-dollar-sign"></i>
-                </div>
-                <div class="card-wrap">
-                    <div class="card-header">
-                        <h4>Total Earnings</h4>
-                    </div>
-                    <div class="card-body">
-                        {{ currencyPosition($totalEarnings) }}
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-            <div class="card card-statistic-1">
-                <div class="card-icon bg-primary">
-                    <i class="fas fa-users"></i>
-                </div>
-                <div class="card-wrap">
-                    <div class="card-header">
-                        <h4>Total Users</h4>
-                    </div>
-                    <div class="card-body">
-                        {{ $totalUsers }}
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-            <div class="card card-statistic-1">
-                <div class="card-icon bg-danger">
-                    <i class="fas fa-user-shield"></i>
-                </div>
-                <div class="card-wrap">
-                    <div class="card-header">
-                        <h4>Total Admins</h4>
-                    </div>
-                    <div class="card-body">
-                        {{ $totalAdmins }}
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-            <div class="card card-statistic-1">
-                <div class="card-icon bg-primary">
-                    <i class="fas fa-th"></i>
-                </div>
-                <div class="card-wrap">
-                    <div class="card-header">
-                        <h4>Total Products</h4>
-                    </div>
-                    <div class="card-body">
-                        {{ $totalProducts }}
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-            <div class="card card-statistic-1">
-                <div class="card-icon bg-danger">
-                    <i class="fas fa-rss"></i>
-                </div>
-                <div class="card-wrap">
-                    <div class="card-header">
-                        <h4>Total Blogs</h4>
-                    </div>
-                    <div class="card-body">
-                        {{ $totalBlogs }}
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-    </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="order_modal" tabindex="-1" role="dialog" aria-labelledby="order_modal"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form action="" method="POST" class="order_status_form">
-                        @csrf
-                        @method('PUT')
-                        <div class="form-group">
-                            <label for="">Payment Status</label>
-                            <select class="form-control payment_status" name="payment_status" id="">
-                                <option value="pending">Pending</option>
-                                <option value="completed">Completed</option>
-                            </select>
-
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                            <div class="card card-statistic-1">
+                                <div class="card-icon bg-primary">
+                                    <i class="fas fa-cart-plus"></i>
+                                </div>
+                                <div class="card-wrap">
+                                    <div class="card-header">
+                                        <h4>Todays Orders</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        {{ $todaysOrders }}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="">Order Status</label>
-                            <select class="form-control order_status" name="order_status" id="">
-                                <option value="pending">Pending</option>
-                                <option value="in_process">In Process</option>
-                                <option value="delivered">Delivered</option>
-                                <option value="declined">Declined</option>
-
-                            </select>
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                            <div class="card card-statistic-1">
+                                <div class="card-icon bg-danger">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                                <div class="card-wrap">
+                                    <div class="card-header">
+                                        <h4>Todays Earnings</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        {{ currencyPosition($todaysEarnings) }}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary submit_btn">Save changes</button>
+
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                            <div class="card card-statistic-1">
+                                <div class="card-icon bg-primary">
+                                    <i class="fas fa-cart-plus"></i>
+                                </div>
+                                <div class="card-wrap">
+                                    <div class="card-header">
+                                        <h4>This Month Orders</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        {{ $thisMonthsOrders }}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <h3>System Notifications</h3>
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                            <div class="card card-statistic-1">
+                                <div class="card-icon bg-danger">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                                <div class="card-wrap">
+                                    <div class="card-header">
+                                        <h4>This Months Earnings</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        {{ currencyPosition($thisMonthsEarnings) }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-    <!-- Server Status -->
-    <div>
-        <h4>Server Status</h4>
-        @if ($serverStatus)
-            <span style="color: green;">Server is running smoothly</span>
-        @else
-            <span style="color: red;">Server is down!</span>
-        @endif
-    </div>
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                            <div class="card card-statistic-1">
+                                <div class="card-icon bg-primary">
+                                    <i class="fas fa-cart-plus"></i>
+                                </div>
+                                <div class="card-wrap">
+                                    <div class="card-header">
+                                        <h4>This Year Orders</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        {{ $thisYearOrders }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-    <div class="container mt-4">
-        <div class="row">
-            <!-- Orders by Status -->
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="card-title">Orders by Status</h5>
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                            <div class="card card-statistic-1">
+                                <div class="card-icon bg-danger">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                                <div class="card-wrap">
+                                    <div class="card-header">
+                                        <h4>This Year Earnings</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        {{ currencyPosition($thisYearEarnings) }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                            <div class="card card-statistic-1">
+                                <div class="card-icon bg-primary">
+                                    <i class="fas fa-cart-plus"></i>
+                                </div>
+                                <div class="card-wrap">
+                                    <div class="card-header">
+                                        <h4>Total Orders</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        {{ $totalOrders }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                            <div class="card card-statistic-1">
+                                <div class="card-icon bg-danger">
+                                    <i class="fas fa-dollar-sign"></i>
+                                </div>
+                                <div class="card-wrap">
+                                    <div class="card-header">
+                                        <h4>Total Earnings</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        {{ currencyPosition($totalEarnings) }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                            <div class="card card-statistic-1">
+                                <div class="card-icon bg-primary">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="card-wrap">
+                                    <div class="card-header">
+                                        <h4>Total Users</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        {{ $totalUsers }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                            <div class="card card-statistic-1">
+                                <div class="card-icon bg-danger">
+                                    <i class="fas fa-user-shield"></i>
+                                </div>
+                                <div class="card-wrap">
+                                    <div class="card-header">
+                                        <h4>Total Admins</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        {{ $totalAdmins }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                            <div class="card card-statistic-1">
+                                <div class="card-icon bg-primary">
+                                    <i class="fas fa-th"></i>
+                                </div>
+                                <div class="card-wrap">
+                                    <div class="card-header">
+                                        <h4>Total Products</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        {{ $totalProducts }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                            <div class="card card-statistic-1">
+                                <div class="card-icon bg-danger">
+                                    <i class="fas fa-rss"></i>
+                                </div>
+                                <div class="card-wrap">
+                                    <div class="card-header">
+                                        <h4>Total Blogs</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        {{ $totalBlogs }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
                     </div>
-                    <div class="card-body">
-                        <canvas id="ordersByStatusChart"></canvas>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="order_modal" tabindex="-1" role="dialog" aria-labelledby="order_modal"
+                        aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="" method="POST" class="order_status_form">
+                                        @csrf
+                                        @method('PUT')
+                                        <div class="form-group">
+                                            <label for="">Payment Status</label>
+                                            <select class="form-control payment_status" name="payment_status" id="">
+                                                <option value="pending">Pending</option>
+                                                <option value="completed">Completed</option>
+                                            </select>
+
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="">Order Status</label>
+                                            <select class="form-control order_status" name="order_status" id="">
+                                                <option value="pending">Pending</option>
+                                                <option value="in_process">In Process</option>
+                                                <option value="delivered">Delivered</option>
+                                                <option value="declined">Declined</option>
+
+                                            </select>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-primary submit_btn">Save changes</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <!-- Site Traffic -->
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="card-title">Site Traffic</h5>
+                    <h3>System Notifications</h3>
+
+                    <!-- Server Status -->
+                    <div>
+                        <h4>Server Status</h4>
+                        @if ($serverStatus)
+                            <span style="color: green;">Server is running smoothly</span>
+                        @else
+                            <span style="color: red;">Server is down!</span>
+                        @endif
                     </div>
-                    <div class="card-body">
-                        <canvas id="trafficChart"></canvas>
+
+                    <div class="container mt-4">
+                        <div class="row">
+                            <!-- Orders by Status -->
+                            <div class="col-md-6 mb-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5 class="card-title">Orders by Status</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <canvas id="ordersByStatusChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Site Traffic -->
+                            <div class="col-md-6 mb-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5 class="card-title">Site Traffic</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <canvas id="trafficChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <!-- Product Categories -->
+                            <div class="col-md-6 mb-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5 class="card-title">Product Categories</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <canvas id="categoriesChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Out of Stock Products -->
+                            <div class="col-md-6 mb-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5 class="card-title">Out of Stock Products</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul class="list-group">
+                                            @foreach($outOfStockProducts as $product)
+                                                <li class="list-group-item">
+                                                    {{ $product->name }}
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <!-- Low Stock Products -->
+                            <div class="col-md-6 mb-4">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5 class="card-title">Low Stock Products</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul class="list-group">
+                                            @foreach($lowStockProducts as $product)
+                                                <li class="list-group-item">
+                                                    {{ $product->name }} - {{ $product->quantity }} in stock
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="row">
-            <!-- Product Categories -->
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="card-title">Product Categories</h5>
+                    <div class="col-md-6 mb-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title">Top-Selling Products</h5>
+                            </div>
+                            <div class="card-body">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Product Name</th>
+                                            <th>Quantity Sold</th>
+                                            <th>Revenue Generated</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($topSellingProducts as $product)
+                                            <tr>
+                                                <td>{{ $product->product_name }}</td>
+                                                <td>{{ $product->total_qty }}</td>
+                                                <td>${{ number_format($product->total_revenue, 2) }}</td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <canvas id="categoriesChart"></canvas>
+
+                    <div class="col-md-12 mb-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title">Low Stock Alerts</h5>
+                            </div>
+                            <div class="card-body">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Product Name</th>
+                                            <th>Available Quantity</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($lowStockAlerts as $product)
+                                            <tr>
+                                                <td>{{ $product->name }}</td>
+                                                <td>{{ $product->quantity }}</td>
+                                                <td>
+                                                    @if ($product->quantity == 0)
+                                                        <span class="text-danger">Out of Stock</span>
+                                                    @else
+                                                        <span class="text-warning">Low Stock</span>
+                                                    @endif
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <!-- Out of Stock Products -->
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="card-title">Out of Stock Products</h5>
+                    <div>
+                        <h3>Top Customers</h3>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Customer Name</th>
+                                    <th>Total Purchases</th>
+                                    <th>Total Spent</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($topCustomers as $customer)
+                                    <tr>
+                                        <td>{{ $customer->name }}</td>
+                                        <td>{{ $customer->total_purchases }}</td>
+                                        <td>${{ number_format($customer->total_spent, 2) }}</td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
                     </div>
-                    <div class="card-body">
-                        <ul class="list-group">
-                            @foreach($outOfStockProducts as $product)
-                                <li class="list-group-item">
-                                    {{ $product->name }}
-                                </li>
-                            @endforeach
-                        </ul>
+                    <div>
+                        <h3>New Customers (Last Week)</h3>
+                        <p>{{ $newCustomers }}</p>
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <!-- Low Stock Products -->
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="card-title">Low Stock Products</h5>
+                    <div>
+                        <h3>Total Customers</h3>
+                        <p>{{ $totalCustomers }}</p>
                     </div>
-                    <div class="card-body">
-                        <ul class="list-group">
-                            @foreach($lowStockProducts as $product)
-                                <li class="list-group-item">
-                                    {{ $product->name }} - {{ $product->quantity }} in stock
-                                </li>
-                            @endforeach
-                        </ul>
+
+
+
+                    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                    <script>
+                        var ctx = document.getElementById('categoriesChart').getContext('2d');
+                        var categoriesChart = new Chart(ctx, {
+                            type: 'doughnut',
+                            data: {
+                                labels: @json($categoryLabels),
+                                datasets: [{
+                                    data: @json($categoryData),
+                                    backgroundColor: [
+                                        'rgba(255, 99, 132, 0.2)',
+                                        'rgba(54, 162, 235, 0.2)',
+                                        'rgba(255, 206, 86, 0.2)',
+                                        'rgba(75, 192, 192, 0.2)',
+                                        'rgba(153, 102, 255, 0.2)',
+                                        'rgba(255, 159, 64, 0.2)'
+                                    ],
+                                    borderColor: [
+                                        'rgba(255, 99, 132, 1)',
+                                        'rgba(54, 162, 235, 1)',
+                                        'rgba(255, 206, 86, 1)',
+                                        'rgba(75, 192, 192, 1)',
+                                        'rgba(153, 102, 255, 1)',
+                                        'rgba(255, 159, 64, 1)'
+                                    ],
+                                    borderWidth: 1
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                plugins: {
+                                    legend: {
+                                        position: 'top',
+                                    },
+                                    tooltip: {
+                                        callbacks: {
+                                            label: function(tooltipItem) {
+                                                return tooltipItem.label + ': ' + tooltipItem.raw;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        });
+                    </script>
+
+
+
+
+                    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                    <script>
+                        var ctx = document.getElementById('ordersByStatusChart').getContext('2d');
+                        var ordersByStatusChart = new Chart(ctx, {
+                            type: 'doughnut', // or 'pie'
+                            data: {
+                                labels: {!! json_encode($ordersByStatus->keys()) !!},
+                                datasets: [{
+                                    label: 'Orders by Status',
+                                    data: {!! json_encode($ordersByStatus->values()) !!},
+                                    backgroundColor: [
+                                        'rgba(255, 99, 132, 0.2)',
+                                        'rgba(54, 162, 235, 0.2)',
+                                        'rgba(255, 206, 86, 0.2)',
+                                        'rgba(75, 192, 192, 0.2)',
+                                        'rgba(153, 102, 255, 0.2)',
+                                        'rgba(255, 159, 64, 0.2)'
+                                    ],
+                                    borderColor: [
+                                        'rgba(255, 99, 132, 1)',
+                                        'rgba(54, 162, 235, 1)',
+                                        'rgba(255, 206, 86, 1)',
+                                        'rgba(75, 192, 192, 1)',
+                                        'rgba(153, 102, 255, 1)',
+                                        'rgba(255, 159, 64, 1)'
+                                    ],
+                                    borderWidth: 1
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                            }
+                        });
+                    </script>
+
+
+
+
+
+                    <!-- Conversion Rate -->
+                    <div>
+                        <h3>Conversion Rate</h3>
+                        <p>{{ number_format($conversionRate, 2) }}%</p>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="col-md-6 mb-4">
-        <div class="card">
-            <div class="card-header">
-                <h5 class="card-title">Top-Selling Products</h5>
-            </div>
-            <div class="card-body">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Product Name</th>
-                            <th>Quantity Sold</th>
-                            <th>Revenue Generated</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($topSellingProducts as $product)
-                            <tr>
-                                <td>{{ $product->product_name }}</td>
-                                <td>{{ $product->total_qty }}</td>
-                                <td>${{ number_format($product->total_revenue, 2) }}</td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
+                    <!-- Bounce Rate -->
+                    <div>
+                        <h3>Bounce Rate</h3>
+                        <p>{{ number_format($bounceRate, 2) }}%</p>
+                    </div>
 
-    <div class="col-md-12 mb-4">
-        <div class="card">
-            <div class="card-header">
-                <h5 class="card-title">Low Stock Alerts</h5>
-            </div>
-            <div class="card-body">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Product Name</th>
-                            <th>Available Quantity</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($lowStockAlerts as $product)
-                            <tr>
-                                <td>{{ $product->name }}</td>
-                                <td>{{ $product->quantity }}</td>
-                                <td>
-                                    @if ($product->quantity == 0)
-                                        <span class="text-danger">Out of Stock</span>
-                                    @else
-                                        <span class="text-warning">Low Stock</span>
-                                    @endif
-                                </td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
+                    <!-- Average Session Duration -->
+                    <div>
+                        <h3>Average Session Duration</h3>
+                        <p>{{ number_format($averageSessionDuration, 2) }} minutes</p>
+                    </div>
 
-    <div>
-        <h3>Top Customers</h3>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Customer Name</th>
-                    <th>Total Purchases</th>
-                    <th>Total Spent</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($topCustomers as $customer)
-                    <tr>
-                        <td>{{ $customer->name }}</td>
-                        <td>{{ $customer->total_purchases }}</td>
-                        <td>${{ number_format($customer->total_spent, 2) }}</td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
-    </div>
-    <div>
-        <h3>New Customers (Last Week)</h3>
-        <p>{{ $newCustomers }}</p>
-    </div>
-    <div>
-        <h3>Total Customers</h3>
-        <p>{{ $totalCustomers }}</p>
-    </div>
+                    <!-- JavaScript for Chart.js -->
+                    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                    <script>
+                        var ctx = document.getElementById('trafficChart').getContext('2d');
+                        var trafficChart = new Chart(ctx, {
+                            type: 'line',
+                            data: {
+                                labels: @json($trafficData->pluck('date')),
+                                datasets: [{
+                                    label: 'Number of Visitors',
+                                    data: @json($trafficData->pluck('count')),
+                                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                                    borderColor: 'rgba(75, 192, 192, 1)',
+                                    borderWidth: 1
+                                }]
+                            },
+                            options: {
+                                scales: {
+                                    x: {
+                                        beginAtZero: true
+                                    },
+                                    y: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+                    </script>
+                    </div>
+                @endsection
 
-
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        var ctx = document.getElementById('categoriesChart').getContext('2d');
-        var categoriesChart = new Chart(ctx, {
-            type: 'doughnut',
-            data: {
-                labels: @json($categoryLabels),
-                datasets: [{
-                    data: @json($categoryData),
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: 'top',
-                    },
-                    tooltip: {
-                        callbacks: {
-                            label: function(tooltipItem) {
-                                return tooltipItem.label + ': ' + tooltipItem.raw;
+                @push('scripts')
+                    {{ $dataTable->scripts(attributes: ['type' => 'module']) }}
+                    {{--
+                    <script>
+                        var options = {
+                            chart: {
+                                type: 'line',
+                                height: 350
+                            },
+                            series: [{
+                                name: 'Sales',
+                                data: @json($salesData) // Pass data from controller
+                            }],
+                            xaxis: {
+                                categories: @json($salesCategories) // Pass categories (e.g., months)
                             }
                         }
-                    }
-                }
-            }
-        });
-    </script>
+
+                        var chart = new ApexCharts(document.querySelector("#line-chart-1"), options);
+                        chart.render();
+                    </script> --}}
 
 
+                    <script>
+                        $(document).ready(function() {
+                            var orderId = '';
 
+                            $(document).on('click', '.order_status_btn', function() {
+                                let id = $(this).data('id');
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        var ctx = document.getElementById('ordersByStatusChart').getContext('2d');
-        var ordersByStatusChart = new Chart(ctx, {
-            type: 'doughnut', // or 'pie'
-            data: {
-                labels: {!! json_encode($ordersByStatus->keys()) !!},
-                datasets: [{
-                    label: 'Orders by Status',
-                    data: {!! json_encode($ordersByStatus->values()) !!},
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-            }
-        });
-    </script>
+                                orderId = id;
 
+                                let paymentStatus = $('.payment_status option');
+                                let orderStatus = $('.order_status option');
 
+                                $.ajax({
+                                    method: 'GET',
+                                    url: '{{ route('admin.orders.status', ':id') }}'.replace(":id", id),
+                                    beforeSend: function() {
+                                        $('.submit_btn').prop('disabled', true);
+                                    },
+                                    success: function(response) {
+                                        paymentStatus.each(function() {
+                                            if ($(this).val() == response.payment_status) {
+                                                $(this).attr('selected', 'selected');
+                                            }
+                                        })
 
+                                        orderStatus.each(function() {
+                                            if ($(this).val() == response.order_status) {
+                                                $(this).attr('selected', 'selected');
+                                            }
+                                        })
 
+                                        $('.submit_btn').prop('disabled', false);
+                                    },
+                                    error: function(xhr, status, error) {
 
-    <!-- Conversion Rate -->
-    <div>
-        <h3>Conversion Rate</h3>
-        <p>{{ number_format($conversionRate, 2) }}%</p>
-    </div>
+                                    }
+                                })
+                            })
 
-    <!-- Bounce Rate -->
-    <div>
-        <h3>Bounce Rate</h3>
-        <p>{{ number_format($bounceRate, 2) }}%</p>
-    </div>
+                            $('.order_status_form').on('submit', function(e) {
+                                e.preventDefault();
+                                let formContent = $(this).serialize();
+                                $.ajax({
+                                    method: 'POST',
+                                    url: '{{ route('admin.orders.status-update', ':id') }}'.replace(":id",
+                                        orderId),
+                                    data: formContent,
+                                    success: function(response) {
+                                        $('#order_modal').modal("hide");
+                                        $('#order-table').DataTable().draw();
 
-    <!-- Average Session Duration -->
-    <div>
-        <h3>Average Session Duration</h3>
-        <p>{{ number_format($averageSessionDuration, 2) }} minutes</p>
-    </div>
-
-    <!-- JavaScript for Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        var ctx = document.getElementById('trafficChart').getContext('2d');
-        var trafficChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: @json($trafficData->pluck('date')),
-                datasets: [{
-                    label: 'Number of Visitors',
-                    data: @json($trafficData->pluck('count')),
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    x: {
-                        beginAtZero: true
-                    },
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-    </script>
-    </div>
-@endsection
-
-@push('scripts')
-    {{ $dataTable->scripts(attributes: ['type' => 'module']) }}
-    {{--
-    <script>
-        var options = {
-            chart: {
-                type: 'line',
-                height: 350
-            },
-            series: [{
-                name: 'Sales',
-                data: @json($salesData) // Pass data from controller
-            }],
-            xaxis: {
-                categories: @json($salesCategories) // Pass categories (e.g., months)
-            }
-        }
-
-        var chart = new ApexCharts(document.querySelector("#line-chart-1"), options);
-        chart.render();
-    </script> --}}
-
-
-    <script>
-        $(document).ready(function() {
-            var orderId = '';
-
-            $(document).on('click', '.order_status_btn', function() {
-                let id = $(this).data('id');
-
-                orderId = id;
-
-                let paymentStatus = $('.payment_status option');
-                let orderStatus = $('.order_status option');
-
-                $.ajax({
-                    method: 'GET',
-                    url: '{{ route('admin.orders.status', ':id') }}'.replace(":id", id),
-                    beforeSend: function() {
-                        $('.submit_btn').prop('disabled', true);
-                    },
-                    success: function(response) {
-                        paymentStatus.each(function() {
-                            if ($(this).val() == response.payment_status) {
-                                $(this).attr('selected', 'selected');
-                            }
+                                        toastr.success(response.message);
+                                    },
+                                    error: function(xhr, status, error) {
+                                        toastr.error(xhr.responseJSON.message);
+                                    }
+                                })
+                            })
                         })
+                    </script>
+                @endpush
 
-                        orderStatus.each(function() {
-                            if ($(this).val() == response.order_status) {
-                                $(this).attr('selected', 'selected');
-                            }
-                        })
+                </div>
+                <!-- /main-content-wrap -->
 
-                        $('.submit_btn').prop('disabled', false);
-                    },
-                    error: function(xhr, status, error) {
 
-                    }
-                })
-            })
 
-            $('.order_status_form').on('submit', function(e) {
-                e.preventDefault();
-                let formContent = $(this).serialize();
-                $.ajax({
-                    method: 'POST',
-                    url: '{{ route('admin.orders.status-update', ':id') }}'.replace(":id",
-                        orderId),
-                    data: formContent,
-                    success: function(response) {
-                        $('#order_modal').modal("hide");
-                        $('#order-table').DataTable().draw();
-
-                        toastr.success(response.message);
-                    },
-                    error: function(xhr, status, error) {
-                        toastr.error(xhr.responseJSON.message);
-                    }
-                })
-            })
-        })
-    </script>
-@endpush

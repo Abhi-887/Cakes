@@ -6,7 +6,7 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>{{ config('settings.site_name') }} | Dashboard</title>
-	<link rel="icon" href="{{ asset('frontend/images/3d-cakes-favicon.png') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('frontend/images/3d-cakes-favicon.png') }}" type="image/x-icon">
     <!-- General CSS Files -->
     <link rel="stylesheet" href="{{ asset('admin/assets/modules/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/assets/modules/fontawesome/css/all.min.css') }}">
@@ -16,30 +16,34 @@
     <link rel="stylesheet" href="{{ asset('admin/assets/css/bootstrap-iconpicker.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/assets/modules/select2/dist/css/select2.min.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/assets/modules/summernote/summernote-bs4.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin/assets/modules/bootstrap-timepicker/css/bootstrap-timepicker.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin/assets/modules/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('admin/assets/modules/bootstrap-timepicker/css/bootstrap-timepicker.min.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('admin/assets/modules/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/assets/modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css') }}">
 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-      <!-- Theme Style -->
-      <link rel="stylesheet" type="text/css" href="{{ asset('admin2/assets/css/animate.min.css')}}">
-      <link rel="stylesheet" type="text/css" href="{{ asset('admin2/assets/css/animation.css')}}">
-      <link rel="stylesheet" type="text/css" href="{{ asset('admin2/assets/css/bootstrap.css')}}">
-      <link rel="stylesheet" type="text/css" href="{{ asset('admin2/assets/css/bootstrap-select.min.css')}}">
-      <link rel="stylesheet" type="text/css" href="{{ asset('admin2/assets/css/style.css')}}">
+    <!-- Theme Style -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('admin2/assets/css/animate.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('admin2/assets/css/animation.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('admin2/assets/css/bootstrap.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('admin2/assets/css/bootstrap-select.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('admin2/assets/css/style.css') }}">
 
 
 
-      <!-- Font -->
-    <link rel="stylesheet" href="{{ asset('admin2/assets/font/fonts.css')}}">
+    <!-- Font -->
+    <link rel="stylesheet" href="{{ asset('admin2/assets/font/fonts.css') }}">
 
-      <!-- Icon -->
-      <link rel="stylesheet" href="{{ asset('admin2/assets/icon/style.css')}}">
+    <!-- Icon -->
+    <link rel="stylesheet" href="{{ asset('admin2/assets/icon/style.css') }}">
 
-      <!-- Favicon and Touch Icons  -->
-      <link rel="shortcut icon" href="{{ asset('admin2/assets/images/favicon.png')}}">
-      <link rel="apple-touch-icon-precomposed" href="{{ asset('admin2/assets/images/favicon.png')}}">
+    <!-- Favicon and Touch Icons  -->
+    <link rel="shortcut icon" href="{{ asset('admin2/assets/images/favicon.png') }}">
+    <link rel="apple-touch-icon-precomposed" href="{{ asset('admin2/assets/images/favicon.png') }}">
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('admin/assets/css/style.css') }}">
@@ -64,30 +68,35 @@
         <!-- #page -->
         <div id="page" class="">
             <!-- layout-wrap -->
-           <div class="layout-wrap">
+            <div class="layout-wrap">
                 <!-- preload -->
                 <div id="preload" class="preload-container">
                     <div class="preloading">
                         <span></span>
                     </div>
                 </div>
-            @include('admin.layouts.sidebar')
-        </div>
-        <!-- /section-content-right -->
 
-            <!-- Main Content -->
-            <div class="main-content">
-                <div class="main-content-inner">
-                @yield('content')
+                @include('admin.layouts.sidebar')
+
+                <!-- /section-content-right -->
+
+                <!-- Main Content -->
+                <div class="main-content">
+                    <div class="main-content-inner">
+                        @yield('content')
+                    </div>
                 </div>
+                <footer class="main-footer">
+                    <div class="bottom-page">
+                        Copyright &copy; {{ date('Y') }} <div class="bullet"></div>
+                    </div>
+
+                </footer>
             </div>
-            <footer class="main-footer">
-                <div class="bottom-page">
-                    Copyright &copy; {{ date('Y') }} <div class="bullet"></div>
-                </div>
 
-            </footer>
         </div>
+    </div>
+    </div>
     </div>
 
 
@@ -119,21 +128,21 @@
     <script src="{{ asset('admin/assets/js/custom.js') }}"></script>
 
 
-<!-- Javascript -->
-<script src="{{ asset('admin2/assets/js/jquery.min.js') }}"></script>
-<script src="{{ asset('admin2/assets/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('admin2/assets/js/bootstrap-select.min.js') }}"></script>
-<script src="{{ asset('admin2/assets/js/zoom.js') }}"></script>
-<script src="{{ asset('admin2/assets/js/apexcharts/apexcharts.js') }}"></script>
-<script src="{{ asset('admin2/assets/js/apexcharts/line-chart-1.js') }}"></script>
-<script src="{{ asset('admin2/assets/js/apexcharts/line-chart-2.js') }}"></script>
-<script src="{{ asset('admin2/assets/js/apexcharts/line-chart-3.js') }}"></script>
-<script src="{{ asset('admin2/assets/js/apexcharts/line-chart-4.js') }}"></script>
-<script src="{{ asset('admin2/assets/js/apexcharts/line-chart-5.js') }}"></script>
-<script src="{{ asset('admin2/assets/js/apexcharts/line-chart-6.js') }}"></script>
-<script src="{{ asset('admin2/assets/js/switcher.js') }}"></script>
-<script src="{{ asset('admin2/assets/js/theme-settings.js') }}"></script>
-<script src="{{ asset('admin2/assets/js/main.js') }}"></script>
+    <!-- Javascript -->
+    <script src="{{ asset('admin2/assets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('admin2/assets/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('admin2/assets/js/bootstrap-select.min.js') }}"></script>
+    <script src="{{ asset('admin2/assets/js/zoom.js') }}"></script>
+    <script src="{{ asset('admin2/assets/js/apexcharts/apexcharts.js') }}"></script>
+    <script src="{{ asset('admin2/assets/js/apexcharts/line-chart-1.js') }}"></script>
+    <script src="{{ asset('admin2/assets/js/apexcharts/line-chart-2.js') }}"></script>
+    <script src="{{ asset('admin2/assets/js/apexcharts/line-chart-3.js') }}"></script>
+    <script src="{{ asset('admin2/assets/js/apexcharts/line-chart-4.js') }}"></script>
+    <script src="{{ asset('admin2/assets/js/apexcharts/line-chart-5.js') }}"></script>
+    <script src="{{ asset('admin2/assets/js/apexcharts/line-chart-6.js') }}"></script>
+    <script src="{{ asset('admin2/assets/js/switcher.js') }}"></script>
+    <script src="{{ asset('admin2/assets/js/theme-settings.js') }}"></script>
+    <script src="{{ asset('admin2/assets/js/main.js') }}"></script>
 
 
 
@@ -187,14 +196,16 @@
                         $.ajax({
                             method: 'DELETE',
                             url: url,
-                            data: {_token: "{{ csrf_token() }}"},
+                            data: {
+                                _token: "{{ csrf_token() }}"
+                            },
                             success: function(response) {
-                                if(response.status === 'success'){
+                                if (response.status === 'success') {
                                     toastr.success(response.message)
 
                                     window.location.reload();
 
-                                }else if(response.status === 'error'){
+                                } else if (response.status === 'error') {
                                     toastr.error(response.message)
                                 }
                             },
@@ -207,7 +218,6 @@
             })
 
         })
-
     </script>
 
     @stack('scripts')
