@@ -8,8 +8,8 @@
         }
     </style>
     <!--=============================
-                                                                                                                                                        BREADCRUMB START
-                                                                                                                                                    ==============================-->
+                                                                                                                                                                BREADCRUMB START
+                                                                                                                                                            ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay py-5">
             <div class="container py-md-5 py-2">
@@ -24,11 +24,11 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                        BREADCRUMB END
-                                                                                                                                                    ==============================-->
+                                                                                                                                                                BREADCRUMB END
+                                                                                                                                                            ==============================-->
     <!--=============================
-                                                                                                                                                       WE'RE HIRING! PAGE START
-                                                                                                                                                    ==============================-->
+                                                                                                                                                               WE'RE HIRING! PAGE START
+                                                                                                                                                            ==============================-->
 
     {{-- <div class="container my-5">
         <div class="">
@@ -289,8 +289,8 @@
                 </div>
             </div>
 
-            <div class="">
-                <label for="name" class="mb-2">Name *</label>
+            <div class="mt-4">
+                <label for="name">Name *</label>
                 <div class="fp__contact_form_input form-group mt-3">
                     <span><i class="far fa-caret-square-down" aria-hidden="true"></i></span>
                     <input type="text" class="form-control" id="name" name="name">
@@ -300,8 +300,8 @@
                 </div>
             </div>
 
-            <div class="">
-                <label for="email" class="mb-2">Email Address *</label>
+            <div class="mt-4">
+                <label for="email">Email Address *</label>
                 <div class="fp__contact_form_input form-group mt-3">
                     <span><i class="far fa-caret-square-down" aria-hidden="true"></i></span>
                     <input type="email" class="form-control" id="email" name="email">
@@ -311,8 +311,8 @@
                 </div>
             </div>
 
-            <div class="">
-                <label for="telephone" class="mb-2">Telephone Number *</label>
+            <div class="mt-4">
+                <label for="telephone">Telephone Number *</label>
                 <div class="fp__contact_form_input form-group mt-3">
                     <span><i class="far fa-caret-square-down" aria-hidden="true"></i></span>
                     <input type="tel" class="form-control" id="telephone" name="telephone">
@@ -322,8 +322,8 @@
                 </div>
             </div>
 
-            <div class="">
-                <label for="drivingLicense" class="mb-2">Do you hold a valid UK driving license? *</label>
+            <div class="mt-4">
+                <label for="drivingLicense">Do you hold a valid UK driving license? *</label>
                 <div class="fp__contact_form_input form-group mt-3">
                     <span><i class="far fa-caret-square-down" aria-hidden="true"></i></span>
                     <select class="form-control" id="drivingLicense" name="driving_license">
@@ -336,8 +336,8 @@
                 </div>
             </div>
 
-            <div class="">
-                <label for="whyIdeal" class="mb-2">Please detail why you think you would be ideal for the role(s):
+            <div class="mt-4">
+                <label for="whyIdeal">Please detail why you think you would be ideal for the role(s):
                     *</label>
                 <div class="fp__contact_form_input form-group mt-3">
                     <span><i class="far fa-caret-square-down" aria-hidden="true"></i></span>
@@ -348,11 +348,9 @@
                 </div>
             </div>
 
-            <div class="">
-                <label for="relevantExperience" class="mb-2">Please detail any relevant experience that you feel
-                    would
-                    be
-                    beneficial for the role(s): *</label>
+            <div class="mt-4">
+                <label for="relevantExperience">Please detail any relevant experience that you feel would be beneficial for
+                    the role(s): *</label>
                 <div class="fp__contact_form_input form-group mt-3">
                     <span><i class="far fa-caret-square-down" aria-hidden="true"></i></span>
                     <textarea class="form-control" id="relevantExperience" name="relevant_experience" rows="3"></textarea>
@@ -362,8 +360,8 @@
                 </div>
             </div>
 
-            <div class="">
-                <label for="currentPosition" class="mb-2">Length of time in current position *</label>
+            <div class="mt-4">
+                <label for="currentPosition">Length of time in current position *</label>
                 <div class="fp__contact_form_input form-group mt-3">
                     <span><i class="far fa-caret-square-down" aria-hidden="true"></i></span>
                     <input type="text" class="form-control" id="currentPosition" name="current_position_duration">
@@ -373,8 +371,8 @@
                 </div>
             </div>
 
-            <div class="">
-                <label for="portfolio" class="mb-2">Examples of Your Work</label>
+            <div class="mt-4">
+                <label for="portfolio">Examples of Your Work</label>
                 <div class="fp__contact_form_input form-group mt-3">
                     <span><i class="far fa-caret-square-down" aria-hidden="true"></i></span>
                     <input type="file" class="form-control-file" id="portfolio" name="portfolio" accept=".pdf">
@@ -384,8 +382,8 @@
                 </div>
             </div>
 
-            <div class="">
-                <label for="cv" class="mb-2">Please attach your CV *</label>
+            <div class="mt-4">
+                <label for="cv">Please attach your CV *</label>
                 <div class="fp__contact_form_input form-group mt-3">
                     <span><i class="far fa-caret-square-down" aria-hidden="true"></i></span>
                     <input type="file" class="form-control-file" id="cv" name="cv" accept=".pdf">
@@ -396,11 +394,11 @@
             </div>
 
             <div class=" mt-4 text-center">
-                <button type="submit" class="common_btn v_submit_button">Submit Application</button>
+                <button type="submit" class="rounded-1 px-3 py-2 v_submit_button">Submit Application</button>
             </div>
         </form>
     </div>
     <!--=============================
-                                                                                                                                                         Application PAGE END
-                                                                                                                                                    ==============================-->
+                                                                                                                                                                 Application PAGE END
+                                                                                                                                                            ==============================-->
 @endsection
