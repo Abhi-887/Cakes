@@ -289,120 +289,136 @@
                     </li>
                     <li class="sub-menu-item {{ setSidebarActive(['admin.privacy-policy.index']) }}">
                         <a href="{{ route('admin.privacy-policy.index') }}">
-                            <div class="text">Privacy Policy</div>
+                            <
+
+
+            <div class="center-item">
+                <div class="center-heading">Pages</div>
+                <ul class="menu-list">
+                    <li class="menu-item dropdown {{ setSidebarActive([
+                        'admin.custom-page-builder.index',
+                        'admin.about.index',
+                        'admin.trams-and-conditions.index',
+                        'admin.contact.index',
+                        'admin.contact2.index',
+                        'admin.privacy-policy.index'
+                    ]) }}">
+                        <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
+                            <div class="icon"><i class="fas fa-file-alt"></i></div>
+                            <div class="text">Pages</div>
+                        </a>
+                        <ul class="sub-menu">
+                            <li class="{{ setSidebarActive(['admin.custom-page-builder.index']) }}">
+                                <a class="nav-link" href="{{ route('admin.custom-page-builder.index') }}">Custom Page</a>
+                            </li>
+                            <li class="{{ setSidebarActive(['admin.about.index']) }}">
+                                <a class="nav-link" href="{{ route('admin.about.index') }}">About</a>
+                            </li>
+                            <li class="{{ setSidebarActive(['admin.privacy-policy.index']) }}">
+                                <a class="nav-link" href="{{ route('admin.privacy-policy.index') }}">Privacy Policy</a>
+                            </li>
+                            <li class="{{ setSidebarActive(['admin.trams-and-conditions.index']) }}">
+                                <a class="nav-link" href="{{ route('admin.trams-and-conditions.index') }}">Trams and Conditions</a>
+                            </li>
+                            <li class="{{ setSidebarActive(['admin.contact.index']) }}">
+                                <a class="nav-link" href="{{ route('admin.contact.index') }}">Contact</a>
+                            </li>
+                            <li class="{{ setSidebarActive(['admin.contact2.index']) }}">
+                                <a class="nav-link" href="{{ route('admin.contact2.index') }}">Second Contact</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="center-item">
+                <div class="center-heading">Footer</div>
+                <ul class="menu-list">
+                    <li class="menu-item dropdown {{ setSidebarActive([
+                        'admin.footer-info.index',
+                        'admin.footer-info-two.index',
+                        'admin.footer-socials.index',
+                        'admin.footer-grid-two.index',
+                        'admin.footer-grid-three.index',
+                        'admin.footer-grid-four.index'
+                    ]) }}">
+                        <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
+                            <div class="icon"><i class="fas fa-th-large"></i></div>
+                            <div class="text">Footer</div>
+                        </a>
+                        <ul class="sub-menu">
+                            <li class="{{ setSidebarActive(['admin.footer-info.index']) }}">
+                                <a class="nav-link" href="{{ route('admin.footer-info.index') }}">Footer Info</a>
+                            </li>
+                            <li class="{{ setSidebarActive(['admin.footer-info-two.index']) }}">
+                                <a class="nav-link" href="{{ route('admin.footer-info-two.index') }}">Footer Info Two</a>
+                            </li>
+                            <li class="{{ setSidebarActive(['admin.footer-socials.index']) }}">
+                                <a class="nav-link" href="{{ route('admin.footer-socials.index') }}">Footer Socials</a>
+                            </li>
+                            <li class="{{ setSidebarActive(['admin.footer-grid-two.index']) }}">
+                                <a class="nav-link" href="{{ route('admin.footer-grid-two.index') }}">Footer Grid Two</a>
+                            </li>
+                            <li class="{{ setSidebarActive(['admin.footer-grid-three.index']) }}">
+                                <a class="nav-link" href="{{ route('admin.footer-grid-three.index') }}">Footer Grid Three</a>
+                            </li>
+                            <li class="{{ setSidebarActive(['admin.footer-grid-four.index']) }}">
+                                <a class="nav-link" href="{{ route('admin.footer-grid-four.index') }}">Footer Grid Four</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="center-item">
+                <ul class="menu-list">
+                    @if (auth()->user()->id === 1)
+                        <li class="menu-item {{ setSidebarActive(['admin.chat.index']) }}">
+                            <a class="nav-link" href="{{ route('admin.chat.index') }}">
+                                <div class="icon"><i class="fas fa-comment-dots"></i></div>
+                                <div class="text">Messages</div>
+                            </a>
+                        </li>
+                    @endif
+
+                    <li class="menu-item {{ setSidebarActive(['admin.news-letter.index']) }}">
+                        <a class="nav-link" href="{{ route('admin.news-letter.index') }}">
+                            <div class="icon"><i class="fas fa-newspaper"></i></div>
+                            <div class="text">News Letter</div>
                         </a>
                     </li>
-                    <li class="sub-menu-item {{ setSidebarActive(['admin.trams-and-conditions.index']) }}">
-                        <a href="{{ route('admin.trams-and-conditions.index') }}">
-                            <div class="text">Terms & Conditions</div>
+
+                    <li class="menu-item {{ setSidebarActive(['admin.social-link.index']) }}">
+                        <a class="nav-link" href="{{ route('admin.social-link.index') }}">
+                            <div class="icon"><i class="fas fa-link"></i></div>
+                            <div class="text">Social Links</div>
                         </a>
                     </li>
-                    <li class="sub-menu-item {{ setSidebarActive(['admin.contact.index']) }}">
-                        <a href="{{ route('admin.contact.index') }}">
-                            <div class="text">Contact</div>
+
+                    <li class="menu-item {{ setSidebarActive(['admin.menu-builder.index']) }}">
+                        <a class="nav-link" href="{{ route('admin.menu-builder.index') }}">
+                            <div class="icon"><i class="fas fa-list-alt"></i></div>
+                            <div class="text">Menu Builder</div>
                         </a>
                     </li>
-                    <li class="sub-menu-item {{ setSidebarActive(['admin.contact2.index']) }}">
-                        <a href="{{ route('admin.contact2.index') }}">
-                            <div class="text">Contact 2</div>
+
+                    <li class="menu-item {{ setSidebarActive(['admin.admin-management.index']) }}">
+                        <a class="nav-link" href="{{ route('admin.admin-management.index') }}">
+                            <div class="icon"><i class="fas fa-user-shield"></i></div>
+                            <div class="text">Admin Management</div>
+                        </a>
+                    </li>
+
+                    <li class="menu-item {{ setSidebarActive(['admin.setting.index']) }}">
+                        <a class="nav-link" href="{{ route('admin.setting.index') }}">
+                            <div class="icon"><i class="fas fa-cogs"></i></div>
+                            <div class="text">Settings</div>
                         </a>
                     </li>
                 </ul>
-            </li>
-        </ul>
-    </aside>
-</div>
-
-
-<div class="center-item">
-    <div class="center-heading">Footer</div>
-    <ul class="menu-list">
-        <li
-            class="menu-item dropdown {{ setSidebarActive([
-                'admin.footer-info.index',
-                'admin.footer-info-two.index',
-                'admin.footer-socials.index',
-                'admin.footer-grid-two.index',
-                'admin.footer-grid-three.index',
-                'admin.footer-grid-four.index',
-            ]) }}">
-            <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
-                <div class="icon"><i class="fas fa-th-large"></i></div>
-                <div class="text">Footer</div>
-            </a>
-            <ul class="sub-menu">
-                <li class="{{ setSidebarActive(['admin.footer-info.index']) }}">
-                    <a class="nav-link" href="{{ route('admin.footer-info.index') }}">Footer Info</a>
-                </li>
-                <li class="{{ setSidebarActive(['admin.footer-info-two.index']) }}">
-                    <a class="nav-link" href="{{ route('admin.footer-info-two.index') }}">Footer Info Two</a>
-                </li>
-                <li class="{{ setSidebarActive(['admin.footer-socials.index']) }}">
-                    <a class="nav-link" href="{{ route('admin.footer-socials.index') }}">Footer Socials</a>
-                </li>
-                <li class="{{ setSidebarActive(['admin.footer-grid-two.index']) }}">
-                    <a class="nav-link" href="{{ route('admin.footer-grid-two.index') }}">Footer Grid Two</a>
-                </li>
-                <li class="{{ setSidebarActive(['admin.footer-grid-three.index']) }}">
-                    <a class="nav-link" href="{{ route('admin.footer-grid-three.index') }}">Footer Grid Three</a>
-                </li>
-                <li class="{{ setSidebarActive(['admin.footer-grid-four.index']) }}">
-                    <a class="nav-link" href="{{ route('admin.footer-grid-four.index') }}">Footer Grid Four</a>
-                </li>
-            </ul>
-        </li>
-    </ul>
-</div>
-
-<div class="center-item">
-    <ul class="menu-list">
-        @if (auth()->user()->id === 1)
-            <li class="menu-item {{ setSidebarActive(['admin.chat.index']) }}">
-                <a class="nav-link" href="{{ route('admin.chat.index') }}">
-                    <div class="icon"><i class="fas fa-comment-dots"></i></div>
-                    <div class="text">Messages</div>
-                </a>
-            </li>
-        @endif
-
-        <li class="menu-item {{ setSidebarActive(['admin.news-letter.index']) }}">
-            <a class="nav-link" href="{{ route('admin.news-letter.index') }}">
-                <div class="icon"><i class="fas fa-newspaper"></i></div>
-                <div class="text">News Letter</div>
-            </a>
-        </li>
-
-        <li class="menu-item {{ setSidebarActive(['admin.social-link.index']) }}">
-            <a class="nav-link" href="{{ route('admin.social-link.index') }}">
-                <div class="icon"><i class="fas fa-link"></i></div>
-                <div class="text">Social Links</div>
-            </a>
-        </li>
-
-        <li class="menu-item {{ setSidebarActive(['admin.menu-builder.index']) }}">
-            <a class="nav-link" href="{{ route('admin.menu-builder.index') }}">
-                <div class="icon"><i class="fas fa-list-alt"></i></div>
-                <div class="text">Menu Builder</div>
-            </a>
-        </li>
-
-        <li class="menu-item {{ setSidebarActive(['admin.admin-management.index']) }}">
-            <a class="nav-link" href="{{ route('admin.admin-management.index') }}">
-                <div class="icon"><i class="fas fa-user-shield"></i></div>
-                <div class="text">Admin Management</div>
-            </a>
-        </li>
-
-        <li class="menu-item {{ setSidebarActive(['admin.setting.index']) }}">
-            <a class="nav-link" href="{{ route('admin.setting.index') }}">
-                <div class="icon"><i class="fas fa-cogs"></i></div>
-                <div class="text">Settings</div>
-            </a>
-        </li>
-    </ul>
-</div>
-</div>
-</div>
+            </div>
+        </div>
+    </div>
 </div>
 
 
@@ -412,17 +428,14 @@
         <div class="wrap">
             <div class="header-left">
                 <a href="index.html">
-                    <img class="" id="logo_header_mobile" alt="" src="images/logo/logo.png"
-                        data-light="images/logo/logo.png" data-dark="images/logo/logo-dark.png" data-width="154px"
-                        data-height="52px" data-retina="images/logo/logo@2x.png">
+                    <img class="" id="logo_header_mobile" alt="" src="images/logo/logo.png" data-light="images/logo/logo.png" data-dark="images/logo/logo-dark.png" data-width="154px" data-height="52px" data-retina="images/logo/logo@2x.png">
                 </a>
                 <div class="button-show-hide">
                     <i class="icon-menu-left"></i>
                 </div>
                 <form class="form-search flex-grow">
                     <fieldset class="name">
-                        <input type="text" placeholder="Search here..." class="show-search" name="name"
-                            tabindex="2" value="" aria-required="true" required="">
+                        <input type="text" placeholder="Search here..." class="show-search" name="name" tabindex="2" value="" aria-required="true" required="">
                     </fieldset>
                     <div class="button-submit">
                         <button class="" type="submit"><i class="icon-search"></i></button>
@@ -443,8 +456,7 @@
                                         </div>
                                         <div class="flex items-center justify-between gap20 flex-grow">
                                             <div class="name">
-                                                <a href="product-list.html" class="body-text">Dog Food Rachael Ray
-                                                    Nutrish®</a>
+                                                <a href="product-list.html" class="body-text">Dog Food Rachael Ray Nutrish®</a>
                                             </div>
                                         </div>
                                     </li>
@@ -457,8 +469,7 @@
                                         </div>
                                         <div class="flex items-center justify-between gap20 flex-grow">
                                             <div class="name">
-                                                <a href="product-list.html" class="body-text">Natural Dog Food Healthy
-                                                    Dog Food</a>
+                                                <a href="product-list.html" class="body-text">Natural Dog Food Healthy Dog Food</a>
                                             </div>
                                         </div>
                                     </li>
@@ -471,8 +482,7 @@
                                         </div>
                                         <div class="flex items-center justify-between gap20 flex-grow">
                                             <div class="name">
-                                                <a href="product-list.html" class="body-text">Freshpet Healthy Dog
-                                                    Food and Cat</a>
+                                                <a href="product-list.html" class="body-text">Freshpet Healthy Dog Food and Cat</a>
                                             </div>
                                         </div>
                                     </li>
@@ -494,8 +504,7 @@
                                         </div>
                                         <div class="flex items-center justify-between gap20 flex-grow">
                                             <div class="name">
-                                                <a href="product-list.html" class="body-text">Sojos Crunchy Natural
-                                                    Grain Free...</a>
+                                                <a href="product-list.html" class="body-text">Sojos Crunchy Natural Grain Free...</a>
                                             </div>
                                         </div>
                                     </li>
@@ -556,14 +565,13 @@
                 </div>
                 <div class="popup-wrap noti type-header">
                     <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                             <span class="header-item">
                                 <span class="text-tiny">1</span>
                                 <i class="icon-bell"></i>
                             </span>
                         </button>
-                        <ul class="dropdown-menu dropdown-menu-end has-content" aria-labelledby="dropdownMenuButton1">
+                        <ul class="dropdown-menu dropdown-menu-end has-content" aria-labelledby="dropdownMenuButton1" >
                             <li>
                                 <h6>Message</h6>
                             </li>
@@ -591,7 +599,7 @@
                                             <a href="#" class="body-title">Ralph Edwards</a>
                                             <div class="time">10:13 PM</div>
                                         </div>
-                                        <div class="text-tiny">Are you there? interested i this...</div>
+                                        <div class="text-tiny">Are you there?  interested i this...</div>
                                     </div>
                                 </div>
                             </li>
@@ -629,14 +637,13 @@
                 </div>
                 <div class="popup-wrap message type-header">
                     <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                             <span class="header-item">
                                 <span class="text-tiny">1</span>
                                 <i class="icon-message-square"></i>
                             </span>
                         </button>
-                        <ul class="dropdown-menu dropdown-menu-end has-content" aria-labelledby="dropdownMenuButton2">
+                        <ul class="dropdown-menu dropdown-menu-end has-content" aria-labelledby="dropdownMenuButton2" >
                             <li>
                                 <h6>Notifications</h6>
                             </li>
@@ -647,8 +654,7 @@
                                     </div>
                                     <div>
                                         <div class="body-title-2">Discount available</div>
-                                        <div class="text-tiny">Morbi sapien massa, ultricies at rhoncus at, ullamcorper
-                                            nec diam</div>
+                                        <div class="text-tiny">Morbi sapien massa, ultricies at rhoncus at, ullamcorper nec diam</div>
                                     </div>
                                 </div>
                             </li>
@@ -696,13 +702,12 @@
                 </div>
                 <div class="popup-wrap apps type-header">
                     <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton4"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false">
                             <span class="header-item">
                                 <i class="icon-grid"></i>
                             </span>
                         </button>
-                        <ul class="dropdown-menu dropdown-menu-end has-content" aria-labelledby="dropdownMenuButton4">
+                        <ul class="dropdown-menu dropdown-menu-end has-content" aria-labelledby="dropdownMenuButton4" >
                             <li>
                                 <h6>Related apps</h6>
                             </li>
@@ -788,8 +793,7 @@
                 </div>
                 <div class="popup-wrap user type-header">
                     <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton3"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
                             <span class="header-user wg-user">
                                 <span class="image">
                                     <img src="images/avatar/user-1.png" alt="">
@@ -800,7 +804,7 @@
                                 </span>
                             </span>
                         </button>
-                        <ul class="dropdown-menu dropdown-menu-end has-content" aria-labelledby="dropdownMenuButton3">
+                        <ul class="dropdown-menu dropdown-menu-end has-content" aria-labelledby="dropdownMenuButton3" >
                             <li>
                                 <a href="#" class="user-item">
                                     <div class="icon">
