@@ -8,8 +8,8 @@
         }
     </style>
     <!--=============================
-                                                            BREADCRUMB START
-                                                        ==============================-->
+                                                                    BREADCRUMB START
+                                                                ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay py-5">
             <div class="container py-md-5 py-2">
@@ -24,11 +24,11 @@
         </div>
     </section>
     <!--=============================
-                                                            BREADCRUMB END
-                                                        ==============================-->
+                                                                    BREADCRUMB END
+                                                                ==============================-->
     <!--=============================
-                                                           WE'RE HIRING! PAGE START
-                                                        ==============================-->
+                                                                   WE'RE HIRING! PAGE START
+                                                                ==============================-->
 
     {{-- <div class="container my-5">
         <div class="">
@@ -218,9 +218,7 @@
 
             <div class="col-6 mb-3">
                 <div class="service-img">
-                    <img class="img-fluid"
-                        src="https://img.freepik.com/free-photo/smiling-african-american-barista-uniform-giving-cup-coffee-his-client-trendy-coffee-shop_613910-21068.jpg?t=st=1726218281~exp=1726221881~hmac=fbb4c34c55c3e3e86e43a16c9a238e028cdbcf898ea4b3eff9c4a423daaba61a&w=1380"
-                        alt="">
+                    <img class="img-fluid" src="{{ asset('uploads/customer-service.jpg') }}" alt="">
                 </div>
             </div>
 
@@ -362,6 +360,6 @@
         </form>
     </div>
     <!--=============================
-                                                             Application PAGE END
-                                                        ==============================-->
+                                                                     Application PAGE END
+                                                                ==============================-->
 @endsection
