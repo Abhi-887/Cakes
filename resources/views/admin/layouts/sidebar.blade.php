@@ -83,7 +83,8 @@
 <div class="section-menu-left">
     <div class="box-logo">
         <a href="index.html" id="site-logo-inner">
-            <img class="" id="logo_header" alt="" src="images/logo/logo.png" data-light="images/logo/logo.png" data-dark="images/logo/logo-dark.png" >
+            <img class="" id="logo_header" alt="" src="images/logo/logo.png" data-light="images/logo/logo.png"
+                data-dark="images/logo/logo-dark.png">
         </a>
         <div class="button-show-hide">
             <i class="icon-menu-left"></i>
@@ -152,17 +153,14 @@
         <div class="wrap">
             <div class="header-left">
                 <a href="index.html">
-                    <img class="" id="logo_header_mobile" alt="" src="images/logo/logo.png"
-                        data-light="images/logo/logo.png" data-dark="images/logo/logo-dark.png" data-width="154px"
-                        data-height="52px" data-retina="images/logo/logo@2x.png">
+                    <img class="" id="logo_header_mobile" alt="" src="images/logo/logo.png" data-light="images/logo/logo.png" data-dark="images/logo/logo-dark.png" data-width="154px" data-height="52px" data-retina="images/logo/logo@2x.png">
                 </a>
                 <div class="button-show-hide">
                     <i class="icon-menu-left"></i>
                 </div>
                 <form class="form-search flex-grow">
                     <fieldset class="name">
-                        <input type="text" placeholder="Search here..." class="show-search" name="name"
-                            tabindex="2" value="" aria-required="true" required="">
+                        <input type="text" placeholder="Search here..." class="show-search" name="name" tabindex="2" value="" aria-required="true" required="">
                     </fieldset>
                     <div class="button-submit">
                         <button class="" type="submit"><i class="icon-search"></i></button>
@@ -183,8 +181,7 @@
                                         </div>
                                         <div class="flex items-center justify-between gap20 flex-grow">
                                             <div class="name">
-                                                <a href="product-list.html" class="body-text">Dog Food Rachael Ray
-                                                    Nutrish®</a>
+                                                <a href="product-list.html" class="body-text">Dog Food Rachael Ray Nutrish®</a>
                                             </div>
                                         </div>
                                     </li>
@@ -197,8 +194,7 @@
                                         </div>
                                         <div class="flex items-center justify-between gap20 flex-grow">
                                             <div class="name">
-                                                <a href="product-list.html" class="body-text">Natural Dog Food Healthy
-                                                    Dog Food</a>
+                                                <a href="product-list.html" class="body-text">Natural Dog Food Healthy Dog Food</a>
                                             </div>
                                         </div>
                                     </li>
@@ -211,8 +207,7 @@
                                         </div>
                                         <div class="flex items-center justify-between gap20 flex-grow">
                                             <div class="name">
-                                                <a href="product-list.html" class="body-text">Freshpet Healthy Dog Food
-                                                    and Cat</a>
+                                                <a href="product-list.html" class="body-text">Freshpet Healthy Dog Food and Cat</a>
                                             </div>
                                         </div>
                                     </li>
@@ -234,8 +229,7 @@
                                         </div>
                                         <div class="flex items-center justify-between gap20 flex-grow">
                                             <div class="name">
-                                                <a href="product-list.html" class="body-text">Sojos Crunchy Natural
-                                                    Grain Free...</a>
+                                                <a href="product-list.html" class="body-text">Sojos Crunchy Natural Grain Free...</a>
                                             </div>
                                         </div>
                                     </li>
@@ -296,14 +290,13 @@
                 </div>
                 <div class="popup-wrap noti type-header">
                     <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                             <span class="header-item">
                                 <span class="text-tiny">1</span>
                                 <i class="icon-bell"></i>
                             </span>
                         </button>
-                        <ul class="dropdown-menu dropdown-menu-end has-content" aria-labelledby="dropdownMenuButton1">
+                        <ul class="dropdown-menu dropdown-menu-end has-content" aria-labelledby="dropdownMenuButton1" >
                             <li>
                                 <h6>Message</h6>
                             </li>
@@ -331,7 +324,7 @@
                                             <a href="#" class="body-title">Ralph Edwards</a>
                                             <div class="time">10:13 PM</div>
                                         </div>
-                                        <div class="text-tiny">Are you there? interested i this...</div>
+                                        <div class="text-tiny">Are you there?  interested i this...</div>
                                     </div>
                                 </div>
                             </li>
@@ -369,14 +362,13 @@
                 </div>
                 <div class="popup-wrap message type-header">
                     <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                             <span class="header-item">
                                 <span class="text-tiny">1</span>
                                 <i class="icon-message-square"></i>
                             </span>
                         </button>
-                        <ul class="dropdown-menu dropdown-menu-end has-content" aria-labelledby="dropdownMenuButton2">
+                        <ul class="dropdown-menu dropdown-menu-end has-content" aria-labelledby="dropdownMenuButton2" >
                             <li>
                                 <h6>Notifications</h6>
                             </li>
@@ -387,8 +379,7 @@
                                     </div>
                                     <div>
                                         <div class="body-title-2">Discount available</div>
-                                        <div class="text-tiny">Morbi sapien massa, ultricies at rhoncus at, ullamcorper
-                                            nec diam</div>
+                                        <div class="text-tiny">Morbi sapien massa, ultricies at rhoncus at, ullamcorper nec diam</div>
                                     </div>
                                 </div>
                             </li>
@@ -436,13 +427,12 @@
                 </div>
                 <div class="popup-wrap apps type-header">
                     <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton4"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton4" data-bs-toggle="dropdown" aria-expanded="false">
                             <span class="header-item">
                                 <i class="icon-grid"></i>
                             </span>
                         </button>
-                        <ul class="dropdown-menu dropdown-menu-end has-content" aria-labelledby="dropdownMenuButton4">
+                        <ul class="dropdown-menu dropdown-menu-end has-content" aria-labelledby="dropdownMenuButton4" >
                             <li>
                                 <h6>Related apps</h6>
                             </li>
@@ -528,8 +518,7 @@
                 </div>
                 <div class="popup-wrap user type-header">
                     <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton3"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
                             <span class="header-user wg-user">
                                 <span class="image">
                                     <img src="images/avatar/user-1.png" alt="">
@@ -540,7 +529,7 @@
                                 </span>
                             </span>
                         </button>
-                        <ul class="dropdown-menu dropdown-menu-end has-content" aria-labelledby="dropdownMenuButton3">
+                        <ul class="dropdown-menu dropdown-menu-end has-content" aria-labelledby="dropdownMenuButton3" >
                             <li>
                                 <a href="#" class="user-item">
                                     <div class="icon">
@@ -596,12 +585,3 @@
             </div>
         </div>
     </div>
-
-</div>
-
-
-
-
-
-
-
