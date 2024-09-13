@@ -2,7 +2,7 @@
     $selectedOption = $selectedOption ?? null;
 @endphp
 
-<section class="py-5">
+<section class="pt-4 pb-5">
     <div class="container mt-md-5">
         <div class="row wow fadeInUp" data-wow-duration="1s">
             <div class="m-auto text-center col-md-8 col-lg-7 col-xl-6">
@@ -15,7 +15,7 @@
         <div class="row">
             @foreach ($sliders2 as $slider)
                 @if ($slider->show_at_home == $selectedOption || is_null($selectedOption) || $selectedOption === '')
-                    <div class="col-12 col-md-6 col-lg-4 my-3">
+                    <div class="col-12 col-md-6 col-lg-4 my-2">
                         <a class="w-100" href="{{ $slider->button_link }}">
                             <div
                                 class="image-block position-relative overflow-hidden rounded-3 d-flex justify-content-center align-items-center">
