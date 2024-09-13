@@ -50,7 +50,8 @@
 
     /* Customize scrollbar */
     .testimonial-content::-webkit-scrollbar {
-        width: 8px;
+        width: 6px;
+        background-color: gold !important;
     }
 
     .testimonial-content::-webkit-scrollbar-track {
@@ -59,7 +60,7 @@
     }
 
     .testimonial-content::-webkit-scrollbar-thumb {
-        background-color: gold;
+        background-color: gold !important;
         /* Scrollbar color */
         border-radius: 10px;
         /* Round scrollbar */
