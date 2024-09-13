@@ -2223,7 +2223,7 @@ footer .wrapper a:hover {
     text-align: center;
     transform: rotate(90deg);
     background: var(--colorPrimary);
-    border: 1px solid var(--colorWhite);
+    /* border: 1px solid var(--colorWhite); */
     color: var(--colorWhite);
     text-transform: capitalize;
     padding: 5px 15px 7px 15px;
