@@ -4,7 +4,7 @@
 
 
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner pt-5">
+    <div class="carousel-inner pt-5 mt-4">
         @foreach ($sliders as $key => $slider)
             @if ($slider->show_at_home == $selectedOption || $selectedOption === null || $selectedOption === '')
                 <div class="carousel-item{{ $key === 0 ? ' active' : '' }} background{{ $key + 1 }}">
