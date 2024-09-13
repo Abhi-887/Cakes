@@ -8,8 +8,8 @@
         }
     </style>
     <!--=============================
-                                                                                                    BREADCRUMB START
-                                                                                                ==============================-->
+                                                                                                        BREADCRUMB START
+                                                                                                    ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay py-5">
             <div class="container py-md-5 py-2">
@@ -24,11 +24,11 @@
         </div>
     </section>
     <!--=============================
-                                                                                                    BREADCRUMB END
-                                                                                                ==============================-->
+                                                                                                        BREADCRUMB END
+                                                                                                    ==============================-->
     <!--=============================
-                                                                                                   WE'RE HIRING! PAGE START
-                                                                                                ==============================-->
+                                                                                                       WE'RE HIRING! PAGE START
+                                                                                                    ==============================-->
 
     {{-- <div class="container my-5">
         <div class="">
@@ -236,25 +236,30 @@
                         <img class="image-fluid" src="{{ asset('uploads/customer-service.jpeg') }}" alt="">
                     </div>
                 </div>
-            </div>
 
-            <div class="col-6 my-3">
-                <div class="">
-                    <div class="mb-3">
-                        <h4>Full Time Delivery Driver</h4>
+                <div class="col-6 my-3">
+                    <div class="">
+                        <div class="mb-3">
+                            <h4>Full Time Delivery Driver</h4>
+                        </div>
+                        <p><strong>Main Duties:</strong> Main duties will include delivery of cakes to customers in various
+                            locations throughout Scotland. Van provided during working hours and business is covered for
+                            company
+                            van. Previous experience in a delivery driver role. Decant and stack reliable (for gas/trolly
+                            and
+                            methodical). Be flexible as working days will vary per week depending on delivery requirements
+                            each
+                            week.</p>
+                        <p><strong>Other Information:</strong> Suitable candidates will have held a flat, clean UK driving
+                            license
+                            for a minimum of three years. For insurance purposes, our policy requires drivers to be 25 or
+                            older.
+                        </p>
+                        <p><strong>Working Hours & Wage:</strong> 5 days per week (25-40 hours per week); Rota Basis, £12
+                            per
+                            hour |
+                            Job Reference: DRIV4</p>
                     </div>
-                    <p><strong>Main Duties:</strong> Main duties will include delivery of cakes to customers in various
-                        locations throughout Scotland. Van provided during working hours and business is covered for company
-                        van. Previous experience in a delivery driver role. Decant and stack reliable (for gas/trolly and
-                        methodical). Be flexible as working days will vary per week depending on delivery requirements each
-                        week.</p>
-                    <p><strong>Other Information:</strong> Suitable candidates will have held a flat, clean UK driving
-                        license
-                        for a minimum of three years. For insurance purposes, our policy requires drivers to be 25 or older.
-                    </p>
-                    <p><strong>Working Hours & Wage:</strong> 5 days per week (25-40 hours per week); Rota Basis, £12 per
-                        hour |
-                        Job Reference: DRIV4</p>
                 </div>
             </div>
         </div>
@@ -369,6 +374,6 @@
         </form>
     </div>
     <!--=============================
-                                                                                                     Application PAGE END
-                                                                                                ==============================-->
+                                                                                                         Application PAGE END
+                                                                                                    ==============================-->
 @endsection
