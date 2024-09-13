@@ -8,8 +8,8 @@
         }
     </style>
     <!--=============================
-                                                                                                                                                                                                                BREADCRUMB START
-                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                                BREADCRUMB START
+                                                                                                                                                                                                                            ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay py-5">
             <div class="container py-md-5 py-2">
@@ -24,11 +24,11 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                BREADCRUMB END
-                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                                BREADCRUMB END
+                                                                                                                                                                                                                            ==============================-->
     <!--=============================
-                                                                                                                                                                                                               WE'RE HIRING! PAGE START
-                                                                                                                                                                                                            ==============================-->
+                                                                                                                                                                                                                               WE'RE HIRING! PAGE START
+                                                                                                                                                                                                                            ==============================-->
 
     {{-- <div class="container my-5">
         <div class="">
@@ -187,7 +187,7 @@
     </style>
 
 
-    <div class="container my-5">
+    <div class="my-5">
         <div class="">
             <h5>To apply to join the team at 3D Cakes Edinburgh or 3D Cakes Milngavie, please complete the application form
                 below and hit the 'Submit Application' button. Please ensure that you select the job reference(s) for all
@@ -409,7 +409,8 @@
                     <button type="submit" class="rounded-1 px-3 py-2 v_submit_button">Submit Application</button>
                 </div>
         </form>
-        <!--=============================
-                                                                                                                                                                                                                 Application PAGE END
-                                                                                                                                                                                                            ==============================-->
-    @endsection
+    </div>
+    <!--=============================
+                                                                                                                                                                                                                                 Application PAGE END
+                                                                                                                                                                                                                            ==============================-->
+@endsection
