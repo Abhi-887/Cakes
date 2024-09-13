@@ -43,8 +43,8 @@
     }
 
     .testimonial-content {
-        min-height: 150px;
-        max-height: 150px;
+        min-height: 120px;
+        max-height: 120px;
         overflow-y: auto;
     }
 
