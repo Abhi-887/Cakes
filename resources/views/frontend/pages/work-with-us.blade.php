@@ -23,8 +23,8 @@
         }
     </style>
     <!--=============================
-                                                                                                                                                                                                                                                                                                            BREADCRUMB START
-                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                    BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay py-5">
             <div class="container py-md-5 py-2">
@@ -39,11 +39,11 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                                                                            BREADCRUMB END
-                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                    BREADCRUMB END
+                                                                                                                                                                                                                                                                                                                ==============================-->
     <!--=============================
-                                                                                                                                                                                                                                                                                                           WE'RE HIRING! PAGE START
-                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                   WE'RE HIRING! PAGE START
+                                                                                                                                                                                                                                                                                                                ==============================-->
 
     {{-- <div class="container my-5">
         <div class="">
@@ -285,7 +285,7 @@
 
             <form class="" action="{{ route('work-with-us.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
-                <div class="form-group mt-3">
+                <div class="form-group mt-5">
                     <h3 class="">Please select the Job Reference(s) for which you would like to
                         apply:</h3>
                     <div class="row mt-3">
@@ -431,6 +431,6 @@
         </div>
     </section>
     <!--=============================
-                                                                 Application PAGE END
-                                                                ==============================-->
+                                                                         Application PAGE END
+                                                                        ==============================-->
 @endsection
