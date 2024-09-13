@@ -46,11 +46,11 @@
         min-height: 120px;
         max-height: 120px;
         overflow-y: auto;
-        scrollbar-color: rgb(96, 94, 94) #ff9800;
+        scrollbar-color: #262626 #ff9800;
     }
 
     .testimonial-content::-webkit-scrollbar {
-        width: 6px;
+        width: 3px;
     }
 </style>
 
