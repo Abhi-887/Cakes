@@ -16,60 +16,64 @@
             border-color: #788a9f !important;
         }
 
+        ..fp__related_menu .fp__menu_item {
+            margin: 0px 12px 0px 12px !important;
+        }
+
         /* .fa-long-arrow-right::before {
-                                        content: "\f054" !important;
-                                        font-weight: bolder !important;
-                                    }
+                                                    content: "\f054" !important;
+                                                    font-weight: bolder !important;
+                                                }
 
-                                    .fa-long-arrow-left::before {
-                                        content: "\f053" !important;
-                                        font-weight: bolder !important;
-                                    }
+                                                .fa-long-arrow-left::before {
+                                                    content: "\f053" !important;
+                                                    font-weight: bolder !important;
+                                                }
 
-                                    .fp__related_menu .prevArrow {
-                                        left: -45px !important;
-                                    }
+                                                .fp__related_menu .prevArrow {
+                                                    left: -45px !important;
+                                                }
 
-                                    .nextArrow.slick-arrow {
-                                        right: -45px !important;
-                                    }
+                                                .nextArrow.slick-arrow {
+                                                    right: -45px !important;
+                                                }
 
-                                    @media (max-width: 640px) {
-                                        .nextArrow.slick-arrow {
-                                            right: 40% !important;
-                                            top: 103% !important;
-                                        }
+                                                @media (max-width: 640px) {
+                                                    .nextArrow.slick-arrow {
+                                                        right: 40% !important;
+                                                        top: 103% !important;
+                                                    }
 
-                                        .fp__related_menu .prevArrow {
-                                            left: 40% !important;
-                                            top: 103% !important;
-                                        }
-                                    }
+                                                    .fp__related_menu .prevArrow {
+                                                        left: 40% !important;
+                                                        top: 103% !important;
+                                                    }
+                                                }
 
-                                    @media (max-width: 460px) {
-                                        .nextArrow.slick-arrow {
-                                            right: 38% !important;
-                                        }
+                                                @media (max-width: 460px) {
+                                                    .nextArrow.slick-arrow {
+                                                        right: 38% !important;
+                                                    }
 
-                                        .fp__related_menu .prevArrow {
-                                            left: 38% !important;
-                                        }
-                                    }
+                                                    .fp__related_menu .prevArrow {
+                                                        left: 38% !important;
+                                                    }
+                                                }
 
-                                    @media (max-width: 380px) {
-                                        .nextArrow.slick-arrow {
-                                            right: 35% !important;
-                                        }
+                                                @media (max-width: 380px) {
+                                                    .nextArrow.slick-arrow {
+                                                        right: 35% !important;
+                                                    }
 
-                                        .fp__related_menu .prevArrow {
-                                            left: 35% !important;
-                                        }
-                                    }
+                                                    .fp__related_menu .prevArrow {
+                                                        left: 35% !important;
+                                                    }
+                                                }
 
-                                    .prevArrow.slick-arrow {
-                                        font-size: 22px !important;
-                                        font-weight: 600;
-                                    } */
+                                                .prevArrow.slick-arrow {
+                                                    font-size: 22px !important;
+                                                    font-weight: 600;
+                                                } */
 
         #exzoom {
             position: sticky;
@@ -535,7 +539,7 @@
                         <h2>Related Item</h2>
                         <div class="row related_product_slider">
                             @foreach ($relatedProducts as $relatedProduct)
-                                <div class="my-3 fp__menu_hover wow fadeInUp" data-wow-duration="1s">
+                                <div class="fp__menu_hover wow fadeInUp" data-wow-duration="1s">
                                     <div class="card fp__menu_item rounded-3">
                                         <div class="fp__menu_item_img">
                                             <img src="{{ asset($relatedProduct->thumb_image) }}"
