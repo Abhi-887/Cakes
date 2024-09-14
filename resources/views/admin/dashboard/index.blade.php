@@ -175,6 +175,9 @@
                             <div class="wg-table table-top-product" style="max-height: 300px; overflow-y: auto;">
                                 <ul class="flex flex-column gap14">
                                     @foreach ($topSellingProducts as $product)
+                                    @php
+                                        print_r($topSellingProducts);
+                                    @endphp
                                     <li class="product-item">
                                         <div class="image">
                                             <!-- Placeholder image for the product; replace with actual if available -->
