@@ -553,68 +553,49 @@
 
 
             <!-- product-overview -->
-            <div class="wg-box">
-                <div class="flex items-center justify-between">
-                    <h5>Low Stock Alerts</h5>
-                    <div class="dropdown default">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            <span class="view-all">View all<i class="icon-chevron-down"></i></span>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li>
-                                <a href="javascript:void(0);">3 days</a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0);">7 days</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="wg-table table-product-overview">
+                <ul class="table-title flex gap20 mb-14">
+                    <li>
+                        <div class="body-title">Product Name</div>
+                    </li>
+                    <li>
+                        <div class="body-title">Available Quantity</div>
+                    </li>
+                    <li>
+                        <div class="body-title">Status</div>
+                    </li>
+                </ul>
 
-                <div class="wg-table table-product-overview">
-                    <ul class="table-title flex gap20 mb-14">
-                        <li>
-                            <div class="body-title">Product Name</div>
-                        </li>
-                        <li>
-                            <div class="body-title">Available Quantity</div>
-                        </li>
-                        <li>
-                            <div class="body-title">Status</div>
-                        </li>
-                    </ul>
-
-                    <ul class="flex flex-column gap10">
-                        @foreach ($lowStockAlerts as $product)
-                        <li class="product-item gap14">
-                            <div class="flex items-center justify-between flex-grow">
-                                <div class="name">
-                                    <span class="body-text">{{ $product->name }}</span>
-                                </div>
-                                <div class="body-text">{{ $product->quantity }}</div>
-                                <div class="body-text">
-                                    @if ($product->quantity == 0)
-                                        <span class="text-danger">Out of Stock</span>
-                                    @else
-                                        <span class="text-warning">Low Stock</span>
-                                    @endif
-                                </div>
+                <ul class="flex flex-column gap10">
+                    @foreach ($lowStockAlerts as $product)
+                    <li class="product-item gap14">
+                        <div class="flex items-center justify-between flex-grow">
+                            <div class="name">
+                                <span class="body-text">{{ $product->name }}</span>
                             </div>
-                        </li>
-                        @endforeach
-                    </ul>
-                </div>
+                            <div class="body-text">{{ $product->quantity }}</div>
+                            <div class="body-text">
+                                @if ($product->quantity == 0)
+                                    <span class="text-danger">Out of Stock</span>
+                                @else
+                                    <span class="text-warning">Low Stock</span>
+                                @endif
+                            </div>
+                        </div>
+                    </li>
+                    @endforeach
+                </ul>
 
                 <div class="divider"></div>
 
                 <div class="flex items-center justify-between flex-wrap gap10">
                     <div class="text-tiny">Showing {{ $lowStockAlerts->count() }} entries of {{ $lowStockAlerts->total() }}</div>
                     <ul class="wg-pagination">
-                        {{ $lowStockAlerts->links('pagination::bootstrap-4') }}
+                        {!! $lowStockAlerts->links('pagination::bootstrap-4') !!}
                     </ul>
                 </div>
             </div>
+
 
 
             <!-- /product-overview -->
@@ -1522,6 +1503,34 @@
             })
         })
     </script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Load initial data
+        loadLowStockAlerts(1);
+
+        // Handle pagination click
+        $(document).on('click', '.wg-pagination a', function(event) {
+            event.preventDefault();
+            let page = $(this).attr('href').split('page=')[1];
+            loadLowStockAlerts(page);
+        });
+
+        // Function to load data
+        function loadLowStockAlerts(page) {
+            $('#loading').show(); // Show loading spinner
+            $.ajax({
+                url: "{{ route('admin.getLowStockAlerts') }}?page=" + page,
+                success: function(data) {
+                    $('#loading').hide(); // Hide loading spinner
+                    $('#low-stock-alerts').html(data); // Update content
+                }
+            });
+        }
+    });
+</script>
+
 @endpush
 
 <!-- /main-content-wrap -->

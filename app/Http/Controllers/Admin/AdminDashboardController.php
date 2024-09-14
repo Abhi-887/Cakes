@@ -258,4 +258,20 @@ $salesTrendData = $salesTrend->pluck('total_sales')->toArray(); // Convert to ar
         toastr()->success('Notification Cleared Successfully!');
         return redirect()->back();
     }
+
+    public function getLowStockAlerts(Request $request)
+{
+    $lowStockAlerts = Product::select('name', 'quantity')
+        ->where(function ($query) {
+            $query->where('quantity', '<=', 5)
+                  ->orWhere('quantity', '=', 0);
+        })
+        ->paginate(5);
+
+    if ($request->ajax()) {
+        return view('partials.low-stock-alerts', compact('lowStockAlerts'))->render();
+    }
+
+    return response()->json(['error' => 'Invalid request']);
+}
 }
