@@ -526,8 +526,7 @@
             </div> --}}
             <!-- /best-shop-sellers -->
 
-           <!-- category -->
-<!-- category -->
+
 <!-- category -->
 <div class="wg-box w-half">
     <div class="flex items-center justify-between">
@@ -587,6 +586,17 @@
     </div>
 </div>
 <!-- /category -->
+
+<div class="wg-box">
+
+        <div class="card-header">
+            <h5 class="card-title">Orders by Status</h5>
+        </div>
+        <div class="card-body">
+            <canvas id="ordersByStatusChart"></canvas>
+        </div>
+
+</div>
 
 
 
@@ -1075,7 +1085,8 @@
         </div>
 
     </div>
-    <div class="row">
+
+    {{-- <div class="row">
         <div class="col-lg-3 col-md-6 col-sm-6 col-12">
             <div class="card card-statistic-1">
                 <div class="card-icon bg-primary">
@@ -1313,7 +1324,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <h3>System Notifications</h3>
 
