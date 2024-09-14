@@ -87,9 +87,9 @@
                             <div class="header-left">
                                 <a href="index.html">
                                     <img class="" id="logo_header_mobile" alt=""
-                                        src="images/logo/logo.png" data-light="images/logo/logo.png"
-                                        data-dark="images/logo/logo-dark.png" data-width="154px" data-height="52px"
-                                        data-retina="images/logo/logo@2x.png">
+                                        src="{{ asset('admin2/assets/logo/logo.png') }} data-light="{{ asset('admin2/assets/logo/logo.png') }}
+                                        data-dark="{{ asset('admin2/assets/logo/logo-dark.png') }} data-width="154px" data-height="52px"
+                                        data-retina="{{ asset('admin2/assets/logo/logo@2x.png') }}>
                                 </a>
                                 <div class="button-show-hide">
                                     <i class="icon-menu-left"></i>
@@ -115,7 +115,7 @@
                                                 <ul>
                                                     <li class="product-item gap14 mb-10">
                                                         <div class="image no-bg">
-                                                            <img src="images/products/17.png" alt="">
+                                                            <img src="{{ asset('admin2/assets/products/17.png') }} alt="">
                                                         </div>
                                                         <div class="flex items-center justify-between gap20 flex-grow">
                                                             <div class="name">
@@ -129,7 +129,7 @@
                                                     </li>
                                                     <li class="product-item gap14 mb-10">
                                                         <div class="image no-bg">
-                                                            <img src="images/products/18.png" alt="">
+                                                            <img src="{{ asset('admin2/assets/products/18.png') }} alt="">
                                                         </div>
                                                         <div class="flex items-center justify-between gap20 flex-grow">
                                                             <div class="name">
@@ -143,7 +143,7 @@
                                                     </li>
                                                     <li class="product-item gap14">
                                                         <div class="image no-bg">
-                                                            <img src="images/products/19.png" alt="">
+                                                            <img src="{{ asset('admin2/assets/products/19.png') }} alt="">
                                                         </div>
                                                         <div class="flex items-center justify-between gap20 flex-grow">
                                                             <div class="name">
@@ -166,7 +166,7 @@
                                                 <ul>
                                                     <li class="product-item gap14 mb-10">
                                                         <div class="image no-bg">
-                                                            <img src="images/products/20.png" alt="">
+                                                            <img src="{{ asset('admin2/assets/products/20.png') }} alt="">
                                                         </div>
                                                         <div class="flex items-center justify-between gap20 flex-grow">
                                                             <div class="name">
@@ -180,7 +180,7 @@
                                                     </li>
                                                     <li class="product-item gap14 mb-10">
                                                         <div class="image no-bg">
-                                                            <img src="images/products/21.png" alt="">
+                                                            <img src="{{ asset('admin2/assets/products/21.png') }} alt="">
                                                         </div>
                                                         <div class="flex items-center justify-between gap20 flex-grow">
                                                             <div class="name">
@@ -194,7 +194,7 @@
                                                     </li>
                                                     <li class="product-item gap14 mb-10">
                                                         <div class="image no-bg">
-                                                            <img src="images/products/22.png" alt="">
+                                                            <img src="{{ asset('admin2/assets/products/22.png') }} alt="">
                                                         </div>
                                                         <div class="flex items-center justify-between gap20 flex-grow">
                                                             <div class="name">
@@ -208,7 +208,7 @@
                                                     </li>
                                                     <li class="product-item gap14">
                                                         <div class="image no-bg">
-                                                            <img src="images/products/23.png" alt="">
+                                                            <img src="{{ asset('admin2/assets/products/23.png') }} alt="">
                                                         </div>
                                                         <div class="flex items-center justify-between gap20 flex-grow">
                                                             <div class="name">
@@ -226,8 +226,8 @@
                             <div class="header-grid">
                                 <div class="header-item country">
                                     <select class="image-select no-text">
-                                        <option data-thumbnail="images/country/1.png">ENG</option>
-                                        <option data-thumbnail="images/country/9.png">VIE</option>
+                                        <option data-thumbnail="{{ asset('admin2/assets/country/1.png') }}>ENG</option>
+                                        <option data-thumbnail="{{ asset('admin2/assets/country/9.png') }}>VIE</option>
                                     </select>
                                 </div>
                                 <div class="header-item button-dark-light">
@@ -250,7 +250,7 @@
                                             <li>
                                                 <div class="noti-item w-full wg-user active">
                                                     <div class="image">
-                                                        <img src="images/avatar/user-11.png" alt="">
+                                                        <img src="{{ asset('admin2/assets/avatar/user-11.png') }} alt="">
                                                     </div>
                                                     <div class="flex-grow">
                                                         <div class="flex items-center justify-between">
@@ -265,7 +265,7 @@
                                             <li>
                                                 <div class="noti-item w-full wg-user active">
                                                     <div class="image">
-                                                        <img src="images/avatar/user-12.png" alt="">
+                                                        <img src="{{ asset('admin2/assets/avatar/user-12.png') }} alt="">
                                                     </div>
                                                     <div class="flex-grow">
                                                         <div class="flex items-center justify-between">
@@ -280,7 +280,7 @@
                                             <li>
                                                 <div class="noti-item w-full wg-user active">
                                                     <div class="image">
-                                                        <img src="images/avatar/user-13.png" alt="">
+                                                        <img src="{{ asset('admin2/assets/avatar/user-13.png') }} alt="">
                                                     </div>
                                                     <div class="flex-grow">
                                                         <div class="flex items-center justify-between">
@@ -294,7 +294,7 @@
                                             <li>
                                                 <div class="noti-item w-full wg-user active">
                                                     <div class="image">
-                                                        <img src="images/avatar/user-11.png" alt="">
+                                                        <img src="{{ asset('admin2/assets/avatar/user-11.png') }} alt="">
                                                     </div>
                                                     <div class="flex-grow">
                                                         <div class="flex items-center justify-between">
@@ -398,7 +398,7 @@
                                                 <ul class="list-apps">
                                                     <li class="item">
                                                         <div class="image">
-                                                            <img src="images/apps/item-1.png" alt="">
+                                                            <img src="{{ asset('admin2/assets/apps/item-1.png') }} alt="">
                                                         </div>
                                                         <a href="#">
                                                             <div class="text-tiny">Photoshop</div>
@@ -406,7 +406,7 @@
                                                     </li>
                                                     <li class="item">
                                                         <div class="image">
-                                                            <img src="images/apps/item-2.png" alt="">
+                                                            <img src="{{ asset('admin2/assets/apps/item-2.png') }} alt="">
                                                         </div>
                                                         <a href="#">
                                                             <div class="text-tiny">illustrator</div>
@@ -414,7 +414,7 @@
                                                     </li>
                                                     <li class="item">
                                                         <div class="image">
-                                                            <img src="images/apps/item-3.png" alt="">
+                                                            <img src="{{ asset('admin2/assets/apps/item-3.png') }} alt="">
                                                         </div>
                                                         <a href="#">
                                                             <div class="text-tiny">Sheets</div>
@@ -422,7 +422,7 @@
                                                     </li>
                                                     <li class="item">
                                                         <div class="image">
-                                                            <img src="images/apps/item-4.png" alt="">
+                                                            <img src="{{ asset('admin2/assets/apps/item-4.png') }} alt="">
                                                         </div>
                                                         <a href="#">
                                                             <div class="text-tiny">Gmail</div>
@@ -430,7 +430,7 @@
                                                     </li>
                                                     <li class="item">
                                                         <div class="image">
-                                                            <img src="images/apps/item-5.png" alt="">
+                                                            <img src="{{ asset('admin2/assets/apps/item-5.png') }} alt="">
                                                         </div>
                                                         <a href="#">
                                                             <div class="text-tiny">Messenger</div>
@@ -438,7 +438,7 @@
                                                     </li>
                                                     <li class="item">
                                                         <div class="image">
-                                                            <img src="images/apps/item-6.png" alt="">
+                                                            <img src="{{ asset('admin2/assets/apps/item-6.png') }} alt="">
                                                         </div>
                                                         <a href="#">
                                                             <div class="text-tiny">Youtube</div>
@@ -446,7 +446,7 @@
                                                     </li>
                                                     <li class="item">
                                                         <div class="image">
-                                                            <img src="images/apps/item-7.png" alt="">
+                                                            <img src="{{ asset('admin2/assets/apps/item-7.png') }} alt="">
                                                         </div>
                                                         <a href="#">
                                                             <div class="text-tiny">Flaticon</div>
@@ -454,7 +454,7 @@
                                                     </li>
                                                     <li class="item">
                                                         <div class="image">
-                                                            <img src="images/apps/item-8.png" alt="">
+                                                            <img src="{{ asset('admin2/assets/apps/item-8.png') }} alt="">
                                                         </div>
                                                         <a href="#">
                                                             <div class="text-tiny">Instagram</div>
@@ -462,7 +462,7 @@
                                                     </li>
                                                     <li class="item">
                                                         <div class="image">
-                                                            <img src="images/apps/item-9.png" alt="">
+                                                            <img src="{{ asset('admin2/assets/apps/item-9.png') }} alt="">
                                                         </div>
                                                         <a href="#">
                                                             <div class="text-tiny">PDF</div>
@@ -480,7 +480,7 @@
                                             id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
                                             <span class="header-user wg-user">
                                                 <span class="image">
-                                                    <img src="images/avatar/user-1.png" alt="">
+                                                    <img src="{{ asset('admin2/assets/avatar/user-1.png') }} alt="">
                                                 </span>
                                                 <span class="flex flex-column">
                                                     <span class="body-title mb-2">Kristin Watson</span>
