@@ -1281,14 +1281,65 @@
     <h3>System Notifications</h3>
 
     <!-- Server Status -->
-    <div>
+    <div class="status-container">
         <h4>Server Status</h4>
-        @if ($serverStatus)
-            <span style="color: green;">Server is running smoothly</span>
-        @else
-            <span style="color: red;">Server is down!</span>
-        @endif
+        <div class="status">
+            <div class="status-indicator @if($serverStatus) online @else offline @endif"></div>
+            <span class="status-text">
+                @if ($serverStatus)
+                    Server is running smoothly
+                @else
+                    Server is down!
+                @endif
+            </span>
+        </div>
     </div>
+
+    <!-- Styles -->
+    <style>
+        .status-container {
+            font-family: Arial, sans-serif;
+            margin-bottom: 20px;
+        }
+
+        .status {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .status-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: grey;
+            position: relative;
+        }
+
+        .online {
+            background-color: green;
+            animation: blink 1.5s infinite;
+        }
+
+        .offline {
+            background-color: red;
+        }
+
+        .status-text {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.3;
+            }
+        }
+    </style>
+
 
 
 
