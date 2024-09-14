@@ -138,7 +138,7 @@ button {
     COMMON CSS START
 ============================*/
 .common_btn {
-    background: #1f4469;
+    background: #4b637f;
     text-transform: capitalize !important;
     color: var(--colorWhite) !important;
     padding: 12px 45px !important;
