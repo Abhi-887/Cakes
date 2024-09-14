@@ -116,9 +116,9 @@ class AdminDashboardController extends Controller
           ->select('order_status', DB::raw('count(*) as total'))
           ->groupBy('order_status')
           ->pluck('total', 'order_status');
-
-          $topSellingProducts = OrderItem::select('product_name', DB::raw('SUM(qty) as total_qty'), DB::raw('SUM(unit_price * qty) as total_revenue'))
-          ->groupBy('product_name')
+          $topSellingProducts = OrderItem::select('products.name as product_name', 'products.thumb_image', DB::raw('SUM(order_items.qty) as total_qty'), DB::raw('SUM(order_items.unit_price * order_items.qty) as total_revenue'))
+          ->join('products', 'order_items.product_id', '=', 'products.id')
+          ->groupBy('products.name', 'products.thumb_image')
           ->orderBy('total_qty', 'desc')
           ->limit(10)
           ->get();
