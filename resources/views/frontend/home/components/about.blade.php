@@ -26,14 +26,9 @@
     }
 
     .parallax-item {
-        background:
-            #008B8B,
-            url({{ asset('uploads/patterned.png') }});
-        background-blend-mode: overlay;
-        background-size: cover;
-        background-position: center;
+        /* background: url({{ asset('uploads/center_homebg.webp') }}); */
+        background: #008B8B !important;
     }
-
 
     .about-description p {
         color: white !important;
