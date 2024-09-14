@@ -202,33 +202,42 @@
             <div class="center-item">
                 <div class="center-heading">Manage Products</div>
                 <ul class="menu-list">
-                    <li class="menu-item dropdown {{ setSidebarActive([
+                    <li class="menu-item has-children {{ setSidebarActive([
                         'admin.category.index',
                         'admin.product.index',
                         'admin.cakes-stand.index',
                         'admin.product-reviews.index'
                     ]) }}">
-                        <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
+                        <a href="javascript:void(0);" class="menu-item-button">
                             <div class="icon"><i class="fas fa-shopping-cart"></i></div>
                             <div class="text">Manage Products</div>
                         </a>
                         <ul class="sub-menu">
-                            <li class="{{ setSidebarActive(['admin.category.index']) }}">
-                                <a class="nav-link" href="{{ route('admin.category.index') }}">Product Categories</a>
+                            <li class="sub-menu-item {{ setSidebarActive(['admin.category.index']) }}">
+                                <a href="{{ route('admin.category.index') }}" class="">
+                                    <div class="text">Product Categories</div>
+                                </a>
                             </li>
-                            <li class="{{ setSidebarActive(['admin.product.index']) }}">
-                                <a class="nav-link" href="{{ route('admin.product.index') }}">Products</a>
+                            <li class="sub-menu-item {{ setSidebarActive(['admin.product.index']) }}">
+                                <a href="{{ route('admin.product.index') }}" class="">
+                                    <div class="text">Products</div>
+                                </a>
                             </li>
-                            <li class="{{ setSidebarActive(['admin.cakes-stand.index']) }}">
-                                <a class="nav-link" href="{{ route('admin.cakes-stand.index') }}">Cakes Stand Type</a>
+                            <li class="sub-menu-item {{ setSidebarActive(['admin.cakes-stand.index']) }}">
+                                <a href="{{ route('admin.cakes-stand.index') }}" class="">
+                                    <div class="text">Cakes Stand Type</div>
+                                </a>
                             </li>
-                            <li class="{{ setSidebarActive(['admin.product-reviews.index']) }}">
-                                <a class="nav-link" href="{{ route('admin.product-reviews.index') }}">Product Reviews</a>
+                            <li class="sub-menu-item {{ setSidebarActive(['admin.product-reviews.index']) }}">
+                                <a href="{{ route('admin.product-reviews.index') }}" class="">
+                                    <div class="text">Product Reviews</div>
+                                </a>
                             </li>
                         </ul>
                     </li>
                 </ul>
             </div>
+
 
             <div class="center-item">
                 <div class="center-heading">Manage Ecommerce</div>
