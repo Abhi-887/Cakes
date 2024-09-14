@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay py-5">
             <div class="container py-md-5 py-2">
@@ -18,13 +18,13 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            BREADCRUMB END
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    BREADCRUMB END
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
 
 
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            CONTACT PAGE START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    CONTACT PAGE START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
 
 
     <style>
@@ -89,7 +89,7 @@
                         <hr>
                         <p class="text-muted fw-semibold">{!! @$contact->address !!}</p>
                     </div>
-                    <div class="img-container overflow-hidden rounded-3 align-self-stretch">
+                    <div class="img-container overflow-hidden rounded-3 align-self-stretch mt-auto">
                         <iframe src="{{ @$contact->map_link }}" style="border:0; width:100%; height:100%;"
                             allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
@@ -108,12 +108,12 @@
                         <hr>
                         <p class="text-muted fw-semibold">{!! @$contact->phone_one !!}</p>
                     </div>
-                    <div class="img-container overflow-hidden rounded-3 align-self-stretch">
+                    <div class="img-container overflow-hidden rounded-3 align-self-stretch mt-auto">
                         <img src="{{ asset('storage/' . @$contact->phone_image) }}" class="img-fluid" alt="Image">
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-4 d-flex flex-column">
+            <div class="col-md-4 mb-4 mb-md-0 d-flex flex-column">
                 <div class="contact-card rounded-3 p-4 d-flex flex-column flex-grow-1">
                     <div class="contact-content flex-grow-1">
                         <div class="d-flex justify-content-between align-items-center">
@@ -126,12 +126,13 @@
                         <hr>
                         <p class="text-muted fw-semibold">{!! @$contact->mail_one !!}</p>
                     </div>
-                    <div class="img-container overflow-hidden rounded-3 align-self-stretch">
+                    <div class="img-container overflow-hidden rounded-3 align-self-stretch mt-auto">
                         <img src="{{ asset('storage/' . @$contact->email_image) }}" class="img-fluid" alt="Image">
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 
     <div class="contact-card opening-bg py-5 px-3"
@@ -182,7 +183,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-4 mb-md- d-flex flex-column">
+            <div class="col-md-4 mb-4 mb-md-0 d-flex flex-column">
                 <div class="contact-card rounded-3 p-4 d-flex flex-column flex-grow-1">
                     <div class="contact-content flex-grow-1">
                         <div class="d-flex justify-content-between align-items-center">
@@ -200,7 +201,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-4 d-flex flex-column">
+            <div class="col-md-4 mb-4 mb-md-0 d-flex flex-column">
                 <div class="contact-card rounded-3 p-4 d-flex flex-column flex-grow-1">
                     <div class="contact-content flex-grow-1">
                         <div class="d-flex justify-content-between align-items-center">
