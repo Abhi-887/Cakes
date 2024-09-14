@@ -3569,10 +3569,10 @@ footer .wrapper a:hover {
 }
 
 .details_button_area .wishlist {
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     text-align: center;
-    line-height: 45px;
+    line-height: 40px;
     margin-right: 0;
     background: #4b637f !important;
     color: var(--colorWhite);
