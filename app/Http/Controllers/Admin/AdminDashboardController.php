@@ -116,6 +116,7 @@ class AdminDashboardController extends Controller
           ->select('order_status', DB::raw('count(*) as total'))
           ->groupBy('order_status')
           ->pluck('total', 'order_status');
+
           $topSellingProducts = OrderItem::select('products.name as product_name', 'products.thumb_image', DB::raw('SUM(order_items.qty) as total_qty'), DB::raw('SUM(order_items.unit_price * order_items.qty) as total_revenue'))
           ->join('products', 'order_items.product_id', '=', 'products.id')
           ->groupBy('products.name', 'products.thumb_image')
@@ -131,12 +132,13 @@ class AdminDashboardController extends Controller
           ->get();
 
           $topCustomers = User::join('orders', 'users.id', '=', 'orders.user_id')
-                     ->select('users.name', DB::raw('COUNT(orders.id) as total_purchases'), DB::raw('SUM(orders.grand_total) as total_spent'))
-                     ->where('users.role', 'user')
-                     ->groupBy('users.id', 'users.name')
-                     ->orderBy('total_spent', 'desc')
-                     ->take(10) // Limit to top 10 customers
-                     ->get();
+    ->select('users.name', 'users.avatar', DB::raw('COUNT(orders.id) as total_purchases'), DB::raw('SUM(orders.grand_total) as total_spent'))
+    ->where('users.role', 'user')
+    ->groupBy('users.id', 'users.name', 'users.avatar')
+    ->orderBy('total_spent', 'desc')
+    ->take(10)
+    ->get();
+
 
             $totalCustomers = User::where('role', 'user')->count();
 

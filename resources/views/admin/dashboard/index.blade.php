@@ -135,7 +135,7 @@
         </div>
         <div class="tf-section-5 mb-30">
             <!-- chart -->
-            <div class="wg-box">
+            {{-- <div class="wg-box">
                 <div class="flex items-center justify-between">
                     <h5>Recent Order</h5>
                     <div class="dropdown default">
@@ -154,7 +154,54 @@
                     </div>
                 </div>
                 <div id="line-chart-5"></div>
+            </div> --}}
+            <div class="wg-box">
+                <div class="flex items-center justify-between">
+                    <h5>Top Customers</h5>
+                    <div class="dropdown default">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="view-all">View all<i class="icon-chevron-down"></i></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li>
+                                <a href="javascript:void(0);">3 days</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">7 days</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="wg-table">
+                    <ul class="table-title flex justify-between gap20 mb-14">
+                        <li>
+                            <div class="body-title">Name</div>
+                        </li>
+                        <li>
+                            <div class="body-title">Total money</div>
+                        </li>
+                    </ul>
+
+                    <ul class="flex flex-column gap18">
+                        @foreach ($topCustomers as $customer)
+                        <li class="shop-item">
+                            <div class="image">
+                                <img src="{{ asset($customer->avatar) }}" alt="{{ $customer->name }}">
+                            </div>
+                            <div class="flex-grow flex items-center justify-between gap20">
+                                <div>
+                                    <a href="#" class="tf-color-3 body-text name">{{ $customer->name }}</a>
+                                    <div class="text-tiny mt-4">{{ $customer->total_purchases }} Purchases</div>
+                                </div>
+                                <div class="body-text tf-color-3">${{ number_format($customer->total_spent, 2) }}</div>
+                            </div>
+                        </li>
+                        @endforeach
+                    </ul>
+                </div>
             </div>
+
             <!-- /chart -->
             <!-- top-product -->
             <div class="wg-box">
