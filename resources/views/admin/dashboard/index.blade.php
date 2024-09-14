@@ -171,7 +171,8 @@
                                 </div>
                             </div>
 
-                            <div class="wg-table table-top-product">
+                            <!-- Set a max height and enable scrolling for product list -->
+                            <div class="wg-table table-top-product" style="max-height: 400px; overflow-y: auto;">
                                 <ul class="flex flex-column gap14">
                                     @foreach ($topSellingProducts as $product)
                                     <li class="product-item">
@@ -188,20 +189,18 @@
                                                 <div class="text-tiny mb-3">Revenue</div>
                                                 <div class="body-text">${{ number_format($product->total_revenue, 2) }}</div>
                                             </div>
-                                            <div class="country">
-                                                <!-- Placeholder country flag; replace or remove if not relevant -->
-                                                <img src="{{ asset('admin2/assets/images/country/default.png') }}" alt="Country Flag">
-                                            </div>
-                                            <div>
+
+                                            {{-- <div>
                                                 <div class="body-title-2 mb-3">Discount</div>
                                                 <div class="text-tiny">-15%</div>
-                                            </div>
+                                            </div> --}}
                                         </div>
                                     </li>
                                     @endforeach
                                 </ul>
                             </div>
                         </div>
+
 
                         <!-- /top-product -->
                         <!-- top-countries -->
