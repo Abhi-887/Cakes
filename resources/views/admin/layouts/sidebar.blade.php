@@ -172,13 +172,7 @@
                             <div class="text">Consultation Time</div>
                         </a>
                     </li>
-                </ul>
 
-
-
-
-                {{-- <div class="center-heading">Orders</div> --}}
-                <ul class="menu-list">
                     <li
                         class="menu-item has-children {{ setSidebarActive([
                             'admin.orders.index',
@@ -219,13 +213,7 @@
                             </li>
                         </ul>
                     </li>
-                </ul>
 
-
-
-
-                {{-- <div class="center-heading">Manage Products</div> --}}
-                <ul class="menu-list">
                     <li
                         class="menu-item has-children {{ setSidebarActive([
                             'admin.category.index',
@@ -260,13 +248,7 @@
                             </li>
                         </ul>
                     </li>
-                </ul>
 
-
-
-                {{-- <div class="center-item">
-                 <div class="center-heading">Manage Ecommerce</div> --}}
-                <ul class="menu-list">
                     <li
                         class="menu-item has-children {{ setSidebarActive(['admin.coupon.index', 'admin.delivery-area.index', 'admin.payment-setting.index']) }}">
                         <a href="javascript:void(0);" class="menu-item-button">
@@ -291,12 +273,7 @@
                             </li>
                         </ul>
                     </li>
-                </ul>
-                {{-- </div> --}}
 
-
-                {{-- <div class="center-heading">Pages</div> --}}
-                <ul class="menu-list">
                     <li
                         class="menu-item has-children {{ setSidebarActive([
                             'admin.custom-page-builder.index',
@@ -343,12 +320,6 @@
                             </li>
                         </ul>
                     </li>
-                </ul>
-
-
-
-                {{-- <div class="center-heading">Footer</div> --}}
-                <ul class="menu-list">
                     <li
                         class="menu-item has-children {{ setSidebarActive([
                             'admin.footer-info.index',
@@ -396,56 +367,59 @@
                         </ul>
                     </li>
                 </ul>
+
+                @if (auth()->user()->id === 1)
+                <li class="menu-item {{ setSidebarActive(['admin.chat.index']) }}">
+                    <a class="nav-link" href="{{ route('admin.chat.index') }}">
+                        <div class="icon"><i class="fas fa-comment-dots"></i></div>
+                        <div class="text">Messages</div>
+                    </a>
+                </li>
+            @endif
+
+            <li class="menu-item {{ setSidebarActive(['admin.news-letter.index']) }}">
+                <a class="nav-link" href="{{ route('admin.news-letter.index') }}">
+                    <div class="icon"><i class="fas fa-newspaper"></i></div>
+                    <div class="text">News Letter</div>
+                </a>
+            </li>
+
+            <li class="menu-item {{ setSidebarActive(['admin.social-link.index']) }}">
+                <a class="nav-link" href="{{ route('admin.social-link.index') }}">
+                    <div class="icon"><i class="fas fa-link"></i></div>
+                    <div class="text">Social Links</div>
+                </a>
+            </li>
+
+            <li class="menu-item {{ setSidebarActive(['admin.menu-builder.index']) }}">
+                <a class="nav-link" href="{{ route('admin.menu-builder.index') }}">
+                    <div class="icon"><i class="fas fa-list-alt"></i></div>
+                    <div class="text">Menu Builder</div>
+                </a>
+            </li>
+
+            <li class="menu-item {{ setSidebarActive(['admin.admin-management.index']) }}">
+                <a class="nav-link" href="{{ route('admin.admin-management.index') }}">
+                    <div class="icon"><i class="fas fa-user-shield"></i></div>
+                    <div class="text">Admin Management</div>
+                </a>
+            </li>
+
+            <li class="menu-item {{ setSidebarActive(['admin.setting.index']) }}">
+                <a class="nav-link" href="{{ route('admin.setting.index') }}">
+                    <div class="icon"><i class="fas fa-cogs"></i></div>
+                    <div class="text">Settings</div>
+                </a>
+            </li>
+
             </div>
 
 
-            <div class="center-item">
+            {{-- <div class="center-item">
                 <ul class="menu-list">
-                    @if (auth()->user()->id === 1)
-                        <li class="menu-item {{ setSidebarActive(['admin.chat.index']) }}">
-                            <a class="nav-link" href="{{ route('admin.chat.index') }}">
-                                <div class="icon"><i class="fas fa-comment-dots"></i></div>
-                                <div class="text">Messages</div>
-                            </a>
-                        </li>
-                    @endif
 
-                    <li class="menu-item {{ setSidebarActive(['admin.news-letter.index']) }}">
-                        <a class="nav-link" href="{{ route('admin.news-letter.index') }}">
-                            <div class="icon"><i class="fas fa-newspaper"></i></div>
-                            <div class="text">News Letter</div>
-                        </a>
-                    </li>
-
-                    <li class="menu-item {{ setSidebarActive(['admin.social-link.index']) }}">
-                        <a class="nav-link" href="{{ route('admin.social-link.index') }}">
-                            <div class="icon"><i class="fas fa-link"></i></div>
-                            <div class="text">Social Links</div>
-                        </a>
-                    </li>
-
-                    <li class="menu-item {{ setSidebarActive(['admin.menu-builder.index']) }}">
-                        <a class="nav-link" href="{{ route('admin.menu-builder.index') }}">
-                            <div class="icon"><i class="fas fa-list-alt"></i></div>
-                            <div class="text">Menu Builder</div>
-                        </a>
-                    </li>
-
-                    <li class="menu-item {{ setSidebarActive(['admin.admin-management.index']) }}">
-                        <a class="nav-link" href="{{ route('admin.admin-management.index') }}">
-                            <div class="icon"><i class="fas fa-user-shield"></i></div>
-                            <div class="text">Admin Management</div>
-                        </a>
-                    </li>
-
-                    <li class="menu-item {{ setSidebarActive(['admin.setting.index']) }}">
-                        <a class="nav-link" href="{{ route('admin.setting.index') }}">
-                            <div class="icon"><i class="fas fa-cogs"></i></div>
-                            <div class="text">Settings</div>
-                        </a>
-                    </li>
                 </ul>
-            </div>
+            </div> --}}
         </div>
     </div>
 </div>
