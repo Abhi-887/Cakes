@@ -553,7 +553,7 @@
 
 
             <!-- product-overview -->
-            <div class="wg-table table-product-overview">
+            <div class="wg-box table-product-overview">
                 <ul class="table-title flex gap20 mb-14">
                     <li>
                         <div class="body-title">Product Name</div>
@@ -585,16 +585,17 @@
                     </li>
                     @endforeach
                 </ul>
-
-                <div class="divider"></div>
-
-                <div class="flex items-center justify-between flex-wrap gap10">
-                    <div class="text-tiny">Showing {{ $lowStockAlerts->count() }} entries of {{ $lowStockAlerts->total() }}</div>
-                    <ul class="wg-pagination">
-                        {!! $lowStockAlerts->links('pagination::bootstrap-4') !!}
-                    </ul>
-                </div>
             </div>
+
+            <div class="divider"></div>
+
+            <div class="flex items-center justify-between flex-wrap gap10">
+                <div class="text-tiny">Showing {{ $lowStockAlerts->count() }} entries of {{ $lowStockAlerts->total() }}</div>
+                <ul class="wg-pagination">
+                    {{ $lowStockAlerts->links('pagination::bootstrap-4') }}
+                </ul>
+            </div>
+
 
 
 
