@@ -232,7 +232,7 @@
                                 <div class="flex items-center justify-between flex-grow">
                                     <div class="name">
                                         <a href="product-list.html"
-                                            class="body-title-2">{{ Str::limit($product->product_name, 20, '...') }}</a>
+                                            class="body-title-2">{{ Str::limit($product->product_name, 30, '...') }}</a>
                                         <div class="text-tiny mt-3">{{ $product->total_qty }} Items Sold</div>
                                     </div>
                                     <div>
@@ -1506,33 +1506,43 @@
     <script>
         var ctx = document.getElementById('ordersByStatusChart').getContext('2d');
         var ordersByStatusChart = new Chart(ctx, {
-            type: 'doughnut', // or 'pie'
+            type: 'doughnut',
             data: {
                 labels: {!! json_encode($ordersByStatus->keys()) !!},
                 datasets: [{
                     label: 'Orders by Status',
                     data: {!! json_encode($ordersByStatus->values()) !!},
                     backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
+                        'rgba(63, 81, 181, 0.7)',  // Indigo
+                        'rgba(0, 188, 212, 0.7)',  // Cyan
+                        'rgba(255, 193, 7, 0.7)',  // Amber
+                        'rgba(76, 175, 80, 0.7)',  // Green
+                        'rgba(156, 39, 176, 0.7)', // Purple
+                        'rgba(244, 67, 54, 0.7)'   // Red
                     ],
                     borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
+                        'rgba(63, 81, 181, 1)',
+                        'rgba(0, 188, 212, 1)',
+                        'rgba(255, 193, 7, 1)',
+                        'rgba(76, 175, 80, 1)',
+                        'rgba(156, 39, 176, 1)',
+                        'rgba(244, 67, 54, 1)'
                     ],
                     borderWidth: 1
                 }]
             },
             options: {
                 responsive: true,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: 'rgba(0, 0, 0, 0.85)', // Dark mode consideration
+                            font: {
+                                weight: 'bold'
+                            }
+                        }
+                    }
+                }
             }
         });
     </script>
