@@ -527,6 +527,7 @@
             <!-- /best-shop-sellers -->
 
            <!-- category -->
+<!-- category -->
 <div class="wg-box w-half">
     <div class="flex items-center justify-between">
         <h5>Sale by Category</h5>
@@ -550,9 +551,9 @@
             <div class="text-tiny mb-2">Total {{ \Carbon\Carbon::now()->format('M d, Y') }}</div>
             <div class="flex items-center gap10">
                 <h4>${{ number_format($totalSales, 2) }}</h4>
-                <div class="box-icon-trending {{ $salesTrend > 0 ? 'up' : 'down' }}">
-                    <i class="icon-trending-{{ $salesTrend > 0 ? 'up' : 'down' }}"></i>
-                    <div class="body-title number">{{ number_format($salesTrend, 2) }}%</div>
+                <div class="box-icon-trending {{ $salesGrowth > 0 ? 'up' : 'down' }}">
+                    <i class="icon-trending-{{ $salesGrowth > 0 ? 'up' : 'down' }}"></i>
+                    <div class="body-title number">{{ number_format($salesGrowth, 2) }}%</div>
                 </div>
             </div>
         </div>
@@ -576,14 +577,16 @@
     </div>
 
     <div class="flex gap20 mt-4">
-        @foreach($categoryLegends as $index => $category)
+        @foreach($categoryLabels as $index => $label)
         <div class="block-legend style-1 w-full">
             <div class="dot t{{ $index + 1 }}"></div>
-            <div class="text-tiny">{{ $category }}</div>
+            <div class="text-tiny">{{ $label }}</div>
         </div>
         @endforeach
     </div>
 </div>
+<!-- /category -->
+
 <!-- /category -->
             <!-- product-overview -->
             <div class="wg-box">
