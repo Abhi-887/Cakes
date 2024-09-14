@@ -193,7 +193,7 @@
             </div>
 
             @if ($products->hasPages())
-                <div class="my-5 fp__pagination">
+                <div class="mt-5 fp__pagination">
                     <div class="row">
                         <div class="col-12">
                             {{ $products->links() }}
