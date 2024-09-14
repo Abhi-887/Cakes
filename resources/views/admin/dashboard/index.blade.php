@@ -587,7 +587,7 @@
 </div>
 <!-- /category -->
 
-<div class="wg-box">
+{{-- <div class="wg-box">
 
         <div class="card-header">
             <h5 class="card-title">Orders by Status</h5>
@@ -596,7 +596,7 @@
             <canvas id="ordersByStatusChart"></canvas>
         </div>
 
-</div>
+</div> --}}
 
 
 
