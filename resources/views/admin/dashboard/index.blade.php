@@ -135,7 +135,7 @@
         </div>
         <div class="tf-section-5 mb-30">
             <!-- chart -->
-            <div class="wg-box">
+            {{-- <div class="wg-box">
                 <div class="flex items-center justify-between">
                     <h5>Recent Order</h5>
                     <div class="dropdown default">
@@ -154,7 +154,55 @@
                     </div>
                 </div>
                 <div id="line-chart-5"></div>
+            </div> --}}
+            <div class="wg-box">
+                <div class="flex items-center justify-between">
+                    <h5>Top Customers</h5>
+                    <div class="dropdown default">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <span class="view-all">View all<i class="icon-chevron-down"></i></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li>
+                                <a href="javascript:void(0);">3 days</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">7 days</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="wg-table">
+                    <ul class="table-title flex justify-between gap20 mb-14">
+                        <li>
+                            <div class="body-title">Name</div>
+                        </li>
+                        <li>
+                            <div class="body-title">Total money</div>
+                        </li>
+                    </ul>
+
+                    <ul class="flex flex-column gap18">
+                        @foreach ($topCustomers as $customer)
+                            <li class="shop-item">
+                                <div class="image">
+                                    <img src="{{ asset($customer->avatar) }}" alt="{{ $customer->name }}">
+                                </div>
+                                <div class="flex-grow flex items-center justify-between gap20">
+                                    <div>
+                                        <a href="#" class="tf-color-3 body-text name">{{ $customer->name }}</a>
+                                        <div class="text-tiny mt-4">{{ $customer->total_purchases }} Purchases</div>
+                                    </div>
+                                    <div class="body-text tf-color-3">${{ number_format($customer->total_spent, 2) }}</div>
+                                </div>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
             </div>
+
             <!-- /chart -->
             <!-- top-product -->
             <div class="wg-box">
@@ -173,7 +221,7 @@
                 </div>
 
                 <!-- Set a max height and enable scrolling for product list -->
-                <div class="wg-table table-top-product" style="max-height: 400px; overflow-y: auto;">
+                <div class="wg-table table-top-product" style="max-height: 312px; overflow-y: auto;">
                     <ul class="flex flex-column gap14">
                         @foreach ($topSellingProducts as $product)
                             <li class="product-item">
@@ -307,7 +355,7 @@
         </div>
         <div class="tf-section-6 mb-30">
             <!-- best-shop-sellers -->
-            <div class="wg-box">
+            {{-- <div class="wg-box">
                 <div class="flex items-center justify-between">
                     <h5>Best Shop Sellers</h5>
                     <div class="dropdown default">
@@ -476,8 +524,25 @@
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div> --}}
             <!-- /best-shop-sellers -->
+
+
+            <!-- category -->
+            <!-- Sales Trend Chart -->
+<div class="wg-box">
+    <div class="flex items-center justify-between">
+        <h5>Sales Trend by Month</h5>
+    </div>
+
+    <div class="text-center">
+        <canvas id="salesTrendChart"></canvas>
+    </div>
+</div>
+
+
+
+
             <!-- product-overview -->
             <div class="wg-box">
                 <div class="flex items-center justify-between">
@@ -963,7 +1028,8 @@
         </div>
 
     </div>
-    <div class="row">
+
+    {{-- <div class="row">
         <div class="col-lg-3 col-md-6 col-sm-6 col-12">
             <div class="card card-statistic-1">
                 <div class="card-icon bg-primary">
@@ -1201,7 +1267,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <h3>System Notifications</h3>
 
@@ -1389,31 +1455,20 @@
 
 
 
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-        var ctx = document.getElementById('categoriesChart').getContext('2d');
-        var categoriesChart = new Chart(ctx, {
-            type: 'doughnut',
+        var ctx = document.getElementById('salesTrendChart').getContext('2d');
+        var salesTrendChart = new Chart(ctx, {
+            type: 'line', // Use 'line' for a trend chart
             data: {
-                labels: @json($categoryLabels),
+                labels: @json($salesTrendLabels), // Array of month labels
                 datasets: [{
-                    data: @json($categoryData),
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ],
+                    label: 'Sales Trend',
+                    data: @json($salesTrendData), // Array of sales data
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
                     borderWidth: 1
                 }]
             },
@@ -1426,7 +1481,7 @@
                     tooltip: {
                         callbacks: {
                             label: function(tooltipItem) {
-                                return tooltipItem.label + ': ' + tooltipItem.raw;
+                                return 'Sales: $' + tooltipItem.raw.toFixed(2);
                             }
                         }
                     }
