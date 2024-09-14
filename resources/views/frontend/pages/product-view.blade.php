@@ -17,59 +17,59 @@
         }
 
         /* .fa-long-arrow-right::before {
-                                                        content: "\f054" !important;
-                                                        font-weight: bolder !important;
-                                                    }
+                                                                    content: "\f054" !important;
+                                                                    font-weight: bolder !important;
+                                                                }
 
-                                                    .fa-long-arrow-left::before {
-                                                        content: "\f053" !important;
-                                                        font-weight: bolder !important;
-                                                    }
+                                                                .fa-long-arrow-left::before {
+                                                                    content: "\f053" !important;
+                                                                    font-weight: bolder !important;
+                                                                }
 
-                                                    .fp__related_menu .prevArrow {
-                                                        left: -45px !important;
-                                                    }
+                                                                .fp__related_menu .prevArrow {
+                                                                    left: -45px !important;
+                                                                }
 
-                                                    .nextArrow.slick-arrow {
-                                                        right: -45px !important;
-                                                    }
+                                                                .nextArrow.slick-arrow {
+                                                                    right: -45px !important;
+                                                                }
 
-                                                    @media (max-width: 640px) {
-                                                        .nextArrow.slick-arrow {
-                                                            right: 40% !important;
-                                                            top: 103% !important;
-                                                        }
+                                                                @media (max-width: 640px) {
+                                                                    .nextArrow.slick-arrow {
+                                                                        right: 40% !important;
+                                                                        top: 103% !important;
+                                                                    }
 
-                                                        .fp__related_menu .prevArrow {
-                                                            left: 40% !important;
-                                                            top: 103% !important;
-                                                        }
-                                                    }
+                                                                    .fp__related_menu .prevArrow {
+                                                                        left: 40% !important;
+                                                                        top: 103% !important;
+                                                                    }
+                                                                }
 
-                                                    @media (max-width: 460px) {
-                                                        .nextArrow.slick-arrow {
-                                                            right: 38% !important;
-                                                        }
+                                                                @media (max-width: 460px) {
+                                                                    .nextArrow.slick-arrow {
+                                                                        right: 38% !important;
+                                                                    }
 
-                                                        .fp__related_menu .prevArrow {
-                                                            left: 38% !important;
-                                                        }
-                                                    }
+                                                                    .fp__related_menu .prevArrow {
+                                                                        left: 38% !important;
+                                                                    }
+                                                                }
 
-                                                    @media (max-width: 380px) {
-                                                        .nextArrow.slick-arrow {
-                                                            right: 35% !important;
-                                                        }
+                                                                @media (max-width: 380px) {
+                                                                    .nextArrow.slick-arrow {
+                                                                        right: 35% !important;
+                                                                    }
 
-                                                        .fp__related_menu .prevArrow {
-                                                            left: 35% !important;
-                                                        }
-                                                    }
+                                                                    .fp__related_menu .prevArrow {
+                                                                        left: 35% !important;
+                                                                    }
+                                                                }
 
-                                                    .prevArrow.slick-arrow {
-                                                        font-size: 22px !important;
-                                                        font-weight: 600;
-                                                    } */
+                                                                .prevArrow.slick-arrow {
+                                                                    font-size: 22px !important;
+                                                                    font-weight: 600;
+                                                                } */
 
         #exzoom {
             position: sticky;
@@ -142,7 +142,7 @@
     <!--============================= MENU DETAILS START ==============================-->
 
 
-    <section class="py-5 mt-5 fp__menu_details">
+    <section class="py-5 fp__menu_details">
         <div class="container">
             <div class="row justify-content-between">
                 <div class="col-lg-5 wow fadeInUp" data-wow-duration="1s">
@@ -531,8 +531,8 @@
 
             <div class="row">
                 @if (count($relatedProducts) > 0)
-                    <div class="fp__related_menu mt_90 xs_mt_60">
-                        <h2>Related Item</h2>
+                    <div class="fp__related_menu pt-5">
+                        <h2 class="mb-0">Related Item</h2>
                         <div class="row related_product_slider">
                             @foreach ($relatedProducts as $relatedProduct)
                                 <div class="fp__menu_hover wow fadeInUp" data-wow-duration="1s">
