@@ -8,8 +8,8 @@
         }
     </style>
     <!--=============================
-            BREADCRUMB START
-        ==============================-->
+                                BREADCRUMB START
+                            ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay py-5">
             <div class="container py-md-5 py-2">
@@ -24,13 +24,13 @@
         </div>
     </section>
     <!--=============================
-            BREADCRUMB END
-        ==============================-->
+                                BREADCRUMB END
+                            ==============================-->
     <!--=============================
-            Consultation PAGE START
-        ==============================-->
+                                Consultation PAGE START
+                            ==============================-->
     <div class="container mt-5">
-        <div class="mt-3 mb-4">
+        <div class="mb-2">
             <h3 class="text-center">3D Cakes are currently Scotland's most awarded cake boutique.</h3>
         </div>
         <p class="text-center mb-2">Fill out your details below to book a free consultation and cake tasting with our
@@ -40,7 +40,7 @@
         <p class="text-center mb-2">Full details on our ordering process and terms & conditions of booking can be viewed <a
                 href="#">here</a>.</p>
 
-        <div class="my-5 py-5">
+        <div class="py-5">
             <form action="{{ route('consultations.store') }}" method="POST">
                 @csrf
                 <div class="">
@@ -225,6 +225,6 @@
         </div>
     </div>
     <!--=============================
-            Consultation PAGE END
-        ==============================-->
+                                Consultation PAGE END
+                            ==============================-->
 @endsection
