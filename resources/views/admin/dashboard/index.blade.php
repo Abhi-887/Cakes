@@ -528,25 +528,12 @@
 
 
 <!-- category -->
-<div class="wg-box w-half">
+<div class="wg-box ">
     <div class="flex items-center justify-between">
         <h5>Sales Trend by Month</h5>
-        <div class="dropdown default">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="icon-more"><i class="icon-more-horizontal"></i></span>
-            </button>
-            <ul class="dropdown-menu dropdown-menu-end">
-                <li>
-                    <a href="javascript:void(0);">This Week</a>
-                </li>
-                <li>
-                    <a href="javascript:void(0);">Last Week</a>
-                </li>
-            </ul>
-        </div>
-    </div>
 
-    <div class="flex gap10 justify-between flex-wrap">
+
+    {{-- <div class="flex gap10 justify-between flex-wrap">
         <div>
             <div class="text-tiny mb-2">Total {{ \Carbon\Carbon::now()->format('M d, Y') }}</div>
             <div class="flex items-center gap10">
@@ -570,20 +557,20 @@
                 </li>
             </ul>
         </div>
-    </div>
+    </div> --}}
 
     <div class="text-center">
         <canvas id="salesTrendChart"></canvas>
     </div>
 
-    <div class="flex gap20 mt-4">
+    {{-- <div class="flex gap20 mt-4">
         @foreach($categoryLabels as $index => $label)
         <div class="block-legend style-1 w-full">
             <div class="dot t{{ $index + 1 }}"></div>
             <div class="text-tiny">{{ $label }}</div>
         </div>
         @endforeach
-    </div>
+    </div> --}}
 </div>
 <!-- /category -->
 
