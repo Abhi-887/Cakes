@@ -164,8 +164,7 @@ $lowStockProducts = Product::where('quantity', '<', $lowStockThreshold)
     ->where('quantity', '>', 0)
     ->get();
 
-     // Fetch sales trend data
-     $salesTrend = Order::select(
+    $salesTrend = Order::select(
         DB::raw('DATE_FORMAT(created_at, "%Y-%m") as month'),
         DB::raw('SUM(grand_total) as total_sales')
     )
@@ -175,8 +174,9 @@ $lowStockProducts = Product::where('quantity', '<', $lowStockThreshold)
     ->orderBy('month')
     ->get();
 
-$salesTrendLabels = $salesTrend->pluck('month');
-$salesTrendData = $salesTrend->pluck('total_sales');
+$salesTrendLabels = $salesTrend->pluck('month')->toArray(); // Convert to array
+$salesTrendData = $salesTrend->pluck('total_sales')->toArray(); // Convert to array
+
 
 
 
@@ -218,7 +218,7 @@ $salesTrendData = $salesTrend->pluck('total_sales');
             "categoryData",
             'lowStockProducts',
             'outOfStockProducts',
-            "salesTrend",
+
              'salesTrendLabels',
         'salesTrendData'
 
