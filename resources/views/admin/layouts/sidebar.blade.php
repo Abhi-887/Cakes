@@ -83,7 +83,8 @@
 <div class="section-menu-left">
     <div class="box-logo">
         <a href="{{ route('admin.dashboard') }}" id="site-logo-inner">
-            <img id="logo_header" alt="Logo" src="images/logo/logo.png" data-light="images/logo/logo.png" data-dark="images/logo/logo-dark.png">
+            <img id="logo_header" alt="Logo" src="images/logo/logo.png" data-light="images/logo/logo.png"
+                data-dark="images/logo/logo-dark.png">
         </a>
         <div class="button-show-hide">
             <i class="icon-menu-left"></i>
@@ -92,7 +93,7 @@
     <div class="section-menu-left-wrap">
         <div class="center">
             <div class="center-item">
-                <div class="center-heading">Dashboard</div>
+                {{-- <div class="center-heading">Dashboard</div> --}}
                 <ul class="menu-list">
                     <li class="menu-item {{ setSidebarActive(['admin.dashboard']) }}">
                         <a class="nav-link" href="{{ route('admin.dashboard') }}">
@@ -106,7 +107,8 @@
             <div class="center-item">
                 <div class="center-heading">Starter</div>
                 <ul class="menu-list">
-                    <li class="menu-item has-children {{ setSidebarActive(['admin.slider.index', 'admin.slider-category.index']) }}">
+                    <li
+                        class="menu-item has-children {{ setSidebarActive(['admin.slider.index', 'admin.slider-category.index']) }}">
                         <a href="javascript:void(0);" class="menu-item-button">
                             <div class="icon"><i class="fas fa-images"></i></div>
                             <div class="text">Sliders</div>
@@ -125,7 +127,8 @@
                         </ul>
                     </li>
 
-                    <li class="menu-item has-children {{ setSidebarActive(['admin.slider2.index', 'admin.slider-category2.index']) }}">
+                    <li
+                        class="menu-item has-children {{ setSidebarActive(['admin.slider2.index', 'admin.slider-category2.index']) }}">
                         <a href="javascript:void(0);" class="menu-item-button">
                             <div class="icon"><i class="fas fa-rss"></i></div>
                             <div class="text">Blocks</div>
@@ -170,19 +173,20 @@
                         </a>
                     </li>
                 </ul>
-            </div>
 
 
-            <div class="center-item">
-                <div class="center-heading">Orders</div>
+
+
+                {{-- <div class="center-heading">Orders</div> --}}
                 <ul class="menu-list">
-                    <li class="menu-item has-children {{ setSidebarActive([
-                        'admin.orders.index',
-                        'admin.pending-orders',
-                        'admin.inprocess-orders',
-                        'admin.delivered-orders',
-                        'admin.declined-orders'
-                    ]) }}">
+                    <li
+                        class="menu-item has-children {{ setSidebarActive([
+                            'admin.orders.index',
+                            'admin.pending-orders',
+                            'admin.inprocess-orders',
+                            'admin.delivered-orders',
+                            'admin.declined-orders',
+                        ]) }}">
                         <a href="javascript:void(0);" class="menu-item-button">
                             <div class="icon"><i class="fas fa-box"></i></div>
                             <div class="text">Orders</div>
@@ -216,18 +220,19 @@
                         </ul>
                     </li>
                 </ul>
-            </div>
 
 
-            <div class="center-item">
-                <div class="center-heading">Manage Products</div>
+
+
+                {{-- <div class="center-heading">Manage Products</div> --}}
                 <ul class="menu-list">
-                    <li class="menu-item has-children {{ setSidebarActive([
-                        'admin.category.index',
-                        'admin.product.index',
-                        'admin.cakes-stand.index',
-                        'admin.product-reviews.index'
-                    ]) }}">
+                    <li
+                        class="menu-item has-children {{ setSidebarActive([
+                            'admin.category.index',
+                            'admin.product.index',
+                            'admin.cakes-stand.index',
+                            'admin.product-reviews.index',
+                        ]) }}">
                         <a href="javascript:void(0);" class="menu-item-button">
                             <div class="icon"><i class="fas fa-shopping-cart"></i></div>
                             <div class="text">Manage Products</div>
@@ -256,17 +261,14 @@
                         </ul>
                     </li>
                 </ul>
-            </div>
 
 
-            {{-- <div class="center-item">
-                <div class="center-heading">Manage Ecommerce</div> --}}
+
+                {{-- <div class="center-item">
+                 <div class="center-heading">Manage Ecommerce</div> --}}
                 <ul class="menu-list">
-                    <li class="menu-item has-children {{ setSidebarActive([
-                        'admin.coupon.index',
-                        'admin.delivery-area.index',
-                        'admin.payment-setting.index'
-                    ]) }}">
+                    <li
+                        class="menu-item has-children {{ setSidebarActive(['admin.coupon.index', 'admin.delivery-area.index', 'admin.payment-setting.index']) }}">
                         <a href="javascript:void(0);" class="menu-item-button">
                             <div class="icon"><i class="fas fa-store"></i></div>
                             <div class="text">Manage Ecommerce</div>
@@ -290,19 +292,20 @@
                         </ul>
                     </li>
                 </ul>
-            {{-- </div> --}}
+                {{-- </div> --}}
 
-            <div class="center-item">
-                <div class="center-heading">Pages</div>
+
+                {{-- <div class="center-heading">Pages</div> --}}
                 <ul class="menu-list">
-                    <li class="menu-item has-children {{ setSidebarActive([
-                        'admin.custom-page-builder.index',
-                        'admin.about.index',
-                        'admin.trams-and-conditions.index',
-                        'admin.contact.index',
-                        'admin.contact2.index',
-                        'admin.privacy-policy.index'
-                    ]) }}">
+                    <li
+                        class="menu-item has-children {{ setSidebarActive([
+                            'admin.custom-page-builder.index',
+                            'admin.about.index',
+                            'admin.trams-and-conditions.index',
+                            'admin.contact.index',
+                            'admin.contact2.index',
+                            'admin.privacy-policy.index',
+                        ]) }}">
                         <a href="javascript:void(0);" class="menu-item-button">
                             <div class="icon"><i class="fas fa-file-alt"></i></div>
                             <div class="text">Pages</div>
@@ -341,19 +344,20 @@
                         </ul>
                     </li>
                 </ul>
-            </div>
 
-            <div class="center-item">
-                <div class="center-heading">Footer</div>
+
+
+                {{-- <div class="center-heading">Footer</div> --}}
                 <ul class="menu-list">
-                    <li class="menu-item has-children {{ setSidebarActive([
-                        'admin.footer-info.index',
-                        'admin.footer-info-two.index',
-                        'admin.footer-socials.index',
-                        'admin.footer-grid-two.index',
-                        'admin.footer-grid-three.index',
-                        'admin.footer-grid-four.index'
-                    ]) }}">
+                    <li
+                        class="menu-item has-children {{ setSidebarActive([
+                            'admin.footer-info.index',
+                            'admin.footer-info-two.index',
+                            'admin.footer-socials.index',
+                            'admin.footer-grid-two.index',
+                            'admin.footer-grid-three.index',
+                            'admin.footer-grid-four.index',
+                        ]) }}">
                         <a href="javascript:void(0);" class="menu-item-button">
                             <div class="icon"><i class="fas fa-th-large"></i></div>
                             <div class="text">Footer</div>
@@ -445,5 +449,3 @@
         </div>
     </div>
 </div>
-
-
