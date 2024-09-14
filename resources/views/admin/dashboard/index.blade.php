@@ -159,7 +159,8 @@
                 <div class="flex items-center justify-between">
                     <h5>Top Customers</h5>
                     <div class="dropdown default">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
                             <span class="view-all">View all<i class="icon-chevron-down"></i></span>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end">
@@ -185,18 +186,18 @@
 
                     <ul class="flex flex-column gap18">
                         @foreach ($topCustomers as $customer)
-                        <li class="shop-item">
-                            <div class="image">
-                                <img src="{{ asset($customer->avatar) }}" alt="{{ $customer->name }}">
-                            </div>
-                            <div class="flex-grow flex items-center justify-between gap20">
-                                <div>
-                                    <a href="#" class="tf-color-3 body-text name">{{ $customer->name }}</a>
-                                    <div class="text-tiny mt-4">{{ $customer->total_purchases }} Purchases</div>
+                            <li class="shop-item">
+                                <div class="image">
+                                    <img src="{{ asset($customer->avatar) }}" alt="{{ $customer->name }}">
                                 </div>
-                                <div class="body-text tf-color-3">${{ number_format($customer->total_spent, 2) }}</div>
-                            </div>
-                        </li>
+                                <div class="flex-grow flex items-center justify-between gap20">
+                                    <div>
+                                        <a href="#" class="tf-color-3 body-text name">{{ $customer->name }}</a>
+                                        <div class="text-tiny mt-4">{{ $customer->total_purchases }} Purchases</div>
+                                    </div>
+                                    <div class="body-text tf-color-3">${{ number_format($customer->total_spent, 2) }}</div>
+                                </div>
+                            </li>
                         @endforeach
                     </ul>
                 </div>
@@ -527,553 +528,509 @@
             <!-- /best-shop-sellers -->
 
 
-<!-- category -->
-<div class="wg-box ">
-    <div class="flex items-center justify-between">
-        <h5>Sales Trend by Month</h5>
+            <!-- category -->
+            <div class="wg-box ">
+                <div class="flex items-center justify-between">
+                    <h5>Sales Trend by Month</h5>
 
 
-    {{-- <div class="flex gap10 justify-between flex-wrap">
-        <div>
-            <div class="text-tiny mb-2">Total {{ \Carbon\Carbon::now()->format('M d, Y') }}</div>
-            <div class="flex items-center gap10">
-                <h4>${{ number_format($totalSales, 2) }}</h4>
-                <div class="box-icon-trending {{ $salesGrowth > 0 ? 'up' : 'down' }}">
-                    <i class="icon-trending-{{ $salesGrowth > 0 ? 'up' : 'down' }}"></i>
-                    <div class="body-title number">{{ number_format($salesGrowth, 2) }}%</div>
+                    <div class="text-center">
+                        <canvas id="salesTrendChart"></canvas>
+                    </div>
+
+
                 </div>
             </div>
-        </div>
-        <div class="dropdown default style-box">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <a href="product-list.html" class="view-all">Week<i class="icon-chevron-down"></i></a>
-            </button>
-            <ul class="dropdown-menu">
-                <li>
-                    <a href="javascript:void(0);">Month</a>
-                </li>
-                <li>
-                    <a href="javascript:void(0);">Year</a>
-                </li>
-            </ul>
-        </div>
-    </div> --}}
-
-    <div class="text-center">
-        <canvas id="salesTrendChart"></canvas>
-    </div>
-
-    {{-- <div class="flex gap20 mt-4">
-        @foreach($categoryLabels as $index => $label)
-        <div class="block-legend style-1 w-full">
-            <div class="dot t{{ $index + 1 }}"></div>
-            <div class="text-tiny">{{ $label }}</div>
-        </div>
-        @endforeach
-    </div> --}}
-</div>
-<!-- /category -->
-
-{{-- <div class="wg-box">
-
-        <div class="card-header">
-            <h5 class="card-title">Orders by Status</h5>
-        </div>
-        <div class="card-body">
-            <canvas id="ordersByStatusChart"></canvas>
-        </div>
-
-</div> --}}
 
 
 
-            <!-- product-overview -->
-            <div class="wg-box">
-                <div class="flex items-center justify-between">
-                    <h5>Product overview</h5>
-                    <div class="dropdown default">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            <span class="view-all">View all<i class="icon-chevron-down"></i></span>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end">
+                <!-- product-overview -->
+                <div class="wg-box">
+                    <div class="flex items-center justify-between">
+                        <h5>Product overview</h5>
+                        <div class="dropdown default">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <span class="view-all">View all<i class="icon-chevron-down"></i></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                    <a href="javascript:void(0);">3 days</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">7 days</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="wg-table table-product-overview">
+                        <ul class="table-title flex gap20 mb-14">
                             <li>
-                                <a href="javascript:void(0);">3 days</a>
+                                <div class="body-title">Name</div>
                             </li>
                             <li>
-                                <a href="javascript:void(0);">7 days</a>
+                                <div class="body-title">Product ID</div>
+                            </li>
+                            <li>
+                                <div class="body-title">Price</div>
+                            </li>
+                            <li>
+                                <div class="body-title">Quantity</div>
+                            </li>
+                            <li>
+                                <div class="body-title">Sale</div>
+                            </li>
+                            <li>
+                                <div class="body-title">Revenue</div>
+                            </li>
+                            <li>
+                                <div class="body-title">Status</div>
+                            </li>
+                        </ul>
+                        <ul class="flex flex-column gap10">
+                            <li class="product-item gap14">
+                                <div class="image">
+                                    <img src="{{ asset('admin2/assets/images/products/6.png') }}" alt="">
+                                </div>
+                                <div class="flex items-center justify-between flex-grow">
+                                    <div class="name">
+                                        <a href="product-list.html" class="body-text">Soft Fluffy Cats</a>
+                                    </div>
+                                    <div class="body-text">#327</div>
+                                    <div class="body-text">$11.70</div>
+                                    <div class="body-text">28</div>
+                                    <div class="body-text">On sale</div>
+                                    <div class="body-text">$328.85</div>
+                                    <div class="block-not-available">Not Available</div>
+                                </div>
+                            </li>
+                            <li class="product-item gap14">
+                                <div class="image">
+                                    <img src="{{ asset('admin2/assets/images/products/7.png') }}" alt="">
+                                </div>
+                                <div class="flex items-center justify-between flex-grow">
+                                    <div class="name">
+                                        <a href="product-list.html" class="body-text">Taste of the Wild Formula
+                                            Finder</a>
+                                    </div>
+                                    <div class="body-text">#380</div>
+                                    <div class="body-text">$8.99</div>
+                                    <div class="body-text">10</div>
+                                    <div class="body-text">On sale</div>
+                                    <div class="body-text">$105.55</div>
+                                    <div class="block-not-available">Not Available</div>
+                                </div>
+                            </li>
+                            <li class="product-item gap14">
+                                <div class="image">
+                                    <img src="{{ asset('admin2/assets/images/products/8.png') }}" alt="">
+                                </div>
+                                <div class="flex items-center justify-between flex-grow">
+                                    <div class="name">
+                                        <a href="product-list.html" class="body-text">Wellness Natural Food</a>
+                                    </div>
+                                    <div class="body-text">#126</div>
+                                    <div class="body-text">$5.22</div>
+                                    <div class="body-text">578</div>
+                                    <div class="body-text">--/--</div>
+                                    <div class="body-text">$202.87</div>
+                                    <div class="block-not-available">Not Available</div>
+                                </div>
+                            </li>
+                            <li class="product-item gap14">
+                                <div class="image">
+                                    <img src="{{ asset('admin2/assets/images/products/9.png') }}" alt="">
+                                </div>
+                                <div class="flex items-center justify-between flex-grow">
+                                    <div class="name">
+                                        <a href="product-list.html" class="body-text">Dog Food Rachael Ray</a>
+                                    </div>
+                                    <div class="body-text">#582</div>
+                                    <div class="body-text">$14.81</div>
+                                    <div class="body-text">36</div>
+                                    <div class="body-text">--/--</div>
+                                    <div class="body-text">$475.22</div>
+                                    <div>
+                                        <div class="block-available">Available</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="product-item gap14">
+                                <div class="image">
+                                    <img src="{{ asset('admin2/assets/images/products/10.png') }}" alt="">
+                                </div>
+                                <div class="flex items-center justify-between flex-grow">
+                                    <div class="name">
+                                        <a href="product-list.html" class="body-text">Best Buddy Bits Dog
+                                            Treats</a>
+                                    </div>
+                                    <div class="body-text">#293</div>
+                                    <div class="body-text">$6.48</div>
+                                    <div class="body-text">84</div>
+                                    <div class="body-text">--/--</div>
+                                    <div class="body-text">$219.78</div>
+                                    <div class="block-not-available">Not Available</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="flex items-center justify-between flex-wrap gap10">
+                        <div class="text-tiny">Showing 5 entries</div>
+                        <ul class="wg-pagination">
+                            <li>
+                                <a href="#"><i class="icon-chevron-left"></i></a>
+                            </li>
+                            <li>
+                                <a href="#">1</a>
+                            </li>
+                            <li class="active">
+                                <a href="#">2</a>
+                            </li>
+                            <li>
+                                <a href="#">3</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="icon-chevron-right"></i></a>
                             </li>
                         </ul>
                     </div>
                 </div>
-                <div class="wg-table table-product-overview">
-                    <ul class="table-title flex gap20 mb-14">
-                        <li>
-                            <div class="body-title">Name</div>
-                        </li>
-                        <li>
-                            <div class="body-title">Product ID</div>
-                        </li>
-                        <li>
-                            <div class="body-title">Price</div>
-                        </li>
-                        <li>
-                            <div class="body-title">Quantity</div>
-                        </li>
-                        <li>
-                            <div class="body-title">Sale</div>
-                        </li>
-                        <li>
-                            <div class="body-title">Revenue</div>
-                        </li>
-                        <li>
-                            <div class="body-title">Status</div>
-                        </li>
-                    </ul>
-                    <ul class="flex flex-column gap10">
-                        <li class="product-item gap14">
-                            <div class="image">
-                                <img src="{{ asset('admin2/assets/images/products/6.png') }}" alt="">
-                            </div>
-                            <div class="flex items-center justify-between flex-grow">
-                                <div class="name">
-                                    <a href="product-list.html" class="body-text">Soft Fluffy Cats</a>
-                                </div>
-                                <div class="body-text">#327</div>
-                                <div class="body-text">$11.70</div>
-                                <div class="body-text">28</div>
-                                <div class="body-text">On sale</div>
-                                <div class="body-text">$328.85</div>
-                                <div class="block-not-available">Not Available</div>
-                            </div>
-                        </li>
-                        <li class="product-item gap14">
-                            <div class="image">
-                                <img src="{{ asset('admin2/assets/images/products/7.png') }}" alt="">
-                            </div>
-                            <div class="flex items-center justify-between flex-grow">
-                                <div class="name">
-                                    <a href="product-list.html" class="body-text">Taste of the Wild Formula
-                                        Finder</a>
-                                </div>
-                                <div class="body-text">#380</div>
-                                <div class="body-text">$8.99</div>
-                                <div class="body-text">10</div>
-                                <div class="body-text">On sale</div>
-                                <div class="body-text">$105.55</div>
-                                <div class="block-not-available">Not Available</div>
-                            </div>
-                        </li>
-                        <li class="product-item gap14">
-                            <div class="image">
-                                <img src="{{ asset('admin2/assets/images/products/8.png') }}" alt="">
-                            </div>
-                            <div class="flex items-center justify-between flex-grow">
-                                <div class="name">
-                                    <a href="product-list.html" class="body-text">Wellness Natural Food</a>
-                                </div>
-                                <div class="body-text">#126</div>
-                                <div class="body-text">$5.22</div>
-                                <div class="body-text">578</div>
-                                <div class="body-text">--/--</div>
-                                <div class="body-text">$202.87</div>
-                                <div class="block-not-available">Not Available</div>
-                            </div>
-                        </li>
-                        <li class="product-item gap14">
-                            <div class="image">
-                                <img src="{{ asset('admin2/assets/images/products/9.png') }}" alt="">
-                            </div>
-                            <div class="flex items-center justify-between flex-grow">
-                                <div class="name">
-                                    <a href="product-list.html" class="body-text">Dog Food Rachael Ray</a>
-                                </div>
-                                <div class="body-text">#582</div>
-                                <div class="body-text">$14.81</div>
-                                <div class="body-text">36</div>
-                                <div class="body-text">--/--</div>
-                                <div class="body-text">$475.22</div>
-                                <div>
-                                    <div class="block-available">Available</div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="product-item gap14">
-                            <div class="image">
-                                <img src="{{ asset('admin2/assets/images/products/10.png') }}" alt="">
-                            </div>
-                            <div class="flex items-center justify-between flex-grow">
-                                <div class="name">
-                                    <a href="product-list.html" class="body-text">Best Buddy Bits Dog
-                                        Treats</a>
-                                </div>
-                                <div class="body-text">#293</div>
-                                <div class="body-text">$6.48</div>
-                                <div class="body-text">84</div>
-                                <div class="body-text">--/--</div>
-                                <div class="body-text">$219.78</div>
-                                <div class="block-not-available">Not Available</div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="divider"></div>
-                <div class="flex items-center justify-between flex-wrap gap10">
-                    <div class="text-tiny">Showing 5 entries</div>
-                    <ul class="wg-pagination">
-                        <li>
-                            <a href="#"><i class="icon-chevron-left"></i></a>
-                        </li>
-                        <li>
-                            <a href="#">1</a>
-                        </li>
-                        <li class="active">
-                            <a href="#">2</a>
-                        </li>
-                        <li>
-                            <a href="#">3</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="icon-chevron-right"></i></a>
-                        </li>
-                    </ul>
-                </div>
+                <!-- /product-overview -->
             </div>
-            <!-- /product-overview -->
-        </div>
-        <div class="tf-section-3">
-            <!-- orders -->
-            <div class="wg-box">
-                <div class="flex items-center justify-between">
-                    <h5>Orders</h5>
-                    <div class="dropdown default">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            <span class="icon-more"><i class="icon-more-horizontal"></i></span>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end">
+            <div class="tf-section-3">
+                <!-- orders -->
+                <div class="wg-box">
+                    <div class="flex items-center justify-between">
+                        <h5>Orders</h5>
+                        <div class="dropdown default">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <span class="icon-more"><i class="icon-more-horizontal"></i></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                    <a href="javascript:void(0);">This Week</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Last Week</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="wg-table table-orders">
+                        <ul class="table-title flex gap10 mb-14">
                             <li>
-                                <a href="javascript:void(0);">This Week</a>
+                                <div class="body-title">Product</div>
                             </li>
                             <li>
-                                <a href="javascript:void(0);">Last Week</a>
+                                <div class="body-title">Price</div>
+                            </li>
+                            <li>
+                                <div class="body-title">Delivery date</div>
+                            </li>
+                        </ul>
+                        <ul class="flex flex-column gap18">
+                            <li class="product-item gap14">
+                                <div class="image small">
+                                    <img src="{{ asset('admin2/assets/images/products/11.png') }}" alt="">
+                                </div>
+                                <div class="flex items-center justify-between flex-grow gap10">
+                                    <div class="name">
+                                        <a href="product-list.html" class="body-text">Prodotti per il tuo
+                                            cane...</a>
+                                    </div>
+                                    <div class="body-text">20 Nov 2023</div>
+                                    <div class="body-text">20 Nov 2023</div>
+                                </div>
+                            </li>
+                            <li class="product-item gap14">
+                                <div class="image small">
+                                    <img src="{{ asset('admin2/assets/images/products/12.png') }}" alt="">
+                                </div>
+                                <div class="flex items-center justify-between flex-grow gap10">
+                                    <div class="name">
+                                        <a href="product-list.html" class="body-text">Wholesome Pride...</a>
+                                    </div>
+                                    <div class="body-text">20 Nov 2023</div>
+                                    <div class="body-text">20 Nov 2023</div>
+                                </div>
+                            </li>
+                            <li class="product-item gap14">
+                                <div class="image small">
+                                    <img src="{{ asset('admin2/assets/images/products/13.png') }}" alt="">
+                                </div>
+                                <div class="flex items-center justify-between flex-grow gap10">
+                                    <div class="name">
+                                        <a href="product-list.html" class="body-text">Beneful Baked
+                                            Delights...</a>
+                                    </div>
+                                    <div class="body-text">20 Nov 2023</div>
+                                    <div class="body-text">20 Nov 2023</div>
+                                </div>
+                            </li>
+                            <li class="product-item gap14">
+                                <div class="image small">
+                                    <img src="{{ asset('admin2/assets/images/products/14.png') }}" alt="">
+                                </div>
+                                <div class="flex items-center justify-between flex-grow gap10">
+                                    <div class="name">
+                                        <a href="product-list.html" class="body-text">Taste of the Wild...</a>
+                                    </div>
+                                    <div class="body-text">20 Nov 2023</div>
+                                    <div class="body-text">20 Nov 2023</div>
+                                </div>
+                            </li>
+                            <li class="product-item gap14">
+                                <div class="image small">
+                                    <img src="{{ asset('admin2/assets/images/products/15.png') }}" alt="">
+                                </div>
+                                <div class="flex items-center justify-between flex-grow gap10">
+                                    <div class="name">
+                                        <a href="product-list.html" class="body-text">Canagan - Britain's...</a>
+                                    </div>
+                                    <div class="body-text">20 Nov 2023</div>
+                                    <div class="body-text">20 Nov 2023</div>
+                                </div>
                             </li>
                         </ul>
                     </div>
                 </div>
-                <div class="wg-table table-orders">
-                    <ul class="table-title flex gap10 mb-14">
-                        <li>
-                            <div class="body-title">Product</div>
+                <!-- /orders -->
+                <!-- earnings -->
+                <div class="wg-box">
+                    <div class="flex items-center justify-between">
+                        <h5>Earnings</h5>
+                        <div class="dropdown default">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <span class="icon-more"><i class="icon-more-horizontal"></i></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                    <a href="javascript:void(0);">This Week</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Last Week</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap40">
+                        <div>
+                            <div class="mb-2">
+                                <div class="block-legend">
+                                    <div class="dot t1"></div>
+                                    <div class="text-tiny">Revenue</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap10">
+                                <h4>$37,802</h4>
+                                <div class="box-icon-trending up">
+                                    <i class="icon-trending-up"></i>
+                                    <div class="body-title number">0.56%</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="mb-2">
+                                <div class="block-legend">
+                                    <div class="dot t2"></div>
+                                    <div class="text-tiny">Profit</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap10">
+                                <h4>$28,305</h4>
+                                <div class="box-icon-trending up">
+                                    <i class="icon-trending-up"></i>
+                                    <div class="body-title number">0.56%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="line-chart-6"></div>
+                </div>
+                <!-- /earnings -->
+                <!-- new-comment -->
+                <div class="wg-box">
+                    <div class="flex items-center justify-between">
+                        <h5>New Comments</h5>
+                        <div class="dropdown default">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <span class="icon-more"><i class="icon-more-horizontal"></i></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                    <a href="javascript:void(0);">This Week</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);">Last Week</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="flex flex-column gap20 overflow-h">
+                        <li class="comment-item">
+                            <div class="image">
+                                <img src="{{ asset('admin2/assets/images/avatar/user-2.png') }}" alt="">
+                            </div>
+                            <div class="">
+                                <div class="mb-4 name">
+                                    <a href="all-user.html" class="body-title-2">Kathryn Murphy</a>
+                                </div>
+                                <div class="ratings mb-10">
+                                    <i class="icon-star1 active"></i>
+                                    <i class="icon-star1 active"></i>
+                                    <i class="icon-star1 active"></i>
+                                    <i class="icon-star1 active"></i>
+                                    <i class="icon-star1"></i>
+                                </div>
+                                <div class="text-tiny">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Cras nec dolor vel est interdum</div>
+                            </div>
                         </li>
-                        <li>
-                            <div class="body-title">Price</div>
+                        <li class="comment-item">
+                            <div class="image">
+                                <img src="{{ asset('admin2/assets/images/avatar/user-3.png') }}" alt="">
+                            </div>
+                            <div class="">
+                                <div class="mb-4 name">
+                                    <a href="all-user.html" class="body-title-2">Leslie Alexander</a>
+                                </div>
+                                <div class="ratings mb-10">
+                                    <i class="icon-star1 active"></i>
+                                    <i class="icon-star1 active"></i>
+                                    <i class="icon-star1 active"></i>
+                                    <i class="icon-star1 active"></i>
+                                    <i class="icon-star1"></i>
+                                </div>
+                                <div class="text-tiny">Cras nec viverra justo, a mattis lacus. Vestibulum eleifend,
+                                    leo sit amet aliquam laoreet, turpis leo vulputate orci</div>
+                            </div>
                         </li>
-                        <li>
-                            <div class="body-title">Delivery date</div>
+                        <li class="comment-item">
+                            <div class="image">
+                                <img src="{{ asset('admin2/assets/images/avatar/user-4.png') }}" alt="">
+                            </div>
+                            <div class="">
+                                <div class="mb-4 name">
+                                    <a href="all-user.html" class="body-title-2">Devon Lane</a>
+                                </div>
+                                <div class="ratings mb-10">
+                                    <i class="icon-star1 active"></i>
+                                    <i class="icon-star1 active"></i>
+                                    <i class="icon-star1 active"></i>
+                                    <i class="icon-star1 active"></i>
+                                    <i class="icon-star1"></i>
+                                </div>
+                                <div class="text-tiny">Morbi eget commodo diam. Praesent dignissim purus ac turpis
+                                    porta</div>
+                            </div>
+                        </li>
+                        <li class="comment-item">
+                            <div class="image">
+                                <img src="{{ asset('admin2/assets/images/avatar/user-5.png') }}" alt="">
+                            </div>
+                            <div class="">
+                                <div class="mb-4 name">
+                                    <a href="all-user.html" class="body-title-2">Eleanor Pena</a>
+                                </div>
+                                <div class="ratings mb-10">
+                                    <i class="icon-star1 active"></i>
+                                    <i class="icon-star1 active"></i>
+                                    <i class="icon-star1 active"></i>
+                                    <i class="icon-star1 active"></i>
+                                    <i class="icon-star1"></i>
+                                </div>
+                                <div class="text-tiny">Phasellus et eros ullamcorper, efficitur eros eget, pharetra
+                                    ante. Sed blandit risus vitae dolor feugiat, eu vulputate elit rhoncus</div>
+                            </div>
+                        </li>
+                        <li class="comment-item">
+                            <div class="image">
+                                <img src="{{ asset('admin2/assets/images/avatar/user-2.png') }}" alt="">
+                            </div>
+                            <div class="">
+                                <div class="mb-4 name">
+                                    <a href="all-user.html" class="body-title-2">Kathryn Murphy</a>
+                                </div>
+                                <div class="ratings mb-10">
+                                    <i class="icon-star1 active"></i>
+                                    <i class="icon-star1 active"></i>
+                                    <i class="icon-star1 active"></i>
+                                    <i class="icon-star1 active"></i>
+                                    <i class="icon-star1"></i>
+                                </div>
+                                <div class="text-tiny">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                    Cras nec dolor vel est interdum</div>
+                            </div>
+                        </li>
+                        <li class="comment-item">
+                            <div class="image">
+                                <img src="{{ asset('admin2/assets/images/avatar/user-3.png') }}" alt="">
+                            </div>
+                            <div class="">
+                                <div class="mb-4 name">
+                                    <a href="all-user.html" class="body-title-2">Leslie Alexander</a>
+                                </div>
+                                <div class="ratings mb-10">
+                                    <i class="icon-star1 active"></i>
+                                    <i class="icon-star1 active"></i>
+                                    <i class="icon-star1 active"></i>
+                                    <i class="icon-star1 active"></i>
+                                    <i class="icon-star1"></i>
+                                </div>
+                                <div class="text-tiny">Cras nec viverra justo, a mattis lacus. Vestibulum eleifend,
+                                    leo sit amet aliquam laoreet, turpis leo vulputate orci</div>
+                            </div>
+                        </li>
+                        <li class="comment-item">
+                            <div class="image">
+                                <img src="{{ asset('admin2/assets/images/avatar/user-4.png') }}" alt="">
+                            </div>
+                            <div class="">
+                                <div class="mb-4 name">
+                                    <a href="all-user.html" class="body-title-2">Devon Lane</a>
+                                </div>
+                                <div class="ratings mb-10">
+                                    <i class="icon-star1 active"></i>
+                                    <i class="icon-star1 active"></i>
+                                    <i class="icon-star1 active"></i>
+                                    <i class="icon-star1 active"></i>
+                                    <i class="icon-star1"></i>
+                                </div>
+                                <div class="text-tiny">Morbi eget commodo diam. Praesent dignissim purus ac turpis
+                                    porta</div>
+                            </div>
+                        </li>
+                        <li class="comment-item">
+                            <div class="image">
+                                <img src="{{ asset('admin2/assets/images/avatar/user-5.png') }}" alt="">
+                            </div>
+                            <div class="">
+                                <div class="mb-4 name">
+                                    <a href="all-user.html" class="body-title-2">Eleanor Pena</a>
+                                </div>
+                                <div class="ratings mb-10">
+                                    <i class="icon-star1 active"></i>
+                                    <i class="icon-star1 active"></i>
+                                    <i class="icon-star1 active"></i>
+                                    <i class="icon-star1 active"></i>
+                                    <i class="icon-star1"></i>
+                                </div>
+                                <div class="text-tiny">Phasellus et eros ullamcorper, efficitur eros eget, pharetra
+                                    ante. Sed blandit risus vitae dolor feugiat, eu vulputate elit rhoncus</div>
+                            </div>
                         </li>
                     </ul>
-                    <ul class="flex flex-column gap18">
-                        <li class="product-item gap14">
-                            <div class="image small">
-                                <img src="{{ asset('admin2/assets/images/products/11.png') }}" alt="">
-                            </div>
-                            <div class="flex items-center justify-between flex-grow gap10">
-                                <div class="name">
-                                    <a href="product-list.html" class="body-text">Prodotti per il tuo
-                                        cane...</a>
-                                </div>
-                                <div class="body-text">20 Nov 2023</div>
-                                <div class="body-text">20 Nov 2023</div>
-                            </div>
-                        </li>
-                        <li class="product-item gap14">
-                            <div class="image small">
-                                <img src="{{ asset('admin2/assets/images/products/12.png') }}" alt="">
-                            </div>
-                            <div class="flex items-center justify-between flex-grow gap10">
-                                <div class="name">
-                                    <a href="product-list.html" class="body-text">Wholesome Pride...</a>
-                                </div>
-                                <div class="body-text">20 Nov 2023</div>
-                                <div class="body-text">20 Nov 2023</div>
-                            </div>
-                        </li>
-                        <li class="product-item gap14">
-                            <div class="image small">
-                                <img src="{{ asset('admin2/assets/images/products/13.png') }}" alt="">
-                            </div>
-                            <div class="flex items-center justify-between flex-grow gap10">
-                                <div class="name">
-                                    <a href="product-list.html" class="body-text">Beneful Baked
-                                        Delights...</a>
-                                </div>
-                                <div class="body-text">20 Nov 2023</div>
-                                <div class="body-text">20 Nov 2023</div>
-                            </div>
-                        </li>
-                        <li class="product-item gap14">
-                            <div class="image small">
-                                <img src="{{ asset('admin2/assets/images/products/14.png') }}" alt="">
-                            </div>
-                            <div class="flex items-center justify-between flex-grow gap10">
-                                <div class="name">
-                                    <a href="product-list.html" class="body-text">Taste of the Wild...</a>
-                                </div>
-                                <div class="body-text">20 Nov 2023</div>
-                                <div class="body-text">20 Nov 2023</div>
-                            </div>
-                        </li>
-                        <li class="product-item gap14">
-                            <div class="image small">
-                                <img src="{{ asset('admin2/assets/images/products/15.png') }}" alt="">
-                            </div>
-                            <div class="flex items-center justify-between flex-grow gap10">
-                                <div class="name">
-                                    <a href="product-list.html" class="body-text">Canagan - Britain's...</a>
-                                </div>
-                                <div class="body-text">20 Nov 2023</div>
-                                <div class="body-text">20 Nov 2023</div>
-                            </div>
-                        </li>
-                    </ul>
                 </div>
+                <!-- /new-comment -->
             </div>
-            <!-- /orders -->
-            <!-- earnings -->
-            <div class="wg-box">
-                <div class="flex items-center justify-between">
-                    <h5>Earnings</h5>
-                    <div class="dropdown default">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            <span class="icon-more"><i class="icon-more-horizontal"></i></span>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li>
-                                <a href="javascript:void(0);">This Week</a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0);">Last Week</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="flex flex-wrap gap40">
-                    <div>
-                        <div class="mb-2">
-                            <div class="block-legend">
-                                <div class="dot t1"></div>
-                                <div class="text-tiny">Revenue</div>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap10">
-                            <h4>$37,802</h4>
-                            <div class="box-icon-trending up">
-                                <i class="icon-trending-up"></i>
-                                <div class="body-title number">0.56%</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="mb-2">
-                            <div class="block-legend">
-                                <div class="dot t2"></div>
-                                <div class="text-tiny">Profit</div>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap10">
-                            <h4>$28,305</h4>
-                            <div class="box-icon-trending up">
-                                <i class="icon-trending-up"></i>
-                                <div class="body-title number">0.56%</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="line-chart-6"></div>
-            </div>
-            <!-- /earnings -->
-            <!-- new-comment -->
-            <div class="wg-box">
-                <div class="flex items-center justify-between">
-                    <h5>New Comments</h5>
-                    <div class="dropdown default">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            <span class="icon-more"><i class="icon-more-horizontal"></i></span>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li>
-                                <a href="javascript:void(0);">This Week</a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0);">Last Week</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <ul class="flex flex-column gap20 overflow-h">
-                    <li class="comment-item">
-                        <div class="image">
-                            <img src="{{ asset('admin2/assets/images/avatar/user-2.png') }}" alt="">
-                        </div>
-                        <div class="">
-                            <div class="mb-4 name">
-                                <a href="all-user.html" class="body-title-2">Kathryn Murphy</a>
-                            </div>
-                            <div class="ratings mb-10">
-                                <i class="icon-star1 active"></i>
-                                <i class="icon-star1 active"></i>
-                                <i class="icon-star1 active"></i>
-                                <i class="icon-star1 active"></i>
-                                <i class="icon-star1"></i>
-                            </div>
-                            <div class="text-tiny">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Cras nec dolor vel est interdum</div>
-                        </div>
-                    </li>
-                    <li class="comment-item">
-                        <div class="image">
-                            <img src="{{ asset('admin2/assets/images/avatar/user-3.png') }}" alt="">
-                        </div>
-                        <div class="">
-                            <div class="mb-4 name">
-                                <a href="all-user.html" class="body-title-2">Leslie Alexander</a>
-                            </div>
-                            <div class="ratings mb-10">
-                                <i class="icon-star1 active"></i>
-                                <i class="icon-star1 active"></i>
-                                <i class="icon-star1 active"></i>
-                                <i class="icon-star1 active"></i>
-                                <i class="icon-star1"></i>
-                            </div>
-                            <div class="text-tiny">Cras nec viverra justo, a mattis lacus. Vestibulum eleifend,
-                                leo sit amet aliquam laoreet, turpis leo vulputate orci</div>
-                        </div>
-                    </li>
-                    <li class="comment-item">
-                        <div class="image">
-                            <img src="{{ asset('admin2/assets/images/avatar/user-4.png') }}" alt="">
-                        </div>
-                        <div class="">
-                            <div class="mb-4 name">
-                                <a href="all-user.html" class="body-title-2">Devon Lane</a>
-                            </div>
-                            <div class="ratings mb-10">
-                                <i class="icon-star1 active"></i>
-                                <i class="icon-star1 active"></i>
-                                <i class="icon-star1 active"></i>
-                                <i class="icon-star1 active"></i>
-                                <i class="icon-star1"></i>
-                            </div>
-                            <div class="text-tiny">Morbi eget commodo diam. Praesent dignissim purus ac turpis
-                                porta</div>
-                        </div>
-                    </li>
-                    <li class="comment-item">
-                        <div class="image">
-                            <img src="{{ asset('admin2/assets/images/avatar/user-5.png') }}" alt="">
-                        </div>
-                        <div class="">
-                            <div class="mb-4 name">
-                                <a href="all-user.html" class="body-title-2">Eleanor Pena</a>
-                            </div>
-                            <div class="ratings mb-10">
-                                <i class="icon-star1 active"></i>
-                                <i class="icon-star1 active"></i>
-                                <i class="icon-star1 active"></i>
-                                <i class="icon-star1 active"></i>
-                                <i class="icon-star1"></i>
-                            </div>
-                            <div class="text-tiny">Phasellus et eros ullamcorper, efficitur eros eget, pharetra
-                                ante. Sed blandit risus vitae dolor feugiat, eu vulputate elit rhoncus</div>
-                        </div>
-                    </li>
-                    <li class="comment-item">
-                        <div class="image">
-                            <img src="{{ asset('admin2/assets/images/avatar/user-2.png') }}" alt="">
-                        </div>
-                        <div class="">
-                            <div class="mb-4 name">
-                                <a href="all-user.html" class="body-title-2">Kathryn Murphy</a>
-                            </div>
-                            <div class="ratings mb-10">
-                                <i class="icon-star1 active"></i>
-                                <i class="icon-star1 active"></i>
-                                <i class="icon-star1 active"></i>
-                                <i class="icon-star1 active"></i>
-                                <i class="icon-star1"></i>
-                            </div>
-                            <div class="text-tiny">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Cras nec dolor vel est interdum</div>
-                        </div>
-                    </li>
-                    <li class="comment-item">
-                        <div class="image">
-                            <img src="{{ asset('admin2/assets/images/avatar/user-3.png') }}" alt="">
-                        </div>
-                        <div class="">
-                            <div class="mb-4 name">
-                                <a href="all-user.html" class="body-title-2">Leslie Alexander</a>
-                            </div>
-                            <div class="ratings mb-10">
-                                <i class="icon-star1 active"></i>
-                                <i class="icon-star1 active"></i>
-                                <i class="icon-star1 active"></i>
-                                <i class="icon-star1 active"></i>
-                                <i class="icon-star1"></i>
-                            </div>
-                            <div class="text-tiny">Cras nec viverra justo, a mattis lacus. Vestibulum eleifend,
-                                leo sit amet aliquam laoreet, turpis leo vulputate orci</div>
-                        </div>
-                    </li>
-                    <li class="comment-item">
-                        <div class="image">
-                            <img src="{{ asset('admin2/assets/images/avatar/user-4.png') }}" alt="">
-                        </div>
-                        <div class="">
-                            <div class="mb-4 name">
-                                <a href="all-user.html" class="body-title-2">Devon Lane</a>
-                            </div>
-                            <div class="ratings mb-10">
-                                <i class="icon-star1 active"></i>
-                                <i class="icon-star1 active"></i>
-                                <i class="icon-star1 active"></i>
-                                <i class="icon-star1 active"></i>
-                                <i class="icon-star1"></i>
-                            </div>
-                            <div class="text-tiny">Morbi eget commodo diam. Praesent dignissim purus ac turpis
-                                porta</div>
-                        </div>
-                    </li>
-                    <li class="comment-item">
-                        <div class="image">
-                            <img src="{{ asset('admin2/assets/images/avatar/user-5.png') }}" alt="">
-                        </div>
-                        <div class="">
-                            <div class="mb-4 name">
-                                <a href="all-user.html" class="body-title-2">Eleanor Pena</a>
-                            </div>
-                            <div class="ratings mb-10">
-                                <i class="icon-star1 active"></i>
-                                <i class="icon-star1 active"></i>
-                                <i class="icon-star1 active"></i>
-                                <i class="icon-star1 active"></i>
-                                <i class="icon-star1"></i>
-                            </div>
-                            <div class="text-tiny">Phasellus et eros ullamcorper, efficitur eros eget, pharetra
-                                ante. Sed blandit risus vitae dolor feugiat, eu vulputate elit rhoncus</div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <!-- /new-comment -->
+
         </div>
 
-    </div>
-
-    {{-- <div class="row">
+        {{-- <div class="row">
         <div class="col-lg-3 col-md-6 col-sm-6 col-12">
             <div class="card card-statistic-1">
                 <div class="card-icon bg-primary">
@@ -1313,315 +1270,315 @@
         </div>
     </div> --}}
 
-    <h3>System Notifications</h3>
+        <h3>System Notifications</h3>
 
-    <!-- Server Status -->
-    <div>
-        <h4>Server Status</h4>
-        @if ($serverStatus)
-            <span style="color: green;">Server is running smoothly</span>
-        @else
-            <span style="color: red;">Server is down!</span>
-        @endif
-    </div>
+        <!-- Server Status -->
+        <div>
+            <h4>Server Status</h4>
+            @if ($serverStatus)
+                <span style="color: green;">Server is running smoothly</span>
+            @else
+                <span style="color: red;">Server is down!</span>
+            @endif
+        </div>
 
-    <div class="container mt-4">
-        <div class="row">
-            <!-- Orders by Status -->
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="card-title">Orders by Status</h5>
+        <div class="container mt-4">
+            <div class="row">
+                <!-- Orders by Status -->
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Orders by Status</h5>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="ordersByStatusChart"></canvas>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <canvas id="ordersByStatusChart"></canvas>
+                </div>
+
+                <!-- Site Traffic -->
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Site Traffic</h5>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="trafficChart"></canvas>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Site Traffic -->
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="card-title">Site Traffic</h5>
+            <div class="row">
+                <!-- Product Categories -->
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Product Categories</h5>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="categoriesChart"></canvas>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <canvas id="trafficChart"></canvas>
+                </div>
+
+                <!-- Out of Stock Products -->
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Out of Stock Products</h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group">
+                                @foreach ($outOfStockProducts as $product)
+                                    <li class="list-group-item">
+                                        {{ $product->name }}
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Low Stock Products -->
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Low Stock Products</h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group">
+                                @foreach ($lowStockProducts as $product)
+                                    <li class="list-group-item">
+                                        {{ $product->name }} - {{ $product->quantity }} in stock
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="row">
-            <!-- Product Categories -->
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="card-title">Product Categories</h5>
-                    </div>
-                    <div class="card-body">
-                        <canvas id="categoriesChart"></canvas>
-                    </div>
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Top-Selling Products</h5>
                 </div>
-            </div>
-
-            <!-- Out of Stock Products -->
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="card-title">Out of Stock Products</h5>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group">
-                            @foreach ($outOfStockProducts as $product)
-                                <li class="list-group-item">
-                                    {{ $product->name }}
-                                </li>
-                            @endforeach
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <!-- Low Stock Products -->
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="card-title">Low Stock Products</h5>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group">
-                            @foreach ($lowStockProducts as $product)
-                                <li class="list-group-item">
-                                    {{ $product->name }} - {{ $product->quantity }} in stock
-                                </li>
-                            @endforeach
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-6 mb-4">
-        <div class="card">
-            <div class="card-header">
-                <h5 class="card-title">Top-Selling Products</h5>
-            </div>
-            <div class="card-body">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Product Name</th>
-                            <th>Quantity Sold</th>
-                            <th>Revenue Generated</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($topSellingProducts as $product)
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
                             <tr>
-                                <td>{{ $product->product_name }}</td>
-                                <td>{{ $product->total_qty }}</td>
-                                <td>${{ number_format($product->total_revenue, 2) }}</td>
+                                <th>Product Name</th>
+                                <th>Quantity Sold</th>
+                                <th>Revenue Generated</th>
                             </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            @foreach ($topSellingProducts as $product)
+                                <tr>
+                                    <td>{{ $product->product_name }}</td>
+                                    <td>{{ $product->total_qty }}</td>
+                                    <td>${{ number_format($product->total_revenue, 2) }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="col-md-12 mb-4">
-        <div class="card">
-            <div class="card-header">
-                <h5 class="card-title">Low Stock Alerts</h5>
-            </div>
-            <div class="card-body">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Product Name</th>
-                            <th>Available Quantity</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($lowStockAlerts as $product)
+        <div class="col-md-12 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Low Stock Alerts</h5>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
                             <tr>
-                                <td>{{ $product->name }}</td>
-                                <td>{{ $product->quantity }}</td>
-                                <td>
-                                    @if ($product->quantity == 0)
-                                        <span class="text-danger">Out of Stock</span>
-                                    @else
-                                        <span class="text-warning">Low Stock</span>
-                                    @endif
-                                </td>
+                                <th>Product Name</th>
+                                <th>Available Quantity</th>
+                                <th>Status</th>
                             </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            @foreach ($lowStockAlerts as $product)
+                                <tr>
+                                    <td>{{ $product->name }}</td>
+                                    <td>{{ $product->quantity }}</td>
+                                    <td>
+                                        @if ($product->quantity == 0)
+                                            <span class="text-danger">Out of Stock</span>
+                                        @else
+                                            <span class="text-warning">Low Stock</span>
+                                        @endif
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div>
-        <h3>Top Customers</h3>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Customer Name</th>
-                    <th>Total Purchases</th>
-                    <th>Total Spent</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($topCustomers as $customer)
+        <div>
+            <h3>Top Customers</h3>
+            <table class="table">
+                <thead>
                     <tr>
-                        <td>{{ $customer->name }}</td>
-                        <td>{{ $customer->total_purchases }}</td>
-                        <td>${{ number_format($customer->total_spent, 2) }}</td>
+                        <th>Customer Name</th>
+                        <th>Total Purchases</th>
+                        <th>Total Spent</th>
                     </tr>
-                @endforeach
-            </tbody>
-        </table>
-    </div>
-    <div>
-        <h3>New Customers (Last Week)</h3>
-        <p>{{ $newCustomers }}</p>
-    </div>
-    <div>
-        <h3>Total Customers</h3>
-        <p>{{ $totalCustomers }}</p>
-    </div>
+                </thead>
+                <tbody>
+                    @foreach ($topCustomers as $customer)
+                        <tr>
+                            <td>{{ $customer->name }}</td>
+                            <td>{{ $customer->total_purchases }}</td>
+                            <td>${{ number_format($customer->total_spent, 2) }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <h3>New Customers (Last Week)</h3>
+            <p>{{ $newCustomers }}</p>
+        </div>
+        <div>
+            <h3>Total Customers</h3>
+            <p>{{ $totalCustomers }}</p>
+        </div>
 
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-    var ctx = document.getElementById('salesTrendChart').getContext('2d');
-    var salesTrendChart = new Chart(ctx, {
-        type: 'line', // Use 'line' for a trend chart
-        data: {
-            labels: @json($salesTrendLabels), // Array of month labels
-            datasets: [{
-                label: 'Sales Trend',
-                data: @json($salesTrendData), // Array of sales data
-                borderColor: 'rgba(75, 192, 192, 1)',
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                borderWidth: 1
-            }]
-        },
-        options: {
-            responsive: true,
-            plugins: {
-                legend: {
-                    position: 'top',
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+            var ctx = document.getElementById('salesTrendChart').getContext('2d');
+            var salesTrendChart = new Chart(ctx, {
+                type: 'line', // Use 'line' for a trend chart
+                data: {
+                    labels: @json($salesTrendLabels), // Array of month labels
+                    datasets: [{
+                        label: 'Sales Trend',
+                        data: @json($salesTrendData), // Array of sales data
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderWidth: 1
+                    }]
                 },
-                tooltip: {
-                    callbacks: {
-                        label: function(tooltipItem) {
-                            return 'Sales: $' + tooltipItem.raw.toFixed(2);
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(tooltipItem) {
+                                    return 'Sales: $' + tooltipItem.raw.toFixed(2);
+                                }
+                            }
                         }
                     }
                 }
-            }
-        }
-    });
-</script>
+            });
+        </script>
 
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        var ctx = document.getElementById('ordersByStatusChart').getContext('2d');
-        var ordersByStatusChart = new Chart(ctx, {
-            type: 'doughnut', // or 'pie'
-            data: {
-                labels: {!! json_encode($ordersByStatus->keys()) !!},
-                datasets: [{
-                    label: 'Orders by Status',
-                    data: {!! json_encode($ordersByStatus->values()) !!},
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)',
-                        'rgba(54, 162, 235, 0.2)',
-                        'rgba(255, 206, 86, 0.2)',
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)'
-                    ],
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-            }
-        });
-    </script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+            var ctx = document.getElementById('ordersByStatusChart').getContext('2d');
+            var ordersByStatusChart = new Chart(ctx, {
+                type: 'doughnut', // or 'pie'
+                data: {
+                    labels: {!! json_encode($ordersByStatus->keys()) !!},
+                    datasets: [{
+                        label: 'Orders by Status',
+                        data: {!! json_encode($ordersByStatus->values()) !!},
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                }
+            });
+        </script>
 
 
 
 
 
-    <!-- Conversion Rate -->
-    <div>
-        <h3>Conversion Rate</h3>
-        <p>{{ number_format($conversionRate, 2) }}%</p>
-    </div>
+        <!-- Conversion Rate -->
+        <div>
+            <h3>Conversion Rate</h3>
+            <p>{{ number_format($conversionRate, 2) }}%</p>
+        </div>
 
-    <!-- Bounce Rate -->
-    <div>
-        <h3>Bounce Rate</h3>
-        <p>{{ number_format($bounceRate, 2) }}%</p>
-    </div>
+        <!-- Bounce Rate -->
+        <div>
+            <h3>Bounce Rate</h3>
+            <p>{{ number_format($bounceRate, 2) }}%</p>
+        </div>
 
-    <!-- Average Session Duration -->
-    <div>
-        <h3>Average Session Duration</h3>
-        <p>{{ number_format($averageSessionDuration, 2) }} minutes</p>
-    </div>
+        <!-- Average Session Duration -->
+        <div>
+            <h3>Average Session Duration</h3>
+            <p>{{ number_format($averageSessionDuration, 2) }} minutes</p>
+        </div>
 
-    <!-- JavaScript for Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        var ctx = document.getElementById('trafficChart').getContext('2d');
-        var trafficChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: @json($trafficData->pluck('date')),
-                datasets: [{
-                    label: 'Number of Visitors',
-                    data: @json($trafficData->pluck('count')),
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    x: {
-                        beginAtZero: true
-                    },
-                    y: {
-                        beginAtZero: true
+        <!-- JavaScript for Chart.js -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+            var ctx = document.getElementById('trafficChart').getContext('2d');
+            var trafficChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: @json($trafficData->pluck('date')),
+                    datasets: [{
+                        label: 'Number of Visitors',
+                        data: @json($trafficData->pluck('count')),
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        x: {
+                            beginAtZero: true
+                        },
+                        y: {
+                            beginAtZero: true
+                        }
                     }
                 }
-            }
-        });
-    </script>
+            });
+        </script>
     </div>
 @endsection
 
