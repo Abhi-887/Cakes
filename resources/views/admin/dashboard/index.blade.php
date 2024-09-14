@@ -528,9 +528,10 @@
 
            <!-- category -->
 <!-- category -->
+<!-- category -->
 <div class="wg-box w-half">
     <div class="flex items-center justify-between">
-        <h5>Sale by Category</h5>
+        <h5>Sales Trend by Month</h5>
         <div class="dropdown default">
             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="icon-more"><i class="icon-more-horizontal"></i></span>
@@ -573,7 +574,7 @@
     </div>
 
     <div class="text-center">
-        <canvas id="categoriesChart"></canvas>
+        <canvas id="salesTrendChart"></canvas>
     </div>
 
     <div class="flex gap20 mt-4">
@@ -585,6 +586,8 @@
         @endforeach
     </div>
 </div>
+<!-- /category -->
+
 <!-- /category -->
 
 <!-- /category -->
@@ -1501,37 +1504,38 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        var ctx = document.getElementById('salesTrendChart').getContext('2d');
-        var salesTrendChart = new Chart(ctx, {
-            type: 'line', // Use 'line' for a trend chart
-            data: {
-                labels: @json($salesTrendLabels),
-                datasets: [{
-                    label: 'Sales Trend',
-                    data: @json($salesTrendData),
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: 'top',
-                    },
-                    tooltip: {
-                        callbacks: {
-                            label: function(tooltipItem) {
-                                return 'Sales: $' + tooltipItem.raw.toFixed(2);
-                            }
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    var ctx = document.getElementById('salesTrendChart').getContext('2d');
+    var salesTrendChart = new Chart(ctx, {
+        type: 'line', // Use 'line' for a trend chart
+        data: {
+            labels: @json($salesTrendLabels), // Array of month labels
+            datasets: [{
+                label: 'Sales Trend',
+                data: @json($salesTrendData), // Array of sales data
+                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(tooltipItem) {
+                            return 'Sales: $' + tooltipItem.raw.toFixed(2);
                         }
                     }
                 }
             }
-        });
-    </script>
+        }
+    });
+</script>
 
 
 
