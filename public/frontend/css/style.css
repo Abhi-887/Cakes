@@ -792,11 +792,11 @@ button {
     margin: 0px 3px;
     padding: 0;
     opacity: 0.2;
-    transition: all linear 0.2s;
-    -webkit-transition: all linear 0.2s;
-    -moz-transition: all linear 0.2s;
-    -ms-transition: all linear 0.2s;
-    -o-transition: all linear 0.2s;
+    transition: all linear 0.6s;
+    -webkit-transition: all linear 0.6s;
+    -moz-transition: all linear 0.6s;
+    -ms-transition: all linear 0.6s;
+    -o-transition: all linear 0.6s;
     position: relative;
 }
 
