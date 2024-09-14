@@ -26,9 +26,17 @@
     }
 
     .parallax-item {
-        /* background: url({{ asset('uploads/center_homebg.webp') }}); */
-        background: #008B8B !important;
+        background-image: url({{ asset('uploads/patterned.png') }});
+        /* Sets the background image */
+        background-color: #008b8b;
+        /* Adds a fallback background color (Dark Cyan) */
+        background-size: cover;
+        /* Ensures the background image covers the entire element */
+        background-position: center;
+        /* Centers the background image */
     }
+
+
 
     .about-description p {
         color: white !important;
