@@ -1832,7 +1832,7 @@ button {
     box-shadow: var(--boxShadow);
     background: var(--colorWhite);
     position: relative;
-    margin-top: 25px;
+    /* margin-top: 25px; */
     z-index: 0 !important;
 }
 
