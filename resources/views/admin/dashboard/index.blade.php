@@ -172,7 +172,7 @@
                             </div>
 
                             <!-- Set a max height and enable scrolling for product list -->
-                            <div class="wg-table table-top-product" style="max-height: 400px; overflow-y: auto;">
+                            <div class="wg-table table-top-product" style="max-height: 300px; overflow-y: auto;">
                                 <ul class="flex flex-column gap14">
                                     @foreach ($topSellingProducts as $product)
                                     <li class="product-item">
@@ -180,7 +180,7 @@
                                             <!-- Placeholder image for the product; replace with actual if available -->
                                             <img src="{{ asset('admin2/assets/images/products/default.png') }}" alt="{{ $product->product_name }}">
                                         </div>
-                                        <div class="flex items-center justify-between flex-grow">
+                                        <div class="flex items-center justify-content-around flex-grow">
                                             <div class="name">
                                                 <a href="product-list.html" class="body-title-2">{{ Str::limit($product->product_name, 20, '...') }}</a>
                                                 <div class="text-tiny mt-3">{{ $product->total_qty }} Items Sold</div>
@@ -190,10 +190,7 @@
                                                 <div class="body-text">${{ number_format($product->total_revenue, 2) }}</div>
                                             </div>
 
-                                            {{-- <div>
-                                                <div class="body-title-2 mb-3">Discount</div>
-                                                <div class="text-tiny">-15%</div>
-                                            </div> --}}
+
                                         </div>
                                     </li>
                                     @endforeach
