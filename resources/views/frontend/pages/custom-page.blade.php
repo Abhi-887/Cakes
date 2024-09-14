@@ -7,8 +7,8 @@
         }
     </style> --}}
     <!--=============================
-                                                BREADCRUMB START
-                                            ==============================-->
+                                                    BREADCRUMB START
+                                                ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay py-5">
             <div class="container py-md-5 py-2">
@@ -23,14 +23,14 @@
         </div>
     </section>
     <!--=============================
-                                                BREADCRUMB END
-                                            ==============================-->
+                                                    BREADCRUMB END
+                                                ==============================-->
 
 
     <!--================================
-                                                Trams And Condtions START
-                                            =================================-->
-    <section class="fp__terms_condition mt_120 xs_mt_90 mb_100 xs_mb_70">
+                                                    Trams And Condtions START
+                                                =================================-->
+    <section class="fp__terms_condition py-5">
         <div class="container custom-container">
             <div class="row">
                 <div class="col-xl-12 wow fadeInUp" data-wow-duration="1s">
@@ -43,6 +43,6 @@
         </div>
     </section>
     <!--================================
-                                                Trams And Condtions END
-                                            =================================-->
+                                                    Trams And Condtions END
+                                                =================================-->
 @endsection
