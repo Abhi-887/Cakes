@@ -229,7 +229,7 @@
                                     <!-- Display the product's thumbnail image -->
                                     <img src="{{ asset($product->thumb_image) }}" alt="{{ $product->product_name }}">
                                 </div>
-                                <div class="flex items-center justify-between flex-grow">
+                                <div class="flex items-center justify-content-evenly flex-grow">
                                     <div class="name">
                                         <a href="product-list.html"
                                             class="body-title-2">{{ Str::limit($product->product_name, 30, '...') }}</a>
@@ -1290,113 +1290,8 @@
         @endif
     </div>
 
-    <div class="container mt-4">
-        <div class="row">
-            <!-- Orders by Status -->
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="card-title">Orders by Status</h5>
-                    </div>
-                    <div class="card-body">
-                        <canvas id="ordersByStatusChart"></canvas>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Site Traffic -->
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="card-title">Site Traffic</h5>
-                    </div>
-                    <div class="card-body">
-                        <canvas id="trafficChart"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="row">
-            <!-- Product Categories -->
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="card-title">Product Categories</h5>
-                    </div>
-                    <div class="card-body">
-                        <canvas id="categoriesChart"></canvas>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Out of Stock Products -->
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="card-title">Out of Stock Products</h5>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group">
-                            @foreach ($outOfStockProducts as $product)
-                                <li class="list-group-item">
-                                    {{ $product->name }}
-                                </li>
-                            @endforeach
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <!-- Low Stock Products -->
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="card-title">Low Stock Products</h5>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group">
-                            @foreach ($lowStockProducts as $product)
-                                <li class="list-group-item">
-                                    {{ $product->name }} - {{ $product->quantity }} in stock
-                                </li>
-                            @endforeach
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-6 mb-4">
-        <div class="card">
-            <div class="card-header">
-                <h5 class="card-title">Top-Selling Products</h5>
-            </div>
-            <div class="card-body">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Product Name</th>
-                            <th>Quantity Sold</th>
-                            <th>Revenue Generated</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($topSellingProducts as $product)
-                            <tr>
-                                <td>{{ $product->product_name }}</td>
-                                <td>{{ $product->total_qty }}</td>
-                                <td>${{ number_format($product->total_revenue, 2) }}</td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
 
     <div class="col-md-12 mb-4">
         <div class="card">
