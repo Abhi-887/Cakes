@@ -26,7 +26,7 @@
     }
 
     .parallax-item {
-        background-image: url({{ asset('uploads/patterned.png') }});
+        background-image: url({{ asset('uploads/patterned4.png') }});
         /* Sets the background image */
         background-color: #008b8b;
         /* Adds a fallback background color (Dark Cyan) */
