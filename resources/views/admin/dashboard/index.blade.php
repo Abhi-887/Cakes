@@ -1506,42 +1506,40 @@
     <script>
         var ctx = document.getElementById('ordersByStatusChart').getContext('2d');
         var ordersByStatusChart = new Chart(ctx, {
-            type: 'doughnut', // or 'pie'
+            type: 'doughnut',
             data: {
                 labels: {!! json_encode($ordersByStatus->keys()) !!},
                 datasets: [{
                     label: 'Orders by Status',
                     data: {!! json_encode($ordersByStatus->values()) !!},
                     backgroundColor: [
-                        '#FF6384',  // Bold dark pink
-                        '#36A2EB',  // Bold blue
-                        '#FFCE56',  // Deep yellow
-                        '#4BC0C0',  // Rich teal
-                        '#9966FF',  // Dark purple
-                        '#FF9F40'   // Strong orange
+                        'rgba(63, 81, 181, 0.7)',  // Indigo
+                        'rgba(0, 188, 212, 0.7)',  // Cyan
+                        'rgba(255, 193, 7, 0.7)',  // Amber
+                        'rgba(76, 175, 80, 0.7)',  // Green
+                        'rgba(156, 39, 176, 0.7)', // Purple
+                        'rgba(244, 67, 54, 0.7)'   // Red
                     ],
                     borderColor: [
-                        '#B02A37',  // Darker pink for contrast
-                        '#2C6FBC',  // Dark blue border
-                        '#B0892A',  // Deep yellow border
-                        '#358686',  // Dark teal
-                        '#6F3FBF',  // Dark purple border
-                        '#BF6B29'   // Dark orange border
+                        'rgba(63, 81, 181, 1)',
+                        'rgba(0, 188, 212, 1)',
+                        'rgba(255, 193, 7, 1)',
+                        'rgba(76, 175, 80, 1)',
+                        'rgba(156, 39, 176, 1)',
+                        'rgba(244, 67, 54, 1)'
                     ],
-                    borderWidth: 2
+                    borderWidth: 1
                 }]
             },
             options: {
                 responsive: true,
                 plugins: {
                     legend: {
-                        position: 'top',
                         labels: {
+                            color: 'rgba(0, 0, 0, 0.85)', // Dark mode consideration
                             font: {
-                                size: 14,
                                 weight: 'bold'
-                            },
-                            color: '#333'  // Dark text for contrast
+                            }
                         }
                     }
                 }
