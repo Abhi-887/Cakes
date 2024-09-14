@@ -34,7 +34,8 @@ h5,
 h6 {
     margin: 0;
     padding: 0;
-    font-family: var(--headingFont);
+    /* font-family: var(--headingFont); */
+    font-family: var(--paraFont);
     color: var(--colorBlack);
 }
 
@@ -141,8 +142,8 @@ button {
     --colorBlack: #010f1c;
     --colorWhite: #ffffff;
     --paraFont: "Barlow", sans-serif;
-    --headingFont: "Jost", sans-serif;
-    --cursiveFont: "Lobster", cursive;
+    /* --headingFont: "Jost", sans-serif; */
+    /* --cursiveFont: "Lobster", cursive; */
     --boxShadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     --gradiantBg: rgb(173, 205, 222);
     --gradiantHoverBg: rgb(75, 99, 127);
