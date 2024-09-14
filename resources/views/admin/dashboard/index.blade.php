@@ -250,7 +250,7 @@
 
             <!-- /top-product -->
             <!-- top-countries -->
-            <div class="wg-box">
+            {{-- <div class="wg-box">
                 <div class="flex items-center justify-between">
                     <h5>Top Countries By Sales</h5>
                     <div class="dropdown default">
@@ -350,7 +350,16 @@
                         </div>
                     </li>
                 </ul>
-            </div>
+            </div> --}}
+
+          <!-- Orders by Status -->
+<div class="wg-box">
+    <h5>Orders by Status</h5>
+    <div class="card-body">
+        <canvas id="ordersByStatusChart"></canvas>
+    </div>
+</div>
+
             <!-- /top-countries -->
         </div>
         <div class="tf-section-6 mb-30">
