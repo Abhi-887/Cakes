@@ -1506,29 +1506,27 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    $(document).ready(function() {
-        // Load initial data
-        loadLowStockAlerts(1);
-
-        // Handle pagination click
-        $(document).on('click', '.wg-pagination a', function(event) {
-            event.preventDefault();
-            let page = $(this).attr('href').split('page=')[1];
-            loadLowStockAlerts(page);
-        });
-
-        // Function to load data
-        function loadLowStockAlerts(page) {
-            $('#loading').show(); // Show loading spinner
-            $.ajax({
-                url: "{{ route('admin.getLowStockAlerts') }}?page=" + page,
-                success: function(data) {
-                    $('#loading').hide(); // Hide loading spinner
-                    $('#low-stock-alerts').html(data); // Update content
-                }
-            });
+  function loadLowStockAlerts(page) {
+    $.ajax({
+        url: "{{ route('admin.getLowStockAlerts') }}?page=" + page,
+        success: function(data) {
+            $('#loading').hide(); // Hide loading spinner
+            $('#low-stock-alerts').html(data); // Update content
         }
     });
+}
+
+$(document).ready(function() {
+    loadLowStockAlerts(1); // Initial load for page 1
+
+    // Handle pagination click events
+    $(document).on('click', '.wg-pagination a', function(e) {
+        e.preventDefault();
+        var page = $(this).attr('href').split('page=')[1];
+        loadLowStockAlerts(page);
+    });
+});
+
 </script>
 
 @endpush
