@@ -43,8 +43,8 @@
                 <h1 class="fw-semibold">{{ $category->name }}</h1>
                 <h5 class="mt-3 color-light-gray">Edinburgh | Glasgow | Scotland</h5>
             </div>
-            <div class="my-5 row">
-                <div class="my-3 col-md-4">
+            <div class="row mb-5 mt-4">
+                <div class="col-md-4">
                     <a href="/consultations">
                         <div class="position-relative">
                             <img class="rounded-3" src="{{ asset('uploads/book-a-consultation.jpg') }}" alt="">
