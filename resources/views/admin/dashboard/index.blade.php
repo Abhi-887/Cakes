@@ -354,7 +354,7 @@
         </div>
         <div class="tf-section-6 mb-30">
             <!-- best-shop-sellers -->
-            <div class="wg-box">
+            {{-- <div class="wg-box">
                 <div class="flex items-center justify-between">
                     <h5>Best Shop Sellers</h5>
                     <div class="dropdown default">
@@ -523,8 +523,83 @@
                         </li>
                     </ul>
                 </div>
-            </div>
+            </div> --}}
             <!-- /best-shop-sellers -->
+
+            <!-- category -->
+            <div class="wg-box w-half">
+                <div class="flex items-center justify-between">
+                    <h5>Sale by category</h5>
+                    <div class="dropdown default">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                           <span class="icon-more"><i class="icon-more-horizontal"></i></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li>
+                                <a href="javascript:void(0);">This Week</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">Last Week</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="flex gap10 justify-between flex-wrap">
+                    <div>
+                        <div class="text-tiny mb-2">Total Mar 20, 2023</div>
+                        <div class="flex items-center gap10">
+                            <h4>$37,802</h4>
+                            <div class="box-icon-trending up">
+                                <i class="icon-trending-up"></i>
+                                <div class="body-title number">0.56%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown default style-box">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a href="product-list.html" class="view-all">Week<i class="icon-chevron-down"></i></a>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="javascript:void(0);">Month</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">Year</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="morris-donut-1" class="text-center"></div>
+                <div class="flex gap20">
+                    <div class="block-legend style-1 w-full">
+                        <div class="dot t1"></div>
+                        <div class="text-tiny">Men Fashion</div>
+                    </div>
+                    <div class="block-legend style-1 w-full">
+                        <div class="dot t2"></div>
+                        <div class="text-tiny">Men Fashion</div>
+                    </div>
+                    <div class="block-legend style-1 w-full">
+                        <div class="dot t3"></div>
+                        <div class="text-tiny">Men Fashion</div>
+                    </div>
+                </div>
+                <div class="flex gap20">
+                    <div class="block-legend style-1 w-full">
+                        <div class="dot t4"></div>
+                        <div class="text-tiny">Accessory</div>
+                    </div>
+                    <div class="block-legend style-1 w-full">
+                        <div class="dot t5"></div>
+                        <div class="text-tiny">Sport shoes</div>
+                    </div>
+                    <div class="block-legend style-1 w-full">
+                        <div class="dot t6"></div>
+                        <div class="text-tiny">Underwear</div>
+                    </div>
+                </div>
+            </div>
+            <!-- /category -->
             <!-- product-overview -->
             <div class="wg-box">
                 <div class="flex items-center justify-between">
