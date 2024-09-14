@@ -17,59 +17,59 @@
         }
 
         /* .fa-long-arrow-right::before {
-                                                                            content: "\f054" !important;
-                                                                            font-weight: bolder !important;
-                                                                        }
+                                                                                content: "\f054" !important;
+                                                                                font-weight: bolder !important;
+                                                                            }
 
-                                                                        .fa-long-arrow-left::before {
-                                                                            content: "\f053" !important;
-                                                                            font-weight: bolder !important;
-                                                                        }
-
-                                                                        .fp__related_menu .prevArrow {
-                                                                            left: -45px !important;
-                                                                        }
-
-                                                                        .nextArrow.slick-arrow {
-                                                                            right: -45px !important;
-                                                                        }
-
-                                                                        @media (max-width: 640px) {
-                                                                            .nextArrow.slick-arrow {
-                                                                                right: 40% !important;
-                                                                                top: 103% !important;
+                                                                            .fa-long-arrow-left::before {
+                                                                                content: "\f053" !important;
+                                                                                font-weight: bolder !important;
                                                                             }
 
                                                                             .fp__related_menu .prevArrow {
-                                                                                left: 40% !important;
-                                                                                top: 103% !important;
+                                                                                left: -45px !important;
                                                                             }
-                                                                        }
 
-                                                                        @media (max-width: 460px) {
                                                                             .nextArrow.slick-arrow {
-                                                                                right: 38% !important;
+                                                                                right: -45px !important;
                                                                             }
 
-                                                                            .fp__related_menu .prevArrow {
-                                                                                left: 38% !important;
-                                                                            }
-                                                                        }
+                                                                            @media (max-width: 640px) {
+                                                                                .nextArrow.slick-arrow {
+                                                                                    right: 40% !important;
+                                                                                    top: 103% !important;
+                                                                                }
 
-                                                                        @media (max-width: 380px) {
-                                                                            .nextArrow.slick-arrow {
-                                                                                right: 35% !important;
+                                                                                .fp__related_menu .prevArrow {
+                                                                                    left: 40% !important;
+                                                                                    top: 103% !important;
+                                                                                }
                                                                             }
 
-                                                                            .fp__related_menu .prevArrow {
-                                                                                left: 35% !important;
-                                                                            }
-                                                                        }
+                                                                            @media (max-width: 460px) {
+                                                                                .nextArrow.slick-arrow {
+                                                                                    right: 38% !important;
+                                                                                }
 
-                                                                        .prevArrow.slick-arrow {
-                                                                            font-size: 22px !important;
-                                                                            font-weight: 600;
-                                                                        } */
+                                                                                .fp__related_menu .prevArrow {
+                                                                                    left: 38% !important;
+                                                                                }
+                                                                            }
+
+                                                                            @media (max-width: 380px) {
+                                                                                .nextArrow.slick-arrow {
+                                                                                    right: 35% !important;
+                                                                                }
+
+                                                                                .fp__related_menu .prevArrow {
+                                                                                    left: 35% !important;
+                                                                                }
+                                                                            }
+
+                                                                            .prevArrow.slick-arrow {
+                                                                                font-size: 22px !important;
+                                                                                font-weight: 600;
+                                                                            } */
 
         #exzoom {
             position: sticky;
@@ -400,7 +400,7 @@
             </div>
 
             <div class="row wow fadeInUp" data-wow-duration="1s">
-                <div class="fp__menu_description_area mt-5 my-3 py-5">
+                <div class="fp__menu_description_area mt-5 py-5">
                     <ul class="nav nav-pills" id="pills-tab" role="tablist">
                         <li class="nav-item" role="presentation">
                             <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
