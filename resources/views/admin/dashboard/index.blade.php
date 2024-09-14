@@ -609,26 +609,13 @@
                 <div class="divider"></div>
 
                 <div class="flex items-center justify-between flex-wrap gap10">
-                    <div class="text-tiny">Showing {{ $lowStockAlerts->count() }} entries</div>
+                    <div class="text-tiny">Showing {{ $lowStockAlerts->count() }} entries of {{ $lowStockAlerts->total() }}</div>
                     <ul class="wg-pagination">
-                        <li>
-                            <a href="#"><i class="icon-chevron-left"></i></a>
-                        </li>
-                        <li>
-                            <a href="#">1</a>
-                        </li>
-                        <li class="active">
-                            <a href="#">2</a>
-                        </li>
-                        <li>
-                            <a href="#">3</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="icon-chevron-right"></i></a>
-                        </li>
+                        {{ $lowStockAlerts->links('pagination::bootstrap-4') }}
                     </ul>
                 </div>
             </div>
+
 
             <!-- /product-overview -->
         </div>
