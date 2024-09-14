@@ -259,8 +259,8 @@
             </div>
 
 
-            <div class="center-item">
-                <div class="center-heading">Manage Ecommerce</div>
+            {{-- <div class="center-item">
+                <div class="center-heading">Manage Ecommerce</div> --}}
                 <ul class="menu-list">
                     <li class="menu-item has-children {{ setSidebarActive([
                         'admin.coupon.index',
@@ -290,7 +290,7 @@
                         </ul>
                     </li>
                 </ul>
-            </div>
+            {{-- </div> --}}
 
             <div class="center-item">
                 <div class="center-heading">Pages</div>
