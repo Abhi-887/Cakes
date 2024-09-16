@@ -5,12 +5,12 @@
 
     <nav class="shadow-sm navbar bg-light sticky-top py-3 px-3 px-lg-5">
         <div class="row align-items-center w-100">
-            <div class="col-2 header-logo">
+            <div class="col-5 col-xxl-2  header-logo">
                 <a class="" href="{{ url('/') }}">
                     <img src="{{ asset('uploads/web-logo1.png') }}" alt="3D-Cakes Logo" class="img-fluid" />
                 </a>
             </div>
-            <div class="col-10 col-xxl-6">
+            <div class="col-7 col-xxl-6">
                 <ul class="d-none d-xxl-flex">
                     {{-- Main Menu Items --}} @if ($MainMenu)
                         @foreach ($MainMenu as $menu)
@@ -34,8 +34,8 @@
                         @endforeach
                     @endif
                 </ul>
-                <div class="d-flex float-end">
-                    <ul class="d-flex menu_icon d-xxl-none">
+                <div class="d-xxl-none d-flex align-items-center float-end">
+                    <ul class="d-flex menu_icon">
                         <li>
                             <a href="#" class="menu_search me-3 position-relative fw-semibold fs-5 transitions"><i
                                     class="transition far fa-search"></i></a>
@@ -74,7 +74,7 @@
                                     class="far fa-heart me-4"></i></a>
                         </li>
                     </ul>
-                    <a class="d-xxl-none d-block" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+                    <a class="align-items-center" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
                         aria-controls="offcanvasExample">
                         <i class="fas fa-bars fs-2 color-light-gray"></i>
                     </a>
