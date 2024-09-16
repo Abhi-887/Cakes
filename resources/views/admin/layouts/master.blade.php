@@ -86,10 +86,10 @@
                         <div class="wrap">
                             <div class="header-left">
                                 <a href="index.html">
-                                    <img class="" id="logo_header_mobile" alt=""
-                                        src="images/logo/logo.png" data-light="images/logo/logo.png"
-                                        data-dark="images/logo/logo-dark.png" data-width="154px" data-height="52px"
-                                        data-retina="images/logo/logo@2x.png">
+                                    <img id="logo_header" alt="{{ config('settings.site_name') }} Logo"
+                                    src="{{ asset(config('settings.logo')) }}"
+                                    data-light="{{ asset(config('settings.logo')) }}"
+                                    data-dark="{{ asset(config('settings.logo')) }}">
                                 </a>
                                 <div class="button-show-hide">
                                     <i class="icon-menu-left"></i>
