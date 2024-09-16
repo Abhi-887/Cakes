@@ -124,7 +124,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-5 col-xxl-4 d-none d-xl-flex d-block">
+                <div class="col-5 col-xxl-4 d-none d-xl-flex">
                     <ul class="d-flex flex-wrap menu_icon align-items-center ms-auto">
                         <li>
                             <a href="#" class="menu_search me-4 position-relative fw-semibold fs-5 transitions"><i
@@ -154,14 +154,14 @@
                         </li>
                         @php @$unseenMessages = \App\Models\Chat::where(['sender_id' => 1, 'receiver_id' => auth()->user()->id, 'seen' => 0])->count(); @endphp
                         {{-- <li>
-                    <a class="mx-3 message_icon position-relative fw-semibold fs-5 transitions"
-                        href="{{ route('dashboard') }}">
-                        <i class="fas fa-comment-alt-dots"></i>
-                        <span
-                            class="text-center sunseen-message-count bg-gray position-absolute text-light fw-semibold bottom-50 end-25 ms-1 rounded-circle">{{
-                            $unseenMessages > 0 ? 1 : 0 }}</span>
-                    </a>
-                </li> --}}
+                            <a class="mx-3 message_icon position-relative fw-semibold fs-5 transitions"
+                                href="{{ route('dashboard') }}">
+                                <i class="fas fa-comment-alt-dots"></i>
+                                <span
+                                    class="text-center sunseen-message-count bg-gray position-absolute text-light fw-semibold bottom-50 end-25 ms-1 rounded-circle">{{
+                                    $unseenMessages > 0 ? 1 : 0 }}</span>
+                            </a>
+                        </li> --}}
 
                         <li class="nav-item">
                             <a class="nav-link border px-3 py-2 ms-3 rounded-1" href="{{ route('login') }}"><i
