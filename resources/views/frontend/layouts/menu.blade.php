@@ -11,8 +11,8 @@
                         <img src="{{ asset('uploads/web-logo1.png') }}" alt="3D-Cakes Logo" class="img-fluid" />
                     </a>
                 </div>
-                <div class="col-7">
-                    <ul class="d-none d-xl-flex">
+                <div class="col-5 col-xxl-6">
+                    <ul class="d-none d-xxl-flex">
                         {{-- Main Menu Items --}} @if ($MainMenu)
                             @foreach ($MainMenu as $menu)
                                 <li class="me-4 nav-item">
@@ -35,7 +35,7 @@
                             @endforeach
                         @endif
                     </ul>
-                    <ul class="ms-auto d-flex menu_icon d-xl-none d-block">
+                    <ul class="float-end d-flex menu_icon d-xl-none d-block">
                         <li>
                             <a href="#"
                                 class="menu_search me-3 me-sm-4 position-relative fw-semibold fs-5 transitions"><i
@@ -84,7 +84,7 @@
                                     class="far fa-heart me-3"></i></a>
                         </li>
                     </ul>
-                    <a class="d-xl-none d-block" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+                    <a class="d-xxl-none d-block" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
                         aria-controls="offcanvasExample">
                         <i class="fas fa-bars fs-2 color-light-gray"></i>
                     </a>
@@ -132,7 +132,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-3">
+                <div class="col-5 col-xxl-4">
                     <ul class="flex-wrap menu_icon d-none d-xl-flex align-items-center float-end">
                         <li>
                             <a href="#" class="menu_search me-4 position-relative fw-semibold fs-5 transitions"><i
