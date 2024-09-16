@@ -330,593 +330,591 @@
             </div>
         </div>
 
-            <div class="tf-section-3 mb-30">
-                <!-- orders -->
-                <div class="wg-box">
-                    <div class="flex items-center justify-between">
-                        <h5>Orders</h5>
-                        <div class="dropdown default">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                <span class="icon-more"><i class="icon-more-horizontal"></i></span>
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                                <li>
-                                    <a href="javascript:void(0);">This Week</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);">Last Week</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="wg-table table-orders">
-                        <ul class="table-title flex gap10 mb-14">
+        <div class="tf-section-3 mb-30">
+            <!-- orders -->
+            <div class="wg-box">
+                <div class="flex items-center justify-between">
+                    <h5>Orders</h5>
+                    <div class="dropdown default">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <span class="icon-more"><i class="icon-more-horizontal"></i></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
                             <li>
-                                <div class="body-title">Product</div>
+                                <a href="javascript:void(0);">This Week</a>
                             </li>
                             <li>
-                                <div class="body-title">Price</div>
-                            </li>
-                            <li>
-                                <div class="body-title">Delivery date</div>
-                            </li>
-                        </ul>
-                        <ul class="flex flex-column gap18">
-                            <li class="product-item gap14">
-                                <div class="image small">
-                                    <img src="{{ asset('admin2/assets/images/products/11.png') }}" alt="">
-                                </div>
-                                <div class="flex items-center justify-between flex-grow gap10">
-                                    <div class="name">
-                                        <a href="product-list.html" class="body-text">Prodotti per il tuo
-                                            cane...</a>
-                                    </div>
-                                    <div class="body-text">20 Nov 2023</div>
-                                    <div class="body-text">20 Nov 2023</div>
-                                </div>
-                            </li>
-                            <li class="product-item gap14">
-                                <div class="image small">
-                                    <img src="{{ asset('admin2/assets/images/products/12.png') }}" alt="">
-                                </div>
-                                <div class="flex items-center justify-between flex-grow gap10">
-                                    <div class="name">
-                                        <a href="product-list.html" class="body-text">Wholesome Pride...</a>
-                                    </div>
-                                    <div class="body-text">20 Nov 2023</div>
-                                    <div class="body-text">20 Nov 2023</div>
-                                </div>
-                            </li>
-                            <li class="product-item gap14">
-                                <div class="image small">
-                                    <img src="{{ asset('admin2/assets/images/products/13.png') }}" alt="">
-                                </div>
-                                <div class="flex items-center justify-between flex-grow gap10">
-                                    <div class="name">
-                                        <a href="product-list.html" class="body-text">Beneful Baked
-                                            Delights...</a>
-                                    </div>
-                                    <div class="body-text">20 Nov 2023</div>
-                                    <div class="body-text">20 Nov 2023</div>
-                                </div>
-                            </li>
-                            <li class="product-item gap14">
-                                <div class="image small">
-                                    <img src="{{ asset('admin2/assets/images/products/14.png') }}" alt="">
-                                </div>
-                                <div class="flex items-center justify-between flex-grow gap10">
-                                    <div class="name">
-                                        <a href="product-list.html" class="body-text">Taste of the Wild...</a>
-                                    </div>
-                                    <div class="body-text">20 Nov 2023</div>
-                                    <div class="body-text">20 Nov 2023</div>
-                                </div>
-                            </li>
-                            <li class="product-item gap14">
-                                <div class="image small">
-                                    <img src="{{ asset('admin2/assets/images/products/15.png') }}" alt="">
-                                </div>
-                                <div class="flex items-center justify-between flex-grow gap10">
-                                    <div class="name">
-                                        <a href="product-list.html" class="body-text">Canagan - Britain's...</a>
-                                    </div>
-                                    <div class="body-text">20 Nov 2023</div>
-                                    <div class="body-text">20 Nov 2023</div>
-                                </div>
+                                <a href="javascript:void(0);">Last Week</a>
                             </li>
                         </ul>
                     </div>
                 </div>
-                <!-- /orders -->
-                <!-- earnings -->
-                <div class="wg-box">
-                    <div class="flex items-center justify-between">
-                        <h5>Earnings</h5>
-                        <div class="dropdown default">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                <span class="icon-more"><i class="icon-more-horizontal"></i></span>
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                                <li>
-                                    <a href="javascript:void(0);">This Week</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);">Last Week</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap gap40">
-                        <div>
-                            <div class="mb-2">
-                                <div class="block-legend">
-                                    <div class="dot t1"></div>
-                                    <div class="text-tiny">Revenue</div>
-                                </div>
+                <div class="wg-table table-orders">
+                    <ul class="table-title flex gap10 mb-14">
+                        <li>
+                            <div class="body-title">Product</div>
+                        </li>
+                        <li>
+                            <div class="body-title">Price</div>
+                        </li>
+                        <li>
+                            <div class="body-title">Delivery date</div>
+                        </li>
+                    </ul>
+                    <ul class="flex flex-column gap18">
+                        <li class="product-item gap14">
+                            <div class="image small">
+                                <img src="{{ asset('admin2/assets/images/products/11.png') }}" alt="">
                             </div>
-                            <div class="flex items-center gap10">
-                                <h4>$37,802</h4>
-                                <div class="box-icon-trending up">
-                                    <i class="icon-trending-up"></i>
-                                    <div class="body-title number">0.56%</div>
+                            <div class="flex items-center justify-between flex-grow gap10">
+                                <div class="name">
+                                    <a href="product-list.html" class="body-text">Prodotti per il tuo
+                                        cane...</a>
                                 </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="mb-2">
-                                <div class="block-legend">
-                                    <div class="dot t2"></div>
-                                    <div class="text-tiny">Profit</div>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap10">
-                                <h4>$28,305</h4>
-                                <div class="box-icon-trending up">
-                                    <i class="icon-trending-up"></i>
-                                    <div class="body-title number">0.56%</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="line-chart-6"></div>
-                </div>
-                <!-- /earnings -->
-                <!-- new-comment -->
-                <div class="wg-box">
-                    <div class="flex items-center justify-between">
-                        <h5>New Comments</h5>
-                        <div class="dropdown default">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">
-                                <span class="icon-more"><i class="icon-more-horizontal"></i></span>
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                                <li>
-                                    <a href="javascript:void(0);">This Week</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);">Last Week</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <ul class="flex flex-column gap20 overflow-h">
-                        <li class="comment-item">
-                            <div class="image">
-                                <img src="{{ asset('admin2/assets/images/avatar/user-2.png') }}" alt="">
-                            </div>
-                            <div class="">
-                                <div class="mb-4 name">
-                                    <a href="all-user.html" class="body-title-2">Kathryn Murphy</a>
-                                </div>
-                                <div class="ratings mb-10">
-                                    <i class="icon-star1 active"></i>
-                                    <i class="icon-star1 active"></i>
-                                    <i class="icon-star1 active"></i>
-                                    <i class="icon-star1 active"></i>
-                                    <i class="icon-star1"></i>
-                                </div>
-                                <div class="text-tiny">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Cras nec dolor vel est interdum</div>
+                                <div class="body-text">20 Nov 2023</div>
+                                <div class="body-text">20 Nov 2023</div>
                             </div>
                         </li>
-                        <li class="comment-item">
-                            <div class="image">
-                                <img src="{{ asset('admin2/assets/images/avatar/user-3.png') }}" alt="">
+                        <li class="product-item gap14">
+                            <div class="image small">
+                                <img src="{{ asset('admin2/assets/images/products/12.png') }}" alt="">
                             </div>
-                            <div class="">
-                                <div class="mb-4 name">
-                                    <a href="all-user.html" class="body-title-2">Leslie Alexander</a>
+                            <div class="flex items-center justify-between flex-grow gap10">
+                                <div class="name">
+                                    <a href="product-list.html" class="body-text">Wholesome Pride...</a>
                                 </div>
-                                <div class="ratings mb-10">
-                                    <i class="icon-star1 active"></i>
-                                    <i class="icon-star1 active"></i>
-                                    <i class="icon-star1 active"></i>
-                                    <i class="icon-star1 active"></i>
-                                    <i class="icon-star1"></i>
-                                </div>
-                                <div class="text-tiny">Cras nec viverra justo, a mattis lacus. Vestibulum eleifend,
-                                    leo sit amet aliquam laoreet, turpis leo vulputate orci</div>
+                                <div class="body-text">20 Nov 2023</div>
+                                <div class="body-text">20 Nov 2023</div>
                             </div>
                         </li>
-                        <li class="comment-item">
-                            <div class="image">
-                                <img src="{{ asset('admin2/assets/images/avatar/user-4.png') }}" alt="">
+                        <li class="product-item gap14">
+                            <div class="image small">
+                                <img src="{{ asset('admin2/assets/images/products/13.png') }}" alt="">
                             </div>
-                            <div class="">
-                                <div class="mb-4 name">
-                                    <a href="all-user.html" class="body-title-2">Devon Lane</a>
+                            <div class="flex items-center justify-between flex-grow gap10">
+                                <div class="name">
+                                    <a href="product-list.html" class="body-text">Beneful Baked
+                                        Delights...</a>
                                 </div>
-                                <div class="ratings mb-10">
-                                    <i class="icon-star1 active"></i>
-                                    <i class="icon-star1 active"></i>
-                                    <i class="icon-star1 active"></i>
-                                    <i class="icon-star1 active"></i>
-                                    <i class="icon-star1"></i>
-                                </div>
-                                <div class="text-tiny">Morbi eget commodo diam. Praesent dignissim purus ac turpis
-                                    porta</div>
+                                <div class="body-text">20 Nov 2023</div>
+                                <div class="body-text">20 Nov 2023</div>
                             </div>
                         </li>
-                        <li class="comment-item">
-                            <div class="image">
-                                <img src="{{ asset('admin2/assets/images/avatar/user-5.png') }}" alt="">
+                        <li class="product-item gap14">
+                            <div class="image small">
+                                <img src="{{ asset('admin2/assets/images/products/14.png') }}" alt="">
                             </div>
-                            <div class="">
-                                <div class="mb-4 name">
-                                    <a href="all-user.html" class="body-title-2">Eleanor Pena</a>
+                            <div class="flex items-center justify-between flex-grow gap10">
+                                <div class="name">
+                                    <a href="product-list.html" class="body-text">Taste of the Wild...</a>
                                 </div>
-                                <div class="ratings mb-10">
-                                    <i class="icon-star1 active"></i>
-                                    <i class="icon-star1 active"></i>
-                                    <i class="icon-star1 active"></i>
-                                    <i class="icon-star1 active"></i>
-                                    <i class="icon-star1"></i>
-                                </div>
-                                <div class="text-tiny">Phasellus et eros ullamcorper, efficitur eros eget, pharetra
-                                    ante. Sed blandit risus vitae dolor feugiat, eu vulputate elit rhoncus</div>
+                                <div class="body-text">20 Nov 2023</div>
+                                <div class="body-text">20 Nov 2023</div>
                             </div>
                         </li>
-                        <li class="comment-item">
-                            <div class="image">
-                                <img src="{{ asset('admin2/assets/images/avatar/user-2.png') }}" alt="">
+                        <li class="product-item gap14">
+                            <div class="image small">
+                                <img src="{{ asset('admin2/assets/images/products/15.png') }}" alt="">
                             </div>
-                            <div class="">
-                                <div class="mb-4 name">
-                                    <a href="all-user.html" class="body-title-2">Kathryn Murphy</a>
+                            <div class="flex items-center justify-between flex-grow gap10">
+                                <div class="name">
+                                    <a href="product-list.html" class="body-text">Canagan - Britain's...</a>
                                 </div>
-                                <div class="ratings mb-10">
-                                    <i class="icon-star1 active"></i>
-                                    <i class="icon-star1 active"></i>
-                                    <i class="icon-star1 active"></i>
-                                    <i class="icon-star1 active"></i>
-                                    <i class="icon-star1"></i>
-                                </div>
-                                <div class="text-tiny">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Cras nec dolor vel est interdum</div>
-                            </div>
-                        </li>
-                        <li class="comment-item">
-                            <div class="image">
-                                <img src="{{ asset('admin2/assets/images/avatar/user-3.png') }}" alt="">
-                            </div>
-                            <div class="">
-                                <div class="mb-4 name">
-                                    <a href="all-user.html" class="body-title-2">Leslie Alexander</a>
-                                </div>
-                                <div class="ratings mb-10">
-                                    <i class="icon-star1 active"></i>
-                                    <i class="icon-star1 active"></i>
-                                    <i class="icon-star1 active"></i>
-                                    <i class="icon-star1 active"></i>
-                                    <i class="icon-star1"></i>
-                                </div>
-                                <div class="text-tiny">Cras nec viverra justo, a mattis lacus. Vestibulum eleifend,
-                                    leo sit amet aliquam laoreet, turpis leo vulputate orci</div>
-                            </div>
-                        </li>
-                        <li class="comment-item">
-                            <div class="image">
-                                <img src="{{ asset('admin2/assets/images/avatar/user-4.png') }}" alt="">
-                            </div>
-                            <div class="">
-                                <div class="mb-4 name">
-                                    <a href="all-user.html" class="body-title-2">Devon Lane</a>
-                                </div>
-                                <div class="ratings mb-10">
-                                    <i class="icon-star1 active"></i>
-                                    <i class="icon-star1 active"></i>
-                                    <i class="icon-star1 active"></i>
-                                    <i class="icon-star1 active"></i>
-                                    <i class="icon-star1"></i>
-                                </div>
-                                <div class="text-tiny">Morbi eget commodo diam. Praesent dignissim purus ac turpis
-                                    porta</div>
-                            </div>
-                        </li>
-                        <li class="comment-item">
-                            <div class="image">
-                                <img src="{{ asset('admin2/assets/images/avatar/user-5.png') }}" alt="">
-                            </div>
-                            <div class="">
-                                <div class="mb-4 name">
-                                    <a href="all-user.html" class="body-title-2">Eleanor Pena</a>
-                                </div>
-                                <div class="ratings mb-10">
-                                    <i class="icon-star1 active"></i>
-                                    <i class="icon-star1 active"></i>
-                                    <i class="icon-star1 active"></i>
-                                    <i class="icon-star1 active"></i>
-                                    <i class="icon-star1"></i>
-                                </div>
-                                <div class="text-tiny">Phasellus et eros ullamcorper, efficitur eros eget, pharetra
-                                    ante. Sed blandit risus vitae dolor feugiat, eu vulputate elit rhoncus</div>
+                                <div class="body-text">20 Nov 2023</div>
+                                <div class="body-text">20 Nov 2023</div>
                             </div>
                         </li>
                     </ul>
                 </div>
-                <!-- /new-comment -->
             </div>
-
-
-            <!-- Modal -->
-            <div class="modal fade" id="order_modal" tabindex="-1" role="dialog" aria-labelledby="order_modal"
-                aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+            <!-- /orders -->
+            <!-- earnings -->
+            <div class="wg-box">
+                <div class="flex items-center justify-between">
+                    <h5>Earnings</h5>
+                    <div class="dropdown default">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <span class="icon-more"><i class="icon-more-horizontal"></i></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li>
+                                <a href="javascript:void(0);">This Week</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">Last Week</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap40">
+                    <div>
+                        <div class="mb-2">
+                            <div class="block-legend">
+                                <div class="dot t1"></div>
+                                <div class="text-tiny">Revenue</div>
+                            </div>
                         </div>
-                        <div class="modal-body">
-                            <form action="" method="POST" class="order_status_form">
-                                @csrf
-                                @method('PUT')
-                                <div class="form-group">
-                                    <label for="">Payment Status</label>
-                                    <select class="form-control payment_status" name="payment_status" id="">
-                                        <option value="pending">Pending</option>
-                                        <option value="completed">Completed</option>
-                                    </select>
-
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="">Order Status</label>
-                                    <select class="form-control order_status" name="order_status" id="">
-                                        <option value="pending">Pending</option>
-                                        <option value="in_process">In Process</option>
-                                        <option value="delivered">Delivered</option>
-                                        <option value="declined">Declined</option>
-
-                                    </select>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary submit_btn">Save changes</button>
-                                </div>
-                            </form>
+                        <div class="flex items-center gap10">
+                            <h4>$37,802</h4>
+                            <div class="box-icon-trending up">
+                                <i class="icon-trending-up"></i>
+                                <div class="body-title number">0.56%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="mb-2">
+                            <div class="block-legend">
+                                <div class="dot t2"></div>
+                                <div class="text-tiny">Profit</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap10">
+                            <h4>$28,305</h4>
+                            <div class="box-icon-trending up">
+                                <i class="icon-trending-up"></i>
+                                <div class="body-title number">0.56%</div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div id="line-chart-6"></div>
             </div>
+            <!-- /earnings -->
+            <!-- new-comment -->
+            <div class="wg-box">
+                <div class="flex items-center justify-between">
+                    <h5>New Comments</h5>
+                    <div class="dropdown default">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <span class="icon-more"><i class="icon-more-horizontal"></i></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li>
+                                <a href="javascript:void(0);">This Week</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">Last Week</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <ul class="flex flex-column gap20 overflow-h">
+                    <li class="comment-item">
+                        <div class="image">
+                            <img src="{{ asset('admin2/assets/images/avatar/user-2.png') }}" alt="">
+                        </div>
+                        <div class="">
+                            <div class="mb-4 name">
+                                <a href="all-user.html" class="body-title-2">Kathryn Murphy</a>
+                            </div>
+                            <div class="ratings mb-10">
+                                <i class="icon-star1 active"></i>
+                                <i class="icon-star1 active"></i>
+                                <i class="icon-star1 active"></i>
+                                <i class="icon-star1 active"></i>
+                                <i class="icon-star1"></i>
+                            </div>
+                            <div class="text-tiny">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Cras nec dolor vel est interdum</div>
+                        </div>
+                    </li>
+                    <li class="comment-item">
+                        <div class="image">
+                            <img src="{{ asset('admin2/assets/images/avatar/user-3.png') }}" alt="">
+                        </div>
+                        <div class="">
+                            <div class="mb-4 name">
+                                <a href="all-user.html" class="body-title-2">Leslie Alexander</a>
+                            </div>
+                            <div class="ratings mb-10">
+                                <i class="icon-star1 active"></i>
+                                <i class="icon-star1 active"></i>
+                                <i class="icon-star1 active"></i>
+                                <i class="icon-star1 active"></i>
+                                <i class="icon-star1"></i>
+                            </div>
+                            <div class="text-tiny">Cras nec viverra justo, a mattis lacus. Vestibulum eleifend,
+                                leo sit amet aliquam laoreet, turpis leo vulputate orci</div>
+                        </div>
+                    </li>
+                    <li class="comment-item">
+                        <div class="image">
+                            <img src="{{ asset('admin2/assets/images/avatar/user-4.png') }}" alt="">
+                        </div>
+                        <div class="">
+                            <div class="mb-4 name">
+                                <a href="all-user.html" class="body-title-2">Devon Lane</a>
+                            </div>
+                            <div class="ratings mb-10">
+                                <i class="icon-star1 active"></i>
+                                <i class="icon-star1 active"></i>
+                                <i class="icon-star1 active"></i>
+                                <i class="icon-star1 active"></i>
+                                <i class="icon-star1"></i>
+                            </div>
+                            <div class="text-tiny">Morbi eget commodo diam. Praesent dignissim purus ac turpis
+                                porta</div>
+                        </div>
+                    </li>
+                    <li class="comment-item">
+                        <div class="image">
+                            <img src="{{ asset('admin2/assets/images/avatar/user-5.png') }}" alt="">
+                        </div>
+                        <div class="">
+                            <div class="mb-4 name">
+                                <a href="all-user.html" class="body-title-2">Eleanor Pena</a>
+                            </div>
+                            <div class="ratings mb-10">
+                                <i class="icon-star1 active"></i>
+                                <i class="icon-star1 active"></i>
+                                <i class="icon-star1 active"></i>
+                                <i class="icon-star1 active"></i>
+                                <i class="icon-star1"></i>
+                            </div>
+                            <div class="text-tiny">Phasellus et eros ullamcorper, efficitur eros eget, pharetra
+                                ante. Sed blandit risus vitae dolor feugiat, eu vulputate elit rhoncus</div>
+                        </div>
+                    </li>
+                    <li class="comment-item">
+                        <div class="image">
+                            <img src="{{ asset('admin2/assets/images/avatar/user-2.png') }}" alt="">
+                        </div>
+                        <div class="">
+                            <div class="mb-4 name">
+                                <a href="all-user.html" class="body-title-2">Kathryn Murphy</a>
+                            </div>
+                            <div class="ratings mb-10">
+                                <i class="icon-star1 active"></i>
+                                <i class="icon-star1 active"></i>
+                                <i class="icon-star1 active"></i>
+                                <i class="icon-star1 active"></i>
+                                <i class="icon-star1"></i>
+                            </div>
+                            <div class="text-tiny">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Cras nec dolor vel est interdum</div>
+                        </div>
+                    </li>
+                    <li class="comment-item">
+                        <div class="image">
+                            <img src="{{ asset('admin2/assets/images/avatar/user-3.png') }}" alt="">
+                        </div>
+                        <div class="">
+                            <div class="mb-4 name">
+                                <a href="all-user.html" class="body-title-2">Leslie Alexander</a>
+                            </div>
+                            <div class="ratings mb-10">
+                                <i class="icon-star1 active"></i>
+                                <i class="icon-star1 active"></i>
+                                <i class="icon-star1 active"></i>
+                                <i class="icon-star1 active"></i>
+                                <i class="icon-star1"></i>
+                            </div>
+                            <div class="text-tiny">Cras nec viverra justo, a mattis lacus. Vestibulum eleifend,
+                                leo sit amet aliquam laoreet, turpis leo vulputate orci</div>
+                        </div>
+                    </li>
+                    <li class="comment-item">
+                        <div class="image">
+                            <img src="{{ asset('admin2/assets/images/avatar/user-4.png') }}" alt="">
+                        </div>
+                        <div class="">
+                            <div class="mb-4 name">
+                                <a href="all-user.html" class="body-title-2">Devon Lane</a>
+                            </div>
+                            <div class="ratings mb-10">
+                                <i class="icon-star1 active"></i>
+                                <i class="icon-star1 active"></i>
+                                <i class="icon-star1 active"></i>
+                                <i class="icon-star1 active"></i>
+                                <i class="icon-star1"></i>
+                            </div>
+                            <div class="text-tiny">Morbi eget commodo diam. Praesent dignissim purus ac turpis
+                                porta</div>
+                        </div>
+                    </li>
+                    <li class="comment-item">
+                        <div class="image">
+                            <img src="{{ asset('admin2/assets/images/avatar/user-5.png') }}" alt="">
+                        </div>
+                        <div class="">
+                            <div class="mb-4 name">
+                                <a href="all-user.html" class="body-title-2">Eleanor Pena</a>
+                            </div>
+                            <div class="ratings mb-10">
+                                <i class="icon-star1 active"></i>
+                                <i class="icon-star1 active"></i>
+                                <i class="icon-star1 active"></i>
+                                <i class="icon-star1 active"></i>
+                                <i class="icon-star1"></i>
+                            </div>
+                            <div class="text-tiny">Phasellus et eros ullamcorper, efficitur eros eget, pharetra
+                                ante. Sed blandit risus vitae dolor feugiat, eu vulputate elit rhoncus</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- /new-comment -->
+        </div>
 
 
+        <!-- Modal -->
+        <div class="modal fade" id="order_modal" tabindex="-1" role="dialog" aria-labelledby="order_modal"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="" method="POST" class="order_status_form">
+                            @csrf
+                            @method('PUT')
+                            <div class="form-group">
+                                <label for="">Payment Status</label>
+                                <select class="form-control payment_status" name="payment_status" id="">
+                                    <option value="pending">Pending</option>
+                                    <option value="completed">Completed</option>
+                                </select>
 
+                            </div>
 
+                            <div class="form-group">
+                                <label for="">Order Status</label>
+                                <select class="form-control order_status" name="order_status" id="">
+                                    <option value="pending">Pending</option>
+                                    <option value="in_process">In Process</option>
+                                    <option value="delivered">Delivered</option>
+                                    <option value="declined">Declined</option>
 
-
-
-
-            <h3>System Notifications</h3>
-
-            <!-- Server Status -->
-            <div class="status-container">
-                <h4>Server Status</h4>
-                <div class="status">
-                    <div class="status-indicator @if ($serverStatus) online @else offline @endif"></div>
-                    <span class="status-text">
-                        @if ($serverStatus)
-                            Server is running smoothly
-                        @else
-                            Server is down!
-                        @endif
-                    </span>
+                                </select>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary submit_btn">Save changes</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Styles -->
-            <style>
-                .status-container {
-                    font-family: Arial, sans-serif;
-                    margin-bottom: 20px;
+
+
+
+
+
+
+
+        <h3>System Notifications</h3>
+
+        <!-- Server Status -->
+        <div class="status-container">
+            <h4>Server Status</h4>
+            <div class="status">
+                <div class="status-indicator @if ($serverStatus) online @else offline @endif"></div>
+                <span class="status-text">
+                    @if ($serverStatus)
+                        Server is running smoothly
+                    @else
+                        Server is down!
+                    @endif
+                </span>
+            </div>
+        </div>
+
+        <!-- Styles -->
+        <style>
+            .status-container {
+                font-family: Arial, sans-serif;
+                margin-bottom: 20px;
+            }
+
+            .status {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .status-indicator {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background-color: grey;
+                position: relative;
+            }
+
+            .online {
+                background-color: green;
+                animation: blink 1.5s infinite;
+            }
+
+            .offline {
+                background-color: red;
+            }
+
+            .status-text {
+                font-size: 14px;
+                font-weight: bold;
+            }
+
+            .wg-table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+
+            .wg-table thead th {
+                background-color: #ff8282;
+            }
+
+            .wg-table tbody tr {
+                border-bottom: 1px solid #eaeaea;
+            }
+
+
+            @keyframes blink {
+
+                0%,
+                100% {
+                    opacity: 1;
                 }
 
-                .status {
-                    display: flex;
-                    align-items: center;
-                    gap: 10px;
+                50% {
+                    opacity: 0.3;
                 }
-
-                .status-indicator {
-                    width: 10px;
-                    height: 10px;
-                    border-radius: 50%;
-                    background-color: grey;
-                    position: relative;
-                }
-
-                .online {
-                    background-color: green;
-                    animation: blink 1.5s infinite;
-                }
-
-                .offline {
-                    background-color: red;
-                }
-
-                .status-text {
-                    font-size: 14px;
-                    font-weight: bold;
-                }
-
-                .wg-table {
-                    width: 100%;
-                    border-collapse: collapse;
-                }
-
-                .wg-table thead th {
-                    background-color: #ff8282;
-                }
-
-                .wg-table tbody tr {
-                    border-bottom: 1px solid #eaeaea;
-                }
-
-
-                @keyframes blink {
-
-                    0%,
-                    100% {
-                        opacity: 1;
-                    }
-
-                    50% {
-                        opacity: 0.3;
-                    }
-                }
-            </style>
+            }
+        </style>
 
 
 
 
 
-            <div class="col-md-12 mb-4">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="card-title">Low Stock Alerts</h5>
-                    </div>
-                    <div class="card-body">
-                        <table class="table">
-                            <thead>
+        <div class="col-md-12 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Low Stock Alerts</h5>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Product Name</th>
+                                <th>Available Quantity</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($lowStockAlerts as $product)
                                 <tr>
-                                    <th>Product Name</th>
-                                    <th>Available Quantity</th>
-                                    <th>Status</th>
+                                    <td>{{ $product->name }}</td>
+                                    <td>{{ $product->quantity }}</td>
+                                    <td>
+                                        @if ($product->quantity == 0)
+                                            <span class="text-danger">Out of Stock</span>
+                                        @else
+                                            <span class="text-warning">Low Stock</span>
+                                        @endif
+                                    </td>
                                 </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($lowStockAlerts as $product)
-                                    <tr>
-                                        <td>{{ $product->name }}</td>
-                                        <td>{{ $product->quantity }}</td>
-                                        <td>
-                                            @if ($product->quantity == 0)
-                                                <span class="text-danger">Out of Stock</span>
-                                            @else
-                                                <span class="text-warning">Low Stock</span>
-                                            @endif
-                                        </td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="tf-section-4 mb-30">
+            <!-- New Customers -->
+            <div class="wg-chart-default">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap14">
+                        <div class="image type-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="52" viewBox="0 0 48 52"
+                                fill="none">
+                                <path
+                                    d="M19.1094 2.12943C22.2034 0.343099 26.0154 0.343099 29.1094 2.12943L42.4921 9.85592C45.5861 11.6423 47.4921 14.9435 47.4921 18.5162V33.9692C47.4921 37.5418 45.5861 40.8431 42.4921 42.6294L29.1094 50.3559C26.0154 52.1423 22.2034 52.1423 19.1094 50.3559L5.72669 42.6294C2.63268 40.8431 0.726688 37.5418 0.726688 33.9692V18.5162C0.726688 14.9435 2.63268 11.6423 5.72669 9.85592L19.1094 2.12943Z"
+                                    fill="#22C55E" />
+                            </svg>
+                            <i class="icon-users"></i>
+                        </div>
+                        <div>
+                            <div class="body-text mb-2">New Customers (Last Week)</div>
+                            <h4>{{ number_format($newCustomers) }}</h4>
+                        </div>
                     </div>
                 </div>
             </div>
 
-
-            <div class="tf-section-4 mb-30">
-                <!-- New Customers -->
-                <div class="wg-chart-default">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap14">
-                            <div class="image type-white">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="52" viewBox="0 0 48 52" fill="none">
-                                    <path d="M19.1094 2.12943C22.2034 0.343099 26.0154 0.343099 29.1094 2.12943L42.4921 9.85592C45.5861 11.6423 47.4921 14.9435 47.4921 18.5162V33.9692C47.4921 37.5418 45.5861 40.8431 42.4921 42.6294L29.1094 50.3559C26.0154 52.1423 22.2034 52.1423 19.1094 50.3559L5.72669 42.6294C2.63268 40.8431 0.726688 37.5418 0.726688 33.9692V18.5162C0.726688 14.9435 2.63268 11.6423 5.72669 9.85592L19.1094 2.12943Z" fill="#22C55E" />
-                                </svg>
-                                <i class="icon-users"></i>
-                            </div>
-                            <div>
-                                <div class="body-text mb-2">New Customers (Last Week)</div>
-                                <h4>{{ number_format($newCustomers) }}</h4>
-                            </div>
+            <!-- Total Customers -->
+            <div class="wg-chart-default">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap14">
+                        <div class="image type-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="52" viewBox="0 0 48 52"
+                                fill="none">
+                                <path
+                                    d="M19.1094 2.12943C22.2034 0.343099 26.0154 0.343099 29.1094 2.12943L42.4921 9.85592C45.5861 11.6423 47.4921 14.9435 47.4921 18.5162V33.9692C47.4921 37.5418 45.5861 40.8431 42.4921 42.6294L29.1094 50.3559C26.0154 52.1423 22.2034 52.1423 19.1094 50.3559L5.72669 42.6294C2.63268 40.8431 0.726688 37.5418 0.726688 33.9692V18.5162C0.726688 14.9435 2.63268 11.6423 5.72669 9.85592L19.1094 2.12943Z"
+                                    fill="#FF5200" />
+                            </svg>
+                            <i class="icon-users"></i>
+                        </div>
+                        <div>
+                            <div class="body-text mb-2">Total Customers</div>
+                            <h4>{{ number_format($totalCustomers) }}</h4>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Total Customers -->
-                <div class="wg-chart-default">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap14">
-                            <div class="image type-white">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="52" viewBox="0 0 48 52" fill="none">
-                                    <path d="M19.1094 2.12943C22.2034 0.343099 26.0154 0.343099 29.1094 2.12943L42.4921 9.85592C45.5861 11.6423 47.4921 14.9435 47.4921 18.5162V33.9692C47.4921 37.5418 45.5861 40.8431 42.4921 42.6294L29.1094 50.3559C26.0154 52.1423 22.2034 52.1423 19.1094 50.3559L5.72669 42.6294C2.63268 40.8431 0.726688 37.5418 0.726688 33.9692V18.5162C0.726688 14.9435 2.63268 11.6423 5.72669 9.85592L19.1094 2.12943Z" fill="#FF5200" />
-                                </svg>
-                                <i class="icon-users"></i>
-                            </div>
-                            <div>
-                                <div class="body-text mb-2">Total Customers</div>
-                                <h4>{{ number_format($totalCustomers) }}</h4>
-                            </div>
-                        </div><div class="tf-section-4 mb-30">
-                <!-- New Customers -->
-                <div class="wg-chart-default">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap14">
-                            <div class="image type-white">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="52" viewBox="0 0 48 52" fill="none">
-                                    <path d="M19.1094 2.12943C22.2034 0.343099 26.0154 0.343099 29.1094 2.12943L42.4921 9.85592C45.5861 11.6423 47.4921 14.9435 47.4921 18.5162V33.9692C47.4921 37.5418 45.5861 40.8431 42.4921 42.6294L29.1094 50.3559C26.0154 52.1423 22.2034 52.1423 19.1094 50.3559L5.72669 42.6294C2.63268 40.8431 0.726688 37.5418 0.726688 33.9692V18.5162C0.726688 14.9435 2.63268 11.6423 5.72669 9.85592L19.1094 2.12943Z" fill="#22C55E" />
-                                </svg>
-                                <i class="icon-users"></i>
-                            </div>
-                            <div>
-                                <div class="body-text mb-2">New Customers (Last Week)</div>
-                                <h4>{{ number_format($newCustomers) }}</h4>
-                            </div>
+            <!-- Conversion Rate -->
+            <div class="wg-chart-default">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap14">
+                        <div class="image type-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="52" viewBox="0 0 48 52"
+                                fill="none">
+                                <path
+                                    d="M19.1094 2.12943C22.2034 0.343099 26.0154 0.343099 29.1094 2.12943L42.4921 9.85592C45.5861 11.6423 47.4921 14.9435 47.4921 18.5162V33.9692C47.4921 37.5418 45.5861 40.8431 42.4921 42.6294L29.1094 50.3559C26.0154 52.1423 22.2034 52.1423 19.1094 50.3559L5.72669 42.6294C2.63268 40.8431 0.726688 37.5418 0.726688 33.9692V18.5162C0.726688 14.9435 2.63268 11.6423 5.72669 9.85592L19.1094 2.12943Z"
+                                    fill="#CBD5E1" />
+                            </svg>
+                            <i class="icon-stats"></i>
+                        </div>
+                        <div>
+                            <div class="body-text mb-2">Conversion Rate</div>
+                            <h4>{{ number_format($conversionRate, 2) }}%</h4>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Conversion Rate -->
-                <div class="wg-chart-default">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap14">
-                            <div class="image type-white">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="52" viewBox="0 0 48 52" fill="none">
-                                    <path d="M19.1094 2.12943C22.2034 0.343099 26.0154 0.343099 29.1094 2.12943L42.4921 9.85592C45.5861 11.6423 47.4921 14.9435 47.4921 18.5162V33.9692C47.4921 37.5418 45.5861 40.8431 42.4921 42.6294L29.1094 50.3559C26.0154 52.1423 22.2034 52.1423 19.1094 50.3559L5.72669 42.6294C2.63268 40.8431 0.726688 37.5418 0.726688 33.9692V18.5162C0.726688 14.9435 2.63268 11.6423 5.72669 9.85592L19.1094 2.12943Z" fill="#CBD5E1" />
-                                </svg>
-                                <i class="icon-stats"></i>
-                            </div>
-                            <div>
-                                <div class="body-text mb-2">Conversion Rate</div>
-                                <h4>{{ number_format($conversionRate, 2) }}%</h4>
-                            </div>
+            <!-- Bounce Rate -->
+            <div class="wg-chart-default">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap14">
+                        <div class="image type-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="52" viewBox="0 0 48 52"
+                                fill="none">
+                                <path
+                                    d="M19.1094 2.12943C22.2034 0.343099 26.0154 0.343099 29.1094 2.12943L42.4921 9.85592C45.5861 11.6423 47.4921 14.9435 47.4921 18.5162V33.9692C47.4921 37.5418 45.5861 40.8431 42.4921 42.6294L29.1094 50.3559C26.0154 52.1423 22.2034 52.1423 19.1094 50.3559L5.72669 42.6294C2.63268 40.8431 0.726688 37.5418 0.726688 33.9692V18.5162C0.726688 14.9435 2.63268 11.6423 5.72669 9.85592L19.1094 2.12943Z"
+                                    fill="#FF5200" />
+                            </svg>
+                            <i class="icon-stats"></i>
+                        </div>
+                        <div>
+                            <div class="body-text mb-2">Bounce Rate</div>
+                            <h4>{{ number_format($bounceRate, 2) }}%</h4>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Bounce Rate -->
-                <div class="wg-chart-default">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap14">
-                            <div class="image type-white">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="52" viewBox="0 0 48 52" fill="none">
-                                    <path d="M19.1094 2.12943C22.2034 0.343099 26.0154 0.343099 29.1094 2.12943L42.4921 9.85592C45.5861 11.6423 47.4921 14.9435 47.4921 18.5162V33.9692C47.4921 37.5418 45.5861 40.8431 42.4921 42.6294L29.1094 50.3559C26.0154 52.1423 22.2034 52.1423 19.1094 50.3559L5.72669 42.6294C2.63268 40.8431 0.726688 37.5418 0.726688 33.9692V18.5162C0.726688 14.9435 2.63268 11.6423 5.72669 9.85592L19.1094 2.12943Z" fill="#FF5200" />
-                                </svg>
-                                <i class="icon-stats"></i>
-                            </div>
-                            <div>
-                                <div class="body-text mb-2">Bounce Rate</div>
-                                <h4>{{ number_format($bounceRate, 2) }}%</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
             <!-- Average Session Duration -->
             <div>
@@ -929,6 +927,7 @@
 
 
         </div>
+    </div>
     @endsection
 
     @push('scripts')
