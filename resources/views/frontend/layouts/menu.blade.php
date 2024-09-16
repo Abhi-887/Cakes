@@ -11,7 +11,7 @@
                         <img src="{{ asset('uploads/web-logo1.png') }}" alt="3D-Cakes Logo" class="img-fluid" />
                     </a>
                 </div>
-                <div class="col-5 col-xxl-6">
+                <div class="col-10 col-xxl-6">
                     <ul class="d-none d-xxl-flex">
                         {{-- Main Menu Items --}} @if ($MainMenu)
                             @foreach ($MainMenu as $menu)
@@ -35,7 +35,7 @@
                             @endforeach
                         @endif
                     </ul>
-                    <ul class="float-end d-flex menu_icon d-xl-none d-block">
+                    <ul class="d-flex menu_icon d-xl-none">
                         <li>
                             <a href="#"
                                 class="menu_search me-3 me-sm-4 position-relative fw-semibold fs-5 transitions"><i
@@ -64,15 +64,7 @@
                                     class="text-center cart_count bg-gray position-absolute text-light fw-semibold bottom-50 end-25 rounded-circle">{{ count(Cart::content()) }}</span></a>
                         </li>
                         @php @$unseenMessages = \App\Models\Chat::where(['sender_id' => 1, 'receiver_id' => auth()->user()->id, 'seen' => 0])->count(); @endphp
-                        {{-- <li>
-                    <a class="message_icon me-4 position-relative fw-semibold fs-5 transitions"
-                        href="{{ route('dashboard') }}">
-                        <i class="fas fa-comment-alt-dots"></i>
-                        <span
-                            class="text-center sunseen-message-count bg-gray position-absolute text-light fw-semibold bottom-50 end-25 ms-1 rounded-circle">{{
-                            $unseenMessages > 0 ? 1 : 0 }}</span>
-                    </a>
-                </li> --}}
+
                         <li class="nav-item">
                             <a class="nav-link ms-3 rounded-1 fs-5" href="{{ route('login') }}"><i
                                     class="far fa-user me-3"></i></a>
