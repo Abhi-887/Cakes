@@ -1,158 +1,151 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
 
-<style>
-    .testimonial {
-        background: #262626;
-    }
-
-    .testimonial .stars {
-        color: #ff9800;
-    }
-
-    .testimonial .profile img {
-        width: 50px;
-        height: 50px;
-    }
-
-    .testimonial .profile .name {
-        font-weight: bold;
-        color: #333;
-    }
-
-    .testimonial .profile .company {
-        font-size: 12px;
-        color: #999;
-    }
-
-    .slick-dots li button::before {
-        font-size: 14px !important;
-    }
-
-    .slick-dots li.slick-active button::before {
-        color: #000000 !important;
-    }
-
-    .slick-dots li button:hover::before {
-        color: #000000 !important;
-    }
-
-    .popularfood .slick-dots {
-        display: none !important;
-    }
-
-    .popularfood .slick-next {
-        right: -20px !important;
-    }
-
-    .popularfood .slick-prev::before {
-        position: relative !important;
-        right: 1rem !important;
-    }
-
-    @media (max-width: 650px) {
-        .slick-prev.slick-arrow {
-            top: 100%;
-            left: 40%;
-            margin-top: 1.5rem !important;
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+    <style>
+        .testimonial {
+            background: #262626;
         }
 
-        .slick-next.slick-arrow {
-            top: 100%;
-            right: 40% !important;
-            margin-top: 1.5rem !important;
+        .testimonial .stars {
+            color: #ff9800;
+        }
+
+        .testimonial .profile img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .testimonial .profile .name {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .testimonial .profile .company {
+            font-size: 12px;
+            color: #999;
+        }
+
+        .slick-dots li button::before {
+            font-size: 14px !important;
+        }
+
+        .slick-dots li.slick-active button::before {
+            color: #000000 !important;
+        }
+
+        .slick-dots li button:hover::before {
+            color: #000000 !important;
+        }
+
+        .popularfood .slick-dots {
+            display: none !important;
+        }
+
+        .popularfood .slick-next {
+            right: -20px !important;
         }
 
         .popularfood .slick-prev::before {
             position: relative !important;
+            right: 1rem !important;
         }
-    }
 
-    .slick-prev::before {
-        content: '\f053' !important;
-        font-family: 'Font Awesome 5 Free' !important;
-        font-weight: 600;
-        background: #4b637f !important;
-        color: white !important;
-        border-radius: 50%;
-        padding: 10px 14px;
-        font-size: 16px;
-    }
+        @media (max-width: 650px) {
+            .slick-prev.slick-arrow {
+                top: 100%;
+                left: 40%;
+                margin-top: 1.5rem !important;
+            }
 
-    .slick-next::before {
-        content: '\f054' !important;
-        font-family: 'Font Awesome 5 Free' !important;
-        font-weight: 600;
-        background: #4b637f !important;
-        color: white !important;
-        border-radius: 50%;
-        padding: 10px 14px;
-        font-size: 16px;
-    }
+            .slick-next.slick-arrow {
+                top: 100%;
+                right: 40% !important;
+                margin-top: 1.5rem !important;
+            }
 
-    .fp__menu_item {
-        border-radius: 15px;
-        background-color: #fff;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-        /* position: relative; */
-    }
+            .popularfood .slick-prev::before {
+                position: relative !important;
+            }
+        }
 
-    .fp__menu_item_img img {
-        /* border-radius: 15px 15px 0 0; */
-        height: 250px;
-        object-fit: cover;
-        width: 100% !important;
-    }
+        .slick-prev::before {
+            content: '\f053' !important;
+            font-family: 'Font Awesome 5 Free' !important;
+            font-weight: 600;
+            background: #4b637f !important;
+            color: white !important;
+            border-radius: 50%;
+            padding: 10px 14px;
+            font-size: 16px;
+        }
 
-    .fp__menu_item_text .title {
-        font-size: 18px;
-        font-weight: 600;
-        margin-bottom: 10px;
-        color: #333;
-        display: block;
-    }
+        .slick-next::before {
+            content: '\f054' !important;
+            font-family: 'Font Awesome 5 Free' !important;
+            font-weight: 600;
+            background: #4b637f !important;
+            color: white !important;
+            border-radius: 50%;
+            padding: 10px 14px;
+            font-size: 16px;
+        }
 
-    .fp__menu_item_text .price {
-        font-size: 16px;
-        margin-bottom: 10px;
-    }
+        .fp__menu_item {
+            border-radius: 15px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
 
-    .fp__menu_item_text .price del {
-        color: #999;
-        margin-right: 10px;
-    }
+        .fp__menu_item_img img {
+            height: 250px;
+            object-fit: cover;
+            width: 100% !important;
+        }
 
-    .category {
-        position: absolute;
-        top: -11% !important;
-        left: 16px;
-        padding: 5px 10px;
-        font-size: 12px;
-        background-color: #f8f9fa;
-        color: #333;
-        border-radius: 15px;
-        text-transform: uppercase;
-        border: 1px solid #788a9f !important;
-    }
+        .fp__menu_item_text .title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+            display: block;
+        }
 
-    .actions a {
-        font-size: 18px;
-        color: #333;
-        text-decoration: none;
-    }
+        .fp__menu_item_text .price {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
 
-    .actions a:hover {
-        color: #000;
-    }
+        .fp__menu_item_text .price del {
+            color: #999;
+            margin-right: 10px;
+        }
 
-    /* .eye {
-        top: 2%;
-        right: 20%;
-        background-color: #788a9f !important;
-        padding: 10px 15px !important;
-    } */
-</style>
+        .category {
+            position: absolute;
+            top: -11% !important;
+            left: 16px;
+            padding: 5px 10px;
+            font-size: 12px;
+            background-color: #f8f9fa;
+            color: #333;
+            border-radius: 15px;
+            text-transform: uppercase;
+            border: 1px solid #788a9f !important;
+        }
+
+        .actions a {
+            font-size: 18px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .actions a:hover {
+            color: #000;
+        }
+    </style>
+</head>
+<body>
 
 <div class="container pt-4">
     <div class="row wow fadeInUp mt-md-5" data-wow-duration="1s">
@@ -174,7 +167,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
 
-<!-- Embedding PHP settings for currency into JavaScript -->
 <script>
     const currencyIcon = "{{ config('settings.site_currency_icon') }}";
     const currencyPosition = "{{ config('settings.site_currency_icon_position') }}";
@@ -188,21 +180,13 @@
     }
 
     $(document).ready(function() {
-        // Fetch and render data when the window is idle
-        $(window).on('load', function() {
-            setTimeout(function() {
-                console.log('Fetching top-selling products...');
-                fetchTopSellingProducts();  // Fetch data after page load
-            }, 100); // Adjust the delay if necessary
-        });
-
         function fetchTopSellingProducts() {
             $.ajax({
                 url: '/api/top-selling-products',
                 method: 'GET',
                 dataType: 'json',
                 success: function(data) {
-                    console.log('API response:', data);  // Debug: Log API response
+                    console.log('API response:', data);
                     if (data && Array.isArray(data)) {
                         renderProducts(data);
                     } else {
@@ -210,7 +194,7 @@
                     }
                 },
                 error: function(xhr, status, error) {
-                    console.error('Failed to fetch top-selling products.', error);  // Debug: Log errors
+                    console.error('Failed to fetch top-selling products.', error);
                     console.error('Status:', status);
                     console.error('Response:', xhr.responseText);
                 }
@@ -221,7 +205,6 @@
             const container = $('#top-selling-products');
             container.empty();
 
-            // Debug: Check if products array is empty
             if (products.length === 0) {
                 console.log('No products found to render.');
                 return;
@@ -260,13 +243,12 @@
                 container.append(productHtml);
             });
 
-            // Initialize Slick slider after rendering
             initializeSlickSlider();
         }
 
         function initializeSlickSlider() {
             console.log('Initializing Slick slider...');
-            $('.testimonial-slider .row').slick({
+            $('.testimonial-slider').slick({
                 dots: true,
                 arrows: true,
                 infinite: true,
@@ -291,6 +273,11 @@
                 ]
             });
         }
+
+        // Fetch and render data when the page is ready
+        fetchTopSellingProducts();
     });
 </script>
 
+</body>
+</html>
