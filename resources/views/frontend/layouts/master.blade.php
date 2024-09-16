@@ -117,143 +117,143 @@
                             In</a></li>
                 </ul>
             </div>
-            </section>
         </div>
+    </div>
 
-        <!--=============================
+    <!--=============================
         TOPBAR END
     ==============================-->
 
 
-        <!--=============================
+    <!--=============================
         MENU START
     ==============================-->
-        @include('frontend.layouts.menu')
-        <!--=============================
+    @include('frontend.layouts.menu')
+    <!--=============================
         MENU END
     ==============================-->
 
 
-        @yield('content')
+    @yield('content')
 
 
-        <!--=============================
+    <!--=============================
         FOOTER START
     ==============================-->
-        @include('frontend.layouts.footer')
-        <!--=============================
+    @include('frontend.layouts.footer')
+    <!--=============================
         FOOTER END
     ==============================-->
 
 
-        <!--=============================
+    <!--=============================
         SCROLL BUTTON START
     ==============================-->
-        <div class="fp__scroll_btn">
-            Go To Top
-        </div>
-        <!--=============================
+    <div class="fp__scroll_btn">
+        Go To Top
+    </div>
+    <!--=============================
         SCROLL BUTTON END
     ==============================-->
 
 
-        <!--jquery library js-->
-        <script src="{{ asset('frontend/js/jquery-3.6.0.min.js') }}"></script>
-        <!--bootstrap js-->
-        <script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}"></script>
-        <!--font-awesome js-->
-        <script src="{{ asset('frontend/js/Font-Awesome.js') }}"></script>
-        <!-- slick slider -->
-        <script src="{{ asset('frontend/js/slick.min.js') }}"></script>
-        <!-- isotop js -->
-        <script src="{{ asset('frontend/js/isotope.pkgd.min.js') }}"></script>
-        <!-- simplyCountdownjs -->
-        <script src="{{ asset('frontend/js/simplyCountdown.js') }}"></script>
-        <!-- counter up js -->
-        <script src="{{ asset('frontend/js/jquery.waypoints.min.js') }}"></script>
-        <script src="{{ asset('frontend/js/jquery.countup.min.js') }}"></script>
-        <!-- nice select js -->
-        <script src="{{ asset('frontend/js/jquery.nice-select.min.js') }}"></script>
-        <!-- venobox js -->
-        <script src="{{ asset('frontend/js/venobox.min.js') }}"></script>
-        <!-- sticky sidebar js -->
-        <script src="{{ asset('frontend/js/sticky_sidebar.js') }}"></script>
-        <!-- wow js -->
-        <script src="{{ asset('frontend/js/wow.min.js') }}"></script>
-        <!-- ex zoom js -->
-        <script src="{{ asset('frontend/js/jquery.exzoom.js') }}"></script>
+    <!--jquery library js-->
+    <script src="{{ asset('frontend/js/jquery-3.6.0.min.js') }}"></script>
+    <!--bootstrap js-->
+    <script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}"></script>
+    <!--font-awesome js-->
+    <script src="{{ asset('frontend/js/Font-Awesome.js') }}"></script>
+    <!-- slick slider -->
+    <script src="{{ asset('frontend/js/slick.min.js') }}"></script>
+    <!-- isotop js -->
+    <script src="{{ asset('frontend/js/isotope.pkgd.min.js') }}"></script>
+    <!-- simplyCountdownjs -->
+    <script src="{{ asset('frontend/js/simplyCountdown.js') }}"></script>
+    <!-- counter up js -->
+    <script src="{{ asset('frontend/js/jquery.waypoints.min.js') }}"></script>
+    <script src="{{ asset('frontend/js/jquery.countup.min.js') }}"></script>
+    <!-- nice select js -->
+    <script src="{{ asset('frontend/js/jquery.nice-select.min.js') }}"></script>
+    <!-- venobox js -->
+    <script src="{{ asset('frontend/js/venobox.min.js') }}"></script>
+    <!-- sticky sidebar js -->
+    <script src="{{ asset('frontend/js/sticky_sidebar.js') }}"></script>
+    <!-- wow js -->
+    <script src="{{ asset('frontend/js/wow.min.js') }}"></script>
+    <!-- ex zoom js -->
+    <script src="{{ asset('frontend/js/jquery.exzoom.js') }}"></script>
 
-        <script src="{{ asset('frontend/js/toastr.min.js') }}"></script>
+    <script src="{{ asset('frontend/js/toastr.min.js') }}"></script>
 
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <script src="https://cdn.jsdelivr.net/npm/magiczoomplus/magiczoomplus.js" type="text/javascript"></script>
-        <script src="https://cdn.jsdelivr.net/npm/jquery.elevatezoom@3.0.8/jquery.elevateZoom.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/magiczoomplus/magiczoomplus.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.elevatezoom@3.0.8/jquery.elevateZoom.min.js"></script>
 
-        <!--main/custom js-->
-        <script src="{{ asset('frontend/js/main.js') }}"></script>
+    <!--main/custom js-->
+    <script src="{{ asset('frontend/js/main.js') }}"></script>
 
 
-        <script>
-            grecaptcha.ready(function() {
-                grecaptcha.execute('{{ env('RECAPTCHA_SITE_KEY') }}', {
-                    action: 'submit'
-                }).then(function(token) {
-                    document.getElementById('g-recaptcha-response').value = token;
-                });
+    <script>
+        grecaptcha.ready(function() {
+            grecaptcha.execute('{{ env('RECAPTCHA_SITE_KEY') }}', {
+                action: 'submit'
+            }).then(function(token) {
+                document.getElementById('g-recaptcha-response').value = token;
             });
+        });
 
 
-            document.addEventListener('DOMContentLoaded', (event) => {
-                const quoteForm = document.getElementById('quote-form');
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const quoteForm = document.getElementById('quote-form');
 
-                quoteForm.addEventListener('submit', function(event) {
-                    // Validate the form
-                    if (!validateForm()) {
-                        event.preventDefault(); // Prevent form submission
-                    }
-                });
-
-                function validateForm() {
-                    // Check if reCAPTCHA is filled
-                    if (grecaptcha.getResponse() === "") {
-                        alert("Please fill out the reCAPTCHA.");
-                        return false;
-                    }
-
-                    // Add more validation checks if necessary
-                    // For example, check if other fields are filled out correctly
-
-                    return true;
-                }
-            });
-        </script>
-        {{-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> --}}
-        <!-- show dynamic validation message-->
-        <script>
-            toastr.options.progressBar = true;
-
-            @if ($errors->any())
-                @foreach ($errors->all() as $error)
-                    toastr.error("{{ $error }}")
-                @endforeach
-            @endif
-
-            // Set csrf at ajax header
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            quoteForm.addEventListener('submit', function(event) {
+                // Validate the form
+                if (!validateForm()) {
+                    event.preventDefault(); // Prevent form submission
                 }
             });
 
-            $(document).ready(function() {
-                $('.button-click').click();
-            })
-        </script>
+            function validateForm() {
+                // Check if reCAPTCHA is filled
+                if (grecaptcha.getResponse() === "") {
+                    alert("Please fill out the reCAPTCHA.");
+                    return false;
+                }
 
-        <!-- Load global js -->
-        @include('frontend.layouts.global-scripts')
+                // Add more validation checks if necessary
+                // For example, check if other fields are filled out correctly
 
-        @stack('scripts')
+                return true;
+            }
+        });
+    </script>
+    {{-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> --}}
+    <!-- show dynamic validation message-->
+    <script>
+        toastr.options.progressBar = true;
+
+        @if ($errors->any())
+            @foreach ($errors->all() as $error)
+                toastr.error("{{ $error }}")
+            @endforeach
+        @endif
+
+        // Set csrf at ajax header
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $(document).ready(function() {
+            $('.button-click').click();
+        })
+    </script>
+
+    <!-- Load global js -->
+    @include('frontend.layouts.global-scripts')
+
+    @stack('scripts')
 </body>
 
 </html>
