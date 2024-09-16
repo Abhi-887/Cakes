@@ -15,8 +15,8 @@
                     <ul class="d-none d-xl-flex">
                         {{-- Main Menu Items --}} @if ($MainMenu)
                             @foreach ($MainMenu as $menu)
-                                <li class="mx-2 nav-item">
-                                    <a class="mx-2 nav-link fw-semibold" href="{{ $menu['link'] }}">{{ $menu['label'] }}
+                                <li class="me-4 nav-item">
+                                    <a class="nav-link fw-semibold" href="{{ $menu['link'] }}">{{ $menu['label'] }}
                                         {{-- @if ($menu['child'])
                         <i class="far fa-angle-down"></i>
                         @endif --}}
@@ -177,7 +177,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link border d-inline px-3 py-2 ms-3 rounded-1 position-relative transitions"
+                            <a class="nav-link border px-3 py-2 ms-3 rounded-1 position-relative transitions"
                                 href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i
                                     class="far fa-heart me-3"></i>Wishlist</a>
                         </li>
