@@ -71,6 +71,9 @@ Route::get('/brithday-&-party-cakes', function () {
     return view('frontend.pages.birthday-party-cakes');
 });
 
+Route::get('/api/top-selling-products', [ProductController::class, 'getTopSellingProducts']);
+
+
 /** Cupcake*/
 Route::get('/cupcake', function () {
     return view('frontend.pages.cupcake');
