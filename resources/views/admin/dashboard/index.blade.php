@@ -352,13 +352,13 @@
                 </ul>
             </div> --}}
 
-          <!-- Orders by Status -->
-<div class="wg-box">
-    <h5>Orders by Status</h5>
-    <div class="card-body">
-        <canvas id="ordersByStatusChart"></canvas>
-    </div>
-</div>
+            <!-- Orders by Status -->
+            <div class="wg-box">
+                <h5>Orders by Status</h5>
+                <div class="card-body">
+                    <canvas id="ordersByStatusChart"></canvas>
+                </div>
+            </div>
 
             <!-- /top-countries -->
         </div>
@@ -539,15 +539,15 @@
 
             <!-- category -->
             <!-- Sales Trend Chart -->
-<div class="wg-box">
-    <div class="flex items-center justify-between">
-        <h5>Sales Trend by Month</h5>
-    </div>
+            <div class="wg-box">
+                <div class="flex items-center justify-between">
+                    <h5>Sales Trend by Month</h5>
+                </div>
 
-    <div class="text-center">
-        <canvas id="salesTrendChart"></canvas>
-    </div>
-</div>
+                <div class="text-center">
+                    <canvas id="salesTrendChart"></canvas>
+                </div>
+            </div>
 
 
 
@@ -568,21 +568,21 @@
 
                 <ul class="flex flex-column gap10">
                     @foreach ($lowStockAlerts as $product)
-                    <li class="product-item gap14">
-                        <div class="flex items-center justify-between flex-grow">
-                            <div class="name">
-                                <span class="body-text">{{ $product->name }}</span>
+                        <li class="product-item gap14">
+                            <div class="flex items-center justify-between flex-grow">
+                                <div class="name">
+                                    <span class="body-text">{{ $product->name }}</span>
+                                </div>
+                                <div class="body-text">{{ $product->quantity }}</div>
+                                <div class="body-text">
+                                    @if ($product->quantity == 0)
+                                        <span class="text-danger">Out of Stock</span>
+                                    @else
+                                        <span class="text-warning">Low Stock</span>
+                                    @endif
+                                </div>
                             </div>
-                            <div class="body-text">{{ $product->quantity }}</div>
-                            <div class="body-text">
-                                @if ($product->quantity == 0)
-                                    <span class="text-danger">Out of Stock</span>
-                                @else
-                                    <span class="text-warning">Low Stock</span>
-                                @endif
-                            </div>
-                        </div>
-                    </li>
+                        </li>
                     @endforeach
                 </ul>
             </div>
@@ -590,14 +590,170 @@
             <div class="divider"></div>
 
             <div class="flex items-center justify-between flex-wrap gap10">
-                <div class="text-tiny">Showing {{ $lowStockAlerts->count() }} entries of {{ $lowStockAlerts->total() }}</div>
+                <div class="text-tiny">Showing {{ $lowStockAlerts->count() }} entries of {{ $lowStockAlerts->total() }}
+                </div>
                 <ul class="wg-pagination">
                     {{ $lowStockAlerts->links('pagination::bootstrap-4') }}
                 </ul>
             </div>
 
 
+   <!-- orders -->
+   <div class="wg-box">
+    <div class="flex items-center justify-between">
+        <h5>Recent orders</h5>
+        <div class="dropdown default">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="view-all">View all<i class="icon-chevron-down"></i></span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                    <a href="javascript:void(0);">3 days</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">7 days</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="wg-table table-product-overview t2">
+        <ul class="table-title flex gap20 mb-14">
+            <li>
+                <div class="body-title">Product</div>
+            </li>
+            <li>
+                <div class="body-title">Customer</div>
+            </li>
+            <li>
+                <div class="body-title">Product ID</div>
+            </li>
+            <li>
+                <div class="body-title">Quantity</div>
+            </li>
+            <li>
+                <div class="body-title">Price</div>
+            </li>
+            <li>
+                <div class="body-title">Status</div>
+            </li>
+        </ul>
+        <div class="divider mb-14"></div>
+        <ul class="flex flex-column gap10">
+            <li class="product-item gap14">
+                <div class="image no-bg">
+                    <img src="images/products/31.png" alt="">
+                </div>
+                <div class="flex items-center justify-between flex-grow gap20">
+                    <div class="name">
+                        <a href="product-list.html" class="body-title-2">Taste of the Wild Formula Finder</a>
+                    </div>
+                    <div class="body-text">2,672</div>
+                    <div class="body-text">$28,672.36</div>
+                    <div class="body-text">X1</div>
+                    <div class="body-text">$28,672.36</div>
+                    <div>
+                        <div class="block-available">Delivered</div>
+                    </div>
+                </div>
+            </li>
+            <li class="divider"></li>
+            <li class="product-item gap14">
+                <div class="image no-bg">
+                    <img src="images/products/32.png" alt="">
+                </div>
+                <div class="flex items-center justify-between flex-grow gap20">
+                    <div class="name">
+                        <a href="product-list.html" class="body-title-2">Proden Plaqueoff Dental Bites Dog, 150 G</a>
+                    </div>
+                    <div class="body-text">2,672</div>
+                    <div class="body-text">$28,672.36</div>
+                    <div class="body-text">X2</div>
+                    <div class="body-text">$28,672.36</div>
+                    <div>
+                        <div class="block-available">Delivered</div>
+                    </div>
+                </div>
+            </li>
+            <li class="divider"></li>
+            <li class="product-item gap14">
+                <div class="image no-bg">
+                    <img src="images/products/33.png" alt="">
+                </div>
+                <div class="flex items-center justify-between flex-grow gap20">
+                    <div class="name">
+                        <a href="product-list.html" class="body-title-2">Zuke's Lil' Links Healthy Little Sausage Links for Dogs...</a>
+                    </div>
+                    <div class="body-text">2,672</div>
+                    <div class="body-text">$28,672.36</div>
+                    <div class="body-text">X1</div>
+                    <div class="body-text">$28,672.36</div>
+                    <div>
+                        <div class="block-available">Delivered</div>
+                    </div>
+                </div>
+            </li>
+            <li class="divider"></li>
+            <li class="product-item gap14">
+                <div class="image no-bg">
+                    <img src="images/products/34.png" alt="">
+                </div>
+                <div class="flex items-center justify-between flex-grow gap20">
+                    <div class="name">
+                        <a href="product-list.html" class="body-title-2">Rachael Ray Nutrish Grain Free Chicken Drumstick...</a>
+                    </div>
+                    <div class="body-text">2,672</div>
+                    <div class="body-text">$28,672.36</div>
+                    <div class="body-text">X3</div>
+                    <div class="body-text">$28,672.36</div>
+                    <div>
+                        <div class="block-available">Delivered</div>
+                    </div>
+                </div>
+            </li>
+            <li class="divider"></li>
+            <li class="product-item gap14">
+                <div class="image no-bg">
+                    <img src="images/products/35.png" alt="">
+                </div>
+                <div class="flex items-center justify-between flex-grow gap20">
+                    <div class="name">
+                        <a href="product-list.html" class="body-title-2">Fruitables Dog Treats Sweet Potato & Pecan Flavor</a>
+                    </div>
+                    <div class="body-text">2,672</div>
+                    <div class="body-text">$28,672.36</div>
+                    <div class="body-text">X2</div>
+                    <div class="body-text">$28,672.36</div>
+                    <div>
+                        <div class="block-available">Delivered</div>
+                    </div>
+                </div>
+            </li>
 
+        </ul>
+    </div>
+    <div class="divider"></div>
+    <div class="flex items-center justify-between flex-wrap gap10">
+        <div class="text-tiny">Showing 5 entries</div>
+        <ul class="wg-pagination">
+            <li>
+                <a href="#"><i class="icon-chevron-left"></i></a>
+            </li>
+            <li>
+                <a href="#">1</a>
+            </li>
+            <li class="active">
+                <a href="#">2</a>
+            </li>
+            <li>
+                <a href="#">3</a>
+            </li>
+            <li>
+                <a href="#"><i class="icon-chevron-right"></i></a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- /orders -->
 
             <!-- /product-overview -->
         </div>
@@ -1179,7 +1335,7 @@
     <div class="status-container">
         <h4>Server Status</h4>
         <div class="status">
-            <div class="status-indicator @if($serverStatus) online @else offline @endif"></div>
+            <div class="status-indicator @if ($serverStatus) online @else offline @endif"></div>
             <span class="status-text">
                 @if ($serverStatus)
                     Server is running smoothly
@@ -1226,9 +1382,12 @@
         }
 
         @keyframes blink {
-            0%, 100% {
+
+            0%,
+            100% {
                 opacity: 1;
             }
+
             50% {
                 opacity: 0.3;
             }
@@ -1334,12 +1493,12 @@
                     label: 'Orders by Status',
                     data: {!! json_encode($ordersByStatus->values()) !!},
                     backgroundColor: [
-                        'rgba(63, 81, 181, 0.7)',  // Indigo
-                        'rgba(0, 188, 212, 0.7)',  // Cyan
-                        'rgba(255, 193, 7, 0.7)',  // Amber
-                        'rgba(76, 175, 80, 0.7)',  // Green
+                        'rgba(63, 81, 181, 0.7)', // Indigo
+                        'rgba(0, 188, 212, 0.7)', // Cyan
+                        'rgba(255, 193, 7, 0.7)', // Amber
+                        'rgba(76, 175, 80, 0.7)', // Green
                         'rgba(156, 39, 176, 0.7)', // Purple
-                        'rgba(244, 67, 54, 0.7)'   // Red
+                        'rgba(244, 67, 54, 0.7)' // Red
                     ],
                     borderColor: [
                         'rgba(63, 81, 181, 1)',
@@ -1505,31 +1664,29 @@
         })
     </script>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-  function loadLowStockAlerts(page) {
-    $.ajax({
-        url: "{{ route('admin.getLowStockAlerts') }}?page=" + page,
-        success: function(data) {
-            $('#loading').hide(); // Hide loading spinner
-            $('#low-stock-alerts').html(data); // Update content
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function loadLowStockAlerts(page) {
+            $.ajax({
+                url: "{{ route('admin.getLowStockAlerts') }}?page=" + page,
+                success: function(data) {
+                    $('#loading').hide(); // Hide loading spinner
+                    $('#low-stock-alerts').html(data); // Update content
+                }
+            });
         }
-    });
-}
 
-$(document).ready(function() {
-    loadLowStockAlerts(1); // Initial load for page 1
+        $(document).ready(function() {
+            loadLowStockAlerts(1); // Initial load for page 1
 
-    // Handle pagination click events
-    $(document).on('click', '.wg-pagination a', function(e) {
-        e.preventDefault();
-        var page = $(this).attr('href').split('page=')[1];
-        loadLowStockAlerts(page);
-    });
-});
-
-</script>
-
+            // Handle pagination click events
+            $(document).on('click', '.wg-pagination a', function(e) {
+                e.preventDefault();
+                var page = $(this).attr('href').split('page=')[1];
+                loadLowStockAlerts(page);
+            });
+        });
+    </script>
 @endpush
 
 <!-- /main-content-wrap -->
