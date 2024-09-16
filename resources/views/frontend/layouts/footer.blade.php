@@ -41,7 +41,7 @@
 
         <div class="text-white footer-menu">
             <div class="p-5 mx-auto wrapper w-100 row">
-                <div class="col-lg-3 col-md-12 footer-info d-flex justify-content-lg-center my-3 my-lg-0 p-0">
+                <div class="col-lg-3 col-md-12 footer-info d-flex justify-content-lg-center my-3 my-lg-0">
                     <div class="">
                         <h5 class="mt-2 mb-1 text-white mb-xl-3 fw-normal mt-xl-0">{{ @$footerInfo->name }}</h5>
                         <div class="">{!! @$footerInfo->address !!}</div>
@@ -54,7 +54,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-12 footer-info d-flex justify-content-lg-center my-3 my-lg-0 p-0">
+                <div class="col-lg-3 col-md-12 footer-info d-flex justify-content-lg-center my-3 my-lg-0">
                     <div class="">
                         <h5 class="mt-2 mb-1 text-white mb-xl-3 fw-normal mt-xl-0">{{ @$footerInfoTwo->name }}</h5>
                         <div class="">{!! @$footerInfoTwo->address !!}</div>
@@ -67,7 +67,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-12 lh-lg footer-hover d-flex justify-content-lg-center my-3 my-lg-0 p-0">
+                <div class="col-lg-3 col-md-12 lh-lg footer-hover d-flex justify-content-lg-center my-3 my-lg-0">
                     <div class="">
                         <h5 class="mt-2 mb-1 text-white mb-xl-3 fw-normal mt-xl-0">
                             {{ @$footerTitle->footer_grid_two_title }}</h5>
@@ -80,7 +80,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-12 lh-lg footer-hover d-flex justify-content-lg-center my-3 my-lg-0 p-0">
+                <div class="col-lg-3 col-md-12 lh-lg footer-hover d-flex justify-content-lg-center my-3 my-lg-0">
                     <div class="">
                         <h5 class="mt-3 mb-0 text-white mb-xl-3 fw-normal mt-xl-0">
                             {{ @$footerTitle->footer_grid_three_title }}</h5>
