@@ -5,13 +5,13 @@
 
     <nav class="shadow-sm navbar bg-light sticky-top">
         <div class="container-fluid py-3 px-3 px-lg-5 mx-auto d-flex align-items-center w-100">
-            <div class="row w-100">
-                <div class="col-2 header-logo">
+            <div class="row align-items-center w-100">
+                <div class="col-auto header-logo">
                     <a class="" href="{{ url('/') }}">
                         <img src="{{ asset('uploads/web-logo1.png') }}" alt="3D-Cakes Logo" class="img-fluid" />
                     </a>
                 </div>
-                <div class="col-6">
+                <div class="col-7">
                     <ul class="d-none d-xl-flex">
                         {{-- Main Menu Items --}} @if ($MainMenu)
                             @foreach ($MainMenu as $menu)
@@ -133,7 +133,7 @@
                     </div>
                 </div>
                 <div class="col-4">
-                    <ul class="flex-wrap menu_icon d-none d-xl-flex align-items-center ms-auto">
+                    <ul class="flex-wrap menu_icon d-none d-xl-flex align-items-center float-end">
                         <li>
                             <a href="#" class="menu_search me-4 position-relative fw-semibold fs-5 transitions"><i
                                     class="far fa-search"></i></a>
@@ -172,12 +172,12 @@
                 </li> --}}
 
                         <li class="nav-item">
-                            <a class="nav-link border px-3 py-2 rounded-1" href="{{ route('login') }}"><i
+                            <a class="nav-link border px-3 py-2 ms-3 rounded-1" href="{{ route('login') }}"><i
                                     class="far fa-user me-3"></i>Account</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link border d-inline px-3 py-2 rounded-1 position-relative transitions"
+                            <a class="nav-link border d-inline px-3 py-2 ms-3 rounded-1 position-relative transitions"
                                 href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i
                                     class="far fa-heart me-3"></i>Wishlist</a>
                         </li>
