@@ -133,6 +133,99 @@
 
             <!-- /chart-default -->
         </div>
+        <div class="tf-section-4 mb-30">
+            <!-- New Customers -->
+            <div class="wg-chart-default">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap14">
+                        <div class="image type-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="52" viewBox="0 0 48 52"
+                                fill="none">
+                                <path
+                                    d="M19.1094 2.12943C22.2034 0.343099 26.0154 0.343099 29.1094 2.12943L42.4921 9.85592C45.5861 11.6423 47.4921 14.9435 47.4921 18.5162V33.9692C47.4921 37.5418 45.5861 40.8431 42.4921 42.6294L29.1094 50.3559C26.0154 52.1423 22.2034 52.1423 19.1094 50.3559L5.72669 42.6294C2.63268 40.8431 0.726688 37.5418 0.726688 33.9692V18.5162C0.726688 14.9435 2.63268 11.6423 5.72669 9.85592L19.1094 2.12943Z"
+                                    fill="#22C55E" />
+                            </svg>
+                            <i class="icon-users"></i>
+                        </div>
+                        <div>
+                            <div class="body-text mb-2">New Customers (Last Week)</div>
+                            <h4>{{ number_format($newCustomers) }}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Total Customers -->
+            <div class="wg-chart-default">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap14">
+                        <div class="image type-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="52" viewBox="0 0 48 52"
+                                fill="none">
+                                <path
+                                    d="M19.1094 2.12943C22.2034 0.343099 26.0154 0.343099 29.1094 2.12943L42.4921 9.85592C45.5861 11.6423 47.4921 14.9435 47.4921 18.5162V33.9692C47.4921 37.5418 45.5861 40.8431 42.4921 42.6294L29.1094 50.3559C26.0154 52.1423 22.2034 52.1423 19.1094 50.3559L5.72669 42.6294C2.63268 40.8431 0.726688 37.5418 0.726688 33.9692V18.5162C0.726688 14.9435 2.63268 11.6423 5.72669 9.85592L19.1094 2.12943Z"
+                                    fill="#FF5200" />
+                            </svg>
+                            <i class="icon-users"></i>
+                        </div>
+                        <div>
+                            <div class="body-text mb-2">Total Customers</div>
+                            <h4>{{ number_format($totalCustomers) }}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conversion Rate -->
+            <div class="wg-chart-default">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap14">
+                        <div class="image type-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="52" viewBox="0 0 48 52"
+                                fill="none">
+                                <path
+                                    d="M19.1094 2.12943C22.2034 0.343099 26.0154 0.343099 29.1094 2.12943L42.4921 9.85592C45.5861 11.6423 47.4921 14.9435 47.4921 18.5162V33.9692C47.4921 37.5418 45.5861 40.8431 42.4921 42.6294L29.1094 50.3559C26.0154 52.1423 22.2034 52.1423 19.1094 50.3559L5.72669 42.6294C2.63268 40.8431 0.726688 37.5418 0.726688 33.9692V18.5162C0.726688 14.9435 2.63268 11.6423 5.72669 9.85592L19.1094 2.12943Z"
+                                    fill="#CBD5E1" />
+                            </svg>
+                            <i class="icon-stats"></i>
+                        </div>
+                        <div>
+                            <div class="body-text mb-2">Conversion Rate</div>
+                            <h4>{{ number_format($conversionRate, 2) }}%</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bounce Rate -->
+            <div class="wg-chart-default">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap14">
+                        <div class="image type-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="52" viewBox="0 0 48 52"
+                                fill="none">
+                                <path
+                                    d="M19.1094 2.12943C22.2034 0.343099 26.0154 0.343099 29.1094 2.12943L42.4921 9.85592C45.5861 11.6423 47.4921 14.9435 47.4921 18.5162V33.9692C47.4921 37.5418 45.5861 40.8431 42.4921 42.6294L29.1094 50.3559C26.0154 52.1423 22.2034 52.1423 19.1094 50.3559L5.72669 42.6294C2.63268 40.8431 0.726688 37.5418 0.726688 33.9692V18.5162C0.726688 14.9435 2.63268 11.6423 5.72669 9.85592L19.1094 2.12943Z"
+                                    fill="#FF5200" />
+                            </svg>
+                            <i class="icon-stats"></i>
+                        </div>
+                        <div>
+                            <div class="body-text mb-2">Bounce Rate</div>
+                            <h4>{{ number_format($bounceRate, 2) }}%</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+        </div>
         <div class="tf-section-5 mb-30">
             <!-- chart -->
             {{-- <div class="wg-box">
@@ -830,307 +923,216 @@
         </div>
 
 
-        <div class="tf-section-4 mb-30">
-            <!-- New Customers -->
-            <div class="wg-chart-default">
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center gap14">
-                        <div class="image type-white">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="52" viewBox="0 0 48 52"
-                                fill="none">
-                                <path
-                                    d="M19.1094 2.12943C22.2034 0.343099 26.0154 0.343099 29.1094 2.12943L42.4921 9.85592C45.5861 11.6423 47.4921 14.9435 47.4921 18.5162V33.9692C47.4921 37.5418 45.5861 40.8431 42.4921 42.6294L29.1094 50.3559C26.0154 52.1423 22.2034 52.1423 19.1094 50.3559L5.72669 42.6294C2.63268 40.8431 0.726688 37.5418 0.726688 33.9692V18.5162C0.726688 14.9435 2.63268 11.6423 5.72669 9.85592L19.1094 2.12943Z"
-                                    fill="#22C55E" />
-                            </svg>
-                            <i class="icon-users"></i>
-                        </div>
-                        <div>
-                            <div class="body-text mb-2">New Customers (Last Week)</div>
-                            <h4>{{ number_format($newCustomers) }}</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Total Customers -->
-            <div class="wg-chart-default">
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center gap14">
-                        <div class="image type-white">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="52" viewBox="0 0 48 52"
-                                fill="none">
-                                <path
-                                    d="M19.1094 2.12943C22.2034 0.343099 26.0154 0.343099 29.1094 2.12943L42.4921 9.85592C45.5861 11.6423 47.4921 14.9435 47.4921 18.5162V33.9692C47.4921 37.5418 45.5861 40.8431 42.4921 42.6294L29.1094 50.3559C26.0154 52.1423 22.2034 52.1423 19.1094 50.3559L5.72669 42.6294C2.63268 40.8431 0.726688 37.5418 0.726688 33.9692V18.5162C0.726688 14.9435 2.63268 11.6423 5.72669 9.85592L19.1094 2.12943Z"
-                                    fill="#FF5200" />
-                            </svg>
-                            <i class="icon-users"></i>
-                        </div>
-                        <div>
-                            <div class="body-text mb-2">Total Customers</div>
-                            <h4>{{ number_format($totalCustomers) }}</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Conversion Rate -->
-            <div class="wg-chart-default">
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center gap14">
-                        <div class="image type-white">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="52" viewBox="0 0 48 52"
-                                fill="none">
-                                <path
-                                    d="M19.1094 2.12943C22.2034 0.343099 26.0154 0.343099 29.1094 2.12943L42.4921 9.85592C45.5861 11.6423 47.4921 14.9435 47.4921 18.5162V33.9692C47.4921 37.5418 45.5861 40.8431 42.4921 42.6294L29.1094 50.3559C26.0154 52.1423 22.2034 52.1423 19.1094 50.3559L5.72669 42.6294C2.63268 40.8431 0.726688 37.5418 0.726688 33.9692V18.5162C0.726688 14.9435 2.63268 11.6423 5.72669 9.85592L19.1094 2.12943Z"
-                                    fill="#CBD5E1" />
-                            </svg>
-                            <i class="icon-stats"></i>
-                        </div>
-                        <div>
-                            <div class="body-text mb-2">Conversion Rate</div>
-                            <h4>{{ number_format($conversionRate, 2) }}%</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Bounce Rate -->
-            <div class="wg-chart-default">
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center gap14">
-                        <div class="image type-white">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="52" viewBox="0 0 48 52"
-                                fill="none">
-                                <path
-                                    d="M19.1094 2.12943C22.2034 0.343099 26.0154 0.343099 29.1094 2.12943L42.4921 9.85592C45.5861 11.6423 47.4921 14.9435 47.4921 18.5162V33.9692C47.4921 37.5418 45.5861 40.8431 42.4921 42.6294L29.1094 50.3559C26.0154 52.1423 22.2034 52.1423 19.1094 50.3559L5.72669 42.6294C2.63268 40.8431 0.726688 37.5418 0.726688 33.9692V18.5162C0.726688 14.9435 2.63268 11.6423 5.72669 9.85592L19.1094 2.12943Z"
-                                    fill="#FF5200" />
-                            </svg>
-                            <i class="icon-stats"></i>
-                        </div>
-                        <div>
-                            <div class="body-text mb-2">Bounce Rate</div>
-                            <h4>{{ number_format($bounceRate, 2) }}%</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- Average Session Duration -->
-            <div>
-                <h3>Average Session Duration</h3>
-                <p>{{ number_format($averageSessionDuration, 2) }} minutes</p>
-            </div>
-
-
-
-
-
+         <!-- Average Session Duration -->
+         <div>
+            <h3>Average Session Duration</h3>
+            <p>{{ number_format($averageSessionDuration, 2) }} minutes</p>
         </div>
     </div>
-    @endsection
+@endsection
 
-    @push('scripts')
-        {{ $dataTable->scripts() }}
+@push('scripts')
+    {{ $dataTable->scripts() }}
 
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <script>
-            var ctx = document.getElementById('salesTrendChart').getContext('2d');
-            var salesTrendChart = new Chart(ctx, {
-                type: 'line', // Use 'line' for a trend chart
-                data: {
-                    labels: @json($salesTrendLabels), // Array of month labels
-                    datasets: [{
-                        label: 'Sales Trend',
-                        data: @json($salesTrendData), // Array of sales data
-                        borderColor: 'rgba(75, 192, 192, 1)',
-                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: {
-                            position: 'top',
-                        },
-                        tooltip: {
-                            callbacks: {
-                                label: function(tooltipItem) {
-                                    return 'Sales: $' + tooltipItem.raw.toFixed(2);
-                                }
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var ctx = document.getElementById('salesTrendChart').getContext('2d');
+        var salesTrendChart = new Chart(ctx, {
+            type: 'line', // Use 'line' for a trend chart
+            data: {
+                labels: @json($salesTrendLabels), // Array of month labels
+                datasets: [{
+                    label: 'Sales Trend',
+                    data: @json($salesTrendData), // Array of sales data
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(tooltipItem) {
+                                return 'Sales: $' + tooltipItem.raw.toFixed(2);
                             }
                         }
                     }
                 }
-            });
-        </script>
-
-
-
-
-
-        <script>
-            var ctx = document.getElementById('ordersByStatusChart').getContext('2d');
-            var ordersByStatusChart = new Chart(ctx, {
-                type: 'doughnut',
-                data: {
-                    labels: {!! json_encode($ordersByStatus->keys()) !!},
-                    datasets: [{
-                        label: 'Orders by Status',
-                        data: {!! json_encode($ordersByStatus->values()) !!},
-                        backgroundColor: [
-                            'rgba(63, 81, 181, 0.7)', // Indigo
-                            'rgba(0, 188, 212, 0.7)', // Cyan
-                            'rgba(255, 193, 7, 0.7)', // Amber
-                            'rgba(76, 175, 80, 0.7)', // Green
-                            'rgba(156, 39, 176, 0.7)', // Purple
-                            'rgba(244, 67, 54, 0.7)' // Red
-                        ],
-                        borderColor: [
-                            'rgba(63, 81, 181, 1)',
-                            'rgba(0, 188, 212, 1)',
-                            'rgba(255, 193, 7, 1)',
-                            'rgba(76, 175, 80, 1)',
-                            'rgba(156, 39, 176, 1)',
-                            'rgba(244, 67, 54, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: {
-                            labels: {
-                                color: 'rgba(0, 0, 0, 0.85)', // Dark mode consideration
-                                font: {
-                                    weight: 'bold'
-                                }
-                            }
-                        }
-                    }
-                }
-            });
-        </script>
-
-
-
-
-
-
-
-        <script>
-            var ctx = document.getElementById('trafficChart').getContext('2d');
-            var trafficChart = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: @json($trafficData->pluck('date')),
-                    datasets: [{
-                        label: 'Number of Visitors',
-                        data: @json($trafficData->pluck('count')),
-                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                        borderColor: 'rgba(75, 192, 192, 1)',
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    scales: {
-                        x: {
-                            beginAtZero: true
-                        },
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                }
-            });
-        </script>
-
-        <script>
-            function loadLowStockAlerts(page) {
-                $.ajax({
-                    url: "{{ route('admin.getLowStockAlerts') }}?page=" + page,
-                    success: function(data) {
-                        $('#loading').hide(); // Hide loading spinner
-                        $('#low-stock-alerts').html(data); // Update content
-                    }
-                });
             }
+        });
+    </script>
 
-            $(document).ready(function() {
-                loadLowStockAlerts(1); // Initial load for page 1
 
-                // Handle pagination click events
-                $(document).on('click', '.wg-pagination a', function(e) {
-                    e.preventDefault();
-                    var page = $(this).attr('href').split('page=')[1];
-                    loadLowStockAlerts(page);
-                });
+
+
+
+    <script>
+        var ctx = document.getElementById('ordersByStatusChart').getContext('2d');
+        var ordersByStatusChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: {!! json_encode($ordersByStatus->keys()) !!},
+                datasets: [{
+                    label: 'Orders by Status',
+                    data: {!! json_encode($ordersByStatus->values()) !!},
+                    backgroundColor: [
+                        'rgba(63, 81, 181, 0.7)', // Indigo
+                        'rgba(0, 188, 212, 0.7)', // Cyan
+                        'rgba(255, 193, 7, 0.7)', // Amber
+                        'rgba(76, 175, 80, 0.7)', // Green
+                        'rgba(156, 39, 176, 0.7)', // Purple
+                        'rgba(244, 67, 54, 0.7)' // Red
+                    ],
+                    borderColor: [
+                        'rgba(63, 81, 181, 1)',
+                        'rgba(0, 188, 212, 1)',
+                        'rgba(255, 193, 7, 1)',
+                        'rgba(76, 175, 80, 1)',
+                        'rgba(156, 39, 176, 1)',
+                        'rgba(244, 67, 54, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: 'rgba(0, 0, 0, 0.85)', // Dark mode consideration
+                            font: {
+                                weight: 'bold'
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+
+
+
+
+
+
+    <script>
+        var ctx = document.getElementById('trafficChart').getContext('2d');
+        var trafficChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: @json($trafficData->pluck('date')),
+                datasets: [{
+                    label: 'Number of Visitors',
+                    data: @json($trafficData->pluck('count')),
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        beginAtZero: true
+                    },
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+
+    <script>
+        function loadLowStockAlerts(page) {
+            $.ajax({
+                url: "{{ route('admin.getLowStockAlerts') }}?page=" + page,
+                success: function(data) {
+                    $('#loading').hide(); // Hide loading spinner
+                    $('#low-stock-alerts').html(data); // Update content
+                }
             });
-        </script>
+        }
+
+        $(document).ready(function() {
+            loadLowStockAlerts(1); // Initial load for page 1
+
+            // Handle pagination click events
+            $(document).on('click', '.wg-pagination a', function(e) {
+                e.preventDefault();
+                var page = $(this).attr('href').split('page=')[1];
+                loadLowStockAlerts(page);
+            });
+        });
+    </script>
 
 
-        <script>
-            $(document).ready(function() {
-                var orderId = '';
+    <script>
+        $(document).ready(function() {
+            var orderId = '';
 
-                $(document).on('click', '.order_status_btn', function() {
-                    let id = $(this).data('id');
+            $(document).on('click', '.order_status_btn', function() {
+                let id = $(this).data('id');
 
-                    orderId = id;
+                orderId = id;
 
-                    let paymentStatus = $('.payment_status option');
-                    let orderStatus = $('.order_status option');
+                let paymentStatus = $('.payment_status option');
+                let orderStatus = $('.order_status option');
 
-                    $.ajax({
-                        method: 'GET',
-                        url: '{{ route('admin.orders.status', ':id') }}'.replace(":id", id),
-                        beforeSend: function() {
-                            $('.submit_btn').prop('disabled', true);
-                        },
-                        success: function(response) {
-                            paymentStatus.each(function() {
-                                if ($(this).val() == response.payment_status) {
-                                    $(this).attr('selected', 'selected');
-                                }
-                            })
+                $.ajax({
+                    method: 'GET',
+                    url: '{{ route('admin.orders.status', ':id') }}'.replace(":id", id),
+                    beforeSend: function() {
+                        $('.submit_btn').prop('disabled', true);
+                    },
+                    success: function(response) {
+                        paymentStatus.each(function() {
+                            if ($(this).val() == response.payment_status) {
+                                $(this).attr('selected', 'selected');
+                            }
+                        })
 
-                            orderStatus.each(function() {
-                                if ($(this).val() == response.order_status) {
-                                    $(this).attr('selected', 'selected');
-                                }
-                            })
+                        orderStatus.each(function() {
+                            if ($(this).val() == response.order_status) {
+                                $(this).attr('selected', 'selected');
+                            }
+                        })
 
-                            $('.submit_btn').prop('disabled', false);
-                        },
-                        error: function(xhr, status, error) {
+                        $('.submit_btn').prop('disabled', false);
+                    },
+                    error: function(xhr, status, error) {
 
-                        }
-                    })
-                })
-
-                $('.order_status_form').on('submit', function(e) {
-                    e.preventDefault();
-                    let formContent = $(this).serialize();
-                    $.ajax({
-                        method: 'POST',
-                        url: '{{ route('admin.orders.status-update', ':id') }}'.replace(":id",
-                            orderId),
-                        data: formContent,
-                        success: function(response) {
-                            $('#order_modal').modal("hide");
-                            $('#order-table').DataTable().draw();
-
-                            toastr.success(response.message);
-                        },
-                        error: function(xhr, status, error) {
-                            toastr.error(xhr.responseJSON.message);
-                        }
-                    })
+                    }
                 })
             })
-        </script>
-    @endpush
 
-    <!-- /main-content-wrap -->
+            $('.order_status_form').on('submit', function(e) {
+                e.preventDefault();
+                let formContent = $(this).serialize();
+                $.ajax({
+                    method: 'POST',
+                    url: '{{ route('admin.orders.status-update', ':id') }}'.replace(":id",
+                        orderId),
+                    data: formContent,
+                    success: function(response) {
+                        $('#order_modal').modal("hide");
+                        $('#order-table').DataTable().draw();
+
+                        toastr.success(response.message);
+                    },
+                    error: function(xhr, status, error) {
+                        toastr.error(xhr.responseJSON.message);
+                    }
+                })
+            })
+        })
+    </script>
+@endpush
+
+<!-- /main-content-wrap -->
