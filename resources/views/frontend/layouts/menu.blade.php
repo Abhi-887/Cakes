@@ -5,7 +5,7 @@
 
     <nav class="shadow-sm navbar bg-light sticky-top">
         <div class="container-fluid py-3 px-3 px-lg-5 mx-auto d-flex align-items-center w-100">
-            <div class="row">
+            <div class="row w-100">
                 <div class="col-3 header-logo">
                     <a class="" href="{{ url('/') }}">
                         <img src="{{ asset('uploads/web-logo1.png') }}" alt="3D-Cakes Logo" class="img-fluid" />
