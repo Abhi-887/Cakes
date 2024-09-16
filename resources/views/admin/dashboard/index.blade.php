@@ -13,7 +13,7 @@
 
     <!-- main-content-wrap -->
     <div class="main-content-wrap">
-        <div class="tf-section-1 mb-30">
+        <div class="tf-section-4 mb-30">
             <!-- chart-default -->
             <div class="wg-chart-default">
                 <div class="flex items-center justify-between">
@@ -133,7 +133,7 @@
 
             <!-- /chart-default -->
         </div>
-        <div class="tf-section-2 mb-30">
+        <div class="tf-section-4 mb-30">
             <!-- New Customers -->
             <div class="wg-chart-default">
                 <div class="flex items-center justify-between">
@@ -226,7 +226,7 @@
 
 
         </div>
-        <div class="tf-section-3 mb-30">
+        <div class="tf-section-5 mb-30">
             <!-- chart -->
             {{-- <div class="wg-box">
                 <div class="flex items-center justify-between">
@@ -288,8 +288,7 @@
                                         <a href="#" class="tf-color-3 body-text name">{{ $customer->name }}</a>
                                         <div class="text-tiny mt-4">{{ $customer->total_purchases }} Purchases</div>
                                     </div>
-                                    <div class="body-text tf-color-3">${{ number_format($customer->total_spent, 2) }}
-                                    </div>
+                                    <div class="body-text tf-color-3">${{ number_format($customer->total_spent, 2) }}</div>
                                 </div>
                             </li>
                         @endforeach
@@ -354,7 +353,7 @@
 
             <!-- /top-countries -->
         </div>
-        <div class="tf-section-4 mb-30">
+        <div class="tf-section-6 mb-30">
 
 
 
@@ -410,7 +409,7 @@
 
 
         </div>
-        <div class="tf-section-5 mb-30">
+        <div class="tf-section mb-30">
             <!-- orders -->
             <div class="wg-box">
                 <div class="flex items-center justify-between">
@@ -424,7 +423,7 @@
             </div>
         </div>
 
-        <div class="tf-section-6 mb-30">
+        <div class="tf-section-3 mb-30">
             <!-- orders -->
             <div class="wg-box">
                 <div class="flex items-center justify-between">
@@ -925,8 +924,8 @@
 
 
 
-        <!-- Average Session Duration -->
-        <div>
+         <!-- Average Session Duration -->
+         <div>
             <h3>Average Session Duration</h3>
             <p>{{ number_format($averageSessionDuration, 2) }} minutes</p>
         </div>
