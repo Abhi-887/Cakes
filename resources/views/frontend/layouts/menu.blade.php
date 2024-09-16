@@ -5,12 +5,12 @@
 
     <nav class="shadow-sm navbar bg-light sticky-top py-3 px-3 px-lg-5">
         <div class="row align-items-center w-100">
-            <div class="col-2 header-logo">
+            <div class="col-5 col-sm-4  header-logo">
                 <a class="" href="{{ url('/') }}">
                     <img src="{{ asset('uploads/web-logo1.png') }}" alt="3D-Cakes Logo" class="img-fluid" />
                 </a>
             </div>
-            <div class="col-10 col-xxl-6">
+            <div class="col-7 col-xxl-6">
                 <ul class="d-none d-xxl-flex">
                     {{-- Main Menu Items --}} @if ($MainMenu)
                         @foreach ($MainMenu as $menu)
