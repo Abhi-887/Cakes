@@ -36,7 +36,7 @@
 
 
 <style>
-    .image-block {
+    /* .image-block {
         position: relative;
     }
 
@@ -51,7 +51,6 @@
         left: 0;
         width: 100%;
         height: 100%;
-        /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.19), rgba(0, 0, 0, 0.19)); */
         transition: 0.7s ease;
         z-index: 1;
     }
@@ -69,7 +68,7 @@
     .image-block:hover .overlay-text {
         color: #fff !important;
         transition: 0.4s ease-in-out;
-    }
+    } */
 
     /* .image-block {
         height: 300px;
