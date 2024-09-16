@@ -35,7 +35,7 @@
                             @endforeach
                         @endif
                     </ul>
-                    <ul class="ms-auto d-flex menu_icon d-xl-none d-block">
+                    <ul class="float-end d-flex menu_icon d-xl-none d-block">
                         <li>
                             <a href="#"
                                 class="menu_search me-3 me-sm-4 position-relative fw-semibold fs-5 transitions"><i
