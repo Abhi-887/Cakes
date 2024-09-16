@@ -1,13 +1,18 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,800&family=Jost:wght@200;300;400;500;600;700;800;900&family=Lobster&display=swap"); */
 
 @font-face {
-    font-family: 'mnsLondonRegular';
-    src: url(./fonts/mnsLondonRegular.ttf) format('truetype');
-  }
-  @font-face {
-      font-family: 'mnsLondonSemiBold';
-      src: url(./fonts/mnsLondonRegular.ttf) format('truetype');
-    }
+    font-family: 'MnsLondonRegular';
+    src: url('/frontend/fonts/mnsLondonRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'mnsLondonSemiBold';
+    src: url('./frontend/fonts/mnsLondonRegular.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
 
 
 * {
