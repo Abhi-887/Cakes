@@ -15,7 +15,7 @@
                     <ul class="d-none d-xxl-flex">
                         {{-- Main Menu Items --}} @if ($MainMenu)
                             @foreach ($MainMenu as $menu)
-                                <li class="me-4 nav-item">
+                                <li class="me-5 nav-item">
                                     <a class="nav-link fw-semibold" href="{{ $menu['link'] }}">{{ $menu['label'] }}
                                         {{-- @if ($menu['child'])
                         <i class="far fa-angle-down"></i>
@@ -132,8 +132,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-5 col-xxl-4">
-                    <ul class="flex-wrap menu_icon d-none d-xl-flex align-items-center float-end">
+                <div class="col-5 col-xxl-4 d-none d-xl-flex d-block">
+                    <ul class="d-flex flex-wrap menu_icon align-items-center ms-auto">
                         <li>
                             <a href="#" class="menu_search me-4 position-relative fw-semibold fs-5 transitions"><i
                                     class="far fa-search"></i></a>
