@@ -20,7 +20,7 @@ class TopProductController extends Controller
                       'products.price', 'products.offer_price', 'products.quantity',
                       'products.out_of_stock', 'categories.name', 'categories.slug')
             ->orderByRaw('SUM(order_items.qty) DESC')
-            ->take(8)
+            ->take(40)
             ->get();
 
         return response()->json($topSellingProducts);

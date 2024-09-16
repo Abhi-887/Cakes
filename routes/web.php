@@ -24,6 +24,7 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\CaptchaController;
 use App\Http\Controllers\Frontend\CustomerfeedbackController;
+use App\Http\Controllers\TopProductController;
 
 Route::get('/admin/subcategories/{categoryId}', [ProductController::class, 'getSubcategories'])->name('admin.subcategories');
 Route::get('/uploads/{path}', function ($path) {
@@ -71,7 +72,7 @@ Route::get('/brithday-&-party-cakes', function () {
     return view('frontend.pages.birthday-party-cakes');
 });
 
-Route::get('/api/top-selling-products', [ProductController::class, 'getTopSellingProducts']);
+Route::get('/api/top-selling-products', [TopProductController::class, 'getTopSellingProducts']);
 
 
 /** Cupcake*/
