@@ -316,7 +316,7 @@
 
 
         </div>
-        <div class="tf-section-2 mb-30">
+        <div class="tf-section mb-30">
             <!-- orders -->
             <div class="wg-box">
                 <div class="flex items-center justify-between">
