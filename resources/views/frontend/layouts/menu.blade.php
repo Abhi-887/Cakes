@@ -3,157 +3,155 @@
         $MainMenu = Menu::getByName('main_menu');
     @endphp
 
-    <nav class="shadow-sm navbar bg-light sticky-top">
-        <div class="container-fluid py-3 px-3 px-lg-5 mx-auto d-flex align-items-center w-100">
-            <div class="row align-items-center w-100">
-                <div class="col-2 header-logo">
-                    <a class="" href="{{ url('/') }}">
-                        <img src="{{ asset('uploads/web-logo1.png') }}" alt="3D-Cakes Logo" class="img-fluid" />
-                    </a>
-                </div>
-                <div class="col-10 col-xxl-6">
-                    <ul class="d-none d-xxl-flex">
-                        {{-- Main Menu Items --}} @if ($MainMenu)
-                            @foreach ($MainMenu as $menu)
-                                <li class="me-5 nav-item">
-                                    <a class="nav-link fw-semibold" href="{{ $menu['link'] }}">{{ $menu['label'] }}
-                                        {{-- @if ($menu['child'])
+    <nav class="shadow-sm navbar bg-light sticky-top py-3 px-3 px-lg-5">
+        <div class="row align-items-center w-100">
+            <div class="col-2 header-logo">
+                <a class="" href="{{ url('/') }}">
+                    <img src="{{ asset('uploads/web-logo1.png') }}" alt="3D-Cakes Logo" class="img-fluid" />
+                </a>
+            </div>
+            <div class="col-10 col-xxl-6">
+                <ul class="d-none d-xxl-flex">
+                    {{-- Main Menu Items --}} @if ($MainMenu)
+                        @foreach ($MainMenu as $menu)
+                            <li class="me-5 nav-item">
+                                <a class="nav-link fw-semibold" href="{{ $menu['link'] }}">{{ $menu['label'] }}
+                                    {{-- @if ($menu['child'])
                         <i class="far fa-angle-down"></i>
                         @endif --}}
-                                    </a>
-                                    @if ($menu['child'])
-                                        <ul class="droap_menu position-absolute bg-light">
-                                            @foreach ($menu['child'] as $item)
-                                                <li class="pb-2 m-2 border-bottom">
-                                                    <a class="fw-semibold"
-                                                        href="{{ $item['link'] }}">{{ $item['label'] }}</a>
-                                                </li>
-                                            @endforeach
-                                        </ul>
-                                    @endif
-                                </li>
-                            @endforeach
-                        @endif
-                    </ul>
-                    <ul class="d-flex menu_icon d-xl-none">
-                        <li>
-                            <a href="#"
-                                class="menu_search me-3 me-sm-4 position-relative fw-semibold fs-5 transitions"><i
-                                    class="transition far fa-search"></i></a>
-                            <div
-                                class="top-0 fp__search_form position-fixed w-100 end-0 justify-content-center align-items-center transitions vh-100">
-                                <form class="top-50 start-50 position-absolute" action="{{ route('product.index') }}"
-                                    method="GET">
-                                    <span
-                                        class="mb-5 text-center close_search position-absolute rounded-circle fs-3 bottom-100 end-0 transitions"><i
-                                            class="far fa-times"></i></span>
-                                    <input class="border border-0 searchinput w-100 rounded-5" type="text"
-                                        placeholder="Search . . ." name="search" />
-                                    <button
-                                        class="px-4 py-2 position-absolute top-50 fw-semibold rounded-5 outline-0 transitions"
-                                        type="submit">
-                                        Search
-                                    </button>
-                                </form>
-                            </div>
-                        </li>
-                        <li>
-                            <a class="cart_icon me-4 position-relative fw-semibold fs-5" href="/cart"><i
-                                    class="transition fas fa-shopping-basket"></i>
-                                <span
-                                    class="text-center cart_count bg-gray position-absolute text-light fw-semibold bottom-50 end-25 rounded-circle">{{ count(Cart::content()) }}</span></a>
-                        </li>
-                        @php @$unseenMessages = \App\Models\Chat::where(['sender_id' => 1, 'receiver_id' => auth()->user()->id, 'seen' => 0])->count(); @endphp
-
-                        <li class="nav-item">
-                            <a class="nav-link ms-3 rounded-1 fs-5" href="{{ route('login') }}"><i
-                                    class="far fa-user me-3"></i></a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link d-inline ms-3 rounded-1 position-relative transitions fs-5"
-                                href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i
-                                    class="far fa-heart me-3"></i></a>
-                        </li>
-                    </ul>
-                    <a class="d-xxl-none d-block" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
-                        aria-controls="offcanvasExample">
-                        <i class="fas fa-bars fs-2 color-light-gray"></i>
-                    </a>
-
-                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
-                        aria-labelledby="offcanvasExampleLabel">
-                        <div class="pt-3 offcanvas-header">
-                            <a class="w-50" href="{{ url('/') }}">
-                                <img src="{{ asset('uploads/web-logo1.png') }}" alt="3D-Cakes Logo"
-                                    class="img-fluid" />
-                            </a>
-                            <button type="button" class="btn-close fs-4 background-dark-gray"
-                                data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                        </div>
-                        <div class="offcanvas-body">
-                            <ul class="mt-3">
-                                @if ($MainMenu)
-                                    @foreach ($MainMenu as $index => $menu)
-                                        <li class="my-3 nav-item">
-                                            <div class="d-flex ms-2 lh-lg">
-                                                <a class="nav-link fw-semibold"
-                                                    href="{{ $menu['link'] }}">{{ $menu['label'] }}
-                                                </a>
-                                                @if ($menu['child'])
-                                                    <span class="mobile-dropdown-menu ms-2"
-                                                        data-index="{{ $index }}">
-                                                        <i class="far fa-angle-down color-light-gray"></i></span>
-                                                @endif
-                                            </div>
-                                            @if ($menu['child'])
-                                                <ul class="mt-2 drop-dropdown" id="dropdown-{{ $index }}"
-                                                    style="display: none;">
-                                                    @foreach ($menu['child'] as $item)
-                                                        <li>
-                                                            <a class="p-2 dropdown-item fw-semibold"
-                                                                href="{{ $item['link'] }}">{{ $item['label'] }}</a>
-                                                        </li>
-                                                    @endforeach
-                                                </ul>
-                                            @endif
-                                        </li>
-                                    @endforeach
+                                </a>
+                                @if ($menu['child'])
+                                    <ul class="droap_menu position-absolute bg-light">
+                                        @foreach ($menu['child'] as $item)
+                                            <li class="pb-2 m-2 border-bottom">
+                                                <a class="fw-semibold"
+                                                    href="{{ $item['link'] }}">{{ $item['label'] }}</a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
                                 @endif
-                            </ul>
+                            </li>
+                        @endforeach
+                    @endif
+                </ul>
+                <ul class="d-flex menu_icon d-xl-none">
+                    <li>
+                        <a href="#"
+                            class="menu_search me-3 me-sm-4 position-relative fw-semibold fs-5 transitions"><i
+                                class="transition far fa-search"></i></a>
+                        <div
+                            class="top-0 fp__search_form position-fixed w-100 end-0 justify-content-center align-items-center transitions vh-100">
+                            <form class="top-50 start-50 position-absolute" action="{{ route('product.index') }}"
+                                method="GET">
+                                <span
+                                    class="mb-5 text-center close_search position-absolute rounded-circle fs-3 bottom-100 end-0 transitions"><i
+                                        class="far fa-times"></i></span>
+                                <input class="border border-0 searchinput w-100 rounded-5" type="text"
+                                    placeholder="Search . . ." name="search" />
+                                <button
+                                    class="px-4 py-2 position-absolute top-50 fw-semibold rounded-5 outline-0 transitions"
+                                    type="submit">
+                                    Search
+                                </button>
+                            </form>
                         </div>
+                    </li>
+                    <li>
+                        <a class="cart_icon me-4 position-relative fw-semibold fs-5" href="/cart"><i
+                                class="transition fas fa-shopping-basket"></i>
+                            <span
+                                class="text-center cart_count bg-gray position-absolute text-light fw-semibold bottom-50 end-25 rounded-circle">{{ count(Cart::content()) }}</span></a>
+                    </li>
+                    @php @$unseenMessages = \App\Models\Chat::where(['sender_id' => 1, 'receiver_id' => auth()->user()->id, 'seen' => 0])->count(); @endphp
+
+                    <li class="nav-item">
+                        <a class="nav-link ms-3 rounded-1 fs-5" href="{{ route('login') }}"><i
+                                class="far fa-user me-3"></i></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link d-inline ms-3 rounded-1 position-relative transitions fs-5" href="#"
+                            data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i
+                                class="far fa-heart me-3"></i></a>
+                    </li>
+                </ul>
+                <a class="d-xxl-none d-block" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+                    aria-controls="offcanvasExample">
+                    <i class="fas fa-bars fs-2 color-light-gray"></i>
+                </a>
+
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+                    aria-labelledby="offcanvasExampleLabel">
+                    <div class="pt-3 offcanvas-header">
+                        <a class="w-50" href="{{ url('/') }}">
+                            <img src="{{ asset('uploads/web-logo1.png') }}" alt="3D-Cakes Logo" class="img-fluid" />
+                        </a>
+                        <button type="button" class="btn-close fs-4 background-dark-gray" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="mt-3">
+                            @if ($MainMenu)
+                                @foreach ($MainMenu as $index => $menu)
+                                    <li class="my-3 nav-item">
+                                        <div class="d-flex ms-2 lh-lg">
+                                            <a class="nav-link fw-semibold"
+                                                href="{{ $menu['link'] }}">{{ $menu['label'] }}
+                                            </a>
+                                            @if ($menu['child'])
+                                                <span class="mobile-dropdown-menu ms-2"
+                                                    data-index="{{ $index }}">
+                                                    <i class="far fa-angle-down color-light-gray"></i></span>
+                                            @endif
+                                        </div>
+                                        @if ($menu['child'])
+                                            <ul class="mt-2 drop-dropdown" id="dropdown-{{ $index }}"
+                                                style="display: none;">
+                                                @foreach ($menu['child'] as $item)
+                                                    <li>
+                                                        <a class="p-2 dropdown-item fw-semibold"
+                                                            href="{{ $item['link'] }}">{{ $item['label'] }}</a>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
+                                        @endif
+                                    </li>
+                                @endforeach
+                            @endif
+                        </ul>
                     </div>
                 </div>
-                <div class="col-5 col-xxl-4 d-none d-xl-flex">
-                    <ul class="d-flex flex-wrap menu_icon align-items-center ms-auto">
-                        <li>
-                            <a href="#" class="menu_search me-4 position-relative fw-semibold fs-5 transitions"><i
-                                    class="far fa-search"></i></a>
-                            <div
-                                class="top-0 fp__search_form position-fixed w-100 end-0 justify-content-center align-items-center transitions vh-100">
-                                <form class="top-50 start-50 position-absolute" action="{{ route('product.index') }}"
-                                    method="GET">
-                                    <span
-                                        class="mb-5 text-center close_search position-absolute rounded-circle fs-3 bottom-100 end-0 transitions"><i
-                                            class="far fa-times"></i></span>
-                                    <input class="border border-0 searchinput w-100 rounded-5" type="text"
-                                        placeholder="Search . . ." name="search" />
-                                    <button
-                                        class="px-4 py-2 position-absolute top-50 fw-semibold rounded-5 outline-0 transitions"
-                                        type="submit">
-                                        Search
-                                    </button>
-                                </form>
-                            </div>
-                        </li>
-                        <li>
-                            <a class="cart_icon me-4 position-relative fw-semibold fs-5 transitions" href="/cart"><i
-                                    class="fas fa-shopping-basket"></i>
+            </div>
+            <div class="col-5 col-xxl-4 d-none d-xl-flex">
+                <ul class="d-flex flex-wrap menu_icon align-items-center ms-auto">
+                    <li>
+                        <a href="#" class="menu_search me-4 position-relative fw-semibold fs-5 transitions"><i
+                                class="far fa-search"></i></a>
+                        <div
+                            class="top-0 fp__search_form position-fixed w-100 end-0 justify-content-center align-items-center transitions vh-100">
+                            <form class="top-50 start-50 position-absolute" action="{{ route('product.index') }}"
+                                method="GET">
                                 <span
-                                    class="text-center cart_count bg-gray position-absolute text-light fw-semibold bottom-50 end-25 rounded-circle">{{ count(Cart::content()) }}</span></a>
-                        </li>
-                        @php @$unseenMessages = \App\Models\Chat::where(['sender_id' => 1, 'receiver_id' => auth()->user()->id, 'seen' => 0])->count(); @endphp
-                        {{-- <li>
+                                    class="mb-5 text-center close_search position-absolute rounded-circle fs-3 bottom-100 end-0 transitions"><i
+                                        class="far fa-times"></i></span>
+                                <input class="border border-0 searchinput w-100 rounded-5" type="text"
+                                    placeholder="Search . . ." name="search" />
+                                <button
+                                    class="px-4 py-2 position-absolute top-50 fw-semibold rounded-5 outline-0 transitions"
+                                    type="submit">
+                                    Search
+                                </button>
+                            </form>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="cart_icon me-4 position-relative fw-semibold fs-5 transitions" href="/cart"><i
+                                class="fas fa-shopping-basket"></i>
+                            <span
+                                class="text-center cart_count bg-gray position-absolute text-light fw-semibold bottom-50 end-25 rounded-circle">{{ count(Cart::content()) }}</span></a>
+                    </li>
+                    @php @$unseenMessages = \App\Models\Chat::where(['sender_id' => 1, 'receiver_id' => auth()->user()->id, 'seen' => 0])->count(); @endphp
+                    {{-- <li>
                             <a class="mx-3 message_icon position-relative fw-semibold fs-5 transitions"
                                 href="{{ route('dashboard') }}">
                                 <i class="fas fa-comment-alt-dots"></i>
@@ -163,18 +161,17 @@
                             </a>
                         </li> --}}
 
-                        <li class="nav-item">
-                            <a class="nav-link border px-3 py-2 ms-3 rounded-1" href="{{ route('login') }}"><i
-                                    class="far fa-user me-3"></i>Account</a>
-                        </li>
+                    <li class="nav-item">
+                        <a class="nav-link border px-3 py-2 ms-3 rounded-1" href="{{ route('login') }}"><i
+                                class="far fa-user me-3"></i>Account</a>
+                    </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link border px-3 py-2 ms-3 rounded-1 position-relative transitions"
-                                href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i
-                                    class="far fa-heart me-3"></i>Wishlist</a>
-                        </li>
-                    </ul>
-                </div>
+                    <li class="nav-item">
+                        <a class="nav-link border px-3 py-2 ms-3 rounded-1 position-relative transitions"
+                            href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i
+                                class="far fa-heart me-3"></i>Wishlist</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
