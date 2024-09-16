@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: 'mnsLondonRegular';
-    src: url(./mnsLondonRegular.ttf) format('truetype');
+    src: url(./fonts/mnsLondonRegular.ttf) format('truetype');
   }
 
 * {
@@ -39,7 +39,8 @@ h5,
 h6 {
     margin: 0;
     padding: 0;
-    font-family: var(--headingFont);
+    /* font-family: var(--headingFont); */
+    font-family: 'mnsLondonRegular';
     color: var(--colorBlack);
 }
 
@@ -51,7 +52,8 @@ body {
     overflow-x: hidden;
     scroll-behavior: smooth;
     color: var(--paraColor);
-    font-family: var(--paraFont);
+    /* font-family: var(--paraFont); */
+    font-family: 'mnsLondonRegular';
 }
 
 .background-light-gray {
