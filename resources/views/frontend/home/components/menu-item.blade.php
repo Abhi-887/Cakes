@@ -1,4 +1,9 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slick Slider Test</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
     <style>
@@ -146,138 +151,132 @@
     </style>
 </head>
 <body>
+    <div class="container pt-4">
+        <div class="row wow fadeInUp mt-md-5" data-wow-duration="1s">
+            <div class="m-auto text-center col-md-8 col-lg-7 col-xl-6">
+                <div class="fp__section_heading">
+                    <h2>Trending Now</h2>
+                    <p>Shop Our Most Popular Trending Designs</p>
+                </div>
+            </div>
+        </div>
 
-<div class="container pt-4">
-    <div class="row wow fadeInUp mt-md-5" data-wow-duration="1s">
-        <div class="m-auto text-center col-md-8 col-lg-7 col-xl-6">
-            <div class="fp__section_heading">
-                <h2>Trending Now</h2>
-                <p>Shop Our Most Popular Trending Designs</p>
+        <div class="testimonial-slider popularfood slider">
+            <div class="row mt-2" id="top-selling-products">
+                <!-- Products will be rendered here -->
             </div>
         </div>
     </div>
 
-    <div class="testimonial-slider popularfood slider">
-        <div class="row mt-2" id="top-selling-products">
-            <!-- Products will be rendered here -->
-        </div>
-    </div>
-</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script>
+        const currencyIcon = "{{ config('settings.site_currency_icon') }}";
+        const currencyPosition = "{{ config('settings.site_currency_icon_position') }}";
 
-<script>
-    const currencyIcon = "{{ config('settings.site_currency_icon') }}";
-    const currencyPosition = "{{ config('settings.site_currency_icon_position') }}";
-
-    function currencyFormat(price) {
-        if (currencyPosition === 'left') {
-            return currencyIcon + price;
-        } else {
-            return price + currencyIcon;
+        function currencyFormat(price) {
+            return currencyPosition === 'left' ? currencyIcon + price : price + currencyIcon;
         }
-    }
 
-    $(document).ready(function() {
-        function fetchTopSellingProducts() {
-            $.ajax({
-                url: '/api/top-selling-products',
-                method: 'GET',
-                dataType: 'json',
-                success: function(data) {
-                    console.log('API response:', data);
-                    if (data && Array.isArray(data)) {
-                        renderProducts(data);
-                    } else {
-                        console.error('Unexpected data structure:', data);
-                    }
-                },
-                error: function(xhr, status, error) {
-                    console.error('Failed to fetch top-selling products.', error);
-                    console.error('Status:', status);
-                    console.error('Response:', xhr.responseText);
-                }
+        $(document).ready(function() {
+            $(window).on('load', function() {
+                setTimeout(function() {
+                    fetchTopSellingProducts();
+                }, 100);
             });
-        }
 
-        function renderProducts(products) {
-            const container = $('#top-selling-products');
-            container.empty();
-
-            if (products.length === 0) {
-                console.log('No products found to render.');
-                return;
+            function fetchTopSellingProducts() {
+                $.ajax({
+                    url: '/api/top-selling-products',
+                    method: 'GET',
+                    dataType: 'json',
+                    success: function(data) {
+                        if (data && Array.isArray(data)) {
+                            renderProducts(data);
+                        } else {
+                            console.error('Unexpected data structure:', data);
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Failed to fetch top-selling products.', error);
+                    }
+                });
             }
 
-            products.forEach(product => {
-                let productHtml = `
-                    <div class="fp__menu_hover ${product.category_slug}">
-                        <div class="m-3 card position-relative fp__menu_item rounded-3 slide-wrap">
-                            <div class="fp__menu_item_img">
-                                <a href="/product/${product.slug}" class="title w-100">
-                                    <img src="${product.thumb_image}" alt="${product.name}" class="img-fluid w-100">
+            function renderProducts(products) {
+                const container = $('#top-selling-products');
+                container.empty();
+
+                if (products.length === 0) {
+                    console.log('No products found to render.');
+                    return;
+                }
+
+                products.forEach(product => {
+                    const productHtml = `
+                        <div class="fp__menu_hover ${product.category_slug}">
+                            <div class="m-3 card position-relative fp__menu_item rounded-3 slide-wrap">
+                                <div class="fp__menu_item_img">
+                                    <a href="/product/${product.slug}" class="title w-100">
+                                        <img src="${product.thumb_image}" alt="${product.name}" class="img-fluid w-100">
+                                    </a>
+                                </div>
+                                <a class="heart position-absolute rounded-circle" href="javascript:;" onclick="addToWishlist('${product.id}')">
+                                    <i class="text-white fal fa-heart"></i>
                                 </a>
-                            </div>
-                            <a class="heart position-absolute rounded-circle" href="javascript:;" onclick="addToWishlist('${product.id}')">
-                                <i class="text-white fal fa-heart"></i>
-                            </a>
-                            <div class="card-body fp__menu_item_text position-relative d-flex flex-column">
-                                <a class="px-3 py-2 category categorys fw-semibold" href="/category/${product.category_slug}">
-                                    ${product.category_name}
-                                </a>
-                                <a class="title" href="/product/${product.slug}">${product.name}</a>
-                                <div class="mt-auto actions d-flex justify-content-between align-items-center">
-                                    <p class="m-0 price color-light-gray">
-                                        ${product.offer_price > 0 ? `<del>${currencyFormat(product.price)}</del> ${currencyFormat(product.offer_price)}` : currencyFormat(product.price)}
-                                    </p>
-                                    ${product.quantity === 0 || product.out_of_stock ?
-                                        `<a class="px-3 py-2 text-white rounded-pill bg-danger" href="javascript:;">Out of Stock</a>` :
-                                        `<a class="px-3 py-2 text-white add-to-cart rounded-pill background-light-gray" href="javascript:;" onclick="loadProductModal('${product.id}')">Add to Cart</a>`
-                                    }
+                                <div class="card-body fp__menu_item_text position-relative d-flex flex-column">
+                                    <a class="px-3 py-2 category categorys fw-semibold" href="/category/${product.category_slug}">
+                                        ${product.category_name}
+                                    </a>
+                                    <a class="title" href="/product/${product.slug}">${product.name}</a>
+                                    <div class="mt-auto actions d-flex justify-content-between align-items-center">
+                                        <p class="m-0 price color-light-gray">
+                                            ${product.offer_price > 0 ? `<del>${currencyFormat(product.price)}</del> ${currencyFormat(product.offer_price)}` : currencyFormat(product.price)}
+                                        </p>
+                                        ${product.quantity === 0 || product.out_of_stock ?
+                                            `<a class="px-3 py-2 text-white rounded-pill bg-danger" href="javascript:;">Out of Stock</a>` :
+                                            `<a class="px-3 py-2 text-white add-to-cart rounded-pill background-light-gray" href="javascript:;" onclick="loadProductModal('${product.id}')">Add to Cart</a>`
+                                        }
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                `;
-                container.append(productHtml);
-            });
+                    `;
+                    container.append(productHtml);
+                });
 
-            initializeSlickSlider();
-        }
+                initializeSlickSlider();
+            }
 
-        function initializeSlickSlider() {
-            console.log('Initializing Slick slider...');
-            $('.testimonial-slider').slick({
-                dots: true,
-                arrows: true,
-                infinite: true,
-                autoplay: true,
-                autoplaySpeed: 2000,
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                responsive: [{
-                        breakpoint: 1400,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1
+            function initializeSlickSlider() {
+                $('.testimonial-slider .row').slick({
+                    dots: true,
+                    arrows: true,
+                    infinite: true,
+                    autoplay: true,
+                    autoplaySpeed: 2000,
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    responsive: [
+                        {
+                            breakpoint: 1400,
+                            settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 1
+                            }
+                        },
+                        {
+                            breakpoint: 991,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                            }
                         }
-                    },
-                    {
-                        breakpoint: 991,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1
-                        }
-                    }
-                ]
-            });
-        }
-
-        // Fetch and render data when the page is ready
-        fetchTopSellingProducts();
-    });
-</script>
-
+                    ]
+                });
+            }
+        });
+    </script>
 </body>
 </html>
