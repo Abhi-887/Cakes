@@ -29,7 +29,7 @@
                     </div>
                     <div class="mt-3 text-center col-md-2 text-md-start mt-md-0">
                         <button type="submit"
-                            class="px-5 text-white border border-0 subscribe_btn background-dark-gray btn btn-dark subscribe">
+                            class="px-5 text-white border border-0 subscribe_btn bg-dark btn btn-dark subscribe">
                             Subscribe
                         </button>
                     </div>
@@ -145,7 +145,7 @@
     }
 
     .subscribe:hover {
-        background: #8daabc !important;
+        background: #4b637f !important;
     }
 
     .footer-tile {
