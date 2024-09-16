@@ -15,7 +15,7 @@
                     {{-- Main Menu Items --}} @if ($MainMenu)
                         @foreach ($MainMenu as $menu)
                             <li class="me-5 nav-item">
-                                <a class="nav-link fw-semibold" href="{{ $menu['link'] }}">{{ $menu['label'] }}
+                                <a class="nav-link fw-normal" href="{{ $menu['link'] }}">{{ $menu['label'] }}
                                     {{-- @if ($menu['child'])
                         <i class="far fa-angle-down"></i>
                         @endif --}}
@@ -24,8 +24,7 @@
                                     <ul class="droap_menu position-absolute bg-light">
                                         @foreach ($menu['child'] as $item)
                                             <li class="pb-2 m-2 border-bottom">
-                                                <a class="fw-semibold"
-                                                    href="{{ $item['link'] }}">{{ $item['label'] }}</a>
+                                                <a class="fw-normal" href="{{ $item['link'] }}">{{ $item['label'] }}</a>
                                             </li>
                                         @endforeach
                                     </ul>
