@@ -50,7 +50,7 @@ h6 {
     margin: 0;
     padding: 0;
     /* font-family: var(--headingFont); */
-    font-family: 'mnsLondonBold';
+    font-family: 'mnsLondonSemiBold';
     color: var(--colorBlack);
 }
 
