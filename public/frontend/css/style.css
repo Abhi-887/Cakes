@@ -319,7 +319,7 @@ button {
 
 .nav-item a,
 .menu_icon i {
-    color: #4b637f !important;
+    color: #788a9f !important;
 }
 
 .bg-gray {
@@ -458,7 +458,7 @@ button {
 
 .nav-item:hover .nav-link,
 .nav-item .nav-link.active {
-    color: #8badbd !important;
+    color: #364559 !important;
 }
 
 .droap_menu::-webkit-scrollbar {
