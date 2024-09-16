@@ -316,7 +316,7 @@
 
 
         </div>
-        <div class="tf-section mb-30">
+        <div class="tf-section-2 mb-30">
             <!-- orders -->
             <div class="wg-box">
                 <div class="flex items-center justify-between">
@@ -328,6 +328,7 @@
             </div>
             <!-- /orders -->
         </div>
+
 
         <div class="tf-section-3">
             <!-- orders -->
@@ -659,6 +660,8 @@
             <!-- /new-comment -->
         </div>
 
+        </div>
+
             <!-- Modal -->
     <div class="modal fade" id="order_modal" tabindex="-1" role="dialog" aria-labelledby="order_modal" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -767,7 +770,7 @@
 }
 
 .wg-table thead th {
-    background-color: #f5f5f5;
+    background-color: #ff8282;
 }
 
 .wg-table tbody tr {
