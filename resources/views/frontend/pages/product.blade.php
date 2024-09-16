@@ -44,7 +44,7 @@
                 <h5 class="mt-3 color-light-gray">Edinburgh | Glasgow | Scotland</h5>
             </div>
             <div class="row mb-5 mt-4">
-                <div class="col-md-4">
+                <div class="my-3 my-md-0 col-md-4">
                     <a href="/consultations">
                         <div class="position-relative">
                             <img class="rounded-3" src="{{ asset('uploads/book-a-consultation.jpg') }}" alt="">
@@ -54,7 +54,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="my-3 col-md-4">
+                <div class="my-3 my-md-0 col-md-4">
                     <a href="/product/wedding-cake-deposit">
                         <div class="position-relative">
                             <img class="rounded-3" src="{{ asset('uploads/secure-wedding-date.jpg') }}" alt="">
@@ -64,7 +64,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="my-3 col-md-4">
+                <div class="my-3 my-md-0 col-md-4">
                     <a href="">
                         <div class="position-relative">
                             <img class="rounded-3" src="{{ asset('uploads/delicious-flavour-cake.jpg') }}" alt="">
