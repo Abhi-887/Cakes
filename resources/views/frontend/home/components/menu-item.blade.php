@@ -7,25 +7,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
     <style>
-        .testimonial {
+        .product-slider {
             background: #262626;
         }
 
-        .testimonial .stars {
+        .product-slider .stars {
             color: #ff9800;
         }
 
-        .testimonial .profile img {
+        .product-slider .profile img {
             width: 50px;
             height: 50px;
         }
 
-        .testimonial .profile .name {
+        .product-slider .profile .name {
             font-weight: bold;
             color: #333;
         }
 
-        .testimonial .profile .company {
+        .product-slider .profile .company {
             font-size: 12px;
             color: #999;
         }
@@ -161,7 +161,7 @@
             </div>
         </div>
 
-        <div class="testimonial-slider popularfood slider">
+        <div class="product-slider popularfood slider">
             <div class="row mt-2" id="top-selling-products">
                 <!-- Products will be rendered here -->
             </div>
@@ -250,7 +250,7 @@
             }
 
             function initializeSlickSlider() {
-                $('.testimonial-slider .row').slick({
+                $('.product-slider .row').slick({
                     dots: true,
                     arrows: true,
                     infinite: true,
