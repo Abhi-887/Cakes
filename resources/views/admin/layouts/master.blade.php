@@ -85,12 +85,12 @@
                     <div class="header-dashboard">
                         <div class="wrap">
                             <div class="header-left">
-                                <a href="index.html">
+                                {{-- <a href="index.html">
                                     <img id="logo_header" alt="{{ config('settings.site_name') }} Logo"
                                     src="{{ asset(config('settings.logo')) }}"
                                     data-light="{{ asset(config('settings.logo')) }}"
                                     data-dark="{{ asset(config('settings.logo')) }}">
-                                </a>
+                                </a> --}}
                                 <div class="button-show-hide">
                                     <i class="icon-menu-left"></i>
                                 </div>
