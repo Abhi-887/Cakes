@@ -550,16 +550,17 @@
                         <div class="main-content-inner">
                             @yield('content')
                         </div>
+                        <div class="bottom-page">
+                            <div class="body-text">Copyright © 2024 3d cakes</div>
+                            <i class="icon-heart"></i>
+                            <div class="body-text">by - </a> All rights reserved.</div>
+                        </div>
                     </div>
+
                 </div>
 
 
-                <footer class="main-footer">
-                    <div class="bottom-page">
-                        Copyright &copy; {{ date('Y') }} <div class="bullet"></div>
-                    </div>
 
-                </footer>
             </div>
 
         </div>
