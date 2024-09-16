@@ -57,20 +57,22 @@
                 </div>
                 <div class="my-3 my-md-0 col-md-4">
                     <a href="/product/wedding-cake-deposit">
-                        <div class="position-relative">
+                        <div class="image-block position-relative">
                             <img class="rounded-3" src="{{ asset('uploads/secure-wedding-date.jpg') }}" alt="">
+                            <div class="gradient-overlay position-absolute w-100 h-100"></div>
                             <h4
-                                class="top-0 position-absolute w-100 h-100 d-flex start-0 justify-content-center align-items-center text-light fw-semibold">
+                                class="overlay-text top-0 position-absolute w-100 h-100 d-flex start-0 justify-content-center align-items-center text-light fw-semibold">
                                 Secure Your Wedding Date Here</h4>
                         </div>
                     </a>
                 </div>
                 <div class="my-3 my-md-0 col-md-4">
                     <a href="">
-                        <div class="position-relative">
+                        <div class="image-block position-relative">
                             <img class="rounded-3" src="{{ asset('uploads/delicious-flavour-cake.jpg') }}" alt="">
+                            <div class="gradient-overlay position-absolute w-100 h-100"></div>
                             <h4
-                                class="top-0 position-absolute w-100 h-100 d-flex start-0 justify-content-center align-items-center text-light fw-semibold">
+                                class="overlay-text top-0 position-absolute w-100 h-100 d-flex start-0 justify-content-center align-items-center text-light fw-semibold">
                                 Delicious Flavour Cake</h4>
                         </div>
                     </a>
