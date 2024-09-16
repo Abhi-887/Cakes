@@ -14,7 +14,7 @@
                 <ul class="d-none d-xxl-flex">
                     {{-- Main Menu Items --}} @if ($MainMenu)
                         @foreach ($MainMenu as $menu)
-                            <li class="me-5 nav-item">
+                            <li class="me-4 nav-item">
                                 <a class="nav-link fw-normal" href="{{ $menu['link'] }}">{{ $menu['label'] }}
                                     {{-- @if ($menu['child'])
                         <i class="far fa-angle-down"></i>
