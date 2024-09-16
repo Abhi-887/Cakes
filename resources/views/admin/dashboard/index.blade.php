@@ -248,109 +248,7 @@
             </div>
 
 
-            <!-- /top-product -->
-            <!-- top-countries -->
-            {{-- <div class="wg-box">
-                <div class="flex items-center justify-between">
-                    <h5>Top Countries By Sales</h5>
-                    <div class="dropdown default">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            <span class="view-all">View all<i class="icon-chevron-down"></i></span>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li>
-                                <a href="javascript:void(0);">3 days</a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0);">7 days</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="flex items-center gap10">
-                    <h4>$37,802</h4>
-                    <div class="box-icon-trending up">
-                        <i class="icon-trending-up"></i>
-                        <div class="body-title number">1.56%</div>
-                    </div>
-                    <div class="text-tiny">since last weekend</div>
-                </div>
-                <ul class="flex flex-column justify-between gap10 h-full">
-                    <li class="country-item">
-                        <div class="image">
-                            <img src="{{ asset('admin2/assets/images/country/6.png') }}" alt="">
-                        </div>
-                        <div class="flex-grow flex items-center justify-between">
-                            <a href="countries.html" class="body-text name">Turkish Flag</a>
-                            <div class="box-icon-trending up">
-                                <i class="icon-trending-up"></i>
-                            </div>
-                            <div class="body-text number">6,972</div>
-                        </div>
-                    </li>
-                    <li class="country-item">
-                        <div class="image">
-                            <img src="{{ asset('admin2/assets/images/country/7.png') }}" alt="">
-                        </div>
-                        <div class="flex-grow flex items-center justify-between">
-                            <a href="countries.html" class="body-text name">Belgium</a>
-                            <div class="box-icon-trending up">
-                                <i class="icon-trending-up"></i>
-                            </div>
-                            <div class="body-text number">6,972</div>
-                        </div>
-                    </li>
-                    <li class="country-item">
-                        <div class="image">
-                            <img src="{{ asset('admin2/assets/images/country/8.png') }}" alt="">
-                        </div>
-                        <div class="flex-grow flex items-center justify-between">
-                            <a href="countries.html" class="body-text name">Sweden</a>
-                            <div class="box-icon-trending down">
-                                <i class="icon-trending-down"></i>
-                            </div>
-                            <div class="body-text number">6,972</div>
-                        </div>
-                    </li>
-                    <li class="country-item">
-                        <div class="image">
-                            <img src="{{ asset('admin2/assets/images/country/9.png') }}" alt="">
-                        </div>
-                        <div class="flex-grow flex items-center justify-between">
-                            <a href="countries.html" class="body-text name">Vietnamese</a>
-                            <div class="box-icon-trending up">
-                                <i class="icon-trending-up"></i>
-                            </div>
-                            <div class="body-text number">6,972</div>
-                        </div>
-                    </li>
-                    <li class="country-item">
-                        <div class="image">
-                            <img src="{{ asset('admin2/assets/images/country/10.png') }}" alt="">
-                        </div>
-                        <div class="flex-grow flex items-center justify-between">
-                            <a href="countries.html" class="body-text name">Australia</a>
-                            <div class="box-icon-trending down">
-                                <i class="icon-trending-down"></i>
-                            </div>
-                            <div class="body-text number">6,972</div>
-                        </div>
-                    </li>
-                    <li class="country-item">
-                        <div class="image">
-                            <img src="{{ asset('admin2/assets/images/country/11.png') }}" alt="">
-                        </div>
-                        <div class="flex-grow flex items-center justify-between">
-                            <a href="countries.html" class="body-text name">Saudi Arabia</a>
-                            <div class="box-icon-trending down">
-                                <i class="icon-trending-down"></i>
-                            </div>
-                            <div class="body-text number">6,972</div>
-                        </div>
-                    </li>
-                </ul>
-            </div> --}}
+
 
             <!-- Orders by Status -->
             <div class="wg-box">
@@ -363,178 +261,7 @@
             <!-- /top-countries -->
         </div>
         <div class="tf-section-6 mb-30">
-            <!-- best-shop-sellers -->
-            {{-- <div class="wg-box">
-                <div class="flex items-center justify-between">
-                    <h5>Best Shop Sellers</h5>
-                    <div class="dropdown default">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            <span class="view-all">View all<i class="icon-chevron-down"></i></span>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li>
-                                <a href="javascript:void(0);">3 days</a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0);">7 days</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="wg-table table-best-shop-sellers">
-                    <ul class="table-title flex gap20 mb-14">
-                        <li>
-                            <div class="body-title">Shop</div>
-                        </li>
-                        <li>
-                            <div class="body-title">Categories</div>
-                        </li>
-                        <li>
-                            <div class="body-title">Total</div>
-                        </li>
-                        <li>
-                            <div class="body-title">Status</div>
-                        </li>
-                    </ul>
-                    <ul class="flex flex-column gap18">
-                        <li class="shop-item">
-                            <div class="image">
-                                <img src="{{ asset('admin2/assets/images/shop/1.png') }}" alt="">
-                            </div>
-                            <div class="flex-grow flex items-center justify-between gap20">
-                                <div>
-                                    <a href="#" class="body-text name">Robert</a>
-                                    <div class="text-tiny mt-4">73 Purchases</div>
-                                </div>
-                                <div class="body-text">Kitchen, Pets</div>
-                                <div class="body-text">$1,000</div>
-                                <div class="flex items-center justify-between gap10">
-                                    <div class="progress-level-bar">
-                                        <span data-progress="29" data-max="70" class=""></span>
-                                    </div>
-                                    <div class="text-tiny">100%</div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="shop-item">
-                            <div class="image">
-                                <img src="{{ asset('admin2/assets/images/shop/2.png') }}" alt="">
-                            </div>
-                            <div class="flex-grow flex items-center justify-between gap20">
-                                <div>
-                                    <a href="#" class="body-text name">Calvin</a>
-                                    <div class="text-tiny mt-4">66 Purchases</div>
-                                </div>
-                                <div class="body-text">Health, Grocery</div>
-                                <div class="body-text">$4,000</div>
-                                <div class="flex items-center justify-between gap10">
-                                    <div class="progress-level-bar t1">
-                                        <span data-progress="59" data-max="70" class=""></span>
-                                    </div>
-                                    <div class="text-tiny">100%</div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="shop-item">
-                            <div class="image">
-                                <img src="{{ asset('admin2/assets/images/shop/3.png') }}" alt="">
-                            </div>
-                            <div class="flex-grow flex items-center justify-between gap20">
-                                <div>
-                                    <a href="#" class="body-text name">Dwight</a>
-                                    <div class="text-tiny mt-4">15,890 Purchases</div>
-                                </div>
-                                <div class="body-text">Electronics</div>
-                                <div class="body-text">$2,700</div>
-                                <div class="flex items-center justify-between gap10">
-                                    <div class="progress-level-bar t2">
-                                        <span data-progress="29" data-max="70" class=""></span>
-                                    </div>
-                                    <div class="text-tiny">100%</div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="shop-item">
-                            <div class="image">
-                                <img src="{{ asset('admin2/assets/images/shop/4.png') }}" alt="">
-                            </div>
-                            <div class="flex-grow flex items-center justify-between gap20">
-                                <div>
-                                    <a href="#" class="body-text name">Cody</a>
-                                    <div class="text-tiny mt-4">15 Purchases</div>
-                                </div>
-                                <div class="body-text">Movies, Music</div>
-                                <div class="body-text">$2,100</div>
-                                <div class="flex items-center justify-between gap10">
-                                    <div class="progress-level-bar">
-                                        <span data-progress="25" data-max="70" class=""></span>
-                                    </div>
-                                    <div class="text-tiny">100%</div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="shop-item">
-                            <div class="image">
-                                <img src="{{ asset('admin2/assets/images/shop/5.png') }}" alt="">
-                            </div>
-                            <div class="flex-grow flex items-center justify-between gap20">
-                                <div>
-                                    <a href="#" class="body-text name">Bruce</a>
-                                    <div class="text-tiny mt-4">127 Purchases</div>
-                                </div>
-                                <div class="body-text">Sports, Fitness</div>
-                                <div class="body-text">$4,400</div>
-                                <div class="flex items-center justify-between gap10">
-                                    <div class="progress-level-bar t3">
-                                        <span data-progress="52" data-max="70" class=""></span>
-                                    </div>
-                                    <div class="text-tiny">100%</div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="shop-item">
-                            <div class="image">
-                                <img src="{{ asset('admin2/assets/images/shop/6.png') }}" alt="">
-                            </div>
-                            <div class="flex-grow flex items-center justify-between gap20">
-                                <div>
-                                    <a href="#" class="body-text name">Jorge</a>
-                                    <div class="text-tiny mt-4">30 Purchases</div>
-                                </div>
-                                <div class="body-text">Toys, Baby</div>
-                                <div class="body-text">$4,750</div>
-                                <div class="flex items-center justify-between gap10">
-                                    <div class="progress-level-bar t4">
-                                        <span data-progress="23" data-max="70" class=""></span>
-                                    </div>
-                                    <div class="text-tiny">100%</div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="shop-item">
-                            <div class="image">
-                                <img src="{{ asset('admin2/assets/images/shop/7.png') }}" alt="">
-                            </div>
-                            <div class="flex-grow flex items-center justify-between gap20">
-                                <div>
-                                    <a href="#" class="body-text name">Kristin Watson</a>
-                                    <div class="text-tiny mt-4">93 Purchases</div>
-                                </div>
-                                <div class="body-text">Gift Cards</div>
-                                <div class="body-text">$1,000</div>
-                                <div class="flex items-center justify-between gap10">
-                                    <div class="progress-level-bar t5">
-                                        <span data-progress="45" data-max="70" class=""></span>
-                                    </div>
-                                    <div class="text-tiny">100%</div>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div> --}}
-            <!-- /best-shop-sellers -->
+
 
 
             <!-- category -->
@@ -587,173 +314,8 @@
                 </ul>
             </div>
 
-            {{-- <div class="divider"></div>
 
-            <div class="flex items-center justify-between flex-wrap gap10">
-                <div class="text-tiny">Showing {{ $lowStockAlerts->count() }} entries of {{ $lowStockAlerts->total() }}
-                </div>
-                <ul class="wg-pagination">
-                    {{ $lowStockAlerts->links('pagination::bootstrap-4') }}
-                </ul>
-            </div> --}}
-
-
-   <!-- orders -->
-   <div class="wg-box">
-    <div class="flex items-center justify-between">
-        <h5>Recent orders</h5>
-        <div class="dropdown default">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="view-all">View all<i class="icon-chevron-down"></i></span>
-            </button>
-            <ul class="dropdown-menu dropdown-menu-end">
-                <li>
-                    <a href="javascript:void(0);">3 days</a>
-                </li>
-                <li>
-                    <a href="javascript:void(0);">7 days</a>
-                </li>
-            </ul>
         </div>
-    </div>
-    <div class="wg-table table-product-overview t2">
-        <ul class="table-title flex gap20 mb-14">
-            <li>
-                <div class="body-title">Product</div>
-            </li>
-            <li>
-                <div class="body-title">Customer</div>
-            </li>
-            <li>
-                <div class="body-title">Product ID</div>
-            </li>
-            <li>
-                <div class="body-title">Quantity</div>
-            </li>
-            <li>
-                <div class="body-title">Price</div>
-            </li>
-            <li>
-                <div class="body-title">Status</div>
-            </li>
-        </ul>
-        <div class="divider mb-14"></div>
-        <ul class="flex flex-column gap10">
-            <li class="product-item gap14">
-                <div class="image no-bg">
-                    <img src="images/products/31.png" alt="">
-                </div>
-                <div class="flex items-center justify-between flex-grow gap20">
-                    <div class="name">
-                        <a href="product-list.html" class="body-title-2">Taste of the Wild Formula Finder</a>
-                    </div>
-                    <div class="body-text">2,672</div>
-                    <div class="body-text">$28,672.36</div>
-                    <div class="body-text">X1</div>
-                    <div class="body-text">$28,672.36</div>
-                    <div>
-                        <div class="block-available">Delivered</div>
-                    </div>
-                </div>
-            </li>
-            <li class="divider"></li>
-            <li class="product-item gap14">
-                <div class="image no-bg">
-                    <img src="images/products/32.png" alt="">
-                </div>
-                <div class="flex items-center justify-between flex-grow gap20">
-                    <div class="name">
-                        <a href="product-list.html" class="body-title-2">Proden Plaqueoff Dental Bites Dog, 150 G</a>
-                    </div>
-                    <div class="body-text">2,672</div>
-                    <div class="body-text">$28,672.36</div>
-                    <div class="body-text">X2</div>
-                    <div class="body-text">$28,672.36</div>
-                    <div>
-                        <div class="block-available">Delivered</div>
-                    </div>
-                </div>
-            </li>
-            <li class="divider"></li>
-            <li class="product-item gap14">
-                <div class="image no-bg">
-                    <img src="images/products/33.png" alt="">
-                </div>
-                <div class="flex items-center justify-between flex-grow gap20">
-                    <div class="name">
-                        <a href="product-list.html" class="body-title-2">Zuke's Lil' Links Healthy Little Sausage Links for Dogs...</a>
-                    </div>
-                    <div class="body-text">2,672</div>
-                    <div class="body-text">$28,672.36</div>
-                    <div class="body-text">X1</div>
-                    <div class="body-text">$28,672.36</div>
-                    <div>
-                        <div class="block-available">Delivered</div>
-                    </div>
-                </div>
-            </li>
-            <li class="divider"></li>
-            <li class="product-item gap14">
-                <div class="image no-bg">
-                    <img src="images/products/34.png" alt="">
-                </div>
-                <div class="flex items-center justify-between flex-grow gap20">
-                    <div class="name">
-                        <a href="product-list.html" class="body-title-2">Rachael Ray Nutrish Grain Free Chicken Drumstick...</a>
-                    </div>
-                    <div class="body-text">2,672</div>
-                    <div class="body-text">$28,672.36</div>
-                    <div class="body-text">X3</div>
-                    <div class="body-text">$28,672.36</div>
-                    <div>
-                        <div class="block-available">Delivered</div>
-                    </div>
-                </div>
-            </li>
-            <li class="divider"></li>
-            <li class="product-item gap14">
-                <div class="image no-bg">
-                    <img src="images/products/35.png" alt="">
-                </div>
-                <div class="flex items-center justify-between flex-grow gap20">
-                    <div class="name">
-                        <a href="product-list.html" class="body-title-2">Fruitables Dog Treats Sweet Potato & Pecan Flavor</a>
-                    </div>
-                    <div class="body-text">2,672</div>
-                    <div class="body-text">$28,672.36</div>
-                    <div class="body-text">X2</div>
-                    <div class="body-text">$28,672.36</div>
-                    <div>
-                        <div class="block-available">Delivered</div>
-                    </div>
-                </div>
-            </li>
-
-        </ul>
-    </div>
-    <div class="divider"></div>
-    <div class="flex items-center justify-between flex-wrap gap10">
-        <div class="text-tiny">Showing 5 entries</div>
-        <ul class="wg-pagination">
-            <li>
-                <a href="#"><i class="icon-chevron-left"></i></a>
-            </li>
-            <li>
-                <a href="#">1</a>
-            </li>
-            <li class="active">
-                <a href="#">2</a>
-            </li>
-            <li>
-                <a href="#">3</a>
-            </li>
-            <li>
-                <a href="#"><i class="icon-chevron-right"></i></a>
-            </li>
-        </ul>
-    </div>
-</div>
-<!-- /orders -->
 
 
         <div class="tf-section-3">
@@ -762,8 +324,8 @@
                 <div class="flex items-center justify-between">
                     <h5>Orders</h5>
                     <div class="dropdown default">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
+                        <button class="btn btn-secondary dropdown-toggle" type="button"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="icon-more"><i class="icon-more-horizontal"></i></span>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end">
@@ -860,8 +422,8 @@
                 <div class="flex items-center justify-between">
                     <h5>Earnings</h5>
                     <div class="dropdown default">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
+                        <button class="btn btn-secondary dropdown-toggle" type="button"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="icon-more"><i class="icon-more-horizontal"></i></span>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end">
@@ -914,8 +476,8 @@
                 <div class="flex items-center justify-between">
                     <h5>New Comments</h5>
                     <div class="dropdown default">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
+                        <button class="btn btn-secondary dropdown-toggle" type="button"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <span class="icon-more"><i class="icon-more-horizontal"></i></span>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end">
@@ -1086,496 +648,259 @@
             <!-- /new-comment -->
         </div>
 
-    </div>
 
-    {{-- <div class="row">
-        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-            <div class="card card-statistic-1">
-                <div class="card-icon bg-primary">
-                    <i class="fas fa-cart-plus"></i>
-                </div>
-                <div class="card-wrap">
-                    <div class="card-header">
-                        <h4>Todays Orders</h4>
-                    </div>
-                    <div class="card-body">
-                        {{ $todaysOrders }}
-                    </div>
-                </div>
+
+
+
+
+        <h3>System Notifications</h3>
+
+        <!-- Server Status -->
+        <div class="status-container">
+            <h4>Server Status</h4>
+            <div class="status">
+                <div class="status-indicator @if ($serverStatus) online @else offline @endif"></div>
+                <span class="status-text">
+                    @if ($serverStatus)
+                        Server is running smoothly
+                    @else
+                        Server is down!
+                    @endif
+                </span>
             </div>
         </div>
 
-        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-            <div class="card card-statistic-1">
-                <div class="card-icon bg-danger">
-                    <i class="fas fa-dollar-sign"></i>
-                </div>
-                <div class="card-wrap">
-                    <div class="card-header">
-                        <h4>Todays Earnings</h4>
-                    </div>
-                    <div class="card-body">
-                        {{ currencyPosition($todaysEarnings) }}
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-            <div class="card card-statistic-1">
-                <div class="card-icon bg-primary">
-                    <i class="fas fa-cart-plus"></i>
-                </div>
-                <div class="card-wrap">
-                    <div class="card-header">
-                        <h4>This Month Orders</h4>
-                    </div>
-                    <div class="card-body">
-                        {{ $thisMonthsOrders }}
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-            <div class="card card-statistic-1">
-                <div class="card-icon bg-danger">
-                    <i class="fas fa-dollar-sign"></i>
-                </div>
-                <div class="card-wrap">
-                    <div class="card-header">
-                        <h4>This Months Earnings</h4>
-                    </div>
-                    <div class="card-body">
-                        {{ currencyPosition($thisMonthsEarnings) }}
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-            <div class="card card-statistic-1">
-                <div class="card-icon bg-primary">
-                    <i class="fas fa-cart-plus"></i>
-                </div>
-                <div class="card-wrap">
-                    <div class="card-header">
-                        <h4>This Year Orders</h4>
-                    </div>
-                    <div class="card-body">
-                        {{ $thisYearOrders }}
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-            <div class="card card-statistic-1">
-                <div class="card-icon bg-danger">
-                    <i class="fas fa-dollar-sign"></i>
-                </div>
-                <div class="card-wrap">
-                    <div class="card-header">
-                        <h4>This Year Earnings</h4>
-                    </div>
-                    <div class="card-body">
-                        {{ currencyPosition($thisYearEarnings) }}
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-            <div class="card card-statistic-1">
-                <div class="card-icon bg-primary">
-                    <i class="fas fa-cart-plus"></i>
-                </div>
-                <div class="card-wrap">
-                    <div class="card-header">
-                        <h4>Total Orders</h4>
-                    </div>
-                    <div class="card-body">
-                        {{ $totalOrders }}
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-            <div class="card card-statistic-1">
-                <div class="card-icon bg-danger">
-                    <i class="fas fa-dollar-sign"></i>
-                </div>
-                <div class="card-wrap">
-                    <div class="card-header">
-                        <h4>Total Earnings</h4>
-                    </div>
-                    <div class="card-body">
-                        {{ currencyPosition($totalEarnings) }}
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-            <div class="card card-statistic-1">
-                <div class="card-icon bg-primary">
-                    <i class="fas fa-users"></i>
-                </div>
-                <div class="card-wrap">
-                    <div class="card-header">
-                        <h4>Total Users</h4>
-                    </div>
-                    <div class="card-body">
-                        {{ $totalUsers }}
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-            <div class="card card-statistic-1">
-                <div class="card-icon bg-danger">
-                    <i class="fas fa-user-shield"></i>
-                </div>
-                <div class="card-wrap">
-                    <div class="card-header">
-                        <h4>Total Admins</h4>
-                    </div>
-                    <div class="card-body">
-                        {{ $totalAdmins }}
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-            <div class="card card-statistic-1">
-                <div class="card-icon bg-primary">
-                    <i class="fas fa-th"></i>
-                </div>
-                <div class="card-wrap">
-                    <div class="card-header">
-                        <h4>Total Products</h4>
-                    </div>
-                    <div class="card-body">
-                        {{ $totalProducts }}
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-            <div class="card card-statistic-1">
-                <div class="card-icon bg-danger">
-                    <i class="fas fa-rss"></i>
-                </div>
-                <div class="card-wrap">
-                    <div class="card-header">
-                        <h4>Total Blogs</h4>
-                    </div>
-                    <div class="card-body">
-                        {{ $totalBlogs }}
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-    </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="order_modal" tabindex="-1" role="dialog" aria-labelledby="order_modal"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form action="" method="POST" class="order_status_form">
-                        @csrf
-                        @method('PUT')
-                        <div class="form-group">
-                            <label for="">Payment Status</label>
-                            <select class="form-control payment_status" name="payment_status" id="">
-                                <option value="pending">Pending</option>
-                                <option value="completed">Completed</option>
-                            </select>
-
-                        </div>
-
-                        <div class="form-group">
-                            <label for="">Order Status</label>
-                            <select class="form-control order_status" name="order_status" id="">
-                                <option value="pending">Pending</option>
-                                <option value="in_process">In Process</option>
-                                <option value="delivered">Delivered</option>
-                                <option value="declined">Declined</option>
-
-                            </select>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary submit_btn">Save changes</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div> --}}
-
-    <h3>System Notifications</h3>
-
-    <!-- Server Status -->
-    <div class="status-container">
-        <h4>Server Status</h4>
-        <div class="status">
-            <div class="status-indicator @if ($serverStatus) online @else offline @endif"></div>
-            <span class="status-text">
-                @if ($serverStatus)
-                    Server is running smoothly
-                @else
-                    Server is down!
-                @endif
-            </span>
-        </div>
-    </div>
-
-    <!-- Styles -->
-    <style>
-        .status-container {
-            font-family: Arial, sans-serif;
-            margin-bottom: 20px;
-        }
-
-        .status {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .status-indicator {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: grey;
-            position: relative;
-        }
-
-        .online {
-            background-color: green;
-            animation: blink 1.5s infinite;
-        }
-
-        .offline {
-            background-color: red;
-        }
-
-        .status-text {
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        @keyframes blink {
-
-            0%,
-            100% {
-                opacity: 1;
+        <!-- Styles -->
+        <style>
+            .status-container {
+                font-family: Arial, sans-serif;
+                margin-bottom: 20px;
             }
 
-            50% {
-                opacity: 0.3;
+            .status {
+                display: flex;
+                align-items: center;
+                gap: 10px;
             }
-        }
-    </style>
+
+            .status-indicator {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background-color: grey;
+                position: relative;
+            }
+
+            .online {
+                background-color: green;
+                animation: blink 1.5s infinite;
+            }
+
+            .offline {
+                background-color: red;
+            }
+
+            .status-text {
+                font-size: 14px;
+                font-weight: bold;
+            }
+
+            @keyframes blink {
+
+                0%,
+                100% {
+                    opacity: 1;
+                }
+
+                50% {
+                    opacity: 0.3;
+                }
+            }
+        </style>
 
 
 
 
 
-    <div class="col-md-12 mb-4">
-        <div class="card">
-            <div class="card-header">
-                <h5 class="card-title">Low Stock Alerts</h5>
-            </div>
-            <div class="card-body">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Product Name</th>
-                            <th>Available Quantity</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($lowStockAlerts as $product)
+        <div class="col-md-12 mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Low Stock Alerts</h5>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
                             <tr>
-                                <td>{{ $product->name }}</td>
-                                <td>{{ $product->quantity }}</td>
-                                <td>
-                                    @if ($product->quantity == 0)
-                                        <span class="text-danger">Out of Stock</span>
-                                    @else
-                                        <span class="text-warning">Low Stock</span>
-                                    @endif
-                                </td>
+                                <th>Product Name</th>
+                                <th>Available Quantity</th>
+                                <th>Status</th>
                             </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            @foreach ($lowStockAlerts as $product)
+                                <tr>
+                                    <td>{{ $product->name }}</td>
+                                    <td>{{ $product->quantity }}</td>
+                                    <td>
+                                        @if ($product->quantity == 0)
+                                            <span class="text-danger">Out of Stock</span>
+                                        @else
+                                            <span class="text-warning">Low Stock</span>
+                                        @endif
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
-    </div>
 
 
-    <div>
-        <h3>New Customers (Last Week)</h3>
-        <p>{{ $newCustomers }}</p>
-    </div>
-    <div>
-        <h3>Total Customers</h3>
-        <p>{{ $totalCustomers }}</p>
-    </div>
+        <div>
+            <h3>New Customers (Last Week)</h3>
+            <p>{{ $newCustomers }}</p>
+        </div>
+        <div>
+            <h3>Total Customers</h3>
+            <p>{{ $totalCustomers }}</p>
+        </div>
 
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        var ctx = document.getElementById('salesTrendChart').getContext('2d');
-        var salesTrendChart = new Chart(ctx, {
-            type: 'line', // Use 'line' for a trend chart
-            data: {
-                labels: @json($salesTrendLabels), // Array of month labels
-                datasets: [{
-                    label: 'Sales Trend',
-                    data: @json($salesTrendData), // Array of sales data
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        position: 'top',
-                    },
-                    tooltip: {
-                        callbacks: {
-                            label: function(tooltipItem) {
-                                return 'Sales: $' + tooltipItem.raw.toFixed(2);
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+            var ctx = document.getElementById('salesTrendChart').getContext('2d');
+            var salesTrendChart = new Chart(ctx, {
+                type: 'line', // Use 'line' for a trend chart
+                data: {
+                    labels: @json($salesTrendLabels), // Array of month labels
+                    datasets: [{
+                        label: 'Sales Trend',
+                        data: @json($salesTrendData), // Array of sales data
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(tooltipItem) {
+                                    return 'Sales: $' + tooltipItem.raw.toFixed(2);
+                                }
                             }
                         }
                     }
                 }
-            }
-        });
-    </script>
+            });
+        </script>
 
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        var ctx = document.getElementById('ordersByStatusChart').getContext('2d');
-        var ordersByStatusChart = new Chart(ctx, {
-            type: 'doughnut',
-            data: {
-                labels: {!! json_encode($ordersByStatus->keys()) !!},
-                datasets: [{
-                    label: 'Orders by Status',
-                    data: {!! json_encode($ordersByStatus->values()) !!},
-                    backgroundColor: [
-                        'rgba(63, 81, 181, 0.7)', // Indigo
-                        'rgba(0, 188, 212, 0.7)', // Cyan
-                        'rgba(255, 193, 7, 0.7)', // Amber
-                        'rgba(76, 175, 80, 0.7)', // Green
-                        'rgba(156, 39, 176, 0.7)', // Purple
-                        'rgba(244, 67, 54, 0.7)' // Red
-                    ],
-                    borderColor: [
-                        'rgba(63, 81, 181, 1)',
-                        'rgba(0, 188, 212, 1)',
-                        'rgba(255, 193, 7, 1)',
-                        'rgba(76, 175, 80, 1)',
-                        'rgba(156, 39, 176, 1)',
-                        'rgba(244, 67, 54, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        labels: {
-                            color: 'rgba(0, 0, 0, 0.85)', // Dark mode consideration
-                            font: {
-                                weight: 'bold'
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+            var ctx = document.getElementById('ordersByStatusChart').getContext('2d');
+            var ordersByStatusChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: {!! json_encode($ordersByStatus->keys()) !!},
+                    datasets: [{
+                        label: 'Orders by Status',
+                        data: {!! json_encode($ordersByStatus->values()) !!},
+                        backgroundColor: [
+                            'rgba(63, 81, 181, 0.7)', // Indigo
+                            'rgba(0, 188, 212, 0.7)', // Cyan
+                            'rgba(255, 193, 7, 0.7)', // Amber
+                            'rgba(76, 175, 80, 0.7)', // Green
+                            'rgba(156, 39, 176, 0.7)', // Purple
+                            'rgba(244, 67, 54, 0.7)' // Red
+                        ],
+                        borderColor: [
+                            'rgba(63, 81, 181, 1)',
+                            'rgba(0, 188, 212, 1)',
+                            'rgba(255, 193, 7, 1)',
+                            'rgba(76, 175, 80, 1)',
+                            'rgba(156, 39, 176, 1)',
+                            'rgba(244, 67, 54, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            labels: {
+                                color: 'rgba(0, 0, 0, 0.85)', // Dark mode consideration
+                                font: {
+                                    weight: 'bold'
+                                }
                             }
                         }
                     }
                 }
-            }
-        });
-    </script>
+            });
+        </script>
 
 
 
 
 
-    <!-- Conversion Rate -->
-    <div>
-        <h3>Conversion Rate</h3>
-        <p>{{ number_format($conversionRate, 2) }}%</p>
-    </div>
+        <!-- Conversion Rate -->
+        <div>
+            <h3>Conversion Rate</h3>
+            <p>{{ number_format($conversionRate, 2) }}%</p>
+        </div>
 
-    <!-- Bounce Rate -->
-    <div>
-        <h3>Bounce Rate</h3>
-        <p>{{ number_format($bounceRate, 2) }}%</p>
-    </div>
+        <!-- Bounce Rate -->
+        <div>
+            <h3>Bounce Rate</h3>
+            <p>{{ number_format($bounceRate, 2) }}%</p>
+        </div>
 
-    <!-- Average Session Duration -->
-    <div>
-        <h3>Average Session Duration</h3>
-        <p>{{ number_format($averageSessionDuration, 2) }} minutes</p>
-    </div>
+        <!-- Average Session Duration -->
+        <div>
+            <h3>Average Session Duration</h3>
+            <p>{{ number_format($averageSessionDuration, 2) }} minutes</p>
+        </div>
 
-    <!-- JavaScript for Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        var ctx = document.getElementById('trafficChart').getContext('2d');
-        var trafficChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: @json($trafficData->pluck('date')),
-                datasets: [{
-                    label: 'Number of Visitors',
-                    data: @json($trafficData->pluck('count')),
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    x: {
-                        beginAtZero: true
-                    },
-                    y: {
-                        beginAtZero: true
+        <!-- JavaScript for Chart.js -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+            var ctx = document.getElementById('trafficChart').getContext('2d');
+            var trafficChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: @json($trafficData->pluck('date')),
+                    datasets: [{
+                        label: 'Number of Visitors',
+                        data: @json($trafficData->pluck('count')),
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        x: {
+                            beginAtZero: true
+                        },
+                        y: {
+                            beginAtZero: true
+                        }
                     }
                 }
-            }
-        });
-    </script>
+            });
+        </script>
     </div>
 @endsection
 
