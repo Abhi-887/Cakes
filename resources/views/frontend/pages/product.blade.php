@@ -46,10 +46,11 @@
             <div class="row mb-5 mt-4">
                 <div class="my-3 my-md-0 col-md-4">
                     <a href="/consultations">
-                        <div class="position-relative">
+                        <div class="image-block position-relative">
                             <img class="rounded-3" src="{{ asset('uploads/book-a-consultation.jpg') }}" alt="">
+                            <div class="gradient-overlay position-absolute w-100 h-100"></div>
                             <h4
-                                class="top-0 position-absolute w-100 h-100 d-flex start-0 justify-content-center align-items-center text-light fw-semibold">
+                                class="overlay-text top-0 position-absolute w-100 h-100 d-flex start-0 justify-content-center align-items-center text-light fw-semibold">
                                 Book Free Consultation</h4>
                         </div>
                     </a>
