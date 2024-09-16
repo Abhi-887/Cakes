@@ -34,8 +34,8 @@
                         @endforeach
                     @endif
                 </ul>
-                <div class="d-flex float-end">
-                    <ul class="d-flex menu_icon d-xxl-none">
+                <div class="d-xxl-none d-flex align-items-center float-end">
+                    <ul class="d-flex menu_icon">
                         <li>
                             <a href="#" class="menu_search me-3 position-relative fw-semibold fs-5 transitions"><i
                                     class="transition far fa-search"></i></a>
@@ -74,7 +74,7 @@
                                     class="far fa-heart me-4"></i></a>
                         </li>
                     </ul>
-                    <a class="d-xxl-none d-block" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+                    <a class="align-items-center" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
                         aria-controls="offcanvasExample">
                         <i class="fas fa-bars fs-2 color-light-gray"></i>
                     </a>
