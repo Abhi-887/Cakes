@@ -175,10 +175,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
 
 <script>
-$(window).on('load', function() {
-    setTimeout(function() {
-        fetchTopSellingProducts();
-    }, 100); // Adjust the delay if necessary
+$(document).ready(function() {
+    // Fetch and render data when the window is idle
+    $(window).on('load', function() {
+        setTimeout(function() {
+            console.log('Fetching top-selling products...');
+            fetchTopSellingProducts();  // Fetch data after page load
+        }, 100); // Adjust the delay if necessary
+    });
 
     function fetchTopSellingProducts() {
         $.ajax({
@@ -186,10 +190,17 @@ $(window).on('load', function() {
             method: 'GET',
             dataType: 'json',
             success: function(data) {
-                renderProducts(data);
+                console.log('API response:', data);  // Debug: Log API response
+                if (data && Array.isArray(data)) {
+                    renderProducts(data);
+                } else {
+                    console.error('Unexpected data structure:', data);
+                }
             },
-            error: function() {
-                console.error('Failed to fetch top-selling products.');
+            error: function(xhr, status, error) {
+                console.error('Failed to fetch top-selling products.', error);  // Debug: Log errors
+                console.error('Status:', status);
+                console.error('Response:', xhr.responseText);
             }
         });
     }
@@ -198,8 +209,11 @@ $(window).on('load', function() {
         const container = $('#top-selling-products');
         container.empty();
 
-        // Use document fragment for better performance
-        const fragment = $(document.createDocumentFragment());
+        // Debug: Check if products array is empty
+        if (products.length === 0) {
+            console.log('No products found to render.');
+            return;
+        }
 
         products.forEach(product => {
             let productHtml = `
@@ -231,55 +245,39 @@ $(window).on('load', function() {
                     </div>
                 </div>
             `;
-            fragment.append(productHtml);
+            container.append(productHtml);
         });
 
-        // Append fragment to container
-        container.append(fragment);
+        // Initialize Slick slider after rendering
+        initializeSlickSlider();
     }
 
-    // Initialize Slick slider after products are fetched
-    $('.testimonial-slider .row').slick({
-        dots: true,
-        arrows: true,
-        infinite: true,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        responsive: [{
-            breakpoint: 1400,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1
-            }
-        },
-        {
-            breakpoint: 991,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-            }
-        }]
-    });
-
-    function equalHeight() {
-        var maxHeight = 0;
-        $('.testimonial-slider .fp__menu_item').each(function() {
-            var slideHeight = $(this).outerHeight();
-            if (slideHeight > maxHeight) {
-                maxHeight = slideHeight;
-            }
+    function initializeSlickSlider() {
+        console.log('Initializing Slick slider...');
+        $('.testimonial-slider .row').slick({
+            dots: true,
+            arrows: true,
+            infinite: true,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            responsive: [{
+                    breakpoint: 1400,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 991,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }
+            ]
         });
-
-        $('.testimonial-slider .fp__menu_item').css('height', maxHeight + 'px');
     }
-
-    equalHeight();
-
-    $(window).on("resize", function() {
-        $('.testimonial-slider .fp__menu_item').css('height', 'auto');
-        equalHeight();
-    });
 });
 </script>
