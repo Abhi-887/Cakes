@@ -37,8 +37,7 @@
                 <div class="d-flex float-end">
                     <ul class="d-flex menu_icon d-xxl-none">
                         <li>
-                            <a href="#"
-                                class="menu_search me-3 me-sm-4 position-relative fw-semibold fs-5 transitions"><i
+                            <a href="#" class="menu_search me-3 position-relative fw-semibold fs-5 transitions"><i
                                     class="transition far fa-search"></i></a>
                             <div
                                 class="top-0 fp__search_form position-fixed w-100 end-0 justify-content-center align-items-center transitions vh-100">
@@ -63,17 +62,16 @@
                                 <span
                                     class="text-center cart_count bg-gray position-absolute text-light fw-semibold bottom-50 end-25 rounded-circle">{{ count(Cart::content()) }}</span></a>
                         </li>
-                        @php @$unseenMessages = \App\Models\Chat::where(['sender_id' => 1, 'receiver_id' => auth()->user()->id, 'seen' => 0])->count(); @endphp
 
                         <li class="nav-item">
                             <a class="nav-link ms-3 rounded-1 fs-5" href="{{ route('login') }}"><i
-                                    class="far fa-user me-3"></i></a>
+                                    class="far fa-user"></i></a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link d-inline ms-3 rounded-1 position-relative transitions fs-5"
                                 href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i
-                                    class="far fa-heart me-3"></i></a>
+                                    class="far fa-heart me-4"></i></a>
                         </li>
                     </ul>
                     <a class="d-xxl-none d-block" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
@@ -126,7 +124,7 @@
             <div class="col-5 col-xxl-4 d-none d-xxl-flex">
                 <ul class="d-flex flex-wrap menu_icon align-items-center ms-auto">
                     <li>
-                        <a href="#" class="menu_search me-3 position-relative fw-semibold fs-5 transitions"><i
+                        <a href="#" class="menu_search me-4 position-relative fw-semibold fs-5 transitions"><i
                                 class="far fa-search"></i></a>
                         <div
                             class="top-0 fp__search_form position-fixed w-100 end-0 justify-content-center align-items-center transitions vh-100">
@@ -163,14 +161,14 @@
                         </li> --}}
 
                     <li class="nav-item">
-                        <a class="nav-link border px-3 py-2 ms-2 rounded-1" href="{{ route('login') }}"><i
+                        <a class="nav-link border px-3 py-2 ms-3 rounded-1" href="{{ route('login') }}"><i
                                 class="far fa-user me-3"></i>Account</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link border px-3 py-2 rounded-1 position-relative transitions" href="#"
-                            data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i
-                                class="far fa-heart me-4"></i>Wishlist</a>
+                        <a class="nav-link border px-3 py-2 ms-3 rounded-1 position-relative transitions"
+                            href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i
+                                class="far fa-heart me-3"></i>Wishlist</a>
                     </li>
                 </ul>
             </div>
