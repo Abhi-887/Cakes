@@ -2,11 +2,15 @@
 
 @font-face {
     font-family: 'mnsLondonRegular';
-    src: url(./fonts/mnsLondonRegular.ttf) format('truetype');
+    src: url(./public/frontend/fonts/mnsLondonRegular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
   }
   @font-face {
       font-family: 'mnsLondonSemiBold';
-      src: url(./fonts/mnsLondonRegular.ttf) format('truetype');
+      src: url(./public/frontend/fonts/mnsLondonRegular.ttf) format('truetype');
+      font-weight: bold;
+      font-style: normal;
     }
 
 
