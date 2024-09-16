@@ -169,67 +169,61 @@
 
     <div class="testimonial-slider popularfood slider">
         <div class="row mt-2">
-            @foreach ($categories as $category)
-                @php
-                    $products = \App\Models\Product::where([
-                        'show_at_home' => 1,
-                        'status' => 1,
-                        'category_id' => $category->id,
-                    ])
-                        ->orderBy('id', 'DESC')
-                        ->take(8)
-                        ->withAvg('reviews', 'rating')
-                        ->withCount('reviews')
-                        ->get();
-                @endphp
+            @php
+                $topSellingProducts = \App\Models\OrderItem::select('products.name', 'products.slug', 'products.thumb_image', 'products.price', 'products.offer_price', 'products.quantity', 'products.out_of_stock', 'categories.name as category_name', 'categories.slug as category_slug')
+                    ->join('products', 'order_items.product_id', '=', 'products.id')
+                    ->join('categories', 'products.category_id', '=', 'categories.id')
+                    ->groupBy('products.id', 'products.name', 'products.slug', 'products.thumb_image', 'products.price', 'products.offer_price', 'products.quantity', 'products.out_of_stock', 'categories.name', 'categories.slug')
+                    ->orderByRaw('SUM(order_items.qty) DESC')
+                    ->take(8)
+                    ->get();
+            @endphp
 
-                @foreach ($products as $product)
-                    <div class="fp__menu_hover {{ $category->slug }}">
-                        <div class="m-3 card position-relative fp__menu_item rounded-3 slide-wrap">
-                            <div class="fp__menu_item_img">
-                                <a href="{{ route('product.show', $product->slug) }}" class="title w-100">
-                                    <img src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}"
-                                        class="img-fluid w-100">
-                                </a>
-                            </div>
-
-                            <a class="heart position-absolute rounded-circle" href="javascript:;"
-                                onclick="addToWishlist('{{ $product->id }}')">
-                                <i class="text-white fal fa-heart"></i>
+            @foreach ($topSellingProducts as $product)
+                <div class="fp__menu_hover {{ $product->category_slug }}">
+                    <div class="m-3 card position-relative fp__menu_item rounded-3 slide-wrap">
+                        <div class="fp__menu_item_img">
+                            <a href="{{ route('product.show', $product->slug) }}" class="title w-100">
+                                <img src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}"
+                                     class="img-fluid w-100">
                             </a>
+                        </div>
 
-                            <div class="card-body fp__menu_item_text position-relative d-flex flex-column">
-                                <a class="px-3 py-2 category categorys fw-semibold"
-                                    href="{{ route('category.show', ['slug' => $product->category->slug]) }}">
-                                    {{ @$product->category->name }}
-                                </a>
-                                <a class="title"
-                                    href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
-                                <div class="mt-auto actions d-flex justify-content-between align-items-center">
-                                    <p class="m-0 price color-light-gray">
-                                        @if ($product->offer_price > 0)
-                                            <del>{{ currencyPosition($product->price) }}</del>
-                                            {{ currencyPosition($product->offer_price) }}
-                                        @else
-                                            {{ currencyPosition($product->price) }}
-                                        @endif
-                                    </p>
-                                    @if ($product->quantity === 0 || $product->out_of_stock)
-                                        <a class="px-3 py-2 text-white rounded-pill bg-danger" href="javascript:;">
-                                            Out of Stock
-                                        </a>
+                        <a class="heart position-absolute rounded-circle" href="javascript:;"
+                           onclick="addToWishlist('{{ $product->id }}')">
+                            <i class="text-white fal fa-heart"></i>
+                        </a>
+
+                        <div class="card-body fp__menu_item_text position-relative d-flex flex-column">
+                            <a class="px-3 py-2 category categorys fw-semibold"
+                               href="{{ route('category.show', ['slug' => $product->category_slug]) }}">
+                                {{ $product->category_name }}
+                            </a>
+                            <a class="title"
+                               href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
+                            <div class="mt-auto actions d-flex justify-content-between align-items-center">
+                                <p class="m-0 price color-light-gray">
+                                    @if ($product->offer_price > 0)
+                                        <del>{{ currencyPosition($product->price) }}</del>
+                                        {{ currencyPosition($product->offer_price) }}
                                     @else
-                                        <a class="px-3 py-2 text-white add-to-cart rounded-pill background-light-gray"
-                                            href="javascript:;" onclick="loadProductModal('{{ $product->id }}')">
-                                            Add to Cart
-                                        </a>
+                                        {{ currencyPosition($product->price) }}
                                     @endif
-
-                                </div>
+                                </p>
+                                @if ($product->quantity === 0 || $product->out_of_stock)
+                                    <a class="px-3 py-2 text-white rounded-pill bg-danger" href="javascript:;">
+                                        Out of Stock
+                                    </a>
+                                @else
+                                    <a class="px-3 py-2 text-white add-to-cart rounded-pill background-light-gray"
+                                       href="javascript:;" onclick="loadProductModal('{{ $product->id }}')">
+                                        Add to Cart
+                                    </a>
+                                @endif
                             </div>
                         </div>
                     </div>
-                @endforeach
+                </div>
             @endforeach
         </div>
     </div>
