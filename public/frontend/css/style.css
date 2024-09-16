@@ -9,8 +9,8 @@
 
 @font-face {
     font-family: 'mnsLondonSemiBold';
-    src: url('/frontend/fonts/mnsLondonRegular.ttf') format('truetype');
-    font-weight: semibold;
+    src: url('/frontend/fonts/mnsLondonSemiBold.ttf') format('truetype');
+    font-weight: bold;
     font-style: normal;
 }
 
