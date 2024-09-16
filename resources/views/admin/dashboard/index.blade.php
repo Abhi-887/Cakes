@@ -660,7 +660,6 @@
             <!-- /new-comment -->
         </div>
 
-        </div>
 
             <!-- Modal -->
     <div class="modal fade" id="order_modal" tabindex="-1" role="dialog" aria-labelledby="order_modal" aria-hidden="true">
