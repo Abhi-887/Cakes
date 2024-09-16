@@ -587,7 +587,7 @@
                 </ul>
             </div>
 
-            <div class="divider"></div>
+            {{-- <div class="divider"></div>
 
             <div class="flex items-center justify-between flex-wrap gap10">
                 <div class="text-tiny">Showing {{ $lowStockAlerts->count() }} entries of {{ $lowStockAlerts->total() }}
@@ -595,7 +595,7 @@
                 <ul class="wg-pagination">
                     {{ $lowStockAlerts->links('pagination::bootstrap-4') }}
                 </ul>
-            </div>
+            </div> --}}
 
 
    <!-- orders -->
@@ -755,8 +755,7 @@
 </div>
 <!-- /orders -->
 
-            <!-- /product-overview -->
-        </div>
+
         <div class="tf-section-3">
             <!-- orders -->
             <div class="wg-box">
