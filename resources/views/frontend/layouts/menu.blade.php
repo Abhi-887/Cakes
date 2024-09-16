@@ -11,7 +11,7 @@
                         <img src="{{ asset('uploads/web-logo1.png') }}" alt="3D-Cakes Logo" class="img-fluid" />
                     </a>
                 </div>
-                <div class="col-6">
+                <div class="col-5 col-xxl-6">
                     <ul class="d-none d-xxl-flex">
                         {{-- Main Menu Items --}} @if ($MainMenu)
                             @foreach ($MainMenu as $menu)
@@ -132,8 +132,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
-                    <ul class="flex-wrap menu_icon d-none d-xxl-flex align-items-center float-end">
+                <div class="col-5 col-xxl-4">
+                    <ul class="flex-wrap menu_icon d-none d-xl-flex align-items-center float-end">
                         <li>
                             <a href="#" class="menu_search me-4 position-relative fw-semibold fs-5 transitions"><i
                                     class="far fa-search"></i></a>
