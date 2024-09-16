@@ -102,6 +102,7 @@
         /* border-radius: 15px 15px 0 0; */
         height: 250px;
         object-fit: cover;
+        width: 100% !important;
     }
 
     .fp__menu_item_text .title {
