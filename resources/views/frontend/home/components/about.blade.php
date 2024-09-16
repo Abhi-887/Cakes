@@ -15,7 +15,6 @@
     </div>
 </section>
 
-
 <style>
     html {
         scroll-behavior: smooth;
