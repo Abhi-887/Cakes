@@ -340,7 +340,7 @@ button {
 .droap_menu {
     box-shadow: var(--boxShadow);
     width: 250px;
-    top: 56px !important;
+    top: 49px !important;
     transition: ease 0.4s;
     -webkit-transition: ease 0.3s;
     -moz-transition: ease 0.3s;
