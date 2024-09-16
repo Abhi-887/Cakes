@@ -4,6 +4,7 @@
 <style>
     .testimonial {
         background: #262626;
+        height: 300px;
     }
 
     .testimonial .stars {
