@@ -998,7 +998,8 @@
 @endsection
 
 @push('scripts')
-    {{ $dataTable->scripts(attributes: ['type' => 'module']) }}
+{{ $dataTable->scripts() }}
+
 
     <script>
         $(document).ready(function() {
