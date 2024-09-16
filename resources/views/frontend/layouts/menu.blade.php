@@ -12,7 +12,7 @@
                     </a>
                 </div>
                 <div class="col-6">
-                    <ul class="d-none d-xl-flex">
+                    <ul class="d-none d-xxl-flex">
                         {{-- Main Menu Items --}} @if ($MainMenu)
                             @foreach ($MainMenu as $menu)
                                 <li class="me-4 nav-item">
@@ -84,7 +84,7 @@
                                     class="far fa-heart me-3"></i></a>
                         </li>
                     </ul>
-                    <a class="d-xl-none d-block" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+                    <a class="d-xxl-none d-block" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
                         aria-controls="offcanvasExample">
                         <i class="fas fa-bars fs-2 color-light-gray"></i>
                     </a>
@@ -133,7 +133,7 @@
                     </div>
                 </div>
                 <div class="col-4">
-                    <ul class="flex-wrap menu_icon d-none d-xl-flex align-items-center float-end">
+                    <ul class="flex-wrap menu_icon d-none d-xxl-flex align-items-center float-end">
                         <li>
                             <a href="#" class="menu_search me-4 position-relative fw-semibold fs-5 transitions"><i
                                     class="far fa-search"></i></a>
