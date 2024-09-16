@@ -187,7 +187,7 @@
                     <div class="fp__menu_hover {{ $category->slug }}">
                         <div class="m-3 card position-relative fp__menu_item rounded-3 slide-wrap">
                             <div class="fp__menu_item_img">
-                                <a href="{{ route('product.show', $product->slug) }}" class="title">
+                                <a href="{{ route('product.show', $product->slug) }}" class="title w-100">
                                     <img src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}"
                                         class="img-fluid w-100">
                                 </a>
