@@ -229,7 +229,7 @@
                                     <!-- Display the product's thumbnail image -->
                                     <img src="{{ asset($product->thumb_image) }}" alt="{{ $product->product_name }}">
                                 </div>
-                                <div class="flex items-center justify-between flex-grow">
+                                <div class="flex items-center justify-content-evenly flex-grow">
                                     <div class="name">
                                         <a href="product-list.html"
                                             class="body-title-2">{{ Str::limit($product->product_name, 30, '...') }}</a>
@@ -553,157 +553,52 @@
 
 
             <!-- product-overview -->
-            <div class="wg-box">
-                <div class="flex items-center justify-between">
-                    <h5>Product overview</h5>
-                    <div class="dropdown default">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            <span class="view-all">View all<i class="icon-chevron-down"></i></span>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li>
-                                <a href="javascript:void(0);">3 days</a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0);">7 days</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="wg-table table-product-overview">
-                    <ul class="table-title flex gap20 mb-14">
-                        <li>
-                            <div class="body-title">Name</div>
-                        </li>
-                        <li>
-                            <div class="body-title">Product ID</div>
-                        </li>
-                        <li>
-                            <div class="body-title">Price</div>
-                        </li>
-                        <li>
-                            <div class="body-title">Quantity</div>
-                        </li>
-                        <li>
-                            <div class="body-title">Sale</div>
-                        </li>
-                        <li>
-                            <div class="body-title">Revenue</div>
-                        </li>
-                        <li>
-                            <div class="body-title">Status</div>
-                        </li>
-                    </ul>
-                    <ul class="flex flex-column gap10">
-                        <li class="product-item gap14">
-                            <div class="image">
-                                <img src="{{ asset('admin2/assets/images/products/6.png') }}" alt="">
+            <div class="wg-box table-product-overview">
+                <ul class="table-title flex gap20 mb-14">
+                    <li>
+                        <div class="body-title">Product Name</div>
+                    </li>
+                    <li>
+                        <div class="body-title">Available Quantity</div>
+                    </li>
+                    <li>
+                        <div class="body-title">Status</div>
+                    </li>
+                </ul>
+
+                <ul class="flex flex-column gap10">
+                    @foreach ($lowStockAlerts as $product)
+                    <li class="product-item gap14">
+                        <div class="flex items-center justify-between flex-grow">
+                            <div class="name">
+                                <span class="body-text">{{ $product->name }}</span>
                             </div>
-                            <div class="flex items-center justify-between flex-grow">
-                                <div class="name">
-                                    <a href="product-list.html" class="body-text">Soft Fluffy Cats</a>
-                                </div>
-                                <div class="body-text">#327</div>
-                                <div class="body-text">$11.70</div>
-                                <div class="body-text">28</div>
-                                <div class="body-text">On sale</div>
-                                <div class="body-text">$328.85</div>
-                                <div class="block-not-available">Not Available</div>
+                            <div class="body-text">{{ $product->quantity }}</div>
+                            <div class="body-text">
+                                @if ($product->quantity == 0)
+                                    <span class="text-danger">Out of Stock</span>
+                                @else
+                                    <span class="text-warning">Low Stock</span>
+                                @endif
                             </div>
-                        </li>
-                        <li class="product-item gap14">
-                            <div class="image">
-                                <img src="{{ asset('admin2/assets/images/products/7.png') }}" alt="">
-                            </div>
-                            <div class="flex items-center justify-between flex-grow">
-                                <div class="name">
-                                    <a href="product-list.html" class="body-text">Taste of the Wild Formula
-                                        Finder</a>
-                                </div>
-                                <div class="body-text">#380</div>
-                                <div class="body-text">$8.99</div>
-                                <div class="body-text">10</div>
-                                <div class="body-text">On sale</div>
-                                <div class="body-text">$105.55</div>
-                                <div class="block-not-available">Not Available</div>
-                            </div>
-                        </li>
-                        <li class="product-item gap14">
-                            <div class="image">
-                                <img src="{{ asset('admin2/assets/images/products/8.png') }}" alt="">
-                            </div>
-                            <div class="flex items-center justify-between flex-grow">
-                                <div class="name">
-                                    <a href="product-list.html" class="body-text">Wellness Natural Food</a>
-                                </div>
-                                <div class="body-text">#126</div>
-                                <div class="body-text">$5.22</div>
-                                <div class="body-text">578</div>
-                                <div class="body-text">--/--</div>
-                                <div class="body-text">$202.87</div>
-                                <div class="block-not-available">Not Available</div>
-                            </div>
-                        </li>
-                        <li class="product-item gap14">
-                            <div class="image">
-                                <img src="{{ asset('admin2/assets/images/products/9.png') }}" alt="">
-                            </div>
-                            <div class="flex items-center justify-between flex-grow">
-                                <div class="name">
-                                    <a href="product-list.html" class="body-text">Dog Food Rachael Ray</a>
-                                </div>
-                                <div class="body-text">#582</div>
-                                <div class="body-text">$14.81</div>
-                                <div class="body-text">36</div>
-                                <div class="body-text">--/--</div>
-                                <div class="body-text">$475.22</div>
-                                <div>
-                                    <div class="block-available">Available</div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="product-item gap14">
-                            <div class="image">
-                                <img src="{{ asset('admin2/assets/images/products/10.png') }}" alt="">
-                            </div>
-                            <div class="flex items-center justify-between flex-grow">
-                                <div class="name">
-                                    <a href="product-list.html" class="body-text">Best Buddy Bits Dog
-                                        Treats</a>
-                                </div>
-                                <div class="body-text">#293</div>
-                                <div class="body-text">$6.48</div>
-                                <div class="body-text">84</div>
-                                <div class="body-text">--/--</div>
-                                <div class="body-text">$219.78</div>
-                                <div class="block-not-available">Not Available</div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="divider"></div>
-                <div class="flex items-center justify-between flex-wrap gap10">
-                    <div class="text-tiny">Showing 5 entries</div>
-                    <ul class="wg-pagination">
-                        <li>
-                            <a href="#"><i class="icon-chevron-left"></i></a>
-                        </li>
-                        <li>
-                            <a href="#">1</a>
-                        </li>
-                        <li class="active">
-                            <a href="#">2</a>
-                        </li>
-                        <li>
-                            <a href="#">3</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="icon-chevron-right"></i></a>
-                        </li>
-                    </ul>
-                </div>
+                        </div>
+                    </li>
+                    @endforeach
+                </ul>
             </div>
+
+            <div class="divider"></div>
+
+            <div class="flex items-center justify-between flex-wrap gap10">
+                <div class="text-tiny">Showing {{ $lowStockAlerts->count() }} entries of {{ $lowStockAlerts->total() }}</div>
+                <ul class="wg-pagination">
+                    {{ $lowStockAlerts->links('pagination::bootstrap-4') }}
+                </ul>
+            </div>
+
+
+
+
             <!-- /product-overview -->
         </div>
         <div class="tf-section-3">
@@ -1281,122 +1176,68 @@
     <h3>System Notifications</h3>
 
     <!-- Server Status -->
-    <div>
+    <div class="status-container">
         <h4>Server Status</h4>
-        @if ($serverStatus)
-            <span style="color: green;">Server is running smoothly</span>
-        @else
-            <span style="color: red;">Server is down!</span>
-        @endif
-    </div>
-
-    <div class="container mt-4">
-        <div class="row">
-            <!-- Orders by Status -->
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="card-title">Orders by Status</h5>
-                    </div>
-                    <div class="card-body">
-                        <canvas id="ordersByStatusChart"></canvas>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Site Traffic -->
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="card-title">Site Traffic</h5>
-                    </div>
-                    <div class="card-body">
-                        <canvas id="trafficChart"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <!-- Product Categories -->
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="card-title">Product Categories</h5>
-                    </div>
-                    <div class="card-body">
-                        <canvas id="categoriesChart"></canvas>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Out of Stock Products -->
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="card-title">Out of Stock Products</h5>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group">
-                            @foreach ($outOfStockProducts as $product)
-                                <li class="list-group-item">
-                                    {{ $product->name }}
-                                </li>
-                            @endforeach
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <!-- Low Stock Products -->
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="card-title">Low Stock Products</h5>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-group">
-                            @foreach ($lowStockProducts as $product)
-                                <li class="list-group-item">
-                                    {{ $product->name }} - {{ $product->quantity }} in stock
-                                </li>
-                            @endforeach
-                        </ul>
-                    </div>
-                </div>
-            </div>
+        <div class="status">
+            <div class="status-indicator @if($serverStatus) online @else offline @endif"></div>
+            <span class="status-text">
+                @if ($serverStatus)
+                    Server is running smoothly
+                @else
+                    Server is down!
+                @endif
+            </span>
         </div>
     </div>
 
-    <div class="col-md-6 mb-4">
-        <div class="card">
-            <div class="card-header">
-                <h5 class="card-title">Top-Selling Products</h5>
-            </div>
-            <div class="card-body">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Product Name</th>
-                            <th>Quantity Sold</th>
-                            <th>Revenue Generated</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($topSellingProducts as $product)
-                            <tr>
-                                <td>{{ $product->product_name }}</td>
-                                <td>{{ $product->total_qty }}</td>
-                                <td>${{ number_format($product->total_revenue, 2) }}</td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
+    <!-- Styles -->
+    <style>
+        .status-container {
+            font-family: Arial, sans-serif;
+            margin-bottom: 20px;
+        }
+
+        .status {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .status-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: grey;
+            position: relative;
+        }
+
+        .online {
+            background-color: green;
+            animation: blink 1.5s infinite;
+        }
+
+        .offline {
+            background-color: red;
+        }
+
+        .status-text {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.3;
+            }
+        }
+    </style>
+
+
+
+
 
     <div class="col-md-12 mb-4">
         <div class="card">
@@ -1432,27 +1273,7 @@
         </div>
     </div>
 
-    <div>
-        <h3>Top Customers</h3>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Customer Name</th>
-                    <th>Total Purchases</th>
-                    <th>Total Spent</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($topCustomers as $customer)
-                    <tr>
-                        <td>{{ $customer->name }}</td>
-                        <td>{{ $customer->total_purchases }}</td>
-                        <td>${{ number_format($customer->total_spent, 2) }}</td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
-    </div>
+
     <div>
         <h3>New Customers (Last Week)</h3>
         <p>{{ $newCustomers }}</p>
@@ -1683,6 +1504,32 @@
             })
         })
     </script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  function loadLowStockAlerts(page) {
+    $.ajax({
+        url: "{{ route('admin.getLowStockAlerts') }}?page=" + page,
+        success: function(data) {
+            $('#loading').hide(); // Hide loading spinner
+            $('#low-stock-alerts').html(data); // Update content
+        }
+    });
+}
+
+$(document).ready(function() {
+    loadLowStockAlerts(1); // Initial load for page 1
+
+    // Handle pagination click events
+    $(document).on('click', '.wg-pagination a', function(e) {
+        e.preventDefault();
+        var page = $(this).attr('href').split('page=')[1];
+        loadLowStockAlerts(page);
+    });
+});
+
+</script>
+
 @endpush
 
 <!-- /main-content-wrap -->
