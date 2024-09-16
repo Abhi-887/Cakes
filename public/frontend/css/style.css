@@ -6758,4 +6758,5 @@ CHECKOUT PAGE START
 .image-block:hover .overlay-text {
     color: #fff !important;
     transition: 0.4s ease-in-out;
+    border-radius: 8px !important;
 }
