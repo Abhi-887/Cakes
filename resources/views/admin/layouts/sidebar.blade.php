@@ -95,8 +95,8 @@
         <a href="{{ route('admin.dashboard') }}" id="site-logo-inner">
             <img id="logo_header" alt="{{ config('settings.site_name') }} Logo"
                  src="{{ asset(config('settings.logo')) }}"
-                 data-light="{{ asset(config('settings.logo_light')) }}"
-                 data-dark="{{ asset(config('settings.logo_dark')) }}">
+                 data-light="{{ asset(config('settings.logo')) }}"
+                 data-dark="{{ asset(config('settings.logo')) }}">
         </a>
         <div class="button-show-hide">
             <i class="icon-menu-left"></i>
