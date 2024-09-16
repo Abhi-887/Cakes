@@ -133,7 +133,7 @@
                     </div>
                 </div>
                 <div class="col-5 col-xxl-4 d-none d-xl-flex d-block">
-                    <ul class="flex-wrap menu_icon align-items-center float-end">
+                    <ul class="d-flex flex-wrap menu_icon align-items-center float-end">
                         <li>
                             <a href="#" class="menu_search me-4 position-relative fw-semibold fs-5 transitions"><i
                                     class="far fa-search"></i></a>
