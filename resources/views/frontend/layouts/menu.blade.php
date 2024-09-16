@@ -6,7 +6,7 @@
     <nav class="shadow-sm navbar bg-light sticky-top">
         <div class="container-fluid py-3 px-3 px-lg-5 mx-auto d-flex align-items-center w-100">
             <div class="row">
-                <div class="col-3 header-logo me-4">
+                <div class="col-3 header-logo">
                     <a class="" href="{{ url('/') }}">
                         <img src="{{ asset('uploads/web-logo1.png') }}" alt="3D-Cakes Logo" class="img-fluid" />
                     </a>
@@ -172,12 +172,12 @@
                 </li> --}}
 
                         <li class="nav-item">
-                            <a class="nav-link border px-3 py-2 ms-3 rounded-1" href="{{ route('login') }}"><i
+                            <a class="nav-link border px-3 py-2 rounded-1" href="{{ route('login') }}"><i
                                     class="far fa-user me-3"></i>Account</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link border d-inline px-3 py-2 ms-3 rounded-1 position-relative transitions"
+                            <a class="nav-link border d-inline px-3 py-2 rounded-1 position-relative transitions"
                                 href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i
                                     class="far fa-heart me-3"></i>Wishlist</a>
                         </li>
