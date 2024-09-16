@@ -136,7 +136,7 @@ class AdminDashboardController extends Controller
     ->where('users.role', 'user')
     ->groupBy('users.id', 'users.name', 'users.avatar')
     ->orderBy('total_spent', 'desc')
-    ->take(10)
+    ->take(5)
     ->get();
 
 
