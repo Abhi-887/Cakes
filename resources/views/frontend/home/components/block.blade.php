@@ -59,7 +59,11 @@
     .overlay-text {
         color: #ffffffd1 !important;
         z-index: 2;
-        text-shadow: 0px -2px 25px rgba(0, 0, 0, 1), 8px 20px 25px rgba(0, 0, 0, 1), 1px -10px 25px rgba(0, 0, 0, 1), 20px 20px 25px rgba(0, 0, 0, 0);
+        text-shadow: 0px -2px 25px rgba(0, 0, 0, 1),
+            8px 20px 25px rgba(0, 0, 0, 1),
+            1px -10px 25px rgba(0, 0, 0, 1),
+            20px 20px 25px rgba(0, 0, 0, 0),
+            20px 20px 25px rgba(0, 0, 0, 1);
     }
 
     .image-block:hover .overlay-text {
