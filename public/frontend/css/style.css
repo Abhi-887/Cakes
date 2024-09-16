@@ -1365,9 +1365,9 @@ button {
     border-radius: 50%;
 }
 
-.fp__menu_item:hover {
+/* .fp__menu_item:hover {
     margin-top: 20px;
-}
+} */
 
 .fp__menu_item:hover .fp__menu_item_text {
     border-color: var(--colorPrimary);
