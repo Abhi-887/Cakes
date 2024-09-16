@@ -6,7 +6,7 @@
                     <h1 class="fw-semibold text-light display-5">{{ $aboutus->title }}
                         <span class="cakecolor fw-semibold">3D Cakes</span>
                     </h1>
-                    <div class="text-white mt-3 about-description">
+                    <div class="mt-3 about-description">
                         {!! $aboutus->description !!}
                     </div>
                 </div>
