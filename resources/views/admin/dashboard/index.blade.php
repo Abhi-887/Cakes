@@ -321,156 +321,10 @@
             <div class="wg-box">
                 <div class="flex items-center justify-between">
                     <h5>Recent orders</h5>
-                    <div class="dropdown default">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="view-all">View all<i class="icon-chevron-down"></i></span>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li>
-                                <a href="javascript:void(0);">3 days</a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0);">7 days</a>
-                            </li>
-                        </ul>
-                    </div>
+
                 </div>
                 <div class="wg-table table-product-overview t2">
-                    <ul class="table-title flex gap20 mb-14">
-                        <li>
-                            <div class="body-title">Product</div>
-                        </li>
-                        <li>
-                            <div class="body-title">Customer</div>
-                        </li>
-                        <li>
-                            <div class="body-title">Product ID</div>
-                        </li>
-                        <li>
-                            <div class="body-title">Quantity</div>
-                        </li>
-                        <li>
-                            <div class="body-title">Price</div>
-                        </li>
-                        <li>
-                            <div class="body-title">Status</div>
-                        </li>
-                    </ul>
-                    <div class="divider mb-14"></div>
-                    <ul class="flex flex-column gap10">
-                        <li class="product-item gap14">
-                            <div class="image no-bg">
-                                <img src="images/products/31.png" alt="">
-                            </div>
-                            <div class="flex items-center justify-between flex-grow gap20">
-                                <div class="name">
-                                    <a href="product-list.html" class="body-title-2">Taste of the Wild Formula Finder</a>
-                                </div>
-                                <div class="body-text">2,672</div>
-                                <div class="body-text">$28,672.36</div>
-                                <div class="body-text">X1</div>
-                                <div class="body-text">$28,672.36</div>
-                                <div>
-                                    <div class="block-available">Delivered</div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="divider"></li>
-                        <li class="product-item gap14">
-                            <div class="image no-bg">
-                                <img src="images/products/32.png" alt="">
-                            </div>
-                            <div class="flex items-center justify-between flex-grow gap20">
-                                <div class="name">
-                                    <a href="product-list.html" class="body-title-2">Proden Plaqueoff Dental Bites Dog, 150 G</a>
-                                </div>
-                                <div class="body-text">2,672</div>
-                                <div class="body-text">$28,672.36</div>
-                                <div class="body-text">X2</div>
-                                <div class="body-text">$28,672.36</div>
-                                <div>
-                                    <div class="block-available">Delivered</div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="divider"></li>
-                        <li class="product-item gap14">
-                            <div class="image no-bg">
-                                <img src="images/products/33.png" alt="">
-                            </div>
-                            <div class="flex items-center justify-between flex-grow gap20">
-                                <div class="name">
-                                    <a href="product-list.html" class="body-title-2">Zuke's Lil' Links Healthy Little Sausage Links for Dogs...</a>
-                                </div>
-                                <div class="body-text">2,672</div>
-                                <div class="body-text">$28,672.36</div>
-                                <div class="body-text">X1</div>
-                                <div class="body-text">$28,672.36</div>
-                                <div>
-                                    <div class="block-available">Delivered</div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="divider"></li>
-                        <li class="product-item gap14">
-                            <div class="image no-bg">
-                                <img src="images/products/34.png" alt="">
-                            </div>
-                            <div class="flex items-center justify-between flex-grow gap20">
-                                <div class="name">
-                                    <a href="product-list.html" class="body-title-2">Rachael Ray Nutrish Grain Free Chicken Drumstick...</a>
-                                </div>
-                                <div class="body-text">2,672</div>
-                                <div class="body-text">$28,672.36</div>
-                                <div class="body-text">X3</div>
-                                <div class="body-text">$28,672.36</div>
-                                <div>
-                                    <div class="block-available">Delivered</div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="divider"></li>
-                        <li class="product-item gap14">
-                            <div class="image no-bg">
-                                <img src="images/products/35.png" alt="">
-                            </div>
-                            <div class="flex items-center justify-between flex-grow gap20">
-                                <div class="name">
-                                    <a href="product-list.html" class="body-title-2">Fruitables Dog Treats Sweet Potato & Pecan Flavor</a>
-                                </div>
-                                <div class="body-text">2,672</div>
-                                <div class="body-text">$28,672.36</div>
-                                <div class="body-text">X2</div>
-                                <div class="body-text">$28,672.36</div>
-                                <div>
-                                    <div class="block-available">Delivered</div>
-                                </div>
-                            </div>
-                        </li>
-
-                    </ul>
-                </div>
-                <div class="divider"></div>
-                <div class="flex items-center justify-between flex-wrap gap10">
-                    <div class="text-tiny">Showing 5 entries</div>
-                    <ul class="wg-pagination">
-                        <li>
-                            <a href="#"><i class="icon-chevron-left"></i></a>
-                        </li>
-                        <li>
-                            <a href="#">1</a>
-                        </li>
-                        <li class="active">
-                            <a href="#">2</a>
-                        </li>
-                        <li>
-                            <a href="#">3</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="icon-chevron-right"></i></a>
-                        </li>
-                    </ul>
-                </div>
+                    {{ $dataTable->table() }}
             </div>
             <!-- /orders -->
         </div>
@@ -804,6 +658,50 @@
             </div>
             <!-- /new-comment -->
         </div>
+
+            <!-- Modal -->
+    <div class="modal fade" id="order_modal" tabindex="-1" role="dialog" aria-labelledby="order_modal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="" method="POST" class="order_status_form">
+                        @csrf
+                        @method('PUT')
+                        <div class="form-group">
+                            <label for="">Payment Status</label>
+                            <select class="form-control payment_status" name="payment_status" id="">
+                                <option value="pending">Pending</option>
+                                <option value="completed">Completed</option>
+                            </select>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="">Order Status</label>
+                            <select class="form-control order_status" name="order_status" id="">
+                                <option value="pending">Pending</option>
+                                <option value="in_process">In Process</option>
+                                <option value="delivered">Delivered</option>
+                                <option value="declined">Declined</option>
+
+                            </select>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary submit_btn">Save changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
 
