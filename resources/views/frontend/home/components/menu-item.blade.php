@@ -158,131 +158,128 @@
     <div class="row wow fadeInUp mt-md-5" data-wow-duration="1s">
         <div class="m-auto text-center col-md-8 col-lg-7 col-xl-6">
             <div class="fp__section_heading">
-                {{-- <h4>3D Cakes</h4> --}}
                 <h2>Trending Now</h2>
                 <p>Shop Our Most Popular Trending Designs</p>
-                {{-- <p>Objectively pontificate quality models before intuitive information. Dramatically
-                    recaptiualize multifunctional materials.</p> --}}
             </div>
         </div>
     </div>
 
     <div class="testimonial-slider popularfood slider">
-        <div class="row mt-2">
-            @php
-                $topSellingProducts = \App\Models\OrderItem::select('products.name', 'products.slug', 'products.thumb_image', 'products.price', 'products.offer_price', 'products.quantity', 'products.out_of_stock', 'categories.name as category_name', 'categories.slug as category_slug')
-                    ->join('products', 'order_items.product_id', '=', 'products.id')
-                    ->join('categories', 'products.category_id', '=', 'categories.id')
-                    ->groupBy('products.id', 'products.name', 'products.slug', 'products.thumb_image', 'products.price', 'products.offer_price', 'products.quantity', 'products.out_of_stock', 'categories.name', 'categories.slug')
-                    ->orderByRaw('SUM(order_items.qty) DESC')
-                    ->take(8)
-                    ->get();
-            @endphp
-
-            @foreach ($topSellingProducts as $product)
-                <div class="fp__menu_hover {{ $product->category_slug }}">
-                    <div class="m-3 card position-relative fp__menu_item rounded-3 slide-wrap">
-                        <div class="fp__menu_item_img">
-                            <a href="{{ route('product.show', $product->slug) }}" class="title w-100">
-                                <img src="{{ asset($product->thumb_image) }}" alt="{{ $product->name }}"
-                                     class="img-fluid w-100">
-                            </a>
-                        </div>
-
-                        <a class="heart position-absolute rounded-circle" href="javascript:;"
-                           onclick="addToWishlist('{{ $product->id }}')">
-                            <i class="text-white fal fa-heart"></i>
-                        </a>
-
-                        <div class="card-body fp__menu_item_text position-relative d-flex flex-column">
-                            <a class="px-3 py-2 category categorys fw-semibold"
-                               href="{{ route('category.show', ['slug' => $product->category_slug]) }}">
-                                {{ $product->category_name }}
-                            </a>
-                            <a class="title"
-                               href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
-                            <div class="mt-auto actions d-flex justify-content-between align-items-center">
-                                <p class="m-0 price color-light-gray">
-                                    @if ($product->offer_price > 0)
-                                        <del>{{ currencyPosition($product->price) }}</del>
-                                        {{ currencyPosition($product->offer_price) }}
-                                    @else
-                                        {{ currencyPosition($product->price) }}
-                                    @endif
-                                </p>
-                                @if ($product->quantity === 0 || $product->out_of_stock)
-                                    <a class="px-3 py-2 text-white rounded-pill bg-danger" href="javascript:;">
-                                        Out of Stock
-                                    </a>
-                                @else
-                                    <a class="px-3 py-2 text-white add-to-cart rounded-pill background-light-gray"
-                                       href="javascript:;" onclick="loadProductModal('{{ $product->id }}')">
-                                        Add to Cart
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
+        <div class="row mt-2" id="top-selling-products">
+            <!-- Products will be rendered here -->
         </div>
     </div>
-
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+
 <script>
-    $(document).ready(function() {
-        // Initialize Slick slider
-        $('.testimonial-slider .row').slick({
-            dots: true,
-            arrows: true,
-            infinite: true,
-            autoplay: true,
-            autoplaySpeed: 2000,
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            responsive: [{
-                    breakpoint: 1400,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 1
-                    }
-                },
-                {
-                    breakpoint: 991,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                }
-            ]
+$(window).on('load', function() {
+    setTimeout(function() {
+        fetchTopSellingProducts();
+    }, 100); // Adjust the delay if necessary
+
+    function fetchTopSellingProducts() {
+        $.ajax({
+            url: '/api/top-selling-products',
+            method: 'GET',
+            dataType: 'json',
+            success: function(data) {
+                renderProducts(data);
+            },
+            error: function() {
+                console.error('Failed to fetch top-selling products.');
+            }
+        });
+    }
+
+    function renderProducts(products) {
+        const container = $('#top-selling-products');
+        container.empty();
+
+        // Use document fragment for better performance
+        const fragment = $(document.createDocumentFragment());
+
+        products.forEach(product => {
+            let productHtml = `
+                <div class="fp__menu_hover ${product.category_slug}">
+                    <div class="m-3 card position-relative fp__menu_item rounded-3 slide-wrap">
+                        <div class="fp__menu_item_img">
+                            <a href="/product/${product.slug}" class="title w-100">
+                                <img src="${product.thumb_image}" alt="${product.name}" class="img-fluid w-100">
+                            </a>
+                        </div>
+                        <a class="heart position-absolute rounded-circle" href="javascript:;" onclick="addToWishlist('${product.id}')">
+                            <i class="text-white fal fa-heart"></i>
+                        </a>
+                        <div class="card-body fp__menu_item_text position-relative d-flex flex-column">
+                            <a class="px-3 py-2 category categorys fw-semibold" href="/category/${product.category_slug}">
+                                ${product.category_name}
+                            </a>
+                            <a class="title" href="/product/${product.slug}">${product.name}</a>
+                            <div class="mt-auto actions d-flex justify-content-between align-items-center">
+                                <p class="m-0 price color-light-gray">
+                                    ${product.offer_price > 0 ? `<del>${currencyPosition(product.price)}</del> ${currencyPosition(product.offer_price)}` : currencyPosition(product.price)}
+                                </p>
+                                ${product.quantity === 0 || product.out_of_stock ?
+                                    `<a class="px-3 py-2 text-white rounded-pill bg-danger" href="javascript:;">Out of Stock</a>` :
+                                    `<a class="px-3 py-2 text-white add-to-cart rounded-pill background-light-gray" href="javascript:;" onclick="loadProductModal('${product.id}')">Add to Cart</a>`
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            fragment.append(productHtml);
         });
 
-        // Equal height adjustment
-        function equalHeight() {
-            var maxHeight = 0;
-            // Find the tallest slide
-            $('.testimonial-slider .fp__menu_item').each(function() {
-                var slideHeight = $(this).outerHeight();
-                if (slideHeight > maxHeight) {
-                    maxHeight = slideHeight;
-                }
-            });
+        // Append fragment to container
+        container.append(fragment);
+    }
 
-            // Apply the tallest height to all slides
-            $('.testimonial-slider .fp__menu_item').css('height', maxHeight + 'px');
-        }
-
-        // Initial call to equalHeight
-        equalHeight();
-
-        // Recalculate height on window resize
-        $(window).on("resize", function() {
-            // Reset height before recalculating
-            $('.testimonial-slider .fp__menu_item').css('height', 'auto');
-            equalHeight();
-        });
+    // Initialize Slick slider after products are fetched
+    $('.testimonial-slider .row').slick({
+        dots: true,
+        arrows: true,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        responsive: [{
+            breakpoint: 1400,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 991,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }]
     });
+
+    function equalHeight() {
+        var maxHeight = 0;
+        $('.testimonial-slider .fp__menu_item').each(function() {
+            var slideHeight = $(this).outerHeight();
+            if (slideHeight > maxHeight) {
+                maxHeight = slideHeight;
+            }
+        });
+
+        $('.testimonial-slider .fp__menu_item').css('height', maxHeight + 'px');
+    }
+
+    equalHeight();
+
+    $(window).on("resize", function() {
+        $('.testimonial-slider .fp__menu_item').css('height', 'auto');
+        equalHeight();
+    });
+});
 </script>
