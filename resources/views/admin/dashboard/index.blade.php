@@ -761,6 +761,20 @@
                 font-weight: bold;
             }
 
+            .wg-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.wg-table thead th {
+    background-color: #f5f5f5;
+}
+
+.wg-table tbody tr {
+    border-bottom: 1px solid #eaeaea;
+}
+
+
             @keyframes blink {
 
                 0%,
@@ -957,31 +971,34 @@
                 }
             });
         </script>
+
+<script>
+    function loadLowStockAlerts(page) {
+        $.ajax({
+            url: "{{ route('admin.getLowStockAlerts') }}?page=" + page,
+            success: function(data) {
+                $('#loading').hide(); // Hide loading spinner
+                $('#low-stock-alerts').html(data); // Update content
+            }
+        });
+    }
+
+    $(document).ready(function() {
+        loadLowStockAlerts(1); // Initial load for page 1
+
+        // Handle pagination click events
+        $(document).on('click', '.wg-pagination a', function(e) {
+            e.preventDefault();
+            var page = $(this).attr('href').split('page=')[1];
+            loadLowStockAlerts(page);
+        });
+    });
+</script>
     </div>
 @endsection
 
 @push('scripts')
     {{ $dataTable->scripts(attributes: ['type' => 'module']) }}
-    {{--
-                <script>
-                    var options = {
-                        chart: {
-                            type: 'line',
-                            height: 350
-                        },
-                        series: [{
-                            name: 'Sales',
-                            data: @json($salesData) // Pass data from controller
-                        }],
-                        xaxis: {
-                            categories: @json($salesCategories) // Pass categories (e.g., months)
-                        }
-                    }
-
-                    var chart = new ApexCharts(document.querySelector("#line-chart-1"), options);
-                    chart.render();
-                </script> --}}
-
 
     <script>
         $(document).ready(function() {
@@ -1044,29 +1061,8 @@
         })
     </script>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        function loadLowStockAlerts(page) {
-            $.ajax({
-                url: "{{ route('admin.getLowStockAlerts') }}?page=" + page,
-                success: function(data) {
-                    $('#loading').hide(); // Hide loading spinner
-                    $('#low-stock-alerts').html(data); // Update content
-                }
-            });
-        }
 
-        $(document).ready(function() {
-            loadLowStockAlerts(1); // Initial load for page 1
 
-            // Handle pagination click events
-            $(document).on('click', '.wg-pagination a', function(e) {
-                e.preventDefault();
-                var page = $(this).attr('href').split('page=')[1];
-                loadLowStockAlerts(page);
-            });
-        });
-    </script>
 @endpush
 
 <!-- /main-content-wrap -->
