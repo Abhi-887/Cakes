@@ -27,7 +27,7 @@
     .parallax-item {
         background-image: url({{ asset('uploads/patterned1.png') }});
         background-color: #008b8b;
-        /* background-size: cover; */
+        background-size: cover;
         /* background-position: top center; */
     }
 
