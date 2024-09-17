@@ -35,6 +35,10 @@
         .fp__menu_item_text {
             border-top: 1px solid #788a9f !important;
         }
+
+        select {
+            font-family: 'mnsLondonRegular' !important;
+        }
     </style>
 
     <section class="py-5 fp__search_menu">
