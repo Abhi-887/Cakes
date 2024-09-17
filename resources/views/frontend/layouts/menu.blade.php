@@ -24,8 +24,7 @@
                                     <ul class="droap_menu position-absolute bg-light">
                                         @foreach ($menu['child'] as $item)
                                             <li class="pb-2 m-2 border-bottom">
-                                                <a class="fw-normal sub-menu"
-                                                    href="{{ $item['link'] }}">{{ $item['label'] }}</a>
+                                                <a class="fw-normal" href="{{ $item['link'] }}">{{ $item['label'] }}</a>
                                             </li>
                                         @endforeach
                                     </ul>
@@ -97,7 +96,7 @@
                                                 style="display: none;">
                                                 @foreach ($menu['child'] as $item)
                                                     <li>
-                                                        <a class="p-2 dropdown-item fw-semibold"
+                                                        <a class="p-2 dropdown-item fw-semibold sub-menu"
                                                             href="{{ $item['link'] }}">{{ $item['label'] }}</a>
                                                     </li>
                                                 @endforeach
