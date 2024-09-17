@@ -5,6 +5,12 @@
         color: #ff9800;
     }
 
+    img.product-img {
+    object-fit: cover !important;
+    height: 100% !important;
+}
+
+
     .product-slider .profile img {
         width: 50px;
         height: 50px;
@@ -208,9 +214,9 @@
             const productHtml = `
                 <div class="fp__menu_hover ${product.category_slug}">
                     <div class="m-3 card position-relative fp__menu_item rounded-3 slide-wrap">
-                        <div class="fp__menu_item_img">
+                        <div class="fp__menu_item_img" style="height: 300px; overflow: hidden;">
                             <a href="/product/${product.slug}" class="title w-100">
-                                <img src="${product.thumb_image}" alt="${product.name}" class="img-fluid w-100">
+                                <img src="${product.thumb_image}" alt="${product.name}" class="img-fluid w-100 product-img">
                             </a>
                         </div>
                         <a class="heart position-absolute rounded-circle" href="javascript:;" onclick="addToWishlist('${product.id}')">
@@ -239,8 +245,11 @@
         // Initialize the Slick slider after rendering products
         initializeSlickSlider();
 
-        // Adjust the height of product cards
+        // Adjust the height and size of product images
+        adjustImageSizes();
+
         adjustCardHeights();
+
     }
 
     // Initialize the Slick slider
@@ -272,6 +281,15 @@
         });
     }
 
+    // Function to ensure images fill the div without being cropped
+    function adjustImageSizes() {
+        const images = document.querySelectorAll('.fp__menu_item_img img.product-img');
+        images.forEach(img => {
+            img.style.objectFit = 'cover'; // This makes sure the image scales and doesn't distort
+            img.style.height = '100%'; // Ensures it takes up the full height of the container
+        });
+    }
+
     // Adjust product card heights to make them uniform
     function adjustCardHeights() {
         let maxHeight = 0;
@@ -290,4 +308,5 @@
         });
     }
 </script>
+
 
