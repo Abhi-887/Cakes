@@ -6,9 +6,9 @@
     }
 
     img.product-img {
-    object-fit: cover !important;
-    height: 100% !important;
-}
+        object-fit: cover !important;
+        height: 100% !important;
+    }
 
 
     .product-slider .profile img {
@@ -146,75 +146,76 @@
     }
 </style>
 </head>
+
 <body>
-<div class="container pt-4">
-    <div class="row wow fadeInUp mt-md-5" data-wow-duration="1s">
-        <div class="m-auto text-center col-md-8 col-lg-7 col-xl-6">
-            <div class="fp__section_heading">
-                <h2>Trending Now</h2>
-                <p>Shop Our Most Popular Trending Designs</p>
+    <div class="container pt-4">
+        <div class="row wow fadeInUp mt-md-5" data-wow-duration="1s">
+            <div class="m-auto text-center col-md-8 col-lg-7 col-xl-6">
+                <div class="fp__section_heading">
+                    <h2>Trending Now</h2>
+                    <p>Shop Our Most Popular Trending Designs</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-slider popularfood slider">
+            <div class="row mt-2" id="top-selling-products">
+                <!-- Products will be rendered here -->
             </div>
         </div>
     </div>
 
-    <div class="product-slider popularfood slider">
-        <div class="row mt-2" id="top-selling-products">
-            <!-- Products will be rendered here -->
-        </div>
-    </div>
-</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script>
+        // Site currency configuration
+        const currencyIcon = "{{ config('settings.site_currency_icon') }}";
+        const currencyPosition = "{{ config('settings.site_currency_icon_position') }}";
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-<script>
-    // Site currency configuration
-    const currencyIcon = "{{ config('settings.site_currency_icon') }}";
-    const currencyPosition = "{{ config('settings.site_currency_icon_position') }}";
+        // Function to format price based on the currency position
+        function currencyFormat(price) {
+            return currencyPosition === 'left' ? `${currencyIcon}${price}` : `${price}${currencyIcon}`;
+        }
 
-    // Function to format price based on the currency position
-    function currencyFormat(price) {
-        return currencyPosition === 'left' ? `${currencyIcon}${price}` : `${price}${currencyIcon}`;
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-        window.addEventListener('load', () => {
-            setTimeout(fetchTopSellingProducts, 100);
+        document.addEventListener('DOMContentLoaded', () => {
+            window.addEventListener('load', () => {
+                setTimeout(fetchTopSellingProducts, 100);
+            });
         });
-    });
 
-    // Fetch top-selling products from the API
-    async function fetchTopSellingProducts() {
-        try {
-            const response = await fetch('/api/top-selling-products');
-            const data = await response.json();
+        // Fetch top-selling products from the API
+        async function fetchTopSellingProducts() {
+            try {
+                const response = await fetch('/api/top-selling-products');
+                const data = await response.json();
 
-            // Check if the response is an array
-            if (Array.isArray(data)) {
-                renderProducts(data);
-            } else {
-                console.error('Unexpected data structure:', data);
+                // Check if the response is an array
+                if (Array.isArray(data)) {
+                    renderProducts(data);
+                } else {
+                    console.error('Unexpected data structure:', data);
+                }
+            } catch (error) {
+                console.error('Failed to fetch top-selling products:', error);
             }
-        } catch (error) {
-            console.error('Failed to fetch top-selling products:', error);
-        }
-    }
-
-    // Render products into the DOM
-    function renderProducts(products) {
-        const container = document.getElementById('top-selling-products');
-        container.innerHTML = '';
-
-        // Check if there are products to render
-        if (products.length === 0) {
-            console.log('No products found to render.');
-            return;
         }
 
-        // Generate HTML for each product
-        products.forEach(product => {
-            const productHtml = `
+        // Render products into the DOM
+        function renderProducts(products) {
+            const container = document.getElementById('top-selling-products');
+            container.innerHTML = '';
+
+            // Check if there are products to render
+            if (products.length === 0) {
+                console.log('No products found to render.');
+                return;
+            }
+
+            // Generate HTML for each product
+            products.forEach(product => {
+                const productHtml = `
                 <div class="fp__menu_hover ${product.category_slug}">
                     <div class="m-3 card position-relative fp__menu_item rounded-3 slide-wrap">
-                        <div class="fp__menu_item_img" style="height: 300px; overflow: hidden;">
+                        <div class="fp__menu_item_img">
                             <a href="/product/${product.slug}" class="title w-100">
                                 <img src="${product.thumb_image}" alt="${product.name}" class="img-fluid w-100 product-img">
                             </a>
@@ -239,74 +240,71 @@
                     </div>
                 </div>
             `;
-            container.insertAdjacentHTML('beforeend', productHtml);
-        });
+                container.insertAdjacentHTML('beforeend', productHtml);
+            });
 
-        // Initialize the Slick slider after rendering products
-        initializeSlickSlider();
+            // Initialize the Slick slider after rendering products
+            initializeSlickSlider();
 
-        // Adjust the height and size of product images
-        adjustImageSizes();
+            // Adjust the height and size of product images
+            adjustImageSizes();
 
-        adjustCardHeights();
+            adjustCardHeights();
 
-    }
+        }
 
-    // Initialize the Slick slider
-    function initializeSlickSlider() {
-        $('.product-slider .row').slick({
-            dots: true,
-            arrows: true,
-            infinite: true,
-            autoplay: true,
-            autoplaySpeed: 2000,
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            responsive: [
-                {
-                    breakpoint: 1400,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 1
+        // Initialize the Slick slider
+        function initializeSlickSlider() {
+            $('.product-slider .row').slick({
+                dots: true,
+                arrows: true,
+                infinite: true,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                responsive: [{
+                        breakpoint: 1400,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 991,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
                     }
-                },
-                {
-                    breakpoint: 991,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
+                ]
+            });
+        }
+
+        // Function to ensure images fill the div without being cropped
+        function adjustImageSizes() {
+            const images = document.querySelectorAll('.fp__menu_item_img img.product-img');
+            images.forEach(img => {
+                img.style.objectFit = 'cover'; // This makes sure the image scales and doesn't distort
+                img.style.height = '100%'; // Ensures it takes up the full height of the container
+            });
+        }
+
+        // Adjust product card heights to make them uniform
+        function adjustCardHeights() {
+            let maxHeight = 0;
+
+            // Find the maximum height among all product cards
+            document.querySelectorAll('.fp__menu_item').forEach(card => {
+                const cardHeight = card.offsetHeight;
+                if (cardHeight > maxHeight) {
+                    maxHeight = cardHeight;
                 }
-            ]
-        });
-    }
+            });
 
-    // Function to ensure images fill the div without being cropped
-    function adjustImageSizes() {
-        const images = document.querySelectorAll('.fp__menu_item_img img.product-img');
-        images.forEach(img => {
-            img.style.objectFit = 'cover'; // This makes sure the image scales and doesn't distort
-            img.style.height = '100%'; // Ensures it takes up the full height of the container
-        });
-    }
-
-    // Adjust product card heights to make them uniform
-    function adjustCardHeights() {
-        let maxHeight = 0;
-
-        // Find the maximum height among all product cards
-        document.querySelectorAll('.fp__menu_item').forEach(card => {
-            const cardHeight = card.offsetHeight;
-            if (cardHeight > maxHeight) {
-                maxHeight = cardHeight;
-            }
-        });
-
-        // Apply the maximum height to all product cards
-        document.querySelectorAll('.fp__menu_item').forEach(card => {
-            card.style.height = `${maxHeight}px`;
-        });
-    }
-</script>
-
-
+            // Apply the maximum height to all product cards
+            document.querySelectorAll('.fp__menu_item').forEach(card => {
+                card.style.height = `${maxHeight}px`;
+            });
+        }
+    </script>
