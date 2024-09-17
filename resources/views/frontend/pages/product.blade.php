@@ -36,8 +36,9 @@
             border-top: 1px solid #788a9f !important;
         }
 
+        select,
         select option {
-            font-family: 'mnsLondonRegular' !important;
+            font-family: 'mnsLondonRegular', sans-serif !important;
         }
     </style>
 
