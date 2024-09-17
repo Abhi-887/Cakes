@@ -129,6 +129,11 @@ img {
     object-fit: cover;
 }
 
+.sub-menu{
+    font-size: 14px !important;
+}
+
+
 input,
 textarea {
     width: 100%;
