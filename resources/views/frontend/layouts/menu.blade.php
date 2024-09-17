@@ -61,17 +61,6 @@
                                 <span
                                     class="text-center cart_count bg-gray position-absolute text-light fw-semibold bottom-50 end-25 rounded-circle">{{ count(Cart::content()) }}</span></a>
                         </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link ms-3 rounded-1 fs-5" href="{{ route('login') }}"><i
-                                    class="far fa-user"></i></a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link d-inline ms-3 rounded-1 position-relative transitions fs-5"
-                                href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i
-                                    class="far fa-heart me-4"></i></a>
-                        </li>
                     </ul>
                     <a class="align-items-center" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
                         aria-controls="offcanvasExample">
@@ -116,6 +105,17 @@
                                     </li>
                                 @endforeach
                             @endif
+                            <hr>
+                            <li class="nav-item">
+                                <a class="nav-link ms-3 rounded-1 fs-5" href="{{ route('login') }}"><i
+                                        class="far fa-user"></i></a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link d-inline ms-3 rounded-1 position-relative transitions fs-5"
+                                    href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i
+                                        class="far fa-heart me-4"></i></a>
+                            </li>
                         </ul>
                     </div>
                 </div>
