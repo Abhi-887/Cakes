@@ -5,12 +5,12 @@
 
     <nav class="shadow-sm navbar bg-light sticky-top py-3 px-3 px-lg-5">
         <div class="row align-items-center w-100 m-0">
-            <div class="col-5 col-xxl-2  header-logo">
+            <div class="col-5 col-xxl-2 header-logo p-0">
                 <a class="" href="{{ url('/') }}">
                     <img src="{{ asset('uploads/web-logo1.png') }}" alt="3D-Cakes Logo" class="img-fluid" />
                 </a>
             </div>
-            <div class="col-7 col-xxl-6">
+            <div class="col-7 col-xxl-6 p-0">
                 <ul class="d-none d-xxl-flex">
                     {{-- Main Menu Items --}} @if ($MainMenu)
                         @foreach ($MainMenu as $menu)
@@ -24,7 +24,8 @@
                                     <ul class="droap_menu position-absolute bg-light">
                                         @foreach ($menu['child'] as $item)
                                             <li class="pb-2 m-2 border-bottom">
-                                                <a class="fw-normal" href="{{ $item['link'] }}">{{ $item['label'] }}</a>
+                                                <a class="fw-normal sub-menu"
+                                                    href="{{ $item['link'] }}">{{ $item['label'] }}</a>
                                             </li>
                                         @endforeach
                                     </ul>
@@ -122,7 +123,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-5 col-xxl-4 d-none d-xxl-flex">
+            <div class="col-5 col-xxl-4 d-none d-xxl-flex p-0">
                 <ul class="d-flex flex-wrap menu_icon align-items-center ms-auto">
                     <li>
                         <a href="#" class="menu_search me-4 position-relative fw-semibold fs-5 transitions"><i
