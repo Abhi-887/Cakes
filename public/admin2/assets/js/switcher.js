@@ -176,26 +176,7 @@ $(document).ready(function () {
                                     '</div>' +
                                 '</div>' +
                             '</fieldset>' +
-                            '<fieldset class="">' +
-                                '<div class="body-title mb-10">Menu with background image</div>' +
-                                '<div class="select-colors-theme image-menu-background mb-10">' +
-                                    '<div class="item image img-1">' +
-                                        '<img src="images/bg-menu/img-1.jpg" alt="">' +
-                                    '</div>' +
-                                    '<div class="item image img-2">' +
-                                        '<img src="images/bg-menu/img-2.jpg" alt="">' +
-                                    '</div>' +
-                                    '<div class="item image img-3">' +
-                                        '<img src="images/bg-menu/img-3.jpg" alt="">' +
-                                    '</div>' +
-                                    '<div class="item image img-4">' +
-                                        '<img src="images/bg-menu/img-4.jpg" alt="">' +
-                                    '</div>' +
-                                    '<div class="item image img-5">' +
-                                        '<img src="images/bg-menu/img-5.jpg" alt="">' +
-                                    '</div>' +
-                                '</div>' +
-                            '</fieldset>' +
+
                             '<div class="tf-button cursor-pointer w-full button-clear-select">Clear all</div>' +
                         '</form>' +
                     '</div>' +
@@ -203,7 +184,7 @@ $(document).ready(function () {
             '</div>' +
         '</div>' +
     '</div>';
-    
+
   $("#wrapper").append(e);
 });
 
@@ -234,6 +215,6 @@ $(document).ready(function () {
     '<div class="setting cursor-pointer" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight">' +
         '<i class="icon-settings"></i>' +
     '</div>' ;
-    
+
   $(".header-grid").append(x);
 });

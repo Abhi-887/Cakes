@@ -108,75 +108,75 @@ class AdminDashboardController extends Controller
         });
         $averageSessionDuration = $sessions->count() > 0 ? $totalSessionDuration / $sessions->count() : 0;
 
-          // Check server status
-          $serverStatus = SystemStatusService::checkServerStatus();
+        // Check server status
+        $serverStatus = SystemStatusService::checkServerStatus();
 
 
-          $ordersByStatus = DB::table('orders')
-          ->select('order_status', DB::raw('count(*) as total'))
-          ->groupBy('order_status')
-          ->pluck('total', 'order_status');
+        $ordersByStatus = DB::table('orders')
+            ->select('order_status', DB::raw('count(*) as total'))
+            ->groupBy('order_status')
+            ->pluck('total', 'order_status');
 
-          $topSellingProducts = OrderItem::select('products.name as product_name', 'products.thumb_image', DB::raw('SUM(order_items.qty) as total_qty'), DB::raw('SUM(order_items.unit_price * order_items.qty) as total_revenue'))
-          ->join('products', 'order_items.product_id', '=', 'products.id')
-          ->groupBy('products.name', 'products.thumb_image')
-          ->orderBy('total_qty', 'desc')
-          ->limit(10)
-          ->get();
+        $topSellingProducts = OrderItem::select('products.name as product_name', 'products.thumb_image', DB::raw('SUM(order_items.qty) as total_qty'), DB::raw('SUM(order_items.unit_price * order_items.qty) as total_revenue'))
+            ->join('products', 'order_items.product_id', '=', 'products.id')
+            ->groupBy('products.name', 'products.thumb_image')
+            ->orderBy('total_qty', 'desc')
+            ->limit(10)
+            ->get();
 
-          $lowStockAlerts = Product::select('name', 'quantity')
-    ->where(function ($query) {
-        $query->where('quantity', '<=', 5)
-              ->orWhere('quantity', '=', 0);
-    })
-    ->paginate(5);
+        $lowStockAlerts = Product::select('name', 'quantity')
+            ->where(function ($query) {
+                $query->where('quantity', '<=', 5)
+                    ->orWhere('quantity', '=', 0);
+            })
+            ->paginate(5);
 
-          $topCustomers = User::join('orders', 'users.id', '=', 'orders.user_id')
-    ->select('users.name', 'users.avatar', DB::raw('COUNT(orders.id) as total_purchases'), DB::raw('SUM(orders.grand_total) as total_spent'))
-    ->where('users.role', 'user')
-    ->groupBy('users.id', 'users.name', 'users.avatar')
-    ->orderBy('total_spent', 'desc')
-    ->take(5)
-    ->get();
+        $topCustomers = User::join('orders', 'users.id', '=', 'orders.user_id')
+            ->select('users.name', 'users.avatar', DB::raw('COUNT(orders.id) as total_purchases'), DB::raw('SUM(orders.grand_total) as total_spent'))
+            ->where('users.role', 'user')
+            ->groupBy('users.id', 'users.name', 'users.avatar')
+            ->orderBy('total_spent', 'desc')
+            ->take(5)
+            ->get();
 
 
-            $totalCustomers = User::where('role', 'user')->count();
+        $totalCustomers = User::where('role', 'user')->count();
 
-            $newCustomers = User::where('role', 'user')
-                     ->whereDate('created_at', '>=', now()->subWeek())
-                     ->count();
+        $newCustomers = User::where('role', 'user')
+            ->whereDate('created_at', '>=', now()->subWeek())
+            ->count();
 
-                     $productCategories = Product::select('category_id', DB::raw('COUNT(id) as total_products'))
-                             ->groupBy('category_id')
-                             ->get();
+        $productCategories = Product::select('category_id', DB::raw('COUNT(id) as total_products'))
+            ->groupBy('category_id')
+            ->get();
 
-$categories = Category::whereIn('id', $productCategories->pluck('category_id'))->get()->keyBy('id');
+        $categories = Category::whereIn('id', $productCategories->pluck('category_id'))->get()->keyBy('id');
 
-$categoryLabels = $productCategories->map(function($item) use ($categories) {
-    return $categories[$item->category_id]->name;
-});
+        $categoryLabels = $productCategories->map(function ($item) use ($categories) {
+            return $categories[$item->category_id]->name;
+        });
 
-$categoryData = $productCategories->pluck('total_products');
-// Products out of stock or with low stock
-$outOfStockProducts = Product::where('quantity', 0)->get();
-$lowStockThreshold = 5; // Define your low stock threshold
+        $categoryData = $productCategories->pluck('total_products');
+        // Products out of stock or with low stock
+        $outOfStockProducts = Product::where('quantity', 0)->get();
+        $lowStockThreshold = 5; // Define your low stock threshold
 
-$lowStockProducts = Product::where('quantity', '<', $lowStockThreshold)
-    ->where('quantity', '>', 0)
-    ->get();
+        $lowStockProducts = Product::where('quantity', '<', $lowStockThreshold)
+            ->where('quantity', '>', 0)
+            ->get();
 
-    $salesTrend = Order::select(
-        DB::raw('DATE_FORMAT(created_at, "%Y-%m") as month'),
-        DB::raw('SUM(grand_total) as total_sales')
-    )
-    ->where('payment_status', 'completed')
-    ->whereBetween('created_at', [now()->subYear(), now()])
-    ->groupBy('month')
-    ->orderBy('month')
-    ->get();
+        $salesTrend = Order::select(
+            DB::raw('DATE_FORMAT(created_at, "%Y-%m") as month'),
+            DB::raw('SUM(grand_total) as total_sales')
+        )
+            ->where('payment_status', 'completed')
+            ->whereBetween('created_at', [now()->subYear(), now()])
+            ->groupBy('month')
+            ->orderBy('month')
+            ->get();
 
-$salesTrendLabels = $salesTrend->pluck('month')->toArray(); // Convert to array
-$salesTrendData = $salesTrend->pluck('total_sales')->toArray(); // Convert to array
+        $salesTrendLabels = $salesTrend->pluck('month')->toArray(); // Convert to array
+        $salesTrendData = $salesTrend->pluck('total_sales')->toArray(); // Convert to array
 
 
 
@@ -219,9 +219,8 @@ $salesTrendData = $salesTrend->pluck('total_sales')->toArray(); // Convert to ar
             "categoryData",
             'lowStockProducts',
             'outOfStockProducts',
-
-             'salesTrendLabels',
-        'salesTrendData'
+            'salesTrendLabels',
+            'salesTrendData'
 
 
 
@@ -260,18 +259,18 @@ $salesTrendData = $salesTrend->pluck('total_sales')->toArray(); // Convert to ar
     }
 
     public function getLowStockAlerts(Request $request)
-{
-    $lowStockAlerts = Product::select('name', 'quantity')
-        ->where(function ($query) {
-            $query->where('quantity', '<=', 5)
-                  ->orWhere('quantity', '=', 0);
-        })
-        ->paginate(5);
+    {
+        $lowStockAlerts = Product::select('name', 'quantity')
+            ->where(function ($query) {
+                $query->where('quantity', '<=', 5)
+                    ->orWhere('quantity', '=', 0);
+            })
+            ->paginate(5);
 
-    if ($request->ajax()) {
-        return view('partials.low-stock-alerts', compact('lowStockAlerts'))->render();
+        if ($request->ajax()) {
+            return view('partials.low-stock-alerts', compact('lowStockAlerts'))->render();
+        }
+
+        return response()->json(['error' => 'Invalid request']);
     }
-
-    return response()->json(['error' => 'Invalid request']);
-}
 }
