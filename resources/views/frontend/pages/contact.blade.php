@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay py-5">
             <div class="container py-md-5 py-2">
@@ -18,13 +18,13 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            BREADCRUMB END
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    BREADCRUMB END
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
 
 
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            CONTACT PAGE START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    CONTACT PAGE START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ==============================-->
 
 
     <style>
@@ -66,10 +66,6 @@
 
         .rotate90 {
             rotate: 90deg;
-        }
-
-        .fs-22 {
-            font-size: 22px;
         }
     </style>
 
@@ -135,26 +131,29 @@
 
     </div>
 
-    <div class="contact-card opening-bg py-5 px-3" style= "background-image: url({{ asset('uploads/patterned200.png') }});">
-        <div class="container">
-            <h2 class="text-center text-white fw-bold">Opening Times</h2>
-            <div class="row pt-5">
-                <div class="col-lg-4 d-flex justify-content-center text-center text-md-start my-2">
-                    <div>
-                        <h3 class="text-white mb-3"> {!! @$contact->title_one !!}</h3>
-                        <p class="fw-semibold text-white">{!! @$contact->Description_one !!}</p>
+    <div class="">
+        <h2 class="text-center text-black fw-bold">Opening Times</h2>
+        <div class="contact-card opening-bg py-5 px-3"
+            style= "background-image: url({{ asset('uploads/patterned200.png') }});">
+            <div class="container">
+                <div class="row pt-5">
+                    <div class="col-lg-4 d-flex justify-content-center text-center text-md-start my-2">
+                        <div>
+                            <h3 class="text-white mb-3"> {!! @$contact->title_one !!}</h3>
+                            <p class="fw-semibold text-white">{!! @$contact->Description_one !!}</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-4 d-flex justify-content-center text-center text-md-start my-2">
-                    <div>
-                        <h3 class="text-white mb-3">{!! @$contact->title_two !!}</h3>
-                        <p class="fw-semibold text-white">{!! @$contact->Description_two !!}</p>
+                    <div class="col-lg-4 d-flex justify-content-center text-center text-md-start my-2">
+                        <div>
+                            <h3 class="text-white mb-3">{!! @$contact->title_two !!}</h3>
+                            <p class="fw-semibold text-white">{!! @$contact->Description_two !!}</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-4 d-flex justify-content-center text-center text-md-start my-2">
-                    <div>
-                        <h3 class="text-white mb-3">{!! @$contact->title_three !!}</h3>
-                        <p class="fw-semibold text-white">{!! @$contact->Description_three !!}</p>
+                    <div class="col-lg-4 d-flex justify-content-center text-center text-md-start my-2">
+                        <div>
+                            <h3 class="text-white mb-3">{!! @$contact->title_three !!}</h3>
+                            <p class="fw-semibold text-white">{!! @$contact->Description_three !!}</p>
+                        </div>
                     </div>
                 </div>
             </div>
