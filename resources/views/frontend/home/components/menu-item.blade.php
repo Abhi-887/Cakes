@@ -301,12 +301,14 @@
 
     // Function to ensure images fill the div without being cropped
     function adjustImageSizes() {
-        const images = document.querySelectorAll('.fp__menu_item_img img.product-img');
-        images.forEach(img => {
-            img.style.objectFit = 'cover'; // This makes sure the image scales and doesn't distort
-            img.style.height = '100%'; // Ensures it takes up the full height of the container
-        });
-    }
+    const images = document.querySelectorAll('.fp__menu_item_img img.product-img');
+    images.forEach(img => {
+        img.style.objectFit = 'cover'; // This makes sure the image scales and doesn't distort
+        img.style.width = '100%'; // Ensure it fits the container width
+        img.style.height = 'auto'; // Keep the aspect ratio intact
+    });
+}
+
 
     // Adjust product card heights to make them uniform
     function adjustCardHeights() {
