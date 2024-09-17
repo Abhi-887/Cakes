@@ -373,7 +373,7 @@
 
 
             <!-- product-overview -->
-            <div class="wg-box table-product-overview">
+            {{-- <div class="wg-box table-product-overview">
                 <ul class="table-title flex gap20 mb-14">
                     <li>
                         <div class="body-title">Product Name</div>
@@ -405,7 +405,7 @@
                         </li>
                     @endforeach
                 </ul>
-            </div>
+            </div> --}}
 
 
         </div>
@@ -1049,7 +1049,7 @@
         });
     </script>
 
-    <script>
+    {{-- <script>
         function loadLowStockAlerts(page) {
             $.ajax({
                 url: "{{ route('admin.getLowStockAlerts') }}?page=" + page,
@@ -1070,7 +1070,7 @@
                 loadLowStockAlerts(page);
             });
         });
-    </script>
+    </script> --}}
 
 
     <script>
