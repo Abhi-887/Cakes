@@ -40,6 +40,15 @@
         select option {
             font-family: 'mnsLondonRegular', sans-serif !important;
         }
+
+        .fp__menu_item {
+            transition: transform 0.3s ease;
+        }
+
+        .fp__menu_item:hover {
+            transform: scale(1.05);
+            /* Example hover effect */
+        }
     </style>
 
     <section class="py-5 fp__search_menu">
