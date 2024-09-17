@@ -98,11 +98,11 @@
         overflow: hidden;
     }
 
-    .fp__menu_item_img img {
+    /* .fp__menu_item_img img {
         height: 250px;
         object-fit: cover;
         width: 100% !important;
-    }
+    } */
 
     .fp__menu_item_text .title {
         font-size: 18px;
@@ -144,6 +144,24 @@
     .actions a:hover {
         color: #000;
     }
+
+    .fp__menu_item_img {
+    height: auto; /* Allow the container to adjust to the image height */
+    width: 100%;
+    overflow: hidden;
+}
+
+.fp__menu_item_img img {
+    object-fit: cover; /* Ensure the image fills the container without distortion */
+    width: 100%;
+    height: auto;
+}
+
+.fp__menu_item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; }
+
 </style>
 </head>
 <body>
