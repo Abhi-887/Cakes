@@ -42,11 +42,11 @@
         }
 
         .fp__menu_item {
-            transition: transform 0.3s ease;
+            transition: transform 0.4s ease;
         }
 
         .fp__menu_item:hover {
-            transform: scale(1.01);
+            transform: scale(1.02);
             /* Example hover effect */
         }
     </style>
