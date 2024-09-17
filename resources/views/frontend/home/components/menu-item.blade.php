@@ -98,11 +98,11 @@
         overflow: hidden;
     }
 
-    /* .fp__menu_item_img img {
+    .fp__menu_item_img img {
         height: 250px;
         object-fit: cover;
         width: 100% !important;
-    } */
+    }
 
     .fp__menu_item_text .title {
         font-size: 18px;
@@ -144,24 +144,6 @@
     .actions a:hover {
         color: #000;
     }
-
-    .fp__menu_item_img {
-    height: auto; /* Allow the container to adjust to the image height */
-    width: 100%;
-    overflow: hidden;
-}
-
-.fp__menu_item_img img {
-    object-fit: cover; /* Ensure the image fills the container without distortion */
-    width: 100%;
-    height: auto;
-}
-
-.fp__menu_item {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; }
-
 </style>
 </head>
 
@@ -233,7 +215,7 @@
                 const productHtml = `
                 <div class="fp__menu_hover ${product.category_slug}">
                     <div class="m-3 card position-relative fp__menu_item rounded-3 slide-wrap">
-                        <div class="fp__menu_item_img">
+                        <div class="fp__menu_item_img" style="height: 400px; overflow: hidden;">
                             <a href="/product/${product.slug}" class="title w-100">
                                 <img src="${product.thumb_image}" alt="${product.name}" class="img-fluid w-100 product-img">
                             </a>
@@ -318,44 +300,7 @@
                 if (cardHeight > maxHeight) {
                     maxHeight = cardHeight;
                 }
-<<<<<<< HEAD
             });
-=======
-            ]
-        });
-    }
-
-    // Function to ensure images fill the div without being cropped
-    function adjustImageSizes() {
-    const images = document.querySelectorAll('.fp__menu_item_img img.product-img');
-    images.forEach(img => {
-        img.style.objectFit = 'cover'; // This makes sure the image scales and doesn't distort
-        img.style.width = '100%'; // Ensure it fits the container width
-        img.style.height = 'auto'; // Keep the aspect ratio intact
-    });
-}
-
-
-    // Adjust product card heights to make them uniform
-    function adjustCardHeights() {
-        let maxHeight = 0;
-
-        // Find the maximum height among all product cards
-        document.querySelectorAll('.fp__menu_item').forEach(card => {
-            const cardHeight = card.offsetHeight;
-            if (cardHeight > maxHeight) {
-                maxHeight = cardHeight;
-            }
-        });
-
-        // Apply the maximum height to all product cards
-        document.querySelectorAll('.fp__menu_item').forEach(card => {
-            card.style.height = `${maxHeight}px`;
-        });
-    }
-</script>
-
->>>>>>> 5882f3cf366d7bb981173662e1fe0bca46eba243
 
             // Apply the maximum height to all product cards
             document.querySelectorAll('.fp__menu_item').forEach(card => {
