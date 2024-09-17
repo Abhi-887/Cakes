@@ -8,19 +8,19 @@
     <title>{{ config('settings.site_name') }} | Dashboard</title>
     <link rel="icon" href="{{ asset('frontend/images/3d-cakes-favicon.png') }}" type="image/x-icon">
     <!-- General CSS Files -->
-    {{-- <link rel="stylesheet" href="{{ asset('admin/assets/modules/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/assets/modules/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/assets/modules/fontawesome/css/all.min.css') }}">
 
     <link rel="stylesheet" href="{{ asset('admin/assets/css/toastr.min.css') }}">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="{{ asset('admin/assets/css/bootstrap-iconpicker.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/assets/modules/select2/dist/css/select2.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin/assets/modules/summernote/summernote-bs4.css') }}">
+
     <link rel="stylesheet"
         href="{{ asset('admin/assets/modules/bootstrap-timepicker/css/bootstrap-timepicker.min.css') }}">
     <link rel="stylesheet"
         href="{{ asset('admin/assets/modules/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin/assets/modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css') }}"> --}}
+    <link rel="stylesheet" href="{{ asset('admin/assets/modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css') }}">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
@@ -44,6 +44,7 @@
     <!-- Favicon and Touch Icons  -->
     <link rel="shortcut icon" href="{{ asset('admin2/assets/images/favicon.png') }}">
     <link rel="apple-touch-icon-precomposed" href="{{ asset('admin2/assets/images/favicon.png') }}">
+    <link rel="stylesheet" href="{{ asset('admin/assets/modules/summernote/summernote-bs4.css') }}">
 {{--
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('admin/assets/css/style.css') }}">
@@ -352,7 +353,7 @@
 
 
 
-    {{-- <!-- General JS Scripts -->
+    <!-- General JS Scripts -->
     <script src="{{ asset('admin/assets/modules/jquery.min.js') }}"></script>
     <script src="{{ asset('admin/assets/modules/popper.js') }}"></script>
     <script src="{{ asset('admin/assets/modules/tooltip.js') }}"></script>
@@ -368,13 +369,13 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{ asset('admin/assets/modules/select2/dist/js/select2.full.min.js') }}"></script>
-    <script src="{{ asset('admin/assets/modules/summernote/summernote-bs4.js') }}"></script>
+
     <script src="{{ asset('admin/assets/modules/bootstrap-timepicker/js/bootstrap-timepicker.min.js') }}"></script>
     <script src="{{ asset('admin/assets/modules/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js') }}"></script>
     <script src="{{ asset('admin/assets/modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js') }}"></script>
     <!-- Template JS File -->
     <script src="{{ asset('admin/assets/js/scripts.js') }}"></script>
-    <script src="{{ asset('admin/assets/js/custom.js') }}"></script> --}}
+    <script src="{{ asset('admin/assets/js/custom.js') }}"></script>
 
 
     <!-- Javascript -->
@@ -392,7 +393,7 @@
     <script src="{{ asset('admin2/assets/js/switcher.js') }}"></script>
     <script src="{{ asset('admin2/assets/js/theme-settings.js') }}"></script>
     <script src="{{ asset('admin2/assets/js/main.js') }}"></script>
-
+    <script src="{{ asset('admin/assets/modules/summernote/summernote-bs4.js') }}"></script>
 
 
 
