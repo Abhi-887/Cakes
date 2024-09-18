@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slick Slider Integration</title>
     <!-- Slick Carousel CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
@@ -175,10 +169,12 @@
     </div>
 
     <!-- jQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <!-- Slick Carousel JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-    <script>
+  <!-- jQuery -->
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- Slick Carousel JS -->
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+
+    <script defer>
         // Site currency configuration
         const currencyIcon = "{{ config('settings.site_currency_icon') }}";
         const currencyPosition = "{{ config('settings.site_currency_icon_position') }}";
@@ -188,10 +184,8 @@
             return currencyPosition === 'left' ? `${currencyIcon}${price}` : `${price}${currencyIcon}`;
         }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            window.addEventListener('load', () => {
-                setTimeout(fetchTopSellingProducts, 100);
-            });
+        window.addEventListener('load', () => {
+            setTimeout(fetchTopSellingProducts, 100);
         });
 
         // Fetch top-selling products from the API
@@ -319,6 +313,5 @@
             });
         }
     </script>
-</body>
 
-</html>
+
