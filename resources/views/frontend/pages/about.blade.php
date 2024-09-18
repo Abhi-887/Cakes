@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                            BREADCRUMB START
-                                        ==============================-->
+                                                            BREADCRUMB START
+                                                        ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay py-5">
             <div class="container py-md-5 py-2">
@@ -18,14 +18,14 @@
         </div>
     </section>
     <!--=============================
-                                            BREADCRUMB END
-                                        ==============================-->
+                                                            BREADCRUMB END
+                                                        ==============================-->
 
 
     <!--=============================
-                                            ABOUT PAGE START
-                                        ============================== -->
-    <section class="fp__about_us mt_120 xs_mt_90">
+                                                            ABOUT PAGE START
+                                                        ============================== -->
+    <section class="fp__about_us py-5">
         <div class="container custom-container ">
             <div class="row">
                 <div class="col-xl-6 col-lg-7 wow fadeInUp" data-wow-duration="1s">
@@ -39,9 +39,9 @@
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-5 wow fadeInUp" data-wow-duration="1s">
-                    <section class="fp__about_video py-5">
+                    <section class="fp__about_video pb-5">
                         <div class="container wow fadeInUp" data-wow-duration="1s">
-                            <div class="fp__about_video_bg"
+                            <div class="fp__about_video_bg rounded-0"
                                 style="background: url({{ getYtThumbnail(@$about->video_link, 'high') }});">
                                 <div class="fp__about_video_overlay">
                                     <div class="row">
@@ -68,7 +68,7 @@
                         background: url('{{ asset('frontend/images/teasere.avif') }}');
                         background-repeat: no-repeat;
                         background-size: cover;
-                        background-position-y: center;
+                        background-position: center;
                     }
 
                     .fp__about_video_text p {
@@ -86,12 +86,12 @@
     </section>
 
     <!--=============================
-                    WHY CHOOSE START
-                ==============================-->
+                                    WHY CHOOSE START
+                                ==============================-->
     <!-- @include('frontend.home.components.why-choose') -->
     <!--=============================
-                    WHY CHOOSE END
-                ==============================-->
+                                    WHY CHOOSE END
+                                ==============================-->
 
     {{-- <section class="fp__about_video py-5">
         <div class="container wow fadeInUp" data-wow-duration="1s">
@@ -114,28 +114,28 @@
     </section> --}}
 
     <!--=============================
-                                        TEAM START
-                                        ==============================-->
+                                                        TEAM START
+                                                        ==============================-->
     <!--  @include('frontend.home.components.team')-->
     <!--=============================
-                                        TEAM END
-                                        ==============================-->
+                                                        TEAM END
+                                                        ==============================-->
 
     <!--=============================
-                                            COUNTER START
-                                        ==============================-->
+                                                            COUNTER START
+                                                        ==============================-->
     <!--  @include('frontend.home.components.counter')-->
     <!--=============================
-                                                COUNTER END
-                                        ==============================-->
+                                                                COUNTER END
+                                                        ==============================-->
     <!--=============================
-                                           TESTIMONIAL  START
-                                        ==============================-->
+                                                           TESTIMONIAL  START
+                                                        ==============================-->
     <!--  @include('frontend.home.components.testimonial')-->
     <!--=============================
-                                                TESTIMONIAL END
-                                        ==============================-->
+                                                                TESTIMONIAL END
+                                                        ==============================-->
     <!--=============================
-                                            ABOUT PAGE END
-                                        ==============================-->
+                                                            ABOUT PAGE END
+                                                        ==============================-->
 @endsection
