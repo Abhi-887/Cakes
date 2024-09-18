@@ -362,11 +362,9 @@ button {
     -o-transition:  ease 0.3s;
 } */
 
-.droap_menu a:hover,
-.menu_icon li a i:hover {
-    color: #8badbd !important;
-}
-
+.droap_menu a:hover, .menu_icon li a i:hover {
+    color: #364559 !important;
+  }
 .main_menu .menu_icon li a {
     color: var(--colorBlack);
     cursor: pointer;
