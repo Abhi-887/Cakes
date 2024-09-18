@@ -2653,6 +2653,7 @@ footer .wrapper a:hover {
     color: var(--colorWhite);
     text-align: center;
     margin-right: 50px;
+    margin-bottom: 0px;
 }
 
 .fp__about_video_text .play_btn {
