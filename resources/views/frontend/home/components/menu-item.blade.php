@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slick Slider Integration</title>
     <!-- Slick Carousel CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
@@ -178,6 +172,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- Slick Carousel JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <!-- imagesLoaded JS for ensuring all images are loaded before initialization -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js"></script>
     <script>
         // Site currency configuration
         const currencyIcon = "{{ config('settings.site_currency_icon') }}";
@@ -216,56 +212,64 @@
             const container = document.getElementById('top-selling-products');
             container.innerHTML = '';
 
-            // Check if there are products to render
             if (products.length === 0) {
                 console.log('No products found to render.');
                 return;
             }
 
-            // Generate HTML for each product
             products.forEach(product => {
                 const productHtml = `
-                <div class="fp__menu_hover ${product.category_slug}">
-                    <div class="m-3 card position-relative fp__menu_item rounded-3 slide-wrap">
-                        <div class="fp__menu_item_img" style="height: auto; overflow: hidden;">
-                            <a href="/product/${product.slug}" class="title w-100">
-                                <img src="${product.thumb_image}" alt="${product.name}" class="img-fluid w-100 product-img">
+                    <div class="fp__menu_hover ${product.category_slug}">
+                        <div class="m-3 card position-relative fp__menu_item rounded-3 slide-wrap">
+                            <div class="fp__menu_item_img" style="height: auto; overflow: hidden;">
+                                <a href="/product/${product.slug}" class="title w-100">
+                                    <img src="${product.thumb_image}" alt="${product.name}" class="img-fluid w-100 product-img">
+                                </a>
+                            </div>
+                            <a class="heart position-absolute rounded-circle" href="javascript:;" onclick="addToWishlist('${product.id}')">
+                                <i class="text-white fal fa-heart"></i>
                             </a>
-                        </div>
-                        <a class="heart position-absolute rounded-circle" href="javascript:;" onclick="addToWishlist('${product.id}')">
-                            <i class="text-white fal fa-heart"></i>
-                        </a>
-                        <div class="card-body fp__menu_item_text position-relative d-flex flex-column">
-                            <a class="px-3 py-2 category categorys fw-semibold" href="/category/${product.category_slug}">
-                                ${product.category_name}
-                            </a>
-                            <a class="title" href="/product/${product.slug}">${product.name}</a>
-                            <div class="mt-auto actions d-flex justify-content-between align-items-center">
-                                <p class="m-0 price color-light-gray">
-                                    ${product.offer_price > 0 ? `<del>${currencyFormat(product.price)}</del> ${currencyFormat(product.offer_price)}` : currencyFormat(product.price)}
-                                </p>
-                                ${product.quantity === 0 || product.out_of_stock
-                                    ? `<a class="px-3 py-2 text-white rounded-pill bg-danger" href="javascript:;">Out of Stock</a>`
-                                    : `<a class="px-3 py-2 text-white add-to-cart rounded-pill background-light-gray" href="javascript:;" onclick="loadProductModal('${product.id}')">Add to Cart</a>`}
+                            <div class="card-body fp__menu_item_text position-relative d-flex flex-column">
+                                <a class="px-3 py-2 category categorys fw-semibold" href="/category/${product.category_slug}">
+                                    ${product.category_name}
+                                </a>
+                                <a class="title" href="/product/${product.slug}">${product.name}</a>
+                                <div class="mt-auto actions d-flex justify-content-between align-items-center">
+                                    <p class="m-0 price color-light-gray">
+                                        ${product.offer_price > 0
+                                            ? `<del>${currencyFormat(product.price)}</del> ${currencyFormat(product.offer_price)}`
+                                            : `${currencyFormat(product.price)}`
+                                        }
+                                    </p>
+                                    ${product.quantity === 0 || product.out_of_stock
+                                        ? `<a class="px-3 py-2 text-white rounded-pill bg-danger" href="javascript:;">Out of Stock</a>`
+                                        : `<a class="px-3 py-2 text-white add-to-cart rounded-pill background-light-gray" href="javascript:;" onclick="loadProductModal('${product.id}')">Add to Cart</a>`
+                                    }
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            `;
+                `;
                 container.insertAdjacentHTML('beforeend', productHtml);
             });
 
-            // Initialize the Slick slider after rendering products
-            initializeSlickSlider();
+            // Wait for all images to load before initializing the slider
+            $('#top-selling-products').imagesLoaded(function () {
+                initializeSlickSlider();
+            });
 
-            // Adjust the height and size of product images
             adjustImageSizes();
-
             adjustCardHeights();
         }
 
-        // Initialize the Slick slider
+        // Initialize Slick Slider
         function initializeSlickSlider() {
+            // Destroy Slick if it has already been initialized
+            if ($('.product-slider .row').hasClass('slick-initialized')) {
+                $('.product-slider .row').slick('unslick');
+            }
+
+            // Initialize Slick slider
             $('.product-slider .row').slick({
                 dots: true,
                 arrows: true,
@@ -275,50 +279,28 @@
                 slidesToShow: 3,
                 slidesToScroll: 1,
                 responsive: [{
-                        breakpoint: 1400,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1
-                        }
-                    },
-                    {
-                        breakpoint: 991,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1
-                        }
+                    breakpoint: 1400,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
                     }
-                ]
+                }, {
+                    breakpoint: 991,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }]
             });
         }
 
-        // Function to ensure images fill the div without being cropped
+        // Adjust image sizes and card heights if necessary (you can implement this based on your needs)
         function adjustImageSizes() {
-            const images = document.querySelectorAll('.fp__menu_item_img img.product-img');
-            images.forEach(img => {
-                img.style.objectFit = 'cover'; // This makes sure the image scales and doesn't distort
-                img.style.height = '100%'; // Ensures it takes up the full height of the container
-            });
+            // Implement image size adjustments if needed
         }
 
-        // Adjust product card heights to make them uniform
         function adjustCardHeights() {
-            let maxHeight = 0;
-
-            // Find the maximum height among all product cards
-            document.querySelectorAll('.fp__menu_item').forEach(card => {
-                const cardHeight = card.offsetHeight;
-                if (cardHeight > maxHeight) {
-                    maxHeight = cardHeight;
-                }
-            });
-
-            // Apply the maximum height to all product cards
-            document.querySelectorAll('.fp__menu_item').forEach(card => {
-                card.style.height = `${maxHeight}px`;
-            });
+            // Implement card height adjustments if needed
         }
     </script>
-</body>
 
-</html>
