@@ -314,7 +314,7 @@
                 </div>
 
                 <!-- Set a max height and enable scrolling for product list -->
-                <div class="wg-table table-top-product" style="max-height: 312px; overflow-y: auto;">
+                <div class="wg-table table-top-product" style="max-height: 430px; overflow-y: auto;">
                     <ul class="flex flex-column gap14">
                         @foreach ($topSellingProducts as $product)
                             <li class="product-item">
