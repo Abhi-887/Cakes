@@ -1232,9 +1232,9 @@ button {
     height: 240px;
     position: relative;
 } */
-.fp__menu_hover:hover {
+/* .fp__menu_hover:hover {
     margin-top: 10px !important;
-}
+} */
 
 .fp__menu_hover {
     transition: all linear 0.4s;

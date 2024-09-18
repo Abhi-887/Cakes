@@ -47,7 +47,6 @@
 
         .fp__menu_item:hover {
             transform: scale(1.02);
-            /* Example hover effect */
         }
     </style>
 
