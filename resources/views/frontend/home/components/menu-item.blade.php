@@ -263,36 +263,40 @@
         }
 
         // Initialize Slick Slider
-        function initializeSlickSlider() {
-            // Destroy Slick if it has already been initialized
-            if ($('.product-slider .row').hasClass('slick-initialized')) {
-                $('.product-slider .row').slick('unslick');
-            }
+           // Initialize Slick Slider
+    function initializeSlickSlider() {
+        const $slider = $('#top-selling-products');
 
-            // Initialize Slick slider
-            $('.product-slider .row').slick({
-                dots: true,
-                arrows: true,
-                infinite: true,
-                autoplay: true,
-                autoplaySpeed: 2000,
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                responsive: [{
-                    breakpoint: 1400,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 1
-                    }
-                }, {
-                    breakpoint: 991,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                }]
-            });
+        // Destroy Slick if it has already been initialized
+        if ($slider.hasClass('slick-initialized')) {
+            $slider.slick('unslick');
         }
+
+        // Initialize Slick slider
+        $slider.slick({
+            dots: true,
+            arrows: true,
+            infinite: true,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            responsive: [{
+                breakpoint: 1400,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+            }, {
+                breakpoint: 991,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }]
+        });
+    }
+
 
         // Adjust image sizes and card heights if necessary (you can implement this based on your needs)
         function adjustImageSizes() {
