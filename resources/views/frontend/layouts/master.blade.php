@@ -196,14 +196,6 @@
 
 
     <script>
-        grecaptcha.ready(function() {
-            grecaptcha.execute('{{ env('RECAPTCHA_SITE_KEY') }}', {
-                action: 'submit'
-            }).then(function(token) {
-                document.getElementById('g-recaptcha-response').value = token;
-            });
-        });
-
 
         document.addEventListener('DOMContentLoaded', (event) => {
             const quoteForm = document.getElementById('quote-form');
