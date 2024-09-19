@@ -195,7 +195,7 @@
     <script src="{{ asset('frontend/js/main.js') }}"></script>
 
 
-    <script>
+    {{-- <script>
 
         document.addEventListener('DOMContentLoaded', (event) => {
             const quoteForm = document.getElementById('quote-form');
@@ -220,7 +220,7 @@
                 return true;
             }
         });
-    </script>
+    </script> --}}
     {{-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> --}}
     <!-- show dynamic validation message-->
     <script>
