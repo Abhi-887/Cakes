@@ -65,9 +65,9 @@
                 @if (!empty($sectionTitles['testimonial_main_title']))
                     <h2>{{ $sectionTitles['testimonial_main_title'] }}</h2>
                 @endif
-                <span>
+                {{-- <span>
                     <img src="images/heading_shapes.png" alt="shapes" class="img-fluid w-100">
-                </span>
+                </span> --}}
                 @if (!empty($sectionTitles['testimonial_sub_title']))
                     <p>{{ $sectionTitles['testimonial_sub_title'] }}</p>
                 @endif
