@@ -7,7 +7,7 @@
     <div class="carousel-inner">
         @foreach ($sliders as $key => $slider)
             @if ($slider->show_at_home == $selectedOption || $selectedOption === null || $selectedOption === '')
-                <div class="carousel-item{{ $key === 0 ? ' active' : '' }} background{{ $key + 1 }}">
+                <div class="carousel-item{{ $key === 0 ? ' active' : '' }}">
                     <div class="container width_Global">
                         <div class="row h-100 align-items-center">
                             <img src="{{ asset($slider->image) }}" class="d-block img-fluid front_image" alt="">
