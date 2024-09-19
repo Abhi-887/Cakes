@@ -147,9 +147,9 @@
         color: #000;
     }
 </style>
-</head>
 
-<body>
+
+
     <div class="container pt-4">
         <div class="row wow fadeInUp mt-md-5" data-wow-duration="1s">
             <div class="m-auto text-center col-md-8 col-lg-7 col-xl-6">
@@ -310,4 +310,3 @@
             });
         }
     </script>
-</body>
