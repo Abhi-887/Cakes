@@ -1,153 +1,152 @@
+<!-- Slick Carousel CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<style>
+    .product-slider .stars {
+        color: #ff9800;
+    }
 
-    <!-- Slick Carousel CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-        .product-slider .stars {
-            color: #ff9800;
+    img.product-img {
+        object-fit: cover !important;
+        height: 100% !important;
+    }
+
+    .product-slider .profile img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .product-slider .profile .name {
+        font-weight: bold;
+        color: #333;
+    }
+
+    .product-slider .profile .company {
+        font-size: 12px;
+        color: #999;
+    }
+
+    .slick-dots li button::before {
+        font-size: 14px !important;
+    }
+
+    .slick-dots li.slick-active button::before {
+        color: #000000 !important;
+    }
+
+    .slick-dots li button:hover::before {
+        color: #000000 !important;
+    }
+
+    .popularfood .slick-dots {
+        display: none !important;
+    }
+
+    .popularfood .slick-next {
+        right: -20px !important;
+    }
+
+    .popularfood .slick-prev::before {
+        position: relative !important;
+        right: 1rem !important;
+    }
+
+    @media (max-width: 650px) {
+        .slick-prev.slick-arrow {
+            top: 100%;
+            left: 40%;
+            margin-top: 1.5rem !important;
         }
 
-        img.product-img {
-            object-fit: cover !important;
-            height: 100% !important;
-        }
-
-        .product-slider .profile img {
-            width: 50px;
-            height: 50px;
-        }
-
-        .product-slider .profile .name {
-            font-weight: bold;
-            color: #333;
-        }
-
-        .product-slider .profile .company {
-            font-size: 12px;
-            color: #999;
-        }
-
-        .slick-dots li button::before {
-            font-size: 14px !important;
-        }
-
-        .slick-dots li.slick-active button::before {
-            color: #000000 !important;
-        }
-
-        .slick-dots li button:hover::before {
-            color: #000000 !important;
-        }
-
-        .popularfood .slick-dots {
-            display: none !important;
-        }
-
-        .popularfood .slick-next {
-            right: -20px !important;
+        .slick-next.slick-arrow {
+            top: 100%;
+            right: 40% !important;
+            margin-top: 1.5rem !important;
         }
 
         .popularfood .slick-prev::before {
             position: relative !important;
-            right: 1rem !important;
         }
+    }
 
-        @media (max-width: 650px) {
-            .slick-prev.slick-arrow {
-                top: 100%;
-                left: 40%;
-                margin-top: 1.5rem !important;
-            }
+    .slick-prev::before {
+        content: '\f053' !important;
+        font-family: 'Font Awesome 5 Free' !important;
+        font-weight: 600;
+        background: #4b637f !important;
+        color: white !important;
+        border-radius: 50%;
+        padding: 10px 14px;
+        font-size: 16px;
+    }
 
-            .slick-next.slick-arrow {
-                top: 100%;
-                right: 40% !important;
-                margin-top: 1.5rem !important;
-            }
+    .slick-next::before {
+        content: '\f054' !important;
+        font-family: 'Font Awesome 5 Free' !important;
+        font-weight: 600;
+        background: #4b637f !important;
+        color: white !important;
+        border-radius: 50%;
+        padding: 10px 14px;
+        font-size: 16px;
+    }
 
-            .popularfood .slick-prev::before {
-                position: relative !important;
-            }
-        }
+    .fp__menu_item {
+        border-radius: 15px;
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
 
-        .slick-prev::before {
-            content: '\f053' !important;
-            font-family: 'Font Awesome 5 Free' !important;
-            font-weight: 600;
-            background: #4b637f !important;
-            color: white !important;
-            border-radius: 50%;
-            padding: 10px 14px;
-            font-size: 16px;
-        }
+    .fp__menu_item_img img {
+        height: 250px;
+        object-fit: cover;
+        width: 100% !important;
+    }
 
-        .slick-next::before {
-            content: '\f054' !important;
-            font-family: 'Font Awesome 5 Free' !important;
-            font-weight: 600;
-            background: #4b637f !important;
-            color: white !important;
-            border-radius: 50%;
-            padding: 10px 14px;
-            font-size: 16px;
-        }
+    .fp__menu_item_text .title {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        color: #333;
+        display: block;
+    }
 
-        .fp__menu_item {
-            border-radius: 15px;
-            background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
+    .fp__menu_item_text .price {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
 
-        .fp__menu_item_img img {
-            height: 250px;
-            object-fit: cover;
-            width: 100% !important;
-        }
+    .fp__menu_item_text .price del {
+        color: #999;
+        margin-right: 10px;
+    }
 
-        .fp__menu_item_text .title {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: #333;
-            display: block;
-        }
+    .category {
+        position: absolute;
+        top: -11% !important;
+        left: 16px;
+        padding: 5px 10px;
+        font-size: 12px;
+        background-color: #f8f9fa;
+        color: #333;
+        border-radius: 15px;
+        text-transform: uppercase;
+        border: 1px solid #788a9f !important;
+    }
 
-        .fp__menu_item_text .price {
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
+    .actions a {
+        font-size: 18px;
+        color: #333;
+        text-decoration: none;
+    }
 
-        .fp__menu_item_text .price del {
-            color: #999;
-            margin-right: 10px;
-        }
-
-        .category {
-            position: absolute;
-            top: -11% !important;
-            left: 16px;
-            padding: 5px 10px;
-            font-size: 12px;
-            background-color: #f8f9fa;
-            color: #333;
-            border-radius: 15px;
-            text-transform: uppercase;
-            border: 1px solid #788a9f !important;
-        }
-
-        .actions a {
-            font-size: 18px;
-            color: #333;
-            text-decoration: none;
-        }
-
-        .actions a:hover {
-            color: #000;
-        }
-    </style>
+    .actions a:hover {
+        color: #000;
+    }
+</style>
 </head>
 
 <body>
@@ -168,11 +167,9 @@
         </div>
     </div>
 
-    <!-- jQuery -->
-  <!-- jQuery -->
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<!-- Slick Carousel JS -->
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+
+    <!-- Slick Carousel JS -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
 
     <script defer>
         // Site currency configuration
@@ -313,5 +310,4 @@
             });
         }
     </script>
-
-
+</body>
