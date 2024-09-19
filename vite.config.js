@@ -13,9 +13,10 @@ export default defineConfig({
             refresh: true,
         }),
     ],
-    server: {
-        host: 'localhost', // Use localhost instead of IPv6 address
-        port: 5173, // Ensure the port is set correctly
-        cors: true, // Enable CORS
-    },
+    build: {
+        outDir: 'public/dist', // Set your production output directory
+        assetsDir: 'assets',   // Directory for assets
+        sourcemap: false,      // Disable source maps in production
+        minify: 'terser',      // Minify using Terser
+    }
 });
