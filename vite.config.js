@@ -13,4 +13,9 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    server: {
+        host: 'localhost', // Use localhost instead of IPv6 address
+        port: 5173, // Ensure the port is set correctly
+        cors: true, // Enable CORS
+    },
 });
