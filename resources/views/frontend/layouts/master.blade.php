@@ -29,6 +29,10 @@
     <link rel="icon" href="{{ asset('uploads/favicon.png') }}" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/magiczoomplus/magiczoomplus.css" rel="stylesheet" type="text/css">
 
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+
+<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+
 
 
     <!-- Your code -->
@@ -63,7 +67,7 @@
         var loggedInUserId = "{{ auth()->user()->id ?? '' }}";
     </script>
 
-    @vite(['resources/js/app.js', 'resources/js/frontend.js'])
+    {{-- @vite(['resources/js/app.js', 'resources/js/frontend.js']) --}}
     <!-- <link rel="stylesheet" href="css/rtl.css"> -->
 </head>
 
@@ -246,6 +250,10 @@
 
     <!-- Load global js -->
     @include('frontend.layouts.global-scripts')
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="slick/slick.min.js"></script>
 
     @stack('scripts')
 </body>
