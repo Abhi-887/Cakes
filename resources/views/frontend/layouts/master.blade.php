@@ -189,7 +189,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     {{-- <script src="https://cdn.jsdelivr.net/npm/magiczoomplus/magiczoomplus.js" type="text/javascript"></script> --}}
-    <script src="https://cdn.jsdelivr.net/npm/jquery.elevatezoom@3.0.8/jquery.elevateZoom.min.js"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/jquery.elevatezoom@3.0.8/jquery.elevateZoom.min.js"></script> --}}
 
     <!--main/custom js-->
     <script src="{{ asset('frontend/js/main.js') }}"></script>
