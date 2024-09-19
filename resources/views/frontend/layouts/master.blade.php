@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/responsive.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/custom.css') }}">
     <link rel="icon" href="{{ asset('uploads/favicon.png') }}" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/magiczoomplus/magiczoomplus.css" rel="stylesheet" type="text/css">
+    {{-- <link href="https://cdn.jsdelivr.net/npm/magiczoomplus/magiczoomplus.css" rel="stylesheet" type="text/css"> --}}
 
 
 
@@ -188,7 +188,7 @@
     <script src="{{ asset('frontend/js/toastr.min.js') }}"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="https://cdn.jsdelivr.net/npm/magiczoomplus/magiczoomplus.js" type="text/javascript"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/magiczoomplus/magiczoomplus.js" type="text/javascript"></script> --}}
     <script src="https://cdn.jsdelivr.net/npm/jquery.elevatezoom@3.0.8/jquery.elevateZoom.min.js"></script>
 
     <!--main/custom js-->
