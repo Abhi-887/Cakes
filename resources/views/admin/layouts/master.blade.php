@@ -90,7 +90,7 @@
                                 <div class="button-show-hide">
                                     <i class="icon-menu-left"></i>
                                 </div>
-                                <form class="form-search flex-grow" method="GET" action="{{ route('search') }}">
+                                {{-- <form class="form-search flex-grow" method="GET" action="{{ route('search') }}">
                                     <fieldset class="name">
                                         <input type="text" placeholder="Search here..." class="show-search"
                                             name="query" tabindex="2" value="" aria-required="true" required>
@@ -98,7 +98,7 @@
                                     <div class="button-submit">
                                         <button type="submit"><i class="icon-search"></i></button>
                                     </div>
-                                </form>
+                                </form> --}}
                             </div>
 
                             <div class="header-grid">
@@ -217,134 +217,134 @@
 
                 </div>
 
-                </div>
-
             </div>
 
         </div>
 
+    </div>
 
 
 
 
-        <!-- General JS Scripts -->
-        <script src="{{ asset('admin/assets/modules/jquery.min.js') }}"></script>
-        <script src="{{ asset('admin/assets/modules/popper.js') }}"></script>
-        <script src="{{ asset('admin/assets/modules/tooltip.js') }}"></script>
-        <script src="{{ asset('admin/assets/modules/bootstrap/js/bootstrap.min.js') }}"></script>
-        <script src="{{ asset('admin/assets/modules/nicescroll/jquery.nicescroll.min.js') }}"></script>
-        <script src="{{ asset('admin/assets/js/stisla.js') }}"></script>
 
-        <script src="{{ asset('admin/assets/js/toastr.min.js') }}"></script>
-        <script src="{{ asset('admin/assets/modules/upload-preview/assets/js/jquery.uploadPreview.min.js') }}"></script>
-        <script src="{{ asset('admin/assets/js/bootstrap-iconpicker.bundle.min.js') }}"></script>
+    <!-- General JS Scripts -->
+    <script src="{{ asset('admin/assets/modules/jquery.min.js') }}"></script>
+    <script src="{{ asset('admin/assets/modules/popper.js') }}"></script>
+    <script src="{{ asset('admin/assets/modules/tooltip.js') }}"></script>
+    <script src="{{ asset('admin/assets/modules/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('admin/assets/modules/nicescroll/jquery.nicescroll.min.js') }}"></script>
+    <script src="{{ asset('admin/assets/js/stisla.js') }}"></script>
 
-
-
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <script src="{{ asset('admin/assets/modules/select2/dist/js/select2.full.min.js') }}"></script>
-
-        <script src="{{ asset('admin/assets/modules/bootstrap-timepicker/js/bootstrap-timepicker.min.js') }}"></script>
-        <script src="{{ asset('admin/assets/modules/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js') }}"></script>
-        <script src="{{ asset('admin/assets/modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js') }}"></script>
-        <!-- Template JS File -->
-        <script src="{{ asset('admin/assets/js/scripts.js') }}"></script>
-        <script src="{{ asset('admin/assets/js/custom.js') }}"></script>
-
-
-        <!-- Javascript -->
-        <script src="{{ asset('admin2/assets/js/jquery.min.js') }}"></script>
-        <script src="{{ asset('admin2/assets/js/bootstrap.min.js') }}"></script>
-        <script src="{{ asset('admin2/assets/js/bootstrap-select.min.js') }}"></script>
-        <script src="{{ asset('admin2/assets/js/zoom.js') }}"></script>
-        <script src="{{ asset('admin2/assets/js/apexcharts/apexcharts.js') }}"></script>
-        <script src="{{ asset('admin2/assets/js/apexcharts/line-chart-1.js') }}"></script>
-        <script src="{{ asset('admin2/assets/js/apexcharts/line-chart-2.js') }}"></script>
-        <script src="{{ asset('admin2/assets/js/apexcharts/line-chart-3.js') }}"></script>
-        <script src="{{ asset('admin2/assets/js/apexcharts/line-chart-4.js') }}"></script>
-        <script src="{{ asset('admin2/assets/js/apexcharts/line-chart-5.js') }}"></script>
-        <script src="{{ asset('admin2/assets/js/apexcharts/line-chart-6.js') }}"></script>
-        <script src="{{ asset('admin2/assets/js/switcher.js') }}"></script>
-        <script src="{{ asset('admin2/assets/js/theme-settings.js') }}"></script>
-        <script src="{{ asset('admin2/assets/js/main.js') }}"></script>
-        <script src="{{ asset('admin/assets/modules/summernote/summernote-bs4.js') }}"></script>
+    <script src="{{ asset('admin/assets/js/toastr.min.js') }}"></script>
+    <script src="{{ asset('admin/assets/modules/upload-preview/assets/js/jquery.uploadPreview.min.js') }}"></script>
+    <script src="{{ asset('admin/assets/js/bootstrap-iconpicker.bundle.min.js') }}"></script>
 
 
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="{{ asset('admin/assets/modules/select2/dist/js/select2.full.min.js') }}"></script>
 
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap4.min.js"></script>
+    <script src="{{ asset('admin/assets/modules/bootstrap-timepicker/js/bootstrap-timepicker.min.js') }}"></script>
+    <script src="{{ asset('admin/assets/modules/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js') }}"></script>
+    <script src="{{ asset('admin/assets/modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js') }}"></script>
+    <!-- Template JS File -->
+    <script src="{{ asset('admin/assets/js/scripts.js') }}"></script>
+    <script src="{{ asset('admin/assets/js/custom.js') }}"></script>
 
 
-        <!-- show dynamic validation message-->
-        <script>
-            toastr.options.progressBar = true;
+    <!-- Javascript -->
+    <script src="{{ asset('admin2/assets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('admin2/assets/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('admin2/assets/js/bootstrap-select.min.js') }}"></script>
+    <script src="{{ asset('admin2/assets/js/zoom.js') }}"></script>
+    <script src="{{ asset('admin2/assets/js/apexcharts/apexcharts.js') }}"></script>
+    <script src="{{ asset('admin2/assets/js/apexcharts/line-chart-1.js') }}"></script>
+    <script src="{{ asset('admin2/assets/js/apexcharts/line-chart-2.js') }}"></script>
+    <script src="{{ asset('admin2/assets/js/apexcharts/line-chart-3.js') }}"></script>
+    <script src="{{ asset('admin2/assets/js/apexcharts/line-chart-4.js') }}"></script>
+    <script src="{{ asset('admin2/assets/js/apexcharts/line-chart-5.js') }}"></script>
+    <script src="{{ asset('admin2/assets/js/apexcharts/line-chart-6.js') }}"></script>
+    <script src="{{ asset('admin2/assets/js/switcher.js') }}"></script>
+    <script src="{{ asset('admin2/assets/js/theme-settings.js') }}"></script>
+    <script src="{{ asset('admin2/assets/js/main.js') }}"></script>
+    <script src="{{ asset('admin/assets/modules/summernote/summernote-bs4.js') }}"></script>
 
-            @if ($errors->any())
-                @foreach ($errors->all() as $error)
-                    toastr.error("{{ $error }}")
-                @endforeach
-            @endif
-        </script>
 
-        <script>
-            $.uploadPreview({
-                input_field: "#image-upload", // Default: .image-upload
-                preview_box: "#image-preview", // Default: .image-preview
-                label_field: "#image-label", // Default: .image-label
-                label_default: "Choose File", // Default: Choose File
-                label_selected: "Change File", // Default: Change File
-                no_label: false, // Default: false
-                success_callback: null // Default: null
-            });
 
-            $(document).ready(function() {
 
-                $('body').on('click', '.delete-item', function(e) {
-                    e.preventDefault()
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap4.min.js"></script>
 
-                    let url = $(this).attr('href');
 
-                    Swal.fire({
-                        title: 'Are you sure?',
-                        text: "You won't be able to revert this!",
-                        icon: 'warning',
-                        showCancelButton: true,
-                        confirmButtonColor: '#3085d6',
-                        cancelButtonColor: '#d33',
-                        confirmButtonText: 'Yes, delete it!'
-                    }).then((result) => {
-                        if (result.isConfirmed) {
+    <!-- show dynamic validation message-->
+    <script>
+        toastr.options.progressBar = true;
 
-                            $.ajax({
-                                method: 'DELETE',
-                                url: url,
-                                data: {
-                                    _token: "{{ csrf_token() }}"
-                                },
-                                success: function(response) {
-                                    if (response.status === 'success') {
-                                        toastr.success(response.message)
+        @if ($errors->any())
+            @foreach ($errors->all() as $error)
+                toastr.error("{{ $error }}")
+            @endforeach
+        @endif
+    </script>
 
-                                        window.location.reload();
+    <script>
+        $.uploadPreview({
+            input_field: "#image-upload", // Default: .image-upload
+            preview_box: "#image-preview", // Default: .image-preview
+            label_field: "#image-label", // Default: .image-label
+            label_default: "Choose File", // Default: Choose File
+            label_selected: "Change File", // Default: Change File
+            no_label: false, // Default: false
+            success_callback: null // Default: null
+        });
 
-                                    } else if (response.status === 'error') {
-                                        toastr.error(response.message)
-                                    }
-                                },
-                                error: function(error) {
-                                    console.error(error);
+        $(document).ready(function() {
+
+            $('body').on('click', '.delete-item', function(e) {
+                e.preventDefault()
+
+                let url = $(this).attr('href');
+
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+
+                        $.ajax({
+                            method: 'DELETE',
+                            url: url,
+                            data: {
+                                _token: "{{ csrf_token() }}"
+                            },
+                            success: function(response) {
+                                if (response.status === 'success') {
+                                    toastr.success(response.message)
+
+                                    window.location.reload();
+
+                                } else if (response.status === 'error') {
+                                    toastr.error(response.message)
                                 }
-                            })
-                        }
-                    })
+                            },
+                            error: function(error) {
+                                console.error(error);
+                            }
+                        })
+                    }
                 })
-
             })
-        </script>
 
-        @stack('scripts')
+        })
+    </script>
+
+    @stack('scripts')
 </body>
 
 </html>
