@@ -6773,7 +6773,7 @@ textarea::placeholder {
     background:white;
 }
 .fp__breadcrumb_text ul li a {
-    columns: white !important;
+    color: white !important;
 }
 
 /* Color Styles End */
