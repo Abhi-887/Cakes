@@ -123,6 +123,16 @@ video {
   font-weight: inherit;
 }
 
+.custom-file,
+.custom-file-label,
+.custom-select,
+.custom-file-label::after,
+.form-control[type="color"],
+select.form-control:not([size]):not([multiple]) {
+  height: auto !important; /* or set any height you want */
+}
+
+
 article,
 aside,
 details,

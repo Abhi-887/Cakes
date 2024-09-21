@@ -61,6 +61,16 @@
   box-shadow: none !important;
   outline: none; }
 
+  .custom-file,
+  .custom-file-label,
+  .custom-select,
+  .custom-file-label::after,
+  .form-control[type="color"],
+  select.form-control:not([size]):not([multiple]) {
+    height: auto !important; /* or set any height you want */
+  }
+
+
 a {
   color: #6777ef;
   font-weight: 500;
