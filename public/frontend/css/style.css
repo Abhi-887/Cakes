@@ -1139,19 +1139,12 @@ button {
 }
 
 .fp__menu_item .fp__menu_item_text .category {
-    /* text-transform: capitalize; */
     font-size: 12px !important;
-    color: #94a0ae   !important;
-    font-family: var(--headingFont);
     position: absolute;
-    top: -10%;
+    top: -8%;
     left: 20px;
     z-index: 1;
-    /* background: var(--colorWhite); */
-    /* padding: 3px 15px; */
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border-radius: 30px;
-    border: 1px solid #788a9f !important;
 }
 
 .add-to-cart {
@@ -1173,7 +1166,7 @@ button {
 }
 
 .fp__menu_item_text {
-    border-top: 1px solid #e1dddd  !important;
+    border-top: 1px solid #788a9f !important;
 }
 
 .fp__menu_item .fp__menu_item_text {
@@ -6774,6 +6767,11 @@ textarea::placeholder {
 .fp__single_blog_text .category {
     background: white;
     color: #788a9f;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border: 1px solid #788a9f !important;
+}
+.fp__menu_item .fp__menu_item_text .category {
+    color: #94a0ae   !important;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border: 1px solid #788a9f !important;
 }
