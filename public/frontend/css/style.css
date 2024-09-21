@@ -2631,7 +2631,6 @@ footer .wrapper a:hover {
 }
 
 .fp__contact_form {
-    background: #fff2e7;
     padding: 30px;
     border-radius: 10px;
 }
@@ -5345,24 +5344,6 @@ CHECKOUT PAGE START
     content: "\f466";
 }
 
-.fp__track_order ul li.active::after {
-    background: #4caf50;
-}
-
-.fp__track_order ul li.active::before {
-    background: #4caf50;
-    color: var(--colorWhite);
-}
-
-.fp__track_order ul li.declined_status::before {
-    background: #ae0404 !important;
-    color: var(--colorWhite);
-}
-
-.fp__track_order ul li.declined_status::after {
-    background: #ae0404 !important;
-}
-
 .fp__invoice_header {
     display: flex;
     flex-wrap: wrap;
@@ -5702,26 +5683,14 @@ CHECKOUT PAGE START
 }
 
 .fp__why_choose2 .fp__choose_single {
-    background: #faf6f3fa;
     padding: 25px;
     border-radius: 10px;
     position: relative;
-    border: 1px solid #eee;
 }
 
 .fp__why_choose2 .fp__choose_single .icon {
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    border: 5px solid #fff;
     line-height: 49px;
     font-size: 25px;
-}
-
-.fp__why_choose2 .fp__choose_single .text h3 {
-    color: var(--colorBlack);
-}
-
-.fp__why_choose2 .fp__choose_single .text p {
-    color: var(--paraColor);
 }
 
 /* why choose 2 end */
@@ -6776,5 +6745,33 @@ textarea::placeholder {
 }
 .fp__contact_form button:hover {
     background: #788a9f !important;
+}
+.fp__contact_form {
+    background: #fff2e7;
+}
+.fp__why_choose2 .fp__choose_single {
+    background: #faf6f3fa;
+    border: 1px solid #eee;
+}
+.fp__why_choose2 .fp__choose_single .icon {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border: 5px solid #fff;
+}
+.fp__track_order ul li.active::after {
+    background: #4caf50;
+}
+
+.fp__track_order ul li.active::before {
+    background: #4caf50;
+    color: white;
+}
+
+.fp__track_order ul li.declined_status::before {
+    background: #ae0404 !important;
+    color: white;
+}
+
+.fp__track_order ul li.declined_status::after {
+    background: #ae0404 !important;
 }
 /* Color Styles End */
