@@ -1795,8 +1795,6 @@ button {
 }
 
 .fp__single_blog_text .category {
-    background: var(--colorPrimary);
-    color: var(--colorWhite);
     text-transform: capitalize;
     padding: 5px 20px;
     font-weight: 500;
@@ -6772,5 +6770,11 @@ textarea::placeholder {
 .fp__search_menu_form {
     background: #faf6f3fa;
     border: 1px solid #eee;
+}
+.fp__single_blog_text .category {
+    background: white;
+    color: #788a9f;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border: 1px solid #788a9f !important;
 }
 /* Color Styles End */
