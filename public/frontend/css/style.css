@@ -2657,7 +2657,6 @@ footer .wrapper a:hover {
     top: 50%;
     left: 0;
     transform: translateY(-50%);
-    color: var(--colorPrimary);
     border-right: 1px solid #e4e7e9;
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
@@ -2679,9 +2678,7 @@ footer .wrapper a:hover {
 }
 
 .fp__contact_form button {
-    background: #4b637f !important;
     text-transform: capitalize !important;
-    color: var(--colorWhite) !important;
     padding: 10px 20px;
     border-radius: 30px;
     font-size: 16px !important;
@@ -2692,10 +2689,6 @@ footer .wrapper a:hover {
     -ms-transition: all linear 0.6s;
     -o-transition: all linear 0.6s;
     margin-top: 20px;
-}
-
-.fp__contact_form button:hover {
-    background: #788a9f !important;
 }
 
 .fp__contact_map {
@@ -6773,5 +6766,15 @@ textarea::placeholder {
 .fp__menu_cart_area .checkout:hover,
 .fp__menu_cart_area .cart_view :hover {
     background: #788a9f;
+}
+.fp__contact_form button {
+    background: #4b637f !important;
+    color: white !important;
+}
+.fp__contact_form_input span {
+    color: #788a9f;
+}
+.fp__contact_form button:hover {
+    background: #788a9f !important;
 }
 /* Color Styles End */
