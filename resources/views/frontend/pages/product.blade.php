@@ -111,7 +111,7 @@
                     </div>
                     <div class="my-2 col-md-2 col-10">
                         <button type="submit"
-                            class="border border-0 wedding-cake-button rounded-pill text-light fs-5 w-100 form-control">Search</button>
+                            class="border border-0 background-dark-gray rounded-pill text-light fs-5 w-100 form-control">Search</button>
                     </div>
                 </div>
             </form>

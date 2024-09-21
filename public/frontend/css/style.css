@@ -66,51 +66,6 @@ body {
     font-family: 'mnsLondonRegular';
 }
 
-.background-light-gray {
-    background: #788a9f !important;
-}
-.background-light-gray:hover {
-    background: #4b637f !important;
-    transition: all linear 0.6s;
-    -webkit-transition: all linear 0.6s;
-    -moz-transition: all linear 0.6s;
-    -ms-transition: all linear 0.6s;
-    -o-transition: all linear 0.6s;
-}
-.searchformbackground-light-gray {
-    background: #faf6f3fa;
-}
-.color-dark-gray {
-    color: #4b637f !important;
-}
-.background-dark-gray {
-    background-color: #4b637f !important;
-}
-.background-dark-gray:hover {
-    background-color: #788a9f !important;
-    transition: all linear 0.6s;
-    -webkit-transition: all linear 0.6s;
-    -moz-transition: all linear 0.6s;
-    -ms-transition: all linear 0.6s;
-    -o-transition: all linear 0.6s;
-}
-.color-light-gray {
-    color: #788a9f !important;
-}
-
-.social-links a:hover {
-    color: #8caabf !important;
-}
-
-.fp__search_form button:hover {
-    background-color: #788a9f !important;
-    transition: all linear 0.6s;
-    -webkit-transition: all linear 0.6s;
-    -moz-transition: all linear 0.6s;
-    -ms-transition: all linear 0.6s;
-    -o-transition: all linear 0.6s;
-}
-
 .fas,
 .far,
 .fa,
@@ -6722,9 +6677,6 @@ CHECKOUT PAGE START
     font-size: 16px;
     font-weight: 300;
 }
-.wedding-cake-button {
-    background: #86a4ba !important;
-}
 
 .offcanvas {
     width: 450px !important;
@@ -6732,11 +6684,6 @@ CHECKOUT PAGE START
 
 .image-block {
     position: relative;
-}
-
-.image-block:hover .gradient-overlay {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
-    transition: 0.7s ease;
 }
 
 .gradient-overlay {
@@ -6749,10 +6696,63 @@ CHECKOUT PAGE START
     z-index: 1;
     border-radius: 8px;
 }
+.overlay-text {
+    z-index: 2;
+}
+
+
+
+
+
+/* Color Styles Start */
+
+.background-light-gray {
+    background: #788a9f !important;
+}
+.background-light-gray:hover {
+    background: #4b637f !important;
+    transition: all linear 0.6s;
+    -webkit-transition: all linear 0.6s;
+    -moz-transition: all linear 0.6s;
+    -ms-transition: all linear 0.6s;
+    -o-transition: all linear 0.6s;
+}
+.searchformbackground-light-gray {
+    background: #faf6f3fa;
+}
+.color-dark-gray {
+    color: #4b637f !important;
+}
+.background-dark-gray {
+    background-color: #4b637f !important;
+}
+.background-dark-gray:hover {
+    background-color: #788a9f !important;
+    transition: all linear 0.6s;
+    -webkit-transition: all linear 0.6s;
+    -moz-transition: all linear 0.6s;
+    -ms-transition: all linear 0.6s;
+    -o-transition: all linear 0.6s;
+}
+.color-light-gray {
+    color: #788a9f !important;
+}
+
+.social-links a:hover {
+    color: #8caabf !important;
+}
+
+.fp__search_form button:hover {
+    background-color: #788a9f !important;
+    transition: all linear 0.6s;
+    -webkit-transition: all linear 0.6s;
+    -moz-transition: all linear 0.6s;
+    -ms-transition: all linear 0.6s;
+    -o-transition: all linear 0.6s;
+}
 
 .overlay-text {
     color: #fff !important;
-    z-index: 2;
     text-shadow: 0px -2px 25px rgba(0, 0, 0, 1),
         8px 20px 25px rgba(0, 0, 0, 1),
         1px -10px 25px rgba(0, 0, 0, 1),
@@ -6764,3 +6764,14 @@ CHECKOUT PAGE START
     color: #fff !important;
     transition: 0.4s ease-in-out;
 }
+
+.image-block:hover .gradient-overlay {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+    transition: 0.7s ease;
+}
+
+.wedding-cake-button {
+    background: #86a4ba !important;
+}
+
+/* Color Styles End */
