@@ -84,6 +84,7 @@
                 <!-- /section-content-right -->
 
                 <div class="section-content-right">
+
                     <div class="header-dashboard">
                         <div class="wrap">
                             <div class="header-left">
@@ -91,14 +92,14 @@
                                     <i class="icon-menu-left"></i>
                                 </div>
                                 {{-- <form class="form-search flex-grow" method="GET" action="{{ route('search') }}">
-                                    <fieldset class="name">
-                                        <input type="text" placeholder="Search here..." class="show-search"
-                                            name="query" tabindex="2" value="" aria-required="true" required>
-                                    </fieldset>
-                                    <div class="button-submit">
-                                        <button type="submit"><i class="icon-search"></i></button>
-                                    </div>
-                                </form> --}}
+                                        <fieldset class="name">
+                                            <input type="text" placeholder="Search here..." class="show-search"
+                                                name="query" tabindex="2" value="" aria-required="true" required>
+                                        </fieldset>
+                                        <div class="button-submit">
+                                            <button type="submit"><i class="icon-search"></i></button>
+                                        </div>
+                                    </form> --}}
                             </div>
 
                             <div class="header-grid">
@@ -173,8 +174,8 @@
                                                 <h6>Messages</h6>
                                             </li>
                                             <!-- Loop through messages here -->
-                                            <li><a href="{{ route('admin.chat.index') }}"
-                                                    class="tf-button w-full">View all</a></li>
+                                            <li><a href="{{ route('admin.chat.index') }}" class="tf-button w-full">View
+                                                    all</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -202,8 +203,8 @@
                                             <li><a href="{{ route('admin.profile') }}" class="user-item"><i
                                                         class="icon-user"></i> Account</a></li>
                                             {{-- <li><a href="{{ route('admin.inbox') }}" class="user-item"><i
-                                                        class="icon-mail"></i> Inbox <span
-                                                        class="number">{{ $unseenMessages }}</span></a></li> --}}
+                                                            class="icon-mail"></i> Inbox <span
+                                                            class="number">{{ $unseenMessages }}</span></a></li> --}}
                                             <li><a href="{{ route('admin.setting.index') }}" class="user-item"><i
                                                         class="icon-settings"></i> Settings</a></li>
                                             <li><a href="{{ route('logout') }}" class="user-item"><i
@@ -215,7 +216,22 @@
                         </div>
                     </div>
 
+
+                    <!-- Main Content -->
+                    <div class="main-content">
+                        <div class="main-content-inner">
+                            @yield('content')
+                        </div>
+                        <div class="bottom-page">
+                            <div class="body-text">Copyright © 2024 3d cakes</div>
+                            <i class="icon-heart"></i>
+                            <div class="body-text">by - </a> All rights reserved.</div>
+                        </div>
+                    </div>
+
                 </div>
+
+
 
             </div>
 
