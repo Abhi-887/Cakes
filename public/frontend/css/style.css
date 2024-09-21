@@ -54,14 +54,14 @@ h6 {
     color: var(--colorBlack);
 }
 
-.custom-container {
+/* .custom-container {
     max-width: 1200px !important;
-}
+} */
 
 body {
     overflow-x: hidden;
     scroll-behavior: smooth;
-    color: var(--paraColor);
+    color: #000;
     /* font-family: var(--paraFont); */
     font-family: 'mnsLondonRegular';
 }
@@ -70,7 +70,10 @@ body {
 .far,
 .fa,
 .fab,
-.wedding-cake-button {
+.background-light-gray,
+.background-dark-gray,
+.color-light-gray,
+.color-dark-gray {
     transition: all linear 0.6s;
     -webkit-transition: all linear 0.6s;
     -moz-transition: all linear 0.6s;
@@ -101,25 +104,16 @@ textarea {
     font-weight: 300;
 }
 
-input::placeholder,
-textarea::placeholder {
-    color: #a6a6ac;
-}
-
 button {
     border: none;
     box-shadow: none !important;
 }
 
 :root {
-    /* --colorPrimary: #f86f03; */
     --colorPrimary: #788a9f;
     --paraColor: #494949;
     --colorBlack: #010f1c;
     --colorWhite: #ffffff;
-    /* --paraFont: "Barlow", sans-serif;
-    --headingFont: "Jost", sans-serif;
-    --cursiveFont: "Lobster", cursive; */
     --boxShadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     --gradiantBg: rgb(173, 205, 222);
     --gradiantHoverBg: rgb(75, 99, 127);
@@ -129,7 +123,6 @@ button {
     COMMON CSS START
 ============================*/
 .common_btn {
-    background: #4b637f;
     text-transform: capitalize !important;
     color: var(--colorWhite) !important;
     padding: 12px 45px !important;
@@ -2211,8 +2204,6 @@ footer .wrapper a:hover {
     cursor: pointer;
     text-align: center;
     transform: rotate(90deg);
-    background: var(--colorPrimary);
-    /* border: 1px solid var(--colorWhite); */
     color: var(--colorWhite);
     text-transform: capitalize;
     padding: 5px 15px 7px 15px;
@@ -2226,7 +2217,6 @@ footer .wrapper a:hover {
 }
 
 .fp__scroll_btn:hover {
-    background: #4b637f !important;
     transition: all linear 0.5s;
     -webkit-transition: all linear 0.5s;
     -moz-transition: all linear 0.5s;
@@ -4178,11 +4168,9 @@ CHECKOUT PAGE START
 }
 
 .fp__checkout_single_address {
-    border: 1px solid #eeeeeea6;
     padding: 20px;
     border-radius: 5px;
     margin-bottom: 20px;
-    background: #e0f1f9;
     position: relative;
 }
 
@@ -6699,7 +6687,13 @@ CHECKOUT PAGE START
 .overlay-text {
     z-index: 2;
 }
+.image-block:hover .overlay-text {
+    transition: 0.4s ease-in-out;
+}
 
+.image-block:hover .gradient-overlay {
+    transition: 0.7s ease;
+}
 
 
 
@@ -6711,11 +6705,6 @@ CHECKOUT PAGE START
 }
 .background-light-gray:hover {
     background: #4b637f !important;
-    transition: all linear 0.6s;
-    -webkit-transition: all linear 0.6s;
-    -moz-transition: all linear 0.6s;
-    -ms-transition: all linear 0.6s;
-    -o-transition: all linear 0.6s;
 }
 .searchformbackground-light-gray {
     background: #faf6f3fa;
@@ -6728,11 +6717,6 @@ CHECKOUT PAGE START
 }
 .background-dark-gray:hover {
     background-color: #788a9f !important;
-    transition: all linear 0.6s;
-    -webkit-transition: all linear 0.6s;
-    -moz-transition: all linear 0.6s;
-    -ms-transition: all linear 0.6s;
-    -o-transition: all linear 0.6s;
 }
 .color-light-gray {
     color: #788a9f !important;
@@ -6744,11 +6728,6 @@ CHECKOUT PAGE START
 
 .fp__search_form button:hover {
     background-color: #788a9f !important;
-    transition: all linear 0.6s;
-    -webkit-transition: all linear 0.6s;
-    -moz-transition: all linear 0.6s;
-    -ms-transition: all linear 0.6s;
-    -o-transition: all linear 0.6s;
 }
 
 .overlay-text {
@@ -6762,12 +6741,26 @@ CHECKOUT PAGE START
 
 .image-block:hover .overlay-text {
     color: #fff !important;
-    transition: 0.4s ease-in-out;
 }
 
 .image-block:hover .gradient-overlay {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
-    transition: 0.7s ease;
 }
-
+input::placeholder,
+textarea::placeholder {
+    color: #a6a6ac;
+}
+.fp__scroll_btn {
+    background: #788a9f !important;
+}
+.fp__scroll_btn:hover {
+    background: #4b637f !important;
+}
+.common_btn {
+    background: #4b637f;
+}
+.fp__checkout_single_address {
+    border: 1px solid #eeeeeea6;
+    background: #e0f1f9;
+}
 /* Color Styles End */
