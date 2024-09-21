@@ -6536,10 +6536,6 @@ CHECKOUT PAGE START
 .active > .page-link,
 .page-link.active {
     z-index: -1;
-    color: var(--colorWhite);
-    background-color: var(--colorPrimary);
-    border-color: var(--colorPrimary);
-    color: white !important;
     font-weight: bold;
 }
 
@@ -6774,5 +6770,14 @@ textarea::placeholder {
     color: #94a0ae   !important;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border: 1px solid #788a9f !important;
+}
+.fp__single_blog_text > ul > li {
+    color: #4b637f;
+  }
+.active > .page-link,
+.page-link.active {
+    background-color: white;
+    border-color: #4b637f;
+    color: white !important;
 }
 /* Color Styles End */
