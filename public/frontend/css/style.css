@@ -471,18 +471,11 @@ button {
 .fp__menu_cart_area .cart_view {
     display: block;
     text-align: center;
-    background: var(--colorPrimary);
     margin-top: 10px;
     text-transform: capitalize;
     font-size: 18px;
     font-weight: 500;
-    color: var(--colorWhite);
     padding: 10px 0px;
-}
-
-.fp__menu_cart_area .checkout:hover,
-.fp__menu_cart_area .cart_view :hover {
-    background: var(--colorBlack);
 }
 
 .fp__menu_cart_area.show_mini_cart {
@@ -6769,5 +6762,15 @@ textarea::placeholder {
 .fp__menu_cart_header .close_cart {
     background: #788a9f;
     color: white;
+}
+.fp__menu_cart_area .checkout,
+.fp__menu_cart_area .cart_view {
+    background:#788a9f;
+    color: white;
+}
+
+.fp__menu_cart_area .checkout:hover,
+.fp__menu_cart_area .cart_view :hover {
+    background: #788a9f;
 }
 /* Color Styles End */
