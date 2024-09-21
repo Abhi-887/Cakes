@@ -277,10 +277,6 @@ button {
     -ms-transition:  ease 0.3s;
     -o-transition:  ease 0.3s;
 } */
-
-.droap_menu a:hover, .menu_icon li a i:hover {
-    color: #364559 !important;
-  }
 .main_menu .menu_icon li a {
     color: var(--colorBlack);
     cursor: pointer;
@@ -393,13 +389,13 @@ button {
     visibility: visible;
 }
 
-.fp__search_form form .close_search:hover {
+/* .fp__search_form form .close_search:hover {
     background: var(--colorPrimary);
 }
 
 .fp__search_form form .close_search:hover i {
     color: var(--colorWhite) !important;
-}
+} */
 
 .fp__search_form button:hover {
     background: var(--colorBlack);
@@ -6675,6 +6671,9 @@ CHECKOUT PAGE START
 .main_menu .menu_icon li .common_btn:hover {
     color: #fff !important;
 }
+.droap_menu a:hover, .menu_icon li a i:hover {
+    color: #364559 !important;
+  }
 a {
     color: #494949;
 }
