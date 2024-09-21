@@ -201,9 +201,9 @@
                                             aria-labelledby="dropdownMenuButton3">
                                             <li><a href="{{ route('admin.profile') }}" class="user-item"><i
                                                         class="icon-user"></i> Account</a></li>
-                                            <li><a href="{{ route('admin.inbox') }}" class="user-item"><i
+                                            {{-- <li><a href="{{ route('admin.inbox') }}" class="user-item"><i
                                                         class="icon-mail"></i> Inbox <span
-                                                        class="number">{{ $unseenMessages }}</span></a></li>
+                                                        class="number">{{ $unseenMessages }}</span></a></li> --}}
                                             <li><a href="{{ route('admin.setting.index') }}" class="user-item"><i
                                                         class="icon-settings"></i> Settings</a></li>
                                             <li><a href="{{ route('logout') }}" class="user-item"><i
