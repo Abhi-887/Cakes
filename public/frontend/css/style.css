@@ -2274,13 +2274,6 @@ footer .wrapper a:hover {
     margin: 0px 10px;
 }
 
-.fp__pagination ul li a:hover,
-.fp__pagination ul li.active a {
-    background: var(--colorPrimary);
-    color: var(--colorWhite) !important;
-    border-color: var(--colorPrimary);
-}
-
 .fp__pagination ul li a:focus {
     box-shadow: none;
 }
@@ -6777,7 +6770,13 @@ textarea::placeholder {
 .active > .page-link,
 .page-link.active {
     background-color: white;
-    border-color: #989fa7;
+    border-color: var(--bs-pagination-border-width) solid var(--bs-pagination-border-color);
     color: rgb(0, 0, 0) !important;
 }
+/* .fp__pagination ul li a:hover,
+.fp__pagination ul li.active a {
+    background: var(--colorPrimary);
+    color: var(--colorWhite) !important;
+    border-color: var(--colorPrimary);
+} */
 /* Color Styles End */
