@@ -3545,17 +3545,12 @@ footer .wrapper a:hover {
     line-height: 40px;
     margin-right: 0;
     background: #4b637f !important;
-    color: var(--colorWhite);
     border-radius: 50%;
     transition: all linear 0.6s;
     -webkit-transition: all linear 0.6s;
     -moz-transition: all linear 0.6s;
     -ms-transition: all linear 0.6s;
     -o-transition: all linear 0.6s;
-}
-
-.details_button_area .wishlist:hover {
-    background: #788a9f !important;
 }
 
 .fp__menu_description_area .nav {
@@ -6776,5 +6771,11 @@ textarea::placeholder {
 .fp__breadcrumb_text ul li a {
     color: white !important;
 }
+.details_button_area .wishlist {
+    color: white;
+}
 
+.details_button_area .wishlist:hover {
+    background: #788a9f !important;
+}
 /* Color Styles End */
