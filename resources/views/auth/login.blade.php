@@ -1,13 +1,12 @@
-
 @extends('frontend.layouts.master')
 
 @section('content')
     <!--=============================
-        BREADCRUMB START
-    ==============================-->
+            BREADCRUMB START
+        ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ config('settings.breadcrumb') }});">
-        <div class="fp__breadcrumb_overlay">
-            <div class="container">
+        <div class="py-5 fp__breadcrumb_overlay">
+            <div class="container py-2 py-md-5">
                 <div class="fp__breadcrumb_text">
                     <h1>sign in</h1>
                     <ul>
@@ -19,13 +18,13 @@
         </div>
     </section>
     <!--=============================
-        BREADCRUMB END
-    ==============================-->
+            BREADCRUMB END
+        ==============================-->
 
 
     <!--=========================
-        SIGNIN START
-    ==========================-->
+            SIGNIN START
+        ==========================-->
     <section class="fp__signin" style="background: url(images/login_bg.jpg);">
         <div class="fp__signin_overlay pt_125 xs_pt_95 pb_100 xs_pb_70">
             <div class="container">
@@ -40,7 +39,8 @@
                                     <div class="col-xl-12">
                                         <div class="fp__login_imput">
                                             <label>email</label>
-                                            <input type="email" name="email" placeholder="Email" required value="{{ old('email') }}">
+                                            <input type="email" name="email" placeholder="Email" required
+                                                value="{{ old('email') }}">
                                         </div>
                                     </div>
 
@@ -73,7 +73,8 @@
                             </form>
                             <p class="or"><span>or</span></p>
 
-                            <p class="create_account">Dont’t have an aceount ? <a href="{{ route('register') }}">Create Account</a>
+                            <p class="create_account">Dont’t have an aceount ? <a href="{{ route('register') }}">Create
+                                    Account</a>
                             </p>
                         </div>
                     </div>
@@ -82,6 +83,6 @@
         </div>
     </section>
     <!--=========================
-        SIGNIN END
-    ==========================-->
+            SIGNIN END
+        ==========================-->
 @endsection
