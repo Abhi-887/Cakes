@@ -6778,6 +6778,6 @@ textarea::placeholder {
 .page-link.active {
     background-color: white;
     border-color: #4b637f;
-    color: white !important;
+    color: rgb(0, 0, 0) !important;
 }
 /* Color Styles End */
