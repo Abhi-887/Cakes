@@ -1817,6 +1817,7 @@ button {
 
 .fp__single_blog_img {
     height: 500px;
+    overflow: hidden;
     display: block;
 }
 
