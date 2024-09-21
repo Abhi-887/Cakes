@@ -22,20 +22,19 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('admin2/assets/css/style.css') }}">
 
 
-    <link rel="stylesheet" href="{{ asset('admin/assets/modules/bootstrap/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin/assets/modules/fontawesome/css/all.min.css') }}">
+
 
     <link rel="stylesheet" href="{{ asset('admin/assets/css/toastr.min.css') }}">
 
     <link rel="stylesheet" href="{{ asset('admin/assets/css/bootstrap-iconpicker.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin/assets/modules/select2/dist/css/select2.min.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('admin/assets/modules/select2/dist/css/select2.min.css') }}">
 
     <link rel="stylesheet"
         href="{{ asset('admin/assets/modules/bootstrap-timepicker/css/bootstrap-timepicker.min.css') }}">
     <link rel="stylesheet"
         href="{{ asset('admin/assets/modules/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('admin/assets/modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/assets/modules/bootstrap-tagsinput/dist/bootstrap-tagsinput.css') }}"> --}}
 
     <!-- Font -->
 
@@ -61,8 +60,8 @@
         var loggedInUserId = "{{ auth()->user()->id }}";
     </script>
 
-    <!-- /END GA -->
-    @vite(['resources/js/app.js', 'resources/js/admin.js'])
+    {{-- <!-- /END GA -->
+    @vite(['resources/js/app.js', 'resources/js/admin.js']) --}}
 
 </head>
 
@@ -89,174 +88,100 @@
                     <div class="header-dashboard">
                         <div class="wrap">
                             <div class="header-left">
-
                                 <div class="button-show-hide">
                                     <i class="icon-menu-left"></i>
                                 </div>
-                                <form class="form-search flex-grow">
-                                    <fieldset class="name">
-                                        <input type="text" placeholder="Search here..." class="show-search"
-                                            name="name" tabindex="2" value="" aria-required="true"
-                                            required="">
-                                    </fieldset>
-                                    <div class="button-submit">
-                                        <button class="" type="submit"><i class="icon-search"></i></button>
-                                    </div>
-
-                                </form>
+                                {{-- <form class="form-search flex-grow" method="GET" action="{{ route('search') }}">
+                                        <fieldset class="name">
+                                            <input type="text" placeholder="Search here..." class="show-search"
+                                                name="query" tabindex="2" value="" aria-required="true" required>
+                                        </fieldset>
+                                        <div class="button-submit">
+                                            <button type="submit"><i class="icon-search"></i></button>
+                                        </div>
+                                    </form> --}}
                             </div>
+
                             <div class="header-grid">
+                                @php
+                                    $notifications = \App\Models\OrderPlacedNotification::where('seen', 0)
+                                        ->latest()
+                                        ->take(10)
+                                        ->get();
+                                    $unseenMessages = \App\Models\Chat::where([
+                                        'receiver_id' => auth()->user()->id,
+                                        'seen' => 0,
+                                    ])->count();
+                                @endphp
 
                                 <div class="header-item button-dark-light">
                                     <i class="icon-moon"></i>
                                 </div>
+
                                 <div class="popup-wrap noti type-header">
                                     <div class="dropdown">
                                         <button class="btn btn-secondary dropdown-toggle" type="button"
-                                            id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                            data-bs-toggle="dropdown" aria-expanded="false">
                                             <span class="header-item">
-                                                <span class="text-tiny">1</span>
+                                                <span class="text-tiny">{{ count($notifications) }}</span>
                                                 <i class="icon-bell"></i>
                                             </span>
                                         </button>
                                         <ul class="dropdown-menu dropdown-menu-end has-content"
                                             aria-labelledby="dropdownMenuButton1">
                                             <li>
-                                                <h6>Message</h6>
+                                                <h6>Notifications</h6>
                                             </li>
-                                            <li>
-                                                <div class="noti-item w-full wg-user active">
-                                                    <div class="image">
-                                                        <img src="" alt="">
-                                                    </div>
-                                                    <div class="flex-grow">
-                                                        <div class="flex items-center justify-between">
-                                                            <a href="#" class="body-title">Cameron
-                                                                Williamson</a>
-                                                            <div class="time">10:13 PM</div>
+                                            @foreach ($notifications as $notification)
+                                                <li>
+                                                    <div class="noti-item w-full wg-user active">
+                                                        <div class="image">
+                                                            <i class="icon-noti-{{ $loop->index + 1 }}"></i>
                                                         </div>
-                                                        <div class="text-tiny">Hello?</div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="noti-item w-full wg-user active">
-                                                    <div class="image">
-                                                        <img src="" alt="">
-                                                    </div>
-                                                    <div class="flex-grow">
-                                                        <div class="flex items-center justify-between">
-                                                            <a href="#" class="body-title">Ralph Edwards</a>
-                                                            <div class="time">10:13 PM</div>
-                                                        </div>
-                                                        <div class="text-tiny">Are you there? interested i this...
+                                                        <div class="flex-grow">
+                                                            <div class="flex items-center justify-between">
+                                                                <a href="{{ route('admin.orders.show', $notification->order_id) }}"
+                                                                    class="body-title">{{ $notification->message }}</a>
+                                                                <div class="time">
+                                                                    {{ date('h:i A', strtotime($notification->created_at)) }}
+                                                                </div>
+                                                            </div>
+                                                            <div class="text-tiny">
+                                                                {{ date('d-F-Y', strtotime($notification->created_at)) }}
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="noti-item w-full wg-user active">
-                                                    <div class="image">
-                                                        <img src="" alt="">
-                                                    </div>
-                                                    <div class="flex-grow">
-                                                        <div class="flex items-center justify-between">
-                                                            <a href="#" class="body-title">Eleanor Pena</a>
-                                                            <div class="time">10:13 PM</div>
-                                                        </div>
-                                                        <div class="text-tiny">Interested in this loads?</div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="noti-item w-full wg-user active">
-                                                    <div class="image">
-                                                        <img src="" alt="">
-                                                    </div>
-                                                    <div class="flex-grow">
-                                                        <div class="flex items-center justify-between">
-                                                            <a href="#" class="body-title">Jane Cooper</a>
-                                                            <div class="time">10:13 PM</div>
-                                                        </div>
-                                                        <div class="text-tiny">Okay...Do we have a deal?</div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li><a href="#" class="tf-button w-full">View all</a></li>
+                                                </li>
+                                            @endforeach
+                                            <li><a href="{{ route('admin.orders.index') }}"
+                                                    class="tf-button w-full">View all</a></li>
                                         </ul>
                                     </div>
                                 </div>
+
                                 <div class="popup-wrap message type-header">
                                     <div class="dropdown">
                                         <button class="btn btn-secondary dropdown-toggle" type="button"
-                                            id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                                            data-bs-toggle="dropdown" aria-expanded="false">
                                             <span class="header-item">
-                                                <span class="text-tiny">1</span>
+                                                <span class="text-tiny">{{ $unseenMessages }}</span>
                                                 <i class="icon-message-square"></i>
                                             </span>
                                         </button>
                                         <ul class="dropdown-menu dropdown-menu-end has-content"
                                             aria-labelledby="dropdownMenuButton2">
                                             <li>
-                                                <h6>Notifications</h6>
+                                                <h6>Messages</h6>
                                             </li>
-                                            <li>
-                                                <div class="message-item item-1">
-                                                    <div class="image">
-                                                        <i class="icon-noti-1"></i>
-                                                    </div>
-                                                    <div>
-                                                        <div class="body-title-2">Discount available</div>
-                                                        <div class="text-tiny">Morbi sapien massa, ultricies at rhoncus
-                                                            at, ullamcorper nec diam</div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="message-item item-2">
-                                                    <div class="image">
-                                                        <i class="icon-noti-2"></i>
-                                                    </div>
-                                                    <div>
-                                                        <div class="body-title-2">Account has been verified</div>
-                                                        <div class="text-tiny">Mauris libero ex, iaculis vitae rhoncus
-                                                            et</div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="message-item item-3">
-                                                    <div class="image">
-                                                        <i class="icon-noti-3"></i>
-                                                    </div>
-                                                    <div>
-                                                        <div class="body-title-2">Order shipped successfully</div>
-                                                        <div class="text-tiny">Integer aliquam eros nec sollicitudin
-                                                            sollicitudin</div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="message-item item-4">
-                                                    <div class="image">
-                                                        <i class="icon-noti-4"></i>
-                                                    </div>
-                                                    <div>
-                                                        <div class="body-title-2">Order pending: <span>ID 305830</span>
-                                                        </div>
-                                                        <div class="text-tiny">Ultricies at rhoncus at ullamcorper
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li><a href="#" class="tf-button w-full">View all</a></li>
+                                            <!-- Loop through messages here -->
+                                            <li><a href="{{ route('admin.chat.index') }}" class="tf-button w-full">View
+                                                    all</a></li>
                                         </ul>
                                     </div>
                                 </div>
+
                                 <div class="header-item button-zoom-maximize">
-                                    <div class="">
-                                        <i class="icon-maximize"></i>
-                                    </div>
+                                    <i class="icon-maximize"></i>
                                 </div>
 
                                 <div class="popup-wrap user type-header">
@@ -265,71 +190,33 @@
                                             id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
                                             <span class="header-user wg-user">
                                                 <span class="image">
-                                                    <img src="" alt="">
+                                                    <img src="{{ asset(auth()->user()->avatar) }}" alt="">
                                                 </span>
                                                 <span class="flex flex-column">
-                                                    <span class="body-title mb-2">Kristin Watson</span>
+                                                    <span class="body-title mb-2">{{ auth()->user()->name }}</span>
                                                     <span class="text-tiny">Admin</span>
                                                 </span>
                                             </span>
                                         </button>
                                         <ul class="dropdown-menu dropdown-menu-end has-content"
                                             aria-labelledby="dropdownMenuButton3">
-                                            <li>
-                                                <a href="#" class="user-item">
-                                                    <div class="icon">
-                                                        <i class="icon-user"></i>
-                                                    </div>
-                                                    <div class="body-title-2">Account</div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="user-item">
-                                                    <div class="icon">
-                                                        <i class="icon-mail"></i>
-                                                    </div>
-                                                    <div class="body-title-2">Inbox</div>
-                                                    <div class="number">27</div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="user-item">
-                                                    <div class="icon">
-                                                        <i class="icon-file-text"></i>
-                                                    </div>
-                                                    <div class="body-title-2">Taskboard</div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="setting.html" class="user-item">
-                                                    <div class="icon">
-                                                        <i class="icon-settings"></i>
-                                                    </div>
-                                                    <div class="body-title-2">Setting</div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="user-item">
-                                                    <div class="icon">
-                                                        <i class="icon-headphones"></i>
-                                                    </div>
-                                                    <div class="body-title-2">Support</div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="login.html" class="user-item">
-                                                    <div class="icon">
-                                                        <i class="icon-log-out"></i>
-                                                    </div>
-                                                    <div class="body-title-2">Log out</div>
-                                                </a>
-                                            </li>
+                                            <li><a href="{{ route('admin.profile') }}" class="user-item"><i
+                                                        class="icon-user"></i> Account</a></li>
+                                            {{-- <li><a href="{{ route('admin.inbox') }}" class="user-item"><i
+                                                            class="icon-mail"></i> Inbox <span
+                                                            class="number">{{ $unseenMessages }}</span></a></li> --}}
+                                            <li><a href="{{ route('admin.setting.index') }}" class="user-item"><i
+                                                        class="icon-settings"></i> Settings</a></li>
+                                            <li><a href="{{ route('logout') }}" class="user-item"><i
+                                                        class="icon-log-out"></i> Logout</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+
                     <!-- Main Content -->
                     <div class="main-content">
                         <div class="main-content-inner">

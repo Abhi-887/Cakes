@@ -61,6 +61,24 @@
   box-shadow: none !important;
   outline: none; }
 
+  .custom-file,
+  .custom-file-label,
+  .custom-select,
+  .custom-file-label::after,
+  .form-control[type="color"],
+  select.form-control:not([size]):not([multiple]) {
+    height: auto !important; /* or set any height you want */
+  }
+
+  .btn-secondary,
+.btn-secondary.disabled {
+  box-shadow: none !important; /* Removes the shadow */
+  background-color: initial !important; /* Or set your desired background color */
+  border-color: initial !important; /* Or set your desired border color */
+  color: initial !important; /* Or set your desired text color */
+}
+
+
 a {
   color: #6777ef;
   font-weight: 500;

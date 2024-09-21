@@ -27,23 +27,7 @@
 }
 
 /**
-  * Name: Remos eCommerce Admin Dashboard HTML Template
-  * Version: 1.0.1
-  * Author: Themesflat
-  * Author URI: http://www.themesflat.com
-*/
-/**
 
-  	* Reset Browsers
-    * General
-	* Elements
-  	* Forms
-	* Typography
-	* Extra classes
-    * link style
-    * themesflat-container
-
-*/
 /* Reset Browsers
 -------------------------------------------------------------- */
 html,
@@ -138,6 +122,23 @@ video {
   font-style: inherit;
   font-weight: inherit;
 }
+
+.custom-file,
+.custom-file-label,
+.custom-select,
+.custom-file-label::after,
+.form-control[type="color"],
+select.form-control:not([size]):not([multiple]) {
+  height: auto !important; /* or set any height you want */
+}
+.btn-secondary,
+.btn-secondary.disabled {
+  box-shadow: none !important; /* Removes the shadow */
+  background-color: initial !important; /* Or set your desired background color */
+  border-color: initial !important; /* Or set your desired border color */
+  color: initial !important; /* Or set your desired text color */
+}
+
 
 article,
 aside,
