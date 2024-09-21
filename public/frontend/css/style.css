@@ -356,8 +356,6 @@ button {
     width: 30px;
     height: 30px;
     line-height: 30px;
-    background: var(--colorPrimary);
-    color: var(--colorWhite);
     top: -4px;
     right: 0;
     border-radius: 50%;
@@ -6768,5 +6766,8 @@ textarea::placeholder {
 .details_button_area .wishlist:hover {
     background: #788a9f !important;
 }
-
+.fp__menu_cart_header .close_cart {
+    background: #788a9f;
+    color: white;
+}
 /* Color Styles End */
