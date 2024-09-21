@@ -6770,7 +6770,6 @@ textarea::placeholder {
 .active > .page-link,
 .page-link.active {
     background-color: white;
-    border-color: var(--bs-pagination-border-width) solid var(--bs-pagination-border-color);
     color: rgb(0, 0, 0) !important;
 }
 /* .fp__pagination ul li a:hover,
