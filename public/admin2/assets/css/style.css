@@ -131,6 +131,13 @@ video {
 select.form-control:not([size]):not([multiple]) {
   height: auto !important; /* or set any height you want */
 }
+.btn-secondary,
+.btn-secondary.disabled {
+  box-shadow: none !important; /* Removes the shadow */
+  background-color: initial !important; /* Or set your desired background color */
+  border-color: initial !important; /* Or set your desired border color */
+  color: initial !important; /* Or set your desired text color */
+}
 
 
 article,
