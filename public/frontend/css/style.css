@@ -6754,6 +6754,12 @@ textarea::placeholder {
 .common_btn {
     background: #4b637f;
 }
+.fp__section_heading p {
+    color: #788a9f;
+  }
+.fp__about_us_text {
+    color: #405a68;
+}
 .fp__checkout_single_address {
     border: 1px solid #eeeeeea6;
     background: #e0f1f9;
@@ -6767,4 +6773,8 @@ textarea::placeholder {
 .fp__breadcrumb_text ul li a::after {
     background:white;
 }
+.fp__breadcrumb_text ul li a {
+    columns: white;
+}
+
 /* Color Styles End */
