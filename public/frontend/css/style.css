@@ -6291,8 +6291,6 @@ CHECKOUT PAGE START
 ============================*/
 .fp__search_menu_form {
     padding: 20px;
-    background: #faf6f3fa;
-    border: 1px solid #eee;
     border-radius: 80px;
 }
 
@@ -6760,18 +6758,19 @@ textarea::placeholder {
 .fp__track_order ul li.active::after {
     background: #4caf50;
 }
-
 .fp__track_order ul li.active::before {
     background: #4caf50;
     color: white;
 }
-
 .fp__track_order ul li.declined_status::before {
     background: #ae0404 !important;
     color: white;
 }
-
 .fp__track_order ul li.declined_status::after {
     background: #ae0404 !important;
+}
+.fp__search_menu_form {
+    background: #faf6f3fa;
+    border: 1px solid #eee;
 }
 /* Color Styles End */
