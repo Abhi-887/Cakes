@@ -108,11 +108,11 @@ button {
     box-shadow: none !important;
 }
 
-:root {
+/* :root {
     --boxShadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     --gradiantBg: rgb(173, 205, 222);
     --gradiantHoverBg: rgb(75, 99, 127);
-}
+} */
 
 /*============================
     COMMON CSS START
@@ -136,8 +136,8 @@ button {
 }
 
 .fp__section_heading h4 {
-    color: var(--colorPrimary);
-    font-family: var(--cursiveFont);
+    /* color: var(--colorPrimary); */
+    /* font-family: var(--cursiveFont); */
     font-size: 22px;
     text-transform: capitalize;
     margin-bottom: 10px;
@@ -207,7 +207,7 @@ button {
 }
 
 .topbar_icon li a {
-    color: var(--colorWhite);
+    color: white;
     height: 25px;
     line-height: 25px;
     border-left: 1px solid #ffffff80;
@@ -285,7 +285,7 @@ button {
 }
 
 .droap_menu {
-    box-shadow: var(--boxShadow);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     width: 250px;
     top: 49px !important;
     transition: ease 0.4s;
@@ -465,7 +465,7 @@ button {
 .fp__menu_cart_area ul li .menu_cart_img {
     width: 70px;
     height: 70px;
-    box-shadow: var(--boxShadow);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .fp__menu_cart_area ul li .menu_cart_text .title {
@@ -692,7 +692,7 @@ button {
     position: relative;
     margin-top: 20px;
     border-radius: 50%;
-    box-shadow: var(--boxShadow);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border: 5px solid var(--colorWhite);
 }
 
@@ -1147,7 +1147,7 @@ button {
     -moz-transition: all linear 0.3s;
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
-    box-shadow: var(--boxShadow);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .fp__menu_item:hover .fp__menu_item_text ul li a i {
@@ -1197,7 +1197,7 @@ button {
     z-index: 1;
     /* background: var(--colorWhite); */
     /* padding: 3px 15px; */
-    box-shadow: var(--boxShadow);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border-radius: 30px;
     border: 1px solid #788a9f !important;
 }
@@ -1289,7 +1289,7 @@ button {
     background: var(--colorWhite);
     padding: 8px 15px; */
 
-    box-shadow: var(--boxShadow) !;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px !;
     /* border-radius: 30px; */
 }
 
@@ -1697,7 +1697,7 @@ button {
 ============================*/
 .fp__single_testimonial {
     background: var(--colorWhite);
-    box-shadow: var(--boxShadow);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     padding: 25px;
     border-radius: 10px;
     position: relative;
@@ -1783,7 +1783,7 @@ button {
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
-    box-shadow: var(--boxShadow);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     z-index: 1;
 }
 
@@ -1805,7 +1805,7 @@ button {
 .fp__single_blog {
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: var(--boxShadow);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     background: var(--colorWhite);
     position: relative;
     /* margin-top: 25px; */
@@ -2775,7 +2775,7 @@ footer .wrapper a:hover {
 
 .fp__blog_det_area {
     background: #ffffff;
-    box-shadow: var(--boxShadow);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border-radius: 5px;
     overflow: hidden;
 }
@@ -2995,7 +2995,7 @@ footer .wrapper a:hover {
 
 .blog_det_button li {
     width: 48%;
-    box-shadow: var(--boxShadow);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border-radius: 5px;
     background: var(--colorWhite);
     padding: 25px;
@@ -3057,7 +3057,7 @@ footer .wrapper a:hover {
 .fp__comment {
     overflow: hidden;
     background: var(--colorWhite);
-    box-shadow: var(--boxShadow);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border-radius: 5px;
     padding: 25px;
 }
@@ -3082,7 +3082,7 @@ footer .wrapper a:hover {
     width: 100px !important;
     height: 100px !important;
     border-radius: 50%;
-    box-shadow: var(--boxShadow);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border: 5px solid var(--colorWhite);
 }
 
@@ -3173,7 +3173,7 @@ footer .wrapper a:hover {
 .comment_input {
     overflow: hidden;
     background: var(--colorWhite);
-    box-shadow: var(--boxShadow);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border-radius: 5px;
     padding: 25px;
 }
@@ -3194,7 +3194,7 @@ footer .wrapper a:hover {
 
 .blog_sidebar {
     background: var(--colorWhite);
-    box-shadow: var(--boxShadow);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border-radius: 5px;
     padding: 25px;
     margin-top: 25px;
@@ -3670,7 +3670,7 @@ footer .wrapper a:hover {
     padding: 20px;
     border-radius: 10px;
     margin-top: 20px;
-    box-shadow: var(--boxShadow);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .fp__post_review form .rating {
@@ -4421,7 +4421,7 @@ CHECKOUT PAGE START
     PAYMENT PAGE START
 ============================*/
 .fp__single_payment {
-    box-shadow: var(--boxShadow);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border-radius: 5px;
     overflow: hidden;
     background: #faf6f3fa;
@@ -4432,7 +4432,7 @@ CHECKOUT PAGE START
 }
 
 .fp__single_payment img {
-    box-shadow: var(--boxShadow);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border-radius: 4px;
 }
 
@@ -4522,7 +4522,7 @@ CHECKOUT PAGE START
     border: none;
     border-radius: 10px !important;
     overflow: hidden;
-    box-shadow: var(--boxShadow);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .fp__faq_area .accordion-item h2 button {
@@ -4575,7 +4575,7 @@ CHECKOUT PAGE START
 }
 
 .fp__faq_form form {
-    box-shadow: var(--boxShadow);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     padding: 25px;
     border-radius: 1px;
 }
@@ -4751,7 +4751,7 @@ CHECKOUT PAGE START
 .dasboard_header .dasboard_header_img {
     border-radius: 50%;
     border: 5px solid var(--colorWhite);
-    box-shadow: var(--boxShadow);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     width: 140px;
     height: 140px;
     position: relative;
@@ -4778,7 +4778,7 @@ CHECKOUT PAGE START
     text-align: center;
     border-radius: 50%;
     background: var(--colorWhite);
-    box-shadow: var(--boxShadow);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     cursor: pointer;
     transition: all linear 0.6s;
     -webkit-transition: all linear 0.6s;
@@ -5765,7 +5765,7 @@ CHECKOUT PAGE START
 }
 
 .fp__why_choose2 .fp__choose_single .icon {
-    box-shadow: var(--boxShadow);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border: 5px solid #fff;
     line-height: 49px;
     font-size: 25px;
@@ -5812,7 +5812,7 @@ CHECKOUT PAGE START
     border-radius: 50%;
     padding: 5px;
     background: var(--colorWhite);
-    box-shadow: var(--boxShadow);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     position: absolute;
     top: -25px;
     left: -25px;
@@ -5873,7 +5873,7 @@ CHECKOUT PAGE START
     margin-top: 25px;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: var(--boxShadow);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border-bottom: 5px solid var(--colorPrimary);
 }
 
@@ -5898,7 +5898,7 @@ CHECKOUT PAGE START
     left: 5px;
     background: var(--colorWhite);
     padding: 3px 15px;
-    box-shadow: var(--boxShadow);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border-radius: 5px;
 }
 
@@ -5993,7 +5993,7 @@ CHECKOUT PAGE START
 }
 
 .fp__single_team2 {
-    box-shadow: var(--boxShadow);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border-radius: 10px;
     background: var(--colorWhite);
     text-align: center;
@@ -6112,7 +6112,7 @@ CHECKOUT PAGE START
     height: 160px;
     border-radius: 50%;
     padding: 5px;
-    box-shadow: var(--boxShadow);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .fp__testimonial_text2 {
@@ -6131,7 +6131,7 @@ CHECKOUT PAGE START
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
-    box-shadow: var(--boxShadow);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border: 5px solid var(--colorWhite);
 }
 
