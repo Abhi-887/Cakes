@@ -396,19 +396,14 @@ button {
 .fp__search_form form .close_search:hover i {
     color: var(--colorWhite) !important;
 } */
-
-.fp__search_form button:hover {
-    background: var(--colorBlack);
-}
-
 .fp__search_form.show {
     display: block;
 }
 
-.fp__menu_cart_header .close_cart:hover {
+/* .fp__menu_cart_header .close_cart:hover {
     background: var(--colorBlack);
     color: var(--colorWhite);
-}
+} */
 
 .fp__menu_cart_area ul {
     max-height: 450px;
@@ -6767,7 +6762,9 @@ textarea::placeholder {
 .details_button_area .wishlist {
     color: white;
 }
-
+.fp__search_form button:hover {
+    background: white;
+}
 .details_button_area .wishlist:hover {
     background: #788a9f !important;
 }
