@@ -319,8 +319,6 @@ button {
 .fp__search_form button {
     right: 7px;
     transform: translateY(-50%);
-    background: #4b637f !important;
-    color: var(--colorWhite);
 }
 
 .searchformbackground-light-gray button {
@@ -6768,7 +6766,10 @@ textarea::placeholder {
     background:#788a9f;
     color: white;
 }
-
+.fp__search_form button {
+    background: #4b637f !important;
+    color: white;
+}
 .fp__menu_cart_area .checkout:hover,
 .fp__menu_cart_area .cart_view :hover {
     background: #788a9f;
