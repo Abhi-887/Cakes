@@ -109,7 +109,7 @@ button {
     box-shadow: none !important;
 }
 
-:root {
+/* :root {
     --colorPrimary: #788a9f;
     --paraColor: #494949;
     --colorBlack: #010f1c;
@@ -117,7 +117,7 @@ button {
     --boxShadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     --gradiantBg: rgb(173, 205, 222);
     --gradiantHoverBg: rgb(75, 99, 127);
-}
+} */
 
 /*============================
     COMMON CSS START
