@@ -109,15 +109,12 @@ button {
     box-shadow: none !important;
 }
 
-/* :root {
-    --colorPrimary: #788a9f;
+:root {
     --paraColor: #494949;
-    --colorBlack: #010f1c;
-    --colorWhite: #ffffff;
     --boxShadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     --gradiantBg: rgb(173, 205, 222);
     --gradiantHoverBg: rgb(75, 99, 127);
-} */
+}
 
 /*============================
     COMMON CSS START
@@ -2204,7 +2201,6 @@ footer .wrapper a:hover {
     cursor: pointer;
     text-align: center;
     transform: rotate(90deg);
-    color: var(--colorWhite);
     text-transform: capitalize;
     padding: 5px 15px 7px 15px;
     border-radius: 30px;
@@ -2256,7 +2252,6 @@ footer .wrapper a:hover {
 
 .fp__breadcrumb_text h1 {
     text-align: center;
-    color: var(--colorWhite);
     text-transform: capitalize;
     font-size: 50px;
     font-weight: 800;
@@ -2282,7 +2277,6 @@ footer .wrapper a:hover {
     content: "";
     width: 8px;
     height: 1px;
-    background: var(--colorWhite);
     top: 13px;
     right: 10px;
 }
@@ -2302,7 +2296,6 @@ footer .wrapper a:hover {
 .fp__breadcrumb_text ul li:first-child a::before {
     position: absolute;
     content: "\f015";
-    color: var(--colorWhite);
     font-family: "Font Awesome 5 Free";
     font-weight: 600;
     top: 1px;
@@ -6752,6 +6745,7 @@ textarea::placeholder {
 }
 .fp__scroll_btn {
     background: #788a9f !important;
+    color: #ffffff;
 }
 .fp__scroll_btn:hover {
     background: #4b637f !important;
@@ -6762,5 +6756,14 @@ textarea::placeholder {
 .fp__checkout_single_address {
     border: 1px solid #eeeeeea6;
     background: #e0f1f9;
+}
+.fp__breadcrumb_text h1 {
+    color: white;
+}
+.fp__breadcrumb_text ul li:first-child a::before {
+    color: white;
+}
+.fp__breadcrumb_text ul li a::after {
+    background:white;
 }
 /* Color Styles End */
