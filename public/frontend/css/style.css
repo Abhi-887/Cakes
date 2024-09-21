@@ -34,7 +34,6 @@ li {
 a {
     display: inline-block;
     text-decoration: none;
-    color: var(--paraColor);
 }
 
 a:hover {
@@ -110,7 +109,6 @@ button {
 }
 
 :root {
-    --paraColor: #494949;
     --boxShadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     --gradiantBg: rgb(173, 205, 222);
     --gradiantHoverBg: rgb(75, 99, 127);
@@ -6693,7 +6691,9 @@ CHECKOUT PAGE START
 
 
 /* Color Styles Start */
-
+a {
+    color: #494949;
+}
 .background-light-gray {
     background: #788a9f !important;
 }
