@@ -119,7 +119,6 @@ button {
 ============================*/
 .common_btn {
     text-transform: capitalize !important;
-    color: var(--colorWhite) !important;
     padding: 12px 45px !important;
     border-radius: 30px;
     font-size: 15px !important;
@@ -6752,6 +6751,8 @@ textarea::placeholder {
 }
 .common_btn {
     background: #4b637f;
+    color: white !important;
+
 }
 .fp__section_heading p {
     color: #788a9f;
