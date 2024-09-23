@@ -912,9 +912,15 @@ h6, .h6 {
   max-width: 100%;
   height: 100%;
 }
-.wg-box {
-    padding: 10px !important;
+.wg-table {
+    overflow-x: hidden !important;
   }
+
+  #logo_header {
+    max-width: 120px !important;
+    width: 100% !important;
+  }
+
 /* link style
 -------------------------------------------------------------- */
 a {
