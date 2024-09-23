@@ -4295,9 +4295,6 @@ select.h40 {
   line-height: 20px;
 }
 
-.wg-table {
-  overflow-x: auto !important;
-}
 .wg-table::-webkit-scrollbar {
   height: 4px;
 }
