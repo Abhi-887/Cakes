@@ -155,7 +155,7 @@
         <div class="m-auto text-center col-md-8 col-lg-7 col-xl-6">
             <div class="fp__section_heading">
                 <h2>Trending Now</h2>
-                <p class="text-gray">Shop Our Most Popular Trending Designs</p>
+                <p class="color-light-gray">Shop Our Most Popular Trending Designs</p>
             </div>
         </div>
     </div>

@@ -6120,27 +6120,11 @@ select option {
 a {
     color: #494949;
 }
-.background-light-gray {
-    background: #788a9f !important;
-}
-.background-light-gray:hover {
-    background: #4b637f !important;
-}
+
 .searchformbackground-light-gray {
     background: #faf6f3fa;
 }
-.color-dark-gray {
-    color: #4b637f !important;
-}
-.background-dark-gray {
-    background-color: #4b637f !important;
-}
-.background-dark-gray:hover {
-    background-color: #788a9f !important;
-}
-.color-light-gray {
-    color: #788a9f !important;
-}
+
 .social-links a:hover {
     color: #8caabf !important;
 }
@@ -7033,8 +7017,23 @@ footer {
 .bg-gray{
     background-color: #788a9f !important;
 }
-.text-gray{
+.background-light-gray {
+    background: #788a9f !important;
+}
+.background-light-gray:hover {
+    background: #4b637f !important;
+}
+.background-dark-gray {
+    background-color: #4b637f !important;
+}
+.background-dark-gray:hover {
     background-color: #788a9f !important;
+}
+.color-dark-gray {
+    color: #4b637f !important;
+}
+.color-light-gray {
+    color: #788a9f !important;
 }
 .border-common{
     border: 1px solid #788a9f !important;
