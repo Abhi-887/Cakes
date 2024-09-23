@@ -23,11 +23,12 @@
                                     {{ $blog->category->name }}
                                 </a>
                                 <ul class="flex-wrap d-flex mt-2">
-                                    <li class="color-light-gray"><i class="fas fa-user"></i>{{ $blog->user->name }}</li>
                                     <li class="color-light-gray"><i
-                                            class="fas fa-calendar-alt"></i>{{ date('d M Y', strtotime($blog->created_at)) }}
+                                            class="fas fa-user color-light-gray"></i>{{ $blog->user->name }}</li>
+                                    <li class="color-light-gray"><i
+                                            class="fas fa-calendar-alt color-light-gray"></i>{{ date('d M Y', strtotime($blog->created_at)) }}
                                     </li>
-                                    <li class="color-light-gray"><i class="fas fa-comments"></i>
+                                    <li class="color-light-gray"><i class="fas fa-comments color-light-gray"></i>
                                         {{ $blog->comments_count }} comment</li>
                                 </ul>
                                 <a class="title"
