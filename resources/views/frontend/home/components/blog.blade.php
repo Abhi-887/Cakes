@@ -58,7 +58,7 @@
 
     .blogcategory {
         top: -6% !important;
-        color: #788a9f !important;
-        border: 1px solid #788a9f !important;
+        /* color: #788a9f !important;
+        border: 1px solid #788a9f !important; */
     }
 </style>

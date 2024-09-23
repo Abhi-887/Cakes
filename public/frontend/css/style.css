@@ -5283,7 +5283,6 @@ CHECKOUT PAGE START
     content: "";
     width: 100%;
     height: 3px;
-    background: #eee;
     top: 0;
     left: 0;
     z-index: 1;
@@ -5292,7 +5291,6 @@ CHECKOUT PAGE START
 .fp__track_order ul li::before {
     position: absolute;
     content: "\f1ce";
-    color: var(--colorPrimary);
     font-family: "Font Awesome 5 Free";
     font-size: 16px;
     font-weight: 600;
@@ -5304,7 +5302,6 @@ CHECKOUT PAGE START
     top: -20px;
     left: 50%;
     transform: translateX(-50%);
-    background: #eee;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
@@ -5827,10 +5824,6 @@ CHECKOUT PAGE START
     background-repeat: repeat !important;
     background-size: contain !important;
     border: none;
-}
-
-.fp__download2 .fp__download_overlay {
-    background: #faf6f385;
 }
 
 .fp__download2 .fp__download_text h4,
@@ -6434,8 +6427,6 @@ CHECKOUT PAGE START
     cursor: pointer;
     width: 30px;
     height: 30px;
-    background: #eee;
-    color: var(--colorPrimary);
     line-height: 31px;
     text-align: center;
     border-radius: 50%;
@@ -6773,10 +6764,48 @@ textarea::placeholder {
     border-color: #dee2e6;
     color: rgb(0, 0, 0) !important;
 }
-/* .fp__pagination ul li a:hover,
-.fp__pagination ul li.active a {
-    background: var(--colorPrimary);
-    color: var(--colorWhite) !important;
-    border-color: var(--colorPrimary);
-} */
+.fp__track_order ul li::after {
+    background: #eee;
+}
+
+.fp__track_order ul li::before {
+    color: rgb(58, 58, 58);
+    background: #eee;
+}
+.fp__download2 .fp__download_overlay {
+    background: #faf6f385;
+}
+.fp__single_chat_bottom label {
+    background: #eee;
+    color: rgb(58, 58, 58);
+}
+.about-description p {
+    color: white !important;
+}
+.blogcategory {
+    color: #788a9f !important;
+    border: 1px solid #788a9f !important;
+}
+.product-slider .stars {
+    color: #ff9800;
+}
+.product-slider .profile .name {
+    color: #333;
+}
+
+.product-slider .profile .company {
+    color: #999;
+}
+
+.slick-dots li button::before {
+    font-size: 14px !important;
+}
+
+.slick-dots li.slick-active button::before {
+    color: #000000 !important;
+}
+
+.slick-dots li button:hover::before {
+    color: #000000 !important;
+}
 /* Color Styles End */
