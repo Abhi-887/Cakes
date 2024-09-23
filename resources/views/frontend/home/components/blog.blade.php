@@ -23,7 +23,7 @@
                                     {{ $blog->category->name }}
                                 </a>
                                 <ul class="flex-wrap d-flex mt-2">
-                                    <li><i class="fas fa-user"></i>{{ $blog->user->name }}</li>
+                                    <li class="color-light-gray"><i class="fas fa-user"></i>{{ $blog->user->name }}</li>
                                     <li><i
                                             class="fas fa-calendar-alt"></i>{{ date('d M Y', strtotime($blog->created_at)) }}
                                     </li>

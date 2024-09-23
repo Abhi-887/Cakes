@@ -5364,10 +5364,10 @@ CHECKOUT PAGE START
     position: inherit;
 }
 
-.fp__blog2 .fp__single_blog:hover ul li,
+/* .fp__blog2 .fp__single_blog:hover ul li,
 .fp__blog2 .fp__single_blog:hover .title {
     color: black;
-}
+} */
 
 .fp__blog2 .fp__single_blog .title:hover {
     color: #494949;
