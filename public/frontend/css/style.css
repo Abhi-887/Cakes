@@ -5369,9 +5369,7 @@ CHECKOUT PAGE START
     color: black;
 } */
 
-.fp__blog2 .fp__single_blog .title:hover {
-    color: #494949;
-}
+
 
 .fp__blog2 .fp__single_blog_text ul li {
     font-size: 14px;
@@ -7084,4 +7082,7 @@ footer {
 /* Testimonial End */
 
 /* Blog Start */
+.fp__blog2 .fp__single_blog .title:hover {
+    color: #788a9f;
+}
 /* Blog End */
