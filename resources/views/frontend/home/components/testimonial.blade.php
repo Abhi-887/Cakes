@@ -69,7 +69,7 @@
                     <img src="images/heading_shapes.png" alt="shapes" class="img-fluid w-100">
                 </span> --}}
                 @if (!empty($sectionTitles['testimonial_sub_title']))
-                    <p>{{ $sectionTitles['testimonial_sub_title'] }}</p>
+                    <p class="color-light-gray">{{ $sectionTitles['testimonial_sub_title'] }}</p>
                 @endif
             </div>
         </div>
