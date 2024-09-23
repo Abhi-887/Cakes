@@ -453,7 +453,6 @@ button {
 }
 
 .fp__banner_overlay {
-    background: rgb(255 255 255 / 70%);
     height: 100%;
     position: relative;
 }
@@ -560,7 +559,6 @@ button {
 }
 
 .fp__banner_text h3 {
-    color: #494949 !important;
     text-transform: capitalize;
     font-size: 30px;
     font-weight: 600;
@@ -588,8 +586,6 @@ button {
     position: relative;
     margin-top: 20px;
     border-radius: 50%;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    border: 5px solid white;
 }
 
 .fp__banner_img .img img {
@@ -597,22 +593,18 @@ button {
 }
 
 .fp__banner_img span {
-    background: #494949 !important;
     position: absolute;
     width: 100px;
     height: 100px;
     top: -10px;
     right: -10px;
-    border: 5px solid white;
     border-radius: 50%;
     border-bottom-left-radius: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    color: white;
     font-size: 18px;
-    font-family: var(--cursiveFont);
     letter-spacing: 2px;
     font-weight: 900;
     text-transform: lowercase;
@@ -684,7 +676,6 @@ button {
 
 .fp__choose_single {
     margin-top: 55px;
-    background: #494949;
     padding: 35px;
     border-radius: 10px;
     position: relative;
@@ -697,13 +688,10 @@ button {
     line-height: 55px;
     border-radius: 50%;
     font-size: 25px;
-    color: #494949;
-    background: white;
     position: absolute;
     top: -30px;
     left: 50%;
     transform: translateX(-50%);
-    border: 2px solid #494949;
 }
 
 .fp__choose_single .text {
@@ -716,7 +704,6 @@ button {
     font-size: 23px;
     font-weight: 600;
     margin-bottom: 5px;
-    color: white;
     text-align: center;
 }
 
@@ -725,7 +712,6 @@ button {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    color: white;
     text-align: center;
 }
 
@@ -738,7 +724,6 @@ button {
 ============================*/
 .fp__offer_item {
     position: relative;
-    background: #8fabbe85 !important;
 }
 
 .fp__offer_item .slick-dots {
@@ -746,7 +731,6 @@ button {
 }
 
 .fp__offer_item_single {
-    background: white;
     border-radius: 10px;
     overflow: hidden;
     margin: 0px 12px;
@@ -769,11 +753,9 @@ button {
 }
 
 .fp__offer_item_single span {
-    font-family: var(--cursiveFont);
     letter-spacing: 2px;
     font-size: 20px;
     font-weight: 600;
-    color: #494949;
     text-transform: capitalize;
     display: block;
 }
@@ -785,8 +767,6 @@ button {
     margin: 10px 0px 5px;
     transition: all linear 0.6s;
     display: block;
-    color: black;
-    font-family: var(--headingFont);
     -webkit-transition: all linear 0.6s;
     -moz-transition: all linear 0.6s;
     -ms-transition: all linear 0.6s;
@@ -811,11 +791,9 @@ button {
 .fp__offer_item_single ul li a {
     width: 30px;
     height: 30px;
-    background: #494949;
     text-align: center;
     margin-right: 5px;
     line-height: 30px;
-    color: white;
     font-size: 14px;
     border-radius: 50%;
     transition: all linear 0.6s;
@@ -823,14 +801,6 @@ button {
     -moz-transition: all linear 0.6s;
     -ms-transition: all linear 0.6s;
     -o-transition: all linear 0.6s;
-}
-
-.fp__offer_item_single:hover .title {
-    color: #494949;
-}
-
-.fp__offer_item_single ul li a:hover {
-    background: black;
 }
 
 .add_slider .nextArrow,
@@ -6646,6 +6616,62 @@ a {
 input::placeholder,
 textarea::placeholder {
     color: #a6a6ac;
+}
+.fp__banner_overlay {
+    background: rgb(255 255 255 / 70%);
+}
+.fp__banner_img .img {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border: 5px solid white;
+}
+.fp__banner_img span {
+    background: #494949 !important;
+    border: 5px solid white;
+    color: white;
+}
+.fp__choose_single {
+    margin-top: 55px;
+    background: #494949;
+    padding: 35px;
+    border-radius: 10px;
+    position: relative;
+}
+.fp__choose_single .icon {
+    color: #494949;
+    background: white;
+    border: 2px solid #494949;
+}
+.fp__choose_single .text {
+    text-align: center;
+    margin-top: 20px;
+}
+.fp__choose_single .text h3 {
+    color: white;
+}
+.fp__choose_single .text p {
+    color: white;
+}
+.fp__offer_item {
+    background: #8fabbe85 !important;
+}
+.fp__offer_item_single {
+    background: white;
+}
+.fp__offer_item_single span {
+    color: #494949;
+}
+.fp__offer_item_single .title {
+    color: black;
+}
+.fp__offer_item_single ul li a {
+    background: #494949;
+    color: white;
+}
+.fp__offer_item_single:hover .title {
+    color: #494949;
+}
+.fp__offer_item_single ul li a:hover {
+    background: black;
 }
 .fp__scroll_btn {
     background: #788a9f !important;
