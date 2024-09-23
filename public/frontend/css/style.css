@@ -6893,10 +6893,10 @@ footer {
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     background: white;
 }
-.fp__blog2 .fp__single_blog_text ul li i {
+/* .fp__blog2 .fp__single_blog_text ul li i {
     background: white;
     color: #788a9f;
-}
+} */
 .fp__single_blog_text {
     background: white;
     border-top: 1px solid #788a9f !important;
