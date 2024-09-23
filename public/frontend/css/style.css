@@ -3708,11 +3708,6 @@ CHECKOUT PAGE START
     margin-right: 5px;
 }
 
-.fp__checkout_form h5 a:hover {
-    background: #494949;
-    color: white;
-}
-
 .fp__address_modal .modal-dialog {
     max-width: 700px;
 }
