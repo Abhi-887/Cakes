@@ -137,7 +137,7 @@
                                 <input class="border border-0 searchinput w-100 rounded-5" type="text"
                                     placeholder="Search . . ." name="search" />
                                 <button
-                                    class="px-4 py-2 position-absolute top-50 fw-semibold rounded-5 outline-0 transitions"
+                                    class="px-4 py-2 text-white background-light-gray position-absolute top-50 fw-semibold rounded-5 outline-0 transitions"
                                     type="submit">
                                     Search
                                 </button>
