@@ -6169,14 +6169,14 @@ a {
 /* .fp__search_form form .close_search {
     background: white;
 } */
-.overlay-text {
+/* .overlay-text {
     color: #fff !important;
     text-shadow: 0px -2px 25px rgba(0, 0, 0, 1),
         8px 20px 25px rgba(0, 0, 0, 1),
         1px -10px 25px rgba(0, 0, 0, 1),
         20px 20px 25px rgba(0, 0, 0, 0),
         20px 20px 25px rgba(0, 0, 0, 1);
-}
+} */
 .fp__menu_cart_area ul::-webkit-scrollbar-thumb {
     background: #494949;
 }
@@ -6195,12 +6195,10 @@ a {
 .fp__menu_cart_area ul li .menu_cart_text .price {
     color: #494949;
 }
-.image-block:hover .overlay-text {
+/* .image-block:hover .overlay-text {
     color: #fff !important;
-}
-.image-block:hover .gradient-overlay {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
-}
+} */
+
 input::placeholder,
 textarea::placeholder {
     color: #a6a6ac;
@@ -6273,9 +6271,7 @@ textarea::placeholder {
     color: white !important;
 
 }
-.fp__section_heading p {
-    color: #788a9f;
-  }
+
 .fp__about_us_text {
     color: #405a68;
 }
@@ -6450,9 +6446,9 @@ textarea::placeholder {
 .actions a:hover {
     color: #000;
 }
-.heart {
+/* .heart {
     background-color: #788a9f !important;
-}
+} */
 .fp__menu_item_text {
     border-top: 1px solid #788a9f !important;
 }
@@ -6829,9 +6825,9 @@ footer {
 .add-to-cart:hover {
     background: #4b637f !important;
 }
-.heart {
+/* .heart {
     background-color: #788a9f !important;
-}
+} */
 .fp__menu_item_text {
     border-top: 1px solid #788a9f !important;
 }
@@ -7043,7 +7039,11 @@ footer {
 
 
 /* New Updated CSS */
-
+/* Global CSS Start */
+.bg-gray{
+    background-color: #788a9f !important;
+}
+/* Global CSS Start */
 /* Header Start */
 .nav-item a,
 .menu_icon i {
@@ -7054,3 +7054,21 @@ footer {
     color: #364559 !important;
 }
 /* Header End */
+
+/* Blocks Start */
+.overlay-text {
+    text-shadow: 0px -2px 25px rgba(0, 0, 0, 1),
+        8px 20px 25px rgba(0, 0, 0, 1),
+        1px -10px 25px rgba(0, 0, 0, 1),
+        20px 20px 25px rgba(0, 0, 0, 0),
+        20px 20px 25px rgba(0, 0, 0, 1);
+}
+.image-block:hover .gradient-overlay {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+}
+/* Blocks End */
+
+/* Trending Now Start */
+
+
+/* Trending Now End */

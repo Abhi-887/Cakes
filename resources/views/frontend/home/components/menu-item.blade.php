@@ -155,7 +155,7 @@
         <div class="m-auto text-center col-md-8 col-lg-7 col-xl-6">
             <div class="fp__section_heading">
                 <h2>Trending Now</h2>
-                <p>Shop Our Most Popular Trending Designs</p>
+                <p class="bg-gray">Shop Our Most Popular Trending Designs</p>
             </div>
         </div>
     </div>
@@ -223,7 +223,7 @@
                                 <img src="${product.thumb_image}" alt="${product.name}" class="img-fluid w-100 product-img">
                             </a>
                         </div>
-                        <a class="heart position-absolute rounded-circle" href="javascript:;" onclick="addToWishlist('${product.id}')">
+                        <a class="heart bg-gray position-absolute rounded-circle" href="javascript:;" onclick="addToWishlist('${product.id}')">
                             <i class="text-white fal fa-heart"></i>
                         </a>
                         <div class="card-body fp__menu_item_text position-relative d-flex flex-column">
