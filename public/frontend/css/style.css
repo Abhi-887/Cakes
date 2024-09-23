@@ -6558,7 +6558,14 @@ CHECKOUT PAGE START
 .image-block:hover .overlay-text {
     transition: 0.4s ease-in-out;
 }
+select,
+select option {
+    font-family: 'mnsLondonRegular', sans-serif !important;
+}
 
+.fp__menu_item:hover, .fp__menu_hover:hover {
+    transform: scale(1.02);
+}
 .image-block:hover .gradient-overlay {
     transition: 0.7s ease;
 }
@@ -6841,5 +6848,12 @@ textarea::placeholder {
 
 .actions a:hover {
     color: #000;
+}
+.heart {
+    background-color: #788a9f !important;
+}
+
+.fp__menu_item_text {
+    border-top: 1px solid #788a9f !important;
 }
 /* Color Styles End */
