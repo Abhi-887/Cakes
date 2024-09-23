@@ -3417,20 +3417,12 @@ footer .wrapper a:hover {
     text-align: center;
     text-transform: capitalize;
     font-weight: 600;
-    color: black;
     transition: all linear 0.6s;
     -webkit-transition: all linear 0.6s;
     -moz-transition: all linear 0.6s;
     -ms-transition: all linear 0.6s;
     -o-transition: all linear 0.6s;
 }
-
-.fp__menu_description_area .nav .nav-item .nav-link:hover,
-.fp__menu_description_area .nav .nav-item .nav-link.active {
-    background: none !important;
-    color: #494949;
-}
-
 .menu_det_description p {
     margin-top: 25px;
 }
@@ -4573,13 +4565,11 @@ CHECKOUT PAGE START
     DASHBOARD START
 ============================== */
 .fp__dashboard_area {
-    border: 1px solid rgb(233, 242, 255);
     border-radius: 5px;
     overflow: hidden;
 }
 
 .fp__dashboard_menu {
-    background: #faf6f3fa;
     height: 100%;
     overflow: hidden;
 }
@@ -4592,8 +4582,6 @@ CHECKOUT PAGE START
 
 .dasboard_header .dasboard_header_img {
     border-radius: 50%;
-    border: 5px solid white;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     width: 140px;
     height: 140px;
     position: relative;
@@ -4619,8 +4607,6 @@ CHECKOUT PAGE START
     line-height: 30px;
     text-align: center;
     border-radius: 50%;
-    background: white;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     cursor: pointer;
     transition: all linear 0.6s;
     -webkit-transition: all linear 0.6s;
@@ -4628,16 +4614,9 @@ CHECKOUT PAGE START
     -ms-transition: all linear 0.6s;
     -o-transition: all linear 0.6s;
 }
-
-.dasboard_header .dasboard_header_img label:hover {
-    background: #494949;
-    color: white;
-}
-
 .dasboard_header h2 {
     font-size: 18px;
     font-weight: 900;
-    color: black;
     text-transform: capitalize;
     margin-bottom: 5px;
     margin-top: 25px;
@@ -4655,9 +4634,7 @@ CHECKOUT PAGE START
     position: relative;
     transition: all 0.3s linear 0s;
     background: none !important;
-    color: black !important;
     border-radius: 0px !important;
-    border-bottom: 1px solid #d0d0d0 !important;
     padding: 0px 0px !important;
     -webkit-transition: all 0.3s linear 0s;
     -moz-transition: all 0.3s linear 0s;
@@ -4675,22 +4652,14 @@ CHECKOUT PAGE START
     -o-transition: all 0.3s linear 0s;
     width: 50px;
     height: 50px;
-    background: #494949;
-    color: white !important;
     text-align: center;
     line-height: 50px;
     margin-right: 10px;
 }
 
-.nav-pills .nav-link.active,
-.nav-pills .nav-link:hover {
-    background: #292b750a !important;
-}
-
 .fp__dashboard_menu button.active::after {
     position: absolute;
     content: "";
-    background: #494949;
     width: 8px;
     height: 50px;
     top: 0;
@@ -4709,7 +4678,6 @@ CHECKOUT PAGE START
 .fp_dashboard_body h3 {
     font-size: 24px;
     font-weight: 700;
-    color: black;
     text-transform: capitalize;
     margin-bottom: 20px;
     display: flex;
@@ -4721,8 +4689,6 @@ CHECKOUT PAGE START
 .fp_dashboard_body h3 .dash_add_new_address {
     border-radius: 30px;
     padding: 8px 15px;
-    background: var(--gradiantBg);
-    color: white !important;
     cursor: pointer;
     font-size: 14px;
     text-transform: capitalize;
@@ -4733,17 +4699,11 @@ CHECKOUT PAGE START
     -o-transition: all linear 0.6s;
 }
 
-.fp_dashboard_body h3 .dash_add_new_address:hover {
-    background: var(--gradiantHoverBg);
-}
-
 .fp__dsahboard_overview_item {
-    background: #faf6f3fa;
     padding: 30px;
     text-align: center;
     border-radius: 10px;
     position: relative;
-    border: 1px solid #eee;
     margin-bottom: 25px;
 }
 
@@ -4753,7 +4713,6 @@ CHECKOUT PAGE START
     height: 50px;
     line-height: 50px;
     text-align: center;
-    background: orange;
     border-radius: 50%;
     font-size: 20px;
     color: white;
@@ -4763,40 +4722,17 @@ CHECKOUT PAGE START
     text-transform: capitalize;
     font-size: 16px;
     font-weight: 600;
-    color: orange;
     margin-top: 20px;
-    font-family: var(--paraFont);
     text-align: center;
 }
 
 .fp__dsahboard_overview_item h4 span {
     font-size: 18px;
     font-weight: 600;
-    color: orange;
-    font-family: var(--paraFont);
     margin-left: 5px;
 }
 
-.fp__dsahboard_overview_item.red .icon {
-    background: #494949;
-}
-
-.fp__dsahboard_overview_item.red h4,
-.fp__dsahboard_overview_item.red h4 span {
-    color: #494949;
-}
-
-.fp__dsahboard_overview_item.green .icon {
-    background: #4caf50;
-}
-
-.fp__dsahboard_overview_item.green h4,
-.fp__dsahboard_overview_item.green h4 span {
-    color: #4caf50;
-}
-
 .fp_dash_personal_info {
-    background: #faf6f3fa;
     border-radius: 5px;
     padding: 30px;
 }
@@ -4805,7 +4741,6 @@ CHECKOUT PAGE START
     font-size: 18px;
     font-weight: 700;
     text-transform: capitalize;
-    color: black;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -4814,8 +4749,6 @@ CHECKOUT PAGE START
 
 .fp_dash_personal_info h4 a {
     font-size: 14px;
-    background: #494949;
-    color: white;
     font-weight: 600;
     padding: 4px 15px;
     border-radius: 30px;
@@ -4827,20 +4760,11 @@ CHECKOUT PAGE START
     cursor: pointer;
 }
 
-.fp_dash_personal_info h4 a span {
-    color: white;
-}
-
-.fp_dash_personal_info h4 a:hover {
-    background: black;
-}
-
 .fp_dash_personal_info h4 a .cancel {
     display: none;
 }
 
 .fp_dash_personal_info p {
-    color: black;
     margin-top: 20px;
     display: flex;
     justify-content: start;
@@ -4851,12 +4775,10 @@ CHECKOUT PAGE START
     display: inline-block;
     min-width: 120px;
     font-weight: 500;
-    color: black;
 }
 
 .fp_dashboard_new_address,
 .fp_dashboard_edit_address {
-    background: #e0f1f9;
     border-radius: 5px;
     padding: 30px;
     display: none;
@@ -4887,8 +4809,6 @@ CHECKOUT PAGE START
 .fp_dashboard_new_address .form-check,
 .fp_dashboard_edit_address .form-check {
     margin-right: 20px;
-    background: white;
-    border: 1px solid #ddd;
     padding: 10px 30px 10px 40px;
     border-radius: 14px;
 }
@@ -4898,7 +4818,6 @@ CHECKOUT PAGE START
     text-transform: capitalize;
     font-size: 16px;
     font-weight: 400;
-    color: black;
     display: block;
     width: 100%;
 }
@@ -4906,12 +4825,6 @@ CHECKOUT PAGE START
 .fp_dashboard_new_address .form-check input,
 .fp_dashboard_edit_address .form-check input {
     padding: 0;
-}
-
-.fp_dashboard_new_address .form-check input:checked,
-.fp_dashboard_edit_address .form-check input:checked {
-    background-color: #494949;
-    border-color: #494949;
 }
 
 .fp_dashboard_new_address button,
@@ -4959,21 +4872,17 @@ CHECKOUT PAGE START
     border-radius: 5px;
     overflow: hidden;
     margin: 0px;
-    background: #faf6f3fa;
 }
 
 .fp_dashboard_order table tr {
     border-color: transparent;
     display: flex;
-    border-top: 1px solid #ddd;
 }
 
 .fp_dashboard_order table tr th {
-    background: #494949;
     text-transform: capitalize;
     font-size: 18px;
     font-weight: 500;
-    color: white !important;
 }
 
 .fp_dashboard_order table tr th,
@@ -4987,7 +4896,6 @@ CHECKOUT PAGE START
 }
 
 .fp_dashboard_order table tr td h5 {
-    color: black;
     font-size: 16px;
     font-weight: 500;
 }
@@ -5000,19 +4908,11 @@ CHECKOUT PAGE START
 .fp_dashboard_order table tr td a {
     font-size: 13px;
     font-weight: 400;
-    background: #494949;
-    color: white;
     text-transform: capitalize;
     transition: all 0.3s linear 0s;
-    border: 1px solid #494949;
     padding: 5px 10px 3px 10px;
     border-radius: 3px;
     cursor: pointer;
-}
-
-.fp_dashboard_order table tr td a:hover {
-    color: #494949;
-    background: white;
 }
 
 .fp_dashboard_order table tr td span {
@@ -5024,21 +4924,6 @@ CHECKOUT PAGE START
     text-transform: capitalize;
 }
 
-.fp_dashboard_order table tr td .complete {
-    background: rgb(0 191 140 / 9%);
-    color: rgb(0, 191, 140);
-}
-
-.fp_dashboard_order table tr td .cancel {
-    background: rgba(254, 58, 96, 0.11);
-    color: rgb(254, 58, 96);
-}
-
-.fp_dashboard_order table tr td .active {
-    background: #292b751c;
-    color: #494949;
-}
-
 .fp_dashboard_body .fp__dashoard_wishlist {
     margin-top: -20px;
 }
@@ -5048,7 +4933,6 @@ CHECKOUT PAGE START
 }
 
 .fp__dashboard .modal {
-    background: rgba(0, 0, 0, 0.467);
     z-index: 99999;
 }
 
@@ -5068,7 +4952,6 @@ CHECKOUT PAGE START
     padding: 20px;
     border: none;
     width: 500px;
-    background: rgb(233, 247, 250);
 }
 
 .fp__dashboard .modal-header {
@@ -5100,7 +4983,6 @@ CHECKOUT PAGE START
 .fp__dashboard p b {
     font-size: 18px;
     font-weight: 900;
-    color: black;
     display: block;
 }
 
@@ -5125,18 +5007,11 @@ CHECKOUT PAGE START
 }
 
 .fp__dashboard .modal-footer .del_btn {
-    background: rgb(245, 249, 255);
     transition: all 0.3s linear 0s;
     -webkit-transition: all 0.3s linear 0s;
     -moz-transition: all 0.3s linear 0s;
     -ms-transition: all 0.3s linear 0s;
     -o-transition: all 0.3s linear 0s;
-    background: red;
-    color: white;
-}
-
-.fp__dashboard .modal-footer .del_btn:hover {
-    background: #c02b2b;
 }
 
 .fp__payment_modal {
@@ -5144,12 +5019,10 @@ CHECKOUT PAGE START
 }
 
 .fp__invoice .go_back {
-    background: #494949;
     border-radius: 30px;
     padding: 8px 15px;
     font-size: 14px;
     text-transform: capitalize;
-    color: white !important;
     font-weight: 400;
     cursor: pointer;
     transition: all linear 0.6s;
@@ -5163,12 +5036,7 @@ CHECKOUT PAGE START
     margin-right: 10px;
 }
 
-.fp__invoice .go_back:hover {
-    background: black;
-}
-
 .fp__track_order {
-    background: white;
     border-radius: 5px;
     padding: 30px;
     margin-top: 30px;
@@ -5185,7 +5053,6 @@ CHECKOUT PAGE START
     position: relative;
     font-size: 16px;
     font-weight: 500;
-    color: black;
     text-transform: capitalize;
     padding-top: 25px;
     text-align: center;
@@ -5260,7 +5127,6 @@ CHECKOUT PAGE START
 .fp__invoice_header .header_address b {
     font-weight: 500;
     font-size: 16px;
-    font-family: var(--headingFont);
     text-transform: capitalize;
     width: 95px;
 }
@@ -5270,10 +5136,6 @@ CHECKOUT PAGE START
     flex-wrap: wrap;
 }
 
-.fp__invoice_header p span {
-    color: #494949;
-}
-
 .fp__invoice_header h5 {
     text-transform: capitalize;
     font-size: 30px;
@@ -5281,9 +5143,7 @@ CHECKOUT PAGE START
 }
 
 .fp__invoice table {
-    border: 0.5px solid #ddd;
     margin: 0;
-    border-bottom: 0.5px solid #ddd;
 }
 
 .fp__invoice table tr {
@@ -5292,32 +5152,23 @@ CHECKOUT PAGE START
 }
 
 .fp__invoice table tr th {
-    background: #494949;
     border: none;
     font-weight: 700;
     font-size: 16px;
     text-transform: capitalize;
-    color: white !important;
 }
 
 .fp__invoice table tr th,
 .fp__invoice table tr td {
     padding: 10px;
-    border-right: 0.5px solid #ddd;
     text-align: center;
 }
 
-.fp__invoice table tr:last-child td {
-    border-bottom: 0.5px solid #ddd;
-}
-
 .fp__invoice table tr td {
-    color: black;
     vertical-align: middle;
 }
 
 .fp__invoice table tr td p {
-    color: black;
     margin: 0;
     font-weight: 500;
 }
@@ -5326,12 +5177,7 @@ CHECKOUT PAGE START
 .fp__invoice table tr td .coca_cola,
 .fp__invoice table tr td .coca_cola2 {
     display: block;
-    color: black;
     text-transform: capitalize;
-}
-
-.fp__invoice table tr td .size {
-    color: #494949;
 }
 
 .fp__invoice table tr td b {
@@ -5351,14 +5197,6 @@ CHECKOUT PAGE START
 .fp__invoice .qnty,
 .fp__invoice .total {
     width: 20%;
-}
-
-.fp__invoice table tfoot {
-    border-bottom: 0.5px solid #ddd;
-}
-
-.fp__invoice table tfoot tr td {
-    border-bottom: 0.5px solid #ddd;
 }
 
 .fp__invoice table tfoot tr td b {
@@ -5382,14 +5220,12 @@ CHECKOUT PAGE START
 
 .fp_dashboard_body .fp__invoice {
     display: none;
-    background: #faf6f3fa;
     border-radius: 5px;
     padding: 30px;
     overflow: hidden;
 }
 
 .dashboard_review .fp__comment {
-    background: #faf6f3fa;
     box-shadow: none;
 }
 
@@ -5431,7 +5267,6 @@ CHECKOUT PAGE START
 }
 
 .fp__review_input .comment_input {
-    background: #faf6f3fa;
     box-shadow: none;
 }
 
@@ -6952,6 +6787,243 @@ footer {
 }
 .hiring-btn {
     background-color: #788a9f !important;
+}
+.fp__menu_description_area .nav .nav-item .nav-link {
+    color: #788a9f;
+}
+
+.fp__menu_description_area .nav .nav-item .nav-link:hover,
+.fp__menu_description_area .nav .nav-item .nav-link.active {
+    background: none !important;
+    color: #494949;
+}
+
+.fp__dashboard_area {
+    border: 1px solid rgb(233, 242, 255);
+}
+.fp__dashboard_menu {
+    background: #faf6f3fa;
+}
+.dasboard_header .dasboard_header_img {
+    border: 5px solid white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.dasboard_header .dasboard_header_img label {
+    background: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.dasboard_header .dasboard_header_img label:hover {
+    background: #494949;
+    color: white;
+}
+.dasboard_header h2 {
+    color: black;
+}
+.fp__dashboard_menu button {
+    color: black !important;
+    border-bottom: 1px solid #d0d0d0 !important;
+}
+.fp__dashboard_menu button span {
+    background: #494949;
+    color: white !important;
+}
+.nav-pills .nav-link.active,
+.nav-pills .nav-link:hover {
+    background: #292b750a !important;
+}
+.fp__dashboard_menu button.active::after {
+    background: #494949;
+}
+.fp_dashboard_body h3 {
+    color: black;
+}
+.fp_dashboard_body h3 .dash_add_new_address {
+    color: white !important;
+}
+.fp__dsahboard_overview_item {
+    background: #faf6f3fa;
+    border: 1px solid #eee;
+}
+.fp__dsahboard_overview_item .icon {
+    background: orange;
+    color: white;
+}
+.fp__dsahboard_overview_item h4 {
+    color: orange;
+}
+.fp__dsahboard_overview_item h4 span {
+    color: orange;
+}
+.fp__dsahboard_overview_item.red .icon {
+    background: #494949;
+}
+.fp__dsahboard_overview_item.red h4,
+.fp__dsahboard_overview_item.red h4 span {
+    color: #494949;
+}
+.fp__dsahboard_overview_item.green .icon {
+    background: #4caf50;
+}
+.fp__dsahboard_overview_item.green h4,
+.fp__dsahboard_overview_item.green h4 span {
+    color: #4caf50;
+}
+.fp_dash_personal_info {
+    background: #faf6f3fa;
+}
+.fp_dash_personal_info h4 {
+    color: black;
+}
+.fp_dash_personal_info h4 a {
+    background: #494949;
+    color: white;
+}
+.fp_dash_personal_info h4 a span {
+    color: white;
+}
+.fp_dash_personal_info h4 a:hover {
+    background: black;
+}
+.fp_dash_personal_info p {
+    color: black;
+}
+.fp_dash_personal_info p span {
+    color: black;
+}
+.fp_dashboard_new_address,
+.fp_dashboard_edit_address {
+    background: #e0f1f9;
+}
+.fp_dashboard_new_address .form-check,
+.fp_dashboard_edit_address .form-check {
+    background: white;
+    border: 1px solid #ddd;
+}
+
+.fp_dashboard_new_address .form-check label,
+.fp_dashboard_edit_address .form-check label {
+    color: black;
+}
+.fp_dashboard_new_address .form-check input:checked,
+.fp_dashboard_edit_address .form-check input:checked {
+    background-color: #494949;
+    border-color: #494949;
+}
+.fp_dashboard_order table {
+    background: #faf6f3fa;
+}
+.fp_dashboard_order table tr {
+    border-top: 1px solid #ddd;
+}
+.fp_dashboard_order table tr th {
+    background: #494949;
+    color: white !important;
+}
+.fp_dashboard_order table tr td h5 {
+    color: black;
+}
+.fp_dashboard_order table tr td a {
+    background: #494949;
+    color: white;
+    border: 1px solid #494949;
+}
+.fp_dashboard_order table tr td a:hover {
+    color: #494949;
+    background: white;
+}
+.fp_dashboard_order table tr td .complete {
+    background: rgb(0 191 140 / 9%);
+    color: rgb(0, 191, 140);
+}
+.fp_dashboard_order table tr td .cancel {
+    background: rgba(254, 58, 96, 0.11);
+    color: rgb(254, 58, 96);
+}
+.fp_dashboard_order table tr td .active {
+    background: #292b751c;
+    color: #494949;
+}
+.fp__dashboard .modal {
+    background: rgba(0, 0, 0, 0.467);
+}
+.fp__dashboard .modal-content {
+    background: rgb(233, 247, 250);
+}
+.fp__dashboard p b {
+    color: black;
+}
+.fp__dashboard .modal-footer .del_btn {
+    background: rgb(245, 249, 255);
+    background: red;
+    color: white;
+}
+.fp__dashboard .modal-footer .del_btn:hover {
+    background: #c02b2b;
+}
+.fp__invoice .go_back {
+    background: #494949;
+    color: white !important;
+}
+.fp__invoice .go_back:hover {
+    background: black;
+}
+.fp__track_order {
+    background: white;
+}
+.fp__track_order ul li {
+    color: black;
+}
+.fp__invoice_header p span {
+    color: #494949;
+}
+.fp__invoice table {
+    border: 0.5px solid #ddd;
+    border-bottom: 0.5px solid #ddd;
+}
+.fp__invoice table tr th {
+    background: #494949;
+    color: white !important;
+}
+.fp__invoice table tr th,
+.fp__invoice table tr td {
+    border-right: 0.5px solid #ddd;
+}
+.fp__invoice table tr:last-child td {
+    border-bottom: 0.5px solid #ddd;
+}
+.fp__invoice table tr td {
+    color: black;
+}
+
+.fp__invoice table tr td p {
+    color: black;
+}
+
+.fp__invoice table tr td .size,
+.fp__invoice table tr td .coca_cola,
+.fp__invoice table tr td .coca_cola2 {
+    color: black;
+}
+.fp__invoice table tr td .size {
+    color: #494949;
+}
+.fp__invoice table tfoot {
+    border-bottom: 0.5px solid #ddd;
+}
+.fp__invoice table tfoot tr td {
+    border-bottom: 0.5px solid #ddd;
+}
+.fp__invoice table tfoot .coupon b {
+    color: #494949;
+}
+.fp_dashboard_body .fp__invoice {
+    background: #faf6f3fa;
+}
+.dashboard_review .fp__comment {
+    background: #faf6f3fa;
+}
+.fp__review_input .comment_input {
+    background: #faf6f3fa;
 }
 
 /* Color Box Shadow And Background Styles End */
