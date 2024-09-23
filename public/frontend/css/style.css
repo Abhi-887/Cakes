@@ -6889,20 +6889,7 @@ footer {
 .fp__related_blog ul li .text a:hover {
     color: #494949;
 }
-.fp__blog_categori ul li a {
-    background: #f5f9ff;
-}
-.fp__blog_categori ul li a span {
-    background: #494949;
-    color: white;
-}
-.fp__blog_categori ul li a:hover span {
-    border-color: white;
-}
-.fp__blog_categori ul li a:hover {
-    background: #494949;
-    color: white;
-}
+
 .fp__blog_tags ul li a {
     background: #f5f9ff;
     color: #494949;
