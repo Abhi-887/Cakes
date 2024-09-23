@@ -6339,12 +6339,12 @@ textarea::placeholder {
     background: #faf6f3fa;
     border: 1px solid #eee;
 }
-.fp__single_blog_text .category {
+/* .fp__single_blog_text .category {
     background: white;
     color: #788a9f;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border: 1px solid #788a9f !important;
-}
+} */
 /* .fp__menu_item .fp__menu_item_text .category {
     color: #94a0ae   !important;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -6435,27 +6435,7 @@ textarea::placeholder {
 .fp__menu_item_text {
     border-top: 1px solid #788a9f !important;
 }
-.testimonial {
-    background: #262626;
-}
-.testimonial .stars {
-    color: #ff9800;
-}
-.testimonial .profile .name {
-    color: #494949;
-}
-.testimonial .profile .company {
-    color: #999;
-}
-.slick-dots li.slick-active button::before {
-    color: #000000 !important;
-}
-.slick-dots li button:hover::before {
-    color: #000000 !important;
-}
-.testimonial-content {
-    scrollbar-color: #262626 #ff9800;
-}
+
 .fp__about_video_text p {
     color: #f86f03;
 }
@@ -7080,5 +7060,28 @@ footer {
 /* Trending Now End */
 
 /* Testimonial Start */
-
+.testimonial {
+    background: #262626;
+}
+.testimonial .stars {
+    color: #ff9800;
+}
+.testimonial .profile .name {
+    color: #494949;
+}
+.testimonial .profile .company {
+    color: #999;
+}
+.slick-dots li.slick-active button::before {
+    color: #000000 !important;
+}
+.slick-dots li button:hover::before {
+    color: #000000 !important;
+}
+.testimonial-content {
+    scrollbar-color: #262626 #ff9800;
+}
 /* Testimonial End */
+
+/* Blog Start */
+/* Blog End */
