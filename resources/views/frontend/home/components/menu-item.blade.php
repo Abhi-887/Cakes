@@ -4,9 +4,9 @@
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <style>
-    .product-slider .stars {
+    /* .product-slider .stars {
         color: #ff9800;
-    }
+    } */
 
     img.product-img {
         object-fit: cover !important;
@@ -20,25 +20,25 @@
 
     .product-slider .profile .name {
         font-weight: bold;
-        color: #333;
+        /* color: #333; */
     }
 
     .product-slider .profile .company {
         font-size: 12px;
-        color: #999;
+        /* color: #999; */
     }
 
     .slick-dots li button::before {
         font-size: 14px !important;
     }
 
-    .slick-dots li.slick-active button::before {
+    /* .slick-dots li.slick-active button::before {
         color: #000000 !important;
     }
 
     .slick-dots li button:hover::before {
         color: #000000 !important;
-    }
+    } */
 
     .popularfood .slick-dots {
         display: none !important;
@@ -150,72 +150,72 @@
 
 
 
-    <div class="container pt-4">
-        <div class="row wow fadeInUp mt-md-5" data-wow-duration="1s">
-            <div class="m-auto text-center col-md-8 col-lg-7 col-xl-6">
-                <div class="fp__section_heading">
-                    <h2>Trending Now</h2>
-                    <p>Shop Our Most Popular Trending Designs</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="product-slider popularfood slider">
-            <div class="row mt-2" id="top-selling-products">
-                <!-- Products will be rendered here -->
+<div class="container pt-4">
+    <div class="row wow fadeInUp mt-md-5" data-wow-duration="1s">
+        <div class="m-auto text-center col-md-8 col-lg-7 col-xl-6">
+            <div class="fp__section_heading">
+                <h2>Trending Now</h2>
+                <p>Shop Our Most Popular Trending Designs</p>
             </div>
         </div>
     </div>
 
+    <div class="product-slider popularfood slider">
+        <div class="row mt-2" id="top-selling-products">
+            <!-- Products will be rendered here -->
+        </div>
+    </div>
+</div>
 
-    <!-- Slick Carousel JS -->
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
 
-    <script defer>
-        // Site currency configuration
-        const currencyIcon = "{{ config('settings.site_currency_icon') }}";
-        const currencyPosition = "{{ config('settings.site_currency_icon_position') }}";
+<!-- Slick Carousel JS -->
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
 
-        // Function to format price based on the currency position
-        function currencyFormat(price) {
-            return currencyPosition === 'left' ? `${currencyIcon}${price}` : `${price}${currencyIcon}`;
+<script defer>
+    // Site currency configuration
+    const currencyIcon = "{{ config('settings.site_currency_icon') }}";
+    const currencyPosition = "{{ config('settings.site_currency_icon_position') }}";
+
+    // Function to format price based on the currency position
+    function currencyFormat(price) {
+        return currencyPosition === 'left' ? `${currencyIcon}${price}` : `${price}${currencyIcon}`;
+    }
+
+    window.addEventListener('load', () => {
+        setTimeout(fetchTopSellingProducts, 100);
+    });
+
+    // Fetch top-selling products from the API
+    async function fetchTopSellingProducts() {
+        try {
+            const response = await fetch('/api/top-selling-products');
+            const data = await response.json();
+
+            // Check if the response is an array
+            if (Array.isArray(data)) {
+                renderProducts(data);
+            } else {
+                console.error('Unexpected data structure:', data);
+            }
+        } catch (error) {
+            console.error('Failed to fetch top-selling products:', error);
+        }
+    }
+
+    // Render products into the DOM
+    function renderProducts(products) {
+        const container = document.getElementById('top-selling-products');
+        container.innerHTML = '';
+
+        // Check if there are products to render
+        if (products.length === 0) {
+            console.log('No products found to render.');
+            return;
         }
 
-        window.addEventListener('load', () => {
-            setTimeout(fetchTopSellingProducts, 100);
-        });
-
-        // Fetch top-selling products from the API
-        async function fetchTopSellingProducts() {
-            try {
-                const response = await fetch('/api/top-selling-products');
-                const data = await response.json();
-
-                // Check if the response is an array
-                if (Array.isArray(data)) {
-                    renderProducts(data);
-                } else {
-                    console.error('Unexpected data structure:', data);
-                }
-            } catch (error) {
-                console.error('Failed to fetch top-selling products:', error);
-            }
-        }
-
-        // Render products into the DOM
-        function renderProducts(products) {
-            const container = document.getElementById('top-selling-products');
-            container.innerHTML = '';
-
-            // Check if there are products to render
-            if (products.length === 0) {
-                console.log('No products found to render.');
-                return;
-            }
-
-            // Generate HTML for each product
-            products.forEach(product => {
-                const productHtml = `
+        // Generate HTML for each product
+        products.forEach(product => {
+            const productHtml = `
                 <div class="fp__menu_hover ${product.category_slug}">
                     <div class="m-3 card position-relative fp__menu_item rounded-3 slide-wrap">
                         <div class="fp__menu_item_img" style="height: auto; overflow: hidden;">
@@ -243,70 +243,70 @@
                     </div>
                 </div>
             `;
-                container.insertAdjacentHTML('beforeend', productHtml);
-            });
+            container.insertAdjacentHTML('beforeend', productHtml);
+        });
 
-            // Initialize the Slick slider after rendering products
-            initializeSlickSlider();
+        // Initialize the Slick slider after rendering products
+        initializeSlickSlider();
 
-            // Adjust the height and size of product images
-            adjustImageSizes();
+        // Adjust the height and size of product images
+        adjustImageSizes();
 
-            adjustCardHeights();
-        }
+        adjustCardHeights();
+    }
 
-        // Initialize the Slick slider
-        function initializeSlickSlider() {
-            $('.product-slider .row').slick({
-                dots: true,
-                arrows: true,
-                infinite: true,
-                autoplay: true,
-                autoplaySpeed: 2000,
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                responsive: [{
-                        breakpoint: 1400,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1
-                        }
-                    },
-                    {
-                        breakpoint: 991,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1
-                        }
+    // Initialize the Slick slider
+    function initializeSlickSlider() {
+        $('.product-slider .row').slick({
+            dots: true,
+            arrows: true,
+            infinite: true,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            responsive: [{
+                    breakpoint: 1400,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
                     }
-                ]
-            });
-        }
-
-        // Function to ensure images fill the div without being cropped
-        function adjustImageSizes() {
-            const images = document.querySelectorAll('.fp__menu_item_img img.product-img');
-            images.forEach(img => {
-                img.style.objectFit = 'cover'; // This makes sure the image scales and doesn't distort
-                img.style.height = '100%'; // Ensures it takes up the full height of the container
-            });
-        }
-
-        // Adjust product card heights to make them uniform
-        function adjustCardHeights() {
-            let maxHeight = 0;
-
-            // Find the maximum height among all product cards
-            document.querySelectorAll('.fp__menu_item').forEach(card => {
-                const cardHeight = card.offsetHeight;
-                if (cardHeight > maxHeight) {
-                    maxHeight = cardHeight;
+                },
+                {
+                    breakpoint: 991,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
                 }
-            });
+            ]
+        });
+    }
 
-            // Apply the maximum height to all product cards
-            document.querySelectorAll('.fp__menu_item').forEach(card => {
-                card.style.height = `${maxHeight}px`;
-            });
-        }
-    </script>
+    // Function to ensure images fill the div without being cropped
+    function adjustImageSizes() {
+        const images = document.querySelectorAll('.fp__menu_item_img img.product-img');
+        images.forEach(img => {
+            img.style.objectFit = 'cover'; // This makes sure the image scales and doesn't distort
+            img.style.height = '100%'; // Ensures it takes up the full height of the container
+        });
+    }
+
+    // Adjust product card heights to make them uniform
+    function adjustCardHeights() {
+        let maxHeight = 0;
+
+        // Find the maximum height among all product cards
+        document.querySelectorAll('.fp__menu_item').forEach(card => {
+            const cardHeight = card.offsetHeight;
+            if (cardHeight > maxHeight) {
+                maxHeight = cardHeight;
+            }
+        });
+
+        // Apply the maximum height to all product cards
+        document.querySelectorAll('.fp__menu_item').forEach(card => {
+            card.style.height = `${maxHeight}px`;
+        });
+    }
+</script>
