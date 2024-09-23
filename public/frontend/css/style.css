@@ -6348,9 +6348,9 @@ textarea::placeholder {
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border: 1px solid #788a9f !important;
 } */
-.fp__single_blog_text > ul > li {
+/* .fp__single_blog_text > ul > li {
     color: #4b637f;
-  }
+  } */
 .active > .page-link,
 .page-link.active {
     background-color: white;
