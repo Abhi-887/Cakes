@@ -6298,19 +6298,7 @@ textarea::placeholder {
 .fp__menu_cart_area .cart_view :hover {
     background: #788a9f;
 } */
-.fp__contact_form button {
-    background: #4b637f !important;
-    color: white !important;
-}
-.fp__contact_form_input span {
-    color: #788a9f;
-}
-.fp__contact_form button:hover {
-    background: #788a9f !important;
-}
-.fp__contact_form {
-    background: #fff2e7;
-}
+
 .fp__why_choose2 .fp__choose_single {
     background: #faf6f3fa;
     border: 1px solid #eee;
@@ -6440,20 +6428,7 @@ textarea::placeholder {
 .play_btn::before {
     background: #f86f03;
 }
-.contact-card {
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    background-color: #f7f8fd !important;
-}
-.location-icon {
-    background: #4b637f !important;
-}
-.formbg {
-    background-color: #f7f8fd !important;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
-}
-.contact-social-icons i:hover {
-    color: #788a9f !important;
-}
+
 .productviewinput input:checked {
     background-color: #788a9f !important;
     border-color: #788a9f !important;
@@ -7086,3 +7061,33 @@ footer {
     color: #788a9f;
 }
 /* Blog End */
+
+/* Contact Start */
+.contact-card {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    background-color: #f7f8fd !important;
+}
+.location-icon {
+    background: #4b637f !important;
+}
+.formbg {
+    background-color: #f7f8fd !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
+}
+.contact-social-icons i:hover {
+    color: #788a9f !important;
+}
+/* .fp__contact_form button {
+    background: #4b637f !important;
+    color: white !important;
+} */
+.fp__contact_form_input span {
+    color: #788a9f;
+}
+/* .fp__contact_form button:hover {
+    background: #788a9f !important;
+} */
+.fp__contact_form {
+    background: #fff2e7;
+}
+/* Contact End */
