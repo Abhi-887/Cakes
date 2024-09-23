@@ -912,9 +912,8 @@ h6, .h6 {
   max-width: 100%;
   height: 100%;
 }
-.wg-table {
-    overflow-x: hidden !important;
-  }
+
+
 
   #logo_header {
     max-width: 180px !important;
@@ -4295,6 +4294,9 @@ select.h40 {
   line-height: 20px;
 }
 
+.wg-table {
+  overflow-x: auto !important;
+}
 .wg-table::-webkit-scrollbar {
   height: 4px;
 }
