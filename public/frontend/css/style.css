@@ -3610,9 +3610,9 @@ th {
     -o-transition: all linear 0.4s;
 }
 
-.fp__cart_list_footer_button button:hover {
+/* .fp__cart_list_footer_button button:hover {
     background: #4b637f;
-}
+} */
 
 .fp__cart_list_footer_button .common_btn i {
     margin-right: 5px;
