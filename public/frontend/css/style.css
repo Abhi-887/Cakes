@@ -131,7 +131,7 @@ button {
 }
 
 .fp__section_heading h4 {
-    /* color: #333; */
+    /* color: #494949; */
     /* font-family: var(--cursiveFont); */
     font-size: 22px;
     text-transform: capitalize;
@@ -168,7 +168,7 @@ button {
 /* .fp__topbar {
     width: 100%;
     height: 50px;
-    background: #333;
+    background: #494949;
     position: fixed;
     top: 0;
     left: 0;
@@ -362,7 +362,7 @@ button {
 }
 
 /* .fp__search_form form .close_search:hover {
-    background: #333;
+    background: #494949;
 }
 
 .fp__search_form form .close_search:hover i {
@@ -403,20 +403,10 @@ button {
     cursor: pointer;
     width: 25px;
     height: 25px;
-    background: #ffd7de;
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     -o-transform: translateY(-50%);
-}
-
-.fp__menu_cart_area ul li .del_icon:hover {
-    background: #333;
-    color: white;
-}
-
-.fp__menu_cart_area ul li .menu_cart_text .title:hover {
-    color: #333;
 }
 
 .fp__menu_cart_area .checkout,
@@ -570,7 +560,7 @@ button {
 }
 
 .fp__banner_text h3 {
-    color: #333 !important;
+    color: #494949 !important;
     text-transform: capitalize;
     font-size: 30px;
     font-weight: 600;
@@ -607,7 +597,7 @@ button {
 }
 
 .fp__banner_img span {
-    background: #333 !important;
+    background: #494949 !important;
     position: absolute;
     width: 100px;
     height: 100px;
@@ -656,7 +646,7 @@ button {
     width: 25px;
     height: 7px;
     border-radius: 40px;
-    background: #333;
+    background: #494949;
     margin: 0px 3px;
     padding: 0;
     opacity: 0.2;
@@ -694,7 +684,7 @@ button {
 
 .fp__choose_single {
     margin-top: 55px;
-    background: #333;
+    background: #494949;
     padding: 35px;
     border-radius: 10px;
     position: relative;
@@ -707,13 +697,13 @@ button {
     line-height: 55px;
     border-radius: 50%;
     font-size: 25px;
-    color: #333;
+    color: #494949;
     background: white;
     position: absolute;
     top: -30px;
     left: 50%;
     transform: translateX(-50%);
-    border: 2px solid #333;
+    border: 2px solid #494949;
 }
 
 .fp__choose_single .text {
@@ -783,7 +773,7 @@ button {
     letter-spacing: 2px;
     font-size: 20px;
     font-weight: 600;
-    color: #333;
+    color: #494949;
     text-transform: capitalize;
     display: block;
 }
@@ -821,7 +811,7 @@ button {
 .fp__offer_item_single ul li a {
     width: 30px;
     height: 30px;
-    background: #333;
+    background: #494949;
     text-align: center;
     margin-right: 5px;
     line-height: 30px;
@@ -836,7 +826,7 @@ button {
 }
 
 .fp__offer_item_single:hover .title {
-    color: #333;
+    color: #494949;
 }
 
 .fp__offer_item_single ul li a:hover {
@@ -905,7 +895,7 @@ button {
     position: absolute;
     top: 10px;
     right: 10px;
-    border: 1px solid #333;
+    border: 1px solid #494949;
     overflow: hidden;
     width: 20px;
     height: 20px;
@@ -915,7 +905,7 @@ button {
     background: white;
     border-radius: 50%;
     opacity: 1;
-    color: #333;
+    color: #494949;
     transition: all linear 0.6s;
     -webkit-transition: all linear 0.6s;
     -moz-transition: all linear 0.6s;
@@ -924,7 +914,7 @@ button {
 }
 
 .fp__cart_popup .btn-close:hover {
-    background: #333;
+    background: #494949;
     color: white;
 }
 
@@ -953,7 +943,7 @@ button {
 }
 
 .fp__cart_popup_text .title:hover {
-    color: #333;
+    color: #494949;
 }
 
 .fp__cart_popup_text .rating {
@@ -979,7 +969,7 @@ button {
 
 .fp__cart_popup_text .price del {
     font-size: 16px;
-    color: #333;
+    color: #494949;
     font-weight: 500;
     margin-left: 10px;
 }
@@ -1027,11 +1017,11 @@ button {
 .menu_filter button {
     padding: 5px 25px;
     text-transform: capitalize;
-    color: #333;
+    color: #494949;
     margin: 5px 5px 0px 5px;
     border-radius: 30px;
     background: none;
-    border: 1px solid #333;
+    border: 1px solid #494949;
     font-weight: 500;
     font-size: 15px;
     transition: all linear 0.6s;
@@ -1039,7 +1029,7 @@ button {
 
 .menu_filter button:hover,
 .menu_filter button.active {
-    background: #333;
+    background: #494949;
     color: white;
 }
 
@@ -1182,7 +1172,7 @@ button {
     /* top: -15px; */
     right: 10px;
     /* text-transform: capitalize;
-    color: #333; */
+    color: #494949; */
     font-family: var(--headingFont);
     /* position: absolute;
     background: white;
@@ -1202,7 +1192,7 @@ button {
     height: 30px;
     line-height: 30px;
     text-align: center;
-    background: #333;
+    background: #494949;
     color: white;
     font-size: 14px;
     margin: 0px 5px;
@@ -1214,7 +1204,7 @@ button {
 } */
 
 .fp__menu_item:hover .fp__menu_item_text {
-    border-color: #333;
+    border-color: #494949;
 }
 
 .fp__menu_item:hover .title {
@@ -1316,7 +1306,7 @@ button {
     height: 190px;
     margin: 0 auto;
     margin-bottom: 30px;
-    border: 5px solid #333;
+    border: 5px solid #494949;
     border-radius: 50%;
     overflow: hidden;
     transition: all linear 0.6s;
@@ -1353,7 +1343,7 @@ button {
     height: 30px;
     line-height: 30px;
     text-align: center;
-    background: #333;
+    background: #494949;
     color: white;
     font-size: 14px;
     margin: 0px 5px;
@@ -1390,7 +1380,7 @@ button {
 }
 
 .fp__single_team:hover h4 {
-    color: #333;
+    color: #494949;
 }
 
 .fp__single_team:hover ul li a {
@@ -1450,7 +1440,7 @@ button {
 }
 
 .fp__download_text ul li a {
-    background: #333;
+    background: #494949;
     padding: 8px 30px;
     border-radius: 50px;
     display: flex;
@@ -1546,7 +1536,7 @@ button {
 
 .fp__single_counter i {
     font-size: 30px;
-    color: #333;
+    color: #494949;
     margin-bottom: 20px;
     width: 70px;
     height: 70px;
@@ -1634,7 +1624,7 @@ button {
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
-    border: 3px solid #333;
+    border: 3px solid #494949;
     position: absolute;
     top: 0;
     left: 50%;
@@ -1830,7 +1820,7 @@ button {
 }
 
 .fp__single_blog .title:hover {
-    color: #333;
+    color: #494949;
 }
 
 /*============================
@@ -1983,7 +1973,7 @@ footer .wrapper a:hover {
 }
 
 .fp__footer_content button:hover {
-    background: #333;
+    background: #494949;
 }
 
 .fp__footer_social_link h5 {
@@ -2020,7 +2010,7 @@ footer .wrapper a:hover {
 }
 
 .fp__footer_bottom {
-    background: #333;
+    background: #494949;
     padding: 30px 0px;
     border-top: 1px solid #dddddd70;
 }
@@ -2255,7 +2245,7 @@ footer .wrapper a:hover {
     line-height: 70px;
     font-size: 20px;
     background: white;
-    color: #333 !important;
+    color: #494949 !important;
     text-align: center;
     border-radius: 50%;
     transform: translate(-50%, -50%);
@@ -2354,7 +2344,7 @@ footer .wrapper a:hover {
     height: 20px;
     text-align: center;
     line-height: 20px;
-    background: #333;
+    background: #494949;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
@@ -2446,7 +2436,7 @@ footer .wrapper a:hover {
     line-height: 60px;
     border-radius: 50%;
     text-align: center;
-    background: #333;
+    background: #494949;
 }
 
 .fp__about_video_bg {
@@ -2494,7 +2484,7 @@ footer .wrapper a:hover {
     MENU PAGE START
 ============================*/
 .fp__menu_page .menu_heading {
-    color: #333;
+    color: #494949;
     text-transform: capitalize;
     font-size: 35px;
     font-family: var(--cursiveFont);
@@ -2541,7 +2531,7 @@ footer .wrapper a:hover {
     display: block;
     line-height: 70px;
     text-align: center;
-    background: #333;
+    background: #494949;
     border-radius: 50%;
     color: white;
     font-size: 30px;
@@ -2680,7 +2670,7 @@ footer .wrapper a:hover {
 }
 
 .fp__blog_details_text .details_bloger li i {
-    color: #333;
+    color: #494949;
     width: 20px;
 }
 
@@ -2724,7 +2714,7 @@ footer .wrapper a:hover {
     background: #faf6f3fa;
     border-radius: 5px;
     padding: 35px 35px 35px 70px;
-    border-left: 5px solid #333;
+    border-left: 5px solid #494949;
     position: relative;
     margin-bottom: 30px;
 }
@@ -2737,7 +2727,7 @@ footer .wrapper a:hover {
     text-transform: capitalize;
     font-size: 20px;
     font-weight: 700;
-    color: #333;
+    color: #494949;
     margin: 0;
 }
 
@@ -2748,7 +2738,7 @@ footer .wrapper a:hover {
 }
 
 .fp__blog_quot_text .left_icon {
-    color: #333;
+    color: #494949;
     font-size: 20px;
     display: block;
     position: absolute;
@@ -2799,7 +2789,7 @@ footer .wrapper a:hover {
     text-align: center;
     font-size: 12px;
     border-radius: 50%;
-    background: #333;
+    background: #494949;
     transition: all linear 0.6s;
     -webkit-transition: all linear 0.6s;
     -moz-transition: all linear 0.6s;
@@ -2840,7 +2830,7 @@ footer .wrapper a:hover {
 }
 
 .blog_tags_share .tags ul li a:hover {
-    color: #333;
+    color: #494949;
 }
 
 .blog_tags_share .share ul li a {
@@ -2912,7 +2902,7 @@ footer .wrapper a:hover {
     display: block;
     font-size: 18px;
     text-transform: capitalize;
-    color: #333;
+    color: #494949;
     margin-top: 20px;
 }
 
@@ -2933,7 +2923,7 @@ footer .wrapper a:hover {
 }
 
 .blog_det_button li a:hover p {
-    color: #333;
+    color: #494949;
 }
 
 .fp__comment {
@@ -2985,7 +2975,7 @@ footer .wrapper a:hover {
 }
 
 .fp__single_comm_text h3 span {
-    color: #333;
+    color: #494949;
     text-transform: capitalize;
     font-size: 14px;
 }
@@ -3003,7 +2993,7 @@ footer .wrapper a:hover {
 }
 
 .fp__single_comm_text a:hover {
-    color: #333;
+    color: #494949;
 }
 
 .fp__single_comm_text .rating {
@@ -3086,10 +3076,10 @@ footer .wrapper a:hover {
     font-size: 22px;
     font-weight: 700;
     text-transform: capitalize;
-    border-left: 3px solid #333;
+    border-left: 3px solid #494949;
     margin-bottom: 15px;
     padding-left: 10px;
-    color: #333;
+    color: #494949;
     line-height: 24px;
 }
 
@@ -3107,7 +3097,7 @@ footer .wrapper a:hover {
     top: 10px;
     right: 20px;
     font-size: 18px;
-    color: #333;
+    color: #494949;
     background: none;
     transition: all linear 0.6s;
     -webkit-transition: all linear 0.6s;
@@ -3158,7 +3148,7 @@ footer .wrapper a:hover {
 }
 
 .fp__related_blog ul li .text a:hover {
-    color: #333;
+    color: #494949;
 }
 
 .fp__related_blog ul li .text p {
@@ -3168,7 +3158,7 @@ footer .wrapper a:hover {
 
 .fp__related_blog ul li .text p i {
     width: 20px;
-    color: #333;
+    color: #494949;
 }
 
 .fp__blog_categori ul li a {
@@ -3190,7 +3180,7 @@ footer .wrapper a:hover {
 }
 
 .fp__blog_categori ul li a span {
-    background: #333;
+    background: #494949;
     width: 35px;
     height: 35px;
     line-height: 35px;
@@ -3204,7 +3194,7 @@ footer .wrapper a:hover {
 }
 
 .fp__blog_categori ul li a:hover {
-    background: #333;
+    background: #494949;
     color: white;
 }
 
@@ -3230,7 +3220,7 @@ footer .wrapper a:hover {
 }
 
 .fp__blog_tags ul li a:hover {
-    background: #333;
+    background: #494949;
     color: white;
 }
 
@@ -3308,7 +3298,7 @@ footer .wrapper a:hover {
 
 .fp__menu_details_text .price del {
     font-size: 18px;
-    color: #333;
+    color: #494949;
     font-weight: 500;
     margin-left: 10px;
 }
@@ -3356,8 +3346,8 @@ footer .wrapper a:hover {
 
 .details_size .form-check input:checked,
 .details_extra_item .form-check input:checked {
-    background-color: #333;
-    border-color: #333;
+    background-color: #494949;
+    border-color: #494949;
 }
 
 .details_size .form-check label,
@@ -3444,7 +3434,7 @@ footer .wrapper a:hover {
 
 .fp__menu_description_area .nav .nav-item {
     width: 33.33%;
-    border-right: 1px solid #333;
+    border-right: 1px solid #494949;
 }
 
 .fp__menu_description_area .nav .nav-item:last-child {
@@ -3468,7 +3458,7 @@ footer .wrapper a:hover {
 .fp__menu_description_area .nav .nav-item .nav-link:hover,
 .fp__menu_description_area .nav .nav-item .nav-link.active {
     background: none !important;
-    color: #333;
+    color: #494949;
 }
 
 .menu_det_description p {
@@ -3509,7 +3499,7 @@ footer .wrapper a:hover {
     height: 20px;
     text-align: center;
     line-height: 20px;
-    background: #333;
+    background: #494949;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
@@ -3527,11 +3517,11 @@ footer .wrapper a:hover {
 .fp__review_area .load_more {
     float: right;
     text-transform: capitalize;
-    color: #333;
+    color: #494949;
     font-size: 14px;
     font-weight: 600;
     margin-top: 10px;
-    border: 1px solid #333;
+    border: 1px solid #494949;
     padding: 3px 15px 4px 15px;
     border-radius: 30px;
     transition: all linear 0.6s;
@@ -3543,7 +3533,7 @@ footer .wrapper a:hover {
 
 .fp__comment .load_more:hover,
 .fp__review_area .load_more:hover {
-    background: #333;
+    background: #494949;
     color: white;
 }
 
@@ -3572,7 +3562,7 @@ footer .wrapper a:hover {
 }
 
 .fp__post_review form .rating i:hover {
-    color: #333;
+    color: #494949;
 }
 
 .fp__post_review form input,
@@ -3763,7 +3753,7 @@ th {
 }
 
 .fp__cart_list table tbody tr td a:hover {
-    color: #333;
+    color: #494949;
 }
 
 .fp__cart_list table tbody tr td p {
@@ -3774,7 +3764,7 @@ th {
 .fp__cart_list table tbody tr td span {
     display: block;
     width: 100%;
-    color: #333;
+    color: #494949;
     font-size: 14px;
 }
 
@@ -3857,7 +3847,7 @@ th {
 .fp__cart_list_footer_button form {
     margin-top: 15px;
     position: relative;
-    border: 1px solid #333;
+    border: 1px solid #494949;
     border-radius: 30px;
     overflow: hidden;
 }
@@ -3982,8 +3972,8 @@ CHECKOUT PAGE START
     border-radius: 3px;
     font-size: 16px;
     font-weight: 600;
-    color: #333;
-    border: 1px solid #333;
+    color: #494949;
+    border: 1px solid #494949;
     padding: 5px 10px;
     font-family: var(--paraFont);
     background: white;
@@ -4003,7 +3993,7 @@ CHECKOUT PAGE START
 }
 
 .fp__checkout_form h5 a:hover {
-    background: #333;
+    background: #494949;
     color: white;
 }
 
@@ -4043,12 +4033,12 @@ CHECKOUT PAGE START
 
 .fp__checkout_single_address .form-check input {
     padding: 0;
-    border-color: #333;
+    border-color: #494949;
 }
 
 .fp__checkout_single_address .form-check input:checked {
-    background-color: #333;
-    border-color: #333;
+    background-color: #494949;
+    border-color: #494949;
 }
 
 .fp__checkout_single_address .form-check label {
@@ -4058,14 +4048,14 @@ CHECKOUT PAGE START
 }
 
 .fp__checkout_single_address .form-check label .icon {
-    border: 1px solid #333;
+    border: 1px solid #494949;
     text-transform: capitalize;
     padding: 2px 15px;
     border-radius: 2px;
     display: inline-block;
     font-size: 14px;
     font-weight: 600;
-    color: #333;
+    color: #494949;
 }
 
 .fp__checkout_single_address .form-check label .icon i {
@@ -4100,8 +4090,8 @@ CHECKOUT PAGE START
     height: 25px;
     line-height: 23px;
     background: white;
-    color: #333;
-    border: 1px solid #333;
+    color: #494949;
+    border: 1px solid #494949;
     font-size: 12px;
     text-align: center;
     margin: 3px;
@@ -4115,7 +4105,7 @@ CHECKOUT PAGE START
 }
 
 .fp__checkout_single_address ul li a:hover {
-    background: #333;
+    background: #494949;
     color: white;
 }
 
@@ -4194,8 +4184,8 @@ CHECKOUT PAGE START
 }
 
 .fp__login_area .form-check input:checked {
-    background-color: #333;
-    border-color: #333;
+    background-color: #494949;
+    border-color: #494949;
 }
 
 .form-check-input:focus {
@@ -4214,7 +4204,7 @@ CHECKOUT PAGE START
     text-transform: capitalize;
     font-size: 16px;
     font-weight: 400;
-    color: #333;
+    color: #494949;
     transition: all 0.3s linear 0s;
     -webkit-transition: all 0.3s linear 0s;
     -moz-transition: all 0.3s linear 0s;
@@ -4264,7 +4254,7 @@ CHECKOUT PAGE START
 .fp__login_area ul li a {
     width: 35px;
     height: 35px;
-    background: #333;
+    background: #494949;
     color: white;
     text-align: center;
     line-height: 35px;
@@ -4290,7 +4280,7 @@ CHECKOUT PAGE START
 }
 
 .fp__login_area .create_account a {
-    color: #333;
+    color: #494949;
     text-transform: capitalize;
     font-weight: 500;
 }
@@ -4319,7 +4309,7 @@ CHECKOUT PAGE START
 }
 
 .fp__single_payment:hover {
-    background: #333;
+    background: #494949;
 }
 
 .fp__pay_modal_info p {
@@ -4542,7 +4532,7 @@ CHECKOUT PAGE START
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    color: #333;
+    color: #494949;
     left: 0;
     top: 1px;
     font-size: 16px;
@@ -4670,7 +4660,7 @@ CHECKOUT PAGE START
 }
 
 .dasboard_header .dasboard_header_img label:hover {
-    background: #333;
+    background: #494949;
     color: white;
 }
 
@@ -4715,7 +4705,7 @@ CHECKOUT PAGE START
     -o-transition: all 0.3s linear 0s;
     width: 50px;
     height: 50px;
-    background: #333;
+    background: #494949;
     color: white !important;
     text-align: center;
     line-height: 50px;
@@ -4730,7 +4720,7 @@ CHECKOUT PAGE START
 .fp__dashboard_menu button.active::after {
     position: absolute;
     content: "";
-    background: #333;
+    background: #494949;
     width: 8px;
     height: 50px;
     top: 0;
@@ -4818,12 +4808,12 @@ CHECKOUT PAGE START
 }
 
 .fp__dsahboard_overview_item.red .icon {
-    background: #333;
+    background: #494949;
 }
 
 .fp__dsahboard_overview_item.red h4,
 .fp__dsahboard_overview_item.red h4 span {
-    color: #333;
+    color: #494949;
 }
 
 .fp__dsahboard_overview_item.green .icon {
@@ -4854,7 +4844,7 @@ CHECKOUT PAGE START
 
 .fp_dash_personal_info h4 a {
     font-size: 14px;
-    background: #333;
+    background: #494949;
     color: white;
     font-weight: 600;
     padding: 4px 15px;
@@ -4950,8 +4940,8 @@ CHECKOUT PAGE START
 
 .fp_dashboard_new_address .form-check input:checked,
 .fp_dashboard_edit_address .form-check input:checked {
-    background-color: #333;
-    border-color: #333;
+    background-color: #494949;
+    border-color: #494949;
 }
 
 .fp_dashboard_new_address button,
@@ -5009,7 +4999,7 @@ CHECKOUT PAGE START
 }
 
 .fp_dashboard_order table tr th {
-    background: #333;
+    background: #494949;
     text-transform: capitalize;
     font-size: 18px;
     font-weight: 500;
@@ -5040,18 +5030,18 @@ CHECKOUT PAGE START
 .fp_dashboard_order table tr td a {
     font-size: 13px;
     font-weight: 400;
-    background: #333;
+    background: #494949;
     color: white;
     text-transform: capitalize;
     transition: all 0.3s linear 0s;
-    border: 1px solid #333;
+    border: 1px solid #494949;
     padding: 5px 10px 3px 10px;
     border-radius: 3px;
     cursor: pointer;
 }
 
 .fp_dashboard_order table tr td a:hover {
-    color: #333;
+    color: #494949;
     background: white;
 }
 
@@ -5076,7 +5066,7 @@ CHECKOUT PAGE START
 
 .fp_dashboard_order table tr td .active {
     background: #292b751c;
-    color: #333;
+    color: #494949;
 }
 
 .fp_dashboard_body .fp__dashoard_wishlist {
@@ -5184,7 +5174,7 @@ CHECKOUT PAGE START
 }
 
 .fp__invoice .go_back {
-    background: #333;
+    background: #494949;
     border-radius: 30px;
     padding: 8px 15px;
     font-size: 14px;
@@ -5311,7 +5301,7 @@ CHECKOUT PAGE START
 }
 
 .fp__invoice_header p span {
-    color: #333;
+    color: #494949;
 }
 
 .fp__invoice_header h5 {
@@ -5332,7 +5322,7 @@ CHECKOUT PAGE START
 }
 
 .fp__invoice table tr th {
-    background: #333;
+    background: #494949;
     border: none;
     font-weight: 700;
     font-size: 16px;
@@ -5371,7 +5361,7 @@ CHECKOUT PAGE START
 }
 
 .fp__invoice table tr td .size {
-    color: #333;
+    color: #494949;
 }
 
 .fp__invoice table tr td b {
@@ -5417,7 +5407,7 @@ CHECKOUT PAGE START
 }
 
 .fp__invoice table tfoot .coupon b {
-    color: #333;
+    color: #494949;
 }
 
 .fp_dashboard_body .fp__invoice {
@@ -5580,7 +5570,7 @@ CHECKOUT PAGE START
     width: 60px;
     height: 60px;
     background: white;
-    color: #333;
+    color: #494949;
     line-height: 60px;
     text-align: center;
     border-radius: 50%;
@@ -5681,7 +5671,7 @@ CHECKOUT PAGE START
 .fp__offer_item2 .fp__offer_item_single ul li a {
     font-size: 14px;
     background: white;
-    color: #333;
+    color: #494949;
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -5723,7 +5713,7 @@ CHECKOUT PAGE START
     border-radius: 10px;
     overflow: hidden;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    border-bottom: 5px solid #333;
+    border-bottom: 5px solid #494949;
 }
 
 .fp__menu2 .fp__menu_item .fp__menu_item_text {
@@ -5740,7 +5730,7 @@ CHECKOUT PAGE START
 .fp__menu2 .fp__menu_item .fp__menu_item_text .category {
     text-transform: capitalize;
     font-size: 16px;
-    color: #333;
+    color: #494949;
     font-family: var(--cursiveFont);
     position: absolute;
     top: 5px;
@@ -5813,7 +5803,7 @@ CHECKOUT PAGE START
 }
 
 .fp__blog2 .fp__single_blog .title:hover {
-    color: #333;
+    color: #494949;
 }
 
 .fp__blog2 .fp__single_blog_text ul li {
@@ -5826,7 +5816,7 @@ CHECKOUT PAGE START
     line-height: initial;
     font-size: 14px;
     background: white;
-    color: #333;
+    color: #494949;
     margin-right: 10px;
 }
 
@@ -5964,7 +5954,7 @@ CHECKOUT PAGE START
     max-width: 65%;
     padding-left: 30px;
     margin-left: 30px;
-    border-left: 1px dashed #333;
+    border-left: 1px dashed #494949;
 }
 
 .fp__testimonial_text2 .client_img {
@@ -6204,12 +6194,12 @@ CHECKOUT PAGE START
 }
 
 .latest_post li .text p i {
-    color: #333;
+    color: #494949;
     margin-right: 10px;
 }
 
 .latest_post li .text a:hover {
-    color: #333 !important;
+    color: #494949 !important;
 }
 
 /* footer 2 end */
@@ -6287,7 +6277,7 @@ CHECKOUT PAGE START
     height: 20px;
     line-height: 20px;
     border-radius: 50%;
-    background: #333;
+    background: #494949;
     text-align: center;
     font-size: 12px;
     font-weight: 500;
@@ -6396,7 +6386,7 @@ CHECKOUT PAGE START
 }
 
 .fp__single_chat_bottom label:hover {
-    background: #333;
+    background: #494949;
     color: white;
 }
 
@@ -6415,7 +6405,7 @@ CHECKOUT PAGE START
     height: 40px;
     line-height: 40px;
     text-align: center;
-    background: #333;
+    background: #494949;
     transform: translateY(-50%);
     color: white;
     border-radius: 50%;
@@ -6545,7 +6535,7 @@ select option {
     background: #010f1c;
 }
 .droap_menu::-webkit-scrollbar-thumb {
-    background: #333;
+    background: #494949;
 }
 .fp__search_form {
     background: #000000c4;
@@ -6593,7 +6583,6 @@ a {
 .color-light-gray {
     color: #788a9f !important;
 }
-
 .social-links a:hover {
     color: #8caabf !important;
 }
@@ -6602,6 +6591,16 @@ a {
 }
 .searchformbackground-light-gray button:hover {
     background: #86a4ba !important;
+}
+.fp__menu_cart_area ul li .del_icon {
+    background: #ffd7de;
+}
+.fp__menu_cart_area ul li .del_icon:hover {
+    background: #494949;
+    color: white;
+}
+.fp__menu_cart_area ul li .menu_cart_text .title:hover {
+    color: #494949;
 }
 .fp__menu_cart_area {
     background: #00000066;
@@ -6621,7 +6620,7 @@ a {
         20px 20px 25px rgba(0, 0, 0, 1);
 }
 .fp__menu_cart_area ul::-webkit-scrollbar-thumb {
-    background: #333;
+    background: #494949;
 }
 .fp__menu_cart_area ul li {
     background: #f7f5f5;
@@ -6633,10 +6632,10 @@ a {
     color: black;
 }
 .fp__menu_cart_area ul li .menu_cart_text .size {
-    color: #333;
+    color: #494949;
 }
 .fp__menu_cart_area ul li .menu_cart_text .price {
-    color: #333;
+    color: #494949;
 }
 .image-block:hover .overlay-text {
     color: #fff !important;
@@ -6793,7 +6792,7 @@ textarea::placeholder {
     color: #ff9800;
 }
 .product-slider .profile .name {
-    color: #333;
+    color: #494949;
 }
 
 .product-slider .profile .company {
@@ -6821,18 +6820,18 @@ textarea::placeholder {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 .fp__menu_item_text .title {
-    color: #333;
+    color: #494949;
 }
 .fp__menu_item_text .price del {
     color: #999;
 }
 .category {
     background-color: #f8f9fa;
-    color: #333;
+    color: #494949;
     border: 1px solid #788a9f !important;
 }
 .actions a {
-    color: #333;
+    color: #494949;
 }
 .actions a:hover {
     color: #000;
@@ -6850,7 +6849,7 @@ textarea::placeholder {
     color: #ff9800;
 }
 .testimonial .profile .name {
-    color: #333;
+    color: #494949;
 }
 .testimonial .profile .company {
     color: #999;
