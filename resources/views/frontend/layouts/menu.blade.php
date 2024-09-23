@@ -148,7 +148,7 @@
                         <a class="cart_icon me-4 position-relative fw-semibold fs-5 transitions"
                             href="javascript:;"><i class="fas fa-shopping-basket"></i>
                             <span
-                                class="text-center cart_count bg-gray position-absolute text-light fw-semibold bottom-50 end-25 rounded-circle">{{ count(Cart::content()) }}</span></a>
+                                class="text-center cart_count background-light-gray position-absolute text-light fw-semibold bottom-50 end-25 rounded-circle">{{ count(Cart::content()) }}</span></a>
                     </li>
                     @php @$unseenMessages = \App\Models\Chat::where(['sender_id' => 1, 'receiver_id' => auth()->user()->id, 'seen' => 0])->count(); @endphp
                     {{-- <li>
@@ -156,7 +156,7 @@
                                 href="{{ route('dashboard') }}">
                                 <i class="fas fa-comment-alt-dots"></i>
                                 <span
-                                    class="text-center sunseen-message-count bg-gray position-absolute text-light fw-semibold bottom-50 end-25 ms-1 rounded-circle">{{
+                                    class="text-center sunseen-message-count background-light-gray position-absolute text-light fw-semibold bottom-50 end-25 ms-1 rounded-circle">{{
                                     $unseenMessages > 0 ? 1 : 0 }}</span>
                             </a>
                         </li> --}}
