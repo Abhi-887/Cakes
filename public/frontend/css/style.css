@@ -4089,12 +4089,12 @@ CHECKOUT PAGE START
 
 .fp__checkout_single_address .form-check input {
     padding: 0;
-    border-color: var(--colorPrimary);
+    border-color: #333;
 }
 
 .fp__checkout_single_address .form-check input:checked {
-    background-color: var(--colorPrimary);
-    border-color: var(--colorPrimary);
+    background-color: #333;
+    border-color: #333;
 }
 
 .fp__checkout_single_address .form-check label {
@@ -4104,14 +4104,14 @@ CHECKOUT PAGE START
 }
 
 .fp__checkout_single_address .form-check label .icon {
-    border: 1px solid var(--colorPrimary);
+    border: 1px solid #333;
     text-transform: capitalize;
     padding: 2px 15px;
     border-radius: 2px;
     display: inline-block;
     font-size: 14px;
     font-weight: 600;
-    color: var(--colorPrimary);
+    color: #333;
 }
 
 .fp__checkout_single_address .form-check label .icon i {
@@ -4145,9 +4145,9 @@ CHECKOUT PAGE START
     width: 25px;
     height: 25px;
     line-height: 23px;
-    background: var(--colorWhite);
-    color: var(--colorPrimary);
-    border: 1px solid var(--colorPrimary);
+    background: white;
+    color: #333;
+    border: 1px solid #333;
     font-size: 12px;
     text-align: center;
     margin: 3px;
@@ -4161,8 +4161,8 @@ CHECKOUT PAGE START
 }
 
 .fp__checkout_single_address ul li a:hover {
-    background: var(--colorPrimary);
-    color: var(--colorWhite);
+    background: #333;
+    color: white;
 }
 
 /*======================
