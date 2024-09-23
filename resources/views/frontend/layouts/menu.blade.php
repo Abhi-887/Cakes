@@ -132,7 +132,7 @@
                             <form class="top-50 start-50 position-absolute" action="{{ route('product.index') }}"
                                 method="GET">
                                 <span
-                                    class="mb-5 text-center close_search position-absolute rounded-circle fs-3 bottom-100 end-0 transitions"><i
+                                    class="mb-5 text-center close_search bg-light position-absolute rounded-circle fs-3 bottom-100 end-0 transitions"><i
                                         class="far fa-times"></i></span>
                                 <input class="border border-0 searchinput w-100 rounded-5" type="text"
                                     placeholder="Search . . ." name="search" />
