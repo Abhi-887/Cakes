@@ -82,8 +82,8 @@
             content: '\f053' !important;
             font-family: 'Font Awesome 5 Free' !important;
             font-weight: 600;
-            background: #4b637f !important;
-            color: white !important;
+            /* background: #4b637f !important;
+            color: white !important; */
             border-radius: 50%;
             padding: 10px 17px;
             font-size: 16px;
@@ -96,8 +96,8 @@
             content: '\f054' !important;
             font-family: 'Font Awesome 5 Free' !important;
             font-weight: 600;
-            background: #4b637f !important;
-            color: white !important;
+            /* background: #4b637f !important;
+            color: white !important; */
             border-radius: 50%;
             padding: 10px 17px;
             font-size: 16px;
