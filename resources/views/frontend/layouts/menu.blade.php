@@ -246,7 +246,7 @@
 
         <p class="my-3 subtotal d-flex justify-content-between align-items-center fw-bold text-dark">SUB TOTAL <span
                 class="cart_subtotal fw-bold">{{ currencyPosition(cartTotal()) }}</span></p>
-        <a class="cart_view" href="{{ route('cart.index') }}">View Cart</a>
+        <a class="cart_view text-white background-light-gray" href="{{ route('cart.index') }}">View Cart</a>
         {{-- <a class="checkout" href="check_out.html">checkout</a> --}}
     </div>
 </div>
