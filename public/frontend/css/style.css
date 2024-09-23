@@ -5432,8 +5432,6 @@ CHECKOUT PAGE START
     height: auto;
     line-height: initial;
     font-size: 14px;
-    background: white;
-    color: #494949;
     margin-right: 10px;
 }
 
@@ -7005,5 +7003,9 @@ footer {
 .fp__single_blog {
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     background: white;
+}
+.fp__blog2 .fp__single_blog_text ul li i {
+    background: white;
+    color: #788a9f;
 }
 /* Color Box Shadow And Background Styles End */
