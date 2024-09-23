@@ -136,9 +136,10 @@
         cursor: pointer;
         position: relative;
         background: url('{{ asset('uploads/arrow4.png') }}') no-repeat 0 0 !important;
-        width: 60px;
-        height: 60px;
+        width: 59px;
+        height: 58px;
         /* left: 20px !important; */
+        border-radius: 50%;
     }
 
     .carousel-control-prev-icon {
@@ -146,9 +147,10 @@
         cursor: pointer;
         position: relative;
         background: url('{{ asset('uploads/arrow3.png') }}') no-repeat 0 0 !important;
-        width: 60px;
-        height: 60px;
+        width: 59px;
+        height: 58px;
         /* left: 20px !important; */
+        border-radius: 50%;
     }
 
     /* .carousel-control-prev-icon:hover {
