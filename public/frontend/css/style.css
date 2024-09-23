@@ -6888,4 +6888,8 @@ textarea::placeholder {
 .contact-social-icons i:hover {
     color: #788a9f !important;
 }
+.productviewinput input:checked {
+    background-color: #788a9f !important;
+    border-color: #788a9f !important;
+}
 /* Color Styles End */
