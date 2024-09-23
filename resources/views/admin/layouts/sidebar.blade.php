@@ -381,6 +381,24 @@
                     </li>
                 </ul>
 
+                <li class="menu-item has-children {{ setSidebarActive([
+                    'admin.blog-category.*',
+                    'admin.blogs.*',
+                    'admin.blogs.comments.index'
+                ]) }}">
+                    <a href="#" class="menu-item-button" data-toggle="dropdown"><i class="fas fa-rss"></i>
+                        <span> Blog </span></a>
+                    <ul class="sub-menu">
+                        <li class="sub-menu-item {{ setSidebarActive(['admin.blog-category.*']) }}"><a class="nav-link"
+                                href="{{ route('admin.blog-category.index') }}">Categories</a></li>
+                        <li class="sub-menu-item {{ setSidebarActive(['admin.blogs.*']) }}"><a class="nav-link"
+                                href="{{ route('admin.blogs.index') }}">All Blogs</a></li>
+                        <li class="sub-menu-item {{ setSidebarActive(['admin.blogs.comments.index']) }}"><a class="nav-link"
+                                href="{{ route('admin.blogs.comments.index') }}">Comments</a></li>
+                </li>
+            </ul>
+            </li>
+
                 @if (auth()->user()->id === 1)
                 <li class="menu-item {{ setSidebarActive(['admin.chat.index']) }}">
                     <a class="nav-link" href="{{ route('admin.chat.index') }}">
