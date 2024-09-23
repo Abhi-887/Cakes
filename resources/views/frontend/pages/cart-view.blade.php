@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                                                                        BREADCRUMB START
-                                                                                                    ==============================-->
+                                                                                                            BREADCRUMB START
+                                                                                                        ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="py-5 fp__breadcrumb_overlay">
             <div class="container py-2 py-md-5">
@@ -18,12 +18,12 @@
         </div>
     </section>
     <!--=============================
-                                                                                                        BREADCRUMB END
-                                                                                                    ==============================-->
+                                                                                                            BREADCRUMB END
+                                                                                                        ==============================-->
 
     <!--============================
-                                                                                                        CART VIEW START
-                                                                                                    ==============================-->
+                                                                                                            CART VIEW START
+                                                                                                        ==============================-->
 
 
     <section class="fp__cart_view mt_125 xs_mt_95 mb_100 xs_mb_70">
@@ -219,7 +219,8 @@
                             @endif
                         </div>
 
-                        <a class="common_btn" href="{{ route('checkout.index') }}">Checkout</a>
+                        <a class="common_btn text-white background-light-gray"
+                            href="{{ route('checkout.index') }}">Checkout</a>
                     </div>
                 </div>
             </div>
@@ -228,8 +229,8 @@
 
 
     <!--============================
-                                                                                                        CART VIEW END
-                                                                                                    ==============================-->
+                                                                                                            CART VIEW END
+                                                                                                        ==============================-->
 @endsection
 
 @push('scripts')
