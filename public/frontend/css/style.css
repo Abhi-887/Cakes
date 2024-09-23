@@ -3019,9 +3019,7 @@ footer .wrapper a:hover {
     MENU DETAILS START
 ============================*/
 .fp__menu_details_images {
-    border: 1px solid #eee;
     border-radius: 10px;
-    background: #adcdde;
 }
 
 .fp__menu_details_text h2 {
@@ -3030,7 +3028,6 @@ footer .wrapper a:hover {
 }
 
 .fp__menu_details_text .rating {
-    color: #ff9933;
     font-size: 14px;
     text-align: left;
     display: block;
@@ -3052,7 +3049,6 @@ footer .wrapper a:hover {
 
 .fp__menu_details_text .price del {
     font-size: 18px;
-    color: #494949;
     font-weight: 500;
     margin-left: 10px;
 }
@@ -3077,7 +3073,6 @@ footer .wrapper a:hover {
     text-transform: capitalize;
     font-size: 18px;
     font-weight: 600;
-    color: black;
     margin-bottom: 15px;
 }
 
@@ -3097,17 +3092,9 @@ footer .wrapper a:hover {
     padding: 0;
     border-radius: 2px;
 }
-
-.details_size .form-check input:checked,
-.details_extra_item .form-check input:checked {
-    background-color: #494949;
-    border-color: #494949;
-}
-
 .details_size .form-check label,
 .details_extra_item .form-check label {
     text-transform: capitalize;
-    color: black;
     font-size: 16px;
     font-weight: 400;
     display: flex;
@@ -3126,9 +3113,6 @@ footer .wrapper a:hover {
     width: 35px;
     height: 35px;
     font-size: 15px;
-    color: #fff;
-    background-color: #4b637f !important;
-    border-color: #4b637f !important;
     padding: 0;
     border-radius: 3px;
     -webkit-border-radius: 3px;
@@ -3142,11 +3126,9 @@ footer .wrapper a:hover {
     text-align: center;
     height: 35px;
     border-radius: 3px;
-    border: 1px solid #ddd;
     margin: 0px 5px;
     font-size: 16px;
     font-weight: 400;
-    color: black;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     -ms-border-radius: 3px;
@@ -3170,7 +3152,6 @@ footer .wrapper a:hover {
     text-align: center;
     line-height: 40px;
     margin-right: 0;
-    background: #4b637f !important;
     border-radius: 50%;
     transition: all linear 0.4s;
     -webkit-transition: all linear 0.4s;
@@ -3180,7 +3161,6 @@ footer .wrapper a:hover {
 }
 
 .fp__menu_description_area .nav {
-    background: #faf6f3fa;
     border-radius: 10px;
     overflow: hidden;
     margin-bottom: 25px;
@@ -3188,7 +3168,6 @@ footer .wrapper a:hover {
 
 .fp__menu_description_area .nav .nav-item {
     width: 33.33%;
-    border-right: 1px solid #494949;
 }
 
 .fp__menu_description_area .nav .nav-item:last-child {
@@ -7018,5 +6997,47 @@ footer {
 .fp__blog_tags ul li a:hover {
     background: #494949;
     color: white;
+}
+.fp__menu_details_images {
+    border: 1px solid #eee;
+    background: #adcdde;
+}
+.fp__menu_details_text .rating {
+    color: #ff9933;
+}
+.fp__menu_details_text .price del {
+    color: #494949;
+}
+.details_size h5,
+.details_extra_item h5,
+.details_quentity h5 {
+    color: black;
+}
+.details_size .form-check input:checked,
+.details_extra_item .form-check input:checked {
+    background-color: #494949;
+    border-color: #494949;
+}
+.details_size .form-check label,
+.details_extra_item .form-check label {
+    color: black;
+}
+.quentity_btn button {
+    color: #fff;
+    background-color: #4b637f !important;
+    border-color: #4b637f !important;
+}
+.quentity_btn input {
+    border: 1px solid #ddd;
+    color: black;
+}
+.details_button_area .wishlist {
+    background: #4b637f !important;
+}
+.fp__menu_description_area .nav {
+    background: #faf6f3fa;
+}
+.fp__menu_description_area .nav .nav-item {
+    border-right: 1px solid #494949;
 }
 /* Color Box Shadow And Background Styles End */
