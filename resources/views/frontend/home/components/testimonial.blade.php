@@ -3,13 +3,13 @@
 
 <style>
     .testimonial {
-        background: #262626;
+        /* background: #262626; */
         height: 300px;
     }
 
-    .testimonial .stars {
+    /* .testimonial .stars {
         color: #ff9800;
-    }
+    } */
 
     .testimonial .profile img {
         width: 50px;
@@ -18,25 +18,25 @@
 
     .testimonial .profile .name {
         font-weight: bold;
-        color: #333;
+        /* color: #333; */
     }
 
     .testimonial .profile .company {
         font-size: 12px;
-        color: #999;
+        /* color: #999; */
     }
 
     .slick-dots li button::before {
         font-size: 14px !important;
     }
 
-    .slick-dots li.slick-active button::before {
+    /* .slick-dots li.slick-active button::before {
         color: #000000 !important;
     }
 
     .slick-dots li button:hover::before {
         color: #000000 !important;
-    }
+    } */
 
     .testimonialslickslider .slick-next,
     .testimonialslickslider .slick-prev {
@@ -47,7 +47,7 @@
         min-height: 120px;
         max-height: 120px;
         overflow-y: auto;
-        scrollbar-color: #262626 #ff9800;
+        /* scrollbar-color: #262626 #ff9800; */
     }
 
     .testimonial-content::-webkit-scrollbar {
@@ -103,8 +103,8 @@
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <!-- Slick Carousel JS -->
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+<!-- Slick Carousel JS -->
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
 
 <script>
     $(document).ready(function() {

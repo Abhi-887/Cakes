@@ -6807,7 +6807,6 @@ textarea::placeholder {
 .slick-dots li.slick-active button::before {
     color: #000000 !important;
 }
-
 .slick-dots li button:hover::before {
     color: #000000 !important;
 }
@@ -6816,44 +6815,57 @@ textarea::placeholder {
     background: #4b637f !important;
     color: white !important;
 }
-
 .slick-next::before {
     content: '\f054' !important;
     background: #4b637f !important;
     color: white !important;
 }
-
 .fp__menu_item {
     background-color: #fff;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
-
 .fp__menu_item_text .title {
     color: #333;
 }
-
 .fp__menu_item_text .price del {
     color: #999;
 }
-
 .category {
     background-color: #f8f9fa;
     color: #333;
     border: 1px solid #788a9f !important;
 }
-
 .actions a {
     color: #333;
 }
-
 .actions a:hover {
     color: #000;
 }
 .heart {
     background-color: #788a9f !important;
 }
-
 .fp__menu_item_text {
     border-top: 1px solid #788a9f !important;
+}
+.testimonial {
+    background: #262626;
+}
+.testimonial .stars {
+    color: #ff9800;
+}
+.testimonial .profile .name {
+    color: #333;
+}
+.testimonial .profile .company {
+    color: #999;
+}
+.slick-dots li.slick-active button::before {
+    color: #000000 !important;
+}
+.slick-dots li button:hover::before {
+    color: #000000 !important;
+}
+.testimonial-content {
+    scrollbar-color: #262626 #ff9800;
 }
 /* Color Styles End */
