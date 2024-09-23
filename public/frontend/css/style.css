@@ -6362,11 +6362,11 @@ textarea::placeholder {
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border: 1px solid #788a9f !important;
 }
-.fp__menu_item .fp__menu_item_text .category {
+/* .fp__menu_item .fp__menu_item_text .category {
     color: #94a0ae   !important;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border: 1px solid #788a9f !important;
-}
+} */
 .fp__single_blog_text > ul > li {
     color: #4b637f;
   }
@@ -6516,16 +6516,7 @@ footer {
 .footer-menu {
     background: #4b637f !important;
 }
-.slick-prev::before {
-    content: '\f053' !important;
-    background: #4b637f !important;
-    color: white !important;
-}
-.slick-next::before {
-    content: '\f054' !important;
-    background: #4b637f !important;
-    color: white !important;
-}
+
 .hiring {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
 }
@@ -6856,9 +6847,7 @@ footer {
 .fp__menu_item:hover .fp__menu_item_text {
     border-color: #494949;
 }
-.fp__menu_item:hover .title {
-    color: #788a9f !important;
-}
+
 .fp__add_slider {
     background: #f86f031a;
 }
@@ -7039,11 +7028,19 @@ footer {
 
 
 /* New Updated CSS */
+
 /* Global CSS Start */
 .bg-gray{
     background-color: #788a9f !important;
 }
+.text-gray{
+    background-color: #788a9f !important;
+}
+.border-common{
+    border: 1px solid #788a9f !important;
+}
 /* Global CSS Start */
+
 /* Header Start */
 .nav-item a,
 .menu_icon i {
@@ -7069,6 +7066,17 @@ footer {
 /* Blocks End */
 
 /* Trending Now Start */
-
-
+.fp__menu_item:hover .title {
+    color: #788a9f !important;
+}
+.slick-prev::before {
+    content: '\f053' !important;
+    background: #4b637f !important;
+    color: white !important;
+}
+.slick-next::before {
+    content: '\f054' !important;
+    background: #4b637f !important;
+    color: white !important;
+}
 /* Trending Now End */
