@@ -50,7 +50,6 @@ h6 {
     padding: 0;
     /* font-family: var(--headingFont); */
     font-family: 'mnsLondonSemiBold';
-    color: black;
 }
 
 /* .custom-container {
@@ -278,7 +277,6 @@ button {
     -o-transition:  ease 0.3s;
 } */
 .main_menu .menu_icon li a {
-    color: black;
     cursor: pointer;
 }
 
@@ -290,8 +288,6 @@ button {
 }
 
 .fp__search_form {
-    /* height: 100vh; */
-    background: #000000c4;
     z-index: 9999;
     display: none;
 }
@@ -364,20 +360,9 @@ button {
 .nav-item {
     position: relative;
 }
-
-.nav-item:hover .nav-link,
-.nav-item .nav-link.active {
-    color: #364559 !important;
-}
-
 .droap_menu::-webkit-scrollbar {
     scrollbar-width: thin !important;
-    background: #010f1c;
     width: 6px;
-}
-
-.droap_menu::-webkit-scrollbar-thumb {
-    background: #333;
 }
 .nav-item:hover .droap_menu {
     top: 100%;
@@ -6577,6 +6562,22 @@ select option {
 .header-top {
     background: #008b8b;
 }
+.main_menu .menu_icon li a {
+    color: black;
+}
+.nav-item:hover .nav-link,
+.nav-item .nav-link.active {
+    color: #364559 !important;
+}
+.droap_menu::-webkit-scrollbar {
+    background: #010f1c;
+}
+.droap_menu::-webkit-scrollbar-thumb {
+    background: #333;
+}
+.fp__search_form {
+    background: #000000c4;
+}
 .main_menu .menu_icon li a:hover {
     color: #8badbd !important;
 }
@@ -6915,7 +6916,6 @@ footer {
     background: #4b637f !important;
     color: white !important;
 }
-
 .slick-next::before {
     content: '\f054' !important;
     background: #4b637f !important;
@@ -6924,13 +6924,11 @@ footer {
 .hiring {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
 }
-
 #jobReference1:checked,
 #jobReference2:checked {
     background-color: #788a9f !important;
     border-color: #788a9f !important;
 }
-
 .hiring-btn {
     background-color: #788a9f !important;
 }
