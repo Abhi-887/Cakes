@@ -24,7 +24,7 @@
         .heart {
             top: 2%;
             right: 5%;
-            background-color: #788a9f !important;
+            /* background-color: #788a9f !important; */
             padding: 10px 15px !important;
         }
 
@@ -32,14 +32,14 @@
             font-size: 18px;
         }
 
-        .fp__menu_item_text {
-            border-top: 1px solid #788a9f !important;
-        }
+        /* .fp__menu_item_text {
+                border-top: 1px solid #788a9f !important;
+            } */
 
-        select,
-        select option {
-            font-family: 'mnsLondonRegular', sans-serif !important;
-        }
+        /* select,
+            select option {
+                font-family: 'mnsLondonRegular', sans-serif !important;
+        } */
 
         .fp__menu_item {
             transition: transform 0.4s ease;

@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay py-5">
             <div class="container py-md-5 py-2">
@@ -18,22 +18,22 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                BREADCRUMB END
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            BREADCRUMB END
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
 
 
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                CONTACT PAGE START
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            CONTACT PAGE START
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
 
 
     <style>
         .contact-card {
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); */
             transition: transform 0.6s;
             display: flex;
             flex-direction: column;
-            background-color: #f7f8fd !important;
+            /* background-color: #f7f8fd !important; */
         }
 
         .contact-card img {
@@ -51,16 +51,16 @@
             width: 50px;
             height: 50px;
             transition: 0.4s;
-            background: #4b637f !important;
+            /* background: #4b637f !important; */
         }
 
-        .formbg {
-            background-color: #f7f8fd !important;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
-        }
+        /* .formbg {
+                background-color: #f7f8fd !important;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
+            } */
 
         .contact-social-icons i:hover {
-            color: #788a9f !important;
+            /* color: #788a9f !important; */
             transition: transform 0.6s;
         }
 
