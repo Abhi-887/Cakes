@@ -6090,10 +6090,7 @@ select option {
 .main_menu .menu_icon li a {
     color: black;
 }
-.nav-item:hover .nav-link,
-.nav-item .nav-link.active {
-    color: #364559 !important;
-}
+
 .droap_menu {
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
@@ -6109,16 +6106,11 @@ select option {
 .main_menu .menu_icon li a:hover {
     color: #8badbd !important;
 }
-.nav-item a,
-.menu_icon i {
-    color: #788a9f !important;
-}
+
 .common_btn:hover {
     background: #788a9f !important;
 }
-.bg-gray {
-    background: #4b637f !important;
-}
+
 .main_menu .menu_icon li .common_btn:hover {
     color: #fff !important;
 }
@@ -7041,3 +7033,24 @@ footer {
     border-right: 1px solid #494949;
 }
 /* Color Box Shadow And Background Styles End */
+
+
+
+
+
+
+
+
+
+/* New Updated CSS */
+
+/* Header Start */
+.nav-item a,
+.menu_icon i {
+    color: #788a9f !important;
+}
+.nav-item:hover .nav-link,
+.nav-item .nav-link.active {
+    color: #364559 !important;
+}
+/* Header End */
