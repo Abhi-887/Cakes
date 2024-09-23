@@ -6104,9 +6104,9 @@ select option {
     color: #8badbd !important;
 }
 
-.common_btn:hover {
+/* .common_btn:hover {
     background: #788a9f !important;
-}
+} */
 
 .main_menu .menu_icon li .common_btn:hover {
     color: #fff !important;
@@ -6247,11 +6247,10 @@ textarea::placeholder {
 .fp__scroll_btn:hover {
     background: #4b637f !important;
 }
-.common_btn {
+/* .common_btn {
     background: #4b637f;
     color: white !important;
-
-}
+} */
 
 .fp__about_us_text {
     color: #405a68;
