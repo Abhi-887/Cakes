@@ -107,9 +107,10 @@
                                                             </div>
                                                             <div style="display:flex;">
                                                                 <button style="width: 200px" type="button"
-                                                                    class="common_btn cancel_new_address mr-2">cancel</button>
+                                                                    class="common_btn cancel_new_address text-white background-light-gray">cancel</button>
                                                                 <button style="width: 200px" type="submit"
-                                                                    class="common_btn">save address</button>
+                                                                    class="common_btn text-white background-light-gray ms-3">save
+                                                                    address</button>
                                                             </div>
                                                         </div>
                                                     </form>
