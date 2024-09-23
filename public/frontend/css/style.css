@@ -6573,7 +6573,7 @@ select option {
 
 
 
-/* Color Styles Start */
+/* Color Box Shadow And Background Start */
 .header-top {
     background: #008b8b;
 }
@@ -6629,7 +6629,6 @@ a {
     background-color: #788a9f !important;
 }
 .fp__search_form form .close_search {
-    /* color: var(--colorPrimary); */
     background: white;
 }
 .overlay-text {
@@ -6922,4 +6921,17 @@ footer {
     background: #4b637f !important;
     color: white !important;
 }
-/* Color Styles End */
+.hiring {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
+}
+
+#jobReference1:checked,
+#jobReference2:checked {
+    background-color: #788a9f !important;
+    border-color: #788a9f !important;
+}
+
+.hiring-btn {
+    background-color: #788a9f !important;
+}
+/* Color Box Shadow And Background Styles End */
