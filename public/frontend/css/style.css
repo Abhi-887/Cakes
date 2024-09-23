@@ -6868,4 +6868,24 @@ textarea::placeholder {
 .testimonial-content {
     scrollbar-color: #262626 #ff9800;
 }
+.fp__about_video_text p {
+    color: #f86f03;
+}
+.play_btn::before {
+    background: #f86f03;
+}
+.contact-card {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    background-color: #f7f8fd !important;
+}
+.location-icon {
+    background: #4b637f !important;
+}
+.formbg {
+    background-color: #f7f8fd !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
+}
+.contact-social-icons i:hover {
+    color: #788a9f !important;
+}
 /* Color Styles End */
