@@ -258,7 +258,6 @@ button {
 }
 
 .droap_menu {
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     width: 250px;
     top: 49px !important;
     transition: ease 0.4s;
@@ -316,13 +315,6 @@ button {
     right: 7px;
     transform: translateY(-50%);
 }
-
-.searchformbackground-light-gray button {
-    background: #4b637f !important;
-}
-.searchformbackground-light-gray button:hover {
-    background: #86a4ba !important;
-}
 /* New Navbar Custom End */
 
 /* New Carousel Custom Start */
@@ -334,7 +326,6 @@ button {
 
 /* New Cart Custom Start */
 .fp__menu_cart_area {
-    background: #00000066;
     z-index: 999;
     visibility: hidden;
 }
@@ -393,41 +384,19 @@ button {
 
 .fp__menu_cart_area ul::-webkit-scrollbar {
     scrollbar-width: thin !important;
-    background: var(--paraColor);
     height: 8px;
     width: 8px;
 }
-
-.fp__menu_cart_area ul::-webkit-scrollbar-thumb {
-    background: #333;
-}
-
-.fp__menu_cart_area ul li {
-    background: #f7f5f5;
-}
-
 .fp__menu_cart_area ul li .menu_cart_img {
     width: 70px;
     height: 70px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .fp__menu_cart_area ul li .menu_cart_text .title {
-    font-family: var(--headingFont);
-    color: black;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 }
-
-.fp__menu_cart_area ul li .menu_cart_text .size {
-    color: #333;
-}
-
-.fp__menu_cart_area ul li .menu_cart_text .price {
-    color: #333;
-}
-
 .fp__menu_cart_area ul li .del_icon {
     right: 6px;
     transform: translateY(-50%);
@@ -6569,6 +6538,9 @@ select option {
 .nav-item .nav-link.active {
     color: #364559 !important;
 }
+.droap_menu {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
 .droap_menu::-webkit-scrollbar {
     background: #010f1c;
 }
@@ -6625,7 +6597,15 @@ a {
 .social-links a:hover {
     color: #8caabf !important;
 }
-
+.searchformbackground-light-gray button {
+    background: #4b637f !important;
+}
+.searchformbackground-light-gray button:hover {
+    background: #86a4ba !important;
+}
+.fp__menu_cart_area {
+    background: #00000066;
+}
 .fp__search_form button:hover {
     background-color: #788a9f !important;
 }
@@ -6640,11 +6620,27 @@ a {
         20px 20px 25px rgba(0, 0, 0, 0),
         20px 20px 25px rgba(0, 0, 0, 1);
 }
-
+.fp__menu_cart_area ul::-webkit-scrollbar-thumb {
+    background: #333;
+}
+.fp__menu_cart_area ul li {
+    background: #f7f5f5;
+}
+.fp__menu_cart_area ul li .menu_cart_img {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.fp__menu_cart_area ul li .menu_cart_text .title {
+    color: black;
+}
+.fp__menu_cart_area ul li .menu_cart_text .size {
+    color: #333;
+}
+.fp__menu_cart_area ul li .menu_cart_text .price {
+    color: #333;
+}
 .image-block:hover .overlay-text {
     color: #fff !important;
 }
-
 .image-block:hover .gradient-overlay {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
 }
@@ -6932,4 +6928,5 @@ footer {
 .hiring-btn {
     background-color: #788a9f !important;
 }
+
 /* Color Box Shadow And Background Styles End */
