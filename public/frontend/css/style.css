@@ -3591,8 +3591,8 @@ th {
     padding: 8px 20px;
     text-align: center;
     border-radius: 30px;
-    background: #8eacbf;
-    color: white;
+    /* background: #8eacbf;
+    color: white; */
     font-size: 14px;
     font-weight: 600;
     position: absolute;
@@ -7062,16 +7062,9 @@ footer {
 .contact-social-icons i:hover {
     color: #788a9f !important;
 }
-/* .fp__contact_form button {
-    background: #4b637f !important;
-    color: white !important;
-} */
 .fp__contact_form_input span {
     color: #788a9f;
 }
-/* .fp__contact_form button:hover {
-    background: #788a9f !important;
-} */
 .fp__contact_form {
     background: #fff2e7;
 }
