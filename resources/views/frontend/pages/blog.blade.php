@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                                                        BREADCRUMB START
-                                                                                    ==============================-->
+                                                                                            BREADCRUMB START
+                                                                                        ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay py-5">
             <div class="container py-md-5 py-2">
@@ -18,13 +18,13 @@
         </div>
     </section>
     <!--=============================
-                                                                                        BREADCRUMB END
-                                                                                    ==============================-->
+                                                                                            BREADCRUMB END
+                                                                                        ==============================-->
 
 
     <!--=============================
-                                                                                        BLOG PAGE START
-                                                                                    ==============================-->
+                                                                                            BLOG PAGE START
+                                                                                        ==============================-->
     <section class="fp__blog_page fp__blog2 py-5">
         <div class="container">
             <form class="fp__search_menu_form mb-4" action="{{ route('blogs') }}" method="GET">
@@ -61,7 +61,7 @@
                                     <li class="color-light-gray"><i
                                             class="fas fa-user color-light-gray"></i>{{ $blog->user->name }}</li>
                                     <li class="color-light-gray"><i class="fas fa-calendar-alt color-light-gray"></i>
-                                        {{ date('d m Y', strtotime($blog->created_at)) }}</li>
+                                        {{ date('d M Y', strtotime($blog->created_at)) }}</li>
                                     <li class="color-light-gray"><i class="fas fa-comments color-light-gray"></i>
                                         {{ $blog->comments_count }} comment</li>
                                 </ul>
@@ -93,6 +93,6 @@
         </div>
     </section>
     <!--=============================
-                                                                                        BLOG PAGE END
-                                                                                    ==============================-->
+                                                                                            BLOG PAGE END
+                                                                                        ==============================-->
 @endsection
