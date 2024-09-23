@@ -135,7 +135,7 @@
         z-index: 100;
         cursor: pointer;
         position: relative;
-        background: url('{{ asset('uploads/arrow4.png') }}') no-repeat 0 0 !important;
+        background: #788a9f url('{{ asset('uploads/arrow4.png') }}') no-repeat 0 0 !important;
         width: 59px;
         height: 58px;
         /* left: 20px !important; */
@@ -146,7 +146,7 @@
         z-index: 100;
         cursor: pointer;
         position: relative;
-        background: url('{{ asset('uploads/arrow3.png') }}') no-repeat 0 0 !important;
+        background: #788a9f url('{{ asset('uploads/arrow3.png') }}') no-repeat 0 0 !important;
         width: 59px;
         height: 58px;
         /* left: 20px !important; */
