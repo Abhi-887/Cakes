@@ -6257,15 +6257,15 @@ textarea::placeholder {
 .fp__breadcrumb_text ul li a {
     color: white !important;
 }
-.details_button_area .wishlist {
+/* .details_button_area .wishlist {
     color: white;
-}
+} */
 /* .fp__search_form button:hover {
     background: white;
 } */
-.details_button_area .wishlist:hover {
+/* .details_button_area .wishlist:hover {
     background: #788a9f !important;
-}
+} */
 /* .fp__menu_cart_header .close_cart {
     background: #788a9f;
     color: white;
@@ -6960,7 +6960,8 @@ footer {
 .border-common{
     border: 1px solid #788a9f !important;
 }
-/* Global CSS Start */
+
+/* Global CSS End */
 
 /* Header Start */
 .nav-item a,
