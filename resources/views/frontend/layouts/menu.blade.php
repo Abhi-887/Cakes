@@ -181,7 +181,8 @@
     <div class="top-0 p-4 fp__menu_cart_boody position-absolute end-0 bg-light transitions">
         <div class="mb-3 fp__menu_cart_header position-relative">
             <h5 class="fw-bold">Total Item (<span class="cart_count">{{ count(Cart::content()) }}</span>)</h5>
-            <span class="text-center close_cart position-absolute transitions"><i class="fal fa-times"></i></span>
+            <span class="text-center text-white background-light-gray close_cart position-absolute transitions"><i
+                    class="fal fa-times"></i></span>
         </div>
         <ul class="cart_contents">
             @foreach (Cart::content() as $cartProduct)

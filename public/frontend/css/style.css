@@ -6304,10 +6304,10 @@ textarea::placeholder {
 .details_button_area .wishlist:hover {
     background: #788a9f !important;
 }
-.fp__menu_cart_header .close_cart {
+/* .fp__menu_cart_header .close_cart {
     background: #788a9f;
     color: white;
-}
+} */
 .fp__menu_cart_area .checkout,
 .fp__menu_cart_area .cart_view {
     background:#788a9f;
