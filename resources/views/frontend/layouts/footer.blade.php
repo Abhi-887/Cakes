@@ -130,21 +130,21 @@
 </footer>
 
 <style>
-    .social-links a {
+    /* .social-links a {
         color: #ffffff !important;
-    }
+    } */
 
-    footer {
-        /* background-color: #f9f9f9 !important; */
-        background: #008B8B !important;
-    }
+    /* footer { */
+    /* background-color: #f9f9f9 !important; */
+    /* background: #008B8B !important; */
+    /* } */
 
     .form-control:focus {
-        border-color: #ced4da !important;
+        /* border-color: #ced4da !important; */
         box-shadow: none !important;
     }
 
-    .subscribe:hover {
+    /* .subscribe:hover {
         background: #4b637f !important;
     }
 
@@ -154,7 +154,7 @@
 
     .footer-menu {
         background: #4b637f !important;
-    }
+    } */
 </style>
 
 @push('scripts')

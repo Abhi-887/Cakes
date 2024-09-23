@@ -6892,4 +6892,23 @@ textarea::placeholder {
     background-color: #788a9f !important;
     border-color: #788a9f !important;
 }
+.social-links a {
+    color: #ffffff !important;
+}
+footer {
+    background: #008B8B !important;
+}
+
+.form-control:focus {
+    border-color: #ced4da !important;
+}
+.subscribe:hover {
+    background: #4b637f !important;
+}
+.footer-tile {
+    background: #253547 !important;
+}
+.footer-menu {
+    background: #4b637f !important;
+}
 /* Color Styles End */
