@@ -891,20 +891,12 @@ button {
 .menu_filter button {
     padding: 5px 25px;
     text-transform: capitalize;
-    color: #494949;
     margin: 5px 5px 0px 5px;
     border-radius: 30px;
     background: none;
-    border: 1px solid #494949;
     font-weight: 500;
     font-size: 15px;
     transition: all linear 0.6s;
-}
-
-.menu_filter button:hover,
-.menu_filter button.active {
-    background: #494949;
-    color: white;
 }
 
 .fp__menu_item {
@@ -917,11 +909,6 @@ button {
     -moz-transition: all linear 0.3s;
     -ms-transition: all linear 0.3s;
     -o-transition: all linear 0.3s;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-}
-
-.fp__menu_item:hover .fp__menu_item_text ul li a i {
-    color: #788a9f !important;
 }
 
 /* .fp__menu_item:hover .fp__menu_item_text ul li a {
@@ -969,7 +956,6 @@ button {
     font-size: 18px;
 }
 .add-to-cart:hover {
-    background: #4b637f !important;
     transition: all linear 0.6s;
     -webkit-transition: all linear 0.6s;
     -moz-transition: all linear 0.6s;
@@ -979,17 +965,11 @@ button {
 .heart {
     top: 2%;
     right: 5%;
-    background-color: #788a9f !important;
     padding: 10px 15px !important;
-}
-
-.fp__menu_item_text {
-    border-top: 1px solid #788a9f !important;
 }
 
 .fp__menu_item .fp__menu_item_text {
     border-radius: 0 0 06px 06px;
-    background: #f0f0f04d;
     padding: 30px 25px;
     /* text-align: center; */
     /* position: relative; */
@@ -1001,7 +981,6 @@ button {
 }
 
 .fp__menu_item .fp__menu_item_text .rating {
-    color: #ff9933;
     font-size: 14px;
     text-align: center;
 }
@@ -1018,16 +997,13 @@ button {
     content: "";
     width: 10px;
     height: 1px;
-    background: var(--paraColor);
     top: 10px;
     left: 4px;
 }
 
 .fp__menu_item .fp__menu_item_text .title {
     text-transform: capitalize;
-    color: black;
     font-size: 28px !important;
-    font-family: var(--headingFont);
     font-weight: 600;
     margin: 10px 0px 12px 0px;
     display: block;
@@ -1047,17 +1023,13 @@ button {
     right: 10px;
     /* text-transform: capitalize;
     color: #494949; */
-    font-family: var(--headingFont);
     /* position: absolute;
     background: white;
     padding: 8px 15px; */
-
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px !;
     /* border-radius: 30px; */
 }
 
 .fp__menu_item .fp__menu_item_text .price del {
-    color: var(--paraColor);
     margin-left: 5px;
 }
 
@@ -1066,8 +1038,6 @@ button {
     height: 30px;
     line-height: 30px;
     text-align: center;
-    background: #494949;
-    color: white;
     font-size: 14px;
     margin: 0px 5px;
     border-radius: 50%;
@@ -1076,14 +1046,6 @@ button {
 /* .fp__menu_item:hover {
     margin-top: 20px;
 } */
-
-.fp__menu_item:hover .fp__menu_item_text {
-    border-color: #494949;
-}
-
-.fp__menu_item:hover .title {
-    color: #788a9f !important;
-}
 
 /* .fp__menu_item .fp__menu_item_text ul li a:hover {
     background: black;
@@ -1096,9 +1058,6 @@ button {
 /*============================
     OFFER SLIDER START
 ============================*/
-.fp__add_slider {
-    background: #f86f031a;
-}
 
 .fp__add_slider_single {
     display: block;
@@ -1119,7 +1078,6 @@ button {
 }
 
 .fp__add_slider_single h3 {
-    color: white;
     font-size: 25px;
     font-weight: 600;
     margin-bottom: 10px;
@@ -1131,7 +1089,6 @@ button {
 }
 
 .fp__add_slider_single p {
-    color: white;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -1163,7 +1120,6 @@ button {
 
 .fp__single_team {
     border-radius: 10px;
-    background: #f86f031a;
     padding: 30px;
     text-align: center;
     position: relative;
@@ -1180,7 +1136,6 @@ button {
     height: 190px;
     margin: 0 auto;
     margin-bottom: 30px;
-    border: 5px solid #494949;
     border-radius: 50%;
     overflow: hidden;
     transition: all linear 0.6s;
@@ -1192,9 +1147,7 @@ button {
 
 .fp__single_team_text h4 {
     text-transform: capitalize;
-    color: black;
     font-size: 24px;
-    font-family: var(--headingFont);
     font-weight: 600;
     display: block;
     text-align: center;
@@ -1217,8 +1170,6 @@ button {
     height: 30px;
     line-height: 30px;
     text-align: center;
-    background: #494949;
-    color: white;
     font-size: 14px;
     margin: 0px 5px;
     border-radius: 50%;
@@ -1231,10 +1182,6 @@ button {
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
-}
-
-.fp__single_team_text ul li a:hover {
-    background: var(--gradiantHoverBg);
 }
 
 .team_slider .fp__single_team {
@@ -1251,18 +1198,6 @@ button {
     -moz-transform: scale(1.03);
     -ms-transform: scale(1.03);
     -o-transform: scale(1.03);
-}
-
-.fp__single_team:hover h4 {
-    color: #494949;
-}
-
-.fp__single_team:hover ul li a {
-    background: black;
-}
-
-.fp__single_team:hover .fp__single_team_img {
-    border: 5px solid white;
 }
 
 /*============================
@@ -1285,7 +1220,6 @@ button {
 }
 
 .fp__download_overlay {
-    background: #faf6f3eb;
     padding: 70px 70px 60px 70px;
 }
 
@@ -1314,7 +1248,6 @@ button {
 }
 
 .fp__download_text ul li a {
-    background: #494949;
     padding: 8px 30px;
     border-radius: 50px;
     display: flex;
@@ -1328,13 +1261,8 @@ button {
     -o-transition: all linear 0.6s;
 }
 
-.fp__download_text ul li a:hover {
-    background: black;
-}
-
 .fp__download_text ul li a i {
     font-size: 28px;
-    color: white;
     margin-right: 10px;
 }
 
@@ -1342,7 +1270,6 @@ button {
     text-transform: capitalize;
     font-size: 17px;
     font-weight: 600;
-    color: white;
     margin: 0;
 }
 
@@ -1350,7 +1277,6 @@ button {
     display: block;
     text-transform: capitalize;
     font-weight: 400;
-    color: white;
     font-size: 12px;
 }
 
@@ -1400,22 +1326,16 @@ button {
     background: #f86f03ad;
 } */
 
-.fp__counter_overlay {
-    background: #000000b3;
-}
-
 .fp__single_counter {
     text-align: center;
 }
 
 .fp__single_counter i {
     font-size: 30px;
-    color: #494949;
     margin-bottom: 20px;
     width: 70px;
     height: 70px;
     text-align: center;
-    background: white;
     line-height: 70px;
     border-radius: 50%;
 }
@@ -1425,7 +1345,6 @@ button {
 }
 
 .fp__single_counter .text h2 {
-    color: white;
     font-size: 40px;
     font-weight: 600;
     position: relative;
@@ -1437,14 +1356,12 @@ button {
 .fp__single_counter .text h2::after {
     position: absolute;
     content: "+";
-    color: white;
     font-size: 40px;
     top: -3px;
     right: -30px;
 }
 
 .fp__single_counter .text p {
-    color: white;
     text-transform: capitalize;
     font-size: 18px;
     font-weight: 500;
@@ -1459,8 +1376,6 @@ button {
     TESTIMONIAL START
 ============================*/
 .fp__single_testimonial {
-    background: white;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     padding: 25px;
     border-radius: 10px;
     position: relative;
@@ -1528,7 +1443,6 @@ button {
 }
 
 .fp__single_testimonial_body .rating {
-    color: #ff9933;
     font-size: 14px;
     text-align: center !important;
     display: block;
@@ -1546,7 +1460,6 @@ button {
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     z-index: 1;
 }
 
@@ -1561,15 +1474,10 @@ button {
 /*============================
     BLOG START
 ============================*/
-.fp__blog_overlay {
-    background: #faf6f3fa;
-}
 
 .fp__single_blog {
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    background: white;
     position: relative;
     /* margin-top: 25px; */
     z-index: 0 !important;
@@ -2083,7 +1991,7 @@ footer .wrapper a:hover {
     text-align: center !important;
     font-size: 16px !important;
     background: white;
-    color: var(--paraColor) !important;
+    color: #494949 !important;
     border-radius: 0 !important;
     -webkit-border-radius: 0 !important;
     -moz-border-radius: 0 !important;
@@ -2539,7 +2447,7 @@ footer .wrapper a:hover {
 .fp__blog_details_text .details_bloger li {
     font-size: 15px;
     font-weight: 400;
-    color: var(--paraColor);
+    color: #494949;
     margin-right: 50px;
 }
 
@@ -2881,7 +2789,7 @@ footer .wrapper a:hover {
     font-size: 14px;
     margin-left: 10px;
     font-weight: 400;
-    color: var(--paraColor);
+    color: #494949;
 }
 
 .fp__single_comm_text p {
@@ -3082,7 +2990,7 @@ footer .wrapper a:hover {
     border-radius: 3px;
     font-size: 16px;
     font-weight: 400;
-    color: var(--paraColor);
+    color: #494949;
     padding: 7px 17px;
     margin-top: 10px;
     margin-right: 10px;
@@ -3343,7 +3251,7 @@ footer .wrapper a:hover {
 .menu_det_description ol li {
     font-size: 16px;
     font-weight: 400;
-    color: var(--paraColor);
+    color: #494949;
     margin-top: 10px;
     position: relative;
     padding-left: 30px;
@@ -4059,7 +3967,7 @@ CHECKOUT PAGE START
 }
 
 .fp__login_area .form-check label {
-    color: var(--paraColor);
+    color: #494949;
     margin: 0px;
     text-transform: capitalize;
     font-size: 16px;
@@ -4141,7 +4049,7 @@ CHECKOUT PAGE START
 
 .fp__login_area .create_account {
     margin-top: 30px;
-    color: var(--paraColor);
+    color: #494949;
     margin-bottom: 0px;
 }
 
@@ -4184,7 +4092,7 @@ CHECKOUT PAGE START
 
 .fp__pay_modal_info ul li {
     font-size: 16px;
-    color: var(--paraColor);
+    color: #494949;
     position: relative;
     padding-left: 35px;
     margin: 10px 0px;
@@ -4383,7 +4291,7 @@ CHECKOUT PAGE START
 
 .fp__terms_condition ul li,
 .fp__terms_condition ol li {
-    color: var(--paraColor);
+    color: #494949;
     margin-top: 15px;
     padding-left: 25px;
     position: relative;
@@ -6145,7 +6053,7 @@ CHECKOUT PAGE START
     text-align: center !important;
     font-size: 14px !important;
     background: white;
-    color: var(--paraColor) !important;
+    color: #494949 !important;
     border-radius: 0 !important;
     -webkit-border-radius: 0 !important;
     -moz-border-radius: 0 !important;
@@ -6961,5 +6869,141 @@ footer {
 }
 .fp__cart_popup_text .price del {
     color: #494949;
+}
+.menu_filter button {
+    color: #494949;
+    border: 1px solid #494949;
+}
+.menu_filter button:hover,
+.menu_filter button.active {
+    background: #494949;
+    color: white;
+}
+.fp__menu_item {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.fp__menu_item:hover .fp__menu_item_text ul li a i {
+    color: #788a9f !important;
+}
+.add-to-cart:hover {
+    background: #4b637f !important;
+}
+.heart {
+    background-color: #788a9f !important;
+}
+.fp__menu_item_text {
+    border-top: 1px solid #788a9f !important;
+}
+.fp__menu_item .fp__menu_item_text {
+    background: #f0f0f04d;
+}
+.fp__menu_item .fp__menu_item_text .rating {
+    color: #ff9933;
+}
+.fp__menu_item .fp__menu_item_text .rating span::after {
+    background: #494949;
+}
+.fp__menu_item .fp__menu_item_text .title {
+    color: black;
+}
+.fp__menu_item .fp__menu_item_text .price {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px !;
+}
+.fp__menu_item .fp__menu_item_text .price del {
+    color: #494949;
+}
+.fp__menu_item .fp__menu_item_text ul li a {
+    background: #494949;
+    color: white;
+}
+.fp__menu_item:hover .fp__menu_item_text {
+    border-color: #494949;
+}
+.fp__menu_item:hover .title {
+    color: #788a9f !important;
+}
+.fp__add_slider {
+    background: #f86f031a;
+}
+.fp__add_slider_single h3 {
+    color: white;
+}
+.fp__add_slider_single p {
+    color: white;
+}
+.fp__single_team {
+    background: #f86f031a;
+}
+.fp__single_team_img {
+    border: 5px solid #494949;
+}
+.fp__single_team_text h4 {
+    color: black;
+}
+.fp__single_team_text ul li a {
+    background: #494949;
+    color: white;
+}
+.fp__single_team:hover h4 {
+    color: #494949;
+}
+.fp__single_team:hover ul li a {
+    background: black;
+}
+.fp__single_team:hover .fp__single_team_img {
+    border: 5px solid white;
+}
+.fp__download_overlay {
+    background: #faf6f3eb;
+}
+.fp__download_text ul li a {
+    background: #494949;
+}
+.fp__download_text ul li a:hover {
+    background: black;
+}
+.fp__download_text ul li a i {
+    color: white;
+}
+.fp__download_text ul li a p {
+    color: white;
+}
+.fp__download_text ul li a p span {
+    color: white;
+}
+.fp__counter_overlay {
+    background: #000000b3;
+}
+.fp__single_counter i {
+    color: #494949;
+    background: white;
+}
+.fp__single_counter .text h2 {
+    color: white;
+}
+
+.fp__single_counter .text h2::after {
+    content: "+";
+    color: white;
+}
+.fp__single_counter .text p {
+    color: white;
+}
+.fp__single_testimonial {
+    background: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.fp__single_testimonial_body .rating {
+    color: #ff9933;
+}
+.fp__testimonial_product {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.fp__blog_overlay {
+    background: #faf6f3fa;
+}
+.fp__single_blog {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background: white;
 }
 /* Color Box Shadow And Background Styles End */
