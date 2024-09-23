@@ -5299,7 +5299,6 @@ CHECKOUT PAGE START
     text-transform: capitalize;
     font-size: 16px;
     color: #494949;
-    font-family: var(--cursiveFont);
     position: absolute;
     top: 5px;
     left: 5px;
@@ -6419,11 +6418,11 @@ textarea::placeholder {
 .fp__menu_item_text .price del {
     color: #999;
 }
-.category {
+/* .category {
     background-color: #f8f9fa;
     color: #494949;
     border: 1px solid #788a9f !important;
-}
+} */
 .actions a {
     color: #494949;
 }
@@ -6797,9 +6796,9 @@ footer {
 .fp__menu_item:hover .fp__menu_item_text ul li a i {
     color: #788a9f !important;
 }
-.add-to-cart:hover {
+/* .add-to-cart:hover {
     background: #4b637f !important;
-}
+} */
 /* .heart {
     background-color: #788a9f !important;
 } */

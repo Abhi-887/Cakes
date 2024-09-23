@@ -33,13 +33,13 @@
         }
 
         /* .fp__menu_item_text {
-                                border-top: 1px solid #788a9f !important;
-                            } */
+                                    border-top: 1px solid #788a9f !important;
+                                } */
 
         /* select,
-                            select option {
-                                font-family: 'mnsLondonRegular', sans-serif !important;
-                        } */
+                                select option {
+                                    font-family: 'mnsLondonRegular', sans-serif !important;
+                            } */
 
         .fp__menu_item {
             transition: transform 0.4s ease;
@@ -161,7 +161,7 @@
                                 onclick="addToWishlist('{{ $product->id }}')" href="javascript:;"><i
                                     class="text-white fal fa-heart"></i></a>
                             <div class="card-body fp__menu_item_text position-relative d-flex flex-column">
-                                <a class="px-2 py-1 border-common category color-light-gray"
+                                <a class="px-2 py-1 border-common category bg-light color-light-gray"
                                     href="#">{{ $product->subCategory->name ?? '' }}</a>
                                 @if ($product->reviews_avg_rating)
                                     <p class="rating">
