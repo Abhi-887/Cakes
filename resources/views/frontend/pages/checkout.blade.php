@@ -156,7 +156,8 @@
                         @endif
                         <p class="total"><span>total:</span> <span
                                 id="grand_total">{{ currencyPosition(grandCartTotal()) }}</span></p>
-                        <a class="common_btn" id="procced_pmt_button" href="#">Proceed to Payment</a>
+                        <a class="common_btn text-white background-light-gray" id="procced_pmt_button"
+                            href="#">Proceed to Payment</a>
                     </div>
                 </div>
             </div>
