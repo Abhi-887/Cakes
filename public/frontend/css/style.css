@@ -1588,10 +1588,10 @@ button {
     );
 }
 
-.fp__single_blog:hover ul li,
+/* .fp__single_blog:hover ul li,
 .fp__single_blog:hover .title {
     color: white;
-}
+} */
 
 .fp__single_blog:hover .fp__single_blog_img img {
     transform: scale(1.05);
