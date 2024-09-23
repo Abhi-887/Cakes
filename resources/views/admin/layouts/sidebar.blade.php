@@ -379,25 +379,38 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="menu-item has-children {{ setSidebarActive([
+                        'admin.blog-category.*',
+                        'admin.blogs.*',
+                        'admin.blogs.comments.index'
+                    ]) }}">
+                        <a href="javascript:void(0);" class="menu-item-button">
+                            <div class="icon"><i class="fas fa-rss"></i></div>
+                            <div class="text">Blog</div>
+                        </a>
+                        <ul class="sub-menu">
+                            <li class="sub-menu-item {{ setSidebarActive(['admin.blog-category.*']) }}">
+                                <a href="{{ route('admin.blog-category.index') }}" class="">
+                                    <div class="text">Categories</div>
+                                </a>
+                            </li>
+                            <li class="sub-menu-item {{ setSidebarActive(['admin.blogs.*']) }}">
+                                <a href="{{ route('admin.blogs.index') }}" class="">
+                                    <div class="text">All Blogs</div>
+                                </a>
+                            </li>
+                            <li class="sub-menu-item {{ setSidebarActive(['admin.blogs.comments.index']) }}">
+                                <a href="{{ route('admin.blogs.comments.index') }}" class="">
+                                    <div class="text">Comments</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+
                 </ul>
 
-                <li class="menu-item has-children {{ setSidebarActive([
-                    'admin.blog-category.*',
-                    'admin.blogs.*',
-                    'admin.blogs.comments.index'
-                ]) }}">
-                    <a href="#" class="menu-item-button" data-toggle="dropdown"><i class="fas fa-rss"></i>
-                        <span> Blog </span></a>
-                    <ul class="sub-menu">
-                        <li class="sub-menu-item {{ setSidebarActive(['admin.blog-category.*']) }}"><a class="nav-link"
-                                href="{{ route('admin.blog-category.index') }}">Categories</a></li>
-                        <li class="sub-menu-item {{ setSidebarActive(['admin.blogs.*']) }}"><a class="nav-link"
-                                href="{{ route('admin.blogs.index') }}">All Blogs</a></li>
-                        <li class="sub-menu-item {{ setSidebarActive(['admin.blogs.comments.index']) }}"><a class="nav-link"
-                                href="{{ route('admin.blogs.comments.index') }}">Comments</a></li>
-                </li>
-            </ul>
-            </li>
+
 
                 @if (auth()->user()->id === 1)
                 <li class="menu-item {{ setSidebarActive(['admin.chat.index']) }}">
