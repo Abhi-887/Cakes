@@ -13,7 +13,7 @@
             <div class="row mt-2">
                 @foreach ($latestBlogs as $blog)
                     <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-duration="1s">
-                        <div class="fp__single_blog">
+                        <div class="fp__single_blog bg-white">
                             <a href="{{ route('blogs.details', $blog->slug) }}" class="fp__single_blog_img">
                                 <img src="{{ asset($blog->image) }}" alt="{{ $blog->title }}" class="img-fluid w-100">
                             </a>
