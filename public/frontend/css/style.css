@@ -6227,13 +6227,13 @@ textarea::placeholder {
 .fp__offer_item_single ul li a:hover {
     background: black;
 }
-.fp__scroll_btn {
+/* .fp__scroll_btn {
     background: #788a9f !important;
     color: #ffffff;
 }
 .fp__scroll_btn:hover {
     background: #4b637f !important;
-}
+} */
 /* .common_btn {
     background: #4b637f;
     color: white !important;

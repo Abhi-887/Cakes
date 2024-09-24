@@ -151,7 +151,7 @@
     <!--=============================
         SCROLL BUTTON START
     ==============================-->
-    <div class="fp__scroll_btn">
+    <div class="fp__scroll_btn background-light-gray">
         Go To Top
     </div>
     <!--=============================
