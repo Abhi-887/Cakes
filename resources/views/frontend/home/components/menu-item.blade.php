@@ -226,7 +226,7 @@
                         <a class="heart background-light-gray position-absolute rounded-circle" href="javascript:;" onclick="addToWishlist('${product.id}')">
                             <i class="text-white fal fa-heart"></i>
                         </a>
-                        <div class="card-body fp__menu_item_text border-common position-relative d-flex flex-column">
+                        <div class="card-body fp__menu_item_text position-relative d-flex flex-column">
                             <a class="px-3 py-2 category bg-light border-common color-light-gray categorys fw-semibold" href="/category/${product.category_slug}">
                                 ${product.category_name}
                             </a>
