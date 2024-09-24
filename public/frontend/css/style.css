@@ -97,6 +97,9 @@ button {
     box-shadow: none !important;
 }
 
+.row{
+    margin: 0;
+}
 /* :root {
     --boxShadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     --gradiantBg: rgb(173, 205, 222);
