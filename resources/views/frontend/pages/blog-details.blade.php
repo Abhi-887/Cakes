@@ -16,8 +16,8 @@
 @endphp
 </pre> --}}
     <!--=============================
-                                                                                                                BREADCRUMB START
-                                                                                                            ==============================-->
+                                                                                                                    BREADCRUMB START
+                                                                                                                ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay py-5">
             <div class="container py-md-5 py-2">
@@ -32,13 +32,13 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                BREADCRUMB END
-                                                                                                            ==============================-->
+                                                                                                                    BREADCRUMB END
+                                                                                                                ==============================-->
 
 
     <!--=========================
-                                                                                                                BLOG DETAILS START
-                                                                                                            ==========================-->
+                                                                                                                    BLOG DETAILS START
+                                                                                                                ==========================-->
     <section class="fp__blog_details mt_120 xs_mt_90 mb_100 xs_mb_70">
         <div class="container">
             <div class="row">
@@ -168,7 +168,7 @@
                                         <img src="{{ $latestBlog->image }}" alt="{{ $latestBlog->title }}"
                                             class="img-fluid w-100">
                                         <div class="text">
-                                            <a class="color-light-gray"
+                                            <a
                                                 href="{{ route('blogs.details', $latestBlog->slug) }}">{{ truncate($latestBlog->title, 50) }}</a>
                                             <p><i class="far fa-calendar-alt color-light-gray"></i>
                                                 {{ date('d m Y', strtotime($latestBlog->created_at)) }}</p>
@@ -198,6 +198,6 @@
         </div>
     </section>
     <!--=========================
-                                                                                                                BLOG DETAILS END
-                                                                                                            ==========================-->
+                                                                                                                    BLOG DETAILS END
+                                                                                                                ==========================-->
 @endsection
