@@ -6882,10 +6882,10 @@ footer {
     background: #494949;
     color: white;
 }
-.fp__menu_details_images {
+/* .fp__menu_details_images {
     border: 1px solid #eee;
     background: #adcdde;
-}
+} */
 .fp__menu_details_text .rating {
     color: #ff9933;
 }
