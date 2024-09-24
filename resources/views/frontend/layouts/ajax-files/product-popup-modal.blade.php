@@ -1,5 +1,5 @@
-<button type="button" class="btn-close color-dark-gray border-common" data-bs-dismiss="modal" aria-label="Close"><i
-        class="fal fa-times"></i></button>
+<button type="button" class="btn-close bg-transparent color-dark-gray border-common" data-bs-dismiss="modal"
+    aria-label="Close"><i class="fal fa-times"></i></button>
 
 <form action="" id="modal_add_to_cart_form">
     @csrf
