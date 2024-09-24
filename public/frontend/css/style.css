@@ -6902,10 +6902,10 @@ footer {
     background-color: #494949;
     border-color: #494949;
 }
-.details_size .form-check label,
+/* .details_size .form-check label,
 .details_extra_item .form-check label {
     color: black;
-}
+} */
 .quentity_btn button {
     color: #fff;
     background-color: #4b637f !important;
@@ -6921,9 +6921,9 @@ footer {
 .fp__menu_description_area .nav {
     background: #faf6f3fa;
 }
-.fp__menu_description_area .nav .nav-item {
+/* .fp__menu_description_area .nav .nav-item {
     border-right: 1px solid #494949;
-}
+} */
 /* Color Box Shadow And Background Styles End */
 
 
