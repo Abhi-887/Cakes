@@ -20,22 +20,22 @@
         }
 
         /* .hiring {
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
-            }
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
+                }
 
-            #jobReference1:checked,
-            #jobReference2:checked {
-                background-color: #788a9f !important;
-                border-color: #788a9f !important;
-            }
+                #jobReference1:checked,
+                #jobReference2:checked {
+                    background-color: #788a9f !important;
+                    border-color: #788a9f !important;
+                }
 
-            .hiring-btn {
-                background-color: #788a9f !important;
-            } */
+                .hiring-btn {
+                    background-color: #788a9f !important;
+                } */
     </style>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                    BREADCRUMB START
-                                                                                                                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                        BREADCRUMB START
+                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay py-5">
             <div class="container py-md-5 py-2">
@@ -50,11 +50,11 @@
         </div>
     </section>
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                    BREADCRUMB END
-                                                                                                                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                        BREADCRUMB END
+                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
     <!--=============================
-                                                                                                                                                                                                                                                                                                                                                                   WE'RE HIRING! PAGE START
-                                                                                                                                                                                                                                                                                                                                                                ==============================-->
+                                                                                                                                                                                                                                                                                                                                                                       WE'RE HIRING! PAGE START
+                                                                                                                                                                                                                                                                                                                                                                    ==============================-->
 
     {{-- <div class="container my-5">
         <div class="">
@@ -437,13 +437,13 @@
 
                     <div class="mt-4 text-center">
                         <button type="submit"
-                            class="hiring-btn text-white fw-semibold rounded-1 p-3 v_submit_button">Submit
+                            class="hiring-btn background-light-gray text-white fw-semibold rounded-1 p-3 v_submit_button">Submit
                             Application</button>
                     </div>
             </form>
         </div>
     </section>
     <!--=============================
-                                                                                                                         Application PAGE END
-                                                                                                                        ==============================-->
+                                                                                                                             Application PAGE END
+                                                                                                                            ==============================-->
 @endsection
