@@ -195,7 +195,8 @@
                 <li><button type="submit" class="common_btn background-light-gray text-white modal_cart_button">add
                         to cart</button></li>
             @endif
-            <li><a class="wishlist  background-light-gray text-white" href="#"><i class="far fa-heart"></i></a>
+            <li><a class="wishlist  background-light-gray text-white ms-3" href="#"><i
+                        class="far fa-heart"></i></a>
             </li>
         </ul>
     </div>
