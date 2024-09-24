@@ -6860,19 +6860,19 @@ footer {
     background: white;
     border-top: 1px solid #788a9f !important;
 }
-.fp__blog_details_text .details_bloger li i {
+/* .fp__blog_details_text .details_bloger li i {
     color: #788a9f;
 }
 .fp__blog_details_text .details_bloger li {
     color: #788a9f;
-}
-.fp__related_blog ul li .text p,
+} */
+/* .fp__related_blog ul li .text p,
 .fp__related_blog ul li .text p i {
     color: #788a9f;
 }
 .fp__related_blog ul li .text a:hover {
     color: #494949;
-}
+} */
 
 .fp__blog_tags ul li a {
     background: #f5f9ff;
