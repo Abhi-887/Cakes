@@ -16,8 +16,8 @@
 @endphp
 </pre> --}}
     <!--=============================
-                                                                                                BREADCRUMB START
-                                                                                            ==============================-->
+                                                                                                            BREADCRUMB START
+                                                                                                        ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay py-5">
             <div class="container py-md-5 py-2">
@@ -32,13 +32,13 @@
         </div>
     </section>
     <!--=============================
-                                                                                                BREADCRUMB END
-                                                                                            ==============================-->
+                                                                                                            BREADCRUMB END
+                                                                                                        ==============================-->
 
 
     <!--=========================
-                                                                                                BLOG DETAILS START
-                                                                                            ==========================-->
+                                                                                                            BLOG DETAILS START
+                                                                                                        ==========================-->
     <section class="fp__blog_details mt_120 xs_mt_90 mb_100 xs_mb_70">
         <div class="container">
             <div class="row">
@@ -49,9 +49,12 @@
                         </div>
                         <div class="fp__blog_details_text wow fadeInUp" data-wow-duration="1s">
                             <ul class="details_bloger d-flex flex-wrap">
-                                <li><i class="far fa-user"></i> By {{ $blog->user->name }}</li>
-                                <li><i class="far fa-comment-alt-lines"></i> {{ count($comments) }} Comments</li>
-                                <li><i class="far fa-calendar-alt"></i> {{ date('d m Y', strtotime($blog->created_at)) }}
+                                <li class="color-light-gray"><i class="far fa-user color-light-gray"></i> By
+                                    {{ $blog->user->name }}</li>
+                                <li class="color-light-gray"><i class="far fa-comment-alt-lines color-light-gray"></i>
+                                    {{ count($comments) }} Comments</li>
+                                <li class="color-light-gray"><i class="far fa-calendar-alt color-light-gray"></i>
+                                    {{ date('d m Y', strtotime($blog->created_at)) }}
                                 </li>
                             </ul>
                             <h2>{!! $blog->title !!}</h2>
@@ -66,13 +69,13 @@
                                     <span>share:</span>
                                     <ul class="d-flex flex-wrap">
                                         <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ url()->current() }}"><i
-                                                    class="fab fa-facebook-square"></i></a></li>
+                                                    class="fab fa-facebook-square fs-3 ms-2 text-dark"></i></a></li>
                                         <li><a
                                                 href="https://www.linkedin.com/shareArticle?mini=true&url={{ url()->current() }}&title={{ $blog->title }}"><i
-                                                    class="fab fa-linkedin"></i></a></li>
+                                                    class="fab fa-linkedin fs-3 ms-2 text-dark"></i></a></li>
                                         <li><a
                                                 href="http://twitter.com/share?text={{ $blog->title }}&url={{ url()->current() }}"><i
-                                                    class="fab fa-twitter-square"></i></a></li>
+                                                    class="fab fa-twitter-square fs-3 ms-2 text-dark"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -165,9 +168,9 @@
                                         <img src="{{ $latestBlog->image }}" alt="{{ $latestBlog->title }}"
                                             class="img-fluid w-100">
                                         <div class="text">
-                                            <a
+                                            <a class="color-light-gray"
                                                 href="{{ route('blogs.details', $latestBlog->slug) }}">{{ truncate($latestBlog->title, 50) }}</a>
-                                            <p><i class="far fa-calendar-alt"></i>
+                                            <p><i class="far fa-calendar-alt color-light-gray"></i>
                                                 {{ date('d m Y', strtotime($latestBlog->created_at)) }}</p>
                                         </div>
                                     </li>
@@ -195,6 +198,6 @@
         </div>
     </section>
     <!--=========================
-                                                                                                BLOG DETAILS END
-                                                                                            ==========================-->
+                                                                                                            BLOG DETAILS END
+                                                                                                        ==========================-->
 @endsection
