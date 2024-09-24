@@ -6,6 +6,7 @@
 
     <meta name="description" content="{{ config('settings.seo_description') }}">
     <meta name="keywords" content="{{ config('settings.seo_keywords') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     @yield('og_metatag_section')
 
