@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-            BREADCRUMB START
-        ==============================-->
+                BREADCRUMB START
+            ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ config('settings.breadcrumb') }});">
         <div class="py-5 fp__breadcrumb_overlay">
             <div class="container py-2 py-md-5">
@@ -18,13 +18,13 @@
         </div>
     </section>
     <!--=============================
-            BREADCRUMB END
-        ==============================-->
+                BREADCRUMB END
+            ==============================-->
 
 
     <!--=========================
-            SIGNIN START
-        ==========================-->
+                SIGNIN START
+            ==========================-->
     <section class="fp__signin" style="background: url(images/login_bg.jpg);">
         <div class="fp__signin_overlay pt_125 xs_pt_95 pb_100 xs_pb_70">
             <div class="container">
@@ -66,7 +66,8 @@
 
                                     <div class="col-xl-12">
                                         <div class="fp__login_imput">
-                                            <button type="submit" class="common_btn">login</button>
+                                            <button type="submit"
+                                                class="common_btn background-light-gray text-white">login</button>
                                         </div>
                                     </div>
                                 </div>
@@ -83,6 +84,6 @@
         </div>
     </section>
     <!--=========================
-            SIGNIN END
-        ==========================-->
+                SIGNIN END
+            ==========================-->
 @endsection
