@@ -6450,13 +6450,12 @@ footer {
 /* .hiring-btn {
     background-color: #788a9f !important;
 } */
-.fp__menu_description_area .nav .nav-item .nav-link {
+/* .fp__menu_description_area .nav .nav-item .nav-link {
     color: #788a9f;
-}
+} */
 
-.fp__menu_description_area .nav .nav-item .nav-link:hover,
 .fp__menu_description_area .nav .nav-item .nav-link.active {
-    background: none !important;
+    /* background: none !important; */
     color: #494949;
 }
 
