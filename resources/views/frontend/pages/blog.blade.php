@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-                                                                                                    BREADCRUMB START
-                                                                                                ==============================-->
+                                                                                                        BREADCRUMB START
+                                                                                                    ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay py-5">
             <div class="container py-md-5 py-2">
@@ -18,13 +18,13 @@
         </div>
     </section>
     <!--=============================
-                                                                                                    BREADCRUMB END
-                                                                                                ==============================-->
+                                                                                                        BREADCRUMB END
+                                                                                                    ==============================-->
 
 
     <!--=============================
-                                                                                                    BLOG PAGE START
-                                                                                                ==============================-->
+                                                                                                        BLOG PAGE START
+                                                                                                    ==============================-->
     <section class="fp__blog_page fp__blog2 py-5">
         <div class="container">
             <form class="fp__search_menu_form mb-4" action="{{ route('blogs') }}" method="GET">
@@ -54,7 +54,7 @@
                             <a href="{{ route('blogs.details', $blog->slug) }}" class="fp__single_blog_img">
                                 <img src="{{ asset($blog->image) }}" alt="{{ $blog->title }}" class="img-fluid w-100">
                             </a>
-                            <div class="fp__single_blog_text bg-white border-common">
+                            <div class="fp__single_blog_text bg-white">
                                 <a class="category color-light-gray border-common bg-light"
                                     href="#">{{ $blog->category->name }}</a>
                                 <ul class="d-flex flex-wrap mt_15">
@@ -93,6 +93,6 @@
         </div>
     </section>
     <!--=============================
-                                                                                                    BLOG PAGE END
-                                                                                                ==============================-->
+                                                                                                        BLOG PAGE END
+                                                                                                    ==============================-->
 @endsection

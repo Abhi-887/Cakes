@@ -17,7 +17,7 @@
                             <a href="{{ route('blogs.details', $blog->slug) }}" class="fp__single_blog_img">
                                 <img src="{{ asset($blog->image) }}" alt="{{ $blog->title }}" class="img-fluid w-100">
                             </a>
-                            <div class="fp__single_blog_text">
+                            <div class="fp__single_blog_text bg-light">
                                 <a class="blogcategory category color-light-gray border-common bg-light"
                                     href="{{ route('blogs', ['category' => $blog->category->slug]) }}">
                                     {{ $blog->category->name }}
