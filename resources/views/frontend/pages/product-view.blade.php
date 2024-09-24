@@ -12,64 +12,64 @@
         }
 
         /* .productviewinput input:checked {
-                                        background-color: #788a9f !important;
-                                        border-color: #788a9f !important;
-                                    } */
+                                                        background-color: #788a9f !important;
+                                                        border-color: #788a9f !important;
+                                                    } */
 
         /* .fa-long-arrow-right::before {
-                                                                                                                                            content: "\f054" !important;
-                                                                                                                                            font-weight: bolder !important;
-                                                                                                                                        }
+                                                                                                                                                            content: "\f054" !important;
+                                                                                                                                                            font-weight: bolder !important;
+                                                                                                                                                        }
 
-                                                                                                                                        .fa-long-arrow-left::before {
-                                                                                                                                            content: "\f053" !important;
-                                                                                                                                            font-weight: bolder !important;
-                                                                                                                                        }
+                                                                                                                                                        .fa-long-arrow-left::before {
+                                                                                                                                                            content: "\f053" !important;
+                                                                                                                                                            font-weight: bolder !important;
+                                                                                                                                                        }
 
-                                                                                                                                        .fp__related_menu .prevArrow {
-                                                                                                                                            left: -45px !important;
-                                                                                                                                        }
+                                                                                                                                                        .fp__related_menu .prevArrow {
+                                                                                                                                                            left: -45px !important;
+                                                                                                                                                        }
 
-                                                                                                                                        .nextArrow.slick-arrow {
-                                                                                                                                            right: -45px !important;
-                                                                                                                                        }
+                                                                                                                                                        .nextArrow.slick-arrow {
+                                                                                                                                                            right: -45px !important;
+                                                                                                                                                        }
 
-                                                                                                                                        @media (max-width: 640px) {
-                                                                                                                                            .nextArrow.slick-arrow {
-                                                                                                                                                right: 40% !important;
-                                                                                                                                                top: 103% !important;
-                                                                                                                                            }
+                                                                                                                                                        @media (max-width: 640px) {
+                                                                                                                                                            .nextArrow.slick-arrow {
+                                                                                                                                                                right: 40% !important;
+                                                                                                                                                                top: 103% !important;
+                                                                                                                                                            }
 
-                                                                                                                                            .fp__related_menu .prevArrow {
-                                                                                                                                                left: 40% !important;
-                                                                                                                                                top: 103% !important;
-                                                                                                                                            }
-                                                                                                                                        }
+                                                                                                                                                            .fp__related_menu .prevArrow {
+                                                                                                                                                                left: 40% !important;
+                                                                                                                                                                top: 103% !important;
+                                                                                                                                                            }
+                                                                                                                                                        }
 
-                                                                                                                                        @media (max-width: 460px) {
-                                                                                                                                            .nextArrow.slick-arrow {
-                                                                                                                                                right: 38% !important;
-                                                                                                                                            }
+                                                                                                                                                        @media (max-width: 460px) {
+                                                                                                                                                            .nextArrow.slick-arrow {
+                                                                                                                                                                right: 38% !important;
+                                                                                                                                                            }
 
-                                                                                                                                            .fp__related_menu .prevArrow {
-                                                                                                                                                left: 38% !important;
-                                                                                                                                            }
-                                                                                                                                        }
+                                                                                                                                                            .fp__related_menu .prevArrow {
+                                                                                                                                                                left: 38% !important;
+                                                                                                                                                            }
+                                                                                                                                                        }
 
-                                                                                                                                        @media (max-width: 380px) {
-                                                                                                                                            .nextArrow.slick-arrow {
-                                                                                                                                                right: 35% !important;
-                                                                                                                                            }
+                                                                                                                                                        @media (max-width: 380px) {
+                                                                                                                                                            .nextArrow.slick-arrow {
+                                                                                                                                                                right: 35% !important;
+                                                                                                                                                            }
 
-                                                                                                                                            .fp__related_menu .prevArrow {
-                                                                                                                                                left: 35% !important;
-                                                                                                                                            }
-                                                                                                                                        }
+                                                                                                                                                            .fp__related_menu .prevArrow {
+                                                                                                                                                                left: 35% !important;
+                                                                                                                                                            }
+                                                                                                                                                        }
 
-                                                                                                                                        .prevArrow.slick-arrow {
-                                                                                                                                            font-size: 22px !important;
-                                                                                                                                            font-weight: 600;
-                                                                                                                                        } */
+                                                                                                                                                        .prevArrow.slick-arrow {
+                                                                                                                                                            font-size: 22px !important;
+                                                                                                                                                            font-weight: 600;
+                                                                                                                                                        } */
 
         #exzoom {
             position: sticky;
@@ -83,7 +83,7 @@
             font-family: 'Font Awesome 5 Free' !important;
             font-weight: 600;
             /* background: #4b637f !important;
-                                    color: white !important; */
+                                                    color: white !important; */
             border-radius: 50%;
             padding: 10px 17px;
             font-size: 16px;
@@ -97,7 +97,7 @@
             font-family: 'Font Awesome 5 Free' !important;
             font-weight: 600;
             /* background: #4b637f !important;
-                                    color: white !important; */
+                                                    color: white !important; */
             border-radius: 50%;
             padding: 10px 17px;
             font-size: 16px;
@@ -418,19 +418,19 @@
             <div class="row wow fadeInUp" data-wow-duration="1s">
                 <div class="fp__menu_description_area mt-5 pt-5">
                     <ul class="nav nav-pills" id="pills-tab" role="tablist">
-                        <li class="nav-item border-end" role="presentation">
-                            <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
+                        <li class="nav-item border-end border-dark" role="presentation">
+                            <button class="text-white" id="pills-home-tab" data-bs-toggle="pill"
                                 data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
                                 aria-selected="true">Description</button>
                         </li>
-                        <li class="nav-item border-end" role="presentation">
-                            <button class="nav-link" id="pills-cake-stand-gallery-tab" data-bs-toggle="pill"
+                        <li class="nav-item border-end border-dark" role="presentation">
+                            <button class="text-white" id="pills-cake-stand-gallery-tab" data-bs-toggle="pill"
                                 data-bs-target="#pills-cake-stand-gallery" type="button" role="tab"
                                 aria-controls="pills-cake-stand-gallery" aria-selected="false">Cake Stand
                                 Gallery</button>
                         </li>
-                        <li class="nav-item border-end" role="presentation">
-                            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+                        <li class="nav-item border-end border-dark" role="presentation">
+                            <button class="text-white" id="pills-contact-tab" data-bs-toggle="pill"
                                 data-bs-target="#pills-contact" type="button" role="tab"
                                 aria-controls="pills-contact" aria-selected="false">Reviews</button>
                         </li>

@@ -6918,9 +6918,7 @@ footer {
 /* .details_button_area .wishlist {
     background: #4b637f !important;
 } */
-.fp__menu_description_area .nav {
-    background: #faf6f3fa;
-}
+
 /* .fp__menu_description_area .nav .nav-item {
     border-right: 1px solid #494949;
 } */
@@ -7056,3 +7054,9 @@ footer {
     background: #fff2e7;
 }
 /* Contact End */
+
+/* Product Detail Nav-Tab Start */
+.fp__menu_description_area .nav {
+    background: #c3d6ec;
+}
+/* Product Detail Nav-Tab End */
