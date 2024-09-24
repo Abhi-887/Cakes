@@ -195,7 +195,8 @@
                 <li><button type="submit" class="common_btn background-light-gray text-white modal_cart_button">add
                         to cart</button></li>
             @endif
-            <li><a class="wishlist" href="#"><i class="far fa-heart"></i></a></li>
+            <li><a class="wishlist  background-light-gray text-white" href="#"><i class="far fa-heart"></i></a>
+            </li>
         </ul>
     </div>
 </form>
@@ -278,7 +279,7 @@
                 beforeSend: function() {
                     $('.modal_cart_button').attr('disabled', true).html(
                         '<span class="spinner-border spinner-border-sm text-light" role="status" aria-hidden="true"></span> Loading...'
-                        );
+                    );
                 },
                 success: function(response) {
                     updateSidebarCart();
