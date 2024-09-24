@@ -197,7 +197,7 @@
                 <li class="flex-wrap p-2 border d-flex justify-content-between position-relative rounded-3">
                     <div class="menu_cart_img rounded-circle">
                         <img src="{{ asset($cartProduct->options->product_info['image']) }}" alt="menu"
-                            class="img-fluid w-100">
+                            class="img-fluid  rounded-circle">
                     </div>
                     <div class="menu_cart_text w-75">
                         <a class="overflow-hidden title transitions fw-semibold fs-5"
