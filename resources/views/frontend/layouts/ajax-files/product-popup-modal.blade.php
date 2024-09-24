@@ -178,10 +178,10 @@
             <h5>Select Quantity</h5>
             <div class="quentity_btn_area d-flex flex-wrapa align-items-center">
                 <div class="quentity_btn">
-                    <button class="btn v_decrement"><i class="fal fa-minus"></i></button>
+                    <button class="btn v_decrement text-white"><i class="fal fa-minus"></i></button>
                     <input class="border-common" type="text" name="quantity" placeholder="1" value="1"
                         readonly id="v_quantity">
-                    <button class="btn v_increment"><i class="fal fa-plus"></i></button>
+                    <button class="btn v_increment text-white"><i class="fal fa-plus"></i></button>
                 </div>
                 <h3 id="v_total_price">
                     {{ $product->offer_price > 0 ? currencyPosition($product->offer_price) : currencyPosition($product->price) }}
