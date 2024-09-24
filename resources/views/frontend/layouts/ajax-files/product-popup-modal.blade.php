@@ -1,4 +1,5 @@
-<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fal fa-times"></i></button>
+<button type="button" class="btn-close color-dark-gray border-common" data-bs-dismiss="modal" aria-label="Close"><i
+        class="fal fa-times"></i></button>
 
 <form action="" id="modal_add_to_cart_form">
     @csrf
@@ -15,149 +16,160 @@
 
         <h4 class="price">
             @if ($product->offer_price > 0)
-            <input type="hidden" name="base_price" value="{{ $product->offer_price }}">
-            {{ currencyPosition($product->offer_price) }}
-            <del>{{ currencyPosition($product->price) }}</del>
+                <input type="hidden" name="base_price" value="{{ $product->offer_price }}">
+                {{ currencyPosition($product->offer_price) }}
+                <del>{{ currencyPosition($product->price) }}</del>
             @else
-            <input type="hidden" name="base_price" value="{{ $product->price }}">
-            {{ currencyPosition($product->price) }}
+                <input type="hidden" name="base_price" value="{{ $product->price }}">
+                {{ currencyPosition($product->price) }}
             @endif
         </h4>
 
         <div class="selectbox">
             <div class="row">
                 @php
-                $variants = $product->variants->where('status', '!=', 0)->sortBy('shotorder');
+                    $variants = $product->variants->where('status', '!=', 0)->sortBy('shotorder');
                 @endphp
 
                 @foreach ($variants as $variant)
-                <div class="col-12">
-                    <div>
-                        <h6 class="my-4">
-                            {{ $variant->name }}:
-                            @if ($variant->isrequired)
-                            <span class="text-danger">*</span>
-                            @endif
-                        </h6>
-
-                        @switch($variant->attribute_type)
-                        @case('dropdown')
-                        <div class="mt-2 fp__contact_form_input form-group">
-                            <span><i class="far fa-caret-square-down" aria-hidden="true"></i></span>
-                            <select class="form-control v_product_option" name="variants_items[]" data-price=""
-                                required="{{ $variant->isrequired ? 'true' : 'false' }}">
-                                <option value="" selected>-- Please Select --</option>
-                                @foreach ($variant->productVariantItems as $variantItem)
-                                @if ($variantItem->status != 0)
-                                <option value="{{ $variantItem->id }}" data-price="{{ $variantItem->price }}">
-                                    {{ $variantItem->name }}
-                                    @if ($variantItem->price != 0)
-                                    ({{ currencyPosition($variantItem->price) }})
-                                    @endif
-                                </option>
+                    <div class="col-12">
+                        <div>
+                            <h6 class="my-4">
+                                {{ $variant->name }}:
+                                @if ($variant->isrequired)
+                                    <span class="text-danger">*</span>
                                 @endif
-                                @endforeach
-                            </select>
-                            <span class="error-message text-danger" style="display:none;">Please select an
-                                option.</span>
-                        </div>
-                        @break
+                            </h6>
 
-                        @case('radio')
-                        @foreach ($variant->productVariantItems as $variantItem)
-                        @if ($variantItem->status != 0)
-                        <div class="mt-2 fp__contact_form_input form-group">
-                            <input class="w-0 me-2 v_product_option" type="radio"
-                                name="variants_items[{{ $variant->id }}]" value="{{ $variantItem->id }}"
-                                data-price="{{ $variantItem->price }}" id="variantItem_{{ $variantItem->id }}"
-                                required="{{ $variant->isrequired ? 'true' : 'false' }}">
-                            <label for="variantItem_{{ $variantItem->id }}">{{ $variantItem->name }}
-                                @if ($variantItem->price != 0)
-                                ({{ currencyPosition($variantItem->price) }})
-                                @endif
-                            </label>
-                        </div>
-                        @endif
-                        @endforeach
-                        <span class="error-message text-danger" style="display:none;">Please select an option.</span>
-                        @break
+                            @switch($variant->attribute_type)
+                                @case('dropdown')
+                                    <div class="mt-2 fp__contact_form_input form-group">
+                                        <span><i class="far fa-caret-square-down" aria-hidden="true"></i></span>
+                                        <select class="form-control v_product_option" name="variants_items[]" data-price=""
+                                            required="{{ $variant->isrequired ? 'true' : 'false' }}">
+                                            <option value="" selected>-- Please Select --</option>
+                                            @foreach ($variant->productVariantItems as $variantItem)
+                                                @if ($variantItem->status != 0)
+                                                    <option value="{{ $variantItem->id }}"
+                                                        data-price="{{ $variantItem->price }}">
+                                                        {{ $variantItem->name }}
+                                                        @if ($variantItem->price != 0)
+                                                            ({{ currencyPosition($variantItem->price) }})
+                                                        @endif
+                                                    </option>
+                                                @endif
+                                            @endforeach
+                                        </select>
+                                        <span class="error-message text-danger" style="display:none;">Please select an
+                                            option.</span>
+                                    </div>
+                                @break
 
-                        @case('checkbox')
-                        @foreach ($variant->productVariantItems as $variantItem)
-                        @if ($variantItem->status != 0)
-                        <div class="my-4">
-                            <input class="w-0 me-2 v_product_option" type="checkbox"
-                                name="variants_items[{{ $variant->id }}][]" value="{{ $variantItem->id }}"
-                                data-price="{{ $variantItem->price }}" id="variantItem_{{ $variantItem->id }}"
-                                required="{{ $variant->isrequired ? 'true' : 'false' }}">
-                            <label for="variantItem_{{ $variantItem->id }}">{{ $variantItem->name }}
-                                @if ($variantItem->price != 0)
-                                ({{ currencyPosition($variantItem->price) }})
-                                @endif
-                            </label>
-                        </div>
-                        @endif
-                        @endforeach
-                        <span class="error-message text-danger" style="display:none;">Please select an option.</span>
-                        @break
+                                @case('radio')
+                                    @foreach ($variant->productVariantItems as $variantItem)
+                                        @if ($variantItem->status != 0)
+                                            <div class="mt-2 fp__contact_form_input form-group">
+                                                <input class="w-0 me-2 v_product_option" type="radio"
+                                                    name="variants_items[{{ $variant->id }}]" value="{{ $variantItem->id }}"
+                                                    data-price="{{ $variantItem->price }}"
+                                                    id="variantItem_{{ $variantItem->id }}"
+                                                    required="{{ $variant->isrequired ? 'true' : 'false' }}">
+                                                <label for="variantItem_{{ $variantItem->id }}">{{ $variantItem->name }}
+                                                    @if ($variantItem->price != 0)
+                                                        ({{ currencyPosition($variantItem->price) }})
+                                                    @endif
+                                                </label>
+                                            </div>
+                                        @endif
+                                    @endforeach
+                                    <span class="error-message text-danger" style="display:none;">Please select an
+                                        option.</span>
+                                @break
 
-                        @case('field')
-                        <div class="mt-2 fp__contact_form_input form-group">
-                            <span><i class="far fa-solid fa-keyboard" aria-hidden="true"></i></span>
-                            <input type="text" name="variants_items[{{ $variant->id }}]" class="form-control"
-                                placeholder="Enter {{ $variant->name }}" {{ $variant->isrequired ? 'required' : '' }}>
-                            <span class="error-message text-danger" style="display:none;">Please fill this field.</span>
-                        </div>
-                        @break
+                                @case('checkbox')
+                                    @foreach ($variant->productVariantItems as $variantItem)
+                                        @if ($variantItem->status != 0)
+                                            <div class="my-4">
+                                                <input class="w-0 me-2 v_product_option" type="checkbox"
+                                                    name="variants_items[{{ $variant->id }}][]"
+                                                    value="{{ $variantItem->id }}" data-price="{{ $variantItem->price }}"
+                                                    id="variantItem_{{ $variantItem->id }}"
+                                                    required="{{ $variant->isrequired ? 'true' : 'false' }}">
+                                                <label for="variantItem_{{ $variantItem->id }}">{{ $variantItem->name }}
+                                                    @if ($variantItem->price != 0)
+                                                        ({{ currencyPosition($variantItem->price) }})
+                                                    @endif
+                                                </label>
+                                            </div>
+                                        @endif
+                                    @endforeach
+                                    <span class="error-message text-danger" style="display:none;">Please select an
+                                        option.</span>
+                                @break
 
-                        @case('area')
-                        <div class="mt-2 fp__contact_form_input form-group">
-                            <span><i class="far fa-solid fa-paragraph" aria-hidden="true"></i></span>
-                            <textarea name="variants_items[{{ $variant->id }}]" class="form-control" rows="3"
-                                placeholder="Enter {{ $variant->name }}" {{
-                                $variant->isrequired ? 'required' : '' }}></textarea>
-                            <span class="error-message text-danger" style="display:none;">Please fill this field.</span>
-                        </div>
-                        @break
+                                @case('field')
+                                    <div class="mt-2 fp__contact_form_input form-group">
+                                        <span><i class="far fa-solid fa-keyboard" aria-hidden="true"></i></span>
+                                        <input type="text" name="variants_items[{{ $variant->id }}]" class="form-control"
+                                            placeholder="Enter {{ $variant->name }}"
+                                            {{ $variant->isrequired ? 'required' : '' }}>
+                                        <span class="error-message text-danger" style="display:none;">Please fill this
+                                            field.</span>
+                                    </div>
+                                @break
 
-                        @case('date')
-                        <div class="mt-2 fp__contact_form_input form-group">
-                            <span><i class="far fa-regular fa-calendar" aria-hidden="true"></i></span>
-                            <input type="date" name="variants_items[{{ $variant->id }}]" class="form-control" {{
-                                $variant->isrequired ? 'required' : '' }}>
-                            <span class="error-message text-danger" style="display:none;">Please select a date.</span>
-                        </div>
-                        @break
+                                @case('area')
+                                    <div class="mt-2 fp__contact_form_input form-group">
+                                        <span><i class="far fa-solid fa-paragraph" aria-hidden="true"></i></span>
+                                        <textarea name="variants_items[{{ $variant->id }}]" class="form-control" rows="3"
+                                            placeholder="Enter {{ $variant->name }}" {{ $variant->isrequired ? 'required' : '' }}></textarea>
+                                        <span class="error-message text-danger" style="display:none;">Please fill this
+                                            field.</span>
+                                    </div>
+                                @break
 
-                        @case('datetime')
-                        <div class="mt-2 fp__contact_form_input form-group">
-                            <span><i class="far fa-regular fa-calendar-days" aria-hidden="true"></i></span>
-                            <input type="datetime-local" name="variants_items[{{ $variant->id }}]" class="form-control"
-                                {{ $variant->isrequired ? 'required' : '' }}>
-                            <span class="error-message text-danger" style="display:none;">Please select a date and
-                                time.</span>
-                        </div>
-                        @break
+                                @case('date')
+                                    <div class="mt-2 fp__contact_form_input form-group">
+                                        <span><i class="far fa-regular fa-calendar" aria-hidden="true"></i></span>
+                                        <input type="date" name="variants_items[{{ $variant->id }}]" class="form-control"
+                                            {{ $variant->isrequired ? 'required' : '' }}>
+                                        <span class="error-message text-danger" style="display:none;">Please select a
+                                            date.</span>
+                                    </div>
+                                @break
 
-                        @case('time')
-                        <div class="mt-2 fp__contact_form_input form-group">
-                            <span><i class="far fa-solid fa-clock" aria-hidden="true"></i></span>
-                            <input type="time" name="variants_items[{{ $variant->id }}]" class="form-control" {{
-                                $variant->isrequired ? 'required' : '' }}>
-                            <span class="error-message text-danger" style="display:none;">Please select a time.</span>
-                        </div>
-                        @break
+                                @case('datetime')
+                                    <div class="mt-2 fp__contact_form_input form-group">
+                                        <span><i class="far fa-regular fa-calendar-days" aria-hidden="true"></i></span>
+                                        <input type="datetime-local" name="variants_items[{{ $variant->id }}]"
+                                            class="form-control" {{ $variant->isrequired ? 'required' : '' }}>
+                                        <span class="error-message text-danger" style="display:none;">Please select a date and
+                                            time.</span>
+                                    </div>
+                                @break
 
-                        @default
-                        <div class="mt-2 fp__contact_form_input form-group">
-                            <span><i class="far fa-keyboard" aria-hidden="true"></i></span>
-                            <input type="text" name="variants_items[]" class="form-control"
-                                placeholder="Enter {{ $variant->name }}" {{ $variant->isrequired ? 'required' : '' }}>
-                            <span class="error-message text-danger" style="display:none;">Please fill this field.</span>
+                                @case('time')
+                                    <div class="mt-2 fp__contact_form_input form-group">
+                                        <span><i class="far fa-solid fa-clock" aria-hidden="true"></i></span>
+                                        <input type="time" name="variants_items[{{ $variant->id }}]"
+                                            class="form-control" {{ $variant->isrequired ? 'required' : '' }}>
+                                        <span class="error-message text-danger" style="display:none;">Please select a
+                                            time.</span>
+                                    </div>
+                                @break
+
+                                @default
+                                    <div class="mt-2 fp__contact_form_input form-group">
+                                        <span><i class="far fa-keyboard" aria-hidden="true"></i></span>
+                                        <input type="text" name="variants_items[]" class="form-control"
+                                            placeholder="Enter {{ $variant->name }}"
+                                            {{ $variant->isrequired ? 'required' : '' }}>
+                                        <span class="error-message text-danger" style="display:none;">Please fill this
+                                            field.</span>
+                                    </div>
+                            @endswitch
                         </div>
-                        @endswitch
                     </div>
-                </div>
                 @endforeach
             </div>
         </div>
@@ -171,20 +183,17 @@
                     <button class="btn btn-success v_increment"><i class="fal fa-plus"></i></button>
                 </div>
                 <h3 id="v_total_price">
-                    {{ $product->offer_price > 0 ? currencyPosition($product->offer_price) :
-                    currencyPosition($product->price) }}
+                    {{ $product->offer_price > 0 ? currencyPosition($product->offer_price) : currencyPosition($product->price) }}
                 </h3>
             </div>
         </div>
 
         <ul class="flex-wrap details_button_area d-flex">
             @if ($product->quantity === 0)
-            <li><a class="common_btn bg-danger" href="javascript:;">Out of stock </a></li>
+                <li><a class="common_btn bg-danger" href="javascript:;">Out of stock </a></li>
             @else
-            <li><button type="submit" class="common_btn modal_cart_button">add to cart</button></li>
-
-
-
+                <li><button type="submit" class="common_btn background-light-gray text-white modal_cart_button">add
+                        to cart</button></li>
             @endif
             <li><a class="wishlist" href="#"><i class="far fa-heart"></i></a></li>
         </ul>
@@ -267,7 +276,9 @@
                 url: '{{ route('add-to-cart') }}',
                 data: formData,
                 beforeSend: function() {
-                    $('.modal_cart_button').attr('disabled', true).html('<span class="spinner-border spinner-border-sm text-light" role="status" aria-hidden="true"></span> Loading...');
+                    $('.modal_cart_button').attr('disabled', true).html(
+                        '<span class="spinner-border spinner-border-sm text-light" role="status" aria-hidden="true"></span> Loading...'
+                        );
                 },
                 success: function(response) {
                     updateSidebarCart();

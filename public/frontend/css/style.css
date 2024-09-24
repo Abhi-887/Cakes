@@ -6696,22 +6696,22 @@ footer {
     background: #4b637f !important;
     color: white !important;
 }
-.fp__cart_popup .btn-close {
+/* .fp__cart_popup .btn-close {
     border: 1px solid #494949;
     background: white;
     color: #494949;
-}
-.fp__cart_popup .btn-close:hover {
+} */
+/* .fp__cart_popup .btn-close:hover {
     background: #494949;
     color: white;
-}
-.fp__cart_popup_text .title {
+} */
+/* .fp__cart_popup_text .title {
     color: black;
     border-top: 1px solid #eee;
-}
-.fp__cart_popup_text .title:hover {
+} */
+/* .fp__cart_popup_text .title:hover {
     color: #494949;
-}
+} */
 .fp__cart_popup_text .rating {
     color: #ff9933;
 }
