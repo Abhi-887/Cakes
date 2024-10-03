@@ -101,10 +101,10 @@
                 <div class="m-0 col-md-7">
                     <div class="row">
                         <div class="text-center col-md-auto col-12">
-                            <h6 class="text-white"><b>Edinburgh:</b> 0131 337 9990 </h6>
+                            <p class="text-white mb-0"><b>Edinburgh:</b> 0131 337 9990 </p>
                         </div>
                         <div class="text-center col-md-auto col-12 ">
-                            <h6 class="text-white"><b>Glasgow:</b> 0141 378 0027</h6>
+                            <p class="text-white mb-0"><b>Glasgow:</b> 0141 378 0027</p>
                         </div>
                     </div>
                 </div>
