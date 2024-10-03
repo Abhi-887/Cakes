@@ -103,6 +103,7 @@
                         <div class="text-center col-md-auto col-12">
                             <p class="text-white mb-0"><b>Edinburgh:</b> 0131 337 9990 </p>
                         </div>
+
                         <div class="text-center col-md-auto col-12 ">
                             <p class="text-white mb-0"><b>Glasgow:</b> 0141 378 0027</p>
                         </div>
