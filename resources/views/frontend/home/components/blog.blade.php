@@ -31,7 +31,7 @@
                                     <li class="color-light-gray"><i class="fas fa-comments color-light-gray"></i>
                                         {{ $blog->comments_count }} comment</li>
                                 </ul>
-                                <a class="title"
+                                <a class="title fs-5"
                                     href="{{ route('blogs.details', $blog->slug) }}">{{ $blog->title }}</a>
                                 <p class="fw-normal color-light-gray mt-3">{!! truncate($blog->description, 100) !!}</p>
                                 <a href="{{ route('blogs.details', $blog->slug) }}"

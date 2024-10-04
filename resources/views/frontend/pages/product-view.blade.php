@@ -69,7 +69,7 @@
                                                                                                                                                         .prevArrow.slick-arrow {
                                                                                                                                                             font-size: 22px !important;
                                                                                                                                                             font-weight: 600;
-                                                                                                                                                        } */
+                                                                                                                                             } */
 
         #exzoom {
             position: sticky;
