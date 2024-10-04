@@ -6442,14 +6442,18 @@ textarea::placeholder {
 /* .fp__single_blog_text > ul > li {
     color: #4b637f;
   } */
+
+
 .active>.page-link,
 .page-link.active {
     background-color: #008b8b;
     border-color: #008b8b;
     color: #fff !important;
     border-radius: 15px !important;
-    font-size: 20px !important;
+    font-size: 17px !important;
 }
+
+
 
 .page-link:hover {
     background-color: #008b8b;
