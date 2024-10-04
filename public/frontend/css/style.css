@@ -8,7 +8,7 @@
 @font-face {
     font-family: 'mnsLondonSemiBold';
     src: url('/frontend/fonts/mnsLondonSemiBold.ttf') format('truetype');
-    font-weight: bold;
+    /* font-weight: bold; */
     font-style: normal;
 }
 * {
@@ -79,6 +79,12 @@ img {
     font-size: 14px !important;
 }
 
+.fs-14{
+	font-size:14px !important;
+}
+.fw-medium{
+	font-weight:500 !important;
+}
 
 input,
 textarea {
@@ -100,11 +106,7 @@ button {
 .row{
     margin: 0;
 }
-/* :root {
-    --boxShadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    --gradiantBg: rgb(173, 205, 222);
-    --gradiantHoverBg: rgb(75, 99, 127);
-} */
+
 
 /*============================
     COMMON CSS START
@@ -134,7 +136,7 @@ button {
 .fp__section_heading h2 {
     text-transform: capitalize;
     font-size: 35px;
-    font-weight: 800;
+    /* font-weight: 800; */
     text-align: center;
 }
 
@@ -954,6 +956,7 @@ button {
     left: 20px;
     z-index: 1;
     border-radius: 30px;
+	text-transform:capitalize;
 }
 
 .add-to-cart {
@@ -969,14 +972,13 @@ button {
 .heart {
     top: 2%;
     right: 5%;
-    padding: 10px 15px !important;
+    padding: 8px 12px !important;
 }
 
 .fp__menu_item .fp__menu_item_text {
     border-radius: 0 0 06px 06px;
     padding: 30px 25px;
-    /* text-align: center; */
-    /* position: relative; */
+
     transition: all linear 0.4s;
     -webkit-transition: all linear 0.4s;
     -moz-transition: all linear 0.4s;
@@ -1453,6 +1455,7 @@ button {
     margin-top: 20px;
 }
 
+
 .fp__testimonial_product {
     position: absolute;
     width: 130px;
@@ -1566,8 +1569,8 @@ button {
 }
 
 .fp__single_blog_text .title {
-    font-size: 23px;
-    font-weight: 700;
+
+    font-weight: 600;
     text-transform: capitalize;
     color: black;
     margin-top: 15px;
@@ -1928,6 +1931,14 @@ footer .wrapper a:hover {
     font-weight: 800;
     margin-bottom: 7px;
 }
+.fp__breadcrumb_text h2 {
+	color:#fff;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 50px;
+    font-weight: 800;
+    margin-bottom: 7px;
+}
 
 .fp__breadcrumb_text ul {
     display: flex;
@@ -1988,21 +1999,40 @@ footer .wrapper a:hover {
 }
 
 .fp__pagination ul li a {
-    width: 50px !important;
-    height: 50px !important;
-    padding: 0 !important;
-    line-height: 50px !important;
-    text-align: center !important;
-    font-size: 16px !important;
-    background: white;
-    color: #494949 !important;
-    border-radius: 0 !important;
-    -webkit-border-radius: 0 !important;
-    -moz-border-radius: 0 !important;
-    -ms-border-radius: 0 !important;
-    -o-border-radius: 0 !important;
-    margin: 0px 10px;
+  width: 50px !important;
+  height: 50px !important;
+  padding: 0 !important;
+  line-height: 50px !important;
+  text-align: center !important;
+  font-size: 16px !important;
+  color: #fff !important;
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  -ms-border-radius: 0 !important;
+  -o-border-radius: 0 !important;
+  margin: 0px 10px;
+    margin-left: 10px;
+  background: #4b637f;
+  border-radius: 15px !important;
+  border-color: #4b637f !important;
 }
+
+
+
+.disabled > .page-link, .page-link.disabled {
+  background-color: #4b637f !important;
+  border-color: #4b637f !important;
+  border-radius: 15px !important;
+}
+.page-link:focus {
+  background-color: #008b8b !important;
+  box-shadow: none;
+}
+
+
+
+
+
 
 .fp__pagination ul li a:focus {
     box-shadow: none;
@@ -2473,7 +2503,10 @@ footer .wrapper a:hover {
     margin-bottom: 25px;
 }
 
-.fp__blog_details_text h1,
+.fp__blog_details_text h1{
+	font-size: 30px;
+	 font-weight: 700;
+}
 .fp__blog_details_text h2 {
     font-size: 33px;
 }
@@ -2670,10 +2703,8 @@ footer .wrapper a:hover {
 }
 
 .blog_det_button li a p {
-    font-size: 18px;
     font-weight: 700;
     color: black;
-    width: 60%;
     transition: all linear 0.4s;
     -webkit-transition: all linear 0.4s;
     -moz-transition: all linear 0.4s;
@@ -2917,7 +2948,7 @@ footer .wrapper a:hover {
 
 .fp__related_blog ul li .text a {
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 500;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -3178,16 +3209,21 @@ footer .wrapper a:hover {
 }
 
 .fp__menu_description_area .nav .nav-item .nav-link {
-    width: 100%;
-    border-radius: 0;
-    text-align: center;
-    text-transform: capitalize;
-    font-weight: 600;
-    transition: all linear 0.4s;
-    -webkit-transition: all linear 0.4s;
-    -moz-transition: all linear 0.4s;
-    -ms-transition: all linear 0.4s;
-    -o-transition: all linear 0.4s;
+  width: 100%;
+  border-radius: 0;
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 600;
+  transition: all linear 0.4s;
+  -webkit-transition: all linear 0.4s;
+  -moz-transition: all linear 0.4s;
+  -ms-transition: all linear 0.4s;
+  -o-transition: all linear 0.4s;
+  color: #fff;
+  background: #4b637f;
+}
+.border-dark {
+  border-color: #1d2637c9 !important;
 }
 .menu_det_description p {
     margin-top: 25px;
@@ -5982,21 +6018,21 @@ CHECKOUT PAGE START
 }
 
 .fp__pagination ul li span {
-    width: 50px !important;
-    height: 50px !important;
-    padding: 0 !important;
-    line-height: 50px !important;
-    text-align: center !important;
-    font-size: 14px !important;
-    background: white;
-    color: #494949 !important;
-    border-radius: 0 !important;
-    -webkit-border-radius: 0 !important;
-    -moz-border-radius: 0 !important;
-    -ms-border-radius: 0 !important;
-    -o-border-radius: 0 !important;
-    margin: 0px 10px;
+   width: 50px !important;
+  height: 50px !important;
+  padding: 0 !important;
+  line-height: 50px !important;
+  text-align: center !important;
+  font-size: 14px !important;
+  color: #fff !important;
+  border-radius: 0 !important;
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  -ms-border-radius: 0 !important;
+  -o-border-radius: 0 !important;
+  margin: 0px 10px;
     margin-left: 10px;
+  margin-left: 10px;
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
@@ -6066,7 +6102,6 @@ select option {
 .image-block:hover .gradient-overlay {
     transition: 0.7s ease;
 }
-
 
 
 
@@ -6330,9 +6365,15 @@ textarea::placeholder {
   } */
 .active > .page-link,
 .page-link.active {
-    background-color: white;
-    border-color: #dee2e6;
-    color: rgb(0, 0, 0) !important;
+  background-color: #008b8b;
+  border-color: #008b8b;
+  color: #fff !important;
+  border-radius: 15px !important;
+  font-size: 20px !important;
+}
+.page-link:hover {
+  background-color: #008b8b;
+  border-color: #008b8b;
 }
 .fp__track_order ul li::after {
     background: #eee;
@@ -7022,7 +7063,7 @@ footer {
     color: #000000 !important;
 }
 .testimonial-content {
-    scrollbar-color: #262626 #ff9800;
+    scrollbar-color: #008b8b #008b8b82;
 }
 /* Testimonial End */
 
