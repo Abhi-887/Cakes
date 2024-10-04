@@ -85,7 +85,7 @@
                         </div>
                     </div>
 
-                    <!--   <ul class="blog_det_button mt_100 xs_mt_70 wow fadeInUp" data-wow-duration="1s">
+                      <ul class="blog_det_button mt_100 xs_mt_70 wow fadeInUp" data-wow-duration="1s">
                                                 @if ($nextBlog)
     <li>
                                                         <a href="{{ route('blogs.details', $nextBlog->slug) }}">
@@ -106,35 +106,8 @@
                                                         </a>
                                                     </li>
     @endif
-                                            </ul>-->
-                    {{-- <ul class="blog_det_button mt_100 xs_mt_70 wow fadeInUp d-flex justify-content-between" data-wow-duration="1s">
-    @if ($nextBlog)
-        <li class="blog-nav-item text-end">
-            <a href="{{ route('blogs.details', $nextBlog->slug) }}" class="blog-link">
-                <img src="{{ asset($nextBlog->image) }}" alt="button img" class="img-fluid w-100">
-                <div class="blog-nav-text">
-                    <p class="title">{{ truncate($nextBlog->title) }}</p>
-                    <span class="nav-label">
-                        <i class="far fa-long-arrow-left"></i> Previous
-                    </span>
-                </div>
-            </a>
-        </li>
-    @endif
-    @if ($previousBlog)
-        <li class="blog-nav-item">
-            <a href="{{ route('blogs.details', $previousBlog->slug) }}" class="blog-link">
-                <div class="blog-nav-text">
-                    <p class="title">{{ truncate($previousBlog->title) }}</p>
-                    <span class="nav-label">
-                        Next <i class="far fa-long-arrow-right"></i>
-                    </span>
-                </div>
-                <img src="{{ asset($previousBlog->image) }}" alt="button img" class="img-fluid w-100">
-            </a>
-        </li>
-    @endif
-</ul> --}}
+                                            </ul>
+
 
                     <div class="container mt-5 wow fadeInUp" data-wow-duration="1s">
                         <div class="row align-items-stretch">
