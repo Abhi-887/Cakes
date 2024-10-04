@@ -21,12 +21,6 @@
             -moz-appearance: button;
         }
 
-        .heart {
-            top: 2%;
-            right: 5%;
-            /* background-color: #788a9f !important; */
-            padding: 10px 15px !important;
-        }
 
         .add-to-cart {
             font-size: 18px;
@@ -171,7 +165,7 @@
                                         <span>{{ $product->reviews_count }}</span>
                                     </p>
                                 @endif
-                                <a class="pb-3 title"
+                                <a class="pb-3 title text-uppercase"
                                     href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a>
                                 <div class="mt-auto actions d-flex justify-content-between align-items-center">
                                     <p class="m-0 price color-light-gray">
@@ -183,11 +177,11 @@
                                         @endif
                                     </p>
                                     @if ($product->quantity === 0 || $product->out_of_stock == 1)
-                                        <a class="px-3 py-2 text-white rounded-pill bg-danger" href="javascript:;">
+                                        <a class="px-3 py-2 text-white rounded-pill bg-danger fs-14" href="javascript:;">
                                             Out of Stock
                                         </a>
                                     @else
-                                        <a class="px-3 py-2 text-white add-to-cart rounded-pill background-light-gray"
+                                        <a class="px-3 py-2 text-white add-to-cart rounded-pill background-light-gray fs-14"
                                             href="javascript:;" onclick="loadProductModal('{{ $product->id }}')">
                                             Add to Cart
                                         </a>
