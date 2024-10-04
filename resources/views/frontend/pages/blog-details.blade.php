@@ -154,18 +154,18 @@
       </div>
     @endif
     @if ($previousBlog)
-      <div class="col-md-8">
+      <div class="col-md-6">
         <div class="card h-100 d-flex">
           <div class="row">
 
-          <div class="col-4">  <div class="card-body d-flex flex-column">
+          <div class="col-8">  <div class="card-body d-flex flex-column">
             <p class="card-title">{{ truncate($previousBlog->title) }}</p>
             <div class="mt-auto d-flex justify-content-between align-items-center">
               <a href="{{ route('blogs.details', $previousBlog->slug) }}" class="btn btn-outline-secondary">Next →</a>
             </div>
           </div>
 		   </div>
-		   <div class="col-6"><img class="h-auto img-fluid w-100 img-blog" src="{{ asset($previousBlog->image) }}"></div>
+		   <div class="col-4"><img class="h-auto img-fluid w-100 img-blog" src="{{ asset($previousBlog->image) }}"></div>
         </div>
       </div>
   </div>
