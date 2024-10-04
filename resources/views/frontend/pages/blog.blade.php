@@ -69,7 +69,7 @@
                                     href="{{ route('blogs.details', $blog->slug) }}">{!! truncate($blog->title) !!}</a>
                                 <p class=" color-light-gray mt-3">{!! truncate($blog->description, 90) !!}</p>
                                 <a href="{{ route('blogs.details', $blog->slug) }}"
-                                    class="blog-btn rounded-3 mt-2 background-light-gray py-2 px-3 text-light">
+                                    class="  mt-2    blog-btn fw-light rounded-3 color-dark-gray fs-14">
                                     Read More <i class="fas fa-arrow-right ms-1"></i>
                                 </a>
                             </div>
