@@ -36,7 +36,7 @@
                                 <p class="fw-normal color-light-gray mt-3">{!! truncate($blog->description, 100) !!}</p>
                                 <a href="{{ route('blogs.details', $blog->slug) }}"
                                     class="blog-btn fw-light rounded-3 color-dark-gray fs-14">
-                                    Read More <i class="fas fa-arrow-right ms-1 fw-semibold"></i>
+                                    Read More <i class="fas fa-arrow-right ms-1 fw-semibold unic"></i>
                                 </a>
                             </div>
                         </div>
