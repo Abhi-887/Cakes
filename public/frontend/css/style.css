@@ -1999,8 +1999,8 @@ footer .wrapper a:hover {
 }
 
 .fp__pagination ul li a {
-  width: 50px !important;
-  height: 50px !important;
+  width: 40px !important;
+  height: 40px !important;
   padding: 0 !important;
   line-height: 50px !important;
   text-align: center !important;
@@ -2013,7 +2013,7 @@ footer .wrapper a:hover {
   margin: 0px 10px;
     margin-left: 10px;
   background: #4b637f;
-  border-radius: 15px !important;
+  border-radius: 12px !important;
   border-color: #4b637f !important;
 }
 
