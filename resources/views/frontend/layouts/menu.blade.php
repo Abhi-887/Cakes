@@ -15,7 +15,7 @@
                     {{-- Main Menu Items --}} @if ($MainMenu)
                         @foreach ($MainMenu as $menu)
                             <li class="me-4 nav-item">
-                                <a class="nav-link fw-normal" href="{{ $menu['link'] }}">{{ $menu['label'] }}
+                                <a class="nav-link fw-semibold" href="{{ $menu['link'] }}">{{ $menu['label'] }}
                                     {{-- @if ($menu['child'])
                         <i class="far fa-angle-down"></i>
                         @endif --}}
