@@ -16,13 +16,14 @@
 @endphp
 </pre> --}}
     <!--=============================
-                                                                                                                        BREADCRUMB START
-                                                                                                                    ==============================-->
+  BREADCRUMB START
+ ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ asset(config('settings.breadcrumb')) }});">
         <div class="fp__breadcrumb_overlay py-5">
             <div class="container py-md-5 py-2">
                 <div class="fp__breadcrumb_text">
-                    <h1>blog details</h1>
+                    <!--<h1>blog details</h1>-->
+					<h2>3D Cakes - Latest News</h2>
                     <ul>
                         <li><a href="index.html">home</a></li>
                         <li><a href="#">blog details</a></li>
@@ -31,14 +32,13 @@
             </div>
         </div>
     </section>
-    <!--=============================
-                                                                                                                        BREADCRUMB END
-                                                                                                                    ==============================-->
+    <!--=============================                                                                                                                        BREADCRUMB END
+	==============================-->
 
 
     <!--=========================
-                                                                                                                        BLOG DETAILS START
-                                                                                                                    ==========================-->
+	BLOG DETAILS START
+	==========================-->
     <section class="fp__blog_details mt_120 xs_mt_90 mb_100 xs_mb_70">
         <div class="container">
             <div class="row">
@@ -57,9 +57,10 @@
                                     {{ date('d m Y', strtotime($blog->created_at)) }}
                                 </li>
                             </ul>
-                            <h2>{!! $blog->title !!}</h2>
+                           <!-- <h2>{!! $blog->title !!}</h2>-->
+							<h1>{!! $blog->title !!}</h1>
 
-                            {!! $blog->description !!}
+                           <div><p class="fw-normal color-light-gray"> {!! $blog->description !!}</p></div>
 
                             <div class="blog_tags_share d-flex flex-wrap justify-content-between align-items-center">
                                 <div class="tags d-flex flex-wrap align-items-center">
@@ -82,7 +83,7 @@
                         </div>
                     </div>
 
-                    <ul class="blog_det_button mt_100 xs_mt_70 wow fadeInUp" data-wow-duration="1s">
+                 <!--   <ul class="blog_det_button mt_100 xs_mt_70 wow fadeInUp" data-wow-duration="1s">
                         @if ($nextBlog)
                             <li>
                                 <a href="{{ route('blogs.details', $nextBlog->slug) }}">
@@ -103,7 +104,85 @@
                                 </a>
                             </li>
                         @endif
-                    </ul>
+                    </ul>-->
+<ul class="blog_det_button mt_100 xs_mt_70 wow fadeInUp d-flex justify-content-between" data-wow-duration="1s">
+    @if ($nextBlog)
+        <li class="blog-nav-item text-end">
+            <a href="{{ route('blogs.details', $nextBlog->slug) }}" class="blog-link">
+                <img src="{{ asset($nextBlog->image) }}" alt="button img" class="img-fluid w-100">
+                <div class="blog-nav-text">
+                    <p class="title">{{ truncate($nextBlog->title) }}</p>
+                    <span class="nav-label">
+                        <i class="far fa-long-arrow-left"></i> Previous
+                    </span>
+                </div>
+            </a>
+        </li>
+    @endif
+    @if ($previousBlog)
+        <li class="blog-nav-item">
+            <a href="{{ route('blogs.details', $previousBlog->slug) }}" class="blog-link">
+                <div class="blog-nav-text">
+                    <p class="title">{{ truncate($previousBlog->title) }}</p>
+                    <span class="nav-label">
+                        Next <i class="far fa-long-arrow-right"></i>
+                    </span>
+                </div>
+                <img src="{{ asset($previousBlog->image) }}" alt="button img" class="img-fluid w-100">
+            </a>
+        </li>
+    @endif
+</ul>
+<!--
+<div class="container mt-5 wow fadeInUp" data-wow-duration="1s">
+  <div class="row align-items-stretch">
+    @if ($nextBlog)
+      <div class="col-md-6">
+        <div class="card h-100">
+			<div class="row">
+			  <div class="col-6"><img class="h-auto img-fluid w-100 img-blog" src="{{ asset($nextBlog->image) }}"> </div>
+			  <div class="col-6">
+					<div class="card-body d-flex flex-column">
+						<p class="card-title">{{ truncate($nextBlog->title) }}</p>
+						<div class="mt-auto d-flex justify-content-between align-items-center">
+						  <a href="#" class="btn btn-outline-secondary">← Previous</a>
+						</div>
+				  </div>
+			  </div>
+			</div>
+		</div>
+      </div>
+    @endif
+    @if ($previousBlog)
+      <div class="col-md-6">
+        <div class="card h-100 d-flex">
+          <div class="row">
+
+          <div class="col-6">  <div class="card-body d-flex flex-column">
+            <p class="card-title">{{ truncate($previousBlog->title) }}</p>
+            <div class="mt-auto d-flex justify-content-between align-items-center">
+              <a href="{{ route('blogs.details', $previousBlog->slug) }}" class="btn btn-outline-secondary">Next →</a>
+            </div>
+          </div>
+		   </div>
+		   <div class="col-6"><img class="h-auto img-fluid w-100 img-blog" src="{{ asset($previousBlog->image) }}"></div>
+        </div>
+      </div>
+  </div>
+   @endif
+</div>
+
+
+<style>
+.img-blog {
+  width: 110px !important;
+  height: 150px !important;
+  border-radius: 5px;
+}
+</style>-->
+
+
+
 
                     <div class="fp__comment mt_100 xs_mt_70 wow fadeInUp" data-wow-duration="1s">
                         <h4>{{ count($comments) }} Comments</h4>
@@ -198,7 +277,8 @@
             </div>
         </div>
     </section>
+
     <!--=========================
-                                                                                                                        BLOG DETAILS END
-                                                                                                                    ==========================-->
+	BLOG DETAILS END
+	==========================-->
 @endsection
