@@ -161,7 +161,7 @@
     </div>
 
     <div class="product-slider popularfood slider">
-        <div class="row mt-2" id="top-selling-products">
+        <div class="mt-2 row" id="top-selling-products">
             <!-- Products will be rendered here -->
         </div>
     </div>
@@ -218,7 +218,7 @@
             const productHtml = `
                 <div class="fp__menu_hover ${product.category_slug}">
                     <div class="m-3 card position-relative fp__menu_item rounded-3 slide-wrap">
-                        <div class="fp__menu_item_img" style="height: auto; overflow: hidden;">
+                        <div class="fp__menu_item_img" style="height: 586px; overflow: hidden;">
                             <a href="/product/${product.slug}" class="title w-100">
                                 <img src="${product.thumb_image}" alt="${product.name}" class="img-fluid w-100 product-img">
                             </a>
