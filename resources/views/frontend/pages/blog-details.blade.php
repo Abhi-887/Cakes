@@ -139,14 +139,13 @@
                     <div class="container mt-5 wow fadeInUp" data-wow-duration="1s">
                         <div class="row align-items-stretch">
                             @if ($nextBlog)
-                                <div class="col-md-6">
-
-                                    <div class="row">
-                                        <div class="col-4"><img class="h-auto img-fluid w-100 img-blog"
-                                                src="{{ asset($nextBlog->image) }}">
+                                <div class="col-md-6 d-flex">
+                                    <div class="row w-100">
+                                        <div class="col-4">
+                                            <img class="h-auto img-fluid w-100 img-blog" src="{{ asset($nextBlog->image) }}">
                                         </div>
-                                        <div class="col-8">
-                                            <div class="card h-100">
+                                        <div class="col-8 d-flex">
+                                            <div class="card h-100 w-100 d-flex flex-column">
                                                 <div class="card-body d-flex flex-column">
                                                     <p class="card-title">{{ truncate($nextBlog->title) }}</p>
                                                     <div class="mt-auto d-flex justify-content-between align-items-center">
@@ -158,12 +157,12 @@
                                     </div>
                                 </div>
                             @endif
-                            @if ($previousBlog)
-                                <div class="col-md-6">
 
-                                    <div class="row">
-                                        <div class="col-8">
-                                            <div class="card h-100 d-flex">
+                            @if ($previousBlog)
+                                <div class="col-md-6 d-flex">
+                                    <div class="row w-100">
+                                        <div class="col-8 d-flex">
+                                            <div class="card h-100 w-100 d-flex flex-column">
                                                 <div class="card-body d-flex flex-column">
                                                     <p class="card-title">{{ truncate($previousBlog->title) }}</p>
                                                     <div class="mt-auto d-flex justify-content-between align-items-center">
@@ -173,13 +172,14 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-4"><img class="h-auto img-fluid w-100 img-blog"
-                                                src="{{ asset($previousBlog->image) }}"></div>
-
+                                        <div class="col-4">
+                                            <img class="h-auto img-fluid w-100 img-blog" src="{{ asset($previousBlog->image) }}">
+                                        </div>
                                     </div>
                                 </div>
                             @endif
                         </div>
+
 
 
                         <style>
