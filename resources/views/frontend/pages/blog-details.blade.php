@@ -120,7 +120,7 @@
                                         </div>
                                         <div class="col-8 d-flex">
                                             <div class="card h-100 w-100 d-flex flex-column border-0">
-                                                <div class="card-body d-flex flex-column text-end">
+                                                <div class="card-body d-flex flex-column ">
                                                     <p class="card-title">{{ truncate($nextBlog->title) }}</p>
                                                     <div class="mt-auto d-flex justify-content-end align-items-center">
                                                         <a href="#" class="btn btn-outline-secondary">← Previous</a>
