@@ -2750,7 +2750,7 @@ footer .wrapper a:hover {
 }
 
 .blog_det_button li a p {
-    font-weight: 700;
+    /* font-weight: 700; */
     color: black;
     transition: all linear 0.4s;
     -webkit-transition: all linear 0.4s;
