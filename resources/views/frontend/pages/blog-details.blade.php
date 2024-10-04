@@ -90,18 +90,18 @@
                             <li>
                                 <a href="{{ route('blogs.details', $nextBlog->slug) }}">
                                     <img src="{{ asset($nextBlog->image) }}" alt="button img" class="img-fluid w-100">
-                                    <p>{{ truncate($nextBlog->title) }}
+                                    <p>{{ truncate($nextBlog->title) }}</p>
                                         <span> <i class="far fa-long-arrow-left"></i> Previous</span>
-                                    </p>
+
                                 </a>
                             </li>
                         @endif
                         @if ($previousBlog)
                             <li>
                                 <a href="{{ route('blogs.details', $previousBlog->slug) }}">
-                                    <p>{{ truncate($previousBlog->title) }}
+                                    <p>{{ truncate($previousBlog->title) }}</p>
                                         <span>next <i class="far fa-long-arrow-right"></i></span>
-                                    </p>
+
                                     <img src="{{ asset($previousBlog->image) }}" alt="button img" class="img-fluid w-100">
                                 </a>
                             </li>
