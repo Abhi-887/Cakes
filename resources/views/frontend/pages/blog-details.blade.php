@@ -105,7 +105,7 @@
                             </li>
                         @endif
                     </ul>-->
-<ul class="blog_det_button mt_100 xs_mt_70 wow fadeInUp d-flex justify-content-between" data-wow-duration="1s">
+{{-- <ul class="blog_det_button mt_100 xs_mt_70 wow fadeInUp d-flex justify-content-between" data-wow-duration="1s">
     @if ($nextBlog)
         <li class="blog-nav-item text-end">
             <a href="{{ route('blogs.details', $nextBlog->slug) }}" class="blog-link">
@@ -132,8 +132,8 @@
             </a>
         </li>
     @endif
-</ul>
-<!--
+</ul> --}}
+
 <div class="container mt-5 wow fadeInUp" data-wow-duration="1s">
   <div class="row align-items-stretch">
     @if ($nextBlog)
@@ -179,7 +179,7 @@
   height: 150px !important;
   border-radius: 5px;
 }
-</style>-->
+</style>
 
 
 
