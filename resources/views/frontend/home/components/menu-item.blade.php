@@ -230,7 +230,7 @@
                             <a class="px-3 py-2 category bg-light border-common color-light-gray categorys fw-semibold" href="/category/${product.category_slug}">
                                 ${product.category_name}
                             </a>
-                            <a class="title" href="/product/${product.slug}">${product.name}</a>
+                            <a class="title text-uppercase" href="/product/${product.slug}">${product.name}</a>
                             <div class="mt-auto actions d-flex justify-content-between align-items-center">
                                 <p class="m-0 price color-light-gray">
                                     ${product.offer_price > 0 ? `<del>${currencyFormat(product.price)}</del> ${currencyFormat(product.offer_price)}` : currencyFormat(product.price)}
