@@ -1583,7 +1583,7 @@ button {
     -ms-transition: all linear 0.4s;
     -o-transition: all linear 0.4s;
 }
-.unic::before {
+.arrow-right::before {
     font-size: 12px !important;
     color: #4b637f;
   }
