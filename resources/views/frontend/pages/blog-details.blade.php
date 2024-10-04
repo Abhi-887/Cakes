@@ -112,7 +112,7 @@
                     <div class="mt-5 wow fadeInUp" data-wow-duration="1s">
                         <div class="row align-items-stretch">
                             @if ($nextBlog)
-                                <div class="col-md-6 d-flex ps-0">
+                                <div class="col-md-6 d-flex">
                                     <div class="row w-100 align-items-center border-shodow">
                                         <div class="col-4">
                                             <img class="h-auto img-fluid w-100 img-blog"
@@ -133,7 +133,7 @@
                             @endif
 
                             @if ($previousBlog)
-                                <div class="col-md-6 d-flex pe-0">
+                                <div class="col-md-6 d-flex">
                                     <div class="row align-items-center w-100 border-shodow">
                                         <div class="col-8 d-flex">
                                             <div class="card h-100 w-100 d-flex flex-column border-0">
