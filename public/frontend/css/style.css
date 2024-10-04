@@ -1583,13 +1583,13 @@ button {
     -ms-transition: all linear 0.4s;
     -o-transition: all linear 0.4s;
 }
+
 .arrow-right::before {
     font-size: 12px !important;
     color: #4b637f;
-  }
+}
 
 .fp__single_blog_text .title {
-
     font-weight: 600;
     text-transform: capitalize;
     color: #4b637f;
@@ -1603,6 +1603,13 @@ button {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+.border-shodow {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 5px;
+    background: white;
+    padding: 6px;
 }
 
 .fp__single_blog:hover .fp__single_blog_text {
