@@ -236,8 +236,8 @@
                                     ${product.offer_price > 0 ? `<del>${currencyFormat(product.price)}</del> ${currencyFormat(product.offer_price)}` : currencyFormat(product.price)}
                                 </p>
                                 ${product.quantity === 0 || product.out_of_stock
-                                    ? `<a class="px-3 py-2 text-white rounded-pill bg-danger" href="javascript:;">Out of Stock</a>`
-                                    : `<a class="px-3 py-2 text-white add-to-cart rounded-pill background-light-gray" href="javascript:;" onclick="loadProductModal('${product.id}')">Add to Cart</a>`}
+                                    ? `<a class="px-3 py-2 text-white rounded-pill bg-danger fs-14" href="javascript:;">Out of Stock</a>`
+                                    : `<a class="px-3 py-2 text-white add-to-cart rounded-pill background-light-gray fs-14" href="javascript:;" onclick="loadProductModal('${product.id}')">Add to Cart</a>`}
                             </div>
                         </div>
                     </div>
