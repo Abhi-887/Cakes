@@ -182,7 +182,7 @@
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-duration="1s">
                     <div class="px-0 fp__menu_details_text px-lg-5 ms-0 ms-lg-5 ms-xxl-0">
-                        <h2>{!! $product->name !!}</h2>
+                        <h1>{!! $product->name !!}</h1>
                         @if ($product->reviews_avg_rating)
                             <p class="rating">
                                 @for ($i = 1; $i <= $product->reviews_avg_rating; $i++)
@@ -419,18 +419,18 @@
                 <div class="fp__menu_description_area mt-5 pt-5">
                     <ul class="nav nav-pills" id="pills-tab" role="tablist">
                         <li class="nav-item border-end border-dark" role="presentation">
-                            <button class="nav-link text-white active" id="pills-home-tab" data-bs-toggle="pill"
+                            <button class="nav-link nav-link-product  active" id="pills-home-tab" data-bs-toggle="pill"
                                 data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
                                 aria-selected="true">Description</button>
                         </li>
                         <li class="nav-item border-end border-dark" role="presentation">
-                            <button class="nav-link text-white" id="pills-cake-stand-gallery-tab" data-bs-toggle="pill"
+                            <button class="nav-link nav-link-product" id="pills-cake-stand-gallery-tab" data-bs-toggle="pill"
                                 data-bs-target="#pills-cake-stand-gallery" type="button" role="tab"
                                 aria-controls="pills-cake-stand-gallery" aria-selected="false">Cake Stand
                                 Gallery</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link text-white" id="pills-contact-tab" data-bs-toggle="pill"
+                            <button class="nav-link nav-link-product" id="pills-contact-tab" data-bs-toggle="pill"
                                 data-bs-target="#pills-contact" type="button" role="tab"
                                 aria-controls="pills-contact" aria-selected="false">Reviews</button>
                         </li>
@@ -438,7 +438,7 @@
                     <div class="tab-content" id="pills-tabContent">
                         <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
                             aria-labelledby="pills-home-tab" tabindex="0">
-                            <div class="menu_det_description">
+                            <div class="menu_det_description fw-normal color-light-gray">
                                 {!! $product->long_description !!}
                             </div>
                         </div>
