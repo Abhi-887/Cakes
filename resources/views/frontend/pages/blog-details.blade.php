@@ -90,18 +90,18 @@
                             <li>
                                 <a href="{{ route('blogs.details', $nextBlog->slug) }}">
                                     <img src="{{ asset($nextBlog->image) }}" alt="button img" class="img-fluid w-100">
-                                    <p>{{ truncate($nextBlog->title) }}</p>
-                                       <p>  <i class="far fa-long-arrow-left"></i> Previous></p>
-
+                                    <p>{{ truncate($nextBlog->title) }}
+                                        <span> <i class="far fa-long-arrow-left"></i> Previous</span>
+                                    </p>
                                 </a>
                             </li>
                         @endif
                         @if ($previousBlog)
                             <li>
                                 <a href="{{ route('blogs.details', $previousBlog->slug) }}">
-                                    <p>{{ truncate($previousBlog->title) }}</p>
-                                       <p>next <i class="far fa-long-arrow-right"></i></p>
-
+                                    <p>{{ truncate($previousBlog->title) }}
+                                        <span>next <i class="far fa-long-arrow-right"></i></span>
+                                    </p>
                                     <img src="{{ asset($previousBlog->image) }}" alt="button img" class="img-fluid w-100">
                                 </a>
                             </li>
@@ -109,8 +109,8 @@
                     </ul>
 
 
-                    <div class="mt-5 wow fadeInUp" data-wow-duration="1s">
-                        <div class="row align-items-stretch">
+
+                        {{-- <div class="row align-items-stretch">
                             @if ($nextBlog)
                                 <div class="col-md-6 d-flex">
                                     <div class="row w-100 align-items-center border-shodow">
@@ -153,17 +153,17 @@
                                     </div>
                                 </div>
                             @endif
-                        </div>
+                        </div> --}}
 
 
 
-                        <style>
+                        {{-- <style>
                             .img-blog {
                                 width: 110px !important;
                                 height: 150px !important;
                                 border-radius: 5px;
                             }
-                        </style>
+                        </style> --}}
 
 
 
@@ -214,7 +214,7 @@
                                 </div>
                             </form>
                         </div>
-                    </div>
+
                 </div>
                 <div class="col-xl-4 col-lg-4">
                     <div id="sticky_sidebar">
