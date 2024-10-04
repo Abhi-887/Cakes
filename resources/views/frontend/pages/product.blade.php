@@ -26,14 +26,7 @@
             font-size: 18px;
         }
 
-        /* .fp__menu_item_text {
-                                    border-top: 1px solid #788a9f !important;
-                                } */
 
-        /* select,
-                                select option {
-                                    font-family: 'mnsLondonRegular', sans-serif !important;
-                            } */
 
         .fp__menu_item {
             transition: transform 0.4s ease;
@@ -188,9 +181,6 @@
                                     @endif
 
 
-                                    {{-- <a class="background-light-gray"
-                                            href="{{ route('product.show', $product->slug) }}"><i
-                                                class="far fa-eye"></i></a> --}}
                                 </div>
                             </div>
                         </div>
