@@ -3,9 +3,9 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="text-center col-lg-10">
-                    <h1 class="fw-semibold text-light display-5">{{ $aboutus->title }}
+                    <h2 class="fw-semibold text-light ">{{ $aboutus->title }}
                         <span class="text-white fw-semibold">3D Cakes</span>
-                    </h1>
+                    </h2>
                     <div class="mt-3 about-description text-white">
                         {!! $aboutus->description !!}
                     </div>
