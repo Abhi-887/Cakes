@@ -114,12 +114,12 @@
         <div class="text-white footer-tile">
             <div class="py-4 px-5 mx-auto wrapper w-100 row d-flex justify-content-center align-items-center">
                 <div class="col-auto col-sm-7 p-0">
-                    <span class="color-white ">© 3D Cakes. All Rights Reserved.</span>
+                    <span class="color-white fw-lighter fs-14">© 3D Cakes. All Rights Reserved.</span>
                 </div>
                 <div class="col-auto text-white col-sm-5 text-end p-0">
                     <div class="social-links">
                         @foreach ($footerSocials as $link)
-                            <a href="{{ $link->url }}" class="{{ $link->icon }} fs-3 ms-2"></a>
+                            <a href="{{ $link->url }}" class="{{ $link->icon }}  fs-4 ms-2"></a>
                         @endforeach
                     </div>
                 </div>
