@@ -7306,7 +7306,8 @@ footer {
 
 /* Blog Start */
 .fp__blog2 .fp__single_blog .title:hover {
-    color: #788a9f;
+    /* color: #788a9f; */
+    color: #000;
 }
 
 /* Blog End */
