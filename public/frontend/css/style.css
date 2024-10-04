@@ -2040,6 +2040,25 @@ footer .wrapper a:hover {
     border-radius: 12px !important;
 }
 
+.fp__pagination ul li span {
+    width: 40px !important;
+    height: 40px !important;
+    padding: 0 !important;
+    line-height: 39px !important;
+    text-align: center !important;
+    font-size: 14px !important;
+    color: #fff !important;
+    border-radius: 0 !important;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    -ms-border-radius: 0 !important;
+    -o-border-radius: 0 !important;
+    margin: 0px 10px;
+    margin-left: 10px;
+    margin-left: 10px;
+}
+
+
 .page-link:focus {
     background-color: #008b8b !important;
     box-shadow: none;
@@ -6038,23 +6057,6 @@ CHECKOUT PAGE START
     background: black;
 }
 
-.fp__pagination ul li span {
-    width: 50px !important;
-    height: 50px !important;
-    padding: 0 !important;
-    line-height: 50px !important;
-    text-align: center !important;
-    font-size: 14px !important;
-    color: #fff !important;
-    border-radius: 0 !important;
-    -webkit-border-radius: 0 !important;
-    -moz-border-radius: 0 !important;
-    -ms-border-radius: 0 !important;
-    -o-border-radius: 0 !important;
-    margin: 0px 10px;
-    margin-left: 10px;
-    margin-left: 10px;
-}
 
 @media (min-width: 576px) and (max-width: 767px) {
     .fp__pagination ul li span {
