@@ -165,8 +165,8 @@
                                         <div class="col-8 d-flex">
                                             <div class="card h-100 w-100 d-flex flex-column border-0">
                                                 <div class="card-body d-flex flex-column justify-content-between">
-                                                    <p class="card-title text-end">Captivating Creations: Unveiling the Magic of Wedding Cakes from 3D Cakes Captivating Creations: Unveiling the Magic of Wedding Cakes from 3D Cakes</p>
-                                                    <div class="d-flex justify-content-end align-items-center">
+                                                    <p class="card-title mb-4">Captivating Creations: Unveiling the Magic of Wedding Cakes from 3D Cakes Captivating Creations: Unveiling the Magic of Wedding Cakes from 3D Cakes</p>
+                                                    <div class="mt-auto d-flex justify-content-end align-items-center">
                                                         <a href="#" class="btn btn-outline-secondary">← Previous</a>
                                                     </div>
                                                 </div>
@@ -182,8 +182,8 @@
                                         <div class="col-8 d-flex">
                                             <div class="card h-100 w-100 d-flex flex-column border-0">
                                                 <div class="card-body d-flex flex-column justify-content-between">
-                                                    <p class="card-title">Savoring Sweet Moments: Delighting in Decadent Cupcakes from 3D Cakes, Edinburgh</p>
-                                                    <div class="d-flex justify-content-start align-items-center">
+                                                    <p class="card-title mb-4">Savoring Sweet Moments: Delighting in Decadent Cupcakes from 3D Cakes, Edinburgh</p>
+                                                    <div class="mt-auto d-flex justify-content-start align-items-center">
                                                         <a href="{{ route('blogs.details', $previousBlog->slug) }}" class="btn btn-outline-secondary">Next →</a>
                                                     </div>
                                                 </div>
@@ -196,6 +196,7 @@
                                 </div>
                             @endif
                         </div>
+
 
 
 
