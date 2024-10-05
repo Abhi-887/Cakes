@@ -1442,6 +1442,12 @@ button {
     transform: translate(-50%, -50%);
 }
 
+.img-blog {
+    width: 110px !important;
+    height: 150px !important;
+    border-radius: 5px;
+  }
+
 .fp__testimonial_header .text {
     width: 100%;
     margin-top: 25px;
