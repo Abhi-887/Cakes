@@ -165,7 +165,7 @@
                                         <div class="col-8 d-flex">
                                             <div class="card h-100 w-100 d-flex flex-column border-0">
                                                 <div class="card-body d-flex flex-column justify-content-between">
-                                                    <p class="card-title mb-4">Captivating Creations: Unveiling the Magic of Wedding Cakes from 3D Cakes Captivating Creations: Unveiling the Magic of Wedding Cakes from 3D Cakes</p>
+                                                    <p class="card-title mb-4">{{ truncate($nextBlog->title) }}</p>
                                                     <div class="mt-auto d-flex justify-content-end align-items-center">
                                                         <a href="#" class="btn btn-outline-secondary">← Previous</a>
                                                     </div>
@@ -182,7 +182,7 @@
                                         <div class="col-8 d-flex">
                                             <div class="card h-100 w-100 d-flex flex-column border-0">
                                                 <div class="card-body d-flex flex-column justify-content-between">
-                                                    <p class="card-title mb-4">Savoring Sweet Moments: Delighting in Decadent Cupcakes from 3D Cakes, Edinburgh</p>
+                                                    <p class="card-title mb-4">{{ truncate($previousBlog->title) }}</p>
                                                     <div class="mt-auto d-flex justify-content-start align-items-center">
                                                         <a href="{{ route('blogs.details', $previousBlog->slug) }}" class="btn btn-outline-secondary">Next →</a>
                                                     </div>
