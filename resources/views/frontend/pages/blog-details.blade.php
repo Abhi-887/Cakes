@@ -236,7 +236,7 @@
                                                 href="{{ route('blogs.details', $latestBlog->slug) }}">{{ truncate($latestBlog->title, 50) }}</a>
                                             <p class="color-light-gray"><i
                                                     class="far fa-calendar-alt color-light-gray"></i>
-                                                {{ date('d m Y', strtotime($latestBlog->created_at)) }}</p>
+                                                {{ date('d-m-Y', strtotime($latestBlog->created_at)) }}</p>
                                         </div>
                                     </li>
                                 @endforeach
@@ -250,7 +250,7 @@
                                     <li><a class="bg-gray text-white"
                                             href="{{ route('blogs', ['category' => $category->slug]) }}">{{ $category->name }}
                                             <span
-                                                class="bg-dark text-white border border-white">{{ $category->blogs_count }}</span></a>
+                                                class="footer-tile text-white border border-white">{{ $category->blogs_count }}</span></a>
                                     </li>
                                 @endforeach
 
