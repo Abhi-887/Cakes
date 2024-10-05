@@ -589,7 +589,7 @@
                                                     @endif
                                                 </p>
 
-                                                <a class="px-3 py-2 text-white add-to-cart rounded-pill background-light-gray"
+                                                <a class="px-3 py-2 text-white add-to-cart rounded-pill background-light-gray fs-14"
                                                     href="javascript:;"
                                                     onclick="loadProductModal('{{ $relatedProduct->id }}')">Add to
                                                     cart</a>
