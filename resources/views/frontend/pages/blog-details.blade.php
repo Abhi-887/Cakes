@@ -158,7 +158,7 @@
                         <div class="row align-items-stretch mt-5">
                             @if ($nextBlog)
                                 <div class="col-md-6 d-flex">
-                                    <div class="row w-100 align-items-center border-shadow">
+                                    <div class="row w-100 align-items-stretch border-shadow">
                                         <div class="col-4">
                                             <img class="h-auto img-fluid w-100 img-blog" src="{{ asset($nextBlog->image) }}">
                                         </div>
@@ -178,7 +178,7 @@
 
                             @if ($previousBlog)
                                 <div class="col-md-6 d-flex">
-                                    <div class="row align-items-center w-100 border-shadow">
+                                    <div class="row align-items-stretch w-100 border-shadow">
                                         <div class="col-8 d-flex">
                                             <div class="card h-100 w-100 d-flex flex-column border-0">
                                                 <div class="card-body d-flex flex-column justify-content-between">
@@ -196,6 +196,7 @@
                                 </div>
                             @endif
                         </div>
+
 
 
 
