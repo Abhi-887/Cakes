@@ -85,7 +85,7 @@
                         </div>
                     </div>
 
-                    <ul class="blog_det_button mt_100 xs_mt_70 wow fadeInUp" data-wow-duration="1s">
+                    {{-- <ul class="blog_det_button mt_100 xs_mt_70 wow fadeInUp" data-wow-duration="1s">
                         @if ($nextBlog)
                             <li>
                                 <a href="{{ route('blogs.details', $nextBlog->slug) }}">
@@ -106,7 +106,7 @@
                                 </a>
                             </li>
                         @endif
-                    </ul>
+                    </ul> --}}
 
 
                         <div class="row align-items-stretch mt-5">
