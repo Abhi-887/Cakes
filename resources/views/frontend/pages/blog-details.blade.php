@@ -109,52 +109,6 @@
                     </ul> --}}
 
 
-
-                        {{-- <div class="row align-items-stretch mt-5">
-                            @if ($nextBlog)
-                                <div class="col-md-6 d-flex">
-                                    <div class="row w-100 align-items-center border-shodow">
-                                        <div class="col-4">
-                                            <img class="h-auto img-fluid w-100 img-blog"
-                                                src="{{ asset($nextBlog->image) }}">
-                                        </div>
-                                        <div class="col-8 d-flex">
-                                            <div class="card h-100 w-100 d-flex flex-column border-0">
-                                                <div class="card-body d-flex flex-column text-end">
-                                                    <p class="card-title">{{ truncate($nextBlog->title) }}</p>
-                                                    <div class="mt-auto d-flex justify-content-end align-items-center">
-                                                        <a href="#" class="btn btn-outline-secondary">← Previous</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endif
-
-                            @if ($previousBlog)
-                                <div class="col-md-6 d-flex">
-                                    <div class="row align-items-center w-100 border-shodow">
-                                        <div class="col-8 d-flex">
-                                            <div class="card h-100 w-100 d-flex flex-column border-0">
-                                                <div class="card-body d-flex flex-column ">
-                                                    <p class="card-title">{{ truncate($previousBlog->title) }}</p>
-                                                    <div class="mt-auto d-flex justify-content-start align-items-center">
-                                                        <a href="{{ route('blogs.details', $previousBlog->slug) }}"
-                                                            class="btn btn-outline-secondary">Next →</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-4">
-                                            <img class="h-auto img-fluid w-100 img-blog"
-                                                src="{{ asset($previousBlog->image) }}">
-                                        </div>
-                                    </div>
-                                </div>
-                            @endif
-                        </div> --}}
-
                         <div class="row align-items-stretch mt-5">
                             @if ($nextBlog)
                                 <div class="col-md-6 d-flex">
@@ -167,7 +121,7 @@
                                                 <div class="card-body d-flex flex-column justify-content-between">
                                                     <p class="card-title mb-4 text-end">{{ truncate($nextBlog->title) }}</p>
                                                     <div class="mt-auto d-flex justify-content-end align-items-center">
-                                                        <a href="#" class="btn btn-outline-secondary">← Previous</a>
+                                                        <a href="#" class="btn btn-outline-secondary"><i class="far fa-long-arrow-left"></i> Previous</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -184,7 +138,7 @@
                                                 <div class="card-body d-flex flex-column justify-content-between">
                                                     <p class="card-title mb-4">{{ truncate($previousBlog->title) }}</p>
                                                     <div class="mt-auto d-flex justify-content-start align-items-center">
-                                                        <a href="{{ route('blogs.details', $previousBlog->slug) }}" class="btn btn-outline-secondary">Next →</a>
+                                                        <a href="{{ route('blogs.details', $previousBlog->slug) }}" class="btn btn-outline-secondary">Next <i class="far fa-long-arrow-right"></i></a>
                                                     </div>
                                                 </div>
                                             </div>
