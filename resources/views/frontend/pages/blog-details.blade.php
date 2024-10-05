@@ -131,7 +131,7 @@
                             @endif
 
                             @if ($previousBlog)
-                                <div class="col-md-6 d-flex">
+                                <div class="col-md-6 d-flex mt-md-0 mt-5">
                                     <div class="row align-items-stretch w-100 border-shodow">
                                         <div class="col-8 d-flex">
                                             <div class="card h-100 w-100 d-flex flex-column border-0">
