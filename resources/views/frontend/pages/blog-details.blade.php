@@ -25,7 +25,7 @@
                     <!--<h1>blog details</h1>-->
                     <h2>3D Cakes - Latest News</h2>
                     <ul>
-                        <li><a href="index.html">home</a></li>
+                        <li><a href="/">home</a></li>
                         <li><a href="#">blog details</a></li>
                     </ul>
                 </div>
