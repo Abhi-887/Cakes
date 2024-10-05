@@ -565,7 +565,7 @@
                                             <a class="px-2 py-1 color-light-gray border-common category bg-light"
                                                 href="#">{{ @$relatedProduct->category->name }}</a>
 
-                                            <a class="title" href="{{ route('product.show', $relatedProduct->slug) }}">
+                                            <a class="title text-uppercase" href="{{ route('product.show', $relatedProduct->slug) }}">
                                                 {{ Str::limit($relatedProduct->name, 300, '...') }}
                                             </a>
                                             <div class="mt-auto actions d-flex justify-content-between align-items-center">
