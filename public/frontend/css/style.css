@@ -1446,7 +1446,13 @@ button {
     width: 110px !important;
     height: 150px !important;
     border-radius: 5px;
-  }
+}
+
+.links-arrow {
+    font-size: 18px;
+    text-transform: capitalize;
+    color: #494949;
+}
 
 .fp__testimonial_header .text {
     width: 100%;
