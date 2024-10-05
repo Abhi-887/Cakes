@@ -54,7 +54,7 @@
                                 <li class="color-light-gray"><i class="far fa-comment-alt-lines color-light-gray"></i>
                                     {{ count($comments) }} Comments</li>
                                 <li class="color-light-gray"><i class="far fa-calendar-alt color-light-gray"></i>
-                                    {{ date('d m Y', strtotime($blog->created_at)) }}
+                                    {{ date('d-m-Y', strtotime($blog->created_at)) }}
                                 </li>
                             </ul>
                             <!-- <h2>{!! $blog->title !!}</h2>-->
