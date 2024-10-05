@@ -109,7 +109,7 @@
                     </ul> --}}
 
 
-                        <div class="row align-items-stretch mt-5">
+                        <div class="row align-items-stretch mt-5 wow fadeInUp" data-wow-duration="1s">
                             @if ($nextBlog)
                                 <div class="col-md-6 ">
                                     <div class="row w-100 align-items-stretch border-shodow">
