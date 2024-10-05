@@ -118,7 +118,7 @@
                                         </div>
                                         <div class="col-8 ">
                                             <div class="card h-100 w-100 d-flex flex-column border-0">
-                                                <div class="card-body d-flex flex-column justify-content-between">
+                                                <div class=" d-flex flex-column justify-content-between">
                                                     <p class="card-title mb-4 text-end">{{ truncate($nextBlog->title) }}</p>
                                                     <div class="mt-auto d-flex justify-content-end align-items-center">
                                                         <a href="{{ route('blogs.details', $nextBlog->slug) }}" class="links-arrow"><i class="far fa-long-arrow-left"></i> Previous</a>
@@ -135,7 +135,7 @@
                                     <div class="row align-items-stretch w-100 border-shodow">
                                         <div class="col-8 ">
                                             <div class="card h-100 w-100 d-flex flex-column border-0">
-                                                <div class="card-body d-flex flex-column justify-content-between">
+                                                <div class=" d-flex flex-column justify-content-between">
                                                     <p class="card-title mb-4">{{ truncate($previousBlog->title) }}</p>
                                                     <div class="mt-auto d-flex justify-content-start align-items-center">
                                                         <a href="{{ route('blogs.details', $previousBlog->slug) }}" class="links-arrow">Next <i class="far fa-long-arrow-right"></i></a>
