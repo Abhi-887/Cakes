@@ -110,7 +110,7 @@
 
 
 
-                        <div class="row align-items-stretch mt-5">
+                        {{-- <div class="row align-items-stretch mt-5">
                             @if ($nextBlog)
                                 <div class="col-md-6 d-flex">
                                     <div class="row w-100 align-items-center border-shodow">
@@ -153,7 +153,7 @@
                                     </div>
                                 </div>
                             @endif
-                        </div>
+                        </div> --}}
 
                         <div class="row align-items-stretch mt-5">
                             @if ($nextBlog)
