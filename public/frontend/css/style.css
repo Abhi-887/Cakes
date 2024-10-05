@@ -1449,7 +1449,7 @@ button {
 }
 
 .links-arrow {
-    font-size: 18px;
+    /* font-size: 18px; */
     text-transform: capitalize;
     color: #494949;
 }

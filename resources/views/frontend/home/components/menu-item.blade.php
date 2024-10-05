@@ -227,7 +227,7 @@
                             <i class="text-white fal fa-heart"></i>
                         </a>
                         <div class="card-body fp__menu_item_text position-relative d-flex flex-column">
-                            <a class="px-3 py-2 category bg-light border-common color-light-gray categorys fw-semibold" href="/category/${product.category_slug}">
+                            <a class="px-3 py-2 category bg-light border-common color-light-gray categorys " href="/category/${product.category_slug}">
                                 ${product.category_name}
                             </a>
                             <a class="title text-uppercase" href="/product/${product.slug}">${product.name}</a>
