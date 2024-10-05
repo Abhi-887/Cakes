@@ -113,7 +113,7 @@
                             @if ($nextBlog)
                                 <div class="col-md-6 d-flex">
                                     <div class="row w-100 align-items-stretch border-shodow">
-                                        <div class="col-4 align-items-center d-flex">
+                                        <div class="col-4 align-items-center d-flex ps-0">
                                             <img class="h-auto img-fluid w-100 img-blog" src="{{ asset($nextBlog->image) }}">
                                         </div>
                                         <div class="col-8 d-flex">
@@ -143,7 +143,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-4 align-items-center d-flex">
+                                        <div class="col-4 align-items-center d-flex pe-0">
                                             <img class="h-auto img-fluid w-100 img-blog" src="{{ asset($previousBlog->image) }}">
                                         </div>
                                     </div>
