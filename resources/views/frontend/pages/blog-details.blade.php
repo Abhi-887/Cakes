@@ -121,7 +121,7 @@
                                                 <div class="card-body d-flex flex-column justify-content-between">
                                                     <p class="card-title mb-4 text-end">{{ truncate($nextBlog->title) }}</p>
                                                     <div class="mt-auto d-flex justify-content-end align-items-center">
-                                                        <a href="#" class="btn btn-outline-secondary"><i class="far fa-long-arrow-left"></i> Previous</a>
+                                                        <a href="{{ route('blogs.details', $nextBlog->slug) }}" class="btn btn-outline-secondary"><i class="far fa-long-arrow-left"></i> Previous</a>
                                                     </div>
                                                 </div>
                                             </div>
