@@ -137,7 +137,7 @@
         position: relative;
         background: #788a9f url('{{ asset('uploads/Group2(1).svg') }}') no-repeat center center !important;
         width: 59px;
-        height: 58px;
+        height: 59px;
         border-radius: 50%;
     }
 
@@ -147,7 +147,7 @@
         position: relative;
         background: url('{{ asset('uploads/Group2.svg') }}') no-repeat center center !important;
         width: 59px;
-        height: 58px;
+        height: 59px;
         border-radius: 50%;
     }
 
