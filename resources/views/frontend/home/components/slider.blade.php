@@ -138,7 +138,6 @@
         background: #788a9f url('{{ asset('uploads/arrow4.png') }}') no-repeat 0 0 !important;
         width: 59px;
         height: 58px;
-        /* left: 20px !important; */
         border-radius: 50%;
     }
 
@@ -149,15 +148,14 @@
         background: #788a9f url('{{ asset('uploads/arrow3.png') }}') no-repeat 0 0 !important;
         width: 59px;
         height: 58px;
-        /* left: 20px !important; */
         border-radius: 50%;
     }
 
-    /* .carousel-control-prev-icon:hover {
+    .carousel-control-prev-icon:hover {
         background: url('{{ asset(' uploads/arrow1.png') }}') no-repeat 0 0 !important;
     }
 
     .carousel-control-next-icon:hover {
         background: url('{{ asset(' uploads/arrow2.png') }}') no-repeat 0 0 !important;
-    } */
+    }
 </style>
