@@ -138,19 +138,19 @@
                 <div class="col-lg-4 d-flex justify-content-center text-center text-md-start my-2">
                     <div>
                         <h5 class="text-white mb-3 fw-bold"> {!! @$contact->title_one !!}</h5>
-                        <p class="fw-semibold text-white">{!! @$contact->Description_one !!}</p>
+                        <p class="text-white">{!! @$contact->Description_one !!}</p>
                     </div>
                 </div>
                 <div class="col-lg-4 d-flex justify-content-center text-center text-md-start my-2">
                     <div>
                         <h5 class="text-white mb-3 fw-bold">{!! @$contact->title_two !!}</h5>
-                        <p class="fw-semibold text-white">{!! @$contact->Description_two !!}</p>
+                        <p class="text-white">{!! @$contact->Description_two !!}</p>
                     </div>
                 </div>
                 <div class="col-lg-4 d-flex justify-content-center text-center text-md-start my-2">
                     <div>
                         <h5 class="text-white mb-3 fw-bold">{!! @$contact->title_three !!}</h5>
-                        <p class="fw-semibold text-white">{!! @$contact->Description_three !!}</p>
+                        <p class="text-white">{!! @$contact->Description_three !!}</p>
                     </div>
                 </div>
             </div>
