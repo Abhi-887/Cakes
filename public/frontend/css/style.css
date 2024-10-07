@@ -89,6 +89,10 @@ img {
     font-weight: 500 !important;
 }
 
+.bg-dark-gray {
+    background: #dde1e6;
+}
+
 input,
 textarea {
     width: 100%;
