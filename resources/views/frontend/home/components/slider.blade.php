@@ -156,6 +156,6 @@
     }
 
     .carousel-control-next-icon:hover {
-        background:  url('{{ asset('uploads/arrow.png') }}') no-repeat center center !important;
+        background:  url('{{ asset('uploads/next.png') }}') no-repeat center center !important;
     }
 </style>
