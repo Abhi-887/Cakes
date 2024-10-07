@@ -145,7 +145,7 @@
         z-index: 100;
         cursor: pointer;
         position: relative;
-        background:  url('{{ asset('uploads/Group2.svg') }}') no-repeat center center !important;
+        background: url('{{ asset('uploads/Group2.svg') }}') no-repeat center center !important;
         width: 59px;
         height: 58px;
         border-radius: 50%;
@@ -155,7 +155,11 @@
         background: url('{{ asset('uploads/previous.png') }}') no-repeat center center !important;
     }
 
+    .carousel-control-prev,.carousel-control-next {
+        opacity: unset;
+    }
+
     .carousel-control-next-icon:hover {
-        background:  url('{{ asset('uploads/next.png') }}') no-repeat center center !important;
+        background: url('{{ asset('uploads/next.png') }}') no-repeat center center !important;
     }
 </style>
