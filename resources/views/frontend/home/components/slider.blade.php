@@ -152,10 +152,10 @@
     }
 
     .carousel-control-prev-icon:hover {
-        background: #008b8b url('{{ asset('uploads/previous.png') }}') no-repeat 0 0 !important;
+        background: url('{{ asset('uploads/previous.png') }}') no-repeat center center !important;
     }
 
     .carousel-control-next-icon:hover {
-        background: #008b8b url('{{ asset('uploads/arrow.png') }}') no-repeat 0 0 !important;
+        background:  url('{{ asset('uploads/arrow.png') }}') no-repeat center center !important;
     }
 </style>
