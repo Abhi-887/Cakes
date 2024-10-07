@@ -137,19 +137,19 @@
             <div class="row pt-5">
                 <div class="col-lg-4 d-flex justify-content-center text-center text-md-start my-2">
                     <div>
-                        <h2 class="text-white mb-3"> {!! @$contact->title_one !!}</h2>
+                        <h5 class="text-white mb-3"> {!! @$contact->title_one !!}</h5>
                         <p class="fw-semibold text-white">{!! @$contact->Description_one !!}</p>
                     </div>
                 </div>
                 <div class="col-lg-4 d-flex justify-content-center text-center text-md-start my-2">
                     <div>
-                        <h2 class="text-white mb-3">{!! @$contact->title_two !!}</h2>
+                        <h5 class="text-white mb-3">{!! @$contact->title_two !!}</h5>
                         <p class="fw-semibold text-white">{!! @$contact->Description_two !!}</p>
                     </div>
                 </div>
                 <div class="col-lg-4 d-flex justify-content-center text-center text-md-start my-2">
                     <div>
-                        <h2 class="text-white mb-3">{!! @$contact->title_three !!}</h2>
+                        <h5 class="text-white mb-3">{!! @$contact->title_three !!}</h5>
                         <p class="fw-semibold text-white">{!! @$contact->Description_three !!}</p>
                     </div>
                 </div>
