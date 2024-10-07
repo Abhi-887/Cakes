@@ -133,7 +133,7 @@
 
     <div class="contact-card opening-bg py-5 px-3" style= "background-image: url({{ asset('uploads/patterned200.png') }});">
         <div class="container">
-            <h1 class="text-center text-white fw-bold">Opening Times</h1>
+            <h2 class="text-center text-white fw-bold">Opening Times</h2>
             <div class="row pt-5">
                 <div class="col-lg-4 d-flex justify-content-center text-center text-md-start my-2">
                     <div>
