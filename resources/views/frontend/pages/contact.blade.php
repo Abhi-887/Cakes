@@ -288,8 +288,8 @@
         <div class="row my-5">
             <div class="col-lg-6">
                 <div class="mb-4">
-                    <h1 class="fw-bold color-dark-gray">Get in touch with us today</h1>
-                    <p class="text-secondary fw-semibold my-4">We’d love to hear from you. Whether you have a question,
+                    <h2 class="fw-bold color-dark-gray">Get in touch with us today</h2>
+                    <p class="text-secondary  my-4">We’d love to hear from you. Whether you have a question,
                         feedback, or need assistance, please fill out the form below and our team will get back to you as
                         soon as possible.</p>
                 </div>
