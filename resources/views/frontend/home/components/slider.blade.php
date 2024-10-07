@@ -145,7 +145,7 @@
         z-index: 100;
         cursor: pointer;
         position: relative;
-        background: #788a9f url('{{ asset('uploads/arrow3.png') }}') no-repeat 0 0 !important;
+        background:  url('{{ asset('uploads/Group2.svg') }}') no-repeat 0 0 !important;
         width: 59px;
         height: 58px;
         border-radius: 50%;
