@@ -106,21 +106,21 @@
                 <div class="m-0 col-md-7">
                     <div class="row">
                         <div class="text-center col-md-auto col-12">
-                            <p class="text-white mb-0"><span>Edinburgh:</span> 0131 337 9990 </p>
+                            <p class="text-white mb-0 fs-14"><span>Edinburgh:</span> 0131 337 9990 </p>
                         </div>
 
                         <div class="text-center col-md-auto col-12 ">
-                            <p class="text-white mb-0"><span>Glasgow:</span> 0141 378 0027</p>
+                            <p class="text-white mb-0 fs-14"><span>Glasgow:</span> 0141 378 0027</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-5">
                     <ul class="m-0 d-none d-md-flex d-lg-flex justify-content-end">
-                        <li class="pe-3"><a class="text-decoration-none text-white" href="/login">My
+                        <li class="pe-3"><a class="text-decoration-none text-white fs-14" href="/login">My
                                 Account</a></li>
-                        <li class="pe-3"><a class="text-decoration-none text-white" href="/">My
+                        <li class="pe-3"><a class="text-decoration-none text-white fs-14" href="/">My
                                 Wishlist</a></li>
-                        <li class=""><a class="text-decoration-none text-white" href="/admin/dashboard">Log
+                        <li class=""><a class="text-decoration-none text-white fs-14" href="/admin/dashboard">Log
                                 In</a></li>
                     </ul>
                 </div>
