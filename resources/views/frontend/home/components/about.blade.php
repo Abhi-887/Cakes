@@ -2,7 +2,7 @@
     <div id="parallax" class="py-5 bg-cover parallax-item w-100">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="text-center col-lg-10">
+                <div class="text-center col-lg-8">
                     <h2 class="fw-semibold text-light ">{{ $aboutus->title }}
                         <span class="text-white fw-semibold">3D Cakes</span>
                     </h2>
