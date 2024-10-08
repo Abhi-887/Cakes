@@ -139,6 +139,7 @@
         width: 59px;
         height: 59px;
         border-radius: 50%;
+        background-color: #dde1e6 !important;
     }
 
     .carousel-control-prev-icon {
@@ -150,6 +151,7 @@
         width: 59px;
         height: 59px;
         border-radius: 50%;
+        background-color: #dde1e6 !important;
     }
 
     .carousel-control-prev-icon:hover {
