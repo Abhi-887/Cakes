@@ -3278,7 +3278,8 @@ footer .wrapper a:hover {
     -ms-transition: all linear 0.4s;
     -o-transition: all linear 0.4s;
     color: #fff;
-    background: #4b637f;
+    /* background: #4b637f; */
+    background: #bccfe8;
 }
 
 .border-dark {
