@@ -35,7 +35,7 @@
                                 <h2>Welcome back!</h2>
                                 <p>sign in to continue</p>
                             </div>
-                            <hr>
+                            <hr class="text-secondary">
                             <form action="{{ route('login') }}" method="POST">
                                 @csrf
                                 <div class="row">
