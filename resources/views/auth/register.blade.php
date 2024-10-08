@@ -30,10 +30,9 @@
             <div class=" container">
                 <div class="row wow fadeInUp" data-wow-duration="1s">
                     <div class="col-xxl-5 col-xl-6 col-md-9 col-lg-7 m-auto">
-                        <div class="fp__login_area">
+                        <div class="fp__login_area formbg">
                             <div class="text-center">
-                                <h2>Welcome </h2>
-
+                                <h2>Sign Up</h2>
                             </div>
                             <hr class="text-color">
                             <form method="POST" action="{{ route('register') }}">
@@ -70,7 +69,6 @@
                                         </div>
                                     </div>
 
-
                                     <div class="col-xl-12">
                                         <div class="fp__login_imput">
                                             <button type="submit" class="common_btn">Register</button>
@@ -80,7 +78,7 @@
                             </form>
                             <p class="or"><span>or</span></p>
 
-                            <p class="create_account">Allready have an account ? <a href="{{ route('login') }}">login</a></p>
+                            <p class="create_account text-center">Already have an account ? <a href="{{ route('login') }}">login</a></p>
                         </div>
                     </div>
                 </div>

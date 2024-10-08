@@ -42,9 +42,9 @@
         <div class="text-white footer-menu">
             <div class="p-5 mx-auto wrapper w-100 row">
                 <div class="col-lg-3 col-md-12 footer-info d-flex justify-content-lg-center my-3 my-lg-0">
-                    <div class="">
+                    <div>
                         <h5 class="mt-2 mb-1 text-white mb-xl-3 fw-normal mt-xl-0">{{ @$footerInfo->name }}</h5>
-                        <div class="">{!! @$footerInfo->address !!}</div>
+                        <div>{!! @$footerInfo->address !!}</div>
                         <div><strong class=" fas fa-solid fa-envelope">&nbsp; &nbsp; </strong><span
                                 class="text-white ">{{ @$footerInfo->email }}</span>
                         </div>

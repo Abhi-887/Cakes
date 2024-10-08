@@ -30,7 +30,7 @@
             <div class="container">
                 <div class="row wow fadeInUp" data-wow-duration="1s">
                     <div class="col-xxl-5 col-xl-6 col-md-9 col-lg-7 m-auto">
-                        <div class="fp__login_area">
+                        <div class="formbg fp__login_area">
                             <div class="text-center">
                                 <h2>Welcome back!</h2>
                                 <p>sign in to continue</p>
@@ -77,7 +77,7 @@
                             </form>
                             <p class="or"><span>or</span></p>
 
-                            <p class="create_account">Don't have an account ? <a href="{{ route('register') }}">Sign Up</a>
+                            <p class="create_account text-center" role="buttton">Don't have an account ? <a href="{{ route('register') }}">Sign Up</a>
                             </p>
                         </div>
                     </div>

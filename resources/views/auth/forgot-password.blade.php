@@ -30,7 +30,7 @@
             <div class="container">
                 <div class="row wow fadeInUp" data-wow-duration="1s">
                     <div class="col-xxl-5 col-xl-6 col-md-9 col-lg-7 m-auto">
-                        <div class="fp__login_area">
+                        <div class="fp__login_area formbg">
                             <div class="text-center">
                                 <h2> Forgot Password</h2>
                             </div>
