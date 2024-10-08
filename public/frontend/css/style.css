@@ -7277,7 +7277,7 @@ footer {
 
 /* Trending Now Start */
 .fp__menu_item:hover .title {
-    color: #788a9f !important;
+    color: #000 !important;
 }
 
 .slick-prev::before {
