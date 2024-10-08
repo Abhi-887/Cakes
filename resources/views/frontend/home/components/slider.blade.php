@@ -135,7 +135,7 @@
         z-index: 100;
         cursor: pointer;
         position: relative;
-        background: #788a9f url('{{ asset('uploads/Group2(1).svg') }}') no-repeat center center !important;
+        background: #788a9f url('{{ asset('uploads/logos/left-chevron(1).png') }}') no-repeat center center !important;
         width: 59px;
         height: 59px;
         border-radius: 50%;
