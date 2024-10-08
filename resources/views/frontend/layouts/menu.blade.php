@@ -1,3 +1,9 @@
+<style>
+    .btn-close.background-dark-gray:hover {
+        background-color: black !important;
+        /* Change to black on hover */
+    }
+</style>
 <section class="sticky-top">
     @php
         $MainMenu = Menu::getByName('main_menu');

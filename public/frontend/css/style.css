@@ -6092,9 +6092,6 @@ CHECKOUT PAGE START
     background-color: darkgray; /* Replace this with your preferred dark gray */
 }
 
-.btn-close.background-dark-gray:hover {
-    background-color: black; /* Change to black on hover */
-}
 
 
 @media (min-width: 576px) and (max-width: 767px) {
