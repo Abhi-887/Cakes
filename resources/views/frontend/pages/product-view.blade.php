@@ -11,7 +11,7 @@
             width: auto !important;
         }
 
-        #pills-home-tab.active {
+        #pills-home-tab.active, #pills-cake-stand-gallery-tab.active, #pills-contact-tab.active {
   color: white !important;
 }
 
