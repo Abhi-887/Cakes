@@ -11,6 +11,10 @@
             width: auto !important;
         }
 
+        .nav-link-product:hover, .nav-link-product.active {
+  color: #fff !important;
+}
+
         /* .productviewinput input:checked {
             background-color: #788a9f !important;
             border-color: #788a9f !important;
