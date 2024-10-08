@@ -4,10 +4,6 @@
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <style>
-    /* .product-slider .stars {
-        color: #ff9800;
-    } */
-
     img.product-img {
         object-fit: cover !important;
         height: 100% !important;
@@ -20,12 +16,10 @@
 
     .product-slider .profile .name {
         font-weight: bold;
-        /* color: #333; */
     }
 
     .product-slider .profile .company {
         font-size: 12px;
-        /* color: #999; */
     }
 
     .slick-dots li button::before {
@@ -75,8 +69,6 @@
         content: '\f053' !important;
         font-family: 'Font Awesome 5 Free' !important;
         font-weight: 600;
-        /* background: #4b637f !important;
-        color: white !important; */
         border-radius: 50%;
         padding: 10px 14px;
         font-size: 16px;
@@ -86,8 +78,6 @@
         content: '\f054' !important;
         font-family: 'Font Awesome 5 Free' !important;
         font-weight: 600;
-        /* background: #4b637f !important;
-        color: white !important; */
         border-radius: 50%;
         padding: 10px 14px;
         font-size: 16px;
@@ -95,8 +85,6 @@
 
     .fp__menu_item {
         border-radius: 15px;
-        /* background-color: #fff;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
         overflow: hidden;
     }
 
@@ -110,7 +98,6 @@
         font-size: 18px;
         font-weight: 600;
         margin-bottom: 10px;
-        /* color: #333; */
         display: block;
     }
 
@@ -120,7 +107,6 @@
     }
 
     .fp__menu_item_text .price del {
-        /* color: #999; */
         margin-right: 10px;
     }
 
@@ -130,22 +116,14 @@
         left: 16px;
         padding: 5px 10px;
         font-size: 12px;
-        /* background-color: #f8f9fa;
-        color: #333; */
-        /* border-radius: 15px; */
         text-transform: uppercase;
-        /* border: 1px solid #788a9f !important; */
+
     }
 
     .actions a {
         font-size: 18px;
-        /* color: #333; */
         text-decoration: none;
     }
-
-    /* .actions a:hover {
-        color: #000;
-    } */
 </style>
 
 
