@@ -71,7 +71,7 @@
                     aria-labelledby="offcanvasExampleLabel">
                     <div class="pt-3 offcanvas-header">
                         <a class="w-50" href="{{ url('/') }}">
-                            <img src="{{ asset('uploads/web-logo1.png') }}" alt="3D-Cakes Logo" class="img-fluid" />
+                            <img src="{{ asset('uploads/web-logo1.png') }}" alt="3D-Cakes Logo" class="img-fluid head-img" />
                         </a>
                         <button type="button" class="btn-close fs-4 background-dark-gray" data-bs-dismiss="offcanvas"
                             aria-label="Close"></button>

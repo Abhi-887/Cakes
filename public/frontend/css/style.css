@@ -6080,6 +6080,10 @@ CHECKOUT PAGE START
 }
 
 
+.head-img {
+    max-width: 200px;
+}
+
 @media (min-width: 576px) and (max-width: 767px) {
     .fp__pagination ul li span {
         width: 40px !important;
