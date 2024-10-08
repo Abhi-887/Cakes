@@ -145,17 +145,22 @@
         z-index: 100;
         cursor: pointer;
         position: relative;
-        background: url('{{ asset('uploads/Group2.svg') }}') no-repeat center center !important;
+        background: url('{{ asset('uploads/logos/left-chevron.png') }}') no-repeat center center !important;
+        background-size: no-repeat;
         width: 59px;
         height: 59px;
         border-radius: 50%;
     }
 
     .carousel-control-prev-icon:hover {
-        background: url('{{ asset('uploads/previous.png') }}') no-repeat center center !important;
+        background-image: url('{{ asset('uploads/logos/left-chevron(3).png') }}') !important;
+        background-color: #008b8b !important;
     }
 
-    .carousel-control-prev,.carousel-control-next {
+
+
+    .carousel-control-prev,
+    .carousel-control-next {
         opacity: unset;
     }
 
