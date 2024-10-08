@@ -7259,7 +7259,7 @@ footer {
 .nav-item .nav-link.active {
     color: #364559 !important;
 }
-.nav-link-product:hover {
+.nav-link-product:hover,.nav-link-product.active {
     color: #fff !important;
 }
 
