@@ -11,8 +11,8 @@
             width: auto !important;
         }
 
-        .nav-link-product:hover, .nav-link-product.active {
-  color: #fff !important;
+        #pills-home-tab.active {
+  color: white !important;
 }
 
         /* .productviewinput input:checked {
