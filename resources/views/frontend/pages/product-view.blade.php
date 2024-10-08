@@ -419,18 +419,18 @@
                 <div class="fp__menu_description_area mt-5 pt-5">
                     <ul class="nav nav-pills" id="pills-tab" role="tablist">
                         <li class="nav-item border-end border-dark" role="presentation">
-                            <button class=" nav-link-product  active" id="pills-home-tab" data-bs-toggle="pill"
+                            <button class="nav-link nav-link-product  active" id="pills-home-tab" data-bs-toggle="pill"
                                 data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
                                 aria-selected="true">Description</button>
                         </li>
                         <li class="nav-item border-end border-dark" role="presentation">
-                            <button class=" nav-link-product" id="pills-cake-stand-gallery-tab" data-bs-toggle="pill"
+                            <button class="nav-link nav-link-product" id="pills-cake-stand-gallery-tab" data-bs-toggle="pill"
                                 data-bs-target="#pills-cake-stand-gallery" type="button" role="tab"
                                 aria-controls="pills-cake-stand-gallery" aria-selected="false">Cake Stand
                                 Gallery</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class=" nav-link-product" id="pills-contact-tab" data-bs-toggle="pill"
+                            <button class="nav-link nav-link-product" id="pills-contact-tab" data-bs-toggle="pill"
                                 data-bs-target="#pills-contact" type="button" role="tab"
                                 aria-controls="pills-contact" aria-selected="false">Reviews</button>
                         </li>
