@@ -80,7 +80,7 @@
                             <img src="{{ asset('uploads/web-logo1.png') }}" alt="3D-Cakes Logo"
                                 class="img-fluid head-img" />
                         </a>
-                        <button id="cross-nav" type="button" class="btn-close fs-4 background-dark-gray " data-bs-dismiss="offcanvas"
+                        <button id="cross-nav" type="button" class="btn-close fs-4 background-dark-gray ms-2" data-bs-dismiss="offcanvas"
                             aria-label="Close"></button>
                     </div>
                     <hr class="mx-3">
