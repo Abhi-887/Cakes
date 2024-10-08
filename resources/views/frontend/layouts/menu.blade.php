@@ -83,15 +83,15 @@
                             @foreach ($MainMenu as $index => $menu)
                                 <li class="my-3 nav-item">
                                     <div class="d-flex ms-2 lh-lg">
-                                        <!-- Only display the menu label without a link on mobile screens -->
-                                        <span class="nav-link fw-semibold d-xxl-none">{{ $menu['label'] }}</span>
-
-                                        <!-- Display the menu label as a link on non-mobile screens -->
-                                        <a class="nav-link fw-semibold d-none d-xxl-block"
-                                           href="{{ $menu['link'] }}">{{ $menu['label'] }}</a>
+                                        <!-- Make both the menu title and dropdown icon toggle the submenu -->
+                                        <a class="nav-link fw-semibold toggle-dropdown"
+                                           data-index="{{ $index }}" href="javascript:void(0);">
+                                            {{ $menu['label'] }}
+                                        </a>
 
                                         @if ($menu['child'])
-                                            <span class="mobile-dropdown-menu ms-2" data-index="{{ $index }}">
+                                            <span class="mobile-dropdown-menu ms-2 toggle-dropdown"
+                                                  data-index="{{ $index }}">
                                                 <i class="far fa-angle-down color-light-gray"></i>
                                             </span>
                                         @endif
@@ -110,6 +110,9 @@
                                 </li>
                             @endforeach
                         @endif
+
+
+
 
                         </ul>
                         <hr>
@@ -303,4 +306,18 @@
             });
         });
     </script>
+                            <script>
+                                // JavaScript/jQuery to toggle dropdown on click of either the title or the icon
+                                document.querySelectorAll('.toggle-dropdown').forEach(function (element) {
+                                    element.addEventListener('click', function () {
+                                        const index = this.getAttribute('data-index');
+                                        const dropdown = document.getElementById('dropdown-' + index);
+                                        if (dropdown.style.display === 'none' || dropdown.style.display === '') {
+                                            dropdown.style.display = 'block';
+                                        } else {
+                                            dropdown.style.display = 'none';
+                                        }
+                                    });
+                                });
+                            </script>
 @endpush
