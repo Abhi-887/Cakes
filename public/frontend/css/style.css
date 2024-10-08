@@ -77,6 +77,10 @@ img {
     object-fit: cover;
 }
 
+.text-color {
+    color: #d5cbcb;
+}
+
 .sub-menu {
     font-size: 14px !important;
 }
