@@ -27,7 +27,7 @@
                 ==========================-->
     <section class="fp__signin" style="background: url(images/login_bg.jpg);">
         <div class="fp__signin_overlay pt_125 xs_pt_95 pb_100 xs_pb_70">
-            <div class="container">
+            <div class="container py-2 py-md-5">
                 <div class="row wow fadeInUp" data-wow-duration="1s">
                     <div class="col-xxl-5 col-xl-6 col-md-9 col-lg-7 m-auto">
                         <div class="fp__login_area">
