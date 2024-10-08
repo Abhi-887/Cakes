@@ -309,12 +309,12 @@
             })
         })
 
-        $(document).ready(function() {
-            $(".mobile-dropdown-menu").click(function() {
-                var index = $(this).data("index");
-                $("#dropdown-" + index).slideToggle("slow");
-            });
-        });
+        // $(document).ready(function() {
+        //     $(".mobile-dropdown-menu").click(function() {
+        //         var index = $(this).data("index");
+        //         $("#dropdown-" + index).slideToggle("slow");
+        //     });
+        // });
     </script>
     <script>
         $(document).ready(function() {
