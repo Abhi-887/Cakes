@@ -234,7 +234,7 @@
 
     .carousel-control-prev-icon,
     .carousel-control-next-icon {
-        background-size: contain;
+        background-size: contain !important;
     }
 }
 
