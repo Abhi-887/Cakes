@@ -53,7 +53,7 @@
                             </form>
                             <p class="create_account d-flex justify-content-between">
                                 <a href="{{ route('login') }}">Back To login</a>
-                                <a href="{{ route('register') }}">Create Account</a>
+                                <a href="{{ route('register') }}">Sign Up</a>
                             </p>
                         </div>
                     </div>
