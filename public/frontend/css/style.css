@@ -6671,7 +6671,8 @@ footer {
 
 .nav-pills .nav-link.active,
 .nav-pills .nav-link:hover {
-    background: #292b750a !important;
+    background: #4b637f !important;
+    /* background: #292b750a !important; */
 }
 
 .fp__dashboard_menu button.active::after {
@@ -7255,7 +7256,8 @@ footer {
 
 .nav-item:hover .nav-link,
 .nav-item .nav-link.active {
-    color: #364559 !important;
+    /* color: #364559 !important; */
+    color: #fff !important;
 }
 
 /* Header End */
