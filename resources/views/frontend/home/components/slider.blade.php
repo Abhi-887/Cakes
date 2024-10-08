@@ -188,7 +188,7 @@
 }
 
 .carousel-control-prev-icon {
-    background: url('{{ asset('uploads/logos/left-chevron.png') }}') no-repeat center center !important;
+    background: #dde1e6 url('{{ asset('uploads/logos/left-chevron.png') }}') no-repeat center center !important;
     background-size: no-repeat;
 }
 
