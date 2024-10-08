@@ -6088,9 +6088,9 @@ CHECKOUT PAGE START
     max-width: 200px;
 }
 
-.background-dark-gray:hover {
-    background-color: #000 !important;
-}
+.btn-close.fs-4.background-dark-gray:hover {
+    background-color: black !important;
+  }
 
 @media (min-width: 576px) and (max-width: 767px) {
     .fp__pagination ul li span {
