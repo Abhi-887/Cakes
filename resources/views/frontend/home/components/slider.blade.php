@@ -167,6 +167,8 @@
     }
 
     .carousel-control-next-icon:hover {
-        background: url('{{ asset('uploads/next.png') }}') no-repeat center center !important;
+        background-image: url('https://cakes.gprlive.com/uploads/logos/left-chevron(3).png') !important;
+        rotate: 180deg;
+        background-color: #008b8b !important;
     }
 </style>
