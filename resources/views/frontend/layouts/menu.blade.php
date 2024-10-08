@@ -87,14 +87,15 @@
                                         <a class="nav-link fw-semibold toggle-dropdown"
                                            data-index="{{ $index }}" href="javascript:void(0);">
                                             {{ $menu['label'] }}
-                                        </a>
-
-                                        @if ($menu['child'])
-                                            <span class="mobile-dropdown-menu ms-2 toggle-dropdown"
+                                            @if ($menu['child'])
+                                            <span class="mobile-dropdown-menu ms-2"
                                                   data-index="{{ $index }}">
                                                 <i class="far fa-angle-down color-light-gray"></i>
                                             </span>
                                         @endif
+                                        </a>
+
+
                                     </div>
 
                                     @if ($menu['child'])
