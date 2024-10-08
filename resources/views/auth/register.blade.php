@@ -32,8 +32,8 @@
                     <div class="col-xxl-5 col-xl-6 col-md-9 col-lg-7 m-auto">
                         <div class="fp__login_area">
                             <div class="text-center">
-                                <h2>Welcome back!</h2>
-                                <p>sign up to continue</p>
+                                <h2>Welcome </h2>
+                                
                             </div>
                             <hr class="text-color">
                             <form method="POST" action="{{ route('register') }}">
