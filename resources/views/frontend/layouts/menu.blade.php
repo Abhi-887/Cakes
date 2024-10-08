@@ -76,6 +76,7 @@
                         <button type="button" class="btn-close fs-4 background-dark-gray" data-bs-dismiss="offcanvas"
                             aria-label="Close"></button>
                     </div>
+                    <hr class="mx-3">
                     <div class="offcanvas-body">
                         <ul class="mt-3">
                             @if ($MainMenu)
