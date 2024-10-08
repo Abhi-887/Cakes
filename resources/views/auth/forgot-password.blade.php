@@ -2,8 +2,8 @@
 
 @section('content')
     <!--=============================
-        BREADCRUMB START
-    ==============================-->
+            BREADCRUMB START
+        ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ config('settings.breadcrumb') }});">
         <div class="fp__breadcrumb_overlay">
             <div class="container">
@@ -18,13 +18,13 @@
         </div>
     </section>
     <!--=============================
-        BREADCRUMB END
-    ==============================-->
+            BREADCRUMB END
+        ==============================-->
 
 
     <!--=========================
-        FORGOT PASSWORD START
-    ==========================-->
+            FORGOT PASSWORD START
+        ==========================-->
     <section class="fp__signin" style="background: url({{ asset('frontend/images/login_bg.jpg') }});">
         <div class="fp__signin_overlay pt_125 xs_pt_95 pb_100 xs_pb_70">
             <div class="container">
@@ -32,14 +32,17 @@
                     <div class="col-xxl-5 col-xl-6 col-md-9 col-lg-7 m-auto">
                         <div class="fp__login_area">
                             <div class="text-center">
-                            <h2> Forgot Password</h2></div>
+                                <h2> Forgot Password</h2>
+                            </div>
+                            <hr class="text-color">
                             <form method="POST" action="{{ route('password.email') }}">
                                 @csrf
                                 <div class="row">
                                     <div class="col-xl-12">
                                         <div class="fp__login_imput">
                                             <label>email</label>
-                                            <input type="email" name="email" value="{{ old('email') }}" placeholder="Email">
+                                            <input type="email" name="email" value="{{ old('email') }}"
+                                                placeholder="Email">
                                         </div>
                                     </div>
 
@@ -63,6 +66,6 @@
         </div>
     </section>
     <!--=========================
-        FORGOT PASSWORD END
-    ==========================-->
+            FORGOT PASSWORD END
+        ==========================-->
 @endsection
