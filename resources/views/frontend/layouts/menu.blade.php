@@ -98,14 +98,16 @@
                                     </div>
 
                                     @if ($menu['child'])
-                                        <ul class="mt-2 drop-dropdown" id="dropdown-{{ $index }}" style="display: none;">
-                                            @foreach ($menu['child'] as $item)
-                                                <li>
-                                                    <a class="p-2 dropdown-item fw-semibold sub-menu"
-                                                       href="{{ $item['link'] }}">{{ $item['label'] }}</a>
-                                                </li>
-                                            @endforeach
-                                        </ul>
+<!-- Dropdown HTML structure -->
+<ul class="mt-2 drop-dropdown" id="dropdown-{{ $index }}" style="display: none;">
+    @foreach ($menu['child'] as $item)
+        <li>
+            <a class="p-2 dropdown-item fw-semibold sub-menu"
+               href="{{ $item['link'] }}">{{ $item['label'] }}</a>
+        </li>
+    @endforeach
+</ul>
+
                                     @endif
                                 </li>
                             @endforeach
@@ -307,17 +309,22 @@
         });
     </script>
                             <script>
-                                // JavaScript/jQuery to toggle dropdown on click of either the title or the icon
-                                document.querySelectorAll('.toggle-dropdown').forEach(function (element) {
-                                    element.addEventListener('click', function () {
-                                        const index = this.getAttribute('data-index');
-                                        const dropdown = document.getElementById('dropdown-' + index);
-                                        if (dropdown.style.display === 'none' || dropdown.style.display === '') {
-                                            dropdown.style.display = 'block';
-                                        } else {
-                                            dropdown.style.display = 'none';
-                                        }
-                                    });
-                                });
+                      $(document).ready(function() {
+    // Attach click event handler to both the title and the dropdown icon
+    $('.toggle-dropdown').on('click', function() {
+        // Get the index of the clicked element
+        var index = $(this).data("index");
+
+        // Select the corresponding dropdown menu by ID
+        var $dropdown = $("#dropdown-" + index);
+
+        // Use slideToggle to show or hide the dropdown with animation
+        $dropdown.stop(true, true).slideToggle(300); // Adjust duration (300ms) as needed
+
+        // Optionally, add an active class to the dropdown container for custom styles
+        $(this).toggleClass('active');
+    });
+});
+
                             </script>
 @endpush
