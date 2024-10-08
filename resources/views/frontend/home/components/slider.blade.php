@@ -130,7 +130,7 @@
         text-decoration: none;
         display: inline-block;
     }
-
+/*
     .carousel-control-next-icon {
         z-index: 100;
         cursor: pointer;
@@ -170,5 +170,72 @@
         background-image: url('https://cakes.gprlive.com/uploads/logos/left-chevron(3).png') !important;
         rotate: 180deg;
         background-color: #008b8b !important;
+    } */
+
+    .carousel-control-next-icon,
+.carousel-control-prev-icon {
+    z-index: 100;
+    cursor: pointer;
+    position: relative;
+    width: 59px;
+    height: 59px;
+    border-radius: 50%;
+    background-color: #dde1e6 !important;
+}
+
+.carousel-control-next-icon {
+    background: #788a9f url('{{ asset('uploads/logos/left-chevron(1).png') }}') no-repeat center center !important;
+}
+
+.carousel-control-prev-icon {
+    background: url('{{ asset('uploads/logos/left-chevron.png') }}') no-repeat center center !important;
+    background-size: no-repeat;
+}
+
+.carousel-control-prev-icon:hover {
+    background-image: url('{{ asset('uploads/logos/left-chevron(3).png') }}') !important;
+    background-color: #008b8b !important;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    opacity: unset;
+}
+
+.carousel-control-next-icon:hover {
+    background-image: url('https://cakes.gprlive.com/uploads/logos/left-chevron(3).png') !important;
+    rotate: 180deg;
+    background-color: #008b8b !important;
+}
+
+/* Responsive styling for mobile and tablet */
+@media (max-width: 1024px) {
+    .carousel-control-next-icon,
+    .carousel-control-prev-icon {
+        width: 50px;
+        height: 50px;
     }
+}
+
+@media (max-width: 768px) {
+    .carousel-control-next-icon,
+    .carousel-control-prev-icon {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-control-next-icon,
+    .carousel-control-prev-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        background-size: contain;
+    }
+}
+
 </style>
