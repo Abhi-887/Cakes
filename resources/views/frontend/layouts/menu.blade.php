@@ -71,7 +71,8 @@
                     aria-labelledby="offcanvasExampleLabel">
                     <div class="pt-3 offcanvas-header">
                         <a class="w-50" href="{{ url('/') }}">
-                            <img src="{{ asset('uploads/web-logo1.png') }}" alt="3D-Cakes Logo" class="img-fluid head-img" />
+                            <img src="{{ asset('uploads/web-logo1.png') }}" alt="3D-Cakes Logo"
+                                class="img-fluid head-img" />
                         </a>
                         <button type="button" class="btn-close fs-4 background-dark-gray" data-bs-dismiss="offcanvas"
                             aria-label="Close"></button>
@@ -80,39 +81,39 @@
                     <div class="offcanvas-body">
                         <ul class="mt-3">
                             @if ($MainMenu)
-                            @foreach ($MainMenu as $index => $menu)
-                                <li class="my-3 nav-item">
-                                    <div class="d-flex ms-2 lh-lg">
-                                        <!-- Make both the menu title and dropdown icon toggle the submenu -->
-                                        <a class="nav-link fw-semibold toggle-dropdown"
-                                           data-index="{{ $index }}" href="javascript:void(0);">
-                                            {{ $menu['label'] }}
-                                            @if ($menu['child'])
-                                            <span class="mobile-dropdown-menu ms-2"
-                                                  data-index="{{ $index }}">
-                                                <i class="far fa-angle-down color-light-gray"></i>
-                                            </span>
+                                @foreach ($MainMenu as $index => $menu)
+                                    <li class="my-3 nav-item">
+                                        <div class="d-flex ms-2 lh-lg">
+                                            <!-- Make both the menu title and dropdown icon toggle the submenu -->
+                                            <a class="nav-link fw-semibold toggle-dropdown"
+                                                data-index="{{ $index }}" href="javascript:void(0);">
+                                                {{ $menu['label'] }}
+                                                @if ($menu['child'])
+                                                    <span class="mobile-dropdown-menu ms-2"
+                                                        data-index="{{ $index }}">
+                                                        <i class="far fa-angle-down color-light-gray"></i>
+                                                    </span>
+                                                @endif
+                                            </a>
+
+
+                                        </div>
+
+                                        @if ($menu['child'])
+                                            <!-- Dropdown HTML structure -->
+                                            <ul class="mt-2 drop-dropdown" id="dropdown-{{ $index }}"
+                                                style="display: none;">
+                                                @foreach ($menu['child'] as $item)
+                                                    <li>
+                                                        <a class="p-2 dropdown-item fw-semibold sub-menu"
+                                                            href="{{ $item['link'] }}">{{ $item['label'] }}</a>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
                                         @endif
-                                        </a>
-
-
-                                    </div>
-
-                                    @if ($menu['child'])
-<!-- Dropdown HTML structure -->
-<ul class="mt-2 drop-dropdown" id="dropdown-{{ $index }}" style="display: none;">
-    @foreach ($menu['child'] as $item)
-        <li>
-            <a class="p-2 dropdown-item fw-semibold sub-menu"
-               href="{{ $item['link'] }}">{{ $item['label'] }}</a>
-        </li>
-    @endforeach
-</ul>
-
-                                    @endif
-                                </li>
-                            @endforeach
-                        @endif
+                                    </li>
+                                @endforeach
+                            @endif
 
 
 
@@ -174,8 +175,8 @@
                         </li> --}}
 
                     <li class="nav-item">
-                        <a class="nav-link border px-3 py-2 ms-3 rounded-1 bg-dark-gray" href="{{ route('login') }}"><i
-                                class="far fa-user me-3"></i>Account</a>
+                        <a class="nav-link border px-3 py-2 ms-3 rounded-1 bg-dark-gray"
+                            href="{{ route('login') }}"><i class="far fa-user me-3"></i>Account</a>
                     </li>
 
                     <li class="nav-item">
@@ -309,23 +310,22 @@
             });
         });
     </script>
-                            <script>
-                      $(document).ready(function() {
-    // Attach click event handler to both the title and the dropdown icon
-    $('.toggle-dropdown').on('click', function() {
-        // Get the index of the clicked element
-        var index = $(this).data("index");
+    <script>
+        $(document).ready(function() {
+            // Attach click event handler to both the title and the dropdown icon
+            $('.toggle-dropdown').on('click', function() {
+                // Get the index of the clicked element
+                var index = $(this).data("index");
 
-        // Select the corresponding dropdown menu by ID
-        var $dropdown = $("#dropdown-" + index);
+                // Select the corresponding dropdown menu by ID
+                var $dropdown = $("#dropdown-" + index);
 
-        // Use slideToggle to show or hide the dropdown with animation
-        $dropdown.stop(true, true).slideToggle(300); // Adjust duration (300ms) as needed
+                // Use slideToggle to show or hide the dropdown with animation
+                $dropdown.stop(true, true).slideToggle(300); // Adjust duration (300ms) as needed
 
-        // Optionally, add an active class to the dropdown container for custom styles
-        $(this).toggleClass('active');
-    });
-});
-
-                            </script>
+                // Optionally, add an active class to the dropdown container for custom styles
+                $(this).toggleClass('active');
+            });
+        });
+    </script>
 @endpush

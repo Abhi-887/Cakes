@@ -6078,13 +6078,18 @@ CHECKOUT PAGE START
 .fp__massage_btn:hover {
     background: black;
 }
+
 #dropdown-2 {
     background: aliceblue;
     border-radius: 8px;
-  }
+}
 
 .head-img {
     max-width: 200px;
+}
+
+.background-dark-gray:hover {
+    background-color: #000 !important;
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
