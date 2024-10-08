@@ -6078,7 +6078,10 @@ CHECKOUT PAGE START
 .fp__massage_btn:hover {
     background: black;
 }
-
+#dropdown-2 {
+    background: aliceblue;
+    border-radius: 8px;
+  }
 
 .head-img {
     max-width: 200px;

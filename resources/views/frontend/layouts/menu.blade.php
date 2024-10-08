@@ -80,32 +80,37 @@
                     <div class="offcanvas-body">
                         <ul class="mt-3">
                             @if ($MainMenu)
-                                @foreach ($MainMenu as $index => $menu)
-                                    <li class="my-3 nav-item">
-                                        <div class="d-flex ms-2 lh-lg">
-                                            <a class="nav-link fw-semibold"
-                                                href="{{ $menu['link'] }}">{{ $menu['label'] }}
-                                            </a>
-                                            @if ($menu['child'])
-                                                <span class="mobile-dropdown-menu ms-2"
-                                                    data-index="{{ $index }}">
-                                                    <i class="far fa-angle-down color-light-gray"></i></span>
-                                            @endif
-                                        </div>
+                            @foreach ($MainMenu as $index => $menu)
+                                <li class="my-3 nav-item">
+                                    <div class="d-flex ms-2 lh-lg">
+                                        <!-- Only display the menu label without a link on mobile screens -->
+                                        <span class="nav-link fw-semibold d-xxl-none">{{ $menu['label'] }}</span>
+
+                                        <!-- Display the menu label as a link on non-mobile screens -->
+                                        <a class="nav-link fw-semibold d-none d-xxl-block"
+                                           href="{{ $menu['link'] }}">{{ $menu['label'] }}</a>
+
                                         @if ($menu['child'])
-                                            <ul class="mt-2 drop-dropdown" id="dropdown-{{ $index }}"
-                                                style="display: none;">
-                                                @foreach ($menu['child'] as $item)
-                                                    <li>
-                                                        <a class="p-2 dropdown-item fw-semibold sub-menu"
-                                                            href="{{ $item['link'] }}">{{ $item['label'] }}</a>
-                                                    </li>
-                                                @endforeach
-                                            </ul>
+                                            <span class="mobile-dropdown-menu ms-2" data-index="{{ $index }}">
+                                                <i class="far fa-angle-down color-light-gray"></i>
+                                            </span>
                                         @endif
-                                    </li>
-                                @endforeach
-                            @endif
+                                    </div>
+
+                                    @if ($menu['child'])
+                                        <ul class="mt-2 drop-dropdown" id="dropdown-{{ $index }}" style="display: none;">
+                                            @foreach ($menu['child'] as $item)
+                                                <li>
+                                                    <a class="p-2 dropdown-item fw-semibold sub-menu"
+                                                       href="{{ $item['link'] }}">{{ $item['label'] }}</a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    @endif
+                                </li>
+                            @endforeach
+                        @endif
+
                         </ul>
                         <hr>
                         <div class="d-flex">
