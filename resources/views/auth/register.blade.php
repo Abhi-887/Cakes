@@ -35,6 +35,7 @@
                                 <h2>Welcome back!</h2>
                                 <p>sign up to continue</p>
                             </div>
+                            <hr class="text-color">
                             <form method="POST" action="{{ route('register') }}">
                                 @csrf
                                 <div class="row">
