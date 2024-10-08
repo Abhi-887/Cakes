@@ -51,6 +51,7 @@
                                     </div>
                                 </div>
                             </form>
+                            <p class="or"><span>or</span></p>
                             <p class="create_account d-flex justify-content-between">
                                 <a href="{{ route('login') }}">Back To login</a>
                                 <a href="{{ route('register') }}">Sign Up</a>
