@@ -56,7 +56,7 @@
 
                                     <div class="col-xl-12">
                                         <div class="fp__login_imput fp__login_check_area">
-                                            <div class="form-check">
+                                            <div class="form-check ps-0">
                                                 <input class="form-check-input" type="checkbox" value=""
                                                     id="flexCheckDefault" name="remember">
                                                 <label class="form-check-label" for="flexCheckDefault">
