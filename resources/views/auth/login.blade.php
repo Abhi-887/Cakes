@@ -6,7 +6,7 @@
                 ==============================-->
     <section class="fp__breadcrumb" style="background: url({{ config('settings.breadcrumb') }});">
         <div class="py-5 fp__breadcrumb_overlay">
-            <div class="container py-2 py-md-5">
+            <div class="container py-2 py-md-4">
                 <div class="fp__breadcrumb_text">
                     <h1>sign in</h1>
                     <ul>
