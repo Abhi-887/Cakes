@@ -33,7 +33,7 @@
                         <div class="fp__login_area">
                             <div class="text-center">
                                 <h2>Welcome </h2>
-                                
+
                             </div>
                             <hr class="text-color">
                             <form method="POST" action="{{ route('register') }}">
@@ -80,7 +80,7 @@
                             </form>
                             <p class="or"><span>or</span></p>
 
-                            <p class="create_account">Dont’t have an account ? <a href="{{ route('login') }}">login</a></p>
+                            <p class="create_account">Allready have an account ? <a href="{{ route('login') }}">login</a></p>
                         </div>
                     </div>
                 </div>
