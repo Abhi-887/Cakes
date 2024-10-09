@@ -43,7 +43,7 @@
                 @if ($paginator->onFirstPage())
                     <li class="page-item disabled" aria-disabled="true" aria-label="Previous">
                         <span class="page-link">
-                            <img class="custom-next-pre " src="{{asset('uploads/logos/left-chevron(4).png')}}" alt="arrow">
+                            <img class="custom-next-simp" src="{{asset('uploads/logos/left-chevron(4).png')}}" alt="arrow">
                         </span>
                     </li>
                 @else
