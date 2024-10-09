@@ -2132,10 +2132,14 @@ footer .wrapper a:hover {
 }
 
 
-.page-link:focus {
+/* .page-link:focus {
     background-color: #008b8b !important;
     box-shadow: none;
-}
+} */
+.page-link:focus {
+    background-color: #fff !important;
+    box-shadow: none;
+  }
 
 
 
