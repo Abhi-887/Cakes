@@ -49,7 +49,7 @@
                 @else
                     <li class="page-item">
                         <a class="page-link fs-2 text-secondary" href="{{ $paginator->previousPageUrl() }}" rel="prev" aria-label="Previous">
-                            <img src="{{asset('uploads/logos/left-chevron(4).png')}}" class="custom-next-simp" alt="arrow">
+                            <img src="{{asset('uploads/logos/left-chevron(4).png')}}" class="custom-next-simp left-arrow-1" alt="arrow">
                         </a>
                     </li>
                 @endif
