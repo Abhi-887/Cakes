@@ -2070,6 +2070,7 @@ footer .wrapper a:hover {
     /* border-color: #4b637f !important; */
     color: #a0abb7;
     font-weight: 300;
+    border: none;
 }
 
 
@@ -6515,10 +6516,10 @@ textarea::placeholder {
 
 
 
-.page-link:hover {
+/* .page-link:hover {
     background-color: #008b8b;
     border-color: #008b8b;
-}
+} */
 
 .fp__track_order ul li::after {
     background: #eee;
