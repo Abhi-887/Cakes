@@ -27,7 +27,7 @@
                 {{-- First Page Link --}}
                 @if (!$paginator->onFirstPage())
                     <li class="page-item">
-                        <a class="page-link" href="{{ $paginator->url(1) }}" aria-label="First">
+                        <a class="page-link fs-4" href="{{ $paginator->url(1) }}" aria-label="First">
                             &laquo;
                         </a>
                     </li>
