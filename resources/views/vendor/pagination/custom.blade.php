@@ -1,7 +1,7 @@
 @if ($paginator->hasPages())
     <div class="d-flex justify-content-between align-items-center mt-4">
         <!-- Rows per page section -->
-        <div class="d-flex align-items-center">
+        <div class="d-flex align-items-center text-secondary">
             <span>Rows per page:</span>
             <div class="dropdown ms-2">
                 <button class="btn btn-light dropdown-toggle" type="button" id="rowsPerPage" data-bs-toggle="dropdown" aria-expanded="false">
