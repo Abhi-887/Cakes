@@ -2077,8 +2077,16 @@ footer .wrapper a:hover {
     rotate: 90deg;
     width: 55%;
 }
-.custom-next-simple{
+
+.custom-next-simple {
     rotate: 180deg;
+    width: 56%;
+    height: 57%;
+}
+
+.custom-next-simp {
+    width: 56%;
+    height: 57%;
 }
 
 .left-arrow-1 {
