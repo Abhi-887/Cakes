@@ -22,7 +22,7 @@
         </div>
 
         <!-- Pagination controls -->
-        <nav aria-label="Page navigation custom">
+        <nav aria-label="Page navigation custom" class="custom">
             <ul class="pagination mb-0">
                 {{-- First Page Link --}}
                 @if (!$paginator->onFirstPage())
