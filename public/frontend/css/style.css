@@ -6090,6 +6090,7 @@ CHECKOUT PAGE START
 
 .fp__pagination .dropdown-menu {
     --bs-dropdown-min-width: 0rem;
+    display: none;
 }
 
 .dropdown-menu.show {
