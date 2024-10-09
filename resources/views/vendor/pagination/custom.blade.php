@@ -28,7 +28,7 @@
                 @if (!$paginator->onFirstPage())
                     <li class="page-item">
                         <a class="page-link fs-2 text-secondary" href="{{ $paginator->url(1) }}" aria-label="First">
-                            <img class="custom-next-pre left-arrow-1" src="{{asset('uploads/logos/upload.png')}}" alt="">
+                            <img class="custom-next-pre left-arrow-1" src="{{asset('uploads/logos/upload.png')}}" alt="left-arrow-1">
                         </a>
                     </li>
                 @endif
@@ -40,14 +40,14 @@
                     </li>
                 @else
                     <li class="page-item">
-                        <a class="page-link fs-2 text-secondary" href="{{ $paginator->previousPageUrl() }}" rel="prev" aria-label="Previous">&lsaquo; </a>
+                        <a class="page-link fs-2 text-secondary" href="{{ $paginator->previousPageUrl() }}" rel="prev" aria-label="Previous"><img src="{{asset('uploads/logos/left-chevron(4).png')}}" alt="arrow"></a>
                     </li>
                 @endif
 
                 {{-- Next Page Link --}}
                 @if ($paginator->hasMorePages())
                     <li class="page-item">
-                        <a class="page-link fs-2 text-secondary" href="{{ $paginator->nextPageUrl() }}" rel="next" aria-label="Next">&rsaquo;</a>
+                        <a class="page-link fs-2 text-secondary" href="{{ $paginator->nextPageUrl() }}" rel="next" aria-label="Next"><img src="{{asset('uploads/logos/left-chevron(4).png')}}" alt="arrow"></a>
                     </li>
                 @else
                     <li class="page-item disabled" aria-disabled="true" aria-label="Next">
