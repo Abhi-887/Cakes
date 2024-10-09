@@ -31,27 +31,41 @@
                             <img class="custom-next-pre left-arrow-1" src="{{asset('uploads/logos/upload.png')}}" alt="left-arrow-1">
                         </a>
                     </li>
+                @else
+                    <li class="page-item disabled" aria-disabled="true">
+                        <span class="page-link">
+                            <img class="custom-next-pre left-arrow-1" src="{{asset('uploads/logos/upload.png')}}" alt="left-arrow-1">
+                        </span>
+                    </li>
                 @endif
 
                 {{-- Previous Page Link --}}
                 @if ($paginator->onFirstPage())
                     <li class="page-item disabled" aria-disabled="true" aria-label="Previous">
-                        <span class="page-link"> <img class="custom-next-pre left-arrow-1" src="{{asset('uploads/logos/upload.png')}}" alt="left-arrow-1"></span>
+                        <span class="page-link">
+                            <img class="custom-next-pre left-arrow-1" src="{{asset('uploads/logos/left-chevron(4).png')}}" alt="arrow">
+                        </span>
                     </li>
                 @else
                     <li class="page-item">
-                        <a class="page-link fs-2 text-secondary" href="{{ $paginator->previousPageUrl() }}" rel="prev" aria-label="Previous"><img src="{{asset('uploads/logos/left-chevron(4).png')}}" class="custom-next-simp"  alt="arrow"></a>
+                        <a class="page-link fs-2 text-secondary" href="{{ $paginator->previousPageUrl() }}" rel="prev" aria-label="Previous">
+                            <img src="{{asset('uploads/logos/left-chevron(4).png')}}" class="custom-next-simp" alt="arrow">
+                        </a>
                     </li>
                 @endif
 
                 {{-- Next Page Link --}}
                 @if ($paginator->hasMorePages())
                     <li class="page-item">
-                        <a class="page-link fs-2 text-secondary" href="{{ $paginator->nextPageUrl() }}" rel="next" aria-label="Next"><img src="{{asset('uploads/logos/left-chevron(4).png')}}" class="custom-next-simple" alt="arrow"></a>
+                        <a class="page-link fs-2 text-secondary" href="{{ $paginator->nextPageUrl() }}" rel="next" aria-label="Next">
+                            <img src="{{asset('uploads/logos/left-chevron(4).png')}}" class="custom-next-simple" alt="arrow">
+                        </a>
                     </li>
                 @else
                     <li class="page-item disabled" aria-disabled="true" aria-label="Next">
-                        <span class="page-link"><img src="{{asset('uploads/logos/left-chevron(4).png')}}" class="custom-next-simple" alt="arrow"></span>
+                        <span class="page-link">
+                            <img src="{{asset('uploads/logos/left-chevron(4).png')}}" class="custom-next-simple" alt="arrow">
+                        </span>
                     </li>
                 @endif
 
@@ -61,6 +75,12 @@
                         <a class="page-link fs-2 text-secondary" href="{{ $paginator->url($paginator->lastPage()) }}" aria-label="Last">
                               <img class="custom-next-pre" src="{{asset('uploads/logos/upload.png')}}" alt="">
                         </a>
+                    </li>
+                @else
+                    <li class="page-item disabled" aria-disabled="true">
+                        <span class="page-link">
+                            <img class="custom-next-pre" src="{{asset('uploads/logos/upload.png')}}" alt="">
+                        </span>
                     </li>
                 @endif
             </ul>
