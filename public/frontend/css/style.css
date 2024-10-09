@@ -2038,7 +2038,8 @@ footer .wrapper a:hover {
     width: 40px !important;
     height: 40px !important;
     padding: 0 !important;
-    line-height: 39px !important;
+    /* line-height: 39px !important; */
+    line-height: 35px !important;
     text-align: center !important;
     color: #fff !important;
     -webkit-border-radius: 0 !important;
