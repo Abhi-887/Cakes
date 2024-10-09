@@ -2101,11 +2101,16 @@ footer .wrapper a:hover {
 }
 
 
-.disabled>.page-link,
+/* .disabled>.page-link,
 .page-link.disabled {
     background-color: #4b637f !important;
     border-color: #4b637f !important;
     border-radius: 12px !important;
+} */
+.disabled>.page-link,
+.page-link.disabled {
+    background-color: #fff !important;
+    border-color: #FFF !important;
 }
 
 .fp__pagination ul li span {
