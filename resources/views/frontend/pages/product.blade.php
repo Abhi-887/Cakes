@@ -196,8 +196,8 @@
                 <div class="mt-5 fp__pagination">
                     <div class="row">
                         <div class="col-12">
-                            {{-- {{$product->links()}} --}}
-                            {{ $products->links('vendor.pagination.custom') }}
+                            {{$product->links()}}
+                            {{-- {{ $products->links('vendor.pagination.custom') }} --}}
                         </div>
                     </div>
                 </div>
