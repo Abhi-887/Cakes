@@ -2083,6 +2083,12 @@ footer .wrapper a:hover {
     width: 56%;
     height: 57%;
 }
+.page-link:hover {
+    z-index: 2;
+    color: var(--bs-pagination-hover-color);
+    background-color: none;
+    border-color: none;
+  }
 
 .custom-next-simp {
     width: 56%;
