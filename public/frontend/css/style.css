@@ -2143,7 +2143,7 @@ footer .wrapper a:hover {
 
 
 .custom-toggle::after {
-    background-image: url('{{ asset('uploads/logos/left-chevron.png') }}');
+    background-image: url('https://cakes.gprlive.com/uploads/logos/left-chevron.png');
 }
 
 
