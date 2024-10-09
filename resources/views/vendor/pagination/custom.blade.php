@@ -59,7 +59,7 @@
                 @if ($paginator->hasMorePages())
                     <li class="page-item">
                         <a class="page-link fs-2 text-secondary" href="{{ $paginator->url($paginator->lastPage()) }}" aria-label="Last">
-                            &raquo;  <img src="{{asset('uploads/logos/upload.png')}}" alt="">
+                              <img class="custom-next-pre" src="{{asset('uploads/logos/upload.png')}}" alt="">
                         </a>
                     </li>
                 @endif
