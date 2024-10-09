@@ -6088,7 +6088,9 @@ CHECKOUT PAGE START
     max-width: 200px;
 }
 
-
+.fp__pagination .dropdown-menu {
+    --bs-dropdown-min-width: 0rem;
+  }
 
 
 
