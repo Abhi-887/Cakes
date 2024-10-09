@@ -4,7 +4,7 @@
         <div class="d-flex align-items-center text-secondary">
             <span>Rows per page:</span>
             <div class="dropdown ms-2">
-                <button class="btn btn-light dropdown-toggle custom-toggle" type="button" id="rowsPerPage" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="btn btn-light dropdown-toggle custom-toggle pe-4" type="button" id="rowsPerPage" data-bs-toggle="dropdown" aria-expanded="false">
                     {{ $paginator->perPage() }}
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="rowsPerPage">
