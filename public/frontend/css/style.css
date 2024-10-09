@@ -2072,9 +2072,14 @@ footer .wrapper a:hover {
     font-weight: 300;
     border: none;
 }
-.custom-next-pre{
+
+.custom-next-pre {
     rotate: 90deg;
     width: 55%;
+}
+
+.left-arrow-1 {
+    rotate: -90deg;
 }
 
 
