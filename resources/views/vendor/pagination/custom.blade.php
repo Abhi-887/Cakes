@@ -36,7 +36,7 @@
                 {{-- Previous Page Link --}}
                 @if ($paginator->onFirstPage())
                     <li class="page-item disabled" aria-disabled="true" aria-label="Previous">
-                        <span class="page-link">&lsaquo; |<</span>
+                        <span class="page-link">&lsaquo; <img src="{{asset('uploads/logos/upload.png')}}" alt=""></span>
                     </li>
                 @else
                     <li class="page-item">
