@@ -40,7 +40,7 @@
                     </li>
                 @else
                     <li class="page-item">
-                        <a class="page-link fs-2 text-secondary" href="{{ $paginator->previousPageUrl() }}" rel="prev" aria-label="Previous">&lsaquo; <img src="{{asset('uploads/logos/upload.png')}}" alt=""></a>
+                        <a class="page-link fs-2 text-secondary" href="{{ $paginator->previousPageUrl() }}" rel="prev" aria-label="Previous">&lsaquo; </a>
                     </li>
                 @endif
 
