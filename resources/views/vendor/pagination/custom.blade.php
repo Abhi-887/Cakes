@@ -27,7 +27,7 @@
                 {{-- First Page Link --}}
                 @if (!$paginator->onFirstPage())
                     <li class="page-item">
-                        <a class="page-link fs-4 text-secondary" href="{{ $paginator->url(1) }}" aria-label="First">
+                        <a class="page-link fs-2 text-secondary" href="{{ $paginator->url(1) }}" aria-label="First">
                             &laquo;
                         </a>
                     </li>
@@ -40,14 +40,14 @@
                     </li>
                 @else
                     <li class="page-item">
-                        <a class="page-link fs-4 text-secondary" href="{{ $paginator->previousPageUrl() }}" rel="prev" aria-label="Previous">&lsaquo;</a>
+                        <a class="page-link fs-2 text-secondary" href="{{ $paginator->previousPageUrl() }}" rel="prev" aria-label="Previous">&lsaquo;</a>
                     </li>
                 @endif
 
                 {{-- Next Page Link --}}
                 @if ($paginator->hasMorePages())
                     <li class="page-item">
-                        <a class="page-link fs-4 text-secondary" href="{{ $paginator->nextPageUrl() }}" rel="next" aria-label="Next">&rsaquo;</a>
+                        <a class="page-link fs-2 text-secondary" href="{{ $paginator->nextPageUrl() }}" rel="next" aria-label="Next">&rsaquo;</a>
                     </li>
                 @else
                     <li class="page-item disabled" aria-disabled="true" aria-label="Next">
@@ -58,7 +58,7 @@
                 {{-- Last Page Link --}}
                 @if ($paginator->hasMorePages())
                     <li class="page-item">
-                        <a class="page-link fs-4 text-secondary" href="{{ $paginator->url($paginator->lastPage()) }}" aria-label="Last">
+                        <a class="page-link fs-2 text-secondary" href="{{ $paginator->url($paginator->lastPage()) }}" aria-label="Last">
                             &raquo;
                         </a>
                     </li>
