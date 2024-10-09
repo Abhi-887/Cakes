@@ -18,7 +18,7 @@
 
         <!-- Pagination text -->
         <div class="text-secondary">
-             {{ $paginator->firstItem() }}–{{ $paginator->lastItem() }} of {{ $paginator->total() }}
+             {{ $paginator->firstItem() }} – {{ $paginator->lastItem() }} of {{ $paginator->total() }}
         </div>
 
         <!-- Pagination controls -->
