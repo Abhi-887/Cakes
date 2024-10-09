@@ -47,7 +47,7 @@
                 {{-- Next Page Link --}}
                 @if ($paginator->hasMorePages())
                     <li class="page-item">
-                        <a class="page-link fs-2 text-secondary" href="{{ $paginator->nextPageUrl() }}" rel="next" aria-label="Next"><img src="{{asset('uploads/logos/left-chevron(4).png')}}" class="custom-next-pre" alt="arrow"></a>
+                        <a class="page-link fs-2 text-secondary" href="{{ $paginator->nextPageUrl() }}" rel="next" aria-label="Next"><img src="{{asset('uploads/logos/left-chevron(4).png')}}" class="custom-next-simple" alt="arrow"></a>
                     </li>
                 @else
                     <li class="page-item disabled" aria-disabled="true" aria-label="Next">

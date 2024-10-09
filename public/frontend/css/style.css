@@ -2077,6 +2077,9 @@ footer .wrapper a:hover {
     rotate: 90deg;
     width: 55%;
 }
+.custom-next-simple{
+    rotate: 180deg;
+}
 
 .left-arrow-1 {
     rotate: -90deg;
